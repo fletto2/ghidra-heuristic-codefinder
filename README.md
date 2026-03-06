@@ -27,8 +27,8 @@ When analyzing a ROM, the extension automatically:
    (RTS, RTE, NOP, BX LR, etc.) in native vs byte-swapped byte order. If a
    swapped interpretation has significantly more hits, it warns that the ROM
    needs byte-swapping. Supports 68000, SH2, ARM, MIPS, TMS9900, H8, PowerPC,
-   and V60. Reports specific swap type (16-bit swap, 32-bit reversal, or
-   16-bit pair swap within 32-bit words).
+   V60, and WE32100. Reports specific swap type (16-bit swap, 32-bit reversal,
+   or 16-bit pair swap within 32-bit words).
 
 2. **Infers ROM base address** — Analyzes absolute jump/call targets and raw
    pointer values to detect if the ROM is loaded at the wrong address. For
@@ -192,8 +192,12 @@ instruction opcodes in both native and swapped byte orders:
 | TMS9900 | B *R11 (0x045B), NOP (0x1000) |
 | H8 | RTS (0x5470), RTE (0x5670) |
 | PowerPC | BLR (0x4E800020) |
+| WE32100 | RETG+disp (0x2CCC), SAVE %fp (0x1049), CALL+desc (0x7087, 0x7084), RET+abs (0x247F) |
 
 8-bit CPUs (Z80, 6502, 6809, 8080) are not affected by byte-swap issues.
+WE32100 ROMs are 32-bit interleaved across 4 byte-wide chips; wrong chip order
+during dumping produces byte-level permutation that completely clobbers the
+instruction stream. Both 16-bit and 32-bit swap patterns are checked.
 
 ## Heuristic reference
 

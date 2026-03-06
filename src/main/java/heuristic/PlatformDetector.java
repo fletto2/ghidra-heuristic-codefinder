@@ -87,6 +87,7 @@ public class PlatformDetector {
 		CPU_FAMILY_MAP.put("8051", Set.of("8051", "8048", "8049"));
 		CPU_FAMILY_MAP.put("68HC11", Set.of("68hc11"));
 		CPU_FAMILY_MAP.put("6805", Set.of("6805", "68705"));
+		CPU_FAMILY_MAP.put("WE32100", Set.of("we32100", "we32200"));
 	}
 
 	/**
@@ -614,6 +615,34 @@ public class PlatformDetector {
 			check32bit = true;
 			nativeOpcodes = new int[][] {{0x4E, 0x80}}; // first half of BLR
 			swappedOpcodes = new int[][] {{0x80, 0x4E}};
+		} else if (processor.contains("WE32100") || processor.contains("WE32")) {
+			// WE32100: 1-byte opcodes, big-endian data, instructions not word-aligned.
+			// ROMs are 32-bit interleaved across 4 byte-wide chips — wrong chip order
+			// produces byte-level permutation that completely clobbers instructions.
+			// Common 16-bit aligned byte pairs in real code:
+			//   0x2C 0xCC — RETG + displacement deferred mode (function epilogue)
+			//   0x10 0x49 — SAVE %fp (function prologue)
+			//   0x70 0x87 — CALL + byte-immediate descriptor
+			//   0x70 0x84 — CALL + word-immediate descriptor
+			//   0x24 0x7F — RET + absolute addressing (return then next function)
+			//   0xCC 0xFC — displacement deferred + absolute deferred
+			check32bit = true;
+			nativeOpcodes = new int[][] {
+				{0x2C, 0xCC}, // RETG + disp deferred
+				{0x10, 0x49}, // SAVE %fp
+				{0x70, 0x87}, // CALL + descriptor
+				{0x70, 0x84}, // CALL + descriptor
+				{0x24, 0x7F}, // RET + absolute
+				{0xCC, 0xFC}, // disp deferred + abs deferred
+			};
+			swappedOpcodes = new int[][] {
+				{0xCC, 0x2C},
+				{0x49, 0x10},
+				{0x87, 0x70},
+				{0x84, 0x70},
+				{0x7F, 0x24},
+				{0xFC, 0xCC},
+			};
 		} else {
 			// 8-bit CPUs (Z80, 6502, 8080) don't have byte-swap issues
 			return new EndiannessResult("ok", 1.0, 0.0,
@@ -669,6 +698,18 @@ public class PlatformDetector {
 					patterns32 = new long[]{ 0x03E00008L }; // JR RA
 				} else if (processor.contains("PowerPC") || processor.contains("PPC")) {
 					patterns32 = new long[]{ 0x4E800020L }; // BLR
+				} else if (processor.contains("WE32100") || processor.contains("WE32")) {
+					// WE32100: common 4-byte aligned sequences from 3B2 ROMs
+					// 0x0200_0BC8 — very common (248 hits in 32K ROM)
+					// 0x1049_9C4F — SAVE %fp + disp deferred (function prologue)
+					// 0x2CCC_FC7F — RETG epilogue sequence
+					// 0x2CCC_F87F — RETG epilogue variant
+					patterns32 = new long[]{
+						0x02000BC8L,
+						0x10499C4FL,
+						0x2CCCFC7FL,
+						0x2CCCF87FL,
+					};
 				} else {
 					patterns32 = new long[]{ 0xE12FFF1EL, 0xE1A0F00EL }; // ARM: BX LR, MOV PC,LR
 				}
@@ -1036,6 +1077,9 @@ public class PlatformDetector {
 		} else if (processor.contains("TMS9900")) {
 			// TMS9900: ROMs at $0000, $4000, $6000
 			return new long[]{ 0x0000L, 0x4000L, 0x6000L };
+		} else if (processor.contains("WE32100") || processor.contains("WE32")) {
+			// WE32100: ROM always at $00000000 (reset reads PCBP from $80)
+			return new long[]{ 0x00000000L };
 		}
 		return new long[]{};
 	}
