@@ -300,6 +300,83 @@ public class FunctionPatternDetector {
 		tryDetect(results, detectJtagBoundaryScan(pcode, profile));
 		tryDetect(results, detectBusArbitrationTest(pcode, profile));
 		tryDetect(results, detectMpuRegionConfig(pcode, profile));
+		tryDetect(results, detectDnsResolver(pcode, profile));
+		tryDetect(results, detectDhcpClient(pcode, profile));
+		tryDetect(results, detectHttpParser(pcode, profile));
+		tryDetect(results, detectSmtpHandler(pcode, profile));
+		tryDetect(results, detectTftpClient(pcode, profile));
+		tryDetect(results, detectNtpSync(pcode, profile));
+		tryDetect(results, detectPppFraming(pcode, profile));
+		tryDetect(results, detectTelnetProtocol(pcode, profile));
+		tryDetect(results, detectSnmpAgent(pcode, profile));
+		tryDetect(results, detectUdpChecksum(pcode, profile));
+		tryDetect(results, detectAesRound(pcode, profile));
+		tryDetect(results, detectDesRound(pcode, profile));
+		tryDetect(results, detectSha256Round(pcode, profile));
+		tryDetect(results, detectMd5Round(pcode, profile));
+		tryDetect(results, detectRc4Cipher(pcode, profile));
+		tryDetect(results, detectChaCha20(pcode, profile));
+		tryDetect(results, detectFirFilter(pcode, profile));
+		tryDetect(results, detectIirFilter(pcode, profile));
+		tryDetect(results, detectMovingAverage(pcode, profile));
+		tryDetect(results, detectMedianFilter(pcode, profile));
+		tryDetect(results, detectZeroCrossing(pcode, profile));
+		tryDetect(results, detectConvolution(pcode, profile));
+		tryDetect(results, detectStepperMotor(pcode, profile));
+		tryDetect(results, detectBootloaderJump(pcode, profile));
+		tryDetect(results, detectFlashErase(pcode, profile));
+		tryDetect(results, detectBatteryMonitor(pcode, profile));
+		tryDetect(results, detectTempCompensation(pcode, profile));
+		tryDetect(results, detectSpriteScaling(pcode, profile));
+		tryDetect(results, detectAlphaBlending(pcode, profile));
+		tryDetect(results, detectGammaCorrection(pcode, profile));
+		tryDetect(results, detectColorSpaceConvert(pcode, profile));
+		tryDetect(results, detectParallaxScroll(pcode, profile));
+		tryDetect(results, detectRaycasting(pcode, profile));
+		tryDetect(results, detectJsonParser(pcode, profile));
+		tryDetect(results, detectCsvParser(pcode, profile));
+		tryDetect(results, detectCoffParser(pcode, profile));
+		tryDetect(results, detectBmpLoader(pcode, profile));
+		tryDetect(results, detectWavLoader(pcode, profile));
+		tryDetect(results, detectSyscallDispatch(pcode, profile));
+		tryDetect(results, detectThreadScheduler(pcode, profile));
+		tryDetect(results, detectSignalHandler(pcode, profile));
+		tryDetect(results, detectPipeIpc(pcode, profile));
+		tryDetect(results, detectMemoryPool(pcode, profile));
+		tryDetect(results, detectTlbFlush(pcode, profile));
+		tryDetect(results, detectFileDescTable(pcode, profile));
+		tryDetect(results, detectMountHandler(pcode, profile));
+		tryDetect(results, detectSocketBind(pcode, profile));
+		tryDetect(results, detectBigIntAdd(pcode, profile));
+		tryDetect(results, detectBigIntMul(pcode, profile));
+		tryDetect(results, detectPolynomialEval(pcode, profile));
+		tryDetect(results, detectLinearInterp(pcode, profile));
+		tryDetect(results, detectLogApprox(pcode, profile));
+		tryDetect(results, detectExpApprox(pcode, profile));
+		tryDetect(results, detectReciprocalApprox(pcode, profile));
+		tryDetect(results, detectDivByConstant(pcode, profile));
+		tryDetect(results, detectGcdCompute(pcode, profile));
+		tryDetect(results, detectRegexMatch(pcode, profile));
+		tryDetect(results, detectStringHash(pcode, profile));
+		tryDetect(results, detectStringTokenize(pcode, profile));
+		tryDetect(results, detectAtoi(pcode, profile));
+		tryDetect(results, detectItoa(pcode, profile));
+		tryDetect(results, detectStringSearch(pcode, profile));
+		tryDetect(results, detectCaseConvert(pcode, profile));
+		tryDetect(results, detectWhitespaceStrip(pcode, profile));
+		tryDetect(results, detectCollisionResponse(pcode, profile));
+		tryDetect(results, detectGravitySim(pcode, profile));
+		tryDetect(results, detectJumpPhysics(pcode, profile));
+		tryDetect(results, detectHealthDamage(pcode, profile));
+		tryDetect(results, detectInventoryManage(pcode, profile));
+		tryDetect(results, detectNpcDialog(pcode, profile));
+		tryDetect(results, detectEnemyPatrol(pcode, profile));
+		tryDetect(results, detectBossPattern(pcode, profile));
+		tryDetect(results, detectArithmeticCoding(pcode, profile));
+		tryDetect(results, detectLzwCodec(pcode, profile));
+		tryDetect(results, detectBwtTransform(pcode, profile));
+		tryDetect(results, detectDeflate(pcode, profile));
+		tryDetect(results, detectUartInit(pcode, profile));
 
 		// Phase 2: Feature-vector similarity (broader coverage via P-code
 		// operation distribution fingerprinting — catches patterns that
@@ -5903,6 +5980,1928 @@ public class FunctionPatternDetector {
 			Math.min(conf, 0.75), "MPU/MMU region configuration");
 	}
 
+	// New detectors: Network, Crypto, DSP, Embedded, Graphics, Parsers, OS, Math, String, Game, Compression
+
+	/**
+	 * DNS resolver: parses DNS packets. Expects port 53 (0x35), label-length
+	 * prefixed domain names, query/response flags via shifts and masks.
+	 */
+	private FunctionType detectDnsResolver(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		if (p.loads < 5) return null;
+		if (p.compares < 3) return null;
+
+		boolean hasPort53 = p.constants.contains(53L) || p.constants.contains(0x35L);
+		boolean hasDnsFlags = p.constants.contains(0x8000L) || p.constants.contains(0x0F00L);
+		boolean hasLabelParse = p.hasLoop && p.loads >= 8 && p.adds >= 2;
+
+		if (!hasPort53 && !hasDnsFlags) return null;
+
+		double conf = 0.40;
+		if (hasPort53) conf += 0.15;
+		if (hasDnsFlags) conf += 0.10;
+		if (hasLabelParse) conf += 0.15;
+		if (p.constAsciiCompares > 0) conf += 0.05; // dot separators
+		if (p.ands >= 2) conf += 0.05; // flag extraction
+		if (p.shifts >= 1) conf += 0.05; // QR/opcode field shifts
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "dns_resolver",
+			Math.min(conf, 0.75),
+			"DNS packet parsing or resolution (port 53 protocol)");
+	}
+
+	/**
+	 * DHCP client: constructs or parses DHCP packets with magic cookie
+	 * 0x63825363, option TLV encoding, and broadcast behavior.
+	 */
+	private FunctionType detectDhcpClient(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		if (p.stores < 5) return null;
+
+		boolean hasMagicCookie = p.constants.contains(0x63825363L);
+		boolean hasPort67 = p.constants.contains(67L) || p.constants.contains(68L);
+		boolean hasBroadcast = p.constants.contains(0xFFFFFFFFL);
+
+		if (!hasMagicCookie && !hasPort67) return null;
+
+		double conf = 0.40;
+		if (hasMagicCookie) conf += 0.25;
+		if (hasPort67) conf += 0.10;
+		if (hasBroadcast) conf += 0.05;
+		if (p.consecutiveStores >= 4) conf += 0.10; // filling packet fields
+		if (p.hasLoop) conf += 0.05; // option iteration
+		if (p.loads >= 3) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "dhcp_client",
+			Math.min(conf, 0.75),
+			"DHCP client packet build/parse (magic cookie 0x63825363)");
+	}
+
+	/**
+	 * HTTP parser: heavy ASCII character comparisons for header fields,
+	 * CR/LF detection, method/status code parsing.
+	 */
+	private FunctionType detectHttpParser(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 40) return null;
+		if (p.compares < 5) return null;
+		if (p.cbranches < 4) return null;
+
+		boolean hasCR = p.constants.contains(0x0DL);
+		boolean hasLF = p.constants.contains(0x0AL);
+		boolean hasSpace = p.constants.contains(0x20L);
+		boolean hasColon = p.constants.contains(0x3AL);
+		boolean hasHttpConst = p.constants.contains(0x48L) || // 'H'
+			p.constants.contains(200L) || p.constants.contains(404L);
+
+		int httpChars = (hasCR ? 1 : 0) + (hasLF ? 1 : 0) +
+			(hasSpace ? 1 : 0) + (hasColon ? 1 : 0);
+		if (httpChars < 2 && !hasHttpConst) return null;
+
+		double conf = 0.35;
+		if (httpChars >= 3) conf += 0.20;
+		if (hasHttpConst) conf += 0.10;
+		if (p.constAsciiCompares >= 4) conf += 0.15;
+		if (p.hasLoop) conf += 0.05;
+		if (p.loads >= 6) conf += 0.05;
+		if (p.loadStoreAlternations >= 3) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "http_parser",
+			Math.min(conf, 0.75),
+			"HTTP protocol header parsing (CR/LF delimited fields)");
+	}
+
+	/**
+	 * SMTP handler: command/response state machine with ASCII char compares,
+	 * numeric reply codes (2xx/3xx/4xx/5xx), line-oriented processing.
+	 */
+	private FunctionType detectSmtpHandler(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		if (p.compares < 4) return null;
+		if (p.cbranches < 3) return null;
+
+		boolean hasCRLF = p.constants.contains(0x0DL) && p.constants.contains(0x0AL);
+		boolean hasReplyCode = p.constants.contains(250L) || p.constants.contains(220L) ||
+			p.constants.contains(354L) || p.constants.contains(550L);
+		boolean hasPort25 = p.constants.contains(25L);
+
+		if (!hasCRLF && !hasReplyCode && !hasPort25) return null;
+
+		double conf = 0.35;
+		if (hasCRLF) conf += 0.10;
+		if (hasReplyCode) conf += 0.20;
+		if (hasPort25) conf += 0.10;
+		if (p.constAsciiCompares >= 3) conf += 0.10;
+		if (p.cbranch_eq_runs >= 2) conf += 0.10; // state machine transitions
+		if (p.calls >= 2) conf += 0.05; // send/recv calls
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "smtp_handler",
+			Math.min(conf, 0.75),
+			"SMTP protocol handler (command/reply state machine)");
+	}
+
+	/**
+	 * TFTP client: simple block-based transfer protocol. Few states,
+	 * block numbers, opcode constants (1-5), 512-byte blocks.
+	 */
+	private FunctionType detectTftpClient(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.loads < 3 || p.stores < 2) return null;
+
+		boolean hasBlockSize = p.constants.contains(512L) || p.constants.contains(0x200L);
+		boolean hasPort69 = p.constants.contains(69L);
+		boolean hasOpcodes = p.constants.contains(1L) && p.constants.contains(4L); // RRQ + ACK
+
+		if (!hasBlockSize && !hasPort69) return null;
+
+		double conf = 0.40;
+		if (hasBlockSize) conf += 0.15;
+		if (hasPort69) conf += 0.15;
+		if (hasOpcodes) conf += 0.05;
+		if (p.compares >= 2) conf += 0.05;
+		if (p.hasLoop) conf += 0.10; // block retry/receive loop
+		if (p.calls >= 1) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "tftp_client",
+			Math.min(conf, 0.75),
+			"TFTP client (block-based file transfer)");
+	}
+
+	/**
+	 * NTP time synchronization: 48-byte packet, timestamp fractions with
+	 * shift operations, epoch constants.
+	 */
+	private FunctionType detectNtpSync(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.shifts < 2) return null;
+
+		boolean hasNtpPort = p.constants.contains(123L);
+		boolean hasPktSize = p.constants.contains(48L);
+		boolean hasEpochDelta = p.constants.contains(2208988800L); // NTP epoch offset
+		boolean hasVersion = p.constants.contains(0x1BL) || p.constants.contains(0x23L);
+
+		if (!hasNtpPort && !hasPktSize && !hasEpochDelta) return null;
+
+		double conf = 0.35;
+		if (hasNtpPort) conf += 0.15;
+		if (hasPktSize) conf += 0.10;
+		if (hasEpochDelta) conf += 0.25;
+		if (hasVersion) conf += 0.10;
+		if (p.lefts >= 1 && p.rights >= 1) conf += 0.10; // timestamp fraction math
+		if (p.subs >= 1) conf += 0.05; // time difference
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "ntp_sync",
+			Math.min(conf, 0.75),
+			"NTP time synchronization (48-byte packet, timestamp math)");
+	}
+
+	/**
+	 * PPP/HDLC framing: byte stuffing with flag (0x7E) and escape (0x7D)
+	 * characters, FCS/CRC computation.
+	 */
+	private FunctionType detectPppFraming(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (!p.hasLoop) return null;
+		if (p.loads < 3) return null;
+
+		boolean hasFlag = p.constants.contains(0x7EL);
+		boolean hasEscape = p.constants.contains(0x7DL);
+		boolean hasXorMask = p.constants.contains(0x20L); // byte unstuffing XOR
+
+		if (!hasFlag) return null;
+
+		double conf = 0.40;
+		if (hasFlag) conf += 0.10;
+		if (hasEscape) conf += 0.15;
+		if (hasXorMask && p.xors >= 1) conf += 0.15;
+		if (p.cbranches >= 2) conf += 0.05; // flag/escape detection branches
+		if (p.compares >= 3) conf += 0.05;
+		if (p.stores >= 2) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "ppp_framing",
+			Math.min(conf, 0.75),
+			"PPP/HDLC byte stuffing and framing (0x7E/0x7D)");
+	}
+
+	/**
+	 * Telnet protocol: IAC byte (0xFF) detection, option negotiation
+	 * commands (WILL/WONT/DO/DONT), subnegotiation.
+	 */
+	private FunctionType detectTelnetProtocol(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		if (p.compares < 3) return null;
+		if (p.cbranches < 3) return null;
+
+		boolean hasIAC = p.constants.contains(0xFFL);
+		boolean hasWill = p.constants.contains(0xFBL);
+		boolean hasWont = p.constants.contains(0xFCL);
+		boolean hasDo = p.constants.contains(0xFDL);
+		boolean hasDont = p.constants.contains(0xFEL);
+		boolean hasPort23 = p.constants.contains(23L);
+
+		int optionCmds = (hasWill ? 1 : 0) + (hasWont ? 1 : 0) +
+			(hasDo ? 1 : 0) + (hasDont ? 1 : 0);
+		if (!hasIAC && optionCmds < 2 && !hasPort23) return null;
+
+		double conf = 0.35;
+		if (hasIAC) conf += 0.15;
+		if (optionCmds >= 2) conf += 0.20;
+		if (hasPort23) conf += 0.10;
+		if (p.hasLoop) conf += 0.05;
+		if (p.loads >= 4) conf += 0.05;
+		if (p.cbranch_eq_runs >= 2) conf += 0.05; // command dispatch
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "telnet_protocol",
+			Math.min(conf, 0.75),
+			"Telnet protocol handler (IAC option negotiation)");
+	}
+
+	/**
+	 * SNMP agent: ASN.1 BER tag-length-value encoding, OID tree
+	 * traversal with nested loops, community string comparison.
+	 */
+	private FunctionType detectSnmpAgent(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		if (p.loads < 5) return null;
+		if (p.compares < 4) return null;
+
+		// ASN.1 BER type tags
+		boolean hasSequence = p.constants.contains(0x30L);
+		boolean hasInteger = p.constants.contains(0x02L);
+		boolean hasOctetStr = p.constants.contains(0x04L);
+		boolean hasOID = p.constants.contains(0x06L);
+		boolean hasPort161 = p.constants.contains(161L) || p.constants.contains(162L);
+
+		int berTags = (hasSequence ? 1 : 0) + (hasInteger ? 1 : 0) +
+			(hasOctetStr ? 1 : 0) + (hasOID ? 1 : 0);
+		if (berTags < 2 && !hasPort161) return null;
+
+		double conf = 0.35;
+		if (berTags >= 3) conf += 0.20;
+		else if (berTags >= 2) conf += 0.10;
+		if (hasPort161) conf += 0.15;
+		if (p.hasLoop) conf += 0.05; // OID walk
+		if (p.cbranch_eq_runs >= 3) conf += 0.10; // tag dispatch
+		if (p.ands >= 1) conf += 0.05; // length decoding
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("network_protocol", "snmp_agent",
+			Math.min(conf, 0.75),
+			"SNMP agent (ASN.1 BER encoding, OID tree traversal)");
+	}
+
+	/**
+	 * UDP checksum: 16-bit one's complement sum over pseudo-header and data.
+	 * Characterized by add-with-carry in a loop, final complement.
+	 */
+	private FunctionType detectUdpChecksum(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasLoop) return null;
+		if (p.totalOps < 20 || p.totalOps > 200) return null;
+		if (p.adds < 3) return null;
+
+		// One's complement: add, carry detect (shift right 16), fold
+		boolean hasFold = p.constants.contains(0xFFFFL) || p.hasShiftByConst16;
+		boolean hasComplement = p.negates > 0 || p.xors >= 1;
+
+		if (!hasFold) return null;
+
+		double conf = 0.40;
+		if (hasFold) conf += 0.15;
+		if (hasComplement) conf += 0.15; // final NOT
+		if (p.rights >= 1) conf += 0.10; // carry fold shift
+		if (p.loads >= 3) conf += 0.05; // reading packet data
+		if (p.calls == 0) conf += 0.05; // pure computation
+		if (p.ands >= 1) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("checksum", "udp_checksum",
+			Math.min(conf, 0.75),
+			"UDP/IP one's complement checksum (16-bit fold + complement)");
+	}
+
+	/**
+	 * AES round: S-box table lookup, ShiftRows byte permutation,
+	 * MixColumns GF(2^8) multiply, AddRoundKey XOR. Minimum 10 rounds.
+	 */
+	private FunctionType detectAesRound(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 80) return null;
+		if (p.xors < 8) return null;
+		if (p.loads < 10) return null;
+
+		boolean hasAesConst = p.constants.contains(0x1BL); // GF(2^8) reduction polynomial
+		boolean has256 = p.constants.contains(256L) || p.constants.contains(0x100L);
+		boolean hasBlockSize = p.constants.contains(16L);
+
+		double xorFrac = p.xors / (double) p.totalOps;
+
+		double conf = 0.35;
+		if (hasAesConst) conf += 0.25; // strong AES indicator
+		if (xorFrac >= 0.10) conf += 0.10;
+		if (has256) conf += 0.05; // S-box size
+		if (hasBlockSize) conf += 0.05;
+		if (p.hasLoop) conf += 0.05;
+		if (p.ands >= 4) conf += 0.05; // byte masking
+		if (p.lefts >= 2) conf += 0.05; // ShiftRows/MixColumns shifts
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("crypto", "aes_round",
+			Math.min(conf, 0.75),
+			"AES cipher (S-box lookup, MixColumns GF multiply, XOR key)");
+	}
+
+	/**
+	 * DES round: 8 S-box lookups via table, initial/final permutations,
+	 * Feistel network XOR, expansion permutation.
+	 */
+	private FunctionType detectDesRound(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 60) return null;
+		if (p.xors < 4) return null;
+		if (p.shifts < 6) return null;
+
+		boolean has0x3F = p.constants.contains(0x3FL); // 6-bit S-box index mask
+		boolean has48 = p.constants.contains(48L); // expansion output bits
+		boolean has28 = p.constants.contains(28L); // key schedule half size
+
+		double conf = 0.35;
+		if (has0x3F) conf += 0.20; // S-box index masking
+		if (has48 || has28) conf += 0.10;
+		if (p.ands >= 6) conf += 0.10; // bit field extraction
+		if (p.loads >= 8) conf += 0.10; // S-box table lookups
+		if (p.hasLoop) conf += 0.05; // 16 round iterations
+		if (p.rights >= 3 && p.lefts >= 3) conf += 0.10; // permutation shifts
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("crypto", "des_round",
+			Math.min(conf, 0.75),
+			"DES cipher (8 S-box lookups, Feistel network, permutations)");
+	}
+
+	/**
+	 * SHA-256 round: 64 rounds of Ch/Maj/Sigma functions. Heavy on
+	 * right-rotates (implemented as shift pairs), XOR, and ADD.
+	 */
+	private FunctionType detectSha256Round(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 100) return null;
+		if (p.adds < 15) return null;
+		if (p.xors < 10) return null;
+		if (p.shifts < 12) return null;
+
+		// SHA-256 rotation constants
+		boolean has2 = p.constants.contains(2L);
+		boolean has13 = p.constants.contains(13L);
+		boolean has22 = p.constants.contains(22L);
+		boolean has6 = p.constants.contains(6L);
+		boolean has11 = p.constants.contains(11L);
+		boolean has25 = p.constants.contains(25L);
+
+		int rotConsts = (has2 ? 1 : 0) + (has13 ? 1 : 0) + (has22 ? 1 : 0) +
+			(has6 ? 1 : 0) + (has11 ? 1 : 0) + (has25 ? 1 : 0);
+
+		if (rotConsts < 3) return null;
+
+		double conf = 0.40;
+		if (rotConsts >= 5) conf += 0.25;
+		else if (rotConsts >= 4) conf += 0.20;
+		else conf += 0.10;
+		if (p.ands >= 4) conf += 0.05; // Ch function
+		if (p.ors >= 2) conf += 0.05; // rotation combine
+		if (p.hasLoop) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("crypto", "sha256_round",
+			Math.min(conf, 0.75),
+			"SHA-256 hash (Ch/Maj/Sigma with rotation constants)");
+	}
+
+	/**
+	 * MD5 round: F/G/H/I auxiliary functions, 64 steps, left-rotate by
+	 * per-round constants (7,12,17,22 etc.), additive constants.
+	 */
+	private FunctionType detectMd5Round(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 80) return null;
+		if (p.adds < 10) return null;
+
+		// MD5 rotation amounts
+		boolean has7 = p.constants.contains(7L);
+		boolean has12 = p.constants.contains(12L);
+		boolean has17 = p.constants.contains(17L);
+		boolean has22 = p.constants.contains(22L);
+		boolean has5 = p.constants.contains(5L);
+
+		// MD5 additive constant (first round constant d76aa478)
+		boolean hasMd5Const = p.constants.contains(0xD76AA478L) ||
+			p.constants.contains(0xE8C7B756L) || p.constants.contains(0x67452301L);
+
+		int rotConsts = (has7 ? 1 : 0) + (has12 ? 1 : 0) + (has17 ? 1 : 0) +
+			(has22 ? 1 : 0) + (has5 ? 1 : 0);
+
+		if (rotConsts < 3 && !hasMd5Const) return null;
+
+		double conf = 0.35;
+		if (hasMd5Const) conf += 0.30;
+		if (rotConsts >= 4) conf += 0.15;
+		else if (rotConsts >= 3) conf += 0.10;
+		if (p.ors >= 2) conf += 0.05; // F/G/H/I functions
+		if (p.ands >= 2) conf += 0.05;
+		if (p.xors >= 2) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("crypto", "md5_round",
+			Math.min(conf, 0.75),
+			"MD5 hash (F/G/H/I functions, 64 steps with rotation constants)");
+	}
+
+	/**
+	 * RC4 cipher: KSA phase initializes 256-byte identity permutation
+	 * then swaps; PRGA phase swaps and outputs keystream byte.
+	 */
+	private FunctionType detectRc4Cipher(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasLoop) return null;
+		if (p.totalOps < 30) return null;
+		if (p.loads < 4) return null;
+		if (p.stores < 3) return null;
+
+		boolean has256 = p.constants.contains(256L) || p.constants.contains(0x100L);
+		boolean has0xFF = p.constants.contains(0xFFL);
+
+		if (!has256 && !has0xFF) return null;
+
+		// RC4: swap pattern (load a[i], load a[j], store a[j]<-a[i], store a[i]<-a[j])
+		double memBal = Math.min(p.loads, p.stores) / (double) Math.max(p.loads, p.stores);
+
+		double conf = 0.40;
+		if (has256) conf += 0.10;
+		if (has0xFF) conf += 0.10;
+		if (memBal >= 0.5) conf += 0.10; // balanced load/store for swaps
+		if (p.adds >= 2) conf += 0.05; // index arithmetic
+		if (p.loadStoreAlternations >= 3) conf += 0.10; // swap pattern
+		if (p.loopCount >= 1) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("crypto", "rc4_cipher",
+			Math.min(conf, 0.75),
+			"RC4 stream cipher (256-byte permutation swap loop)");
+	}
+
+	/**
+	 * ChaCha20: quarter-round operations consisting of 32-bit add, XOR,
+	 * and left-rotate by 16/12/8/7. State is 16 x 32-bit words.
+	 */
+	private FunctionType detectChaCha20(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 80) return null;
+		if (p.adds < 8) return null;
+		if (p.xors < 8) return null;
+		if (p.shifts < 8) return null;
+
+		boolean has16 = p.constants.contains(16L);
+		boolean has12 = p.constants.contains(12L);
+		boolean has8 = p.constants.contains(8L);
+		boolean has7 = p.constants.contains(7L);
+
+		int qrConsts = (has16 ? 1 : 0) + (has12 ? 1 : 0) + (has8 ? 1 : 0) + (has7 ? 1 : 0);
+		if (qrConsts < 3) return null;
+
+		double addXorRatio = Math.min(p.adds, p.xors) / (double) Math.max(p.adds, p.xors);
+
+		double conf = 0.40;
+		if (qrConsts == 4) conf += 0.20;
+		else conf += 0.10;
+		if (addXorRatio >= 0.5) conf += 0.10; // balanced add/xor
+		if (p.ors >= 2) conf += 0.05; // rotate combine
+		if (p.hasLoop) conf += 0.05; // 20 rounds
+		if (p.lefts >= 4) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("crypto", "chacha20",
+			Math.min(conf, 0.75),
+			"ChaCha20 cipher (quarter-round add/xor/rotate pattern)");
+	}
+
+	/**
+	 * FIR filter: multiply-accumulate in a loop with coefficient table.
+	 * Load coefficient, load sample, multiply, accumulate, advance.
+	 */
+	private FunctionType detectFirFilter(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasLoop) return null;
+		if (p.totalOps < 25) return null;
+		if (p.mults < 2 && p.floatMults < 2) return null;
+		if (p.adds < 2 && p.floatAdds < 2) return null;
+
+		// MAC pattern: load coeff, load sample, multiply, add to accum
+		boolean hasMACloop = false;
+		for (int i = 0; i < pcode.length - 3; i++) {
+			int op0 = pcode[i].getOpcode();
+			int op1 = pcode[i+1].getOpcode();
+			int op2 = pcode[i+2].getOpcode();
+			if (op0 == PcodeOp.LOAD &&
+				(op1 == PcodeOp.INT_MULT || op1 == PcodeOp.FLOAT_MULT) &&
+				(op2 == PcodeOp.INT_ADD || op2 == PcodeOp.FLOAT_ADD)) {
+				hasMACloop = true;
+				break;
+			}
+		}
+
+		double conf = 0.35;
+		if (hasMACloop) conf += 0.25;
+		if (p.loads >= 4) conf += 0.05; // two arrays: coefficients + samples
+		if (p.calls == 0) conf += 0.05; // pure computation
+		if (!p.hasNestedLoop) conf += 0.10; // single loop (vs. convolution)
+		if (p.stores <= 3) conf += 0.05; // few outputs
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("dsp", "fir_filter",
+			Math.min(conf, 0.75),
+			"FIR filter (multiply-accumulate loop with coefficient table)");
+	}
+
+	/**
+	 * IIR filter: like FIR but with feedback path. Multiply-accumulate
+	 * with both input and output history (state variables), more stores.
+	 */
+	private FunctionType detectIirFilter(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasLoop) return null;
+		if (p.totalOps < 30) return null;
+		if (p.mults < 3 && p.floatMults < 3) return null;
+		if (p.adds < 2 && p.floatAdds < 2) return null;
+		if (p.stores < 3) return null;
+
+		// IIR: more stores than FIR because state update; subs for feedback
+		int totalMults = p.mults + p.floatMults;
+		int totalAdds = p.adds + p.subs + p.floatAdds + p.floatSubs;
+
+		double conf = 0.35;
+		if (totalMults >= 4) conf += 0.10;
+		if (p.subs >= 1 || p.floatSubs >= 1) conf += 0.15; // feedback subtraction
+		if (p.stores >= 4) conf += 0.10; // state variable updates
+		if (p.loads >= 6) conf += 0.05;
+		if (p.calls == 0) conf += 0.05;
+		if (totalAdds >= 4) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("dsp", "iir_filter",
+			Math.min(conf, 0.75),
+			"IIR filter (multiply-accumulate with feedback state variables)");
+	}
+
+	/**
+	 * Moving average: circular buffer with modulo index wrapping,
+	 * running sum update, divide by window size N.
+	 */
+	private FunctionType detectMovingAverage(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasLoop) return null;
+		if (p.totalOps < 20) return null;
+		if (p.adds < 2) return null;
+		if (p.loads < 2) return null;
+
+		boolean hasDivide = p.divs > 0 || p.hasMultThenShift;
+		boolean hasModulo = p.rems > 0 || (p.ands >= 1 && p.powerOf2Masks > 0);
+
+		if (!hasDivide) return null;
+
+		double conf = 0.40;
+		if (hasDivide) conf += 0.10;
+		if (hasModulo) conf += 0.15; // circular buffer wrapping
+		if (p.subs >= 1) conf += 0.10; // subtract oldest, add newest
+		if (p.stores >= 2) conf += 0.05;
+		if (p.calls == 0) conf += 0.05;
+		if (p.totalOps < 80) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("dsp", "moving_average",
+			Math.min(conf, 0.75),
+			"Moving average filter (circular buffer, divide by window size)");
+	}
+
+	/**
+	 * Median filter: sorting/comparison network over small window.
+	 * Heavy on compares and conditional swaps, few arithmetic ops.
+	 */
+	private FunctionType detectMedianFilter(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.compares < 5) return null;
+		if (p.cbranches < 4) return null;
+
+		// Median: compare-heavy with swap (load/store pairs)
+		double compareFrac = p.compares / (double) p.totalOps;
+		double arithFrac = (p.adds + p.mults) / (double) p.totalOps;
+
+		if (compareFrac < 0.10) return null;
+
+		double conf = 0.35;
+		if (compareFrac >= 0.15) conf += 0.20;
+		if (arithFrac < 0.05) conf += 0.10; // mostly compares, little arithmetic
+		if (p.loadStoreAlternations >= 3) conf += 0.10; // swap operations
+		if (p.loads >= 5 && p.stores >= 3) conf += 0.05;
+		if (p.sLesses > 0 || p.lesses > 0) conf += 0.05;
+		if (p.calls == 0) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("dsp", "median_filter",
+			Math.min(conf, 0.75),
+			"Median filter (comparison network, conditional swaps)");
+	}
+
+	/**
+	 * Zero crossing detector: detects sign changes in a signal.
+	 * XOR or sign-bit check on consecutive samples, increment counter.
+	 */
+	private FunctionType detectZeroCrossing(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasLoop) return null;
+		if (p.totalOps < 20 || p.totalOps > 150) return null;
+		if (p.compares < 2) return null;
+		if (p.loads < 3) return null;
+
+		// Sign change: compare to zero, or XOR and check sign bit
+		boolean hasSignCheck = p.constZeroCompares >= 2 ||
+			(p.xors >= 1 && p.rights >= 1); // XOR then shift to get sign
+		boolean hasCounter = p.adds >= 1 && p.cbranches >= 2;
+
+		if (!hasSignCheck) return null;
+
+		double conf = 0.40;
+		if (hasSignCheck) conf += 0.15;
+		if (hasCounter) conf += 0.10;
+		if (p.sLesses > 0) conf += 0.10; // signed comparison for sign detect
+		if (p.totalOps < 80) conf += 0.05;
+		if (p.calls == 0) conf += 0.05;
+		if (p.consecutiveLoads >= 2) conf += 0.05; // load consecutive samples
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("dsp", "zero_crossing",
+			Math.min(conf, 0.75),
+			"Zero crossing detector (sign change detection, event counter)");
+	}
+
+	/**
+	 * Convolution: nested loop multiply-accumulate. Outer loop over
+	 * output samples, inner loop over kernel.
+	 */
+	private FunctionType detectConvolution(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasNestedLoop) return null;
+		if (p.totalOps < 35) return null;
+		if (p.mults < 2 && p.floatMults < 2) return null;
+		if (p.adds < 3 && p.floatAdds < 3) return null;
+		if (p.loads < 4) return null;
+
+		int totalMults = p.mults + p.floatMults;
+		int totalAdds = p.adds + p.floatAdds;
+
+		double conf = 0.40;
+		if (p.hasNestedLoop) conf += 0.10;
+		if (totalMults >= 3) conf += 0.10;
+		if (totalAdds >= 4) conf += 0.05;
+		if (p.loads >= 6) conf += 0.05; // kernel + input reads
+		if (p.stores >= 2) conf += 0.05; // output writes
+		if (p.calls == 0) conf += 0.05;
+		if (p.maxLoopDepth >= 2) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("dsp", "convolution",
+			Math.min(conf, 0.75),
+			"Convolution (nested loop multiply-accumulate over kernel)");
+	}
+
+	/**
+	 * Stepper motor driver: phase sequence table lookup, IO register writes
+	 * for coil activation, step delay, direction control.
+	 */
+	private FunctionType detectStepperMotor(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		if (p.stores < 2) return null;
+		if (p.ioRegionAccesses < 1) return null;
+
+		// Phase table: small constants for coil patterns (e.g., 0x01,0x02,0x04,0x08)
+		boolean hasPhaseConsts = p.constants.contains(0x01L) &&
+			(p.constants.contains(0x02L) || p.constants.contains(0x04L) ||
+			 p.constants.contains(0x08L));
+		boolean hasModulo = p.rems > 0 || (p.ands >= 1 && p.constants.contains(0x03L));
+
+		if (!hasPhaseConsts && p.ioRegionAccesses < 2) return null;
+
+		double conf = 0.35;
+		if (hasPhaseConsts) conf += 0.15;
+		if (p.ioRegionAccesses >= 2) conf += 0.15;
+		if (hasModulo) conf += 0.10; // phase index wrapping
+		if (p.hasLoop) conf += 0.05;
+		if (p.loads >= 2) conf += 0.05; // table read
+		if (p.cbranches >= 1) conf += 0.05; // direction check
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("hw_control", "stepper_motor",
+			Math.min(conf, 0.75),
+			"Stepper motor driver (phase sequence, IO coil activation)");
+	}
+
+	/**
+	 * Bootloader jump: validates application signature/checksum, then
+	 * performs indirect branch to application entry point.
+	 */
+	private FunctionType detectBootloaderJump(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		if (p.branchInds < 1 && p.callInds < 1) return null;
+
+		// Bootloader: read signature word, compare to magic, jump if valid
+		boolean hasMagicCheck = p.compares >= 1 && p.cbranches >= 1;
+		boolean hasSignature = p.constants.contains(0xAA55L) ||
+			p.constants.contains(0x55AAL) || p.constants.contains(0x5AA5L) ||
+			p.constants.contains(0xDEADBEEFL);
+
+		if (!hasMagicCheck) return null;
+
+		double conf = 0.40;
+		if (hasSignature) conf += 0.20;
+		if (p.branchInds >= 1) conf += 0.10; // jump to app
+		if (p.callInds >= 1) conf += 0.10;
+		if (p.loads >= 2) conf += 0.05; // read vector table
+		if (p.totalOps < 60) conf += 0.05; // bootloader jump is compact
+		if (p.calls == 0) conf += 0.05; // no library calls
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("boot", "bootloader_jump",
+			Math.min(conf, 0.75),
+			"Bootloader jump to application (signature validate + indirect branch)");
+	}
+
+	/**
+	 * Flash erase: unlock command sequence (0xAA to 0x555, 0x55 to 0x2AA),
+	 * sector erase command, busy-poll status register.
+	 */
+	private FunctionType detectFlashErase(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		if (p.stores < 3) return null;
+
+		boolean hasUnlock1 = p.constants.contains(0x555L) || p.constants.contains(0x5555L);
+		boolean hasUnlock2 = p.constants.contains(0x2AAL) || p.constants.contains(0x2AAAL);
+		boolean hasAAcmd = p.constants.contains(0xAAL);
+		boolean has55cmd = p.constants.contains(0x55L);
+		boolean hasEraseCmd = p.constants.contains(0x80L) || p.constants.contains(0x30L);
+
+		int unlockEvidence = (hasUnlock1 ? 1 : 0) + (hasUnlock2 ? 1 : 0) +
+			(hasAAcmd ? 1 : 0) + (has55cmd ? 1 : 0);
+		if (unlockEvidence < 2) return null;
+
+		// Busy poll: load + AND/compare + CBRANCH in a loop
+		boolean hasBusyPoll = p.hasLoop && p.compares >= 1;
+
+		double conf = 0.40;
+		if (unlockEvidence >= 3) conf += 0.20;
+		else conf += 0.10;
+		if (hasEraseCmd) conf += 0.10;
+		if (hasBusyPoll) conf += 0.10;
+		if (p.consecutiveStores >= 2) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("flash", "flash_erase",
+			Math.min(conf, 0.75),
+			"Flash erase (unlock sequence + sector erase + busy poll)");
+	}
+
+	/**
+	 * Battery monitor: ADC read from IO region, voltage scaling with
+	 * multiply/shift, threshold compare for charge levels.
+	 */
+	private FunctionType detectBatteryMonitor(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		if (p.ioRegionAccesses < 1) return null;
+		if (p.compares < 2) return null;
+
+		boolean hasScaling = p.mults >= 1 || p.hasMultThenShift ||
+			(p.lefts >= 1 && p.rights >= 1);
+		boolean hasThresholds = p.cbranches >= 2 && (p.lesses >= 2 || p.sLesses >= 2);
+
+		if (!hasScaling && !hasThresholds) return null;
+
+		double conf = 0.40;
+		if (p.ioRegionAccesses >= 1) conf += 0.10; // ADC register read
+		if (hasScaling) conf += 0.10;
+		if (hasThresholds) conf += 0.15; // multiple voltage thresholds
+		if (p.loads >= 2) conf += 0.05;
+		if (p.stores >= 1) conf += 0.05;
+		if (p.totalOps < 100) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("hw_monitor", "battery_monitor",
+			Math.min(conf, 0.75),
+			"Battery monitor (ADC read, voltage scaling, threshold compare)");
+	}
+
+	/**
+	 * Temperature compensation: lookup table indexed by sensor reading,
+	 * linear interpolation between table entries, offset/gain adjust.
+	 */
+	private FunctionType detectTempCompensation(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.loads < 3) return null;
+		if (p.mults < 1 && p.floatMults < 1) return null;
+
+		boolean hasInterpolation = (p.subs >= 1 || p.floatSubs >= 1) &&
+			(p.mults >= 1 || p.floatMults >= 1);
+		boolean hasTableIndex = p.rights >= 1 || p.divs > 0;
+
+		if (!hasInterpolation) return null;
+
+		double conf = 0.40;
+		if (hasInterpolation) conf += 0.15;
+		if (hasTableIndex) conf += 0.10; // index calculation
+		if (p.loads >= 4) conf += 0.05; // table[i] and table[i+1]
+		if (p.adds >= 2) conf += 0.05;
+		if (p.ioRegionAccesses >= 1) conf += 0.10; // sensor read
+		if (p.calls == 0) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("hw_control", "temp_compensation",
+			Math.min(conf, 0.75),
+			"Temperature compensation (lookup table + linear interpolation)");
+	}
+
+	/**
+	 * Sprite scaling: Bresenham-like error accumulator for scaling pixels,
+	 * nested loop for row/column, pixel copy with source stepping.
+	 */
+	private FunctionType detectSpriteScaling(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasNestedLoop) return null;
+		if (p.totalOps < 35) return null;
+		if (p.loads < 4) return null;
+		if (p.stores < 3) return null;
+		if (p.adds < 4) return null;
+
+		// Bresenham: error accumulation with conditional source advance
+		boolean hasErrorAccum = false;
+		for (int i = 0; i < pcode.length - 2; i++) {
+			if (pcode[i].getOpcode() == PcodeOp.INT_ADD &&
+				(pcode[i+1].getOpcode() == PcodeOp.INT_LESS ||
+				 pcode[i+1].getOpcode() == PcodeOp.INT_SLESS) &&
+				pcode[i+2].getOpcode() == PcodeOp.CBRANCH) {
+				hasErrorAccum = true;
+				break;
+			}
+		}
+
+		double conf = 0.35;
+		if (hasErrorAccum) conf += 0.20;
+		if (p.maxLoopDepth >= 2) conf += 0.10;
+		if (p.subs >= 1) conf += 0.05; // error wrap
+		if (p.memory >= 8) conf += 0.05;
+		if (p.ands >= 1) conf += 0.05; // pixel masking
+		if (p.lefts >= 1 || p.rights >= 1) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("graphics", "sprite_scaling",
+			Math.min(conf, 0.75),
+			"Sprite scaling (Bresenham-style, nested loop pixel copy)");
+	}
+
+	/**
+	 * Alpha blending: per-component multiply by alpha, shift right by 8,
+	 * combine RGB. Pattern: (a*alpha + b*(255-alpha)) >> 8.
+	 */
+	private FunctionType detectAlphaBlending(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.mults < 2) return null;
+		if (p.rights < 1) return null;
+
+		boolean has0xFF = p.constants.contains(0xFFL);
+		boolean hasShift8 = p.constants.contains(8L);
+		boolean hasColorMasks = p.constants.contains(0xFF00L) ||
+			p.constants.contains(0xFF0000L) || p.constants.contains(0xFF00FFL);
+
+		if (p.mults < 2 || p.rights < 1) return null;
+
+		double conf = 0.35;
+		if (has0xFF) conf += 0.10; // alpha mask or 255
+		if (hasShift8) conf += 0.10;
+		if (hasColorMasks) conf += 0.10;
+		if (p.mults >= 3) conf += 0.10; // R, G, B components
+		if (p.adds >= 2) conf += 0.05;
+		if (p.subs >= 1) conf += 0.05; // 255 - alpha
+		if (p.ands >= 2) conf += 0.05; // channel isolation
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("graphics", "alpha_blending",
+			Math.min(conf, 0.75),
+			"Alpha blending (per-component multiply, shift right 8, RGB combine)");
+	}
+
+	/**
+	 * Gamma correction: lookup table with 256 entries or power-law
+	 * approximation using multiply chains.
+	 */
+	private FunctionType detectGammaCorrection(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+
+		boolean has256 = p.constants.contains(256L) || p.constants.contains(0x100L);
+		boolean has0xFF = p.constants.contains(0xFFL);
+		boolean hasTableLookup = p.loads >= 3 && has256;
+		boolean hasPowerApprox = p.mults >= 3 && p.rights >= 2; // x*x*x >> shifts
+
+		if (!hasTableLookup && !hasPowerApprox) return null;
+
+		double conf = 0.40;
+		if (hasTableLookup) conf += 0.15;
+		if (hasPowerApprox) conf += 0.20;
+		if (has0xFF) conf += 0.05; // clamp to 8-bit
+		if (p.ands >= 1) conf += 0.05;
+		if (p.hasLoop && p.loads >= 4) conf += 0.05; // apply to pixel array
+		if (p.calls == 0) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("graphics", "gamma_correction",
+			Math.min(conf, 0.75),
+			"Gamma correction (" +
+			(hasTableLookup ? "256-entry lookup table" : "power-law approximation") + ")");
+	}
+
+	/**
+	 * Color space conversion (RGB/YUV): 3x3 matrix multiply-add with
+	 * fixed-point coefficients, clamp to 0-255.
+	 */
+	private FunctionType detectColorSpaceConvert(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.mults < 3) return null;
+		if (p.adds < 3) return null;
+
+		// YUV coefficients: 66, 129, 25 or 298, 409, 516 (BT.601 fixed-point)
+		boolean hasYuvConst = p.constants.contains(66L) || p.constants.contains(129L) ||
+			p.constants.contains(298L) || p.constants.contains(409L) ||
+			p.constants.contains(516L);
+		boolean has0xFF = p.constants.contains(0xFFL);
+		boolean hasShift8 = p.constants.contains(8L);
+
+		double conf = 0.35;
+		if (hasYuvConst) conf += 0.25;
+		if (p.mults >= 6) conf += 0.10; // 3 components * 2 or 3 terms
+		else if (p.mults >= 3) conf += 0.05;
+		if (p.adds >= 5) conf += 0.05;
+		if (has0xFF) conf += 0.05; // clamp
+		if (hasShift8) conf += 0.05; // fixed-point descale
+		if (p.rights >= 2) conf += 0.05;
+		if (p.subs >= 1) conf += 0.05; // offset subtract (e.g., Y-16)
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("graphics", "colorspace_convert",
+			Math.min(conf, 0.75),
+			"Color space conversion (RGB/YUV matrix multiply-add)");
+	}
+
+	/**
+	 * Parallax scrolling: multiple scroll offset values applied to
+	 * different background layers, modulo wrapping for tile boundaries.
+	 */
+	private FunctionType detectParallaxScroll(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.stores < 3) return null;
+		if (p.loads < 3) return null;
+
+		boolean hasModulo = p.rems > 0 || p.powerOf2Masks > 0;
+		boolean hasMultiOffset = p.adds >= 3 && p.stores >= 4;
+
+		if (!hasModulo && !hasMultiOffset) return null;
+
+		double conf = 0.35;
+		if (hasModulo) conf += 0.15; // tile wrap
+		if (hasMultiOffset) conf += 0.10;
+		if (p.rights >= 1) conf += 0.10; // divide speed by power of 2
+		if (p.ioRegionAccesses >= 1) conf += 0.10; // scroll register writes
+		if (p.consecutiveStores >= 3) conf += 0.05; // layer registers
+		if (p.ands >= 1) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("graphics", "parallax_scroll",
+			Math.min(conf, 0.75),
+			"Parallax scrolling (multiple layer offsets, modulo wrapping)");
+	}
+
+	/**
+	 * Raycasting: trigonometric table lookup, distance calculation
+	 * (multiply/divide), column-by-column rendering loop.
+	 */
+	private FunctionType detectRaycasting(PcodeOp[] pcode, OpcodeProfile p) {
+		if (!p.hasLoop) return null;
+		if (p.totalOps < 50) return null;
+		if (p.mults < 3) return null;
+		if (p.loads < 6) return null;
+
+		// Trig lookups (sin/cos table), distance via divide, column store
+		boolean hasTrigIndex = p.ands >= 1 && p.loads >= 8; // table index masking
+		boolean hasDistCalc = p.divs > 0 || p.hasMultThenShift;
+
+		if (!hasDistCalc) return null;
+
+		double conf = 0.35;
+		if (hasTrigIndex) conf += 0.10;
+		if (hasDistCalc) conf += 0.15;
+		if (p.hasNestedLoop) conf += 0.10; // inner column fill loop
+		if (p.stores >= 4) conf += 0.05;
+		if (p.compares >= 3) conf += 0.05; // wall hit detection
+		if (p.adds >= 4) conf += 0.05;
+		if (p.subs >= 2) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("graphics", "raycasting",
+			Math.min(conf, 0.75),
+			"Raycasting renderer (trig lookup, distance calc, column rendering)");
+	}
+
+	/**
+	 * JSON parser: brace/bracket matching with depth counter, string
+	 * delimiter detection, number parsing, whitespace skip.
+	 */
+	private FunctionType detectJsonParser(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 40) return null;
+		if (p.compares < 6) return null;
+		if (p.cbranches < 5) return null;
+
+		boolean hasLBrace = p.constants.contains(0x7BL);  // '{'
+		boolean hasRBrace = p.constants.contains(0x7DL);  // '}'
+		boolean hasLBrack = p.constants.contains(0x5BL);  // '['
+		boolean hasRBrack = p.constants.contains(0x5DL);  // ']'
+		boolean hasQuote = p.constants.contains(0x22L);   // '"'
+		boolean hasColon = p.constants.contains(0x3AL);   // ':'
+		boolean hasComma = p.constants.contains(0x2CL);   // ','
+
+		int jsonChars = (hasLBrace ? 1 : 0) + (hasRBrace ? 1 : 0) +
+			(hasLBrack ? 1 : 0) + (hasRBrack ? 1 : 0) +
+			(hasQuote ? 1 : 0) + (hasColon ? 1 : 0) + (hasComma ? 1 : 0);
+
+		if (jsonChars < 4) return null;
+
+		double conf = 0.35;
+		if (jsonChars >= 6) conf += 0.25;
+		else if (jsonChars >= 4) conf += 0.15;
+		if (p.constAsciiCompares >= 5) conf += 0.10;
+		if (p.hasLoop) conf += 0.05;
+		if (p.adds >= 1) conf += 0.05; // depth counter
+		if (p.subs >= 1) conf += 0.05; // depth decrement
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("parser", "json_parser",
+			Math.min(conf, 0.75),
+			"JSON parser (brace/bracket matching, string/number parsing)");
+	}
+
+	/**
+	 * CSV parser: delimiter scanning (comma/tab), field extraction,
+	 * quote handling, line-oriented processing.
+	 */
+	private FunctionType detectCsvParser(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		if (p.compares < 4) return null;
+		if (!p.hasLoop) return null;
+
+		boolean hasComma = p.constants.contains(0x2CL);   // ','
+		boolean hasTab = p.constants.contains(0x09L);     // '\t'
+		boolean hasQuote = p.constants.contains(0x22L);   // '"'
+		boolean hasNewline = p.constants.contains(0x0AL);  // '\n'
+		boolean hasCR = p.constants.contains(0x0DL);      // '\r'
+
+		int csvChars = (hasComma ? 1 : 0) + (hasTab ? 1 : 0) +
+			(hasQuote ? 1 : 0) + (hasNewline ? 1 : 0) + (hasCR ? 1 : 0);
+
+		if (csvChars < 2 || (!hasComma && !hasTab)) return null;
+
+		double conf = 0.40;
+		if (csvChars >= 4) conf += 0.20;
+		else if (csvChars >= 2) conf += 0.10;
+		if (p.constAsciiCompares >= 3) conf += 0.10;
+		if (p.loads >= 4) conf += 0.05;
+		if (p.stores >= 2) conf += 0.05;
+		if (p.cbranch_eq_runs >= 2) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("parser", "csv_parser",
+			Math.min(conf, 0.75),
+			"CSV parser (delimiter scan, field extraction, quote handling)");
+	}
+
+	/**
+	 * COFF/PE parser: header magic validation (0x014C, 0x5A4D),
+	 * section table walk, field offset reads.
+	 */
+	private FunctionType detectCoffParser(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		if (p.loads < 5) return null;
+		if (p.compares < 2) return null;
+
+		boolean hasMZ = p.constants.contains(0x5A4DL);     // "MZ"
+		boolean hasPE = p.constants.contains(0x4550L);     // "PE"
+		boolean hasCOFF = p.constants.contains(0x014CL);   // i386 COFF machine
+		boolean hasARM = p.constants.contains(0x01C0L);    // ARM COFF machine
+		boolean has68k = p.constants.contains(0x0268L);    // 68k COFF machine
+
+		int magics = (hasMZ ? 1 : 0) + (hasPE ? 1 : 0) + (hasCOFF ? 1 : 0) +
+			(hasARM ? 1 : 0) + (has68k ? 1 : 0);
+		if (magics < 1) return null;
+
+		double conf = 0.40;
+		if (magics >= 2) conf += 0.20;
+		else conf += 0.10;
+		if (p.hasLoop) conf += 0.10; // section table iteration
+		if (p.adds >= 3) conf += 0.05; // offset calculations
+		if (p.loads >= 8) conf += 0.05;
+		if (p.cbranches >= 2) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("parser", "coff_parser",
+			Math.min(conf, 0.75),
+			"COFF/PE object file parser (magic validation, section table walk)");
+	}
+
+	/**
+	 * BMP image loader: BM header magic (0x4D42), palette loading,
+	 * row-by-row pixel data reading, stride padding.
+	 */
+	private FunctionType detectBmpLoader(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		if (p.loads < 5) return null;
+
+		boolean hasBM = p.constants.contains(0x4D42L); // "BM" little-endian
+		boolean hasHeaderSize = p.constants.contains(40L) || p.constants.contains(54L);
+		boolean hasBitsPerPixel = p.constants.contains(24L) || p.constants.contains(32L) ||
+			p.constants.contains(8L);
+		boolean hasPadding = p.constants.contains(3L) && p.ands >= 1; // 4-byte row alignment
+
+		if (!hasBM && !hasHeaderSize) return null;
+
+		double conf = 0.40;
+		if (hasBM) conf += 0.20;
+		if (hasHeaderSize) conf += 0.10;
+		if (hasBitsPerPixel) conf += 0.05;
+		if (hasPadding) conf += 0.05;
+		if (p.hasLoop) conf += 0.05; // row iteration
+		if (p.stores >= 3) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("parser", "bmp_loader",
+			Math.min(conf, 0.75),
+			"BMP image loader (0x4D42 header, palette, pixel data)");
+	}
+
+	/**
+	 * WAV audio loader: RIFF header (0x52494646), chunk-based parsing,
+	 * sample rate and channel count extraction.
+	 */
+	private FunctionType detectWavLoader(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (p.loads < 4) return null;
+
+		boolean hasRIFF = p.constants.contains(0x52494646L);  // "RIFF"
+		boolean hasWAVE = p.constants.contains(0x57415645L);  // "WAVE"
+		boolean hasFmt = p.constants.contains(0x666D7420L);   // "fmt "
+		boolean hasData = p.constants.contains(0x64617461L);  // "data"
+
+		int chunks = (hasRIFF ? 1 : 0) + (hasWAVE ? 1 : 0) +
+			(hasFmt ? 1 : 0) + (hasData ? 1 : 0);
+		if (chunks < 1) return null;
+
+		double conf = 0.35;
+		if (chunks >= 3) conf += 0.30;
+		else if (chunks >= 2) conf += 0.20;
+		else conf += 0.10;
+		if (p.compares >= 2) conf += 0.05; // chunk type checks
+		if (p.adds >= 2) conf += 0.05; // chunk size skipping
+		if (p.hasLoop) conf += 0.05; // chunk iteration
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("parser", "wav_loader",
+			Math.min(conf, 0.75),
+			"WAV audio loader (RIFF header, chunk-based parsing)");
+	}
+
+	/**
+	 * Syscall dispatch: syscall number in register, table-indexed indirect
+	 * branch, range validation, possible privilege transition.
+	 */
+	private FunctionType detectSyscallDispatch(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		if (p.branchInds < 1 && p.callInds < 1) return null;
+
+		boolean hasRangeCheck = p.lesses >= 1 || p.sLesses >= 1;
+		boolean hasTableLoad = p.loads >= 2;
+		boolean hasPrivOp = p.callOtherCount > 0;
+
+		if (!hasRangeCheck) return null;
+
+		double conf = 0.40;
+		if (hasRangeCheck) conf += 0.10;
+		if (p.branchInds >= 1 || p.callInds >= 1) conf += 0.10; // dispatch jump
+		if (hasTableLoad) conf += 0.05;
+		if (hasPrivOp) conf += 0.15; // privilege-related ops
+		if (p.lefts >= 1) conf += 0.05; // index * sizeof(ptr)
+		if (p.cbranches >= 1) conf += 0.05; // bounds check branch
+		if (p.totalOps < 50) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("os_kernel", "syscall_dispatch",
+			Math.min(conf, 0.75),
+			"Syscall dispatch (number validation, table-indexed indirect call)");
+	}
+
+	/**
+	 * Thread scheduler: context save/restore (many consecutive stores/loads),
+	 * priority comparison, next-thread selection, timer interaction.
+	 */
+	private FunctionType detectThreadScheduler(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		if (p.loads < 5) return null;
+		if (p.stores < 5) return null;
+		if (p.compares < 2) return null;
+
+		boolean hasContextSwitch = p.consecutiveStores >= 4 || p.consecutiveLoads >= 4;
+		boolean hasPriorityCompare = (p.lesses >= 2 || p.sLesses >= 2) && p.cbranches >= 2;
+
+		if (!hasContextSwitch && !hasPriorityCompare) return null;
+
+		double conf = 0.35;
+		if (hasContextSwitch) conf += 0.20;
+		if (hasPriorityCompare) conf += 0.10;
+		if (p.hasLoop) conf += 0.05; // ready queue scan
+		if (p.callOtherCount > 0) conf += 0.10; // privilege ops (interrupt disable)
+		if (p.branchInds >= 1 || p.callInds >= 1) conf += 0.05; // jump to next thread
+		if (p.loads >= 8 && p.stores >= 8) conf += 0.05;
+
+		if (conf < 0.55) return null;
+
+		return new FunctionType("os_kernel", "thread_scheduler",
+			Math.min(conf, 0.75),
+			"Thread scheduler (context save/restore, priority queue, dispatch)");
+	}
+
+	private FunctionType detectSignalHandler(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// Signal handler: save context, check signal number, dispatch
+		if (p.consecutiveStores >= 4) conf += 0.15; // context save (push registers)
+		if (p.cbranch_eq_runs >= 2) conf += 0.15; // signal number dispatch
+		if (p.constSmallInts >= 3) conf += 0.10; // signal numbers (SIGHUP=1, SIGINT=2, etc.)
+		if (p.branchInds >= 1 || p.callInds >= 1) conf += 0.10; // handler table dispatch
+		if (p.stores >= 5) conf += 0.10; // register save
+		if (p.loads >= 3) conf += 0.05; // read signal info struct
+		if (p.returns >= 1) conf += 0.05;
+		if (p.calls >= 1) conf += 0.05; // call actual handler
+		if (conf < 0.55) return null;
+		return new FunctionType("signal_handler", "signal_dispatch",
+			Math.min(conf, 0.75), "Unix signal handler with context save and dispatch");
+	}
+
+	private FunctionType detectPipeIpc(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Pipe IPC: ring buffer with head/tail pointers for read/write
+		if (p.powerOf2Masks >= 1) conf += 0.15; // modular wrap for ring buffer
+		if (p.loadStoreAlternations >= 2) conf += 0.15; // read data then update pointer
+		if (p.adds >= 2) conf += 0.10; // pointer advance
+		if (p.compares >= 2) conf += 0.10; // empty/full check
+		if (p.constZeroCompares >= 1) conf += 0.10; // check for empty
+		if (p.cbranches >= 2) conf += 0.10; // empty/full branch
+		if (p.hasLoop) conf += 0.05; // byte-by-byte transfer loop
+		if (conf < 0.55) return null;
+		return new FunctionType("pipe_ipc", "pipe_read_write",
+			Math.min(conf, 0.75), "Pipe IPC with ring buffer head/tail management");
+	}
+
+	private FunctionType detectMemoryPool(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Memory pool: fixed-size block allocation from pre-carved arena
+		if (p.loads >= 3) conf += 0.10; // read free list head
+		if (p.stores >= 2) conf += 0.10; // update free list link
+		if (p.constZeroCompares >= 2) conf += 0.15; // null checks (pool exhausted)
+		if (p.adds >= 2) conf += 0.10; // pointer arithmetic for block offset
+		if (p.ands >= 1) conf += 0.10; // alignment masking
+		if (p.cbranches >= 2) conf += 0.10; // exhausted check + alignment check
+		if (p.returns >= 2) conf += 0.10; // success/failure paths
+		if (p.mults == 0 && p.divs == 0) conf += 0.05; // no complex math
+		if (conf < 0.55) return null;
+		return new FunctionType("memory_pool", "pool_block_allocate",
+			Math.min(conf, 0.75), "Fixed-size memory pool block allocation");
+	}
+
+	private FunctionType detectTlbFlush(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// TLB flush: special register writes, memory barrier (CALLOTHER)
+		if (p.callOtherCount >= 1) conf += 0.20; // memory barrier / special instruction
+		if (p.stores >= 2) conf += 0.10; // write to control registers
+		if (p.ioRegionAccesses >= 1) conf += 0.15; // system register region
+		if (p.totalOps < 60) conf += 0.10; // typically short
+		if (p.loads <= 2) conf += 0.05; // mostly write operations
+		if (p.arithmetic < 3) conf += 0.05; // minimal computation
+		if (p.hasLoop) conf += 0.10; // iterate over TLB entries
+		if (conf < 0.55) return null;
+		return new FunctionType("tlb_flush", "tlb_invalidate",
+			Math.min(conf, 0.75), "TLB flush/invalidate with memory barrier");
+	}
+
+	private FunctionType detectFileDescTable(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// File descriptor table: index into array, validate bounds
+		if (p.loads >= 3) conf += 0.10; // read table entry
+		if (p.lesses >= 1 || p.sLesses >= 1) conf += 0.15; // bounds check
+		if (p.constZeroCompares >= 1) conf += 0.10; // check for invalid fd
+		if (p.cbranches >= 2) conf += 0.10; // bounds + validity branches
+		if (p.lefts >= 1 || p.mults >= 1) conf += 0.10; // index * struct_size
+		if (p.adds >= 2) conf += 0.10; // base + offset
+		if (p.returns >= 2) conf += 0.10; // success/error paths
+		if (conf < 0.55) return null;
+		return new FunctionType("file_desc_table", "fd_table_lookup",
+			Math.min(conf, 0.75), "File descriptor table index and bounds validation");
+	}
+
+	private FunctionType detectMountHandler(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 40) return null;
+		double conf = 0;
+		// Mount handler: device/inode lookup, superblock read, multiple calls
+		if (p.calls >= 3) conf += 0.15; // read superblock, lookup device, alloc
+		if (p.loads >= 6) conf += 0.10; // read device info, superblock fields
+		if (p.stores >= 4) conf += 0.10; // fill mount struct
+		if (p.constZeroCompares >= 2) conf += 0.10; // error checks
+		if (p.cbranches >= 3) conf += 0.10; // multiple validation branches
+		if (p.compares >= 3) conf += 0.10; // type checks, magic number checks
+		if (p.returns >= 2) conf += 0.10; // error/success returns
+		if (conf < 0.55) return null;
+		return new FunctionType("mount_handler", "filesystem_mount",
+			Math.min(conf, 0.75), "Filesystem mount with device/inode/superblock handling");
+	}
+
+	private FunctionType detectSocketBind(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Socket bind: fill sockaddr struct, byte-swap port (htons)
+		if (p.consecutiveStores >= 3) conf += 0.15; // fill address struct fields
+		if (p.lefts >= 1 && p.rights >= 1) conf += 0.15; // byte swap (htons)
+		if (p.ors >= 1) conf += 0.10; // combine bytes for port number
+		if (p.stores >= 4) conf += 0.10; // write family, port, addr fields
+		if (p.calls >= 1) conf += 0.10; // call bind() syscall
+		if (p.constSmallInts >= 2) conf += 0.10; // AF_INET=2, SOCK_STREAM=1
+		if (p.cbranches >= 1) conf += 0.05; // error check after bind
+		if (conf < 0.55) return null;
+		return new FunctionType("socket_bind", "socket_bind_address",
+			Math.min(conf, 0.75), "Socket bind with address struct fill and port byte-swap");
+	}
+
+	private FunctionType detectBigIntAdd(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// Big integer add: multi-word carry propagation in loop
+		if (p.adds >= 3) conf += 0.15; // add words + carry
+		if (p.lesses >= 1) conf += 0.10; // carry detection (result < operand)
+		if (p.loads >= 2) conf += 0.10; // load operand words
+		if (p.stores >= 2) conf += 0.10; // store result words
+		if (p.loopCount == 1) conf += 0.10; // single loop over words
+		if (p.mults == 0 && p.divs == 0) conf += 0.10; // no multiply/divide
+		if (p.xors == 0 && p.ors <= 1) conf += 0.05; // minimal logic ops
+		if (p.totalOps < 80) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("big_int_add", "bigint_add_carry",
+			Math.min(conf, 0.75), "Big integer addition with multi-word carry propagation");
+	}
+
+	private FunctionType detectBigIntMul(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		if (!p.hasNestedLoop) return null;
+		double conf = 0;
+		// Big integer multiply: nested loop over partial products
+		if (p.mults >= 1) conf += 0.15; // partial product multiply
+		if (p.adds >= 3) conf += 0.15; // accumulate partial products + carry
+		if (p.loads >= 3) conf += 0.10; // load operand words
+		if (p.stores >= 2) conf += 0.10; // store result words
+		if (p.rights >= 1 || p.srights >= 1) conf += 0.10; // extract high word of product
+		if (p.loopCount >= 2) conf += 0.10; // nested iteration
+		if (p.lesses >= 1) conf += 0.05; // carry/overflow detection
+		if (conf < 0.55) return null;
+		return new FunctionType("big_int_mul", "bigint_multiply",
+			Math.min(conf, 0.75), "Big integer multiply with nested partial products");
+	}
+
+	private FunctionType detectPolynomialEval(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Horner's method: multiply-then-add chain
+		if (p.mults >= 2) conf += 0.15; // repeated multiply by x
+		if (p.adds >= 2) conf += 0.15; // add coefficient each step
+		if (p.hasMultThenShift) conf += 0.10; // fixed-point variant
+		if (p.loads >= 2) conf += 0.10; // load coefficients from table
+		if (p.hasLoop && p.loopCount == 1) conf += 0.10; // single evaluation loop
+		if (p.divs == 0) conf += 0.05; // no division in Horner's
+		if (p.compares <= 2) conf += 0.05; // minimal branching
+		if (p.shifts >= 1) conf += 0.05; // fixed-point scaling
+		if (conf < 0.55) return null;
+		return new FunctionType("polynomial_eval", "horner_polynomial",
+			Math.min(conf, 0.75), "Polynomial evaluation via Horner's method");
+	}
+
+	private FunctionType detectLinearInterp(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Linear interpolation: (b-a)*t + a with fixed-point scaling
+		if (p.subs >= 1) conf += 0.15; // b - a
+		if (p.mults >= 1) conf += 0.15; // * t
+		if (p.adds >= 1) conf += 0.10; // + a
+		if (p.shifts >= 1) conf += 0.10; // fixed-point scale down
+		if (p.hasMultThenShift) conf += 0.15; // multiply then shift = fixed-point
+		if (p.totalOps < 60) conf += 0.05; // typically compact
+		if (!p.hasLoop) conf += 0.05; // single computation, no loop needed
+		if (conf < 0.55) return null;
+		return new FunctionType("linear_interp", "lerp_fixed_point",
+			Math.min(conf, 0.75), "Linear interpolation (b-a)*t+a with fixed-point");
+	}
+
+	private FunctionType detectLogApprox(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Log approximation: extract exponent via right shift, mantissa via table
+		if (p.rights >= 2 || p.srights >= 1) conf += 0.15; // exponent extraction
+		if (p.ands >= 1) conf += 0.10; // mantissa mask
+		if (p.loads >= 2) conf += 0.15; // table lookup for mantissa correction
+		if (p.adds >= 1) conf += 0.10; // combine exponent + mantissa part
+		if (p.lefts >= 1) conf += 0.10; // index scaling for table access
+		if (p.mults <= 2) conf += 0.05; // minimal or no multiply
+		if (p.totalOps < 80) conf += 0.05;
+		if (p.cbranches >= 1) conf += 0.05; // edge case check (zero input)
+		if (conf < 0.55) return null;
+		return new FunctionType("log_approx", "log2_approximation",
+			Math.min(conf, 0.75), "Logarithm approximation via exponent extract and mantissa table");
+	}
+
+	private FunctionType detectExpApprox(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Exp approximation: range reduction then polynomial or table lookup
+		if (p.ands >= 1) conf += 0.10; // fractional part mask
+		if (p.rights >= 1) conf += 0.10; // integer part extraction
+		if (p.lefts >= 1) conf += 0.10; // shift for 2^integer_part
+		if (p.mults >= 1) conf += 0.15; // polynomial term or scale
+		if (p.adds >= 2) conf += 0.10; // polynomial accumulation
+		if (p.loads >= 1) conf += 0.10; // coefficient or table entry
+		if (p.subs >= 1) conf += 0.05; // range reduction subtraction
+		if (p.totalOps < 100) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("exp_approx", "exp_approximation",
+			Math.min(conf, 0.75), "Exponential approximation with range reduction");
+	}
+
+	private FunctionType detectReciprocalApprox(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Newton-Raphson reciprocal: x' = x*(2 - d*x)
+		if (p.mults >= 2) conf += 0.20; // d*x and x*(2-d*x)
+		if (p.subs >= 1) conf += 0.15; // 2 - d*x
+		if (p.hasLoop && p.loopCount <= 2) conf += 0.10; // few iterations
+		if (p.adds <= 2) conf += 0.05; // minimal adds
+		if (p.divs == 0) conf += 0.10; // no hardware divide (that's the point)
+		if (p.shifts >= 1) conf += 0.10; // fixed-point scaling
+		if (p.totalOps < 80) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("reciprocal_approx", "newton_reciprocal",
+			Math.min(conf, 0.75), "Reciprocal approximation via Newton-Raphson iteration");
+	}
+
+	private FunctionType detectDivByConstant(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 10) return null;
+		double conf = 0;
+		// Division by constant: multiply by magic number then shift right
+		if (p.hasLargeConstMult) conf += 0.25; // multiply by magic reciprocal
+		if (p.hasMultThenShift) conf += 0.25; // mult followed by right shift
+		if (p.rights >= 1 || p.srights >= 1) conf += 0.10; // shift to get quotient
+		if (p.mults >= 1) conf += 0.10; // the magic multiply
+		if (p.divs == 0) conf += 0.05; // no hardware divide instruction
+		if (!p.hasLoop) conf += 0.05; // straight-line computation
+		if (p.totalOps < 40) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("div_by_constant", "const_division_by_multiply",
+			Math.min(conf, 0.75), "Division by constant via multiply-high and shift");
+	}
+
+	private FunctionType detectGcdCompute(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// GCD Euclidean algorithm: modulo loop until remainder is zero
+		if (p.rems >= 1) conf += 0.20; // modulo operation
+		if (p.subs >= 1) conf += 0.10; // subtraction variant of Euclid
+		if (p.constZeroCompares >= 1) conf += 0.15; // remainder == 0 termination
+		if (p.cbranches >= 1) conf += 0.10; // loop-until-zero branch
+		if (p.copies >= 1) conf += 0.05; // swap a and b
+		if (p.loopCount == 1) conf += 0.10; // single iteration loop
+		if (p.mults == 0) conf += 0.05; // no multiply needed
+		if (p.totalOps < 60) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("gcd_compute", "euclidean_gcd",
+			Math.min(conf, 0.75), "GCD computation via Euclidean algorithm");
+	}
+
+	private FunctionType detectRegexMatch(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 40) return null;
+		double conf = 0;
+		// Regex matching: state transitions, character class tests, backtrack
+		if (p.cbranch_eq_runs >= 3) conf += 0.15; // character class dispatch
+		if (p.constAsciiCompares >= 3) conf += 0.15; // character range tests
+		if (p.loads >= 4) conf += 0.10; // read pattern + input characters
+		if (p.cbranches >= 4) conf += 0.10; // many conditional branches
+		if (p.hasLoop) conf += 0.10; // scan loop
+		if (p.sLesses >= 1 || p.lesses >= 2) conf += 0.10; // range comparisons
+		if (p.adds >= 2) conf += 0.05; // pointer advance
+		if (conf < 0.55) return null;
+		return new FunctionType("regex_match", "regex_state_machine",
+			Math.min(conf, 0.75), "Regex match with state transitions and character class tests");
+	}
+
+	private FunctionType detectStringHash(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// String hash: character-by-character multiply-accumulate
+		if (p.mults >= 1 || p.constLargeMultipliers >= 1) conf += 0.20; // hash multiplier
+		if (p.adds >= 1) conf += 0.10; // accumulate character value
+		if (p.loads >= 1) conf += 0.10; // load characters
+		if (p.constZeroCompares >= 1) conf += 0.10; // null terminator check
+		if (p.xors >= 1) conf += 0.10; // hash mixing via XOR
+		if (p.loopCount == 1) conf += 0.10; // single character loop
+		if (p.totalOps < 60) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("string_hash", "string_hash_function",
+			Math.min(conf, 0.75), "String hash via character multiply-accumulate loop");
+	}
+
+	private FunctionType detectStringTokenize(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Tokenizer: scan for delimiter, advance pointer, return token start
+		if (p.hasLoop) conf += 0.10;
+		if (p.loads >= 3) conf += 0.10; // load characters
+		if (p.constAsciiCompares >= 2) conf += 0.15; // delimiter comparison
+		if (p.cbranch_eq_runs >= 2) conf += 0.10; // check multiple delimiters
+		if (p.adds >= 2) conf += 0.10; // pointer advance
+		if (p.constZeroCompares >= 1) conf += 0.10; // null terminator
+		if (p.stores >= 1) conf += 0.10; // write null to split token
+		if (p.cbranches >= 2) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("string_tokenize", "strtok_delimit",
+			Math.min(conf, 0.75), "String tokenizer with delimiter scan and pointer advance");
+	}
+
+	private FunctionType detectAtoi(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// atoi: validate digit, multiply by 10, accumulate
+		if (p.mults >= 1) conf += 0.15; // multiply accumulator by 10
+		if (p.adds >= 1) conf += 0.10; // add digit value
+		if (p.subs >= 1) conf += 0.10; // subtract '0' (0x30)
+		if (p.loads >= 1) conf += 0.10; // load next character
+		if (p.lesses >= 1 || p.sLesses >= 1) conf += 0.10; // range check 0-9
+		if (p.constAsciiCompares >= 1) conf += 0.10; // compare with '0' or '9'
+		if (p.constZeroCompares >= 1) conf += 0.05; // null terminator
+		if (p.loopCount == 1) conf += 0.05;
+		if (p.totalOps < 80) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("atoi", "string_to_integer",
+			Math.min(conf, 0.75), "String-to-integer conversion (atoi)");
+	}
+
+	private FunctionType detectItoa(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// itoa: divide by 10 loop, store digit, reverse buffer
+		if (p.divs >= 1 || p.rems >= 1) conf += 0.20; // divide/mod by 10
+		if (p.adds >= 1) conf += 0.10; // add '0' to get ASCII digit
+		if (p.stores >= 2) conf += 0.10; // store digit characters
+		if (p.constZeroCompares >= 1) conf += 0.10; // quotient == 0 terminates
+		if (p.loads >= 1) conf += 0.05; // reverse pass loads
+		if (p.subs >= 1) conf += 0.10; // decrement pointer during reverse
+		if (p.loopCount >= 1) conf += 0.10; // digit extraction loop
+		if (p.totalOps < 100) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("itoa", "integer_to_string",
+			Math.min(conf, 0.75), "Integer-to-string conversion (divide by 10 loop)");
+	}
+
+	private FunctionType detectStringSearch(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// String search (strstr): nested loop compare, mismatch restart
+		if (p.hasNestedLoop) conf += 0.15; // outer scan + inner match
+		if (p.loads >= 3) conf += 0.10; // load from haystack and needle
+		if (p.equals >= 1 || p.notEquals >= 1) conf += 0.15; // character compare
+		if (p.cbranches >= 3) conf += 0.10; // mismatch, end-of-needle, end-of-haystack
+		if (p.adds >= 2) conf += 0.10; // advance pointers
+		if (p.constZeroCompares >= 1) conf += 0.10; // null terminator check
+		if (p.subs >= 1) conf += 0.05; // restart position adjustment
+		if (conf < 0.55) return null;
+		return new FunctionType("string_search", "strstr_search",
+			Math.min(conf, 0.75), "Substring search with nested compare and mismatch restart");
+	}
+
+	private FunctionType detectCaseConvert(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Case conversion: range compare A-Z or a-z, add/sub 0x20
+		if (p.constAsciiCompares >= 2) conf += 0.20; // compare with 'A','Z' or 'a','z'
+		if (p.subs >= 1 || p.adds >= 1) conf += 0.15; // +/- 0x20 for case flip
+		if (p.loads >= 1) conf += 0.10; // load character
+		if (p.stores >= 1) conf += 0.10; // store converted character
+		if (p.cbranches >= 1) conf += 0.10; // branch if in range
+		if (p.hasLoop) conf += 0.10; // iterate over string
+		if (p.lesses >= 1 || p.sLesses >= 1) conf += 0.05; // range check
+		if (conf < 0.55) return null;
+		return new FunctionType("case_convert", "toupper_tolower",
+			Math.min(conf, 0.75), "Case conversion with A-Z/a-z range check and 0x20 offset");
+	}
+
+	private FunctionType detectWhitespaceStrip(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Whitespace strip: scan from both ends, compare space/tab constants
+		if (p.constAsciiCompares >= 2) conf += 0.15; // space (0x20), tab (0x09)
+		if (p.loads >= 2) conf += 0.10; // load from both ends
+		if (p.subs >= 1) conf += 0.10; // decrement end pointer
+		if (p.adds >= 1) conf += 0.10; // increment start pointer
+		if (p.cbranches >= 2) conf += 0.10; // whitespace continue branches
+		if (p.hasLoop) conf += 0.10; // scan loops
+		if (p.equals >= 1 || p.lesses >= 1) conf += 0.10; // char comparison
+		if (conf < 0.55) return null;
+		return new FunctionType("whitespace_strip", "string_trim",
+			Math.min(conf, 0.75), "Whitespace trim scanning from both ends of string");
+	}
+
+	private FunctionType detectCollisionResponse(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Collision response: velocity reflect (negate), position correction
+		if (p.negates >= 1) conf += 0.15; // velocity negate for reflection
+		if (p.subs >= 2) conf += 0.15; // penetration depth, position correction
+		if (p.loads >= 3) conf += 0.10; // load position, velocity, bounds
+		if (p.stores >= 2) conf += 0.10; // write corrected position and velocity
+		if (p.compares >= 2) conf += 0.10; // boundary comparison per axis
+		if (p.cbranches >= 2) conf += 0.05; // per-axis collision check
+		if (p.srights >= 1) conf += 0.05; // fixed-point halving for restitution
+		if (p.adds >= 1) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("collision_response", "collision_velocity_reflect",
+			Math.min(conf, 0.75), "Collision response with velocity reflect and position correct");
+	}
+
+	private FunctionType detectGravitySim(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Gravity: constant acceleration added to velocity, velocity to position
+		if (p.adds >= 2) conf += 0.15; // vel += accel; pos += vel
+		if (p.loads >= 2) conf += 0.10; // load velocity and position
+		if (p.stores >= 2) conf += 0.10; // store updated velocity and position
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // ground/terminal check
+		if (p.cbranches >= 1) conf += 0.10; // ground collision branch
+		if (p.subs >= 1) conf += 0.05; // bounce or clamp
+		if (p.totalOps < 60) conf += 0.05; // typically short
+		if (p.constSmallInts >= 1) conf += 0.10; // gravity constant value
+		if (conf < 0.55) return null;
+		return new FunctionType("gravity_sim", "gravity_acceleration",
+			Math.min(conf, 0.75), "Gravity simulation: acceleration to velocity to position");
+	}
+
+	private FunctionType detectJumpPhysics(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Jump physics: apply gravity + initial velocity, ground check
+		if (p.adds >= 2) conf += 0.10; // velocity accumulation + position update
+		if (p.subs >= 1) conf += 0.10; // subtract gravity from velocity
+		if (p.sLesses >= 1) conf += 0.15; // signed less for ground check
+		if (p.cbranches >= 2) conf += 0.10; // ground check + jump initiate
+		if (p.loads >= 2) conf += 0.10; // load y-position and velocity
+		if (p.stores >= 2) conf += 0.10; // write y-position and velocity
+		if (p.constSmallInts >= 1) conf += 0.05; // gravity/jump strength constant
+		if (p.constZeroCompares >= 1) conf += 0.05; // on-ground flag check
+		if (conf < 0.55) return null;
+		return new FunctionType("jump_physics", "jump_gravity_handler",
+			Math.min(conf, 0.75), "Jump physics with gravity, initial velocity, and ground check");
+	}
+
+	private FunctionType detectHealthDamage(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Damage: subtract from health, clamp to zero, death check
+		if (p.subs >= 1) conf += 0.15; // subtract damage from health
+		if (p.constZeroCompares >= 1) conf += 0.15; // health <= 0 check
+		if (p.sLesses >= 1) conf += 0.15; // signed less (health < 0 = dead)
+		if (p.loads >= 1) conf += 0.10; // load current health
+		if (p.stores >= 1) conf += 0.10; // store updated health
+		if (p.cbranches >= 1) conf += 0.10; // branch on death
+		if (p.calls >= 1) conf += 0.05; // call death/game-over handler
+		if (p.totalOps < 50) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("health_damage", "apply_damage_clamp",
+			Math.min(conf, 0.75), "Health/damage: subtract, clamp to zero, death check");
+	}
+
+	private FunctionType detectInventoryManage(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Inventory: slot array scan, item add/remove, count check
+		if (p.hasLoop) conf += 0.10;
+		if (p.loads >= 3) conf += 0.10; // read slot data
+		if (p.stores >= 2) conf += 0.10; // write to slot
+		if (p.equals >= 1) conf += 0.10; // check item ID match
+		if (p.cbranches >= 2) conf += 0.10; // empty slot check + found check
+		if (p.adds >= 2) conf += 0.10; // index advance + count update
+		if (p.lesses >= 1) conf += 0.10; // bounds check (max slots)
+		if (p.constZeroCompares >= 1) conf += 0.05; // empty slot == 0
+		if (p.constSmallInts >= 2) conf += 0.05; // slot size, max count
+		if (conf < 0.55) return null;
+		return new FunctionType("inventory_manage", "inventory_slot_op",
+			Math.min(conf, 0.75), "Inventory management: slot array add/remove with bounds");
+	}
+
+	private FunctionType detectNpcDialog(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// NPC dialog: index into text pointer table, advance dialog state
+		if (p.loads >= 3) conf += 0.10; // load NPC ID, dialog index, text pointer
+		if (p.lefts >= 1 || p.mults >= 1) conf += 0.10; // index * entry_size
+		if (p.adds >= 2) conf += 0.10; // table base + offset, state advance
+		if (p.stores >= 1) conf += 0.10; // update dialog state
+		if (p.cbranch_eq_runs >= 1) conf += 0.10; // end-of-dialog check
+		if (p.calls >= 1) conf += 0.10; // call text renderer
+		if (p.constSmallInts >= 2) conf += 0.10; // state IDs
+		if (p.cbranches >= 1) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("npc_dialog", "dialog_text_advance",
+			Math.min(conf, 0.75), "NPC dialog: text table index and state advance");
+	}
+
+	private FunctionType detectEnemyPatrol(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Enemy patrol: waypoint list, direction calc, timer decrement
+		if (p.loads >= 3) conf += 0.10; // load waypoint, current pos, timer
+		if (p.subs >= 2) conf += 0.15; // direction = target - current, timer--
+		if (p.compares >= 2) conf += 0.10; // arrived? timer expired?
+		if (p.cbranches >= 2) conf += 0.10; // waypoint-reached, timer branches
+		if (p.stores >= 2) conf += 0.10; // update position, waypoint index
+		if (p.adds >= 1) conf += 0.10; // advance waypoint index
+		if (p.sLesses >= 1) conf += 0.05; // direction sign check
+		if (p.constSmallInts >= 1) conf += 0.05; // waypoint count constant
+		if (conf < 0.55) return null;
+		return new FunctionType("enemy_patrol", "patrol_waypoint_advance",
+			Math.min(conf, 0.75), "Enemy patrol with waypoint list, direction, and timer");
+	}
+
+	private FunctionType detectBossPattern(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// Boss pattern: phase check via compare chains, timer-driven attack select
+		if (p.cbranch_eq_runs >= 3) conf += 0.15; // phase dispatch table
+		if (p.loads >= 4) conf += 0.10; // load phase, timer, health, attack ID
+		if (p.compares >= 3) conf += 0.15; // health thresholds for phase changes
+		if (p.cbranches >= 3) conf += 0.10; // multi-way phase branching
+		if (p.calls >= 2) conf += 0.10; // call attack subroutines
+		if (p.subs >= 1) conf += 0.05; // timer decrement
+		if (p.stores >= 2) conf += 0.05; // update phase and timer
+		if (p.constSmallInts >= 2) conf += 0.05; // phase ID constants
+		if (conf < 0.55) return null;
+		return new FunctionType("boss_pattern", "boss_phase_attack",
+			Math.min(conf, 0.75), "Boss pattern: phase check with timer-driven attack select");
+	}
+
+	private FunctionType detectArithmeticCoding(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// Arithmetic coding: range subdivision, renormalization, bit output
+		if (p.mults >= 2) conf += 0.15; // range * probability
+		if (p.rights >= 2) conf += 0.10; // range normalization shift
+		if (p.subs >= 2) conf += 0.10; // high - low
+		if (p.adds >= 1) conf += 0.05; // low + scaled range
+		if (p.lesses >= 2) conf += 0.10; // range underflow check
+		if (p.lefts >= 1) conf += 0.10; // bit output shift
+		if (p.cbranches >= 3) conf += 0.10; // normalization + underflow branches
+		if (p.stores >= 2) conf += 0.05; // update low and range state
+		if (conf < 0.55) return null;
+		return new FunctionType("arithmetic_coding", "arith_range_encode",
+			Math.min(conf, 0.75), "Arithmetic coding with range subdivision and bit output");
+	}
+
+	private FunctionType detectLzwCodec(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 40) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// LZW: dictionary table build, variable-width code output
+		if (p.loads >= 5) conf += 0.10; // dictionary lookups
+		if (p.stores >= 3) conf += 0.10; // dictionary inserts
+		if (p.lefts >= 1) conf += 0.10; // index scaling for table
+		if (p.lesses >= 1) conf += 0.10; // code < table_size check
+		if (p.adds >= 3) conf += 0.10; // pointer advance, table index++
+		if (p.cbranches >= 3) conf += 0.10; // code-in-table, table-full, input-done
+		if (p.hasNestedLoop || p.loopCount >= 2) conf += 0.05; // string output loop
+		if (p.compares >= 3) conf += 0.10; // code comparisons
+		if (conf < 0.55) return null;
+		return new FunctionType("lzw_codec", "lzw_compress_decompress",
+			Math.min(conf, 0.75), "LZW codec with dictionary build and code output");
+	}
+
+	private FunctionType detectBwtTransform(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 50) return null;
+		if (!p.hasNestedLoop) return null;
+		double conf = 0;
+		// Burrows-Wheeler: suffix sort (nested loop), output last column
+		if (p.loads >= 6) conf += 0.10; // character comparisons during sort
+		if (p.stores >= 4) conf += 0.10; // index array updates
+		if (p.compares >= 4) conf += 0.10; // sort key comparisons
+		if (p.cbranches >= 4) conf += 0.10; // sort branching
+		if (p.loopCount >= 2) conf += 0.10; // nested sort loops
+		if (p.adds >= 4) conf += 0.10; // index arithmetic
+		if (p.sLesses >= 2 || p.lesses >= 2) conf += 0.10; // character ordering
+		if (p.copies >= 2) conf += 0.05; // swap during sort
+		if (conf < 0.55) return null;
+		return new FunctionType("bwt_transform", "burrows_wheeler_transform",
+			Math.min(conf, 0.75), "Burrows-Wheeler transform with suffix sort");
+	}
+
+	private FunctionType detectDeflate(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 60) return null;
+		if (!p.hasLoop) return null;
+		double conf = 0;
+		// DEFLATE: Huffman tree decode + LZ77 back-reference copy
+		if (p.loads >= 6) conf += 0.10; // code table lookups
+		if (p.ands >= 3) conf += 0.10; // bit extraction masks
+		if (p.rights >= 2) conf += 0.10; // bitstream shift right
+		if (p.cbranches >= 4) conf += 0.10; // decode branch cascade
+		if (p.adds >= 3) conf += 0.05; // pointer advance
+		if (p.subs >= 1) conf += 0.05; // distance back-reference
+		if (p.hasNestedLoop) conf += 0.10; // inner copy loop for LZ77 match
+		if (p.stores >= 3) conf += 0.05; // output decoded bytes
+		if (p.lefts >= 1) conf += 0.05; // bit manipulation
+		if (p.compares >= 4) conf += 0.05; // length/distance bounds checks
+		if (conf < 0.55) return null;
+		return new FunctionType("deflate", "deflate_decompress",
+			Math.min(conf, 0.75), "DEFLATE decompression (Huffman + LZ77)");
+	}
+
+	private FunctionType detectUartInit(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// UART init: baud rate divisor write, parity/stop config registers
+		if (p.ioRegionAccesses >= 3) conf += 0.20; // UART register writes
+		if (p.consecutiveStores >= 3) conf += 0.15; // sequential register config
+		if (p.stores >= 4) conf += 0.10; // write LCR, DLL, DLM, etc.
+		if (p.divs >= 1 || p.rights >= 1) conf += 0.10; // baud rate divisor calc
+		if (p.ands >= 1) conf += 0.05; // register field masking
+		if (p.ors >= 1) conf += 0.10; // set configuration bits
+		if (p.loads <= p.stores) conf += 0.05; // write-heavy initialization
+		if (conf < 0.55) return null;
+		return new FunctionType("uart_init", "uart_baud_config",
+			Math.min(conf, 0.75), "UART initialization: baud rate divisor and line config");
+	}
+
+
 	// ================================================================
 	// Feature-vector similarity classifier
 	// ================================================================
@@ -7435,5 +9434,566 @@ public class FunctionPatternDetector {
 			new double[]{0.06,0.22,0.04,0.06,0.02,0.04,0.06,0.02,
 				0.06,0.02, 0.08,0.02,0.15,0.04,0.10,
 				0.00,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.06,0.50}),
+
+		// === New signatures: Network protocols ===
+
+		// DNS resolver: loads for packet parsing, compares for labels, loop for domain walk
+		new ReferenceSignature("dns", "dns_resolver",
+			"DNS packet parser/resolver",
+			new double[]{0.20,0.06,0.08,0.10,0.06,0.14,0.12,0.04,
+				0.06,0.02, 0.30,0.04,0.30,0.10,0.14,
+				0.00,0.04,0.00,0.00,0.00,0.10,0.06,0.00,0.18,0.00}),
+
+		// DHCP client: heavy stores for option building, magic cookie constant
+		new ReferenceSignature("dhcp", "dhcp_client",
+			"DHCP client option builder",
+			new double[]{0.10,0.22,0.06,0.04,0.02,0.08,0.10,0.04,
+				0.08,0.02, 0.20,0.04,0.30,0.08,0.16,
+				0.00,0.02,0.00,0.00,0.00,0.06,0.00,0.30,0.12,0.00}),
+
+		// HTTP parser: many ASCII compares, string ops, state machine
+		new ReferenceSignature("http", "http_parser",
+			"HTTP protocol parser",
+			new double[]{0.18,0.08,0.04,0.04,0.02,0.18,0.14,0.06,
+				0.06,0.02, 0.25,0.06,0.35,0.12,0.20,
+				0.00,0.02,0.00,0.00,0.00,0.14,0.00,0.00,0.24,0.00}),
+
+		// SMTP handler: ASCII char compares, state machine branching
+		new ReferenceSignature("smtp", "smtp_handler",
+			"SMTP protocol handler",
+			new double[]{0.16,0.10,0.04,0.04,0.02,0.16,0.14,0.06,
+				0.06,0.02, 0.20,0.06,0.40,0.12,0.18,
+				0.00,0.02,0.00,0.00,0.00,0.12,0.00,0.00,0.22,0.00}),
+
+		// TFTP client: simple protocol, few states, block-based
+		new ReferenceSignature("tftp", "tftp_client",
+			"TFTP block transfer client",
+			new double[]{0.14,0.12,0.06,0.04,0.02,0.10,0.10,0.06,
+				0.06,0.02, 0.20,0.06,0.50,0.08,0.12,
+				0.04,0.04,0.00,0.00,0.00,0.08,0.00,0.04,0.14,0.00}),
+
+		// NTP sync: shift ops for timestamp fractions, 48-byte packet
+		new ReferenceSignature("ntp", "ntp_time_sync",
+			"NTP time synchronization",
+			new double[]{0.14,0.10,0.08,0.06,0.10,0.08,0.08,0.04,
+				0.06,0.02, 0.10,0.04,0.50,0.06,0.12,
+				0.04,0.04,0.00,0.02,0.02,0.06,0.00,0.00,0.10,0.00}),
+
+		// PPP framing: byte stuffing, flag detection, checksum
+		new ReferenceSignature("ppp", "ppp_framing",
+			"PPP/HDLC byte-stuffing framing",
+			new double[]{0.18,0.14,0.06,0.08,0.04,0.10,0.10,0.04,
+				0.06,0.02, 0.30,0.04,0.50,0.08,0.12,
+				0.04,0.04,0.04,0.00,0.00,0.08,0.04,0.00,0.14,0.00}),
+
+		// Telnet: IAC byte detection, option negotiation
+		new ReferenceSignature("telnet", "telnet_protocol",
+			"Telnet IAC/option negotiation",
+			new double[]{0.16,0.10,0.04,0.06,0.02,0.16,0.14,0.06,
+				0.06,0.02, 0.20,0.06,0.40,0.12,0.16,
+				0.00,0.02,0.00,0.00,0.00,0.14,0.00,0.00,0.24,0.00}),
+
+		// SNMP agent: ASN.1 BER encoding, OID tree traversal
+		new ReferenceSignature("snmp", "snmp_agent",
+			"SNMP BER/OID handler",
+			new double[]{0.18,0.10,0.06,0.08,0.06,0.12,0.12,0.06,
+				0.06,0.02, 0.30,0.06,0.40,0.10,0.16,
+				0.00,0.04,0.00,0.02,0.00,0.10,0.04,0.00,0.18,0.00}),
+
+		// UDP checksum: ones-complement sum, pseudo-header
+		new ReferenceSignature("udpcksum", "udp_checksum",
+			"UDP ones-complement checksum",
+			new double[]{0.22,0.04,0.14,0.04,0.04,0.06,0.08,0.00,
+				0.06,0.02, 0.30,0.00,0.15,0.06,0.08,
+				0.00,0.30,0.00,0.00,0.00,0.00,0.04,0.00,0.00,0.00}),
+
+		// === New signatures: Cryptography ===
+
+		// AES round: S-box lookup, ShiftRows, MixColumns
+		new ReferenceSignature("aes", "aes_round",
+			"AES encryption round",
+			new double[]{0.18,0.14,0.06,0.08,0.10,0.04,0.06,0.00,
+				0.06,0.04, 0.30,0.00,0.50,0.04,0.18,
+				0.04,0.04,0.12,0.00,0.00,0.00,0.04,0.00,0.00,0.00}),
+
+		// DES round: S-box lookups, Feistel XOR
+		new ReferenceSignature("des", "des_round",
+			"DES Feistel network round",
+			new double[]{0.16,0.10,0.04,0.08,0.12,0.04,0.08,0.00,
+				0.06,0.04, 0.30,0.00,0.45,0.06,0.20,
+				0.04,0.02,0.14,0.00,0.00,0.00,0.04,0.00,0.00,0.00}),
+
+		// SHA-256: 64 rounds, Ch/Maj/Sigma, rotations
+		new ReferenceSignature("sha256", "sha256_round",
+			"SHA-256 compression round",
+			new double[]{0.14,0.10,0.10,0.10,0.14,0.04,0.08,0.00,
+				0.06,0.02, 0.40,0.00,0.50,0.06,0.20,
+				0.00,0.06,0.10,0.02,0.00,0.00,0.04,0.00,0.00,0.00}),
+
+		// MD5: F/G/H/I functions, 64 steps, rotations
+		new ReferenceSignature("md5", "md5_round",
+			"MD5 hash computation round",
+			new double[]{0.12,0.08,0.12,0.10,0.14,0.04,0.08,0.00,
+				0.06,0.02, 0.40,0.00,0.45,0.06,0.22,
+				0.00,0.06,0.08,0.02,0.00,0.00,0.04,0.00,0.00,0.00}),
+
+		// RC4: KSA + PRGA swap loop
+		new ReferenceSignature("rc4", "rc4_cipher",
+			"RC4 stream cipher KSA/PRGA",
+			new double[]{0.18,0.16,0.08,0.06,0.02,0.04,0.06,0.00,
+				0.08,0.02, 0.40,0.00,0.60,0.04,0.10,
+				0.10,0.04,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// ChaCha20: quarter-round add/xor/rotate
+		new ReferenceSignature("chacha", "chacha20_quarter_round",
+			"ChaCha20 quarter-round",
+			new double[]{0.10,0.10,0.14,0.04,0.16,0.02,0.06,0.00,
+				0.08,0.02, 0.30,0.00,0.55,0.04,0.14,
+				0.00,0.06,0.12,0.04,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// === New signatures: DSP / Signal Processing ===
+
+		// FIR filter: multiply-accumulate loop, coefficient table
+		new ReferenceSignature("fir", "fir_filter",
+			"FIR digital filter",
+			new double[]{0.18,0.06,0.16,0.02,0.04,0.04,0.06,0.00,
+				0.06,0.02, 0.40,0.00,0.20,0.04,0.12,
+				0.00,0.20,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// IIR filter: feedback, multiply-accumulate
+		new ReferenceSignature("iir", "iir_filter",
+			"IIR recursive digital filter",
+			new double[]{0.18,0.10,0.18,0.02,0.04,0.04,0.06,0.00,
+				0.06,0.02, 0.35,0.00,0.45,0.04,0.12,
+				0.04,0.20,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// Moving average: accumulate in loop, divide by N
+		new ReferenceSignature("mavg", "moving_average",
+			"Moving average filter",
+			new double[]{0.18,0.08,0.14,0.02,0.04,0.04,0.08,0.00,
+				0.06,0.02, 0.30,0.00,0.35,0.06,0.08,
+				0.00,0.16,0.00,0.00,0.04,0.00,0.00,0.00,0.00,0.00}),
+
+		// Median filter: compare network on small window
+		new ReferenceSignature("median", "median_filter",
+			"Median filter (compare-swap)",
+			new double[]{0.16,0.14,0.06,0.02,0.02,0.16,0.14,0.00,
+				0.10,0.02, 0.15,0.00,0.55,0.12,0.08,
+				0.04,0.00,0.00,0.00,0.00,0.04,0.00,0.00,0.00,0.00}),
+
+		// Zero crossing: sign change, counter
+		new ReferenceSignature("zerocross", "zero_crossing_detect",
+			"Zero crossing detector",
+			new double[]{0.16,0.08,0.08,0.04,0.04,0.12,0.12,0.00,
+				0.06,0.02, 0.30,0.00,0.35,0.10,0.08,
+				0.00,0.04,0.00,0.00,0.00,0.08,0.00,0.00,0.14,0.00}),
+
+		// Convolution: nested loop multiply-accumulate
+		new ReferenceSignature("convolve", "convolution",
+			"Discrete convolution (nested loop MAC)",
+			new double[]{0.18,0.08,0.18,0.02,0.04,0.06,0.08,0.00,
+				0.06,0.02, 0.50,0.00,0.30,0.06,0.10,
+				0.00,0.24,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// === New signatures: Hardware / Embedded ===
+
+		// Stepper motor: phase table, IO writes
+		new ReferenceSignature("stepper", "stepper_motor",
+			"Stepper motor phase driver",
+			new double[]{0.12,0.16,0.06,0.06,0.04,0.08,0.10,0.04,
+				0.06,0.02, 0.20,0.04,0.40,0.08,0.12,
+				0.00,0.02,0.00,0.00,0.00,0.06,0.04,0.00,0.14,0.04}),
+
+		// Bootloader jump: validate signature, jump to app
+		new ReferenceSignature("bootjump", "bootloader_jump",
+			"Bootloader application handoff",
+			new double[]{0.14,0.06,0.04,0.04,0.02,0.14,0.10,0.04,
+				0.08,0.02, 0.10,0.04,0.25,0.08,0.14,
+				0.00,0.00,0.00,0.00,0.00,0.10,0.00,0.00,0.16,0.06}),
+
+		// Flash erase: unlock sequence, busy poll
+		new ReferenceSignature("flasherase", "flash_erase",
+			"Flash memory sector erase",
+			new double[]{0.12,0.16,0.04,0.06,0.02,0.10,0.12,0.04,
+				0.06,0.02, 0.25,0.04,0.40,0.10,0.14,
+				0.00,0.00,0.00,0.00,0.00,0.08,0.04,0.06,0.18,0.00}),
+
+		// Battery monitor: ADC read, voltage scale, threshold
+		new ReferenceSignature("battery", "battery_monitor",
+			"Battery voltage monitoring",
+			new double[]{0.14,0.08,0.10,0.04,0.04,0.10,0.10,0.04,
+				0.06,0.02, 0.15,0.04,0.40,0.08,0.10,
+				0.00,0.04,0.00,0.00,0.02,0.06,0.00,0.00,0.14,0.00}),
+
+		// Temperature compensation: lookup + interpolation
+		new ReferenceSignature("tempcomp", "temp_compensation",
+			"Temperature compensation lookup/interp",
+			new double[]{0.16,0.08,0.12,0.04,0.06,0.08,0.08,0.04,
+				0.06,0.02, 0.20,0.04,0.35,0.06,0.14,
+				0.04,0.06,0.00,0.00,0.02,0.06,0.00,0.00,0.12,0.00}),
+
+		// === New signatures: Graphics ===
+
+		// Sprite scaling: Bresenham-like, nested loop
+		new ReferenceSignature("spritescale", "sprite_scaling",
+			"Sprite scaling/stretching",
+			new double[]{0.16,0.14,0.10,0.04,0.06,0.06,0.08,0.00,
+				0.06,0.02, 0.45,0.00,0.55,0.06,0.10,
+				0.06,0.04,0.00,0.02,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// Alpha blending: multiply, shift right by 8
+		new ReferenceSignature("alphablend", "alpha_blending",
+			"Alpha blending (mul + shift)",
+			new double[]{0.14,0.12,0.14,0.08,0.08,0.04,0.06,0.00,
+				0.06,0.02, 0.20,0.00,0.55,0.04,0.12,
+				0.04,0.04,0.00,0.02,0.02,0.00,0.04,0.00,0.00,0.00}),
+
+		// Gamma correction: 256-entry table lookup
+		new ReferenceSignature("gamma", "gamma_correction",
+			"Gamma correction table lookup",
+			new double[]{0.18,0.10,0.06,0.06,0.04,0.06,0.08,0.00,
+				0.06,0.04, 0.20,0.00,0.45,0.06,0.10,
+				0.04,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.00,0.00}),
+
+		// Color space convert: RGB/YUV matrix multiply
+		new ReferenceSignature("colorspace", "color_space_convert",
+			"Color space conversion (matrix mul)",
+			new double[]{0.14,0.12,0.16,0.06,0.06,0.04,0.06,0.00,
+				0.06,0.02, 0.15,0.00,0.55,0.04,0.14,
+				0.04,0.06,0.00,0.04,0.00,0.00,0.04,0.00,0.00,0.00}),
+
+		// Parallax scroll: multiple scroll offsets, modulo
+		new ReferenceSignature("parallax", "parallax_scroll",
+			"Multi-layer parallax scrolling",
+			new double[]{0.14,0.14,0.10,0.06,0.06,0.06,0.08,0.02,
+				0.06,0.02, 0.20,0.02,0.55,0.06,0.12,
+				0.04,0.04,0.00,0.00,0.00,0.04,0.04,0.04,0.00,0.00}),
+
+		// Raycasting: trig lookup, distance calc
+		new ReferenceSignature("raycast", "raycasting",
+			"Raycasting column renderer",
+			new double[]{0.16,0.12,0.14,0.06,0.08,0.08,0.08,0.02,
+				0.06,0.02, 0.40,0.02,0.50,0.06,0.16,
+				0.04,0.06,0.00,0.02,0.02,0.04,0.00,0.00,0.00,0.00}),
+
+		// === New signatures: Parsers ===
+
+		// JSON parser: brace/bracket match, string/number parse
+		new ReferenceSignature("json", "json_parser",
+			"JSON object/array parser",
+			new double[]{0.18,0.08,0.04,0.04,0.02,0.18,0.14,0.06,
+				0.06,0.02, 0.25,0.06,0.30,0.12,0.22,
+				0.00,0.02,0.00,0.00,0.00,0.14,0.00,0.00,0.24,0.00}),
+
+		// CSV parser: delimiter scan, field extraction
+		new ReferenceSignature("csv", "csv_parser",
+			"CSV delimiter/field parser",
+			new double[]{0.18,0.10,0.06,0.04,0.02,0.16,0.12,0.04,
+				0.06,0.02, 0.30,0.04,0.40,0.10,0.16,
+				0.00,0.02,0.00,0.00,0.00,0.12,0.00,0.00,0.20,0.00}),
+
+		// COFF/PE parser: header magic, section table walk
+		new ReferenceSignature("coff", "coff_pe_parser",
+			"COFF/PE header parser",
+			new double[]{0.18,0.06,0.06,0.04,0.04,0.14,0.12,0.04,
+				0.06,0.02, 0.20,0.04,0.20,0.10,0.18,
+				0.00,0.04,0.00,0.00,0.00,0.12,0.00,0.00,0.18,0.00}),
+
+		// BMP loader: header parse, palette, pixel data
+		new ReferenceSignature("bmp", "bmp_image_loader",
+			"BMP image header/pixel loader",
+			new double[]{0.18,0.10,0.06,0.06,0.04,0.10,0.10,0.04,
+				0.06,0.02, 0.25,0.04,0.45,0.08,0.16,
+				0.04,0.04,0.00,0.00,0.00,0.08,0.04,0.00,0.14,0.00}),
+
+		// WAV loader: RIFF header, chunk parsing
+		new ReferenceSignature("wav", "wav_audio_loader",
+			"WAV/RIFF audio file loader",
+			new double[]{0.18,0.08,0.06,0.04,0.02,0.14,0.12,0.04,
+				0.06,0.02, 0.20,0.04,0.30,0.10,0.18,
+				0.00,0.04,0.00,0.00,0.00,0.12,0.00,0.00,0.20,0.00}),
+
+		// === New signatures: OS / Kernel ===
+
+		// Syscall dispatch: table dispatch, privilege ops
+		new ReferenceSignature("syscall", "syscall_dispatch",
+			"System call number dispatcher",
+			new double[]{0.10,0.06,0.06,0.06,0.04,0.12,0.12,0.06,
+				0.08,0.02, 0.10,0.06,0.30,0.10,0.14,
+				0.00,0.00,0.00,0.00,0.00,0.08,0.00,0.00,0.14,0.14}),
+
+		// Thread scheduler: context save, priority, next-run
+		new ReferenceSignature("threadsched", "thread_scheduler",
+			"Thread/task scheduler with priority dispatch",
+			new double[]{0.14,0.14,0.06,0.04,0.02,0.10,0.12,0.06,
+				0.08,0.02, 0.15,0.06,0.50,0.10,0.12,
+				0.04,0.00,0.00,0.00,0.00,0.06,0.00,0.10,0.14,0.00}),
+
+		// Signal handler: context save, dispatch by number
+		new ReferenceSignature("signal", "signal_dispatch",
+			"Unix signal dispatch handler",
+			new double[]{0.10,0.14,0.06,0.04,0.02,0.10,0.12,0.06,
+				0.08,0.02, 0.10,0.06,0.35,0.10,0.12,
+				0.00,0.00,0.00,0.00,0.00,0.08,0.00,0.10,0.14,0.04}),
+
+		// Pipe IPC: ring buffer head/tail
+		new ReferenceSignature("pipe", "pipe_read_write",
+			"Pipe IPC ring buffer",
+			new double[]{0.16,0.14,0.10,0.06,0.02,0.08,0.10,0.02,
+				0.06,0.02, 0.25,0.02,0.55,0.08,0.10,
+				0.08,0.04,0.00,0.00,0.00,0.04,0.04,0.00,0.00,0.00}),
+
+		// Memory pool: fixed-size block alloc
+		new ReferenceSignature("mempool", "pool_block_allocate",
+			"Fixed-size memory pool allocator",
+			new double[]{0.14,0.10,0.08,0.06,0.02,0.10,0.10,0.02,
+				0.06,0.02, 0.10,0.02,0.50,0.08,0.08,
+				0.04,0.00,0.00,0.00,0.00,0.08,0.04,0.00,0.12,0.00}),
+
+		// TLB flush: control register write, barrier
+		new ReferenceSignature("tlb", "tlb_invalidate",
+			"TLB flush/invalidate",
+			new double[]{0.06,0.18,0.04,0.06,0.02,0.04,0.06,0.02,
+				0.06,0.02, 0.10,0.02,0.20,0.04,0.08,
+				0.00,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.06,0.40}),
+
+		// File descriptor table: index, bounds check
+		new ReferenceSignature("fdtable", "fd_table_lookup",
+			"File descriptor table lookup",
+			new double[]{0.14,0.06,0.08,0.04,0.04,0.12,0.12,0.04,
+				0.06,0.02, 0.10,0.04,0.25,0.10,0.10,
+				0.00,0.04,0.00,0.02,0.00,0.08,0.00,0.00,0.16,0.00}),
+
+		// Socket bind: address struct, port swap
+		new ReferenceSignature("sockbind", "socket_bind",
+			"Socket bind/listen with address setup",
+			new double[]{0.10,0.16,0.06,0.06,0.04,0.08,0.10,0.06,
+				0.06,0.02, 0.10,0.06,0.35,0.08,0.12,
+				0.00,0.00,0.00,0.00,0.00,0.06,0.00,0.10,0.12,0.00}),
+
+		// Mount handler: superblock, device lookup
+		new ReferenceSignature("mount", "filesystem_mount",
+			"Filesystem mount handler",
+			new double[]{0.16,0.12,0.06,0.04,0.02,0.12,0.12,0.08,
+				0.06,0.02, 0.10,0.08,0.50,0.10,0.14,
+				0.00,0.04,0.00,0.00,0.00,0.08,0.00,0.00,0.16,0.00}),
+
+		// UART init: baud rate divisor, parity config
+		new ReferenceSignature("uartinit", "uart_init",
+			"UART/serial port initialization",
+			new double[]{0.06,0.20,0.04,0.08,0.04,0.04,0.06,0.02,
+				0.06,0.02, 0.08,0.02,0.15,0.04,0.14,
+				0.00,0.00,0.00,0.00,0.00,0.02,0.04,0.16,0.06,0.00}),
+
+		// === New signatures: Math / Algorithms ===
+
+		// Big integer add: multi-word carry propagation
+		new ReferenceSignature("bigintadd", "bigint_add",
+			"Multi-word big integer addition with carry",
+			new double[]{0.16,0.14,0.16,0.04,0.04,0.06,0.08,0.00,
+				0.06,0.02, 0.30,0.00,0.55,0.06,0.08,
+				0.06,0.10,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// Big integer multiply: nested loop, partial products
+		new ReferenceSignature("bigintmul", "bigint_multiply",
+			"Multi-word big integer multiplication",
+			new double[]{0.16,0.14,0.16,0.04,0.06,0.06,0.08,0.00,
+				0.06,0.02, 0.45,0.00,0.55,0.06,0.08,
+				0.06,0.12,0.00,0.02,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// Polynomial eval (Horner): multiply-then-add chain
+		new ReferenceSignature("horner", "polynomial_eval",
+			"Polynomial evaluation (Horner's method)",
+			new double[]{0.14,0.06,0.18,0.02,0.04,0.04,0.06,0.00,
+				0.06,0.02, 0.25,0.00,0.20,0.04,0.12,
+				0.00,0.14,0.00,0.02,0.00,0.00,0.00,0.00,0.00,0.00}),
+
+		// Linear interpolation: (b-a)*t + a
+		new ReferenceSignature("lerp", "linear_interp",
+			"Linear interpolation (lerp)",
+			new double[]{0.12,0.08,0.16,0.02,0.06,0.04,0.06,0.00,
+				0.06,0.02, 0.10,0.00,0.40,0.04,0.08,
+				0.00,0.06,0.00,0.02,0.04,0.00,0.00,0.00,0.00,0.00}),
+
+		// Log approximation: exponent extract, mantissa table
+		new ReferenceSignature("logapprox", "log_approx",
+			"Logarithm approximation",
+			new double[]{0.14,0.06,0.10,0.06,0.10,0.06,0.08,0.00,
+				0.06,0.02, 0.15,0.00,0.25,0.06,0.12,
+				0.04,0.06,0.00,0.02,0.02,0.04,0.04,0.00,0.00,0.00}),
+
+		// Exp approximation: range reduction, polynomial
+		new ReferenceSignature("expapprox", "exp_approx",
+			"Exponential approximation",
+			new double[]{0.12,0.06,0.14,0.04,0.08,0.06,0.08,0.00,
+				0.06,0.02, 0.15,0.00,0.25,0.06,0.14,
+				0.00,0.08,0.00,0.02,0.02,0.04,0.00,0.00,0.00,0.00}),
+
+		// Reciprocal: Newton iteration, multiply-subtract
+		new ReferenceSignature("recip", "reciprocal_approx",
+			"Newton-Raphson reciprocal",
+			new double[]{0.08,0.06,0.18,0.02,0.04,0.04,0.06,0.00,
+				0.06,0.02, 0.20,0.00,0.30,0.04,0.08,
+				0.00,0.06,0.00,0.02,0.04,0.00,0.00,0.00,0.00,0.00}),
+
+		// Division by constant: multiply high + shift right
+		new ReferenceSignature("divconst", "div_by_constant",
+			"Division by constant via multiply-shift",
+			new double[]{0.06,0.06,0.12,0.02,0.10,0.02,0.04,0.00,
+				0.06,0.02, 0.05,0.00,0.30,0.02,0.08,
+				0.00,0.04,0.00,0.02,0.04,0.00,0.00,0.00,0.00,0.00}),
+
+		// GCD: Euclidean algorithm, modulo loop
+		new ReferenceSignature("gcd", "gcd_compute",
+			"GCD (Euclidean algorithm)",
+			new double[]{0.06,0.06,0.10,0.02,0.02,0.06,0.08,0.00,
+				0.06,0.02, 0.30,0.00,0.30,0.06,0.06,
+				0.00,0.04,0.00,0.00,0.04,0.04,0.00,0.00,0.00,0.00}),
+
+		// === New signatures: String operations ===
+
+		// Regex match: state transitions, char class tests
+		new ReferenceSignature("regex", "regex_match",
+			"Regular expression matcher",
+			new double[]{0.18,0.06,0.04,0.06,0.02,0.18,0.16,0.04,
+				0.06,0.02, 0.30,0.04,0.20,0.14,0.20,
+				0.00,0.02,0.00,0.00,0.00,0.16,0.00,0.00,0.28,0.00}),
+
+		// String hash: char-by-char multiply-accumulate
+		new ReferenceSignature("strhash", "string_hash",
+			"String hash (djb2/FNV-style)",
+			new double[]{0.18,0.04,0.12,0.02,0.04,0.06,0.08,0.00,
+				0.06,0.02, 0.30,0.00,0.10,0.06,0.08,
+				0.00,0.14,0.00,0.02,0.00,0.04,0.00,0.00,0.00,0.00}),
+
+		// String tokenize: delimiter scan, pointer advance
+		new ReferenceSignature("strtok", "string_tokenize",
+			"String tokenizer (delimiter scan)",
+			new double[]{0.18,0.08,0.06,0.04,0.02,0.14,0.12,0.04,
+				0.06,0.02, 0.30,0.04,0.30,0.10,0.14,
+				0.00,0.02,0.00,0.00,0.00,0.12,0.00,0.00,0.18,0.00}),
+
+		// atoi: digit validate, multiply by 10, accumulate
+		new ReferenceSignature("atoi", "string_to_int",
+			"String to integer conversion (atoi)",
+			new double[]{0.16,0.04,0.12,0.04,0.02,0.12,0.10,0.00,
+				0.06,0.02, 0.25,0.00,0.10,0.08,0.12,
+				0.00,0.10,0.00,0.02,0.00,0.08,0.00,0.00,0.14,0.00}),
+
+		// itoa: divide by 10, digit store, reverse
+		new ReferenceSignature("itoa", "int_to_string",
+			"Integer to string conversion (itoa)",
+			new double[]{0.06,0.14,0.10,0.04,0.02,0.08,0.10,0.00,
+				0.06,0.02, 0.25,0.00,0.20,0.08,0.10,
+				0.00,0.00,0.00,0.00,0.04,0.04,0.00,0.06,0.14,0.00}),
+
+		// String search: nested compare, mismatch restart
+		new ReferenceSignature("strsearch", "string_search",
+			"String search (KMP/naive)",
+			new double[]{0.20,0.04,0.06,0.02,0.02,0.16,0.14,0.00,
+				0.06,0.02, 0.40,0.00,0.10,0.12,0.10,
+				0.00,0.02,0.00,0.00,0.00,0.14,0.00,0.00,0.20,0.00}),
+
+		// Case convert: range compare, add/sub 0x20
+		new ReferenceSignature("caseconv", "case_convert",
+			"Character case conversion (upper/lower)",
+			new double[]{0.14,0.10,0.08,0.04,0.02,0.14,0.12,0.00,
+				0.06,0.02, 0.25,0.00,0.45,0.10,0.12,
+				0.04,0.02,0.00,0.00,0.00,0.10,0.00,0.00,0.16,0.00}),
+
+		// Whitespace strip: scan ends, compare spaces
+		new ReferenceSignature("trim", "whitespace_strip",
+			"Whitespace trim/strip",
+			new double[]{0.14,0.06,0.06,0.04,0.02,0.16,0.14,0.00,
+				0.06,0.02, 0.20,0.00,0.20,0.12,0.10,
+				0.00,0.02,0.00,0.00,0.00,0.12,0.00,0.00,0.18,0.00}),
+
+		// === New signatures: Game logic ===
+
+		// Collision response: velocity reflect, position correct
+		new ReferenceSignature("collresp", "collision_response",
+			"Collision response with velocity reflection",
+			new double[]{0.14,0.12,0.14,0.04,0.04,0.08,0.08,0.02,
+				0.06,0.02, 0.15,0.02,0.55,0.06,0.10,
+				0.04,0.06,0.00,0.00,0.02,0.04,0.00,0.00,0.00,0.00}),
+
+		// Gravity sim: constant accel add to velocity
+		new ReferenceSignature("gravity", "gravity_sim",
+			"Gravity acceleration simulation",
+			new double[]{0.12,0.12,0.14,0.02,0.02,0.08,0.08,0.02,
+				0.06,0.02, 0.15,0.02,0.55,0.06,0.08,
+				0.04,0.06,0.00,0.00,0.00,0.04,0.00,0.00,0.00,0.00}),
+
+		// Jump physics: gravity + initial velocity, ground check
+		new ReferenceSignature("jump", "jump_physics",
+			"Jump physics (gravity + ground check)",
+			new double[]{0.14,0.12,0.12,0.04,0.02,0.10,0.10,0.02,
+				0.06,0.02, 0.15,0.02,0.55,0.08,0.10,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.10,0.00}),
+
+		// Health/damage: subtract, clamp, death check
+		new ReferenceSignature("damage", "health_damage",
+			"Health/damage calculation with clamp",
+			new double[]{0.10,0.10,0.10,0.04,0.02,0.14,0.12,0.04,
+				0.06,0.02, 0.10,0.04,0.50,0.10,0.08,
+				0.00,0.04,0.00,0.00,0.00,0.10,0.00,0.00,0.14,0.00}),
+
+		// Inventory manage: slot array, add/remove
+		new ReferenceSignature("inventory", "inventory_manage",
+			"Inventory slot management",
+			new double[]{0.16,0.14,0.08,0.04,0.02,0.12,0.12,0.04,
+				0.06,0.02, 0.20,0.04,0.55,0.10,0.10,
+				0.04,0.04,0.00,0.00,0.00,0.08,0.00,0.00,0.14,0.00}),
+
+		// NPC dialog: text table index, state advance
+		new ReferenceSignature("npcdialog", "npc_dialog",
+			"NPC dialog text/state handler",
+			new double[]{0.14,0.10,0.06,0.04,0.04,0.10,0.10,0.06,
+				0.06,0.02, 0.15,0.06,0.45,0.08,0.14,
+				0.04,0.02,0.00,0.00,0.00,0.06,0.00,0.00,0.12,0.04}),
+
+		// Enemy patrol: waypoint list, direction calc
+		new ReferenceSignature("patrol", "enemy_patrol",
+			"Enemy patrol/waypoint AI",
+			new double[]{0.14,0.12,0.10,0.04,0.04,0.10,0.10,0.04,
+				0.06,0.02, 0.20,0.04,0.55,0.08,0.12,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.12,0.00}),
+
+		// Boss pattern: phase check, timer attack select
+		new ReferenceSignature("boss", "boss_pattern",
+			"Boss phase/attack pattern AI",
+			new double[]{0.14,0.12,0.08,0.04,0.02,0.12,0.14,0.06,
+				0.06,0.02, 0.15,0.06,0.50,0.12,0.14,
+				0.00,0.02,0.00,0.00,0.00,0.08,0.00,0.00,0.20,0.00}),
+
+		// === New signatures: Compression ===
+
+		// Arithmetic coding: range subdivision, bit output
+		new ReferenceSignature("arithcode", "arithmetic_coding",
+			"Arithmetic coding range encoder/decoder",
+			new double[]{0.14,0.10,0.12,0.04,0.10,0.08,0.10,0.00,
+				0.06,0.02, 0.30,0.00,0.50,0.08,0.12,
+				0.00,0.08,0.00,0.02,0.02,0.04,0.04,0.00,0.00,0.00}),
+
+		// LZW codec: dictionary build, code output
+		new ReferenceSignature("lzw", "lzw_codec",
+			"LZW dictionary compression",
+			new double[]{0.18,0.14,0.08,0.06,0.06,0.10,0.10,0.02,
+				0.06,0.02, 0.35,0.02,0.50,0.08,0.16,
+				0.06,0.06,0.00,0.00,0.00,0.06,0.04,0.00,0.10,0.00}),
+
+		// BWT: suffix sort, output last column
+		new ReferenceSignature("bwt", "bwt_transform",
+			"Burrows-Wheeler transform",
+			new double[]{0.18,0.14,0.08,0.04,0.04,0.12,0.10,0.02,
+				0.06,0.02, 0.45,0.02,0.55,0.08,0.12,
+				0.06,0.04,0.00,0.00,0.00,0.08,0.00,0.00,0.10,0.00}),
+
+		// DEFLATE: Huffman + LZ77
+		new ReferenceSignature("deflate", "deflate_decompress",
+			"DEFLATE (Huffman + LZ77) decompressor",
+			new double[]{0.18,0.12,0.08,0.08,0.10,0.08,0.10,0.02,
+				0.06,0.02, 0.40,0.02,0.50,0.08,0.18,
+				0.04,0.06,0.00,0.02,0.00,0.04,0.04,0.00,0.10,0.00}),
 	};
 }

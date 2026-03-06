@@ -12,7 +12,7 @@ SLEIGH-supported ISA without per-architecture configuration.
 
 When Ghidra imports a raw binary (no ELF/PE/Mach-O headers), it has no entry
 points to start analysis from. This extension applies 41 proven code/data
-heuristics plus 169 function pattern detectors to identify code blocks,
+heuristics plus 280 function pattern detectors to identify code blocks,
 function boundaries, data regions, and algorithmic function types automatically.
 
 The heuristics were developed and validated across three standalone
@@ -52,14 +52,14 @@ When analyzing a ROM, the extension automatically:
 7. **Gap filling** — Close small gaps between adjacent code blocks
 8. **Overlap resolution** — Ghidra's Listing handles this implicitly
 9. **Confidence assignment** — Tag blocks by discovery method (100=vector, 99=call, ..., 78=boundary)
-10. **Function classification** — 203 rule-based detectors + 197 feature-vector signatures classify functions by algorithmic purpose (memcpy, checksum, decompression, sprite renderer, I2C, FFT, FAT, TCP, MIDI, HMAC, pathfinding, etc.) and label hardware register accesses
+10. **Function classification** — 280 rule-based detectors + 274 feature-vector signatures classify functions by algorithmic purpose (memcpy, checksum, decompression, sprite renderer, I2C, FFT, FAT, TCP, MIDI, HMAC, pathfinding, etc.) and label hardware register accesses
 
 ### Heuristic tiers
 
 - **Tier 1** (23 heuristics): Direct P-code properties — block termination, target collection, entropy, density, decode ratio
 - **Tier 2** (8 heuristics): P-code pattern matching — prologue/epilogue detection, tail calls, interrupt handlers, callee-save registers
 - **Tier 3** (10 heuristics): Platform metadata — vector tables, memory map validation, hardware register patterns
-- **Pass 10** (203 detectors + 197 signatures): Function pattern classification via P-code operation distribution analysis
+- **Pass 10** (280 detectors + 274 signatures): Function pattern classification via P-code operation distribution analysis
 
 ## Install
 
@@ -202,7 +202,7 @@ instruction stream. Both 16-bit and 32-bit swap patterns are checked.
 ## Heuristic reference
 
 See [HEURISTICS.md](HEURISTICS.md) for the complete catalog of all 41
-code/data heuristics, 169 function pattern detectors, and 163 feature-vector
+code/data heuristics, 280 function pattern detectors, and 274 feature-vector
 reference signatures, with P-code patterns, ISA-specific forms, and origin
 cross-references.
 
