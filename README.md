@@ -29,7 +29,12 @@ When analyzing a ROM, the extension automatically:
    and V60. Reports specific swap type (16-bit swap, 32-bit reversal, or
    16-bit pair swap within 32-bit words).
 
-2. **Identifies the target platform** — Matches P-code memory access patterns
+2. **Infers ROM base address** — Analyzes absolute jump/call targets and raw
+   pointer values to detect if the ROM is loaded at the wrong address. For
+   example, a NeoGeo BIOS loaded at 0x000000 will have code referencing
+   0xC00000+, revealing it should be loaded at base 0xC00000.
+
+3. **Identifies the target platform** — Matches P-code memory access patterns
    against a library of 13,500+ machine descriptions (generated from MAME
    source). Shows the top matches ranked by score. The best match is
    automatically used for Tier 3 heuristics (vector tables, memory map

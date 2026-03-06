@@ -894,6 +894,20 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				Msg.info(this, "Endianness check: " + endianness.description);
 			}
 
+			// --- Base address inference ---
+			monitor.setMessage("Inferring ROM base address...");
+			PlatformDetector.BaseAddressResult baseResult =
+				PlatformDetector.inferBaseAddress(program, monitor);
+			if (baseResult.inferredBase != program.getMemory().getBlocks()[0].getStart().getOffset()
+					&& baseResult.confidence > 0.15 && baseResult.targetsInRange >= 3) {
+				String baseMsg = String.format("ROM BASE ADDRESS: %s (confidence: %.0f%%)",
+					baseResult.description, baseResult.confidence * 100);
+				Msg.warn(this, baseMsg);
+				log.appendMsg("Heuristic Code Finder: " + baseMsg);
+			} else {
+				Msg.info(this, "Base address check: " + baseResult.description);
+			}
+
 			// --- Platform detection ---
 			if (platformDir != null && platformDir.isDirectory()) {
 				List<PlatformDetector.DetectionResult> results =
@@ -911,6 +925,12 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 
 					if (endianness.isSwapped()) {
 						msg.append("\n  Note: ROM byte order issue detected — results may be less reliable.\n");
+					}
+
+					if (baseResult.inferredBase != program.getMemory().getBlocks()[0].getStart().getOffset()
+							&& baseResult.confidence > 0.15) {
+						msg.append(String.format("\n  Note: ROM may need to be loaded at base 0x%X\n",
+							baseResult.inferredBase));
 					}
 
 					String resultMsg = msg.toString();

@@ -745,6 +745,266 @@ public class PlatformDetector {
 		return out;
 	}
 
+	// ================================================================
+	// ROM base address inference
+	// ================================================================
+
+	/** Result of base address inference. */
+	public static class BaseAddressResult {
+		public final long inferredBase;
+		public final long romSize;
+		public final int targetCount;       // total absolute targets found
+		public final int targetsInRange;    // targets that fall within ROM at inferred base
+		public final double confidence;     // 0.0 - 1.0
+		public final String description;
+
+		public BaseAddressResult(long inferredBase, long romSize, int targetCount,
+				int targetsInRange, double confidence, String description) {
+			this.inferredBase = inferredBase;
+			this.romSize = romSize;
+			this.targetCount = targetCount;
+			this.targetsInRange = targetsInRange;
+			this.confidence = confidence;
+			this.description = description;
+		}
+	}
+
+	/**
+	 * Infer the correct ROM base address by analyzing absolute jump/call targets.
+	 *
+	 * When a ROM is loaded at address 0 but should be at e.g. 0xE000, the absolute
+	 * JMP/JSR/CALL instructions will reference addresses in the 0xE000-0xFFFF range.
+	 * By finding where these targets cluster, we can infer the real base address.
+	 *
+	 * Algorithm:
+	 * 1. Speculatively disassemble the ROM (using PseudoDisassembler)
+	 * 2. Collect all absolute address operands from flow instructions
+	 * 3. For each candidate base, count how many targets would fall within ROM
+	 * 4. Also check raw pointer-sized values in the ROM (vector tables, jump tables)
+	 * 5. The base with the most hits wins
+	 */
+	public static BaseAddressResult inferBaseAddress(Program program, TaskMonitor monitor) {
+		Memory memory = program.getMemory();
+		int ptrSize = program.getDefaultPointerSize();
+		boolean bigEndian = memory.isBigEndian();
+		long addrSpaceMax = program.getAddressFactory().getDefaultAddressSpace().getMaxAddress().getOffset();
+
+		// Get ROM size and current base
+		ghidra.program.model.mem.MemoryBlock[] blocks = memory.getBlocks();
+		if (blocks.length == 0) {
+			return new BaseAddressResult(0, 0, 0, 0, 0, "No memory blocks");
+		}
+		long currentBase = blocks[0].getStart().getOffset();
+		long romSize = 0;
+		for (ghidra.program.model.mem.MemoryBlock b : blocks) {
+			if (b.isInitialized()) romSize += b.getSize();
+		}
+		if (romSize < 32) {
+			return new BaseAddressResult(currentBase, romSize, 0, 0, 0, "ROM too small");
+		}
+
+		// Collect absolute target addresses from:
+		// 1. Existing disassembled instructions (flow references)
+		// 2. Raw pointer-sized values (vector tables, jump tables)
+		List<Long> targets = new ArrayList<>();
+
+		// From instructions
+		Listing listing = program.getListing();
+		InstructionIterator iter = listing.getInstructions(true);
+		int instrCount = 0;
+		while (iter.hasNext() && instrCount < 10000) {
+			if (monitor != null && monitor.isCancelled()) break;
+			Instruction instr = iter.next();
+			instrCount++;
+
+			Address[] flows = instr.getFlows();
+			if (flows != null) {
+				for (Address flow : flows) {
+					long target = flow.getOffset();
+					// Only collect targets that are OUTSIDE the current ROM range
+					// (targets inside the ROM at current base are relative/already correct)
+					if (target < currentBase || target >= currentBase + romSize) {
+						targets.add(target);
+					}
+				}
+			}
+
+			// Also check P-code for absolute address constants
+			try {
+				PcodeOp[] pcode = instr.getPcode();
+				for (PcodeOp op : pcode) {
+					int opc = op.getOpcode();
+					if (opc == PcodeOp.CALL || opc == PcodeOp.BRANCH || opc == PcodeOp.CBRANCH) {
+						Varnode v = op.getInput(0);
+						if (v != null && v.isAddress()) {
+							long target = v.getOffset();
+							if (target < currentBase || target >= currentBase + romSize) {
+								targets.add(target);
+							}
+						}
+					}
+					// LOAD/STORE with constant addresses (I/O or data references)
+					if (opc == PcodeOp.LOAD || opc == PcodeOp.STORE) {
+						Varnode addr = op.getInput(1);
+						if (addr != null && addr.isConstant()) {
+							long val = addr.getOffset();
+							if (val > 0 && val <= addrSpaceMax) {
+								targets.add(val);
+							}
+						}
+					}
+				}
+			} catch (Exception e) {
+				// skip
+			}
+		}
+
+		// From raw pointer-sized values in the ROM (catches vector tables)
+		for (ghidra.program.model.mem.MemoryBlock block : blocks) {
+			if (!block.isInitialized()) continue;
+			long blockSize = block.getSize();
+			// Scan first 256 bytes densely (likely vector table), rest sparsely
+			int denseLimit = (int) Math.min(256, blockSize);
+			for (int off = 0; off < denseLimit && off <= blockSize - ptrSize; off += ptrSize) {
+				try {
+					byte[] buf = new byte[ptrSize];
+					memory.getBytes(block.getStart().add(off), buf);
+					long value = readPointer(buf, ptrSize, bigEndian);
+					if (value > 0 && value <= addrSpaceMax && value != 0xFFFFFFFFL) {
+						targets.add(value);
+					}
+				} catch (Exception e) { break; }
+			}
+			// Sparse sampling of the rest
+			long step = Math.max(ptrSize, blockSize / 256);
+			for (long off = denseLimit; off <= blockSize - ptrSize; off += step) {
+				try {
+					byte[] buf = new byte[ptrSize];
+					memory.getBytes(block.getStart().add(off), buf);
+					long value = readPointer(buf, ptrSize, bigEndian);
+					if (value > 0 && value <= addrSpaceMax && value != 0xFFFFFFFFL) {
+						targets.add(value);
+					}
+				} catch (Exception e) { break; }
+			}
+		}
+
+		if (targets.isEmpty()) {
+			return new BaseAddressResult(currentBase, romSize, 0, 0, 0,
+				"No absolute address references found");
+		}
+
+		// Score candidate base addresses
+		// Candidates: try every romSize-aligned base where targets cluster
+		// For efficiency, bucket targets into romSize-wide ranges
+		Map<Long, Integer> baseCounts = new LinkedHashMap<>();
+		for (long target : targets) {
+			// What base would make this target fall within ROM?
+			// base = target - (target % romSize), but we need target to be in [base, base+romSize)
+			// Round down to alignment boundary
+			long alignedBase;
+			if (romSize > 0 && romSize <= addrSpaceMax) {
+				// For power-of-2 ROM sizes, align naturally
+				// For non-power-of-2, just subtract the offset within a ROM-sized window
+				alignedBase = (target / romSize) * romSize;
+			} else {
+				alignedBase = 0;
+			}
+			if (alignedBase >= 0 && alignedBase <= addrSpaceMax - romSize + 1) {
+				baseCounts.merge(alignedBase, 1, Integer::sum);
+			}
+		}
+
+		// Also try common base addresses for well-known architectures
+		String processor = program.getLanguage().getProcessor().toString();
+		long[] commonBases = getCommonBases(processor, romSize, addrSpaceMax);
+		for (long base : commonBases) {
+			if (!baseCounts.containsKey(base)) {
+				baseCounts.put(base, 0);
+			}
+		}
+
+		// Count targets that fall within each candidate base
+		long bestBase = currentBase;
+		int bestCount = 0;
+		for (Map.Entry<Long, Integer> entry : baseCounts.entrySet()) {
+			long candidateBase = entry.getKey();
+			if (candidateBase == currentBase) continue; // skip current base
+
+			int count = 0;
+			for (long target : targets) {
+				if (target >= candidateBase && target < candidateBase + romSize) {
+					count++;
+				}
+			}
+			if (count > bestCount) {
+				bestCount = count;
+				bestBase = candidateBase;
+			}
+		}
+
+		// Also count how many targets fall in the current base range
+		int currentCount = 0;
+		for (long target : targets) {
+			if (target >= currentBase && target < currentBase + romSize) {
+				currentCount++;
+			}
+		}
+
+		// Confidence: fraction of out-of-range targets explained by the new base
+		int outOfRange = targets.size() - currentCount;
+		double confidence = outOfRange > 0 ? (double) bestCount / outOfRange : 0;
+
+		// Only report a different base if it's clearly better than the current one.
+		// Must have more hits than current AND be significantly better
+		boolean newHasMoreHits = bestCount > currentCount;
+		boolean newIsMuchBetter = bestCount > currentCount * 2;
+		boolean currentIsVeryWeak = currentCount < 5 && bestCount >= 5;
+
+		if (bestBase == currentBase || bestCount < 3 || !newHasMoreHits ||
+				(!newIsMuchBetter && !currentIsVeryWeak)) {
+			return new BaseAddressResult(currentBase, romSize, targets.size(),
+				currentCount, 0,
+				String.format("ROM base 0x%X appears correct (%d/%d references in range)",
+					currentBase, currentCount, targets.size()));
+		}
+
+		return new BaseAddressResult(bestBase, romSize, targets.size(),
+			bestCount, confidence,
+			String.format("ROM likely belongs at base 0x%X (%d/%d references point there, vs %d at current 0x%X)",
+				bestBase, bestCount, targets.size(), currentCount, currentBase));
+	}
+
+	/**
+	 * Common ROM base addresses for well-known CPU architectures.
+	 */
+	private static long[] getCommonBases(String processor, long romSize, long addrSpaceMax) {
+		if (processor.contains("6502") || processor.contains("65C02")) {
+			// 6502: ROMs at $8000, $C000, $E000, $F000, $F800
+			return new long[]{ 0x8000L, 0xC000L, 0xE000L, 0xF000L, 0xF800L };
+		} else if (processor.contains("z80") || processor.contains("Z80") ||
+				   processor.contains("8080") || processor.contains("8085")) {
+			// Z80: ROMs often at $0000, $4000, $8000, $C000
+			return new long[]{ 0x0000L, 0x4000L, 0x8000L, 0xC000L };
+		} else if (processor.contains("6809")) {
+			// 6809: ROMs at $8000, $C000, $E000, $F000
+			return new long[]{ 0x8000L, 0xC000L, 0xE000L, 0xF000L };
+		} else if (processor.contains("68") && !processor.contains("HC")) {
+			// 68000: ROMs usually at $000000 but some at $FC0000, $F80000
+			return new long[]{ 0x000000L, 0xFC0000L, 0xF80000L, 0xFE0000L };
+		} else if (processor.contains("ARM")) {
+			// ARM: typically $00000000, $08000000 (Flash), $00800000
+			return new long[]{ 0x00000000L, 0x08000000L, 0x00800000L };
+		} else if (processor.contains("SuperH") || processor.contains("SH")) {
+			// SH2: $00000000, $06000000, $20000000
+			return new long[]{ 0x00000000L, 0x06000000L, 0x20000000L };
+		} else if (processor.contains("TMS9900")) {
+			// TMS9900: ROMs at $0000, $4000, $6000
+			return new long[]{ 0x0000L, 0x4000L, 0x6000L };
+		}
+		return new long[]{};
+	}
+
 	/** Internal holder for a candidate platform. */
 	static class PlatformCandidate {
 		final String name;
