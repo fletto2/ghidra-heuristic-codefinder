@@ -914,6 +914,30 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			// Find the extension's data/platforms directory
 			File platformDir = findPlatformDir(program);
 
+			// --- ROM identification by SHA1 ---
+			monitor.setMessage("Identifying ROM by SHA1 hash...");
+			RomIdentifier romId = new RomIdentifier();
+			List<RomIdentifier.RomMatch> romMatches = romId.identify(program.getMemory());
+			if (!romMatches.isEmpty()) {
+				RomIdentifier.RomMatch best = romMatches.get(0);
+				String romMsg = String.format("ROM IDENTIFIED: %s (CPU: %s, match: %s)",
+					best.toString(), best.cpu, best.matchType);
+				Msg.info(this, romMsg);
+				log.appendMsg("Heuristic Code Finder: " + romMsg);
+
+				// Log all matches if multiple
+				if (romMatches.size() > 1) {
+					StringBuilder sb = new StringBuilder("All ROM matches:\n");
+					for (RomIdentifier.RomMatch m : romMatches) {
+						sb.append("  - ").append(m.toString()).append("\n");
+					}
+					Msg.info(this, sb.toString());
+				}
+			} else {
+				Msg.info(this, String.format("ROM SHA1 lookup: no match (%d entries in database)",
+					romId.getEntryCount()));
+			}
+
 			// --- Endianness check ---
 			monitor.setMessage("Checking ROM byte order...");
 			PlatformDetector.EndiannessResult endianness = PlatformDetector.detectEndianness(program, monitor);
