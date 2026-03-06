@@ -77,14 +77,14 @@ Download the latest zip from [Releases](../../releases) or use the one in `dist/
 With Gradle (standard Ghidra extension build):
 
 ```bash
-export GHIDRA_INSTALL_DIR=/path/to/ghidra_12.0.3_PUBLIC
+export GHIDRA_INSTALL_DIR=/path/to/ghidra
 gradle buildExtension
 ```
 
 Or without Gradle, using the included build script:
 
 ```bash
-./build.sh /path/to/ghidra_12.0.3_PUBLIC
+./build.sh /path/to/ghidra
 # optionally: ./build.sh /path/to/ghidra /path/to/java_home
 ```
 

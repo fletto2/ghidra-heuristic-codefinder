@@ -1,6 +1,6 @@
 #!/bin/bash
 # Build HeuristicCodeFinder Ghidra extension without Gradle.
-# Usage: ./build.sh /path/to/ghidra_12.0.3_PUBLIC [/path/to/java_home]
+# Usage: ./build.sh /path/to/ghidra [/path/to/java_home]
 #
 # Produces dist/ghidra_<ver>_HeuristicCodeFinder.zip
 
