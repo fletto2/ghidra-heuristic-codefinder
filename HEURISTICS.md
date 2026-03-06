@@ -878,22 +878,25 @@ by their algorithmic purpose using P-code operation distribution analysis.
 
 | Category | Detectors | Examples |
 |----------|-----------|---------|
-| Memory operations | 8 | memcpy, memset, memcmp, memmove, heap allocator, bitmap allocator, block mapping, DMA transfer |
+| Memory operations | 9 | memcpy, memset, memcmp, memmove, heap allocator, bitmap allocator, block mapping, DMA transfer, DMA chaining |
 | String operations | 7 | strlen, string compare, string copy, printf, sprintf, hex dump, number-to-string |
-| Math / arithmetic | 10 | multiply, divide, fixed-point, square root, trig lookup, dot product, abs value, clamp, coordinate transform, BCD |
-| Checksums / hashing | 6 | checksum, CRC polynomial, CRC table lookup, checksum validation, IP checksum, hash function |
-| Compression / encoding | 5 | decompression (generic), RLE decompress, LZ decompress, ADPCM decode, byte swap |
-| Graphics / display | 10 | sprite renderer, tile decoder, tilemap loader, scroll handler, screen fade, palette fade, palette cycle, line drawing, text renderer, image loader |
+| Math / arithmetic | 14 | multiply, divide, fixed-point, square root, trig lookup, dot product, abs value, clamp, coordinate transform, BCD, matrix multiply, FFT butterfly, PID controller, popcount |
+| Checksums / hashing | 7 | checksum, CRC polynomial, CRC table lookup, checksum validation, IP checksum, hash function, Hamming ECC |
+| Compression / encoding | 10 | decompression, RLE, LZ, ADPCM, byte swap, Huffman decode, base64 encode/decode, UTF-8 encode/decode |
+| Graphics / display | 14 | sprite renderer, tile decoder, tilemap loader, scroll handler, screen fade, palette fade, palette cycle, line drawing, text renderer, image loader, bitmap blit, flood fill, circle draw, polygon fill |
 | Game logic | 7 | collision detection, velocity physics, animation update, particle system, camera tracking, object spawn, score update |
 | Input / UI | 4 | controller input, menu navigation, debounce input, wildcard match |
-| System / hardware | 12 | boot init, interrupt handler, interrupt control, serial IO, memory test, watchdog feed, flash program, vblank wait, DMA queue, delay loop, self-test, device driver dispatch |
+| System / hardware | 18 | boot init, interrupt handler, interrupt control, serial IO, memory test, watchdog feed, flash program, vblank wait, DMA queue, delay loop, self-test, device driver dispatch, timer setup, PWM generation, CRT init, vector table setup, relocation, assert/panic |
 | OS / scheduling | 7 | task scheduler, semaphore, context save/restore, message passing, file operation, bytecode interpreter, stack interpreter |
 | Control flow | 5 | jump table dispatch, state machine, busy-wait loop, retry loop, error handler |
-| Data structures | 4 | table lookup, bitfield extraction, circular buffer, linked list traversal |
-| Algorithms | 5 | sort, RNG, encrypt/decrypt, command parser, parity compute |
-| Audio | 1 | sound driver |
+| Data structures | 8 | table lookup, bitfield extraction, circular buffer, linked list traversal, FIFO queue, priority queue, hash table, binary search |
+| Algorithms | 6 | sort, RNG, encrypt/decrypt, command parser, parity compute, Galois field multiply |
+| Audio | 2 | sound driver, MIDI handler |
+| Communication | 4 | I2C protocol, SPI protocol, Modbus RTU, serial IO |
 | Network | 2 | network protocol, SCSI command |
-| Object update | 1 | object update loop |
+| Filesystem | 2 | FAT filesystem, disk block I/O |
+| Float emulation | 2 | softfloat add, softfloat multiply |
+| Logging | 1 | severity-level logger |
 
 ### Hardware register labeling
 
@@ -909,7 +912,7 @@ LOAD/STORE operations targeting known hardware register addresses and creates:
 - **Tier 1 (direct P-code, zero per-ISA code)**: 23 (56%)
 - **Tier 2 (P-code pattern matching)**: 8 (20%)
 - **Tier 3 (platform metadata required)**: 10 (24%)
-- **Function pattern detectors**: 95 rule-based + 89 reference signatures
+- **Function pattern detectors**: 132 rule-based + 126 reference signatures
 - **Coverage with Tier 1 alone**: Sufficient for basic disassembly of any ISA
 - **Coverage with Tier 1+2**: High-quality function-level disassembly
 - **Coverage with Tier 1+2+3**: Production-quality platform-aware disassembly
