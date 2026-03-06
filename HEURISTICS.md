@@ -912,7 +912,7 @@ LOAD/STORE operations targeting known hardware register addresses and creates:
 - **Tier 1 (direct P-code, zero per-ISA code)**: 23 (56%)
 - **Tier 2 (P-code pattern matching)**: 8 (20%)
 - **Tier 3 (platform metadata required)**: 10 (24%)
-- **Function pattern detectors**: 169 rule-based + 163 reference signatures
+- **Function pattern detectors**: 203 rule-based + 197 reference signatures
 - **Coverage with Tier 1 alone**: Sufficient for basic disassembly of any ISA
 - **Coverage with Tier 1+2**: High-quality function-level disassembly
 - **Coverage with Tier 1+2+3**: Production-quality platform-aware disassembly

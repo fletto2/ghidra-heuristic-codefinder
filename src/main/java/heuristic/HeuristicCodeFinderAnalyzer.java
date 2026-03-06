@@ -24,7 +24,7 @@ import ghidra.util.task.TaskMonitor;
 /**
  * Cross-architecture heuristic code/data block identification.
  *
- * Implements 41 code/data heuristics plus 169 function pattern detectors,
+ * Implements 41 code/data heuristics plus 203 function pattern detectors,
  * proven across 68000, Z80, and 6502 disassemblers, abstracted to work on
  * any SLEIGH-supported ISA via P-code analysis.
  *

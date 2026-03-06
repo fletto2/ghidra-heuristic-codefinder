@@ -52,14 +52,14 @@ When analyzing a ROM, the extension automatically:
 7. **Gap filling** — Close small gaps between adjacent code blocks
 8. **Overlap resolution** — Ghidra's Listing handles this implicitly
 9. **Confidence assignment** — Tag blocks by discovery method (100=vector, 99=call, ..., 78=boundary)
-10. **Function classification** — 169 rule-based detectors + 163 feature-vector signatures classify functions by algorithmic purpose (memcpy, checksum, decompression, sprite renderer, I2C, FFT, FAT, TCP, MIDI, HMAC, pathfinding, etc.) and label hardware register accesses
+10. **Function classification** — 203 rule-based detectors + 197 feature-vector signatures classify functions by algorithmic purpose (memcpy, checksum, decompression, sprite renderer, I2C, FFT, FAT, TCP, MIDI, HMAC, pathfinding, etc.) and label hardware register accesses
 
 ### Heuristic tiers
 
 - **Tier 1** (23 heuristics): Direct P-code properties — block termination, target collection, entropy, density, decode ratio
 - **Tier 2** (8 heuristics): P-code pattern matching — prologue/epilogue detection, tail calls, interrupt handlers, callee-save registers
 - **Tier 3** (10 heuristics): Platform metadata — vector tables, memory map validation, hardware register patterns
-- **Pass 10** (169 detectors + 163 signatures): Function pattern classification via P-code operation distribution analysis
+- **Pass 10** (203 detectors + 197 signatures): Function pattern classification via P-code operation distribution analysis
 
 ## Install
 

@@ -266,6 +266,40 @@ public class FunctionPatternDetector {
 		tryDetect(results, detectGarbageCollectMark(pcode, profile));
 		tryDetect(results, detectFramebufferSwap(pcode, profile));
 		tryDetect(results, detectVramClear(pcode, profile));
+		tryDetect(results, detectEepromAccess(pcode, profile));
+		tryDetect(results, detectAdcRead(pcode, profile));
+		tryDetect(results, detectDacOutput(pcode, profile));
+		tryDetect(results, detectDipSwitchRead(pcode, profile));
+		tryDetect(results, detectCoinHandler(pcode, profile));
+		tryDetect(results, detectOsdOverlay(pcode, profile));
+		tryDetect(results, detectCharGenLookup(pcode, profile));
+		tryDetect(results, detectNandFlashRead(pcode, profile));
+		tryDetect(results, detectNewtonRaphson(pcode, profile));
+		tryDetect(results, detectEuclideanDistance(pcode, profile));
+		tryDetect(results, detectAtan2Approx(pcode, profile));
+		tryDetect(results, detectSigmoidLookup(pcode, profile));
+		tryDetect(results, detectCanBusFrame(pcode, profile));
+		tryDetect(results, detectOneWireProtocol(pcode, profile));
+		tryDetect(results, detectManchesterCodec(pcode, profile));
+		tryDetect(results, detectHdlcFraming(pcode, profile));
+		tryDetect(results, detectIdleWfi(pcode, profile));
+		tryDetect(results, detectIrqPriorityDispatch(pcode, profile));
+		tryDetect(results, detectExceptionFrameBuild(pcode, profile));
+		tryDetect(results, detectPostMemoryTest(pcode, profile));
+		tryDetect(results, detectAiDecisionTree(pcode, profile));
+		tryDetect(results, detectContinueCountdown(pcode, profile));
+		tryDetect(results, detectInterlaceToggle(pcode, profile));
+		tryDetect(results, detectWearLeveling(pcode, profile));
+		tryDetect(results, detectBadBlockScan(pcode, profile));
+		tryDetect(results, detectRandomLevelGen(pcode, profile));
+		tryDetect(results, detectInputRecording(pcode, profile));
+		tryDetect(results, detectThermalPrinter(pcode, profile));
+		tryDetect(results, detectWeightTare(pcode, profile));
+		tryDetect(results, detectFuelInjection(pcode, profile));
+		tryDetect(results, detectBarcodeDecode(pcode, profile));
+		tryDetect(results, detectJtagBoundaryScan(pcode, profile));
+		tryDetect(results, detectBusArbitrationTest(pcode, profile));
+		tryDetect(results, detectMpuRegionConfig(pcode, profile));
 
 		// Phase 2: Feature-vector similarity (broader coverage via P-code
 		// operation distribution fingerprinting — catches patterns that
@@ -5318,6 +5352,557 @@ public class FunctionPatternDetector {
 			Math.min(conf, 0.75), "VRAM clear/fill loop");
 	}
 
+	// ---- Round 8 detectors ----
+
+	private FunctionType detectEepromAccess(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// EEPROM: bit-bang or I2C, address+data writes, polling for ready
+		if (p.ioRegionAccesses >= 3) conf += 0.20;
+		if (p.hasLoop) conf += 0.15; // poll ready or bit-bang
+		if (p.shifts >= 1) conf += 0.10; // address/data shifting
+		if (p.ands >= 1) conf += 0.10; // status bit mask
+		if (p.stores >= 3) conf += 0.10;
+		if (p.loads >= 3) conf += 0.10;
+		if (p.cbranches >= 2) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("eeprom_access", "eeprom_read_write",
+			Math.min(conf, 0.75), "EEPROM/NVRAM read/write routine");
+	}
+
+	private FunctionType detectAdcRead(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// ADC: write start-conversion, poll ready bit, read result
+		if (p.ioRegionAccesses >= 2) conf += 0.25;
+		if (p.hasLoop) conf += 0.15; // poll conversion complete
+		if (p.ands >= 1) conf += 0.10; // mask ready bit or result bits
+		if (p.loads >= 2) conf += 0.10;
+		if (p.stores >= 1) conf += 0.10;
+		if (p.totalOps < 40) conf += 0.10; // ADC reads are short
+		if (conf < 0.55) return null;
+		return new FunctionType("adc_read", "adc_conversion",
+			Math.min(conf, 0.75), "ADC conversion read");
+	}
+
+	private FunctionType detectDacOutput(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 10) return null;
+		double conf = 0;
+		// DAC: scale value, write to DAC register
+		if (p.ioRegionAccesses >= 1) conf += 0.25;
+		if (p.stores >= 1) conf += 0.10;
+		if (p.shifts >= 1 || p.mults >= 1) conf += 0.15; // scale
+		if (p.ands >= 1) conf += 0.10; // mask to DAC resolution
+		if (p.totalOps < 25) conf += 0.15; // typically very short
+		if (p.cbranches <= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("dac_output", "dac_write",
+			Math.min(conf, 0.70), "DAC output write");
+	}
+
+	private FunctionType detectDipSwitchRead(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 10) return null;
+		double conf = 0;
+		// DIP switch: single IO read, extract individual bits
+		if (p.ioRegionAccesses >= 1) conf += 0.20;
+		if (p.ands >= 2) conf += 0.20; // multiple bit extractions
+		if (p.loads >= 1) conf += 0.10;
+		if (p.shifts >= 1) conf += 0.10; // shift bits to position
+		if (p.stores >= 2) conf += 0.10; // store individual flags
+		if (p.totalOps < 30) conf += 0.10;
+		if (p.calls == 0) conf += 0.10; // no calls, just bit extraction
+		if (conf < 0.55) return null;
+		return new FunctionType("dip_switch_read", "config_port_read",
+			Math.min(conf, 0.75), "DIP switch / config port reader");
+	}
+
+	private FunctionType detectCoinHandler(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Coin: edge detect on input, increment credit counter, BCD or saturation
+		if (p.ioRegionAccesses >= 1) conf += 0.15;
+		if (p.adds >= 1) conf += 0.10; // increment counter
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // max check
+		if (p.cbranches >= 2) conf += 0.10;
+		if (p.xors >= 1) conf += 0.10; // edge detection (XOR with previous)
+		if (p.ands >= 1) conf += 0.10; // isolate coin bit
+		if (p.loads >= 2 && p.stores >= 2) conf += 0.10;
+		// BCD characteristic
+		boolean has0x99 = p.constants.contains(0x99L);
+		boolean has0x09 = p.constants.contains(0x09L) || p.constants.contains(9L);
+		if (has0x99 || has0x09) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("coin_handler", "credit_coin_insert",
+			Math.min(conf, 0.75), "Coin/credit insertion handler");
+	}
+
+	private FunctionType detectOsdOverlay(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// OSD: read background, conditionally write overlay pixel
+		if (p.hasNestedLoop) conf += 0.20; // row x col
+		if (p.loads >= 4) conf += 0.10; // read overlay + background
+		if (p.stores >= 2) conf += 0.10;
+		if (p.cbranches >= 2) conf += 0.10; // conditional pixel write
+		if (p.constZeroCompares >= 1) conf += 0.10; // skip transparent
+		if (p.adds >= 2) conf += 0.10; // pointer advancement
+		if (p.ands >= 1) conf += 0.05; // transparency mask
+		if (conf < 0.55) return null;
+		return new FunctionType("osd_overlay", "onscreen_display_blit",
+			Math.min(conf, 0.80), "OSD/overlay renderer");
+	}
+
+	private FunctionType detectCharGenLookup(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Char gen: char code * glyph_height, add ROM base, load scanlines
+		if (p.mults >= 1 || p.lefts >= 1) conf += 0.20; // char * height
+		if (p.adds >= 1) conf += 0.10; // add base address
+		if (p.loads >= 2) conf += 0.15; // load glyph data
+		if (p.hasLoop) conf += 0.10; // scanline loop
+		if (p.shifts >= 1) conf += 0.10; // extract bits from glyph
+		if (p.stores >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("chargen_lookup", "character_generator",
+			Math.min(conf, 0.75), "Character generator ROM lookup");
+	}
+
+	private FunctionType detectNandFlashRead(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// NAND: write command+address to controller, poll ready, bulk read
+		if (p.ioRegionAccesses >= 4) conf += 0.25;
+		if (p.consecutiveStores >= 3) conf += 0.15; // command + address bytes
+		if (p.hasLoop) conf += 0.15; // data read loop or busy poll
+		if (p.loads >= 4) conf += 0.10;
+		if (p.stores >= 4) conf += 0.10;
+		// NAND command constants: 0x00 (read), 0x30 (confirm), 0xFF (reset)
+		boolean has0x30 = p.constants.contains(0x30L);
+		boolean has0xFF = p.constants.contains(0xFFL);
+		if (has0x30 || has0xFF) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("nand_flash", "nand_page_read",
+			Math.min(conf, 0.80), "NAND flash page read");
+	}
+
+	private FunctionType detectNewtonRaphson(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Newton-Raphson: x_new = (x + N/x) / 2, iterate until convergence
+		if (p.hasLoop) conf += 0.15;
+		if (p.divs >= 1) conf += 0.20; // N/x
+		if (p.adds >= 1) conf += 0.10; // x + N/x
+		if (p.rights >= 1) conf += 0.15; // divide by 2
+		if (p.subs >= 1) conf += 0.10; // convergence check: |x_new - x_old|
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // threshold compare
+		if (p.loads >= 2 && p.stores >= 1) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("newton_raphson", "iterative_root",
+			Math.min(conf, 0.80), "Newton-Raphson iterative solver");
+	}
+
+	private FunctionType detectEuclideanDistance(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Distance: dx*dx + dy*dy, optional sqrt
+		if (p.subs >= 2) conf += 0.20; // dx = x1-x2, dy = y1-y2
+		if (p.mults >= 2) conf += 0.25; // dx*dx, dy*dy
+		if (p.adds >= 1) conf += 0.10; // sum of squares
+		if (p.calls >= 1) conf += 0.10; // call sqrt
+		if (p.loads >= 4) conf += 0.10; // load x1,y1,x2,y2
+		if (conf < 0.55) return null;
+		return new FunctionType("euclidean_distance", "distance_calc",
+			Math.min(conf, 0.80), "Euclidean distance calculation");
+	}
+
+	private FunctionType detectAtan2Approx(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// atan2: quadrant detection, ratio, polynomial or table lookup
+		if (p.divs >= 1) conf += 0.15; // dy/dx ratio
+		if (p.cbranches >= 3) conf += 0.15; // quadrant selection (sign checks)
+		if (p.mults >= 2) conf += 0.15; // polynomial terms
+		if (p.adds >= 2) conf += 0.10;
+		if (p.subs >= 1) conf += 0.10; // negate for quadrant
+		if (p.sLesses >= 1) conf += 0.10; // sign check
+		if (p.loads >= 2) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("atan2_approx", "angle_from_deltas",
+			Math.min(conf, 0.80), "atan2 angle approximation");
+	}
+
+	private FunctionType detectSigmoidLookup(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Sigmoid: clamp input, index table, interpolate
+		if (p.loads >= 2) conf += 0.10;
+		if (p.rights >= 1) conf += 0.15; // integer part for index
+		if (p.ands >= 1) conf += 0.10; // fractional part mask
+		if (p.mults >= 1) conf += 0.15; // interpolation
+		if (p.adds >= 1) conf += 0.10;
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // clamp bounds
+		if (p.cbranches >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("sigmoid_lookup", "activation_function",
+			Math.min(conf, 0.75), "Sigmoid/activation function lookup");
+	}
+
+	private FunctionType detectCanBusFrame(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// CAN: pack frame (ID+DLC+data), write to controller, check arbitration
+		if (p.ioRegionAccesses >= 3) conf += 0.20;
+		if (p.consecutiveStores >= 3) conf += 0.15; // write frame fields
+		if (p.shifts >= 1) conf += 0.10; // pack ID bits
+		if (p.ands >= 1) conf += 0.10;
+		if (p.hasLoop) conf += 0.10; // poll transmit complete
+		if (p.cbranches >= 2) conf += 0.10; // arbitration check
+		if (conf < 0.55) return null;
+		return new FunctionType("can_bus", "can_frame_send",
+			Math.min(conf, 0.75), "CAN bus frame transmit");
+	}
+
+	private FunctionType detectOneWireProtocol(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// 1-Wire: precise timing, single IO pin toggle, CRC-8
+		if (p.ioRegionAccesses >= 3) conf += 0.20;
+		if (p.hasLoop) conf += 0.10;
+		if (p.shifts >= 2) conf += 0.15; // bit assembly
+		if (p.ands >= 1) conf += 0.10;
+		if (p.xors >= 1) conf += 0.10; // CRC-8
+		if (p.calls >= 1) conf += 0.05; // delay routine
+		if (p.stores >= 3) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("onewire_protocol", "onewire_bit_bang",
+			Math.min(conf, 0.75), "1-Wire (Dallas) protocol handler");
+	}
+
+	private FunctionType detectManchesterCodec(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Manchester: each bit produces 2 transitions, XOR with clock
+		if (p.hasLoop) conf += 0.15;
+		if (p.xors >= 2) conf += 0.20; // bit XOR for encoding
+		if (p.shifts >= 2) conf += 0.15; // shift in/out bits
+		if (p.ands >= 1) conf += 0.10;
+		if (p.ors >= 1) conf += 0.10; // assemble decoded bits
+		if (p.stores >= 1) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("manchester_codec", "manchester_encode_decode",
+			Math.min(conf, 0.75), "Manchester encoding/decoding");
+	}
+
+	private FunctionType detectHdlcFraming(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// HDLC: flag bytes 0x7E, escape 0x7D, CRC-CCITT
+		boolean has0x7E = p.constants.contains(0x7EL); // HDLC flag
+		boolean has0x7D = p.constants.contains(0x7DL); // HDLC escape
+		if (has0x7E) conf += 0.25;
+		if (has0x7D) conf += 0.20;
+		if (p.xors >= 1) conf += 0.10; // CRC or escape XOR
+		if (p.hasLoop) conf += 0.10;
+		if (p.cbranches >= 2) conf += 0.10; // flag/escape checks
+		if (p.loads >= 2 && p.stores >= 2) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("hdlc_framing", "hdlc_frame_handler",
+			Math.min(conf, 0.80), "HDLC frame framing/deframing");
+	}
+
+	private FunctionType detectIdleWfi(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 5) return null;
+		double conf = 0;
+		// Idle/WFI: very short, possibly a single halt instruction + branch back
+		if (p.callOtherCount >= 1) conf += 0.25; // STOP/HALT/WFI instruction
+		if (p.totalOps <= 10) conf += 0.20; // extremely short
+		if (p.hasLoop) conf += 0.10;
+		if (p.calls == 0) conf += 0.10; // no calls
+		if (p.arithmetic == 0) conf += 0.10; // no computation
+		if (p.stores <= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("idle_wfi", "idle_loop",
+			Math.min(conf, 0.70), "Idle loop / wait-for-interrupt");
+	}
+
+	private FunctionType detectIrqPriorityDispatch(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// IRQ dispatch: read IRQ status, find highest priority, index vector table
+		if (p.ioRegionAccesses >= 1) conf += 0.15;
+		if (p.shifts >= 1) conf += 0.10; // extract vector number
+		if (p.ands >= 1) conf += 0.10; // mask IRQ bits
+		if (p.mults >= 1 || p.lefts >= 1) conf += 0.10; // vector * 4
+		if (p.loads >= 2) conf += 0.10;
+		if (p.branchInds >= 1 || p.callInds >= 1) conf += 0.20; // indirect jump/call to handler
+		if (p.adds >= 1) conf += 0.05; // base + offset
+		if (conf < 0.55) return null;
+		return new FunctionType("irq_dispatch", "interrupt_priority_dispatch",
+			Math.min(conf, 0.80), "Interrupt priority dispatch");
+	}
+
+	private FunctionType detectExceptionFrameBuild(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Exception frame: save multiple registers to stack
+		if (p.consecutiveStores >= 5) conf += 0.30; // save register set
+		if (p.stores >= 6) conf += 0.15;
+		if (p.loads <= 2) conf += 0.10; // mostly stores
+		if (p.arithmetic < p.totalOps / 4) conf += 0.10; // minimal math
+		if (p.subs >= 1 || p.adds >= 1) conf += 0.05; // SP adjustment
+		if (p.calls >= 1) conf += 0.10; // call actual handler
+		if (conf < 0.55) return null;
+		return new FunctionType("exception_frame", "exception_frame_builder",
+			Math.min(conf, 0.80), "Exception/trap frame builder");
+	}
+
+	private FunctionType detectPostMemoryTest(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// POST: write pattern, read back, compare, error if mismatch
+		if (p.hasNestedLoop || (p.hasLoop && p.loopCount >= 2)) conf += 0.20;
+		if (p.loadStoreAlternations >= 3) conf += 0.15; // write-then-read
+		if (p.equals >= 2) conf += 0.15; // verify pattern match
+		if (p.cbranches >= 2) conf += 0.10;
+		// Test pattern constants: 0xAAAA, 0x5555, 0xFFFF
+		boolean hasAA = p.constants.contains(0xAAAAL) || p.constants.contains(0xAAAAAAAAL);
+		boolean has55 = p.constants.contains(0x5555L) || p.constants.contains(0x55555555L);
+		if (hasAA || has55) conf += 0.20;
+		if (conf < 0.55) return null;
+		return new FunctionType("post_memory", "post_ram_test",
+			Math.min(conf, 0.80), "POST memory pattern test");
+	}
+
+	private FunctionType detectAiDecisionTree(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// AI: many comparisons against thresholds, cascading branches
+		if (p.cbranch_eq_runs >= 4) conf += 0.15;
+		if (p.sLesses >= 3 || p.lesses >= 3) conf += 0.20; // threshold checks
+		if (p.loads >= 5) conf += 0.10; // read game state variables
+		if (p.cbranches >= 5) conf += 0.15; // many decision points
+		if (p.calls >= 2) conf += 0.10; // call behavior handlers
+		if (p.subs >= 2) conf += 0.10; // distance/difference calculations
+		if (conf < 0.55) return null;
+		return new FunctionType("ai_decision", "ai_behavior_selector",
+			Math.min(conf, 0.80), "AI decision tree / behavior selector");
+	}
+
+	private FunctionType detectContinueCountdown(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Continue countdown: decrement timer, check zero, trigger game over
+		if (p.subs >= 1) conf += 0.15; // decrement
+		if (p.constZeroCompares >= 1) conf += 0.20; // check if timer expired
+		if (p.cbranches >= 1) conf += 0.10;
+		if (p.loads >= 1 && p.stores >= 1) conf += 0.10;
+		if (p.calls >= 1) conf += 0.10; // call game-over or display update
+		if (p.totalOps < 30) conf += 0.10; // typically small
+		// Often has a constant like 9 or 10 (seconds)
+		boolean has10 = p.constants.contains(10L);
+		boolean has9 = p.constants.contains(9L);
+		if (has10 || has9) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("continue_countdown", "gameover_timer",
+			Math.min(conf, 0.70), "Continue countdown / game-over timer");
+	}
+
+	private FunctionType detectInterlaceToggle(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 10) return null;
+		double conf = 0;
+		// Interlace: toggle field bit, update display base address
+		if (p.xors >= 1) conf += 0.20; // toggle field flag
+		if (p.ioRegionAccesses >= 1) conf += 0.20;
+		if (p.stores >= 1) conf += 0.10;
+		if (p.ands >= 1) conf += 0.10; // mask field bit
+		if (p.adds >= 1) conf += 0.10; // offset for odd/even field
+		if (p.totalOps < 20) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("interlace_toggle", "field_toggle",
+			Math.min(conf, 0.70), "Interlace field toggle");
+	}
+
+	private FunctionType detectWearLeveling(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// Wear leveling: scan erase counts, find minimum, remap
+		if (p.hasLoop) conf += 0.15;
+		if (p.sLesses >= 2 || p.lesses >= 2) conf += 0.15; // find minimum count
+		if (p.loads >= 4) conf += 0.10; // read erase count array
+		if (p.stores >= 2) conf += 0.10; // update mapping
+		if (p.adds >= 1) conf += 0.10; // increment erase count
+		if (p.cbranches >= 2) conf += 0.10;
+		if (p.calls >= 1) conf += 0.10; // call erase or write
+		if (conf < 0.55) return null;
+		return new FunctionType("wear_leveling", "flash_wear_level",
+			Math.min(conf, 0.80), "Flash wear leveling / block rotation");
+	}
+
+	private FunctionType detectBadBlockScan(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// Bad block: iterate blocks, read marker byte, check 0xFF, update table
+		if (p.hasLoop) conf += 0.15;
+		if (p.loads >= 3) conf += 0.10;
+		boolean has0xFF = p.constants.contains(0xFFL);
+		if (has0xFF) conf += 0.15; // good block marker
+		if (p.equals >= 1 || p.notEquals >= 1) conf += 0.10;
+		if (p.cbranches >= 2) conf += 0.10;
+		if (p.ors >= 1 || p.ands >= 1) conf += 0.10; // set bit in bitmap
+		if (p.stores >= 2) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("bad_block_scan", "nand_bad_block_table",
+			Math.min(conf, 0.75), "NAND bad block table scan");
+	}
+
+	private FunctionType detectRandomLevelGen(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// Random level: RNG call, modulo for grid bounds, store to level array
+		if (p.hasLoop || p.hasNestedLoop) conf += 0.15;
+		if (p.calls >= 2) conf += 0.10; // RNG + placement
+		if (p.rems >= 1 || p.powerOf2Masks >= 1) conf += 0.15; // constrain to bounds
+		if (p.stores >= 4) conf += 0.10; // write to level array
+		if (p.loads >= 3) conf += 0.10;
+		if (p.adds >= 2) conf += 0.10; // array indexing
+		if (p.cbranches >= 2) conf += 0.10; // bounds/collision checks
+		if (conf < 0.55) return null;
+		return new FunctionType("random_level_gen", "procedural_level",
+			Math.min(conf, 0.75), "Random/procedural level generator");
+	}
+
+	private FunctionType detectInputRecording(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Input recording: read controller, store to ring buffer, advance index
+		if (p.ioRegionAccesses >= 1) conf += 0.15;
+		if (p.loads >= 2) conf += 0.10;
+		if (p.stores >= 2) conf += 0.10;
+		if (p.adds >= 1) conf += 0.10; // advance buffer index
+		if (p.rems >= 1 || p.powerOf2Masks >= 1) conf += 0.20; // ring buffer wrap
+		if (p.hasLoop) conf += 0.10;
+		if (p.totalOps < 40) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("input_recording", "input_record_buffer",
+			Math.min(conf, 0.75), "Input recording to ring buffer");
+	}
+
+	private FunctionType detectThermalPrinter(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Thermal printer: command bytes interleaved with text data
+		if (p.ioRegionAccesses >= 2) conf += 0.20;
+		if (p.hasLoop) conf += 0.10;
+		if (p.constAsciiCompares >= 1) conf += 0.10;
+		boolean has0x1B = p.constants.contains(0x1BL); // ESC command prefix
+		boolean has0x0A = p.constants.contains(0x0AL); // LF
+		if (has0x1B) conf += 0.15;
+		if (has0x0A) conf += 0.10;
+		if (p.loads >= 3) conf += 0.10;
+		if (p.stores >= 2) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("thermal_printer", "printer_command",
+			Math.min(conf, 0.75), "Thermal/receipt printer command handler");
+	}
+
+	private FunctionType detectWeightTare(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Tare: average N ADC readings, store as offset
+		if (p.hasLoop) conf += 0.15;
+		if (p.adds >= 2) conf += 0.15; // accumulate readings
+		if (p.divs >= 1 || p.rights >= 1) conf += 0.20; // divide for average
+		if (p.ioRegionAccesses >= 1) conf += 0.10; // ADC read
+		if (p.loads >= 2) conf += 0.10;
+		if (p.stores >= 1) conf += 0.10; // store tare offset
+		if (conf < 0.55) return null;
+		return new FunctionType("weight_tare", "scale_zero_calibrate",
+			Math.min(conf, 0.75), "Weight scale tare / zero calibration");
+	}
+
+	private FunctionType detectFuelInjection(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Fuel injection: read sensors, multiply/scale, clamp to pulse range
+		if (p.ioRegionAccesses >= 2) conf += 0.15;
+		if (p.mults >= 2) conf += 0.15; // scaling
+		if (p.divs >= 1) conf += 0.10;
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // clamp
+		if (p.loads >= 3) conf += 0.10; // sensor + calibration values
+		if (p.stores >= 2) conf += 0.10; // output to PWM/timer
+		if (p.cbranches >= 2) conf += 0.10; // min/max bounds
+		if (conf < 0.55) return null;
+		return new FunctionType("fuel_injection", "injection_timing",
+			Math.min(conf, 0.75), "Fuel injection timing computation");
+	}
+
+	private FunctionType detectBarcodeDecode(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// Barcode: read bitstream, group into characters, table lookup, checksum
+		if (p.hasLoop) conf += 0.10;
+		if (p.loads >= 4) conf += 0.10;
+		if (p.shifts >= 2) conf += 0.10;
+		if (p.ands >= 2) conf += 0.10;
+		if (p.adds >= 2) conf += 0.10; // accumulate checksum
+		if (p.rems >= 1) conf += 0.10; // modulo for check digit
+		if (p.cbranches >= 3) conf += 0.10; // validate characters
+		// Barcode digit count constants
+		boolean has12 = p.constants.contains(12L);
+		boolean has13 = p.constants.contains(13L);
+		if (has12 || has13) conf += 0.10; // EAN-12 or EAN-13
+		if (conf < 0.55) return null;
+		return new FunctionType("barcode_decode", "barcode_scanner",
+			Math.min(conf, 0.75), "Barcode scanner decode");
+	}
+
+	private FunctionType detectJtagBoundaryScan(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// JTAG: TDI/TDO/TMS/TCK bit-bang, shift register loop
+		if (p.ioRegionAccesses >= 3) conf += 0.20;
+		if (p.hasLoop) conf += 0.15;
+		if (p.shifts >= 2) conf += 0.15; // shift in/out
+		if (p.ands >= 2) conf += 0.10;
+		if (p.ors >= 1) conf += 0.10; // assemble TDO
+		if (p.stores >= 3) conf += 0.10; // toggle TCK, write TDI/TMS
+		if (conf < 0.55) return null;
+		return new FunctionType("jtag_boundary", "jtag_scan_chain",
+			Math.min(conf, 0.75), "JTAG boundary scan chain");
+	}
+
+	private FunctionType detectBusArbitrationTest(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Bus test: attempt access to unmapped address, catch timeout
+		if (p.loads >= 1) conf += 0.10;
+		if (p.stores >= 2) conf += 0.10; // set exception handler + probe
+		if (p.cbranches >= 1) conf += 0.10;
+		if (p.hasTrapOp || p.callOtherCount >= 1) conf += 0.15;
+		if (p.constZeroCompares >= 1) conf += 0.10;
+		if (p.ands >= 1) conf += 0.10; // flag check
+		if (p.totalOps < 35) conf += 0.10;
+		if (p.ioRegionAccesses >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("bus_test", "bus_probe_timeout",
+			Math.min(conf, 0.75), "Bus probe / timeout detection test");
+	}
+
+	private FunctionType detectMpuRegionConfig(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// MPU region: write base, size, permissions to MPU registers
+		if (p.ioRegionAccesses >= 3) conf += 0.25;
+		if (p.consecutiveStores >= 3) conf += 0.20; // base + size + perms
+		if (p.ors >= 1 || p.ands >= 1) conf += 0.10; // permission bit assembly
+		if (p.stores >= 3) conf += 0.10;
+		if (p.totalOps < 30) conf += 0.10;
+		if (p.loads <= 2) conf += 0.10; // mostly writes
+		if (conf < 0.55) return null;
+		return new FunctionType("mpu_config", "mpu_region_setup",
+			Math.min(conf, 0.75), "MPU/MMU region configuration");
+	}
+
 	// ================================================================
 	// Feature-vector similarity classifier
 	// ================================================================
@@ -6612,5 +7197,243 @@ public class FunctionPatternDetector {
 			new double[]{0.06,0.22,0.06,0.02,0.02,0.06,0.08,0.02,
 				0.06,0.02, 0.20,0.02,0.15,0.06,0.06,
 				0.04,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.10,0.40}),
+
+		// EEPROM: IO-heavy, bit-bang or poll, shift for address/data
+		new ReferenceSignature("eeprom", "eeprom_access",
+			"EEPROM/NVRAM read/write",
+			new double[]{0.16,0.16,0.06,0.06,0.06,0.08,0.10,0.04,
+				0.06,0.02, 0.25,0.04,0.50,0.08,0.10,
+				0.00,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.18,0.04}),
+
+		// ADC: IO poll, mask result bits
+		new ReferenceSignature("adc", "adc_read",
+			"ADC conversion read",
+			new double[]{0.18,0.08,0.04,0.06,0.02,0.10,0.12,0.04,
+				0.06,0.02, 0.20,0.04,0.40,0.08,0.08,
+				0.00,0.00,0.00,0.00,0.00,0.04,0.00,0.00,0.18,0.00}),
+
+		// DAC: scale + IO write, very short
+		new ReferenceSignature("dac", "dac_output",
+			"DAC output write",
+			new double[]{0.08,0.16,0.06,0.06,0.04,0.04,0.06,0.02,
+				0.06,0.02, 0.06,0.02,0.25,0.04,0.08,
+				0.00,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.06,0.00}),
+
+		// DIP switch: single IO read, multiple AND extractions
+		new ReferenceSignature("dipswitch", "dip_switch_read",
+			"DIP switch configuration read",
+			new double[]{0.14,0.10,0.04,0.10,0.04,0.06,0.08,0.02,
+				0.06,0.02, 0.06,0.02,0.55,0.06,0.10,
+				0.00,0.00,0.00,0.00,0.00,0.04,0.00,0.00,0.08,0.04}),
+
+		// Coin handler: edge detect, increment, BCD/saturation
+		new ReferenceSignature("coin", "coin_handler",
+			"Coin/credit insertion handler",
+			new double[]{0.14,0.12,0.08,0.06,0.02,0.12,0.12,0.04,
+				0.06,0.02, 0.15,0.04,0.55,0.10,0.12,
+				0.00,0.04,0.04,0.00,0.00,0.06,0.00,0.00,0.18,0.04}),
+
+		// OSD overlay: conditional pixel blit, nested loop
+		new ReferenceSignature("osd", "osd_overlay",
+			"On-screen display overlay",
+			new double[]{0.18,0.14,0.06,0.04,0.02,0.10,0.10,0.04,
+				0.06,0.02, 0.40,0.04,0.55,0.10,0.10,
+				0.06,0.04,0.00,0.00,0.00,0.06,0.00,0.02,0.18,0.04}),
+
+		// Character generator: char*height, load glyph scanlines
+		new ReferenceSignature("chargen", "chargen_lookup",
+			"Character generator ROM lookup",
+			new double[]{0.18,0.10,0.08,0.04,0.06,0.06,0.08,0.04,
+				0.06,0.02, 0.20,0.04,0.50,0.06,0.10,
+				0.04,0.06,0.00,0.00,0.00,0.06,0.00,0.02,0.14,0.04}),
+
+		// NAND flash: command+address writes, poll, bulk read
+		new ReferenceSignature("nand", "nand_flash_read",
+			"NAND flash page read",
+			new double[]{0.16,0.16,0.06,0.04,0.02,0.08,0.10,0.04,
+				0.06,0.02, 0.25,0.04,0.50,0.08,0.12,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.02,0.18,0.20}),
+
+		// Newton-Raphson: divide + add + shift, convergence loop
+		new ReferenceSignature("newton", "newton_raphson",
+			"Newton-Raphson iterative solver",
+			new double[]{0.10,0.06,0.14,0.04,0.06,0.08,0.10,0.04,
+				0.06,0.02, 0.25,0.04,0.40,0.08,0.08,
+				0.00,0.06,0.00,0.00,0.04,0.04,0.00,0.00,0.15,0.00}),
+
+		// Euclidean distance: subtract, multiply, add, sqrt
+		new ReferenceSignature("euclid", "euclidean_distance",
+			"Euclidean distance calculation",
+			new double[]{0.12,0.06,0.18,0.04,0.02,0.06,0.08,0.06,
+				0.06,0.02, 0.08,0.06,0.40,0.06,0.08,
+				0.00,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.10,0.00}),
+
+		// atan2: quadrant dispatch, divide, polynomial
+		new ReferenceSignature("atan2", "atan2_approx",
+			"atan2 angle approximation",
+			new double[]{0.10,0.06,0.16,0.04,0.04,0.14,0.12,0.06,
+				0.06,0.02, 0.15,0.06,0.40,0.10,0.12,
+				0.00,0.04,0.00,0.00,0.04,0.04,0.00,0.00,0.14,0.00}),
+
+		// Sigmoid: clamp, table index, interpolation
+		new ReferenceSignature("sigmoid", "sigmoid_lookup",
+			"Sigmoid/activation function",
+			new double[]{0.14,0.06,0.10,0.06,0.06,0.10,0.10,0.04,
+				0.06,0.02, 0.10,0.04,0.40,0.08,0.12,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.12,0.00}),
+
+		// CAN bus: frame pack, IO writes, arbitration check
+		new ReferenceSignature("can", "can_bus_frame",
+			"CAN bus frame transmit",
+			new double[]{0.12,0.18,0.06,0.06,0.04,0.08,0.10,0.04,
+				0.06,0.02, 0.20,0.04,0.40,0.08,0.12,
+				0.00,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.16,0.20}),
+
+		// 1-Wire: IO pin toggle, timing, CRC-8
+		new ReferenceSignature("onewire", "onewire_protocol",
+			"1-Wire protocol handler",
+			new double[]{0.14,0.16,0.06,0.06,0.06,0.08,0.10,0.06,
+				0.06,0.02, 0.25,0.06,0.45,0.08,0.10,
+				0.00,0.04,0.04,0.00,0.00,0.06,0.00,0.00,0.16,0.04}),
+
+		// Manchester: XOR encode, shift in/out
+		new ReferenceSignature("manchester", "manchester_codec",
+			"Manchester encoding/decoding",
+			new double[]{0.10,0.10,0.06,0.10,0.10,0.06,0.08,0.04,
+				0.06,0.02, 0.25,0.04,0.40,0.06,0.08,
+				0.00,0.04,0.06,0.00,0.00,0.06,0.00,0.00,0.14,0.04}),
+
+		// HDLC: flag/escape bytes, CRC-CCITT
+		new ReferenceSignature("hdlc", "hdlc_framing",
+			"HDLC frame framing",
+			new double[]{0.16,0.12,0.06,0.06,0.04,0.12,0.12,0.04,
+				0.06,0.02, 0.25,0.04,0.55,0.10,0.14,
+				0.04,0.04,0.04,0.00,0.00,0.08,0.04,0.00,0.20,0.04}),
+
+		// Idle/WFI: nearly empty, halt instruction
+		new ReferenceSignature("idle", "idle_wfi",
+			"Idle loop / wait-for-interrupt",
+			new double[]{0.04,0.02,0.02,0.02,0.00,0.04,0.10,0.02,
+				0.02,0.00, 0.10,0.02,0.10,0.06,0.02,
+				0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.10,0.00}),
+
+		// IRQ priority dispatch: read status, index vector, indirect call
+		new ReferenceSignature("irqdispatch", "irq_priority_dispatch",
+			"Interrupt priority dispatch",
+			new double[]{0.16,0.06,0.06,0.06,0.06,0.10,0.10,0.08,
+				0.06,0.02, 0.10,0.08,0.35,0.08,0.12,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.15,0.00}),
+
+		// Exception frame: consecutive register saves
+		new ReferenceSignature("excframe", "exception_frame",
+			"Exception frame builder",
+			new double[]{0.06,0.24,0.04,0.02,0.00,0.04,0.06,0.04,
+				0.08,0.04, 0.06,0.04,0.12,0.04,0.06,
+				0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.06,0.50}),
+
+		// POST memory: write pattern, read-verify, nested loops
+		new ReferenceSignature("postmem", "post_memory_test",
+			"POST memory pattern test",
+			new double[]{0.16,0.14,0.06,0.04,0.02,0.12,0.12,0.04,
+				0.06,0.02, 0.40,0.04,0.55,0.10,0.12,
+				0.06,0.04,0.00,0.00,0.00,0.08,0.00,0.02,0.20,0.04}),
+
+		// AI decision tree: many threshold compares, cascading branches
+		new ReferenceSignature("ai", "ai_decision_tree",
+			"AI behavior decision tree",
+			new double[]{0.16,0.06,0.08,0.04,0.02,0.18,0.16,0.08,
+				0.06,0.02, 0.15,0.08,0.40,0.14,0.14,
+				0.00,0.04,0.00,0.00,0.00,0.10,0.00,0.00,0.28,0.04}),
+
+		// Continue countdown: decrement, zero check, call game-over
+		new ReferenceSignature("countdown", "continue_countdown",
+			"Continue/game-over countdown",
+			new double[]{0.12,0.10,0.08,0.02,0.00,0.14,0.14,0.08,
+				0.06,0.02, 0.10,0.08,0.45,0.10,0.08,
+				0.00,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.18,0.04}),
+
+		// Interlace toggle: XOR field bit, update display register
+		new ReferenceSignature("interlace", "interlace_toggle",
+			"Interlace field toggle",
+			new double[]{0.10,0.12,0.06,0.06,0.02,0.06,0.08,0.02,
+				0.06,0.02, 0.06,0.02,0.40,0.06,0.08,
+				0.00,0.00,0.04,0.00,0.00,0.02,0.00,0.00,0.08,0.04}),
+
+		// Wear leveling: scan erase counts, find minimum
+		new ReferenceSignature("wearlevel", "wear_leveling",
+			"Flash wear leveling",
+			new double[]{0.16,0.12,0.08,0.04,0.02,0.12,0.12,0.06,
+				0.06,0.02, 0.30,0.06,0.55,0.10,0.12,
+				0.04,0.04,0.00,0.00,0.00,0.08,0.00,0.02,0.20,0.04}),
+
+		// Bad block scan: iterate blocks, check 0xFF marker
+		new ReferenceSignature("badblock", "bad_block_scan",
+			"NAND bad block table scan",
+			new double[]{0.16,0.10,0.04,0.06,0.02,0.12,0.12,0.04,
+				0.06,0.02, 0.25,0.04,0.50,0.10,0.10,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.18,0.04}),
+
+		// Random level gen: RNG, modulo, store to array
+		new ReferenceSignature("levelgen", "random_level_gen",
+			"Procedural level generator",
+			new double[]{0.12,0.14,0.08,0.04,0.02,0.08,0.10,0.08,
+				0.06,0.02, 0.30,0.08,0.45,0.08,0.14,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.02,0.18,0.04}),
+
+		// Input recording: read controller, store to ring buffer
+		new ReferenceSignature("inputrec", "input_recording",
+			"Input recording to ring buffer",
+			new double[]{0.16,0.14,0.06,0.04,0.02,0.08,0.08,0.04,
+				0.06,0.02, 0.20,0.04,0.55,0.06,0.08,
+				0.04,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.14,0.04}),
+
+		// Thermal printer: ESC commands + text data
+		new ReferenceSignature("printer", "thermal_printer",
+			"Thermal printer command handler",
+			new double[]{0.16,0.12,0.04,0.04,0.02,0.12,0.12,0.06,
+				0.06,0.02, 0.20,0.06,0.55,0.10,0.12,
+				0.00,0.04,0.00,0.00,0.00,0.08,0.00,0.00,0.20,0.04}),
+
+		// Weight tare: average ADC readings, store offset
+		new ReferenceSignature("tare", "weight_tare",
+			"Weight scale tare calibration",
+			new double[]{0.14,0.10,0.10,0.04,0.04,0.06,0.08,0.04,
+				0.06,0.02, 0.20,0.04,0.55,0.06,0.08,
+				0.00,0.06,0.00,0.00,0.04,0.04,0.00,0.00,0.14,0.00}),
+
+		// Fuel injection: sensor reads, multiply/scale, clamp PWM
+		new ReferenceSignature("fuel", "fuel_injection",
+			"Fuel injection timing",
+			new double[]{0.14,0.12,0.14,0.04,0.02,0.10,0.10,0.04,
+				0.06,0.02, 0.15,0.04,0.55,0.08,0.12,
+				0.00,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.14,0.00}),
+
+		// Barcode decode: bitstream, table lookup, checksum
+		new ReferenceSignature("barcode", "barcode_decode",
+			"Barcode scanner decode",
+			new double[]{0.16,0.08,0.10,0.08,0.06,0.10,0.12,0.06,
+				0.06,0.02, 0.30,0.06,0.45,0.10,0.16,
+				0.04,0.06,0.00,0.00,0.00,0.08,0.00,0.02,0.22,0.04}),
+
+		// JTAG: TDI/TDO bit-bang, shift register
+		new ReferenceSignature("jtag", "jtag_boundary_scan",
+			"JTAG boundary scan",
+			new double[]{0.14,0.16,0.06,0.08,0.08,0.06,0.10,0.04,
+				0.06,0.02, 0.25,0.04,0.45,0.08,0.10,
+				0.00,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.16,0.04}),
+
+		// Bus probe: attempt access, catch timeout
+		new ReferenceSignature("busprobe", "bus_test",
+			"Bus probe/timeout test",
+			new double[]{0.12,0.10,0.04,0.06,0.02,0.10,0.12,0.06,
+				0.06,0.02, 0.10,0.06,0.40,0.10,0.08,
+				0.00,0.00,0.00,0.00,0.00,0.06,0.00,0.00,0.16,0.04}),
+
+		// MPU region config: consecutive IO writes for base/size/perms
+		new ReferenceSignature("mpu", "mpu_region_config",
+			"MPU/MMU region configuration",
+			new double[]{0.06,0.22,0.04,0.06,0.02,0.04,0.06,0.02,
+				0.06,0.02, 0.08,0.02,0.15,0.04,0.10,
+				0.00,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.06,0.50}),
 	};
 }
