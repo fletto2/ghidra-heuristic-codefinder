@@ -40,7 +40,7 @@ When analyzing a ROM, the extension automatically:
    automatically used for Tier 3 heuristics (vector tables, memory map
    validation, hardware register identification).
 
-### 9-pass pipeline
+### 10-pass pipeline
 
 1. **Vector table entry points** — Read hardware vectors from platform description
 2. **Forward trace** — Recursive descent from seeds with data rejection filters
@@ -51,12 +51,14 @@ When analyzing a ROM, the extension automatically:
 7. **Gap filling** — Close small gaps between adjacent code blocks
 8. **Overlap resolution** — Ghidra's Listing handles this implicitly
 9. **Confidence assignment** — Tag blocks by discovery method (100=vector, 99=call, ..., 78=boundary)
+10. **Function classification** — 95 rule-based detectors + 89 feature-vector signatures classify functions by algorithmic purpose (memcpy, checksum, decompression, sprite renderer, etc.) and label hardware register accesses
 
 ### Heuristic tiers
 
 - **Tier 1** (23 heuristics): Direct P-code properties — block termination, target collection, entropy, density, decode ratio
 - **Tier 2** (8 heuristics): P-code pattern matching — prologue/epilogue detection, tail calls, interrupt handlers, callee-save registers
 - **Tier 3** (10 heuristics): Platform metadata — vector tables, memory map validation, hardware register patterns
+- **Pass 10** (95 detectors + 89 signatures): Function pattern classification via P-code operation distribution analysis
 
 ## Install
 
@@ -139,6 +141,10 @@ are also included:
 | `msx.xml` | MSX home computer | Z80 |
 | `mvme162.xml` | Motorola MVME162 VME board | 68040 |
 | `saturn_cdb.xml` | Sega Saturn CD Block | SH-1 |
+| `plexus_p20.xml` | Plexus P/20 UNIX server | 68010 |
+| `agfa9000.xml` | AGFA 9000PS PostScript RIP | 68000 |
+| `fps3000.xml` | FPS-3000 Fire Protection Controller | 68000 |
+| `gilbarco_pam1000.xml` | Gilbarco PAM 1000 fuel pump controller | 68000 |
 
 ### Creating a new platform description
 

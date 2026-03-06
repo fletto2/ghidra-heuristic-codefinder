@@ -1,0 +1,40 @@
+<platform name="plexus_p20" cpu="68010">
+  <memory_map>
+    <region start="0x000000" end="0x1FFFFF" type="ram" name="dram_2mb"/>
+    <region start="0x800000" end="0x807FFF" type="rom" name="u17_selftest"/>
+    <region start="0x808000" end="0x80FFFF" type="rom" name="u15_bootloader"/>
+    <region start="0xC00000" end="0xC00FFF" type="ram" name="shared_sram"/>
+    <region start="0xC03800" end="0xC03FFF" type="ram" name="device_tables"/>
+    <region start="0xE00000" end="0xE000FF" type="io" name="sio_ports"/>
+    <region start="0xE000A0" end="0xE000CF" type="io" name="ipc_interrupts"/>
+    <region start="0xF00000" end="0xF0FFFF" type="io" name="scsi_controller"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x800000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0xE00000" width="1" name="sio1_ctrl_a" access="rw"/>
+    <reg addr="0xE00002" width="1" name="sio1_data_a" access="rw"/>
+    <reg addr="0xE00004" width="1" name="sio1_ctrl_b" access="rw"/>
+    <reg addr="0xE00006" width="1" name="sio1_data_b" access="rw"/>
+    <reg addr="0xE00010" width="1" name="sio2_ctrl_a" access="rw"/>
+    <reg addr="0xE00012" width="1" name="sio2_data_a" access="rw"/>
+    <reg addr="0xE00014" width="1" name="sio2_ctrl_b" access="rw"/>
+    <reg addr="0xE00016" width="1" name="sio2_data_b" access="rw"/>
+    <reg addr="0xE000A0" width="2" name="ipc_irq_clear" access="w"/>
+    <reg addr="0xE000C0" width="2" name="ipc_irq_set" access="w"/>
+    <reg addr="0xF00000" width="1" name="scsi_data" access="rw"/>
+    <reg addr="0xF00002" width="1" name="scsi_cmd" access="rw"/>
+  </hardware_registers>
+</platform>

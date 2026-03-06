@@ -269,9 +269,39 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		// and confidence is tracked in our map for reporting.
 		// ============================================================
 
-		Msg.info(this, "Heuristic Code Finder complete: " + totalFound + " total instructions found");
+		// ============================================================
+		// Pass 10: Function pattern detection & hardware register labeling
+		// ============================================================
+		monitor.setMessage("Heuristic Pass 10: Function classification & HW register labeling");
+		FunctionPatternDetector fpd = new FunctionPatternDetector(program, platform);
+
+		int hwLabels = 0;
+		try {
+			hwLabels = fpd.labelHardwareRegisters(monitor);
+			if (hwLabels > 0) {
+				Msg.info(this, "Pass 10: " + hwLabels + " hardware register labels created");
+			}
+		} catch (Exception e) {
+			Msg.warn(this, "Hardware register labeling failed: " + e.getMessage());
+		}
+
+		int classified = 0;
+		try {
+			classified = fpd.classifyAllFunctions(monitor);
+			if (classified > 0) {
+				Msg.info(this, "Pass 10: " + classified + " functions classified by pattern");
+			}
+		} catch (Exception e) {
+			Msg.warn(this, "Function classification failed: " + e.getMessage());
+		}
+
+		Msg.info(this, "Heuristic Code Finder complete: " + totalFound + " total instructions found" +
+			(classified > 0 ? ", " + classified + " functions classified" : "") +
+			(hwLabels > 0 ? ", " + hwLabels + " HW registers labeled" : ""));
 		log.appendMsg("Heuristic Code Finder: " + totalFound + " instructions across " +
-			entryPoints.size() + " entry points");
+			entryPoints.size() + " entry points" +
+			(classified > 0 ? ", " + classified + " functions classified" : "") +
+			(hwLabels > 0 ? ", " + hwLabels + " HW registers labeled" : ""));
 
 		return true;
 	}
@@ -935,11 +965,17 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 					Msg.info(this, resultMsg);
 					log.appendMsg("Heuristic Code Finder: " + resultMsg.replace('\n', ' '));
 
-					// If user hasn't specified a platform file, use the best match
+					// If user hasn't specified a platform file, use the best match.
+					// Require both a minimum score AND minimum absolute address matches
+					// to ensure enough degrees of freedom for a reliable detection.
 					if ((platformFile == null || platformFile.isEmpty()) &&
-							results.get(0).score > 0.3 && results.get(0).platform != null) {
+							results.get(0).score > 0.3 &&
+							results.get(0).addressesMatched >= 10 &&
+							results.get(0).platform != null) {
 						platform = results.get(0).platform;
-						Msg.info(this, "Auto-selected platform: " + results.get(0).platformName);
+						Msg.info(this, "Auto-selected platform: " + results.get(0).platformName +
+							" (score=" + String.format("%.0f%%", results.get(0).score * 100) +
+							", " + results.get(0).addressesMatched + " addresses matched)");
 					}
 				} else {
 					Msg.info(this, "Platform detection: no strong matches found");

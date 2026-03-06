@@ -857,12 +857,60 @@ Passes 2-4 iterate until no new blocks are discovered (fixed-point).
 | H41 Stack initialization | Implicit | DI;LD SP;IM 1;EI | SEI;CLD;LDX;TXS | 3 |
 
 
+## Pass 10: Function Pattern Detection
+
+After code/data identification (Passes 1-9), Pass 10 classifies discovered functions
+by their algorithmic purpose using P-code operation distribution analysis.
+
+### Two-phase classification
+
+1. **Phase 1 — Rule-based detectors** (95 detectors): Each detector examines the
+   P-code operation profile (op-class proportions, structural features, constant
+   analysis, IO region tracking) and returns a classification with confidence score
+   when specific thresholds are met. Minimum 20 P-code ops per function.
+
+2. **Phase 2 — Feature-vector similarity** (89 reference signatures): Functions that
+   don't match any rule are compared against 25-dimensional reference fingerprints
+   (10 op-class proportions + 5 structural features + 10 discriminative bigrams)
+   using cosine similarity with threshold 0.80.
+
+### Detector categories
+
+| Category | Detectors | Examples |
+|----------|-----------|---------|
+| Memory operations | 8 | memcpy, memset, memcmp, memmove, heap allocator, bitmap allocator, block mapping, DMA transfer |
+| String operations | 7 | strlen, string compare, string copy, printf, sprintf, hex dump, number-to-string |
+| Math / arithmetic | 10 | multiply, divide, fixed-point, square root, trig lookup, dot product, abs value, clamp, coordinate transform, BCD |
+| Checksums / hashing | 6 | checksum, CRC polynomial, CRC table lookup, checksum validation, IP checksum, hash function |
+| Compression / encoding | 5 | decompression (generic), RLE decompress, LZ decompress, ADPCM decode, byte swap |
+| Graphics / display | 10 | sprite renderer, tile decoder, tilemap loader, scroll handler, screen fade, palette fade, palette cycle, line drawing, text renderer, image loader |
+| Game logic | 7 | collision detection, velocity physics, animation update, particle system, camera tracking, object spawn, score update |
+| Input / UI | 4 | controller input, menu navigation, debounce input, wildcard match |
+| System / hardware | 12 | boot init, interrupt handler, interrupt control, serial IO, memory test, watchdog feed, flash program, vblank wait, DMA queue, delay loop, self-test, device driver dispatch |
+| OS / scheduling | 7 | task scheduler, semaphore, context save/restore, message passing, file operation, bytecode interpreter, stack interpreter |
+| Control flow | 5 | jump table dispatch, state machine, busy-wait loop, retry loop, error handler |
+| Data structures | 4 | table lookup, bitfield extraction, circular buffer, linked list traversal |
+| Algorithms | 5 | sort, RNG, encrypt/decrypt, command parser, parity compute |
+| Audio | 1 | sound driver |
+| Network | 2 | network protocol, SCSI command |
+| Object update | 1 | object update loop |
+
+### Hardware register labeling
+
+When a platform description is loaded, Pass 10 also scans all instructions for
+LOAD/STORE operations targeting known hardware register addresses and creates:
+- Named labels at register addresses
+- Cross-references from instructions to registers
+- End-of-line comments identifying the register
+
 ## Statistics
 
-- **Total heuristics**: 41
+- **Total code/data heuristics**: 41
 - **Tier 1 (direct P-code, zero per-ISA code)**: 23 (56%)
 - **Tier 2 (P-code pattern matching)**: 8 (20%)
 - **Tier 3 (platform metadata required)**: 10 (24%)
+- **Function pattern detectors**: 95 rule-based + 89 reference signatures
 - **Coverage with Tier 1 alone**: Sufficient for basic disassembly of any ISA
 - **Coverage with Tier 1+2**: High-quality function-level disassembly
 - **Coverage with Tier 1+2+3**: Production-quality platform-aware disassembly
+- **Coverage with Pass 10**: Automatic function classification and hardware labeling

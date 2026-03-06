@@ -1,0 +1,49 @@
+<platform name="fps3000" cpu="68000">
+  <memory_map>
+    <region start="0x000000" end="0x01FFFF" type="ram" name="main_ram_128k"/>
+    <region start="0x01FFF0" end="0x01FFF1" type="io" name="versamodule_ctrl"/>
+    <region start="0xF00000" end="0xF0FFFF" type="rom" name="firmware_64k"/>
+    <region start="0xF70001" end="0xF7000F" type="io" name="mc6840_ptm"/>
+    <region start="0xF70018" end="0xF7001B" type="io" name="board_status_ctrl"/>
+    <region start="0xFF0000" end="0xFF025F" type="io" name="fire_panel_io"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0xF00000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+    <entry index="25" name="trap0"/>
+    <entry index="26" name="trap1"/>
+    <entry index="27" name="trap2"/>
+    <entry index="28" name="trap3"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0xF70001" width="1" name="ptm_ctrl1" access="rw"/>
+    <reg addr="0xF70003" width="1" name="ptm_ctrl2" access="rw"/>
+    <reg addr="0xF70005" width="1" name="ptm_ctrl3" access="rw"/>
+    <reg addr="0xF70007" width="1" name="ptm_timer1_msb" access="rw"/>
+    <reg addr="0xF70009" width="1" name="ptm_timer1_lsb" access="rw"/>
+    <reg addr="0xF7000B" width="1" name="ptm_timer2_msb" access="rw"/>
+    <reg addr="0xF7000D" width="1" name="ptm_timer2_lsb" access="rw"/>
+    <reg addr="0xF7000F" width="1" name="ptm_timer3_msb" access="rw"/>
+    <reg addr="0xF70018" width="4" name="board_status" access="rw"/>
+    <reg addr="0xFF0000" width="2" name="panel_ch1_data" access="rw"/>
+    <reg addr="0xFF0040" width="2" name="panel_ch1_ctrl" access="rw"/>
+    <reg addr="0xFF0080" width="2" name="panel_ch2_data" access="rw"/>
+    <reg addr="0xFF00C0" width="2" name="panel_ch2_ctrl" access="rw"/>
+    <reg addr="0xFF0100" width="2" name="panel_ch3_data" access="rw"/>
+    <reg addr="0xFF0140" width="2" name="panel_ch3_ctrl" access="rw"/>
+    <reg addr="0xFF0180" width="2" name="panel_ch4_data" access="rw"/>
+    <reg addr="0xFF01C0" width="2" name="panel_ch4_ctrl" access="rw"/>
+    <reg addr="0xFF0200" width="2" name="panel_dma_ctrl" access="rw"/>
+    <reg addr="0xFF0240" width="2" name="panel_irq_ctrl" access="rw"/>
+  </hardware_registers>
+</platform>

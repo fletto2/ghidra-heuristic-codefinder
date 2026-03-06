@@ -1,0 +1,53 @@
+<platform name="gilbarco_pam1000" cpu="68000">
+  <memory_map>
+    <region start="0x000000" end="0x01FFFF" type="rom" name="mem1_eprom_bank0"/>
+    <region start="0x020000" end="0x03FFFF" type="rom" name="mem1_eprom_bank1"/>
+    <region start="0x040000" end="0x05FFFF" type="rom" name="mem1_eprom_bank2"/>
+    <region start="0x800000" end="0x81FFFF" type="ram" name="ram_bank0"/>
+    <region start="0x820000" end="0x83FFFF" type="ram" name="ram_bank1"/>
+    <region start="0x840000" end="0x85FFFF" type="ram" name="ram_bank2"/>
+    <region start="0x860000" end="0x87FFFF" type="ram" name="ram_bank3"/>
+    <region start="0xFD0000" end="0xFD000F" type="io" name="scc2_io_board1"/>
+    <region start="0xFD0100" end="0xFD010F" type="io" name="scc3_io_board"/>
+    <region start="0xFD0300" end="0xFD030F" type="io" name="scc1_cpu_board"/>
+    <region start="0xFD8000" end="0xFD80FF" type="io" name="pit_rtc_misc"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x000000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+    <entry index="25" name="trap0_psos"/>
+    <entry index="26" name="trap1_queue"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0xFD030D" width="1" name="scc1_ctrl_a" access="rw"/>
+    <reg addr="0xFD030F" width="1" name="scc1_data_a" access="rw"/>
+    <reg addr="0xFD0309" width="1" name="scc1_ctrl_b" access="rw"/>
+    <reg addr="0xFD030B" width="1" name="scc1_data_b" access="rw"/>
+    <reg addr="0xFD000D" width="1" name="scc2_ctrl_a" access="rw"/>
+    <reg addr="0xFD000F" width="1" name="scc2_data_a" access="rw"/>
+    <reg addr="0xFD0009" width="1" name="scc2_ctrl_b" access="rw"/>
+    <reg addr="0xFD000B" width="1" name="scc2_data_b" access="rw"/>
+    <reg addr="0xFD010D" width="1" name="scc3_ctrl_a" access="rw"/>
+    <reg addr="0xFD010F" width="1" name="scc3_data_a" access="rw"/>
+    <reg addr="0xFD8001" width="1" name="pit_pgcr" access="rw"/>
+    <reg addr="0xFD8003" width="1" name="pit_psrr" access="rw"/>
+    <reg addr="0xFD8005" width="1" name="pit_paddr" access="rw"/>
+    <reg addr="0xFD8007" width="1" name="pit_pbddr" access="rw"/>
+    <reg addr="0xFD8011" width="1" name="pit_port_a" access="rw"/>
+    <reg addr="0xFD8013" width="1" name="pit_port_b" access="rw"/>
+    <reg addr="0xFD8041" width="1" name="scc4_reg0" access="rw"/>
+    <reg addr="0xFD8043" width="1" name="scc4_reg1" access="rw"/>
+    <reg addr="0xFD8081" width="1" name="rtc_base" access="rw"/>
+    <reg addr="0xFD80A3" width="1" name="rtc_command" access="w"/>
+  </hardware_registers>
+</platform>

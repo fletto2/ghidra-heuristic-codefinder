@@ -263,6 +263,17 @@ public class PlatformDetector {
 			+ hwRate * 0.2
 			- missRate * 0.3;
 
+		// Degrees-of-freedom scaling: reduce confidence when we have few samples.
+		// At 30 tested addresses the score is fully trusted; below that it's
+		// proportionally reduced. This prevents small ROMs or early analysis
+		// from producing overconfident matches.
+		double sampleConfidence = Math.min(1.0, tested / 30.0);
+		raw *= sampleConfidence;
+
+		// Minimum absolute hits: if fewer than 5 addresses actually matched
+		// defined regions, the match is not reliable regardless of the ratio
+		if (hits < 5) raw *= 0.5;
+
 		// Clamp to [0, 1]
 		return Math.max(0.0, Math.min(1.0, raw));
 	}
@@ -392,8 +403,12 @@ public class PlatformDetector {
 		Set<Long> addresses = collectAccessAddresses(program, maxInstructions, monitor);
 		Msg.info(PlatformDetector.class, "Platform detection: " + addresses.size() + " unique addresses collected");
 
-		if (addresses.size() < 10) {
-			Msg.warn(PlatformDetector.class, "Too few addresses for reliable detection");
+		// Minimum degrees of freedom: need enough distinct addresses to
+		// distinguish real memory map matches from coincidence. With fewer
+		// than 30 addresses, almost any memory map will match by chance.
+		if (addresses.size() < 30) {
+			Msg.warn(PlatformDetector.class,
+				"Too few addresses (" + addresses.size() + ") for reliable platform detection (need 30+)");
 			return Collections.emptyList();
 		}
 
@@ -705,8 +720,10 @@ public class PlatformDetector {
 		double nativeScore = (double) nativeHits;
 		double swapScore = (double) bestSwapHits;
 
-		// If swapped hits significantly outnumber native hits, ROM is likely byte-swapped
-		if (bestSwapHits > nativeHits * 2 && bestSwapHits >= 3) {
+		// If swapped hits significantly outnumber native hits, ROM is likely byte-swapped.
+		// Require at least 5 swapped opcode hits for a confident determination —
+		// with fewer samples the ratio could be due to chance alignment.
+		if (bestSwapHits > nativeHits * 2 && bestSwapHits >= 5) {
 			String desc;
 			switch (bestSwapType) {
 				case "swapped16":
@@ -969,7 +986,17 @@ public class PlatformDetector {
 		boolean newIsMuchBetter = bestCount > currentCount * 2;
 		boolean currentIsVeryWeak = currentCount < 5 && bestCount >= 5;
 
-		if (bestBase == currentBase || bestCount < 3 || !newHasMoreHits ||
+		// Minimum degrees of freedom: need at least 8 total target references
+		// for the base address analysis to be meaningful. Fewer targets could
+		// just be data values that happen to look like addresses.
+		if (targets.size() < 8) {
+			return new BaseAddressResult(currentBase, romSize, targets.size(),
+				currentCount, 0,
+				String.format("ROM base 0x%X (too few references (%d) for reliable inference)",
+					currentBase, targets.size()));
+		}
+
+		if (bestBase == currentBase || bestCount < 5 || !newHasMoreHits ||
 				(!newIsMuchBetter && !currentIsVeryWeak)) {
 			return new BaseAddressResult(currentBase, romSize, targets.size(),
 				currentCount, 0,

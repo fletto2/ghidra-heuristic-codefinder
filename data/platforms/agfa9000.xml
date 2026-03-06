@@ -1,0 +1,51 @@
+<platform name="agfa9000" cpu="68000">
+  <memory_map>
+    <region start="0x000000" end="0x01FFFF" type="rom" name="bank0_boot"/>
+    <region start="0x020000" end="0x03FFFF" type="rom" name="bank1_fonts"/>
+    <region start="0x040000" end="0x05FFFF" type="rom" name="bank2_ps_core"/>
+    <region start="0x060000" end="0x07FFFF" type="rom" name="bank3_math_glyph"/>
+    <region start="0x080000" end="0x09FFFF" type="rom" name="bank4_fs_scsi"/>
+    <region start="0x02000000" end="0x020FFFFF" type="ram" name="main_ram"/>
+    <region start="0x04000000" end="0x0400000F" type="io" name="scc1_io_board"/>
+    <region start="0x05000000" end="0x0500002F" type="io" name="scsi_ncr5380"/>
+    <region start="0x06080000" end="0x060800FF" type="io" name="hw_regs_1"/>
+    <region start="0x060C0000" end="0x060C00FF" type="io" name="hw_regs_2"/>
+    <region start="0x06100000" end="0x061000FF" type="io" name="display_ctrl"/>
+    <region start="0x07000000" end="0x0700000F" type="io" name="scc2_debug"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x000000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+    <entry index="10" name="line_1010"/>
+    <entry index="11" name="line_1111"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0x04000000" width="1" name="scc1_ctrl_a" access="rw"/>
+    <reg addr="0x04000002" width="1" name="scc1_data_a" access="rw"/>
+    <reg addr="0x04000004" width="1" name="scc1_ctrl_b" access="rw"/>
+    <reg addr="0x04000006" width="1" name="scc1_data_b" access="rw"/>
+    <reg addr="0x05000001" width="1" name="ncr5380_data" access="rw"/>
+    <reg addr="0x05000003" width="1" name="ncr5380_icr" access="rw"/>
+    <reg addr="0x05000005" width="1" name="ncr5380_mode" access="rw"/>
+    <reg addr="0x05000007" width="1" name="ncr5380_tcr" access="rw"/>
+    <reg addr="0x05000009" width="1" name="ncr5380_csbs" access="r"/>
+    <reg addr="0x0500000B" width="1" name="ncr5380_bsr" access="r"/>
+    <reg addr="0x0500000D" width="1" name="ncr5380_idr" access="r"/>
+    <reg addr="0x05000026" width="1" name="ncr5380_pseudo_dma" access="rw"/>
+    <reg addr="0x06100000" width="2" name="display_ctrl_reg" access="rw"/>
+    <reg addr="0x07000000" width="1" name="scc2_ctrl_a" access="rw"/>
+    <reg addr="0x07000002" width="1" name="scc2_data_a" access="rw"/>
+    <reg addr="0x07000004" width="1" name="scc2_ctrl_b" access="rw"/>
+    <reg addr="0x07000006" width="1" name="scc2_data_b" access="rw"/>
+  </hardware_registers>
+</platform>
