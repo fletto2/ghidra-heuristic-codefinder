@@ -864,12 +864,12 @@ by their algorithmic purpose using P-code operation distribution analysis.
 
 ### Two-phase classification
 
-1. **Phase 1 — Rule-based detectors** (95 detectors): Each detector examines the
+1. **Phase 1 — Rule-based detectors** (280 detectors): Each detector examines the
    P-code operation profile (op-class proportions, structural features, constant
    analysis, IO region tracking) and returns a classification with confidence score
    when specific thresholds are met. Minimum 20 P-code ops per function.
 
-2. **Phase 2 — Feature-vector similarity** (89 reference signatures): Functions that
+2. **Phase 2 — Feature-vector similarity** (274 reference signatures): Functions that
    don't match any rule are compared against 25-dimensional reference fingerprints
    (10 op-class proportions + 5 structural features + 10 discriminative bigrams)
    using cosine similarity with threshold 0.80.
@@ -879,21 +879,24 @@ by their algorithmic purpose using P-code operation distribution analysis.
 | Category | Detectors | Examples |
 |----------|-----------|---------|
 | Memory operations | 11 | memcpy, memset, memcmp, memmove, heap allocator, bitmap allocator, block mapping, DMA transfer, DMA chaining, slab allocator, cache flush |
-| String operations | 7 | strlen, string compare, string copy, printf, sprintf, hex dump, number-to-string |
-| Math / arithmetic | 15 | multiply, divide, fixed-point, square root, trig lookup, dot product, abs value, clamp, coordinate transform, BCD, matrix multiply, FFT butterfly, PID controller, popcount, bit reverse |
+| String operations | 14 | strlen, string compare, string copy, printf, sprintf, hex dump, number-to-string, regex matcher, string hash, tokenizer, atoi, itoa, string search, case convert, trim |
+| Math / arithmetic | 21 | multiply, divide, fixed-point, square root, trig lookup, dot product, abs value, clamp, coordinate transform, BCD, matrix multiply, FFT butterfly, PID controller, popcount, bit reverse, big integer add/multiply, polynomial eval, linear interpolation, log approximation, exp approximation, reciprocal, divide-by-constant, GCD |
 | Checksums / hashing | 9 | checksum, CRC polynomial, CRC table lookup, checksum validation, IP checksum, hash function, Hamming ECC, HMAC, Galois field multiply |
-| Compression / encoding | 15 | decompression, RLE decompress/compress, LZ, ADPCM, byte swap, Huffman decode, base64 encode/decode, UTF-8 encode/decode, delta encode/decode, XDR encode/decode |
-| Graphics / display | 18 | sprite renderer, tile decoder, tilemap loader, scroll handler, screen fade, palette fade, palette cycle, line drawing, text renderer, image loader, bitmap blit, flood fill, circle draw, polygon fill, LCD init, framebuffer swap, VRAM clear |
-| Game logic | 11 | collision detection, velocity physics, animation update, particle system, camera tracking, object spawn, score update, pathfinding, high score table, demo playback, save/load state |
+| Compression / encoding | 19 | decompression, RLE decompress/compress, LZ, ADPCM, byte swap, Huffman decode, base64 encode/decode, UTF-8 encode/decode, delta encode/decode, XDR encode/decode, arithmetic coding, LZW, BWT, DEFLATE |
+| Crypto | 6 | AES round, DES Feistel, SHA-256 round, MD5 transform, RC4 keystream, ChaCha20 quarter-round |
+| Graphics / display | 24 | sprite renderer, tile decoder, tilemap loader, scroll handler, screen fade, palette fade, palette cycle, line drawing, text renderer, image loader, bitmap blit, flood fill, circle draw, polygon fill, LCD init, framebuffer swap, VRAM clear, sprite scaling, alpha blending, gamma correction, color space convert, parallax scroll, raycasting |
+| Game logic | 17 | collision detection, velocity physics, animation update, particle system, camera tracking, object spawn, score update, pathfinding, high score table, demo playback, save/load state, collision response, gravity/jump, damage calc, inventory, NPC dialog, patrol AI, boss pattern |
 | Input / UI | 6 | controller input, menu navigation, debounce input, wildcard match, keyboard scan, VT100 escape parser |
-| System / hardware | 24 | boot init, interrupt handler, interrupt control, serial IO, memory test, watchdog feed, flash program, vblank wait, DMA queue, delay loop, self-test, device driver dispatch, timer setup, PWM generation, CRT init, vector table setup, relocation, assert/panic, sensor calibration, power sleep, motor control, page table walk, event signal |
-| OS / scheduling | 9 | task scheduler, semaphore, context save/restore, message passing, file operation, bytecode interpreter, stack interpreter, mutex/spinlock, coroutine switch |
+| System / hardware | 28 | boot init, interrupt handler, interrupt control, serial IO, memory test, watchdog feed, flash program, vblank wait, DMA queue, delay loop, self-test, device driver dispatch, timer setup, PWM generation, CRT init, vector table setup, relocation, assert/panic, sensor calibration, power sleep, motor control, page table walk, event signal, stepper motor, bootloader, flash erase, battery monitor, temp compensation |
+| OS / kernel | 17 | task scheduler, semaphore, context save/restore, message passing, file operation, bytecode interpreter, stack interpreter, mutex/spinlock, coroutine switch, syscall dispatcher, thread scheduler, signal handler, pipe read/write, memory pool, TLB flush, fd table, mount handler, socket handler, UART driver |
 | Control flow | 5 | jump table dispatch, state machine, busy-wait loop, retry loop, error handler |
 | Data structures | 8 | table lookup, bitfield extraction, circular buffer, linked list traversal, FIFO queue, priority queue, hash table, binary search |
 | Algorithms | 6 | sort, RNG, encrypt/decrypt, command parser, parity compute, ELF section parser |
 | Audio | 7 | sound driver, MIDI handler, audio mixer, ADSR envelope, wavetable synth, FM synth operator, sample rate convert |
+| DSP / signal processing | 6 | FIR filter, IIR filter, moving average, median filter, zero-crossing detector, convolution |
 | Communication | 5 | I2C protocol, SPI protocol, Modbus RTU, PS/2 protocol, serial IO |
-| Network | 5 | network protocol, SCSI command, SCSI phase handler, ARP handler, TCP state machine, CD-ROM command |
+| Network | 14 | network protocol, SCSI command, SCSI phase handler, ARP handler, TCP state machine, CD-ROM command, DNS resolver, DHCP client, HTTP parser, SMTP handler, TFTP handler, NTP sync, PPP framer, Telnet handler, SNMP handler, UDP handler |
+| Parsers | 5 | JSON parser, CSV parser, COFF/PE loader, BMP decoder, WAV decoder |
 | Filesystem | 2 | FAT filesystem, disk block I/O |
 | Float emulation | 2 | softfloat add, softfloat multiply |
 | Logging / debug | 2 | severity-level logger, garbage collector mark |
@@ -912,7 +915,7 @@ LOAD/STORE operations targeting known hardware register addresses and creates:
 - **Tier 1 (direct P-code, zero per-ISA code)**: 23 (56%)
 - **Tier 2 (P-code pattern matching)**: 8 (20%)
 - **Tier 3 (platform metadata required)**: 10 (24%)
-- **Function pattern detectors**: 203 rule-based + 197 reference signatures
+- **Function pattern detectors**: 280 rule-based + 274 reference signatures
 - **Coverage with Tier 1 alone**: Sufficient for basic disassembly of any ISA
 - **Coverage with Tier 1+2**: High-quality function-level disassembly
 - **Coverage with Tier 1+2+3**: Production-quality platform-aware disassembly

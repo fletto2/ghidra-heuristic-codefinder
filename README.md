@@ -41,6 +41,16 @@ When analyzing a ROM, the extension automatically:
    automatically used for Tier 3 heuristics (vector tables, memory map
    validation, hardware register identification).
 
+4. **Identifies ROMs by SHA1 hash** — Computes SHA1 of the loaded binary and
+   looks it up against a database of ~80,000 hashes extracted from MAME's
+   code-relevant ROM regions (maincpu, bootstrap, audiocpu, etc.) covering
+   ~35,000 machines. Automatically handles interleaved ROMs: if a direct
+   match fails, it splits the binary into even/odd bytes (16-bit interleave),
+   4-way byte split (32-bit interleave), or word-pair split (32-bit word
+   interleave) and checks each piece. A SHA1 match instantly provides CPU
+   type, machine name, manufacturer, and ROM region — bypassing heuristic
+   platform detection entirely.
+
 ### 10-pass pipeline
 
 1. **Vector table entry points** — Read hardware vectors from platform description
