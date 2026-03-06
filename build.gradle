@@ -1,0 +1,32 @@
+// Ghidra Extension: HeuristicCodeFinder
+//
+// Set GHIDRA_INSTALL_DIR environment variable or pass as property:
+//     > export GHIDRA_INSTALL_DIR=<Absolute path to Ghidra>
+//     > gradle
+//
+//     > gradle -PGHIDRA_INSTALL_DIR=<Absolute path to Ghidra>
+
+def ghidraInstallDir
+
+if (System.env.GHIDRA_INSTALL_DIR) {
+	ghidraInstallDir = System.env.GHIDRA_INSTALL_DIR
+}
+else if (project.hasProperty("GHIDRA_INSTALL_DIR")) {
+	ghidraInstallDir = project.getProperty("GHIDRA_INSTALL_DIR")
+}
+else {
+	throw new GradleException("GHIDRA_INSTALL_DIR is not defined")
+}
+
+task distributeExtension {
+	group = "Ghidra"
+
+	apply from: new File(ghidraInstallDir).getCanonicalPath() + "/support/buildExtension.gradle"
+	dependsOn ':buildExtension'
+}
+
+repositories {
+}
+
+dependencies {
+}

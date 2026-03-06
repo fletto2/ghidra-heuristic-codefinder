@@ -1,0 +1,42 @@
+<platform name="sega_genesis" cpu="68020">
+  <memory_map>
+    <region start="0x000000" end="0x3FFFFF" type="rom" name="cartridge"/>
+    <region start="0x400000" end="0x9FFFFF" type="unmapped" name="dead_zone"/>
+    <region start="0xA00000" end="0xA0FFFF" type="io" name="z80_space"/>
+    <region start="0xA10000" end="0xA1001F" type="io" name="io_ports"/>
+    <region start="0xA11100" end="0xA11101" type="io" name="z80_busreq"/>
+    <region start="0xA11200" end="0xA11201" type="io" name="z80_reset"/>
+    <region start="0xA14000" end="0xA14003" type="io" name="tmss"/>
+    <region start="0xC00000" end="0xC0001F" type="io" name="vdp"/>
+    <region start="0xFF0000" end="0xFFFFFF" type="ram" name="work_ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x000000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="25" name="trap0"/>
+    <entry index="26" name="trap1"/>
+    <entry index="28" name="hblank" irq="true"/>
+    <entry index="30" name="vblank" irq="true"/>
+    <entry index="31" name="external" irq="true"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0xA14000" width="4" name="tmss" access="w"/>
+    <reg addr="0xA11100" width="2" name="z80_busreq" access="w"/>
+    <reg addr="0xA11200" width="2" name="z80_reset" access="w"/>
+    <reg addr="0xC00000" width="2" name="vdp_data" access="rw"/>
+    <reg addr="0xC00004" width="2" name="vdp_ctrl" access="rw"/>
+    <reg addr="0xC00008" width="2" name="vdp_hv" access="r"/>
+    <reg addr="0xA10003" width="1" name="joypad1_data" access="r"/>
+    <reg addr="0xA10005" width="1" name="joypad2_data" access="r"/>
+    <reg addr="0xA10009" width="1" name="joypad1_ctrl" access="w"/>
+    <reg addr="0xA1000B" width="1" name="joypad2_ctrl" access="w"/>
+  </hardware_registers>
+
+  <coprocessor name="z80" base="0xA00000" size="0x2000"/>
+</platform>

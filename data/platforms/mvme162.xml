@@ -1,0 +1,39 @@
+<platform name="mvme162" cpu="68040">
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="rom" name="flash_bank"/>
+    <region start="0x00400000" end="0x007FFFFF" type="rom" name="flash_bank2"/>
+    <region start="0x00800000" end="0x00BFFFFF" type="ram" name="sram"/>
+    <region start="0x00C00000" end="0x00FFFFFF" type="ram" name="dram"/>
+    <region start="0xFFF40000" end="0xFFF401FF" type="io" name="mcchip"/>
+    <region start="0xFFF42000" end="0xFFF420FF" type="io" name="cd2401_uart"/>
+    <region start="0xFFF43000" end="0xFFF430FF" type="io" name="ip2_chip"/>
+    <region start="0xFFF45000" end="0xFFF450FF" type="io" name="ncr53c710"/>
+    <region start="0xFFF46000" end="0xFFF460FF" type="io" name="lanc_82596"/>
+    <region start="0xFFF47000" end="0xFFF470FF" type="io" name="rtc"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+    <entry index="25" name="trap0"/>
+    <entry index="26" name="trap1"/>
+    <entry index="36" name="trap11_psos"/>
+    <entry index="37" name="trap12_prepc"/>
+    <entry index="38" name="trap13_phile"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0xFFF40000" width="4" name="mcchip_id" access="r"/>
+    <reg addr="0xFFF42000" width="1" name="cd2401_base" access="rw"/>
+    <reg addr="0xFFF45000" width="4" name="ncr710_base" access="rw"/>
+    <reg addr="0xFFF46000" width="4" name="lanc_base" access="rw"/>
+  </hardware_registers>
+</platform>

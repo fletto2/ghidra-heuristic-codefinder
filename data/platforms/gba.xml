@@ -1,0 +1,38 @@
+<platform name="gba" cpu="ARM7_le">
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="bios"/>
+    <region start="0x02000000" end="0x0203FFFF" type="ram" name="ewram"/>
+    <region start="0x03000000" end="0x03007FFF" type="ram" name="iwram"/>
+    <region start="0x04000000" end="0x040003FF" type="io" name="io_registers"/>
+    <region start="0x05000000" end="0x050003FF" type="ram" name="palette"/>
+    <region start="0x06000000" end="0x06017FFF" type="ram" name="vram"/>
+    <region start="0x07000000" end="0x070003FF" type="ram" name="oam"/>
+    <region start="0x08000000" end="0x09FFFFFF" type="rom" name="rom"/>
+    <region start="0x0E000000" end="0x0E00FFFF" type="ram" name="sram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0x04000000" width="2" name="dispcnt" access="rw"/>
+    <reg addr="0x04000004" width="2" name="dispstat" access="rw"/>
+    <reg addr="0x04000006" width="2" name="vcount" access="r"/>
+    <reg addr="0x040000B0" width="4" name="dma0sad" access="w"/>
+    <reg addr="0x040000B4" width="4" name="dma0dad" access="w"/>
+    <reg addr="0x040000B8" width="2" name="dma0cnt_l" access="w"/>
+    <reg addr="0x040000BA" width="2" name="dma0cnt_h" access="rw"/>
+    <reg addr="0x04000100" width="2" name="tm0cnt_l" access="rw"/>
+    <reg addr="0x04000130" width="2" name="keyinput" access="r"/>
+    <reg addr="0x04000200" width="2" name="ie" access="rw"/>
+    <reg addr="0x04000202" width="2" name="if" access="rw"/>
+    <reg addr="0x04000208" width="2" name="ime" access="rw"/>
+  </hardware_registers>
+</platform>

@@ -1,0 +1,26 @@
+<platform name="saturn_cdb" cpu="sh-1">
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="rom" name="cd_block_rom"/>
+    <region start="0x00010000" end="0x0001FFFF" type="ram" name="work_ram"/>
+    <region start="0x01000000" end="0x010001FF" type="io" name="sh1_onchip"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+
+  <hardware_registers>
+    <reg addr="0x01000000" width="2" name="smr" access="rw"/>
+    <reg addr="0x01000010" width="1" name="tier" access="rw"/>
+    <reg addr="0x01000060" width="2" name="iprb" access="rw"/>
+  </hardware_registers>
+</platform>
