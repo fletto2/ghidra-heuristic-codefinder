@@ -11,8 +11,9 @@ SLEIGH-supported ISA without per-architecture configuration.
 ## What it does
 
 When Ghidra imports a raw binary (no ELF/PE/Mach-O headers), it has no entry
-points to start analysis from. This extension applies 41 proven heuristics to
-identify code blocks, function boundaries, and data regions automatically.
+points to start analysis from. This extension applies 41 proven code/data
+heuristics plus 169 function pattern detectors to identify code blocks,
+function boundaries, data regions, and algorithmic function types automatically.
 
 The heuristics were developed and validated across three standalone
 disassemblers for 68000, Z80, and 6502, then abstracted to operate on Ghidra's
@@ -195,7 +196,9 @@ instruction opcodes in both native and swapped byte orders:
 ## Heuristic reference
 
 See [HEURISTICS.md](HEURISTICS.md) for the complete catalog of all 41
-heuristics with P-code patterns, ISA-specific forms, and origin cross-references.
+code/data heuristics, 169 function pattern detectors, and 163 feature-vector
+reference signatures, with P-code patterns, ISA-specific forms, and origin
+cross-references.
 
 ## License
 
