@@ -918,9 +918,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 					msg.append("Top platform matches:\n\n");
 					int rank = 1;
 					for (PlatformDetector.DetectionResult r : results) {
-						String line = String.format("  %d. %s  (score: %.1f%%, %d/%d addresses matched)\n",
-							rank++, r.toString(), r.score * 100.0, r.addressesMatched, r.addressesTested);
-						msg.append(line);
+						msg.append(String.format("  %d. %s\n", rank++, r.toString()));
 					}
 
 					if (endianness.isSwapped()) {

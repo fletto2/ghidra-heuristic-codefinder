@@ -246,17 +246,25 @@ public class PlatformDetector {
 
 		if (tested == 0) return -1.0;
 
-		// Score formula:
-		// Base: fraction of addresses that hit defined regions
-		// Bonus: extra weight for IO hits (distinguishes machines with same ROM/RAM layout)
-		// Bonus: strong bonus for hardware register hits (very specific to machine)
-		// Penalty: unmapped hits
-		double baseScore = (double) hits / tested;
-		double ioPenalty = (double) misses / tested;
-		double ioBonus = (double) ioHits / tested * 0.3;
-		double hwBonus = (double) hwRegHits / tested * 2.0;
+		// Score formula (normalized to 0.0 - 1.0):
+		// Base: fraction of addresses that hit defined regions (0..1)
+		// Weighted components add detail within that range:
+		//   IO region hits boost slightly (distinguishes machines with same ROM/RAM)
+		//   Hardware register hits boost more (very machine-specific)
+		//   Misses penalize
+		double hitRate = (double) hits / tested;
+		double missRate = (double) misses / tested;
+		double ioRate = (double) ioHits / tested;
+		double hwRate = (double) hwRegHits / tested;
 
-		return baseScore - ioPenalty + ioBonus + hwBonus;
+		// Weighted score: hitRate is the base, bonuses/penalties adjust within 0..1
+		double raw = hitRate * 0.7
+			+ ioRate * 0.1
+			+ hwRate * 0.2
+			- missRate * 0.3;
+
+		// Clamp to [0, 1]
+		return Math.max(0.0, Math.min(1.0, raw));
 	}
 
 	/**
