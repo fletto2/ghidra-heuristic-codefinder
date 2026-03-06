@@ -1,0 +1,75 @@
+<platform name="att3b2_300" cpu="we32100">
+  <!-- AT&T 3B2/300 (also 310, 400) - WE32100 @ 10MHz
+       27-bit physical address space (0x0000000-0x7FFFFFF)
+       ROM: 32KB interleaved across 4 byte-wide chips
+       RAM: 256KB base, expandable -->
+
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="bootstrap_rom"/>
+    <region start="0x00040000" end="0x00040003" type="io" name="floppy_control"/>
+    <region start="0x00042000" end="0x0004200F" type="io" name="pit_8253"/>
+    <region start="0x00043000" end="0x00043FFF" type="io" name="nvram"/>
+    <region start="0x00044000" end="0x0004403F" type="io" name="csr"/>
+    <region start="0x00045000" end="0x00045003" type="io" name="hd_page"/>
+    <region start="0x00048000" end="0x0004800F" type="io" name="dmac_am9517a"/>
+    <region start="0x00049000" end="0x0004900F" type="io" name="duart_scn2681"/>
+    <region start="0x0004A000" end="0x0004A003" type="io" name="hdc_d7261"/>
+    <region start="0x0004C000" end="0x0004C003" type="io" name="dpdram_size"/>
+    <region start="0x0004D000" end="0x0004D003" type="io" name="fdc_wd2797"/>
+    <region start="0x02000000" end="0x0203FFFF" type="ram" name="main_ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000080">
+    <entry index="0" name="reset_ssp"/>
+    <entry index="1" name="reset_pcbp"/>
+    <entry index="2" name="reset_psw"/>
+    <entry index="3" name="nmi_handler"/>
+    <entry index="4" name="autovec_0"/>
+    <entry index="5" name="ipl1"/>
+    <entry index="6" name="ipl2"/>
+    <entry index="7" name="ipl3"/>
+    <entry index="8" name="ipl4"/>
+    <entry index="9" name="ipl5"/>
+    <entry index="10" name="ipl6"/>
+    <entry index="11" name="ipl7"/>
+    <entry index="12" name="ipl8"/>
+    <entry index="13" name="ipl9"/>
+    <entry index="14" name="ipl10"/>
+    <entry index="15" name="ipl11"/>
+    <entry index="16" name="ipl12"/>
+    <entry index="17" name="ipl13"/>
+    <entry index="18" name="ipl14"/>
+    <entry index="19" name="ipl15"/>
+  </vectors>
+
+  <hardware_registers>
+    <!-- PIT 8253 Programmable Interval Timer -->
+    <reg addr="0x00042000" width="1" name="pit_counter0" access="rw"/>
+    <reg addr="0x00042004" width="1" name="pit_counter1" access="rw"/>
+    <reg addr="0x00042008" width="1" name="pit_counter2" access="rw"/>
+    <reg addr="0x0004200C" width="1" name="pit_control" access="w"/>
+    <!-- CSR (Control/Status Register) -->
+    <reg addr="0x00044002" width="2" name="csr" access="rw"/>
+    <!-- DMA Controller AM9517A -->
+    <reg addr="0x00048000" width="1" name="dma_ch0_addr" access="rw"/>
+    <reg addr="0x00048001" width="1" name="dma_ch0_count" access="rw"/>
+    <reg addr="0x00048002" width="1" name="dma_ch1_addr" access="rw"/>
+    <reg addr="0x00048003" width="1" name="dma_ch1_count" access="rw"/>
+    <reg addr="0x00048008" width="1" name="dma_status_cmd" access="rw"/>
+    <!-- DUART SCN2681 -->
+    <reg addr="0x00049000" width="1" name="duart_mr1a_mr2a" access="rw"/>
+    <reg addr="0x00049001" width="1" name="duart_sra_csra" access="rw"/>
+    <reg addr="0x00049003" width="1" name="duart_rba_tba" access="rw"/>
+    <reg addr="0x00049004" width="1" name="duart_ipcr_acr" access="rw"/>
+    <reg addr="0x00049005" width="1" name="duart_isr_imr" access="rw"/>
+    <reg addr="0x00049008" width="1" name="duart_mr1b_mr2b" access="rw"/>
+    <reg addr="0x00049009" width="1" name="duart_srb_csrb" access="rw"/>
+    <reg addr="0x0004900B" width="1" name="duart_rbb_tbb" access="rw"/>
+    <reg addr="0x0004900D" width="1" name="duart_opr" access="rw"/>
+    <!-- FDC WD2797 -->
+    <reg addr="0x0004D000" width="1" name="fdc_status_cmd" access="rw"/>
+    <reg addr="0x0004D001" width="1" name="fdc_track" access="rw"/>
+    <reg addr="0x0004D002" width="1" name="fdc_sector" access="rw"/>
+    <reg addr="0x0004D003" width="1" name="fdc_data" access="rw"/>
+  </hardware_registers>
+</platform>
