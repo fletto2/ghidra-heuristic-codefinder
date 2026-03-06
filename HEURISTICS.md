@@ -878,25 +878,25 @@ by their algorithmic purpose using P-code operation distribution analysis.
 
 | Category | Detectors | Examples |
 |----------|-----------|---------|
-| Memory operations | 9 | memcpy, memset, memcmp, memmove, heap allocator, bitmap allocator, block mapping, DMA transfer, DMA chaining |
+| Memory operations | 11 | memcpy, memset, memcmp, memmove, heap allocator, bitmap allocator, block mapping, DMA transfer, DMA chaining, slab allocator, cache flush |
 | String operations | 7 | strlen, string compare, string copy, printf, sprintf, hex dump, number-to-string |
-| Math / arithmetic | 14 | multiply, divide, fixed-point, square root, trig lookup, dot product, abs value, clamp, coordinate transform, BCD, matrix multiply, FFT butterfly, PID controller, popcount |
-| Checksums / hashing | 7 | checksum, CRC polynomial, CRC table lookup, checksum validation, IP checksum, hash function, Hamming ECC |
-| Compression / encoding | 10 | decompression, RLE, LZ, ADPCM, byte swap, Huffman decode, base64 encode/decode, UTF-8 encode/decode |
-| Graphics / display | 14 | sprite renderer, tile decoder, tilemap loader, scroll handler, screen fade, palette fade, palette cycle, line drawing, text renderer, image loader, bitmap blit, flood fill, circle draw, polygon fill |
-| Game logic | 7 | collision detection, velocity physics, animation update, particle system, camera tracking, object spawn, score update |
-| Input / UI | 4 | controller input, menu navigation, debounce input, wildcard match |
-| System / hardware | 18 | boot init, interrupt handler, interrupt control, serial IO, memory test, watchdog feed, flash program, vblank wait, DMA queue, delay loop, self-test, device driver dispatch, timer setup, PWM generation, CRT init, vector table setup, relocation, assert/panic |
-| OS / scheduling | 7 | task scheduler, semaphore, context save/restore, message passing, file operation, bytecode interpreter, stack interpreter |
+| Math / arithmetic | 15 | multiply, divide, fixed-point, square root, trig lookup, dot product, abs value, clamp, coordinate transform, BCD, matrix multiply, FFT butterfly, PID controller, popcount, bit reverse |
+| Checksums / hashing | 9 | checksum, CRC polynomial, CRC table lookup, checksum validation, IP checksum, hash function, Hamming ECC, HMAC, Galois field multiply |
+| Compression / encoding | 15 | decompression, RLE decompress/compress, LZ, ADPCM, byte swap, Huffman decode, base64 encode/decode, UTF-8 encode/decode, delta encode/decode, XDR encode/decode |
+| Graphics / display | 18 | sprite renderer, tile decoder, tilemap loader, scroll handler, screen fade, palette fade, palette cycle, line drawing, text renderer, image loader, bitmap blit, flood fill, circle draw, polygon fill, LCD init, framebuffer swap, VRAM clear |
+| Game logic | 11 | collision detection, velocity physics, animation update, particle system, camera tracking, object spawn, score update, pathfinding, high score table, demo playback, save/load state |
+| Input / UI | 6 | controller input, menu navigation, debounce input, wildcard match, keyboard scan, VT100 escape parser |
+| System / hardware | 24 | boot init, interrupt handler, interrupt control, serial IO, memory test, watchdog feed, flash program, vblank wait, DMA queue, delay loop, self-test, device driver dispatch, timer setup, PWM generation, CRT init, vector table setup, relocation, assert/panic, sensor calibration, power sleep, motor control, page table walk, event signal |
+| OS / scheduling | 9 | task scheduler, semaphore, context save/restore, message passing, file operation, bytecode interpreter, stack interpreter, mutex/spinlock, coroutine switch |
 | Control flow | 5 | jump table dispatch, state machine, busy-wait loop, retry loop, error handler |
 | Data structures | 8 | table lookup, bitfield extraction, circular buffer, linked list traversal, FIFO queue, priority queue, hash table, binary search |
-| Algorithms | 6 | sort, RNG, encrypt/decrypt, command parser, parity compute, Galois field multiply |
-| Audio | 2 | sound driver, MIDI handler |
-| Communication | 4 | I2C protocol, SPI protocol, Modbus RTU, serial IO |
-| Network | 2 | network protocol, SCSI command |
+| Algorithms | 6 | sort, RNG, encrypt/decrypt, command parser, parity compute, ELF section parser |
+| Audio | 7 | sound driver, MIDI handler, audio mixer, ADSR envelope, wavetable synth, FM synth operator, sample rate convert |
+| Communication | 5 | I2C protocol, SPI protocol, Modbus RTU, PS/2 protocol, serial IO |
+| Network | 5 | network protocol, SCSI command, SCSI phase handler, ARP handler, TCP state machine, CD-ROM command |
 | Filesystem | 2 | FAT filesystem, disk block I/O |
 | Float emulation | 2 | softfloat add, softfloat multiply |
-| Logging | 1 | severity-level logger |
+| Logging / debug | 2 | severity-level logger, garbage collector mark |
 
 ### Hardware register labeling
 
@@ -912,7 +912,7 @@ LOAD/STORE operations targeting known hardware register addresses and creates:
 - **Tier 1 (direct P-code, zero per-ISA code)**: 23 (56%)
 - **Tier 2 (P-code pattern matching)**: 8 (20%)
 - **Tier 3 (platform metadata required)**: 10 (24%)
-- **Function pattern detectors**: 132 rule-based + 126 reference signatures
+- **Function pattern detectors**: 169 rule-based + 163 reference signatures
 - **Coverage with Tier 1 alone**: Sufficient for basic disassembly of any ISA
 - **Coverage with Tier 1+2**: High-quality function-level disassembly
 - **Coverage with Tier 1+2+3**: Production-quality platform-aware disassembly

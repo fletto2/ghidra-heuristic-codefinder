@@ -229,6 +229,43 @@ public class FunctionPatternDetector {
 		tryDetect(results, detectFloatEmulMul(pcode, profile));
 		tryDetect(results, detectVectorTableSetup(pcode, profile));
 		tryDetect(results, detectRelocation(pcode, profile));
+		tryDetect(results, detectScsiPhaseHandler(pcode, profile));
+		tryDetect(results, detectCdromCommand(pcode, profile));
+		tryDetect(results, detectArpHandler(pcode, profile));
+		tryDetect(results, detectTcpStateMachine(pcode, profile));
+		tryDetect(results, detectVt100Parser(pcode, profile));
+		tryDetect(results, detectMutexSpinlock(pcode, profile));
+		tryDetect(results, detectCoroutineSwitch(pcode, profile));
+		tryDetect(results, detectAudioMixer(pcode, profile));
+		tryDetect(results, detectAdsrEnvelope(pcode, profile));
+		tryDetect(results, detectWavetableSynth(pcode, profile));
+		tryDetect(results, detectFmSynthOperator(pcode, profile));
+		tryDetect(results, detectSampleRateConvert(pcode, profile));
+		tryDetect(results, detectRleEncode(pcode, profile));
+		tryDetect(results, detectDeltaEncode(pcode, profile));
+		tryDetect(results, detectDeltaDecode(pcode, profile));
+		tryDetect(results, detectSensorCalibration(pcode, profile));
+		tryDetect(results, detectPowerSleep(pcode, profile));
+		tryDetect(results, detectSlabAllocator(pcode, profile));
+		tryDetect(results, detectBitReverse(pcode, profile));
+		tryDetect(results, detectXdrEncode(pcode, profile));
+		tryDetect(results, detectXdrDecode(pcode, profile));
+		tryDetect(results, detectPageTableWalk(pcode, profile));
+		tryDetect(results, detectCacheFlush(pcode, profile));
+		tryDetect(results, detectEventSignal(pcode, profile));
+		tryDetect(results, detectPathfinding(pcode, profile));
+		tryDetect(results, detectSaveLoadState(pcode, profile));
+		tryDetect(results, detectHighScoreTable(pcode, profile));
+		tryDetect(results, detectDemoPlayback(pcode, profile));
+		tryDetect(results, detectLcdInit(pcode, profile));
+		tryDetect(results, detectMotorControl(pcode, profile));
+		tryDetect(results, detectKeyboardScan(pcode, profile));
+		tryDetect(results, detectHmacCompute(pcode, profile));
+		tryDetect(results, detectElfSectionParser(pcode, profile));
+		tryDetect(results, detectPs2Protocol(pcode, profile));
+		tryDetect(results, detectGarbageCollectMark(pcode, profile));
+		tryDetect(results, detectFramebufferSwap(pcode, profile));
+		tryDetect(results, detectVramClear(pcode, profile));
 
 		// Phase 2: Feature-vector similarity (broader coverage via P-code
 		// operation distribution fingerprinting — catches patterns that
@@ -4663,6 +4700,624 @@ public class FunctionPatternDetector {
 			Math.min(conf, 0.75), "Address relocation/fixup routine");
 	}
 
+	// ---- Round 7 detectors ----
+
+	private FunctionType detectScsiPhaseHandler(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// SCSI phase: read phase register, mask 0x07, dispatch on phase value
+		if (p.ioRegionAccesses >= 3) conf += 0.20;
+		boolean has7 = p.constants.contains(7L) || p.constants.contains(0x07L);
+		if (has7) conf += 0.15; // phase mask
+		if (p.cbranch_eq_runs >= 4) conf += 0.20; // 8-way phase dispatch
+		if (p.ands >= 2) conf += 0.10;
+		if (p.calls >= 2) conf += 0.10; // call phase-specific handlers
+		if (p.loads >= 4) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("scsi_phase", "scsi_phase_handler",
+			Math.min(conf, 0.80), "SCSI bus phase state machine");
+	}
+
+	private FunctionType detectCdromCommand(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// CD-ROM command dispatch: opcode byte, switch to handlers
+		if (p.cbranch_eq_runs >= 5) conf += 0.25; // many command opcodes
+		if (p.calls >= 3) conf += 0.15; // call per-command handlers
+		if (p.loads >= 3) conf += 0.10;
+		if (p.ands >= 1) conf += 0.05;
+		// CD-ROM constants: sector size 2048 or 2352
+		boolean has2048 = p.constants.contains(2048L);
+		boolean has2352 = p.constants.contains(2352L);
+		if (has2048 || has2352) conf += 0.20;
+		if (p.ioRegionAccesses >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("cdrom_command", "cdrom_command_dispatch",
+			Math.min(conf, 0.80), "CD-ROM/ATAPI command dispatcher");
+	}
+
+	private FunctionType detectArpHandler(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// ARP: ethertype 0x0806, opcode 1 (request) or 2 (reply), IP/MAC addresses
+		boolean has0x0806 = p.constants.contains(0x0806L);
+		if (has0x0806) conf += 0.30; // ARP ethertype
+		if (p.equals >= 3) conf += 0.15; // compare IPs, opcode
+		if (p.loads >= 6) conf += 0.10; // load sender/target IP+MAC
+		if (p.stores >= 4) conf += 0.10; // store to ARP cache
+		if (p.cbranches >= 2) conf += 0.10;
+		if (p.calls >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("arp_handler", "arp_protocol",
+			Math.min(conf, 0.80), "ARP protocol handler");
+	}
+
+	private FunctionType detectTcpStateMachine(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 50) return null;
+		double conf = 0;
+		// TCP: many state+flag combinations, complex dispatch
+		if (p.cbranch_eq_runs >= 6) conf += 0.25; // state dispatch
+		if (p.ands >= 3) conf += 0.10; // flag extraction (SYN, ACK, FIN, RST)
+		if (p.calls >= 4) conf += 0.15; // state handlers
+		if (p.loads >= 8) conf += 0.10;
+		if (p.stores >= 4) conf += 0.10; // update connection state
+		// TCP flag constants
+		boolean has0x02 = p.constants.contains(0x02L); // SYN
+		boolean has0x10 = p.constants.contains(0x10L); // ACK
+		boolean has0x01 = p.constants.contains(0x01L); // FIN
+		if (has0x02 && has0x10) conf += 0.15;
+		if (has0x01) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("tcp_state", "tcp_state_machine",
+			Math.min(conf, 0.80), "TCP connection state machine");
+	}
+
+	private FunctionType detectVt100Parser(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// VT100: ESC (0x1B) check, CSI sequence, parameter parsing
+		boolean has0x1B = p.constants.contains(0x1BL); // ESC
+		boolean has0x5B = p.constants.contains(0x5BL); // '['
+		if (has0x1B) conf += 0.25;
+		if (has0x5B) conf += 0.15;
+		if (p.constAsciiCompares >= 3) conf += 0.15; // compare with letters
+		if (p.cbranch_eq_runs >= 4) conf += 0.10; // dispatch on command char
+		if (p.hasLoop) conf += 0.10; // parameter digit parsing
+		if (p.stores >= 3) conf += 0.10; // update cursor/color state
+		if (conf < 0.55) return null;
+		return new FunctionType("vt100_parser", "terminal_escape_parser",
+			Math.min(conf, 0.80), "VT100/ANSI escape sequence parser");
+	}
+
+	private FunctionType detectMutexSpinlock(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Spinlock: load lock, compare 0, branch-if-locked, store owner
+		if (p.hasLoop) conf += 0.20; // spin loop
+		if (p.loads >= 2) conf += 0.10;
+		if (p.constZeroCompares >= 1) conf += 0.15; // check if unlocked
+		if (p.cbranches >= 1) conf += 0.10;
+		if (p.stores >= 1) conf += 0.10;
+		// Should be very small
+		if (p.totalOps < 30) conf += 0.15;
+		if (p.calls == 0) conf += 0.10; // no calls, just spin
+		if (conf < 0.55) return null;
+		return new FunctionType("mutex_spinlock", "spinlock_acquire",
+			Math.min(conf, 0.75), "Mutex/spinlock acquire");
+	}
+
+	private FunctionType detectCoroutineSwitch(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Coroutine: save all regs (many stores), load all regs (many loads), swap SP
+		if (p.consecutiveStores >= 4) conf += 0.20; // save register set
+		if (p.consecutiveLoads >= 4) conf += 0.20; // restore register set
+		if (p.loads >= 6 && p.stores >= 6) conf += 0.15;
+		// Minimal computation between save and restore
+		if (p.arithmetic < p.totalOps / 5) conf += 0.10;
+		if (p.adds >= 1) conf += 0.05; // pointer adjustments
+		if (p.branchInds >= 1 || p.returns >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("coroutine_switch", "fiber_context_swap",
+			Math.min(conf, 0.80), "Coroutine/fiber context switch");
+	}
+
+	private FunctionType detectAudioMixer(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// Mixer: loop over channels, load sample, multiply volume, accumulate
+		if (p.hasLoop) conf += 0.15;
+		if (p.mults >= 2) conf += 0.20; // volume scaling per channel
+		if (p.adds >= 3) conf += 0.15; // accumulate channels
+		if (p.loads >= 4) conf += 0.10; // read samples + volumes
+		if (p.stores >= 1) conf += 0.05;
+		// Clipping: compare with max, conditional select
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10;
+		if (p.hasNestedLoop) conf += 0.10; // channel × sample loops
+		if (conf < 0.55) return null;
+		return new FunctionType("audio_mixer", "multichannel_mixer",
+			Math.min(conf, 0.80), "Audio mixer (multi-channel blend)");
+	}
+
+	private FunctionType detectAdsrEnvelope(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// ADSR: 4-phase state machine (attack/decay/sustain/release)
+		if (p.cbranch_eq_runs >= 3) conf += 0.20; // phase dispatch
+		if (p.adds >= 1 || p.subs >= 1) conf += 0.10; // ramp up/down
+		if (p.mults >= 1) conf += 0.10; // scale by rate
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // compare with level
+		if (p.stores >= 2) conf += 0.10; // update level + phase
+		if (p.loads >= 3) conf += 0.10; // read rate/level/phase
+		if (p.constSmallInts >= 3) conf += 0.10; // phase constants 0-3
+		if (conf < 0.55) return null;
+		return new FunctionType("adsr_envelope", "sound_envelope",
+			Math.min(conf, 0.80), "ADSR sound envelope generator");
+	}
+
+	private FunctionType detectWavetableSynth(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// Wavetable: phase accumulator, table index from upper bits, interpolate
+		if (p.hasLoop) conf += 0.15;
+		if (p.adds >= 2) conf += 0.10; // phase accumulator += frequency
+		if (p.rights >= 1) conf += 0.15; // extract table index from phase
+		if (p.ands >= 1) conf += 0.10; // mask for table index
+		if (p.loads >= 3) conf += 0.10; // read wavetable samples
+		if (p.mults >= 1) conf += 0.10; // interpolation or volume
+		if (p.stores >= 2) conf += 0.10; // write output sample + update phase
+		if (conf < 0.55) return null;
+		return new FunctionType("wavetable_synth", "wavetable_oscillator",
+			Math.min(conf, 0.80), "Wavetable synthesis oscillator");
+	}
+
+	private FunctionType detectFmSynthOperator(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// FM synth: phase + modulator, sine lookup, multiply by envelope
+		if (p.adds >= 2) conf += 0.10; // phase + modulation
+		if (p.mults >= 2) conf += 0.20; // modulation depth, envelope
+		if (p.loads >= 3) conf += 0.10; // sine table, envelope, modulator
+		if (p.shifts >= 1) conf += 0.10; // fixed-point scaling
+		if (p.ands >= 1) conf += 0.10; // phase wrap mask
+		if (p.stores >= 2) conf += 0.10; // output + phase update
+		if (p.hasLoop) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("fm_synth", "fm_synthesis_operator",
+			Math.min(conf, 0.80), "FM synthesis operator");
+	}
+
+	private FunctionType detectSampleRateConvert(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// SRC: fractional position, interpolate between samples, step by ratio
+		if (p.hasLoop) conf += 0.15;
+		if (p.mults >= 2) conf += 0.15; // interpolation weights
+		if (p.adds >= 2) conf += 0.10;
+		if (p.subs >= 1) conf += 0.10; // weight = 1 - fraction
+		if (p.shifts >= 2) conf += 0.10; // fixed-point fraction
+		if (p.loads >= 3) conf += 0.10; // read adjacent samples
+		if (p.stores >= 1) conf += 0.10;
+		if (p.ands >= 1) conf += 0.05; // fraction mask
+		if (conf < 0.55) return null;
+		return new FunctionType("sample_rate_convert", "src_interpolator",
+			Math.min(conf, 0.80), "Sample rate converter (interpolation)");
+	}
+
+	private FunctionType detectRleEncode(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// RLE encode: compare current with previous, count runs, output pairs
+		if (p.hasLoop) conf += 0.15;
+		if (p.equals >= 2) conf += 0.20; // compare current == previous
+		if (p.adds >= 1) conf += 0.10; // increment run count
+		if (p.cbranches >= 2) conf += 0.10;
+		if (p.loads >= 2) conf += 0.10;
+		if (p.stores >= 2) conf += 0.10; // output value + count
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // max run length check
+		if (conf < 0.55) return null;
+		return new FunctionType("rle_encode", "rle_compressor",
+			Math.min(conf, 0.80), "Run-length encoder (compressor)");
+	}
+
+	private FunctionType detectDeltaEncode(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Delta encode: current - previous, store delta, update previous
+		if (p.hasLoop) conf += 0.15;
+		if (p.subs >= 1) conf += 0.20; // delta = current - previous
+		if (p.loads >= 2) conf += 0.10;
+		if (p.stores >= 2) conf += 0.15; // store delta + update previous
+		if (p.loadStoreAlternations >= 2) conf += 0.10;
+		// Typically small and simple
+		if (p.totalOps < 50) conf += 0.10;
+		if (p.mults == 0 && p.divs == 0) conf += 0.10; // no multiply/divide
+		if (conf < 0.55) return null;
+		return new FunctionType("delta_encode", "differential_encoder",
+			Math.min(conf, 0.75), "Delta/differential encoder");
+	}
+
+	private FunctionType detectDeltaDecode(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Delta decode: accumulator += delta
+		if (p.hasLoop) conf += 0.15;
+		if (p.adds >= 1) conf += 0.20; // accumulator += delta
+		if (p.loads >= 2) conf += 0.10;
+		if (p.stores >= 2) conf += 0.15;
+		if (p.loadStoreAlternations >= 2) conf += 0.10;
+		if (p.totalOps < 50) conf += 0.10;
+		if (p.mults == 0 && p.divs == 0) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("delta_decode", "differential_decoder",
+			Math.min(conf, 0.75), "Delta/differential decoder");
+	}
+
+	private FunctionType detectSensorCalibration(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Calibration: read raw, subtract offset, multiply scale, clamp
+		if (p.ioRegionAccesses >= 1) conf += 0.15; // ADC register read
+		if (p.subs >= 1) conf += 0.15; // subtract offset
+		if (p.mults >= 1) conf += 0.20; // multiply by scale factor
+		if (p.loads >= 3) conf += 0.10; // raw value, offset, scale
+		if (p.stores >= 1) conf += 0.10;
+		// Clamping
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10;
+		if (p.cbranches >= 1) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("sensor_calibration", "adc_calibrate",
+			Math.min(conf, 0.75), "Sensor/ADC calibration (offset + scale)");
+	}
+
+	private FunctionType detectPowerSleep(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Power sleep: save context, write sleep register, halt
+		if (p.ioRegionAccesses >= 2) conf += 0.20; // power control registers
+		if (p.consecutiveStores >= 3) conf += 0.15; // save state
+		if (p.ors >= 1 || p.ands >= 1) conf += 0.10; // set sleep bits
+		if (p.stores >= 3) conf += 0.10;
+		// Check for halt-like instruction at end
+		boolean hasEndBranch = false;
+		for (int i = Math.max(0, pcode.length - 3); i < pcode.length; i++) {
+			if (pcode[i].getOpcode() == PcodeOp.BRANCH) hasEndBranch = true;
+		}
+		if (hasEndBranch) conf += 0.15;
+		if (p.callOtherCount >= 1) conf += 0.10; // STOP/HALT instruction
+		if (conf < 0.55) return null;
+		return new FunctionType("power_sleep", "sleep_mode_enter",
+			Math.min(conf, 0.75), "Power management / sleep mode entry");
+	}
+
+	private FunctionType detectSlabAllocator(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Slab: load freelist head, check null, update next, return object
+		if (p.loads >= 3) conf += 0.15; // load freelist, next ptr, object
+		if (p.stores >= 2) conf += 0.10; // update freelist head
+		if (p.constZeroCompares >= 1) conf += 0.15; // check NULL (empty)
+		if (p.cbranches >= 1) conf += 0.10;
+		if (p.returns >= 1) conf += 0.05;
+		// Small, fast-path oriented
+		if (p.totalOps < 50) conf += 0.10;
+		if (p.adds >= 1) conf += 0.10; // pointer arithmetic
+		if (p.calls <= 1) conf += 0.10; // maybe one call to grow
+		if (conf < 0.55) return null;
+		return new FunctionType("slab_allocator", "slab_alloc",
+			Math.min(conf, 0.75), "Slab/pool memory allocator");
+	}
+
+	private FunctionType detectBitReverse(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Bit reverse: extract LSB, shift into MSB, 8/16/32 iterations
+		if (p.hasLoop) conf += 0.15;
+		if (p.shifts >= 2) conf += 0.20; // shift left + shift right
+		if (p.ands >= 1) conf += 0.15; // extract bit
+		if (p.ors >= 1) conf += 0.15; // assemble reversed
+		// Or table-driven: single load from 256-entry table
+		if (!p.hasLoop && p.loads >= 1 && p.ands >= 1) conf += 0.20;
+		if (p.totalOps < 40) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("bit_reverse", "bitreverse_permutation",
+			Math.min(conf, 0.80), "Bit reversal permutation");
+	}
+
+	private FunctionType detectXdrEncode(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// XDR encode: shift right by 24/16/8/0, mask 0xFF, store sequentially
+		boolean has24 = p.constants.contains(24L);
+		boolean has16 = p.constants.contains(16L);
+		boolean has8 = p.constants.contains(8L);
+		boolean has0xFF = p.constants.contains(0xFFL);
+		if (has24 && has16 && has8) conf += 0.30; // classic byte extraction shifts
+		if (has0xFF) conf += 0.15;
+		if (p.rights >= 2) conf += 0.10;
+		if (p.ands >= 2) conf += 0.10;
+		if (p.stores >= 3) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("xdr_encode", "network_byte_encode",
+			Math.min(conf, 0.80), "XDR/network byte order encoder");
+	}
+
+	private FunctionType detectXdrDecode(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// XDR decode: load 4 bytes, shift left by 24/16/8/0, OR together
+		boolean has24 = p.constants.contains(24L);
+		boolean has16 = p.constants.contains(16L);
+		boolean has8 = p.constants.contains(8L);
+		if (has24 && has16 && has8) conf += 0.30;
+		if (p.lefts >= 2) conf += 0.15; // shift left for assembly
+		if (p.ors >= 2) conf += 0.15; // OR bytes together
+		if (p.loads >= 3) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("xdr_decode", "network_byte_decode",
+			Math.min(conf, 0.80), "XDR/network byte order decoder");
+	}
+
+	private FunctionType detectPageTableWalk(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Page table walk: shift address for index, load PTE, check valid bit, mask PFN
+		if (p.rights >= 2) conf += 0.20; // extract page directory/table index
+		if (p.ands >= 2) conf += 0.15; // mask index, check flags
+		if (p.loads >= 3) conf += 0.15; // read PDE, PTE, physical addr
+		if (p.cbranches >= 1) conf += 0.10; // valid bit check
+		if (p.ors >= 1) conf += 0.10; // combine PFN + offset
+		if (p.shifts >= 3) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("page_table_walk", "mmu_pagetable_lookup",
+			Math.min(conf, 0.80), "MMU page table walk");
+	}
+
+	private FunctionType detectCacheFlush(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Cache flush: loop by cache line size, write to cache control
+		if (p.hasLoop) conf += 0.15;
+		if (p.callOtherCount >= 1) conf += 0.20; // CPUSH/CINV instructions
+		if (p.adds >= 1) conf += 0.10; // address += line_size
+		if (p.sLesses >= 1 || p.lesses >= 1) conf += 0.10; // addr < end
+		// Common cache line sizes
+		boolean has16 = p.constants.contains(16L);
+		boolean has32 = p.constants.contains(32L);
+		boolean has64 = p.constants.contains(64L);
+		if (has16 || has32 || has64) conf += 0.15;
+		if (p.ioRegionAccesses >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("cache_flush", "cache_invalidate",
+			Math.min(conf, 0.75), "Cache flush/invalidate routine");
+	}
+
+	private FunctionType detectEventSignal(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Event signal: load waiters list, traverse, set run flag
+		if (p.loads >= 3) conf += 0.10;
+		if (p.stores >= 2) conf += 0.10;
+		if (p.hasLoop) conf += 0.15; // traverse waiter list
+		if (p.constZeroCompares >= 1) conf += 0.10; // null check (end of list)
+		if (p.ors >= 1) conf += 0.10; // set flag bit
+		if (p.cbranches >= 1) conf += 0.10;
+		if (p.calls >= 1) conf += 0.10; // call scheduler
+		if (p.adds >= 1) conf += 0.10; // advance pointer
+		if (conf < 0.55) return null;
+		return new FunctionType("event_signal", "event_notification",
+			Math.min(conf, 0.75), "Event/signal notification");
+	}
+
+	private FunctionType detectPathfinding(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 50) return null;
+		double conf = 0;
+		// A*/BFS/Dijkstra: open set, cost compare, neighbor expansion
+		if (p.hasNestedLoop || p.hasLoop) conf += 0.15;
+		if (p.sLesses >= 2 || p.lesses >= 2) conf += 0.15; // cost comparisons
+		if (p.adds >= 4) conf += 0.15; // neighbor offset (x+1,x-1,y+1,y-1)
+		if (p.loads >= 6) conf += 0.10; // read cost/visited/neighbor arrays
+		if (p.stores >= 4) conf += 0.10; // update cost/parent arrays
+		if (p.cbranches >= 4) conf += 0.10; // bounds + visited checks
+		if (p.calls >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("pathfinding", "pathfind_algorithm",
+			Math.min(conf, 0.80), "Pathfinding algorithm (A*/BFS/Dijkstra)");
+	}
+
+	private FunctionType detectSaveLoadState(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 30) return null;
+		double conf = 0;
+		// Serialize: bulk copy of structured data, checksum at end
+		if (p.loadStoreAlternations >= 6) conf += 0.25; // copy many fields
+		if (p.loads >= 8 && p.stores >= 6) conf += 0.15;
+		if (p.hasLoop) conf += 0.10; // array copy
+		if (p.adds >= 2) conf += 0.10; // pointer advancement
+		if (p.calls >= 1) conf += 0.10; // call to checksum/write
+		// Minimal logic
+		if (p.cbranches <= 3) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("save_load_state", "state_serializer",
+			Math.min(conf, 0.80), "Save/load state serialization");
+	}
+
+	private FunctionType detectHighScoreTable(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// High score: compare with table entries, shift entries down, insert
+		if (p.hasLoop) conf += 0.15;
+		if (p.sLesses >= 2 || p.lesses >= 2) conf += 0.15; // score comparison
+		if (p.loadStoreAlternations >= 3) conf += 0.15; // shift entries
+		if (p.loads >= 4) conf += 0.10;
+		if (p.stores >= 3) conf += 0.10;
+		if (p.subs >= 1) conf += 0.10; // count down
+		if (p.cbranches >= 2) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("high_score_table", "score_table_insert",
+			Math.min(conf, 0.75), "High score table insertion");
+	}
+
+	private FunctionType detectDemoPlayback(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Demo/attract: read input from recording buffer, advance frame counter
+		if (p.hasLoop) conf += 0.15;
+		if (p.loads >= 3) conf += 0.10; // read recorded input + frame counter
+		if (p.stores >= 2) conf += 0.10; // write to input registers
+		if (p.adds >= 1) conf += 0.10; // increment frame/index
+		if (p.equals >= 1) conf += 0.10; // check end marker
+		if (p.cbranches >= 2) conf += 0.10; // end check + frame sync
+		if (p.calls >= 1) conf += 0.10; // call game update
+		if (p.constZeroCompares >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("demo_playback", "attract_mode_replay",
+			Math.min(conf, 0.75), "Demo/attract mode input playback");
+	}
+
+	private FunctionType detectLcdInit(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// LCD init: many sequential IO writes, delay between commands
+		if (p.ioRegionAccesses >= 5) conf += 0.30;
+		if (p.consecutiveStores >= 4) conf += 0.20;
+		if (p.stores >= 6) conf += 0.10;
+		if (p.calls >= 1) conf += 0.10; // delay routine
+		if (p.loads <= p.stores / 2) conf += 0.10; // write-heavy
+		if (conf < 0.55) return null;
+		return new FunctionType("lcd_init", "display_controller_init",
+			Math.min(conf, 0.75), "LCD/display controller initialization");
+	}
+
+	private FunctionType detectMotorControl(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 20) return null;
+		double conf = 0;
+		// Stepper/motor: phase sequence, IO writes, step delay
+		if (p.ioRegionAccesses >= 2) conf += 0.20;
+		if (p.hasLoop) conf += 0.10;
+		if (p.stores >= 3) conf += 0.10;
+		if (p.constSmallInts >= 3) conf += 0.10; // phase patterns (0-3 or bitmask)
+		if (p.ands >= 1) conf += 0.10; // phase masking
+		if (p.adds >= 1) conf += 0.10; // step counter
+		if (p.calls >= 1) conf += 0.10; // delay between steps
+		if (p.cbranches >= 1) conf += 0.05;
+		if (conf < 0.55) return null;
+		return new FunctionType("motor_control", "stepper_driver",
+			Math.min(conf, 0.75), "Motor/stepper driver control");
+	}
+
+	private FunctionType detectKeyboardScan(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// Keyboard matrix: drive rows, read columns, build keycode
+		if (p.ioRegionAccesses >= 2) conf += 0.20;
+		if (p.hasLoop) conf += 0.15; // scan rows
+		if (p.shifts >= 1) conf += 0.10; // row select shift
+		if (p.ands >= 1) conf += 0.10; // column read mask
+		if (p.loads >= 3 && p.stores >= 2) conf += 0.10;
+		if (p.adds >= 1) conf += 0.10; // row counter
+		if (p.cbranches >= 2) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("keyboard_scan", "matrix_key_scanner",
+			Math.min(conf, 0.75), "Keyboard matrix scanner");
+	}
+
+	private FunctionType detectHmacCompute(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 40) return null;
+		double conf = 0;
+		// HMAC: XOR key with ipad/opad, hash(key^ipad || message), hash(key^opad || inner)
+		boolean has0x36 = p.constants.contains(0x36L); // ipad
+		boolean has0x5C = p.constants.contains(0x5CL); // opad
+		if (has0x36 && has0x5C) conf += 0.40; // very distinctive HMAC constants
+		if (p.xors >= 2) conf += 0.10;
+		if (p.calls >= 2) conf += 0.15; // two hash calls
+		if (p.hasLoop) conf += 0.10; // XOR key loop
+		if (p.loads >= 3) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("hmac_compute", "hmac_authentication",
+			Math.min(conf, 0.85), "HMAC message authentication code");
+	}
+
+	private FunctionType detectElfSectionParser(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// ELF: magic 0x7F454C46, section header iteration, load fields
+		boolean has0x7F454C46 = p.constants.contains(0x7F454C46L); // "\x7FELF"
+		if (has0x7F454C46) conf += 0.35;
+		if (p.hasLoop) conf += 0.10; // iterate sections
+		if (p.loads >= 6) conf += 0.10; // read header fields
+		if (p.adds >= 2) conf += 0.10; // offset calculations
+		if (p.cbranches >= 2) conf += 0.10;
+		if (p.calls >= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("elf_parser", "elf_section_loader",
+			Math.min(conf, 0.80), "ELF/COFF section header parser");
+	}
+
+	private FunctionType detectPs2Protocol(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 25) return null;
+		double conf = 0;
+		// PS/2: clock/data bit-bang, 11-bit frame (start, 8 data, parity, stop)
+		boolean has11 = p.constants.contains(11L);
+		if (has11) conf += 0.15; // 11-bit frame
+		if (p.ioRegionAccesses >= 3) conf += 0.20;
+		if (p.shifts >= 2) conf += 0.15; // bit assembly
+		if (p.ands >= 1) conf += 0.10;
+		if (p.hasLoop) conf += 0.10; // 8-bit receive loop
+		if (p.xors >= 1) conf += 0.10; // parity computation
+		if (conf < 0.55) return null;
+		return new FunctionType("ps2_protocol", "ps2_keyboard_mouse",
+			Math.min(conf, 0.75), "PS/2 keyboard/mouse protocol handler");
+	}
+
+	private FunctionType detectGarbageCollectMark(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 35) return null;
+		double conf = 0;
+		// GC mark: traverse object graph, set mark bits, recurse/queue
+		if (p.hasLoop) conf += 0.15;
+		if (p.loads >= 5) conf += 0.10; // read object pointers + fields
+		if (p.ands >= 2) conf += 0.10; // check/set mark bit
+		if (p.ors >= 1) conf += 0.10; // set mark bit
+		if (p.constZeroCompares >= 2) conf += 0.10; // null ptr checks
+		if (p.cbranches >= 3) conf += 0.10;
+		if (p.calls >= 1) conf += 0.10; // recursive mark or push to worklist
+		if (p.stores >= 2) conf += 0.10; // write mark bits + worklist
+		if (conf < 0.55) return null;
+		return new FunctionType("gc_mark", "garbage_collector_mark",
+			Math.min(conf, 0.80), "Garbage collector mark phase");
+	}
+
+	private FunctionType detectFramebufferSwap(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// Double buffering: swap front/back pointers, update display register
+		if (p.loads >= 2) conf += 0.15; // read front + back pointers
+		if (p.stores >= 2) conf += 0.15; // swap pointers
+		if (p.ioRegionAccesses >= 1) conf += 0.20; // write display base register
+		if (p.xors >= 1 || p.adds >= 1) conf += 0.10; // toggle buffer index
+		if (p.totalOps < 30) conf += 0.10; // typically very short
+		if (p.cbranches <= 1) conf += 0.10;
+		if (conf < 0.55) return null;
+		return new FunctionType("framebuffer_swap", "double_buffer_flip",
+			Math.min(conf, 0.75), "Framebuffer double-buffer swap");
+	}
+
+	private FunctionType detectVramClear(PcodeOp[] pcode, OpcodeProfile p) {
+		if (p.totalOps < 15) return null;
+		double conf = 0;
+		// VRAM clear: tight store loop to graphics memory, often via IO register
+		if (p.hasLoop) conf += 0.15;
+		if (p.stores >= 2) conf += 0.10;
+		if (p.ioRegionAccesses >= 2) conf += 0.20;
+		if (p.consecutiveStores >= 2) conf += 0.10;
+		// Write-heavy, minimal reads
+		if (p.stores > p.loads * 2) conf += 0.15;
+		if (p.xorSelfOps >= 1) conf += 0.10; // clear register = zero source
+		if (p.adds >= 1) conf += 0.05; // counter/address increment
+		if (conf < 0.55) return null;
+		return new FunctionType("vram_clear", "vram_fill_loop",
+			Math.min(conf, 0.75), "VRAM clear/fill loop");
+	}
+
 	// ================================================================
 	// Feature-vector similarity classifier
 	// ================================================================
@@ -5698,5 +6353,264 @@ public class FunctionPatternDetector {
 			new double[]{0.16,0.16,0.12,0.02,0.02,0.06,0.08,0.04,
 				0.06,0.02, 0.30,0.04,0.50,0.06,0.08,
 				0.06,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.14,0.04}),
+
+		// SCSI phase handler: IO reads, phase mask, 8-way dispatch
+		new ReferenceSignature("scsiphase", "scsi_phase_handler",
+			"SCSI bus phase state machine",
+			new double[]{0.16,0.10,0.04,0.06,0.02,0.14,0.14,0.10,
+				0.06,0.02, 0.20,0.10,0.50,0.12,0.14,
+				0.00,0.04,0.00,0.00,0.00,0.08,0.04,0.00,0.25,0.04}),
+
+		// CD-ROM command: opcode dispatch, sector constants
+		new ReferenceSignature("cdrom", "cdrom_command",
+			"CD-ROM command dispatcher",
+			new double[]{0.14,0.08,0.06,0.04,0.02,0.16,0.14,0.12,
+				0.06,0.02, 0.20,0.12,0.40,0.12,0.16,
+				0.00,0.04,0.00,0.00,0.00,0.10,0.04,0.00,0.25,0.06}),
+
+		// ARP handler: ethertype check, IP/MAC load, cache store
+		new ReferenceSignature("arp", "arp_handler",
+			"ARP protocol handler",
+			new double[]{0.18,0.12,0.04,0.04,0.02,0.14,0.12,0.06,
+				0.06,0.02, 0.15,0.06,0.55,0.10,0.16,
+				0.00,0.04,0.00,0.00,0.00,0.10,0.00,0.00,0.18,0.04}),
+
+		// TCP state machine: many state+flag branches
+		new ReferenceSignature("tcp", "tcp_state_machine",
+			"TCP connection state machine",
+			new double[]{0.14,0.10,0.06,0.08,0.02,0.16,0.14,0.10,
+				0.06,0.02, 0.25,0.10,0.45,0.14,0.18,
+				0.00,0.04,0.00,0.00,0.00,0.10,0.06,0.00,0.28,0.04}),
+
+		// VT100 parser: ESC check, CSI dispatch, parameter digits
+		new ReferenceSignature("vt100", "vt100_parser",
+			"Terminal escape sequence parser",
+			new double[]{0.16,0.10,0.06,0.04,0.02,0.16,0.14,0.06,
+				0.06,0.02, 0.25,0.06,0.50,0.14,0.16,
+				0.00,0.04,0.00,0.00,0.00,0.10,0.04,0.00,0.25,0.04}),
+
+		// Spinlock: tiny loop, load-compare-store
+		new ReferenceSignature("spinlock", "mutex_spinlock",
+			"Mutex/spinlock acquire",
+			new double[]{0.18,0.10,0.04,0.02,0.00,0.14,0.16,0.02,
+				0.06,0.02, 0.20,0.02,0.50,0.12,0.04,
+				0.00,0.00,0.00,0.00,0.00,0.06,0.00,0.00,0.20,0.00}),
+
+		// Coroutine switch: save regs, load regs, minimal arithmetic
+		new ReferenceSignature("coroutine", "coroutine_switch",
+			"Coroutine/fiber context switch",
+			new double[]{0.20,0.20,0.04,0.02,0.00,0.04,0.06,0.02,
+				0.08,0.04, 0.08,0.02,0.50,0.04,0.06,
+				0.06,0.04,0.00,0.00,0.00,0.02,0.00,0.00,0.08,0.40}),
+
+		// Audio mixer: multiply volumes, accumulate, clip
+		new ReferenceSignature("audiomix", "audio_mixer",
+			"Multi-channel audio mixer",
+			new double[]{0.16,0.10,0.14,0.04,0.04,0.08,0.10,0.04,
+				0.06,0.02, 0.35,0.04,0.50,0.08,0.10,
+				0.04,0.06,0.00,0.00,0.00,0.06,0.00,0.02,0.18,0.04}),
+
+		// ADSR envelope: 4-phase state dispatch, ramp up/down
+		new ReferenceSignature("adsr", "adsr_envelope",
+			"ADSR sound envelope",
+			new double[]{0.14,0.12,0.10,0.04,0.02,0.14,0.12,0.06,
+				0.06,0.02, 0.20,0.06,0.55,0.10,0.12,
+				0.00,0.04,0.00,0.00,0.00,0.08,0.00,0.00,0.20,0.04}),
+
+		// Wavetable synth: phase accumulator, table index, interpolate
+		new ReferenceSignature("wavetable", "wavetable_synth",
+			"Wavetable synthesis oscillator",
+			new double[]{0.16,0.12,0.10,0.06,0.06,0.06,0.08,0.04,
+				0.06,0.02, 0.25,0.04,0.55,0.06,0.12,
+				0.04,0.06,0.00,0.00,0.00,0.06,0.00,0.02,0.15,0.04}),
+
+		// FM synth: phase + modulation, sine table, envelope multiply
+		new ReferenceSignature("fmsynth", "fm_synth_operator",
+			"FM synthesis operator",
+			new double[]{0.14,0.12,0.12,0.06,0.04,0.06,0.08,0.04,
+				0.06,0.02, 0.20,0.04,0.55,0.06,0.12,
+				0.04,0.06,0.00,0.00,0.00,0.06,0.00,0.02,0.14,0.04}),
+
+		// Sample rate converter: interpolation weights, fraction tracking
+		new ReferenceSignature("src", "sample_rate_convert",
+			"Sample rate conversion",
+			new double[]{0.16,0.10,0.12,0.06,0.06,0.06,0.08,0.04,
+				0.06,0.02, 0.30,0.04,0.50,0.06,0.10,
+				0.04,0.06,0.00,0.00,0.00,0.06,0.00,0.02,0.18,0.04}),
+
+		// RLE encoder: compare current==previous, count runs
+		new ReferenceSignature("rleenc", "rle_encode",
+			"Run-length encoder",
+			new double[]{0.16,0.12,0.06,0.02,0.02,0.14,0.12,0.04,
+				0.06,0.02, 0.30,0.04,0.55,0.10,0.08,
+				0.04,0.04,0.00,0.00,0.00,0.10,0.00,0.02,0.18,0.04}),
+
+		// Delta encoder: current - previous
+		new ReferenceSignature("deltaenc", "delta_encode",
+			"Delta/differential encoder",
+			new double[]{0.16,0.14,0.10,0.02,0.02,0.06,0.08,0.02,
+				0.06,0.02, 0.25,0.02,0.55,0.06,0.06,
+				0.06,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.14,0.04}),
+
+		// Delta decoder: accumulator += delta
+		new ReferenceSignature("deltadec", "delta_decode",
+			"Delta/differential decoder",
+			new double[]{0.16,0.14,0.08,0.02,0.02,0.06,0.08,0.02,
+				0.06,0.02, 0.25,0.02,0.55,0.06,0.06,
+				0.06,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.14,0.04}),
+
+		// Sensor calibration: offset + scale, clamp
+		new ReferenceSignature("sensor", "sensor_calibration",
+			"Sensor/ADC calibration",
+			new double[]{0.16,0.10,0.12,0.04,0.02,0.10,0.10,0.04,
+				0.06,0.02, 0.10,0.04,0.50,0.08,0.10,
+				0.00,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.12,0.00}),
+
+		// Power sleep: save context, write sleep register
+		new ReferenceSignature("sleep", "power_sleep",
+			"Power management sleep entry",
+			new double[]{0.10,0.18,0.04,0.04,0.02,0.06,0.08,0.04,
+				0.06,0.02, 0.10,0.04,0.30,0.06,0.10,
+				0.00,0.00,0.00,0.00,0.00,0.04,0.00,0.00,0.08,0.40}),
+
+		// Slab allocator: freelist pop, null check
+		new ReferenceSignature("slab", "slab_allocator",
+			"Slab/pool allocator",
+			new double[]{0.18,0.12,0.06,0.02,0.02,0.10,0.10,0.04,
+				0.06,0.02, 0.10,0.04,0.55,0.08,0.08,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.14,0.00}),
+
+		// Bit reverse: shift/mask loop or table lookup
+		new ReferenceSignature("bitrev", "bit_reverse",
+			"Bit reversal permutation",
+			new double[]{0.10,0.06,0.06,0.06,0.14,0.04,0.08,0.02,
+				0.04,0.02, 0.20,0.02,0.40,0.06,0.08,
+				0.00,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.12,0.00}),
+
+		// XDR encode: shift right 24/16/8, mask 0xFF
+		new ReferenceSignature("xdrenc", "xdr_encode",
+			"Network byte order encoder",
+			new double[]{0.06,0.14,0.04,0.06,0.12,0.04,0.06,0.02,
+				0.04,0.02, 0.08,0.02,0.20,0.04,0.10,
+				0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.06,0.40}),
+
+		// XDR decode: load 4 bytes, shift left, OR together
+		new ReferenceSignature("xdrdec", "xdr_decode",
+			"Network byte order decoder",
+			new double[]{0.18,0.06,0.04,0.08,0.12,0.04,0.06,0.02,
+				0.04,0.02, 0.08,0.02,0.15,0.04,0.10,
+				0.06,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.06,0.00}),
+
+		// Page table walk: shift for index, load PTE, check valid
+		new ReferenceSignature("pagetable", "page_table_walk",
+			"MMU page table walk",
+			new double[]{0.18,0.06,0.06,0.08,0.08,0.10,0.10,0.04,
+				0.06,0.02, 0.15,0.04,0.40,0.08,0.14,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.04,0.00,0.16,0.00}),
+
+		// Cache flush: loop by line size, CALLOTHER for CINV/CPUSH
+		new ReferenceSignature("cacheflush", "cache_flush",
+			"Cache flush/invalidate",
+			new double[]{0.08,0.06,0.08,0.04,0.02,0.10,0.12,0.04,
+				0.06,0.02, 0.20,0.04,0.30,0.08,0.08,
+				0.00,0.00,0.00,0.00,0.00,0.04,0.00,0.00,0.15,0.00}),
+
+		// Event signal: traverse waiter list, set flags
+		new ReferenceSignature("eventsig", "event_signal",
+			"Event/signal notification",
+			new double[]{0.16,0.12,0.04,0.06,0.02,0.10,0.10,0.06,
+				0.06,0.02, 0.20,0.06,0.55,0.08,0.08,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.16,0.04}),
+
+		// Pathfinding: nested loop, cost compare, neighbor expansion
+		new ReferenceSignature("pathfind", "pathfinding",
+			"Pathfinding (A*/BFS/Dijkstra)",
+			new double[]{0.16,0.14,0.10,0.04,0.02,0.12,0.12,0.06,
+				0.06,0.02, 0.45,0.06,0.55,0.12,0.14,
+				0.04,0.04,0.00,0.00,0.00,0.08,0.00,0.02,0.22,0.04}),
+
+		// Save/load state: bulk field copy, optional checksum
+		new ReferenceSignature("savestate", "save_load_state",
+			"State serialization",
+			new double[]{0.18,0.16,0.06,0.02,0.02,0.06,0.08,0.06,
+				0.06,0.02, 0.25,0.06,0.60,0.06,0.08,
+				0.08,0.04,0.00,0.00,0.00,0.04,0.00,0.00,0.10,0.04}),
+
+		// High score table: compare scores, shift entries
+		new ReferenceSignature("hiscore", "high_score_table",
+			"High score table insertion",
+			new double[]{0.16,0.14,0.08,0.02,0.02,0.12,0.12,0.04,
+				0.06,0.02, 0.25,0.04,0.55,0.10,0.08,
+				0.06,0.04,0.00,0.00,0.00,0.06,0.00,0.02,0.18,0.04}),
+
+		// Demo playback: read input from buffer, advance frame
+		new ReferenceSignature("demo", "demo_playback",
+			"Demo/attract mode playback",
+			new double[]{0.16,0.10,0.06,0.02,0.02,0.10,0.10,0.06,
+				0.06,0.02, 0.25,0.06,0.50,0.08,0.10,
+				0.04,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.18,0.04}),
+
+		// LCD init: sequential IO writes
+		new ReferenceSignature("lcdinit", "lcd_init",
+			"LCD/display controller init",
+			new double[]{0.06,0.22,0.04,0.04,0.02,0.04,0.06,0.06,
+				0.06,0.02, 0.08,0.06,0.15,0.04,0.12,
+				0.00,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.06,0.50}),
+
+		// Motor control: phase sequence, IO, step delay
+		new ReferenceSignature("motor", "motor_control",
+			"Motor/stepper driver control",
+			new double[]{0.12,0.16,0.06,0.06,0.02,0.08,0.10,0.06,
+				0.06,0.02, 0.20,0.06,0.40,0.08,0.10,
+				0.00,0.00,0.00,0.00,0.00,0.06,0.00,0.00,0.15,0.04}),
+
+		// Keyboard scan: drive rows, read columns, keycode
+		new ReferenceSignature("kbdscan", "keyboard_scan",
+			"Keyboard matrix scanner",
+			new double[]{0.16,0.14,0.06,0.06,0.04,0.10,0.10,0.04,
+				0.06,0.02, 0.25,0.04,0.55,0.08,0.10,
+				0.00,0.04,0.00,0.00,0.00,0.06,0.00,0.00,0.18,0.04}),
+
+		// HMAC: ipad/opad XOR, two hash calls
+		new ReferenceSignature("hmac", "hmac_compute",
+			"HMAC message authentication",
+			new double[]{0.14,0.10,0.06,0.10,0.04,0.08,0.10,0.10,
+				0.06,0.02, 0.25,0.10,0.45,0.08,0.16,
+				0.04,0.06,0.08,0.00,0.00,0.06,0.00,0.02,0.18,0.04}),
+
+		// ELF parser: magic check, section header iteration
+		new ReferenceSignature("elfparse", "elf_parser",
+			"ELF/COFF section parser",
+			new double[]{0.18,0.08,0.06,0.04,0.02,0.12,0.12,0.08,
+				0.06,0.02, 0.25,0.08,0.45,0.10,0.18,
+				0.04,0.04,0.00,0.00,0.00,0.08,0.00,0.00,0.22,0.04}),
+
+		// PS/2 protocol: 11-bit frame, clock/data bit-bang
+		new ReferenceSignature("ps2", "ps2_protocol",
+			"PS/2 keyboard/mouse protocol",
+			new double[]{0.16,0.16,0.06,0.06,0.06,0.08,0.10,0.04,
+				0.06,0.02, 0.25,0.04,0.50,0.08,0.10,
+				0.00,0.04,0.04,0.00,0.00,0.06,0.00,0.00,0.18,0.04}),
+
+		// GC mark: traverse object graph, set mark bits
+		new ReferenceSignature("gcmark", "gc_mark",
+			"Garbage collector mark phase",
+			new double[]{0.18,0.10,0.04,0.08,0.02,0.12,0.12,0.06,
+				0.06,0.02, 0.30,0.06,0.50,0.10,0.10,
+				0.04,0.04,0.04,0.00,0.00,0.08,0.00,0.02,0.20,0.04}),
+
+		// Framebuffer swap: swap pointers, write display register
+		new ReferenceSignature("fbswap", "framebuffer_swap",
+			"Double-buffer framebuffer swap",
+			new double[]{0.14,0.14,0.06,0.04,0.02,0.06,0.08,0.02,
+				0.06,0.02, 0.06,0.02,0.50,0.06,0.08,
+				0.04,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.08,0.04}),
+
+		// VRAM clear: tight store loop to graphics memory
+		new ReferenceSignature("vramclr", "vram_clear",
+			"VRAM fill/clear loop",
+			new double[]{0.06,0.22,0.06,0.02,0.02,0.06,0.08,0.02,
+				0.06,0.02, 0.20,0.02,0.15,0.06,0.06,
+				0.04,0.00,0.00,0.00,0.00,0.02,0.00,0.00,0.10,0.40}),
 	};
 }
