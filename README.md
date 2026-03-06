@@ -146,6 +146,8 @@ are also included:
 | `agfa9000.xml` | AGFA 9000PS PostScript RIP | 68000 |
 | `fps3000.xml` | FPS-3000 Fire Protection Controller | 68000 |
 | `gilbarco_pam1000.xml` | Gilbarco PAM 1000 fuel pump controller | 68000 |
+| `att3b2_300.xml` | AT&T 3B2/300-400 UNIX minicomputer | WE32100 |
+| `att3b2_600.xml` | AT&T 3B2/600 UNIX minicomputer | WE32100 |
 
 ### Creating a new platform description
 
