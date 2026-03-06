@@ -1,0 +1,11 @@
+<platform name="mnight" cpu="z80">
+  <!-- source: MAME upl/ninjakd2.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000F5FF" type="ram" name="banked"/>
+    <region start="0x0000F800" end="0x0000F804" type="io" name="port"/>
+    <region start="0x0000FA00" end="0x0000FA03" type="io" name="write"/>
+    <region start="0x0000FA08" end="0x0000FA0C" type="io" name="ninjakd2_bg_ctrl_w"/>
+  </memory_map>
+</platform>

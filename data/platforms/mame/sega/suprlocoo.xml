@@ -1,0 +1,11 @@
+<platform name="suprlocoo" cpu="z80">
+  <!-- source: MAME sega/suprloco.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="write"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="write"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="acka_r"/>
+  </memory_map>
+</platform>

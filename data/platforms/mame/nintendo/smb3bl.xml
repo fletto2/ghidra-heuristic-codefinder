@@ -1,0 +1,13 @@
+<platform name="smb3bl" cpu="z80">
+  <!-- source: MAME nintendo/nes_arcade_bl.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00003FFF" type="io" name="read"/>
+    <region start="0x00004014" end="0x00004014" type="io" name="spriteram_dma"/>
+    <region start="0x00004016" end="0x00004017" type="io" name="in0_w"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000800F" type="io" name="reg_w"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

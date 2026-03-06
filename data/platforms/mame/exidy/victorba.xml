@@ -1,0 +1,10 @@
+<platform name="victorba" cpu="z80">
+  <!-- source: MAME exidy/victory.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C3FF" type="io" name="video_control_r"/>
+    <region start="0x0000C400" end="0x0000F7FF" type="ram" name="videoram"/>
+    <region start="0x0000F800" end="0x0000F801" type="io" name="response_r"/>
+  </memory_map>
+</platform>

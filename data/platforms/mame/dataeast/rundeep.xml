@@ -1,0 +1,17 @@
+<platform name="rundeep" cpu="z80">
+  <!-- source: MAME dataeast/thedeep.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000DFFF" type="ram" name="banked"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="protection_r"/>
+    <region start="0x0000E004" end="0x0000E004" type="io" name="e004_r"/>
+    <region start="0x0000E008" end="0x0000E00C" type="io" name="port"/>
+    <region start="0x0000E100" end="0x0000E100" type="io" name="e100_w"/>
+    <region start="0x0000E200" end="0x0000E207" type="io" name="pf_control0_8bit_w"/>
+    <region start="0x0000E210" end="0x0000E217" type="io" name="pf_control1_8bit_swap_w"/>
+    <region start="0x0000E400" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F83F" type="io" name="pf_data_8bit_swap_r"/>
+    <region start="0x0000F840" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="drifto94" cpu="v60">
+  <!-- source: MAME seta/ssv.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00210002" end="0x00210003" type="unmapped" name="nop_write"/>
+    <region start="0x00400000" end="0x0047FFFF" type="unmapped" name="nop_write"/>
+    <region start="0x00480000" end="0x00480000" type="io" name="data_r"/>
+    <region start="0x00482000" end="0x00482FFF" type="io" name="dsp_r"/>
+    <region start="0x00483000" end="0x00485FFF" type="unmapped" name="nop_write"/>
+    <region start="0x00500000" end="0x00500001" type="unmapped" name="nop_write"/>
+    <region start="0x00510000" end="0x00510001" type="io" name="drifto94_unknown_r"/>
+    <region start="0x00520000" end="0x00520001" type="io" name="drifto94_unknown_r"/>
+    <region start="0x00580000" end="0x005807FF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

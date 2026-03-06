@@ -1,0 +1,13 @@
+<platform name="excalibrf" cpu="6502">
+  <!-- source: MAME pinball/gts80b.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x0000017F" type="io" name="ram_map"/>
+    <region start="0x000001CB" end="0x000001CB" type="io" name="continual_read"/>
+    <region start="0x00000200" end="0x0000021F" type="io" name="io_map"/>
+    <region start="0x00000280" end="0x0000029F" type="io" name="io_map"/>
+    <region start="0x00000300" end="0x0000031F" type="io" name="io_map"/>
+    <region start="0x00001800" end="0x000018FF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

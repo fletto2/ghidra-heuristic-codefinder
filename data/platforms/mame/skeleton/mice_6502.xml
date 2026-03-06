@@ -1,0 +1,10 @@
+<platform name="mice_6502" cpu="8085">
+  <!-- source: MAME skeleton/mice.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00009000" end="0x000090FF" type="io" name="memory_r"/>
+    <region start="0x0000B000" end="0x0000B7FF" type="ram" name="ram"/>
+    <region start="0x0000E800" end="0x0000E8FF" type="io" name="memory_r"/>
+  </memory_map>
+</platform>

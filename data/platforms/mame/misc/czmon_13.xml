@@ -1,0 +1,9 @@
+<platform name="czmon_13" cpu="z80">
+  <!-- source: MAME misc/multfish.cpp -->
+  <!-- year: 2003 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="timekeeper_r"/>
+  </memory_map>
+</platform>

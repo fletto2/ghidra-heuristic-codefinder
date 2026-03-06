@@ -1,0 +1,16 @@
+<platform name="aponow" cpu="z80">
+  <!-- source: MAME galaxian/scobra.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004800" end="0x00004801" type="io" name="write"/>
+    <region start="0x00004803" end="0x00004803" type="io" name="port"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="scramble_sh_irqtrigger_w"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000090FF" type="ram" name="attributesram"/>
+    <region start="0x0000A801" end="0x0000A802" type="io" name="galaxold_nmi_enable_w"/>
+    <region start="0x0000A806" end="0x0000A806" type="io" name="galaxold_flip_screen_y_w"/>
+    <region start="0x0000A808" end="0x0000A808" type="unmapped" name="nop_write"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="doesnt_boot_with_0x00"/>
+  </memory_map>
+</platform>

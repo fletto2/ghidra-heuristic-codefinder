@@ -1,0 +1,19 @@
+<platform name="initdv3e" cpu="arm7_le">
+  <!-- source: MAME sega/naomi.cpp -->
+  <!-- year: 2004 -->
+  <memory_map>
+    <region start="0x005F7C00" end="0x005F7CFF" type="io" name="pd_dma_map"/>
+    <region start="0x005F8000" end="0x005F9FFF" type="io" name="ta_map"/>
+    <region start="0x025F6800" end="0x025F69FF" type="io" name="dc_sysctrl_r"/>
+    <region start="0x025F7C00" end="0x025F7CFF" type="io" name="pd_dma_map"/>
+    <region start="0x025F8000" end="0x025F9FFF" type="io" name="ta_map"/>
+    <region start="0x04000000" end="0x07FFFFFF" type="ram" name="dc_texture_ram"/>
+    <region start="0x085F6800" end="0x085F69FF" type="io" name="dc_sysctrl_w"/>
+    <region start="0x085F8000" end="0x085F9FFF" type="io" name="both_pvr2_ta_w"/>
+    <region start="0x08800000" end="0x088000FF" type="io" name="elan_regs_r"/>
+    <region start="0x0A000000" end="0x0DFFFFFF" type="ram" name="elan_ram"/>
+    <region start="0x10000000" end="0x11FFFFFF" type="io" name="ta_fifo_poly_w"/>
+    <region start="0x13000000" end="0x13FFFFFF" type="io" name="ta_texture_directpath1_w"/>
+    <region start="0x14000000" end="0x1FFFFFFF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

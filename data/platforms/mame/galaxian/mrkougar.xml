@@ -1,0 +1,15 @@
+<platform name="mrkougar" cpu="z80">
+  <!-- source: MAME galaxian/scramble.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="attributesram"/>
+    <region start="0x00004800" end="0x00004FFF" type="io" name="videoram"/>
+    <region start="0x00005000" end="0x00005000" type="ram" name="racknrol_tbank"/>
+    <region start="0x00005800" end="0x00005807" type="io" name="reset_r"/>
+    <region start="0x00006100" end="0x00006103" type="io" name="read"/>
+    <region start="0x00006200" end="0x00006203" type="io" name="read"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="rombank"/>
+  </memory_map>
+</platform>

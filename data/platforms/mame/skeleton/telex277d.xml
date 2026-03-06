@@ -1,0 +1,9 @@
+<platform name="telex277d" cpu="8085">
+  <!-- source: MAME skeleton/telex277d.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x000080FF" type="io" name="memory_r"/>
+  </memory_map>
+</platform>

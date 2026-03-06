@@ -1,0 +1,20 @@
+<platform name="rollerga" cpu="z80">
+  <!-- source: MAME konami/rollerg.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000010" end="0x00000010" type="io" name="ext_enable_w"/>
+    <region start="0x00000020" end="0x00000020" type="io" name="reset_r"/>
+    <region start="0x00000030" end="0x00000031" type="io" name="main_read"/>
+    <region start="0x00000040" end="0x00000040" type="io" name="soundirq_w"/>
+    <region start="0x00000050" end="0x00000053" type="io" name="port"/>
+    <region start="0x00000060" end="0x00000061" type="io" name="port"/>
+    <region start="0x00000100" end="0x0000010F" type="io" name="read"/>
+    <region start="0x00000200" end="0x0000020F" type="io" name="ctrl_w"/>
+    <region start="0x00000300" end="0x0000030F" type="io" name="k053244_r"/>
+    <region start="0x00000800" end="0x00000FFF" type="io" name="read"/>
+    <region start="0x00000800" end="0x000017FF" type="io" name="region_800"/>
+    <region start="0x00001800" end="0x00003AFF" type="ram" name="palette"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

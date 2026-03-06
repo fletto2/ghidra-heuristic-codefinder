@@ -1,0 +1,14 @@
+<platform name="mgames" cpu="z80">
+  <!-- source: MAME merit/mgames.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00000158" end="0x00000158" type="io" name="muxed_w"/>
+    <region start="0x00003800" end="0x000038FF" type="ram" name="nvram"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="video"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="port"/>
+    <region start="0x00008000" end="0x00008001" type="io" name="outport0_w"/>
+    <region start="0x00008001" end="0x00008002" type="io" name="outport1_w"/>
+    <region start="0x00008002" end="0x00008003" type="io" name="outport2_w"/>
+    <region start="0x00008003" end="0x00008007" type="io" name="outport3_w"/>
+  </memory_map>
+</platform>

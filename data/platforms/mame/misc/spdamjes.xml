@@ -1,0 +1,10 @@
+<platform name="spdamjes" cpu="z80">
+  <!-- source: MAME misc/spdamjes.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000A002" type="io" name="address_w"/>
+    <region start="0x0000C000" end="0x0000C007" type="unmapped" name="nop_write"/>
+    <region start="0x0000D000" end="0x0000D007" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="cultures" cpu="z80">
+  <!-- source: MAME nmk/cultures.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000BFFF" type="io" name="region_8000"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

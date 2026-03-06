@@ -1,0 +1,20 @@
+<platform name="minefldfe" cpu="z80">
+  <!-- source: MAME galaxian/scobra.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000BFF" type="rom" name="rom"/>
+    <region start="0x00000C00" end="0x000017FF" type="ram" name="attributesram"/>
+    <region start="0x00001D98" end="0x00001D98" type="io" name="reset_r"/>
+    <region start="0x00002200" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004200" end="0x000045FF" type="ram" name="videoram"/>
+    <region start="0x00004B00" end="0x00004B03" type="io" name="read"/>
+    <region start="0x00004C00" end="0x00004C03" type="io" name="read"/>
+    <region start="0x00005800" end="0x00006DFF" type="rom" name="rom"/>
+    <region start="0x00007616" end="0x00007617" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x00007621" end="0x00007621" type="io" name="galaxold_nmi_enable_w"/>
+    <region start="0x00007673" end="0x00007673" type="io" name="scrambold_background_enable_w"/>
+    <region start="0x00007704" end="0x00007704" type="io" name="galaxold_stars_enable_w"/>
+    <region start="0x00008A00" end="0x000091FF" type="rom" name="rom"/>
+    <region start="0x0000F802" end="0x0000F802" type="io" name="galaxold_coin_counter_w"/>
+  </memory_map>
+</platform>

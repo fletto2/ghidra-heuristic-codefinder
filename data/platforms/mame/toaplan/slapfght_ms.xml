@@ -1,0 +1,10 @@
+<platform name="slapfght_ms" cpu="z80">
+  <!-- source: MAME toaplan/slapfght_ms.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000E7FF" type="ram" name="banked"/>
+    <region start="0x0000E900" end="0x0000E900" type="io" name="region_e900"/>
+    <region start="0x0000EA00" end="0x0000EFFF" type="rom" name="rom"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

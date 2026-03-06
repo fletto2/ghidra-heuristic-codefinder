@@ -1,0 +1,15 @@
+<platform name="spartanxtec" cpu="z80">
+  <!-- source: MAME irem/spartanxtec.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="write"/>
+    <region start="0x00008100" end="0x00008103" type="io" name="port"/>
+    <region start="0x00008200" end="0x00008200" type="io" name="irq_ack"/>
+    <region start="0x0000A801" end="0x0000A801" type="io" name="a801_w"/>
+    <region start="0x0000A900" end="0x0000A903" type="ram" name="scroll_lo"/>
+    <region start="0x0000A980" end="0x0000A983" type="ram" name="scroll_hi"/>
+    <region start="0x0000C400" end="0x0000C7FF" type="ram" name="spriteram"/>
+    <region start="0x0000D000" end="0x0000EFFF" type="ram" name="m62_tileram"/>
+  </memory_map>
+</platform>

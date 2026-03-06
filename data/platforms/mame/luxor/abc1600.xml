@@ -1,0 +1,10 @@
+<platform name="abc1600" cpu="z80">
+  <!-- source: MAME luxor/abc1600.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x000FFFF0" end="0x000FFFFF" type="io" name="autovectors_map"/>
+    <region start="0x000FFFF5" end="0x000FFFF5" type="io" name="region_ffff5"/>
+    <region start="0x000FFFFB" end="0x000FFFFB" type="io" name="region_ffffb"/>
+    <region start="0x000FFFFF" end="0x000FFFFF" type="io" name="region_fffff"/>
+  </memory_map>
+</platform>

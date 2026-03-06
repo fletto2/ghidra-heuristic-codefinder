@@ -1,0 +1,12 @@
+<platform name="mrsdyna" cpu="z80">
+  <!-- source: MAME universal/sraider.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006FFF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x000073FF" type="io" name="spr_w"/>
+    <region start="0x000077FF" end="0x00008007" type="io" name="map0x77ff_0x7fff___ls139__h4_pin7_is_nc"/>
+    <region start="0x0000D000" end="0x0000D7FF" type="io" name="bg_w"/>
+    <region start="0x0000E000" end="0x0000E000" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

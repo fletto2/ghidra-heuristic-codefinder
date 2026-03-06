@@ -1,0 +1,33 @@
+<platform name="nws3860" cpu="68030">
+  <!-- source: MAME sony/news_38xx.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x08000000" end="0x0FFFFFFF" type="io" name="ram_tas_r"/>
+    <region start="0x18000000" end="0x1803FFFF" type="ram" name="ram"/>
+    <region start="0x20000000" end="0x2000FFFF" type="rom" name="rom"/>
+    <region start="0x22000000" end="0x22000007" type="io" name="poweron_w"/>
+    <region start="0x22800000" end="0x22800001" type="io" name="xpustart_w"/>
+    <region start="0x22800008" end="0x22800009" type="io" name="region_22800008"/>
+    <region start="0x22800010" end="0x22800011" type="io" name="region_22800010"/>
+    <region start="0x22800018" end="0x22800019" type="io" name="region_22800018"/>
+    <region start="0x23000000" end="0x23000000" type="io" name="iop_intst_r"/>
+    <region start="0x23800000" end="0x23800000" type="io" name="iop_ipc_intst_r"/>
+    <region start="0x24000000" end="0x24000007" type="io" name="map"/>
+    <region start="0x24000105" end="0x24000105" type="io" name="dma_r"/>
+    <region start="0x26040000" end="0x26040003" type="io" name="region_26040000"/>
+    <region start="0x26080000" end="0x26080007" type="io" name="map"/>
+    <region start="0x260C0000" end="0x260C0007" type="io" name="map"/>
+    <region start="0x26100000" end="0x26100007" type="io" name="map_68k"/>
+    <region start="0x26140000" end="0x26140003" type="io" name="ab_dc_r"/>
+    <region start="0x26180000" end="0x2618000F" type="io" name="read"/>
+    <region start="0x26200000" end="0x26203FFF" type="io" name="region_26200000"/>
+    <region start="0x26300000" end="0x26300003" type="io" name="regs_r"/>
+    <region start="0x26340000" end="0x26340000" type="io" name="park_status_r"/>
+    <region start="0x26380000" end="0x26380000" type="io" name="index_divide_w"/>
+    <region start="0x28000000" end="0x28000017" type="io" name="map"/>
+    <region start="0x2A000000" end="0x2A000017" type="io" name="map"/>
+    <region start="0x2C000000" end="0x2C0000FF" type="rom" name="rom"/>
+    <region start="0x2C000100" end="0x2C000103" type="io" name="port"/>
+    <region start="0x2E000000" end="0x2EFFFFFF" type="io" name="iop_bus_error_r"/>
+  </memory_map>
+</platform>

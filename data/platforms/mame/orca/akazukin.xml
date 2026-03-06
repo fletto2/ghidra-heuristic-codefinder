@@ -1,0 +1,15 @@
+<platform name="akazukin" cpu="z80">
+  <!-- source: MAME orca/akazukin.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000ABFF" type="ram" name="bg1videoram"/>
+    <region start="0x0000AC00" end="0x0000AC00" type="io" name="priority_w"/>
+    <region start="0x0000AC01" end="0x0000AFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C007" type="io" name="d0"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="port"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="port"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="port"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="levers" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00005800" end="0x00005800" type="io" name="data_w"/>
+    <region start="0x00005900" end="0x00005900" type="io" name="address_w"/>
+  </memory_map>
+</platform>

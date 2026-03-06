@@ -1,0 +1,8 @@
+<platform name="bingoct" cpu="z80">
+  <!-- source: MAME sega/bingoct.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="gfxbank"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

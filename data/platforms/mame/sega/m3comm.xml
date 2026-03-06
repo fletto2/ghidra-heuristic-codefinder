@@ -1,0 +1,9 @@
+<platform name="m3comm" cpu="68000">
+  <!-- source: MAME sega/m3comm.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="m68k_ram"/>
+    <region start="0x00040000" end="0x000400FF" type="io" name="ctrl_r"/>
+    <region start="0x00080000" end="0x0008FFFF" type="ram" name="comm_ram"/>
+    <region start="0x000C0000" end="0x000C00FF" type="io" name="ioregs_r"/>
+  </memory_map>
+</platform>

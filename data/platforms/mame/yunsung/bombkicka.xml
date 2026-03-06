@@ -1,0 +1,8 @@
+<platform name="bombkicka" cpu="68000">
+  <!-- source: MAME yunsung/yunsun16.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00800181" end="0x00800181" type="io" name="sound_bank_w"/>
+    <region start="0x00800189" end="0x00800189" type="io" name="read"/>
+  </memory_map>
+</platform>

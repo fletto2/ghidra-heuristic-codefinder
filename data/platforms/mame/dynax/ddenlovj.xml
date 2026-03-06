@@ -1,0 +1,26 @@
+<platform name="ddenlovj" cpu="z80">
+  <!-- source: MAME dynax/ddenlovr.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x002003FF" type="io" name="ddenlovr_palette_w"/>
+    <region start="0x00201000" end="0x002017FF" type="io" name="map0x201000_0x2017ffnopq"/>
+    <region start="0x00300040" end="0x0030005F" type="io" name="ddenlovr_palette_base_w"/>
+    <region start="0x00300069" end="0x00300069" type="io" name="ddenlovr_bgcolor_w"/>
+    <region start="0x0030006B" end="0x0030006B" type="io" name="ddenlovr_priority_w"/>
+    <region start="0x0030006D" end="0x0030006D" type="io" name="ddenlovr_layer_enable_w"/>
+    <region start="0x00300071" end="0x00300071" type="io" name="unk_r"/>
+    <region start="0x00300080" end="0x00300083" type="io" name="ddenlovr_blitter_w"/>
+    <region start="0x00300087" end="0x00300087" type="io" name="ddenlovr_gfxrom_r"/>
+    <region start="0x003000C0" end="0x003000C3" type="io" name="write"/>
+    <region start="0x00300100" end="0x0030011F" type="io" name="read"/>
+    <region start="0x00300140" end="0x00300143" type="io" name="address_data_w"/>
+    <region start="0x00300180" end="0x00300187" type="io" name="port"/>
+    <region start="0x00300189" end="0x00300189" type="io" name="ddenlovj_coincounter_w"/>
+    <region start="0x0030018B" end="0x0030018B" type="io" name="ddenlovr_select_w"/>
+    <region start="0x0030018D" end="0x0030018D" type="io" name="ddenlovr_oki_bank_w"/>
+    <region start="0x003001C0" end="0x003001CF" type="io" name="d0"/>
+    <region start="0x00300241" end="0x00300241" type="io" name="read"/>
+    <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

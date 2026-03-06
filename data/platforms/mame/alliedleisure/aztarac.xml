@@ -1,0 +1,11 @@
+<platform name="aztarac" cpu="z80">
+  <!-- source: MAME alliedleisure/aztarac.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00008800" end="0x00008800" type="io" name="snd_command_r"/>
+    <region start="0x00008C00" end="0x00008C07" type="io" name="data_r"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="snd_status_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="ngenb38" cpu="80186">
+  <!-- source: MAME skeleton/ngen.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FCFFF" type="ram" name="ram"/>
+    <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

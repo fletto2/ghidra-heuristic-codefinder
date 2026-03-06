@@ -1,0 +1,17 @@
+<platform name="subs" cpu="6502">
+  <!-- source: MAME atari/subs.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000008F" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00000000" type="io" name="noise_reset_w"/>
+    <region start="0x00000000" end="0x00000007" type="io" name="control_r"/>
+    <region start="0x00000020" end="0x00000020" type="io" name="steer_reset_w"/>
+    <region start="0x00000020" end="0x00000027" type="io" name="coin_r"/>
+    <region start="0x00000040" end="0x00000040" type="io" name="timer_reset_w"/>
+    <region start="0x00000060" end="0x00000063" type="io" name="options_r"/>
+    <region start="0x00000060" end="0x0000006F" type="io" name="a0"/>
+    <region start="0x00000090" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000BFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

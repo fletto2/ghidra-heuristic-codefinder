@@ -1,0 +1,15 @@
+<platform name="mikiej" cpu="z80">
+  <!-- source: MAME konami/mikie.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002007" type="io" name="d0"/>
+    <region start="0x00002100" end="0x00002100" type="io" name="reset_w"/>
+    <region start="0x00002200" end="0x00002200" type="io" name="palettebank_w"/>
+    <region start="0x00002300" end="0x00002300" type="unmapped" name="nop_write"/>
+    <region start="0x00002400" end="0x00002403" type="io" name="write"/>
+    <region start="0x00002500" end="0x00002501" type="io" name="port"/>
+    <region start="0x00002800" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

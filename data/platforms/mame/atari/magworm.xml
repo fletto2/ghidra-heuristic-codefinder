@@ -1,0 +1,8 @@
+<platform name="magworm" cpu="6502">
+  <!-- source: MAME atari/centiped.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00001001" end="0x00001001" type="io" name="address_w"/>
+    <region start="0x00001003" end="0x00001003" type="io" name="data_r"/>
+  </memory_map>
+</platform>

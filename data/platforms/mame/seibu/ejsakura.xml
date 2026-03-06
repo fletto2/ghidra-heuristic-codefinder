@@ -1,0 +1,16 @@
+<platform name="ejsakura" cpu="z80">
+  <!-- source: MAME seibu/seibuspi.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
+    <region start="0x00000010" end="0x00000010" type="io" name="spi_status_r"/>
+    <region start="0x00000400" end="0x00000404" type="io" name="input_select_w"/>
+    <region start="0x00000408" end="0x0000040F" type="io" name="write"/>
+    <region start="0x00000484" end="0x00000487" type="io" name="palette_dma_start_w"/>
+    <region start="0x00000490" end="0x00000497" type="io" name="video_dma_length_w"/>
+    <region start="0x00000600" end="0x00000607" type="io" name="read"/>
+    <region start="0x0000060C" end="0x0000060F" type="io" name="input_mux_r"/>
+    <region start="0x00200000" end="0x003FFFFF" type="rom" name="rom"/>
+    <region start="0xFFE00000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

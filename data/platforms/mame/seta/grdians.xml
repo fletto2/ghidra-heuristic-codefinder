@@ -1,0 +1,16 @@
+<platform name="grdians" cpu="h8">
+  <!-- source: MAME seta/seta2.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="ram"/>
+    <region start="0x00304000" end="0x0030FFFF" type="ram" name="ram"/>
+    <region start="0x00600000" end="0x00600003" type="io" name="port"/>
+    <region start="0x00700000" end="0x00700005" type="io" name="port"/>
+    <region start="0x0070000C" end="0x0070000D" type="io" name="reset16_r"/>
+    <region start="0x00800001" end="0x00800001" type="io" name="grdians_lockout_w"/>
+    <region start="0x00B00000" end="0x00B03FFF" type="io" name="word_r"/>
+    <region start="0x00C00000" end="0x00C6003F" type="ram" name="ram"/>
+    <region start="0x00E00010" end="0x00E0001F" type="io" name="sound_bank_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,17 @@
+<platform name="ob8" cpu="z80">
+  <!-- source: MAME oberheim/ob8.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00007FFF" type="io" name="todo_map0x6000_0x7fff__chen__decoded_by"/>
+    <region start="0x00007C00" end="0x00007C1F" type="io" name="switches_r"/>
+    <region start="0x00007C80" end="0x00007C87" type="io" name="leds_w"/>
+    <region start="0x00007D00" end="0x00007D00" type="io" name="write"/>
+    <region start="0x00007D20" end="0x00007D20" type="io" name="write"/>
+    <region start="0x00007D40" end="0x00007D61" type="io" name="todo_map0x7d40_0x7d5f___misc"/>
+    <region start="0x00007D80" end="0x00007D83" type="io" name="read"/>
+    <region start="0x00007E00" end="0x00007E80" type="io" name="todo_map0x7e00_0x7e7f___stat"/>
+    <region start="0x00007F00" end="0x00007F7F" type="io" name="todo_map0x7f00_0x7f7f___misc2"/>
+  </memory_map>
+</platform>

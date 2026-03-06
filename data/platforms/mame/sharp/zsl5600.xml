@@ -1,0 +1,9 @@
+<platform name="zsl5600" cpu="z80">
+  <!-- source: MAME sharp/zaurus.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x40000000" end="0x47FFFFFF" type="io" name="map"/>
+    <region start="0xA0000000" end="0xA07FFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

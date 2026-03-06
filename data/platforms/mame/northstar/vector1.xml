@@ -1,0 +1,16 @@
+<platform name="vector1" cpu="z80">
+  <!-- source: MAME northstar/horizon.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000E7FF" type="ram" name="ram"/>
+    <region start="0x0000E800" end="0x0000E9FF" type="rom" name="rom"/>
+    <region start="0x0000EA01" end="0x0000EA01" type="io" name="region_ea01"/>
+    <region start="0x0000EA11" end="0x0000EA11" type="io" name="region_ea11"/>
+    <region start="0x0000EA21" end="0x0000EA21" type="io" name="region_ea21"/>
+    <region start="0x0000EA31" end="0x0000EA31" type="io" name="region_ea31"/>
+    <region start="0x0000EB10" end="0x0000EB17" type="io" name="ff_r"/>
+    <region start="0x0000EB20" end="0x0000EB20" type="io" name="region_eb20"/>
+    <region start="0x0000EB35" end="0x0000EB35" type="io" name="region_eb35"/>
+    <region start="0x0000EB40" end="0x0000EB40" type="io" name="region_eb40"/>
+  </memory_map>
+</platform>

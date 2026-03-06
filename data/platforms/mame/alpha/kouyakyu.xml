@@ -1,0 +1,8 @@
+<platform name="kouyakyu" cpu="68000">
+  <!-- source: MAME alpha/equites.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00040000" end="0x00040FFF" type="ram" name="ram"/>
+    <region start="0x00180001" end="0x00180001" type="io" name="sound_command_w"/>
+  </memory_map>
+</platform>

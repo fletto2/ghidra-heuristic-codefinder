@@ -1,0 +1,15 @@
+<platform name="champbas" cpu="z80">
+  <!-- source: MAME alpha/champbas.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x00007001" type="io" name="data_address_w"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="vram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000A040" end="0x0000A040" type="io" name="port"/>
+    <region start="0x0000A060" end="0x0000A06F" type="ram" name="spriteram"/>
+    <region start="0x0000A080" end="0x0000A080" type="io" name="port"/>
+    <region start="0x0000A0C0" end="0x0000A0C0" type="io" name="port"/>
+  </memory_map>
+</platform>

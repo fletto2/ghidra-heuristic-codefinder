@@ -1,0 +1,28 @@
+<platform name="maxf_ng" cpu="68000">
+  <!-- source: MAME atari/jaguar.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x04000000" end="0x047FFFFF" type="ram" name="sharedram"/>
+    <region start="0x04E00030" end="0x04E0003F" type="io" name="config_r"/>
+    <region start="0x04E001F0" end="0x04E001F7" type="io" name="cs0_r"/>
+    <region start="0x04E003F0" end="0x04E003F7" type="io" name="cs1_r"/>
+    <region start="0x04F00000" end="0x04F003FF" type="io" name="tom_regs_r"/>
+    <region start="0x04F00400" end="0x04F007FF" type="ram" name="gpuclut"/>
+    <region start="0x04F02100" end="0x04F022FF" type="io" name="gpuctrl_r"/>
+    <region start="0x04F03000" end="0x04F03FFF" type="ram" name="gpuram"/>
+    <region start="0x04F10000" end="0x04F103FF" type="io" name="jerry_regs_r"/>
+    <region start="0x04F16000" end="0x04F1600B" type="io" name="cojag_gun_input_r"/>
+    <region start="0x04F17000" end="0x04F17003" type="io" name="gpio3"/>
+    <region start="0x04F17800" end="0x04F17803" type="io" name="latch_w"/>
+    <region start="0x04F17C00" end="0x04F17C03" type="io" name="port"/>
+    <region start="0x04F1A100" end="0x04F1A17F" type="io" name="dspctrl_r"/>
+    <region start="0x04F1B000" end="0x04F1CFFF" type="ram" name="dspram"/>
+    <region start="0x06000000" end="0x06000003" type="io" name="misc_control_r"/>
+    <region start="0x10000000" end="0x1007FFFF" type="ram" name="mainram"/>
+    <region start="0x12000000" end="0x120FFFFF" type="ram" name="mainram2"/>
+    <region start="0x14000004" end="0x14000007" type="io" name="reset32_w"/>
+    <region start="0x16000000" end="0x16000003" type="io" name="eeprom_enable_w"/>
+    <region start="0x18000000" end="0x18001FFF" type="io" name="nvram"/>
+    <region start="0x1FC00000" end="0x1FDFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

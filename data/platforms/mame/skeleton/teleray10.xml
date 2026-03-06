@@ -1,0 +1,11 @@
+<platform name="teleray10" cpu="6502">
+  <!-- source: MAME skeleton/teleray10.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000011" type="io" name="kb_r"/>
+    <region start="0x00000020" end="0x00000021" type="io" name="port"/>
+    <region start="0x00000030" end="0x00000033" type="io" name="serial_io_r"/>
+    <region start="0x00000040" end="0x00000BFF" type="ram" name="scratchpad"/>
+    <region start="0x00009000" end="0x00009FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

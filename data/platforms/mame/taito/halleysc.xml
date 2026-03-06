@@ -1,0 +1,17 @@
+<platform name="halleysc" cpu="z80">
+  <!-- source: MAME taito/halleys.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="io" name="blitter_ram"/>
+    <region start="0x00001000" end="0x0000EFFF" type="rom" name="rom"/>
+    <region start="0x00001F00" end="0x00001FFF" type="io" name="bgtile_w"/>
+    <region start="0x0000F000" end="0x0000FFBF" type="ram" name="ram"/>
+    <region start="0x0000FF66" end="0x0000FF66" type="io" name="collision_id_r"/>
+    <region start="0x0000FF71" end="0x0000FF71" type="io" name="blitter_status_r"/>
+    <region start="0x0000FF80" end="0x0000FF83" type="io" name="io_mirror_r"/>
+    <region start="0x0000FF8A" end="0x0000FF8A" type="io" name="soundcommand_w"/>
+    <region start="0x0000FF90" end="0x0000FF97" type="io" name="port"/>
+    <region start="0x0000FF9C" end="0x0000FF9C" type="io" name="firq_ack_w"/>
+    <region start="0x0000FFC0" end="0x0000FFFF" type="io" name="paletteram_r"/>
+  </memory_map>
+</platform>

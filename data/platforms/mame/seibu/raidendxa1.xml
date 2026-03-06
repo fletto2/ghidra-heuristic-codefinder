@@ -1,0 +1,12 @@
+<platform name="raidendxa1" cpu="z80">
+  <!-- source: MAME seibu/raiden2.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000470" end="0x00000471" type="io" name="cop_tile_bank_2_r"/>
+    <region start="0x000004D0" end="0x000004D7" type="ram" name="ram"/>
+    <region start="0x00000600" end="0x0000063F" type="io" name="alt"/>
+    <region start="0x000006CA" end="0x000006CB" type="unmapped" name="nop_write"/>
+    <region start="0x00020000" end="0x0002FFFF" type="ram" name="banked"/>
+    <region start="0x00030000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

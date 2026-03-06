@@ -1,0 +1,13 @@
+<platform name="destiny" cpu="6809">
+  <!-- source: MAME dataeast/deshoros.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="ram" name="bank1"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x00009005" type="io" name="printer_status_r"/>
+    <region start="0x00009006" end="0x00009007" type="unmapped" name="unmapped"/>
+    <region start="0x0000900A" end="0x0000900C" type="io" name="sound_w"/>
+    <region start="0x0000900D" end="0x0000900E" type="unmapped" name="unmapped"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

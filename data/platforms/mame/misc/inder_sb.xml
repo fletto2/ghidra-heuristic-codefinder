@@ -1,0 +1,8 @@
+<platform name="inder_sb" cpu="z80">
+  <!-- source: MAME misc/inder_sb.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00000020" end="0x00000020" type="io" name="vec_bankswitch_r"/>
+    <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

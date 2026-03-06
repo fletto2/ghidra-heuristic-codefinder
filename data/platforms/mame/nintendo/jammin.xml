@@ -1,0 +1,18 @@
+<platform name="jammin" cpu="z80">
+  <!-- source: MAME nintendo/dkong.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004001" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006BFF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x000077FF" type="ram" name="sprite_ram"/>
+    <region start="0x00007800" end="0x0000780F" type="io" name="read"/>
+    <region start="0x00007C00" end="0x00007C00" type="io" name="port"/>
+    <region start="0x00007C80" end="0x00007C80" type="io" name="port"/>
+    <region start="0x00007D07" end="0x00007D07" type="io" name="port"/>
+    <region start="0x00007D80" end="0x00007D80" type="io" name="port"/>
+    <region start="0x00007D82" end="0x00007D87" type="io" name="dkong_flipscreen_w"/>
+    <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="opengolf2" cpu="68020">
+  <!-- source: MAME konami/konamigx.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00D90000" end="0x00D97FFF" type="ram" name="palette"/>
+    <region start="0x00DDA000" end="0x00DDAFFF" type="io" name="port"/>
+    <region start="0x00DDC000" end="0x00DDCFFF" type="io" name="port"/>
+    <region start="0x00DDE000" end="0x00DDE003" type="io" name="type1_cablamps_w"/>
+    <region start="0x00E00000" end="0x00E0001F" type="ram" name="k053936_0_ctrl"/>
+    <region start="0x00E20000" end="0x00E2000F" type="unmapped" name="nop_write"/>
+    <region start="0x00E40000" end="0x00E40003" type="unmapped" name="nop_write"/>
+    <region start="0x00E80000" end="0x00E81FFF" type="ram" name="k053936_0_line"/>
+    <region start="0x00EC0000" end="0x00EDFFFF" type="ram" name="psacram"/>
+    <region start="0x00F00000" end="0x00F7FFFF" type="io" name="type1_roz_r1"/>
+    <region start="0x00F80000" end="0x00F80FFF" type="ram" name="ram"/>
+    <region start="0x00FC0000" end="0x00FC00FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

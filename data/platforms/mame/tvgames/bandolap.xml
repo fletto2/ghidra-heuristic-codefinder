@@ -1,0 +1,11 @@
+<platform name="bandolap" cpu="arm9">
+  <!-- source: MAME tvgames/generalplus_gpl32612.cpp -->
+  <!-- year: 2014 -->
+  <memory_map>
+    <region start="0x00000000" end="0x03FFFFFF" type="ram" name="ram"/>
+    <region start="0xD000003C" end="0xD000003F" type="io" name="unk_d000003c_r"/>
+    <region start="0xD0800018" end="0xD080001B" type="io" name="unk_d0800018_r"/>
+    <region start="0xD0900140" end="0xD0900143" type="io" name="unk_d0900140_r"/>
+    <region start="0xD0900150" end="0xD0900153" type="io" name="unk_d0900153_r"/>
+  </memory_map>
+</platform>

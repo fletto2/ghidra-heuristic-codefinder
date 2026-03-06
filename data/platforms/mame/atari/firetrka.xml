@@ -1,0 +1,27 @@
+<platform name="firetrka" cpu="6800">
+  <!-- source: MAME atari/firetrk.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x000008FF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001000" type="ram" name="writeonly"/>
+    <region start="0x00001020" end="0x00001020" type="ram" name="writeonly"/>
+    <region start="0x00001040" end="0x00001040" type="io" name="drone_reset_w"/>
+    <region start="0x00001060" end="0x00001060" type="io" name="car_reset_w"/>
+    <region start="0x00001080" end="0x00001080" type="ram" name="writeonly"/>
+    <region start="0x000010A0" end="0x000010A0" type="io" name="steer_reset_w"/>
+    <region start="0x000010C0" end="0x000010C0" type="io" name="reset_w"/>
+    <region start="0x000010E0" end="0x000010E0" type="io" name="skid_reset_w"/>
+    <region start="0x00001400" end="0x00001400" type="io" name="motor_snd_w"/>
+    <region start="0x00001420" end="0x00001420" type="io" name="crash_snd_w"/>
+    <region start="0x00001440" end="0x00001440" type="io" name="skid_snd_w"/>
+    <region start="0x00001460" end="0x00001460" type="ram" name="writeonly"/>
+    <region start="0x00001480" end="0x00001480" type="ram" name="writeonly"/>
+    <region start="0x000014A0" end="0x000014A0" type="ram" name="writeonly"/>
+    <region start="0x000014C0" end="0x000014C0" type="io" name="output_1_w"/>
+    <region start="0x000014E0" end="0x000014E0" type="io" name="output_2_w"/>
+    <region start="0x00001800" end="0x00001807" type="io" name="input_r"/>
+    <region start="0x00001C00" end="0x00001C03" type="io" name="dip_r"/>
+    <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

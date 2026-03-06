@@ -1,0 +1,17 @@
+<platform name="sxevious" cpu="z80">
+  <!-- source: MAME namco/galaga.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00006800" end="0x00006807" type="io" name="bosco_dsw_r"/>
+    <region start="0x00006800" end="0x00006827" type="io" name="pacman_sound_w"/>
+    <region start="0x00006830" end="0x00006830" type="io" name="reset_w"/>
+    <region start="0x00007000" end="0x00007100" type="io" name="data_r"/>
+    <region start="0x00007800" end="0x000087FF" type="ram" name="share1"/>
+    <region start="0x00009000" end="0x000097FF" type="ram" name="xevious_sr2"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="xevious_sr3"/>
+    <region start="0x0000B000" end="0x0000CFFF" type="ram" name="fg_colorram"/>
+    <region start="0x0000D000" end="0x0000D07F" type="io" name="xevious_vh_latch_w"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="io" name="xevious_bb_r"/>
+  </memory_map>
+</platform>

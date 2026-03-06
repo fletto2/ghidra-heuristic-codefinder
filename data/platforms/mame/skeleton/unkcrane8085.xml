@@ -1,0 +1,10 @@
+<platform name="unkcrane8085" cpu="8085">
+  <!-- source: MAME skeleton/unkcrane8085.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="map0x2000_0x2000r"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="map0x4000_0x4000w"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="map0x6000_0x6000r"/>
+    <region start="0x00008000" end="0x000080FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

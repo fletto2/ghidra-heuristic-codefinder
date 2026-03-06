@@ -1,0 +1,14 @@
+<platform name="simultano" cpu="65c02">
+  <!-- source: MAME saitek/simultano.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="nvram"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="select_w"/>
+    <region start="0x00002200" end="0x00002200" type="io" name="sound_w"/>
+    <region start="0x00002400" end="0x00002400" type="io" name="chessboard_r"/>
+    <region start="0x00002600" end="0x00002600" type="io" name="control_r"/>
+    <region start="0x00004000" end="0x00005FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00006000" end="0x0000607F" type="io" name="read"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="region_8000"/>
+  </memory_map>
+</platform>

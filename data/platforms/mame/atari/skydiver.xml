@@ -1,0 +1,15 @@
+<platform name="skydiver" cpu="6800">
+  <!-- source: MAME atari/skydiver.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="io" name="wram_r"/>
+    <region start="0x00000080" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000400" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x0000080F" type="io" name="a0"/>
+    <region start="0x00001000" end="0x0000100F" type="io" name="a0"/>
+    <region start="0x00001800" end="0x0000180B" type="io" name="port"/>
+    <region start="0x00001810" end="0x00001811" type="io" name="port"/>
+    <region start="0x00002000" end="0x0000201F" type="io" name="reset_r"/>
+    <region start="0x00002800" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00007800" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

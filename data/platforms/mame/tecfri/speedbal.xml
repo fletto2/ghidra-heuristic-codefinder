@@ -1,0 +1,8 @@
+<platform name="speedbal" cpu="z80">
+  <!-- source: MAME tecfri/speedbal.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DBFF" type="rom" name="rom"/>
+    <region start="0x0000DC00" end="0x0000E1FF" type="ram" name="share1"/>
+    <region start="0x0000E800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

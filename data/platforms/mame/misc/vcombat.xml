@@ -1,0 +1,9 @@
+<platform name="vcombat" cpu="68000">
+  <!-- source: MAME misc/vcombat.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00500000" end="0x00540003" type="io" name="vram_1_r"/>
+    <region start="0x00580000" end="0x00580003" type="io" name="m0_p1_c2_r"/>
+    <region start="0x005C0000" end="0x005C0003" type="io" name="wiggle_i860p1_pins_w"/>
+  </memory_map>
+</platform>

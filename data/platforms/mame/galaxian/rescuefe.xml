@@ -1,0 +1,21 @@
+<platform name="rescuefe" cpu="z80">
+  <!-- source: MAME galaxian/scobra.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000005FF" type="rom" name="rom"/>
+    <region start="0x00000600" end="0x000014FF" type="ram" name="ram"/>
+    <region start="0x00004400" end="0x00006BFF" type="rom" name="rom"/>
+    <region start="0x00008200" end="0x000093FF" type="rom" name="rom"/>
+    <region start="0x0000A600" end="0x0000A6FF" type="rom" name="rom"/>
+    <region start="0x0000C160" end="0x0000C163" type="io" name="read"/>
+    <region start="0x0000C180" end="0x0000C183" type="io" name="write"/>
+    <region start="0x0000C190" end="0x0000C193" type="io" name="read"/>
+    <region start="0x0000C220" end="0x0000C223" type="io" name="write"/>
+    <region start="0x0000C4AC" end="0x0000C4AF" type="io" name="read"/>
+    <region start="0x0000EA01" end="0x0000EA01" type="io" name="galaxold_nmi_enable_w"/>
+    <region start="0x0000EA86" end="0x0000EA87" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x0000EA93" end="0x0000EA93" type="io" name="scrambold_background_enable_w"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="reset_r"/>
+    <region start="0x0000F802" end="0x0000F802" type="io" name="galaxold_coin_counter_w"/>
+  </memory_map>
+</platform>

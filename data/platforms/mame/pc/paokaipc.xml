@@ -1,0 +1,11 @@
+<platform name="paokaipc" cpu="pentium">
+  <!-- source: MAME pc/paokaipc.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0009FFFF" type="ram" name="ram"/>
+    <region start="0x000A0000" end="0x000BFFFF" type="io" name="mem_r"/>
+    <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x008FFFFF" type="ram" name="ram"/>
+    <region start="0x02000000" end="0x28FFFFFF" type="unmapped" name="unmapped"/>
+    <region start="0xFFFC0000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

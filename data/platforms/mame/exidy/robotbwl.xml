@@ -1,0 +1,16 @@
+<platform name="robotbwl" cpu="6502">
+  <!-- source: MAME exidy/circus.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="clown_x_w"/>
+    <region start="0x00003000" end="0x00003000" type="io" name="clown_y_w"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="clown_z_w"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="port"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="paddle_r"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,12 @@
+<platform name="bayroutejd" cpu="68000">
+  <!-- source: MAME sega/segas16b.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00FFFFFF" type="io" name="read"/>
+    <region start="0x00100000" end="0x001007FF" type="ram" name="sprites"/>
+    <region start="0x00200000" end="0x00200FFF" type="ram" name="paletteram"/>
+    <region start="0x00300000" end="0x0030FFFF" type="ram" name="tileram"/>
+    <region start="0x00400000" end="0x00400FFF" type="ram" name="textram"/>
+    <region start="0x00500000" end="0x00503FFF" type="ram" name="workram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,19 @@
+<platform name="tsururin" cpu="z80">
+  <!-- source: MAME konami/konmedal.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+    <region start="0x00008800" end="0x00008803" type="io" name="port"/>
+    <region start="0x00008900" end="0x00008900" type="io" name="control2_w"/>
+    <region start="0x00008A00" end="0x00008A00" type="io" name="medalcnt_w"/>
+    <region start="0x00008B00" end="0x00008B00" type="unmapped" name="nop_write"/>
+    <region start="0x00008C00" end="0x00008C00" type="io" name="shuri_bank_w"/>
+    <region start="0x00008D00" end="0x00008D00" type="io" name="port_w"/>
+    <region start="0x00008E00" end="0x00008E00" type="io" name="lamps_w"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="scc_enable_w"/>
+    <region start="0x00009800" end="0x00009FFF" type="io" name="region_9800"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="read"/>
+  </memory_map>
+</platform>

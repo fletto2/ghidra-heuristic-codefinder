@@ -1,0 +1,14 @@
+<platform name="flipjack" cpu="z80">
+  <!-- source: MAME misc/flipjack.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000067FF" type="ram" name="prgbank"/>
+    <region start="0x00006800" end="0x00006803" type="io" name="read"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="soundlatch_w"/>
+    <region start="0x00007010" end="0x00007011" type="io" name="address_w"/>
+    <region start="0x00007020" end="0x00007020" type="io" name="port"/>
+    <region start="0x00007800" end="0x00007800" type="io" name="layer_w"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="ram" name="cram"/>
+  </memory_map>
+</platform>

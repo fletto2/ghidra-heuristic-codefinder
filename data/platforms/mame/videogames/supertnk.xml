@@ -1,0 +1,11 @@
+<platform name="supertnk" cpu="tms9980">
+  <!-- source: MAME videogames/supertnk.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x00001BFF" type="ram" name="banked"/>
+    <region start="0x00001EFC" end="0x00001EFF" type="io" name="port"/>
+    <region start="0x00001EFE" end="0x00001EFF" type="io" name="port"/>
+    <region start="0x00002000" end="0x00003FFF" type="io" name="videoram_r"/>
+  </memory_map>
+</platform>

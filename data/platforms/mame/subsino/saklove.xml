@@ -1,0 +1,14 @@
+<platform name="saklove" cpu="h8">
+  <!-- source: MAME subsino/subsino2.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="nvram"/>
+    <region start="0x00012000" end="0x000131FF" type="io" name="ss9601_videoram_1_lo_r"/>
+    <region start="0x00016000" end="0x000171FF" type="io" name="ss9601_videoram_0_lo_r"/>
+    <region start="0x00022000" end="0x000231FF" type="io" name="ss9601_videoram_1_hi_r"/>
+    <region start="0x00026000" end="0x000271FF" type="io" name="ss9601_videoram_0_hi_r"/>
+    <region start="0x00030000" end="0x00031FFF" type="io" name="ss9601_videoram_1_hi_r"/>
+    <region start="0x00034000" end="0x00035FFF" type="io" name="ss9601_videoram_0_hi_r"/>
+    <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

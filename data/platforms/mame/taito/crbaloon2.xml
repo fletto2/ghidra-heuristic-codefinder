@@ -1,0 +1,11 @@
+<platform name="crbaloon2" cpu="z80">
+  <!-- source: MAME taito/crbaloon.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00004BFF" type="ram" name="videoram"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="colorram"/>
+    <region start="0x00005800" end="0x00007FFF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="mir7hgt" cpu="z80">
+  <!-- source: MAME excellent/lastbank.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x0000A808" end="0x0000A808" type="io" name="port"/>
+    <region start="0x0000A80C" end="0x0000A80C" type="io" name="port"/>
+  </memory_map>
+</platform>

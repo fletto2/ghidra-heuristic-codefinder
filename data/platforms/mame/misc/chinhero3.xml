@@ -1,0 +1,14 @@
+<platform name="chinhero3" cpu="z80">
+  <!-- source: MAME misc/shangkid.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="mainbank"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="nmiq_1_w"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="nmiq_2_w"/>
+    <region start="0x0000B000" end="0x0000B007" type="io" name="d0"/>
+    <region start="0x0000B800" end="0x0000B803" type="io" name="port"/>
+    <region start="0x0000C000" end="0x0000C002" type="ram" name="writeonly"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="ksayakyu" cpu="z80">
+  <!-- source: MAME taito/ksayakyu.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000A800" end="0x0000A802" type="io" name="port"/>
+    <region start="0x0000A803" end="0x0000A803" type="unmapped" name="nop_read"/>
+    <region start="0x0000A804" end="0x0000A808" type="io" name="videoctrl_w"/>
+    <region start="0x0000B000" end="0x0000BFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

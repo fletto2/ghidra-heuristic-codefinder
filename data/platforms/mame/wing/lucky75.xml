@@ -1,0 +1,8 @@
+<platform name="lucky75" cpu="z80">
+  <!-- source: MAME wing/lucky37.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00004000" end="0x000047FF" type="io" name="left_r"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

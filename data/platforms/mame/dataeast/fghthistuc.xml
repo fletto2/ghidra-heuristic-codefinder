@@ -1,0 +1,29 @@
+<platform name="fghthistuc" cpu="z80">
+  <!-- source: MAME dataeast/deco32.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0011FFFF" type="ram" name="ram"/>
+    <region start="0x00120020" end="0x00120021" type="io" name="region_120020"/>
+    <region start="0x00120024" end="0x00120025" type="io" name="region_120024"/>
+    <region start="0x00120028" end="0x00120028" type="io" name="eeprom_r"/>
+    <region start="0x0012002C" end="0x0012002D" type="io" name="eeprom_w"/>
+    <region start="0x001201FC" end="0x001201FC" type="io" name="write"/>
+    <region start="0x00140000" end="0x00140003" type="io" name="vblank_ack_w"/>
+    <region start="0x00168000" end="0x00169FFF" type="ram" name="paletteram"/>
+    <region start="0x0016C008" end="0x0016C00B" type="io" name="palette_dma_w"/>
+    <region start="0x0016C010" end="0x0016C013" type="io" name="unk_status_r"/>
+    <region start="0x00178000" end="0x00179FFF" type="io" name="region_178000"/>
+    <region start="0x0017C010" end="0x0017C013" type="io" name="region_17c010"/>
+    <region start="0x0017C020" end="0x0017C023" type="io" name="unk_status_r"/>
+    <region start="0x00182000" end="0x00185FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x00192000" end="0x00195FFF" type="ram" name="pf1_rowscroll32"/>
+    <region start="0x001A0000" end="0x001A001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x001C2000" end="0x001C5FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x001D2000" end="0x001D5FFF" type="ram" name="pf3_rowscroll32"/>
+    <region start="0x001E0000" end="0x001E001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x00200000" end="0x00207FFF" type="io" name="prot32ram"/>
+    <region start="0x00208800" end="0x00208803" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

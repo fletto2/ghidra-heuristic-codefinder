@@ -1,0 +1,12 @@
+<platform name="cucaracha2" cpu="z80">
+  <!-- source: MAME taito/cucaracha.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000D800" end="0x0000D80F" type="io" name="read"/>
+    <region start="0x0000DA00" end="0x0000DA01" type="io" name="write"/>
+    <region start="0x0000E000" end="0x0000E003" type="unmapped" name="nop_read"/>
+    <region start="0x0000F000" end="0x0000F001" type="io" name="master_port_w"/>
+  </memory_map>
+</platform>

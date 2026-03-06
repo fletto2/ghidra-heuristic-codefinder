@@ -1,0 +1,10 @@
+<platform name="sutapper" cpu="z80">
+  <!-- source: MAME midway/mcr.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000E9FF" type="ram" name="nvram"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="ram" name="videoram"/>
+    <region start="0x0000F800" end="0x0000F87F" type="io" name="paletteram"/>
+  </memory_map>
+</platform>

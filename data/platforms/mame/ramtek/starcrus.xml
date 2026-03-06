@@ -1,0 +1,8 @@
+<platform name="starcrus" cpu="8080">
+  <!-- source: MAME ramtek/starcrus.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x000010FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

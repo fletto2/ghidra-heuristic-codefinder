@@ -1,0 +1,22 @@
+<platform name="lyon32" cpu="68000">
+  <!-- source: MAME hegenerglaser/modular.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="io" name="rom_r"/>
+    <region start="0x40000000" end="0x4007FFFF" type="ram" name="ram"/>
+    <region start="0x80000000" end="0x8003FFFF" type="ram" name="ram"/>
+    <region start="0xC0000000" end="0xC0000000" type="io" name="input_r"/>
+    <region start="0xC8000000" end="0xC8000003" type="unmapped" name="nop_write"/>
+    <region start="0xC8000004" end="0xC8000004" type="io" name="mux_w"/>
+    <region start="0xD0000000" end="0xD0000003" type="unmapped" name="nop_write"/>
+    <region start="0xD0000004" end="0xD0000004" type="io" name="led_w"/>
+    <region start="0xD8000004" end="0xD8000004" type="io" name="bavaria1_r"/>
+    <region start="0xD8000008" end="0xD8000008" type="io" name="bavaria_w"/>
+    <region start="0xD800000C" end="0xD800000C" type="io" name="bavaria2_r"/>
+    <region start="0xE0000000" end="0xE0000000" type="io" name="latch_w"/>
+    <region start="0xE0000010" end="0xE0000010" type="io" name="io_w"/>
+    <region start="0xE8000000" end="0xE8007FFF" type="io" name="nvram_r"/>
+    <region start="0xF0000004" end="0xF000000B" type="io" name="port"/>
+    <region start="0xF0000010" end="0xF0000013" type="io" name="port"/>
+  </memory_map>
+</platform>

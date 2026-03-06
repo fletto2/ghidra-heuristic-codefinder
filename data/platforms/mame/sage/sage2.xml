@@ -1,0 +1,20 @@
+<platform name="sage2" cpu="68000">
+  <!-- source: MAME sage/sage2.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00FFC000" end="0x00FFC007" type="io" name="read"/>
+    <region start="0x00FFC010" end="0x00FFC01F" type="unmapped" name="unmapped"/>
+    <region start="0x00FFC020" end="0x00FFC027" type="io" name="read"/>
+    <region start="0x00FFC030" end="0x00FFC033" type="io" name="read"/>
+    <region start="0x00FFC040" end="0x00FFC043" type="io" name="read"/>
+    <region start="0x00FFC050" end="0x00FFC053" type="io" name="map"/>
+    <region start="0x00FFC060" end="0x00FFC067" type="io" name="read"/>
+    <region start="0x00FFC070" end="0x00FFC073" type="io" name="read"/>
+    <region start="0x00FFC080" end="0x00FFC087" type="io" name="read"/>
+    <region start="0x00FFC400" end="0x00FFC407" type="io" name="read"/>
+    <region start="0x00FFC440" end="0x00FFC447" type="io" name="read"/>
+    <region start="0x00FFC480" end="0x00FFC487" type="io" name="read"/>
+    <region start="0x00FFC4C0" end="0x00FFC4C7" type="io" name="read"/>
+    <region start="0x00FFC500" end="0x00FFC7FF" type="io" name="map0xffc500_0xffc7ff__winchester_drive_p"/>
+  </memory_map>
+</platform>

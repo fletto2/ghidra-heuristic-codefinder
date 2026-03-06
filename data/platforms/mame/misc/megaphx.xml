@@ -1,0 +1,12 @@
+<platform name="megaphx" cpu="68000">
+  <!-- source: MAME misc/megaphx.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00040000" end="0x00040007" type="io" name="host_r"/>
+    <region start="0x00050000" end="0x00050003" type="io" name="megaphx_0x050000_w"/>
+    <region start="0x00060000" end="0x00060007" type="io" name="read"/>
+    <region start="0x00800000" end="0x008FFFFF" type="rom" name="rom"/>
+    <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="dvp1" cpu="upd7810">
+  <!-- source: MAME korg/korgdvp1.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000A0FF" type="io" name="leds_w"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="dsp_w"/>
+  </memory_map>
+</platform>

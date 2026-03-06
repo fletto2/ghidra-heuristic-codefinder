@@ -1,0 +1,25 @@
+<platform name="dss1" cpu="8085">
+  <!-- source: MAME korg/korgdss1.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="rombank"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C107" type="io" name="memory_r"/>
+    <region start="0x0000C400" end="0x0000C403" type="io" name="read"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="bank_switch_w"/>
+    <region start="0x0000D000" end="0x0000D018" type="io" name="read"/>
+    <region start="0x0000D01C" end="0x0000D01C" type="io" name="dmaram_msb_w"/>
+    <region start="0x0000D020" end="0x0000D027" type="io" name="klm782_ga3_1_r"/>
+    <region start="0x0000D040" end="0x0000D047" type="io" name="klm782_ga3_2_r"/>
+    <region start="0x0000D060" end="0x0000D061" type="io" name="klm782_ga1_r"/>
+    <region start="0x0000D080" end="0x0000D08F" type="io" name="klm782_ga2_1_r"/>
+    <region start="0x0000D0A0" end="0x0000D0AF" type="io" name="klm782_ga2_2_r"/>
+    <region start="0x0000D0C0" end="0x0000D0C0" type="io" name="dmaram_lsb_r"/>
+    <region start="0x0000D0E0" end="0x0000D0E0" type="io" name="dmaram_msb_r"/>
+    <region start="0x0000D400" end="0x0000D400" type="io" name="write"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="read"/>
+    <region start="0x0000DC00" end="0x0000DC01" type="io" name="fdc_r"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

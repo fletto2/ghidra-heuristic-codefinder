@@ -1,0 +1,8 @@
+<platform name="mz6500" cpu="8086">
+  <!-- source: MAME sharp/mz5500.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00FF8000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

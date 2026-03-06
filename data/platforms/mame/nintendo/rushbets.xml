@@ -1,0 +1,11 @@
+<platform name="rushbets" cpu="68000">
+  <!-- source: MAME nintendo/snesb.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x005B8E3C" end="0x005B8E3C" type="io" name="prot_cnt_r"/>
+    <region start="0x0075A000" end="0x0075AFFF" type="io" name="rushbets_75axxx_r"/>
+    <region start="0x00770071" end="0x00770071" type="io" name="port"/>
+    <region start="0x00770079" end="0x00770079" type="io" name="port"/>
+    <region start="0x00785000" end="0x0078500F" type="ram" name="ram"/>
+  </memory_map>
+</platform>

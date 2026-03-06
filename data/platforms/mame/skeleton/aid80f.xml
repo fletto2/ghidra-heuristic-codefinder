@@ -1,0 +1,8 @@
+<platform name="aid80f" cpu="z80">
+  <!-- source: MAME skeleton/aid80f.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="ram_r"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="io" name="monitor_r"/>
+  </memory_map>
+</platform>

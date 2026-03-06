@@ -1,0 +1,12 @@
+<platform name="minisupf" cpu="8085">
+  <!-- source: MAME cirsa/missbamby.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="map0x6000_0x6000r__only_read_once_at_sta"/>
+    <region start="0x00008000" end="0x000080FF" type="ram" name="ram"/>
+    <region start="0x00008800" end="0x00008907" type="io" name="memory_r"/>
+    <region start="0x00009000" end="0x00009002" type="io" name="data_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,17 @@
+<platform name="radrad" cpu="z80">
+  <!-- source: MAME nichibutsu/seicross.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000077FF" type="rom" name="rom"/>
+    <region start="0x00007800" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008820" end="0x0000887F" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="ram"/>
+    <region start="0x00009800" end="0x0000981F" type="ram" name="ram"/>
+    <region start="0x00009880" end="0x0000989F" type="ram" name="writeonly"/>
+    <region start="0x00009C00" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="port"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

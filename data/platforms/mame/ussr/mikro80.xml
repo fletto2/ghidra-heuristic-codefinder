@@ -1,0 +1,8 @@
+<platform name="mikro80" cpu="8080">
+  <!-- source: MAME ussr/mikro80.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000F7FF" type="ram" name="mainram"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

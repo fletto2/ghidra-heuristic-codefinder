@@ -1,0 +1,12 @@
+<platform name="dakkochn" cpu="z80">
+  <!-- source: MAME sega/system1.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="io" name="mixer_collision_r"/>
+    <region start="0x0000D000" end="0x0000DFFF" type="ram" name="spriteram"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="io" name="videoram_r"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

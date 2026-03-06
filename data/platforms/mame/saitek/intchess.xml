@@ -1,0 +1,12 @@
+<platform name="intchess" cpu="6502">
+  <!-- source: MAME saitek/intchess.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000BFF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001000" type="io" name="read"/>
+    <region start="0x00001800" end="0x000018FF" type="ram" name="vram"/>
+    <region start="0x0000A800" end="0x0000A80F" type="io" name="map"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

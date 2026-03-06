@@ -1,0 +1,21 @@
+<platform name="starforc" cpu="z80">
+  <!-- source: MAME tecmo/senjyo.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000987F" type="ram" name="ram"/>
+    <region start="0x00009C00" end="0x00009E21" type="ram" name="palette"/>
+    <region start="0x00009E22" end="0x00009E23" type="io" name="map0x9e22_0x9e23_height_of_the_layer_sen"/>
+    <region start="0x00009E22" end="0x00009E29" type="ram" name="ram"/>
+    <region start="0x00009E2A" end="0x00009E2B" type="io" name="map0x9e2a_0x9e2b_height_of_the_layer_sen"/>
+    <region start="0x00009E2A" end="0x00009E31" type="ram" name="ram"/>
+    <region start="0x00009E32" end="0x00009E33" type="io" name="map0x9e32_0x9e33_height_of_the_layer_sen"/>
+    <region start="0x00009E32" end="0x00009E3F" type="ram" name="ram"/>
+    <region start="0x00009E38" end="0x00009E38" type="io" name="map0x9e38_0x9e38_probably_radar_y_positi"/>
+    <region start="0x00009E3D" end="0x00009E3D" type="io" name="map0x9e3d_0x9e3d_probably_radar_x_positi"/>
+    <region start="0x0000A000" end="0x0000BBFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D002" type="io" name="flip_screen_w"/>
+    <region start="0x0000D003" end="0x0000D003" type="unmapped" name="nop_read"/>
+    <region start="0x0000D004" end="0x0000D005" type="io" name="write"/>
+  </memory_map>
+</platform>

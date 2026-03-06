@@ -1,0 +1,8 @@
+<platform name="m5p" cpu="z80">
+  <!-- source: MAME sord/m5.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x00000000" end="0x00007FFF" type="io" name="region_0"/>
+  </memory_map>
+</platform>

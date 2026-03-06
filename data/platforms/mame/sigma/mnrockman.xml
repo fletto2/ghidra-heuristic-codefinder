@@ -1,0 +1,14 @@
+<platform name="mnrockman" cpu="z80">
+  <!-- source: MAME sigma/sigmab98.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x00040000" end="0x00047FFF" type="ram" name="nvram"/>
+    <region start="0x00080000" end="0x00080FFF" type="ram" name="spriteram"/>
+    <region start="0x00082000" end="0x000821FF" type="ram" name="palette"/>
+    <region start="0x00082800" end="0x0008287F" type="ram" name="vtable"/>
+    <region start="0x00083000" end="0x00083021" type="io" name="vregs"/>
+    <region start="0x00083013" end="0x00083013" type="io" name="d013_r"/>
+    <region start="0x00083021" end="0x00083021" type="io" name="d021_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="rallyxm" cpu="z80">
+  <!-- source: MAME namco/rallyx.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x00009800" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A000" end="0x0000A00F" type="ram" name="writeonly"/>
+    <region start="0x0000A080" end="0x0000A080" type="io" name="port"/>
+    <region start="0x0000A100" end="0x0000A100" type="io" name="port"/>
+    <region start="0x0000A100" end="0x0000A11F" type="io" name="pacman_sound_w"/>
+    <region start="0x0000A130" end="0x0000A130" type="io" name="scrollx_w"/>
+    <region start="0x0000A140" end="0x0000A140" type="io" name="scrolly_w"/>
+    <region start="0x0000A170" end="0x0000A170" type="unmapped" name="nop_write"/>
+    <region start="0x0000A180" end="0x0000A187" type="io" name="d0"/>
+  </memory_map>
+</platform>

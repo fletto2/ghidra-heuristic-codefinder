@@ -1,0 +1,9 @@
+<platform name="exctsccr" cpu="z80">
+  <!-- source: MAME alpha/champbas.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00007000" end="0x00007001" type="unmapped" name="unmapped"/>
+    <region start="0x00007C00" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x0000A040" end="0x0000A04F" type="ram" name="spriteram2"/>
+  </memory_map>
+</platform>

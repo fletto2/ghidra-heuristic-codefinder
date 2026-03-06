@@ -1,0 +1,8 @@
+<platform name="edfbl" cpu="68000">
+  <!-- source: MAME jaleco/megasys1.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x000E0002" end="0x000E000B" type="io" name="port"/>
+    <region start="0x000E000E" end="0x000E000F" type="io" name="soundlatch_w"/>
+  </memory_map>
+</platform>

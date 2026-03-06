@@ -1,0 +1,18 @@
+<platform name="simpsons2p2" cpu="z80">
+  <!-- source: MAME konami/simpsons.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="io" name="read"/>
+    <region start="0x00000000" end="0x00000FFF" type="io" name="region_0"/>
+    <region start="0x00001F80" end="0x00001F81" type="io" name="port"/>
+    <region start="0x00001F90" end="0x00001F93" type="io" name="port"/>
+    <region start="0x00001FA0" end="0x00001FA7" type="io" name="k053246_w"/>
+    <region start="0x00001FB0" end="0x00001FC0" type="io" name="write"/>
+    <region start="0x00001FC2" end="0x00001FC2" type="io" name="eeprom_w"/>
+    <region start="0x00001FC4" end="0x00001FC4" type="io" name="sound_interrupt_r"/>
+    <region start="0x00001FC6" end="0x00001FCA" type="io" name="main_read"/>
+    <region start="0x00002000" end="0x00003FFF" type="io" name="region_2000"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

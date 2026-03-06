@@ -1,0 +1,18 @@
+<platform name="turrett" cpu="r3000">
+  <!-- source: MAME namco/turrett.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="ram"/>
+    <region start="0x02000010" end="0x02000013" type="ram" name="ram"/>
+    <region start="0x02000040" end="0x02000043" type="ram" name="ram"/>
+    <region start="0x02000050" end="0x02000053" type="ram" name="ram"/>
+    <region start="0x02000060" end="0x02000063" type="ram" name="ram"/>
+    <region start="0x02000070" end="0x02000073" type="ram" name="ram"/>
+    <region start="0x04000000" end="0x0400000F" type="io" name="dma_w"/>
+    <region start="0x04000100" end="0x04000103" type="io" name="int_r"/>
+    <region start="0x04000200" end="0x040003FF" type="io" name="read"/>
+    <region start="0x08000000" end="0x0800000F" type="io" name="video_r"/>
+    <region start="0x08000200" end="0x080003FF" type="io" name="cs0_r"/>
+    <region start="0x1FC00000" end="0x1FDFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

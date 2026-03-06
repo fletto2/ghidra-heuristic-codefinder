@@ -1,0 +1,8 @@
+<platform name="kurikinta" cpu="z80">
+  <!-- source: MAME taito/taito_l.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A801" type="io" name="right_r"/>
+  </memory_map>
+</platform>

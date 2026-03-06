@@ -1,0 +1,22 @@
+<platform name="macpb145" cpu="68030">
+  <!-- source: MAME apple/macpwrbk030.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x40000000" end="0x400FFFFF" type="io" name="rom_switch_r"/>
+    <region start="0x50F00000" end="0x50F07FFF" type="io" name="via_r"/>
+    <region start="0x50F10000" end="0x50F11FFF" type="io" name="scsi_r"/>
+    <region start="0x50F12060" end="0x50F12063" type="io" name="scsi_drq_r"/>
+    <region start="0x50F14000" end="0x50F17FFF" type="io" name="read"/>
+    <region start="0x50F20000" end="0x50F21FFF" type="io" name="buserror_r"/>
+    <region start="0x50F24000" end="0x50F27FFF" type="io" name="buserror_r"/>
+    <region start="0x50F80000" end="0x50FBFFFF" type="io" name="niagra_r"/>
+    <region start="0xFC000000" end="0xFC07FFFF" type="io" name="pangola_vram_r"/>
+    <region start="0xFC400102" end="0xFC400102" type="io" name="map0xfc400102_0xfc400102wwd90c26_vga_dev"/>
+    <region start="0xFC4003B0" end="0xFC4003DF" type="io" name="io_map"/>
+    <region start="0xFC4046E8" end="0xFC4046E8" type="io" name="mode_setup_w"/>
+    <region start="0xFC800000" end="0xFC800003" type="io" name="pangola_r"/>
+    <region start="0xFCFF8000" end="0xFCFFFFFF" type="rom" name="rom"/>
+    <region start="0xFE0FE000" end="0xFE0FE0FF" type="io" name="ext_video_r"/>
+    <region start="0xFE100000" end="0xFE17FFFF" type="ram" name="ext_vram"/>
+  </memory_map>
+</platform>

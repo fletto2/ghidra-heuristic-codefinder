@@ -1,0 +1,14 @@
+<platform name="bp1200" cpu="80286">
+  <!-- source: MAME skeleton/bpmmicro.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="ram"/>
+    <region start="0x00082200" end="0x00082201" type="io" name="unknown_82200_w"/>
+    <region start="0x00084000" end="0x00084003" type="io" name="latch_84000_r"/>
+    <region start="0x0008400E" end="0x0008400F" type="io" name="unknown_8400e_w"/>
+    <region start="0x00084018" end="0x0008401D" type="io" name="unknown_84018_w"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00FE0000" end="0x00FFFFFF" type="rom" name="rom"/>
+    <region start="0x00FFFFF0" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

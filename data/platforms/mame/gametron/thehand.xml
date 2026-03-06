@@ -1,0 +1,13 @@
+<platform name="thehand" cpu="z80">
+  <!-- source: MAME gametron/gotya.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006002" type="io" name="port"/>
+    <region start="0x00006004" end="0x00006005" type="io" name="video_control_w"/>
+    <region start="0x00006006" end="0x00006006" type="ram" name="writeonly"/>
+    <region start="0x00006007" end="0x00006007" type="io" name="reset_w"/>
+    <region start="0x0000C000" end="0x0000D3FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

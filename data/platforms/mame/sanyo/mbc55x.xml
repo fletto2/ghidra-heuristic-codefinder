@@ -1,0 +1,9 @@
+<platform name="mbc55x" cpu="8088">
+  <!-- source: MAME sanyo/mbc55x.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000F7FFF" type="ram" name="banked"/>
+    <region start="0x000F8000" end="0x000FBFFF" type="unmapped" name="unmapped"/>
+    <region start="0x000FC000" end="0x000FDFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

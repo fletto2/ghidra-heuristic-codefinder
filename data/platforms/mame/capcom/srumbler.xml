@@ -1,0 +1,16 @@
+<platform name="srumbler" cpu="z80">
+  <!-- source: MAME capcom/srumbler.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00004008" end="0x0000400A" type="io" name="bankswitch_w"/>
+    <region start="0x0000400A" end="0x0000400D" type="io" name="scroll_w"/>
+    <region start="0x0000400B" end="0x0000400C" type="io" name="port"/>
+    <region start="0x0000400E" end="0x0000400E" type="io" name="write"/>
+    <region start="0x00005000" end="0x00006FFF" type="ram" name="banked"/>
+    <region start="0x00006000" end="0x00006FFF" type="unmapped" name="nop_write"/>
+    <region start="0x00007000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00007000" end="0x000073FF" type="io" name="palette"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,34 @@
+<platform name="pmac6100" cpu="ppc">
+  <!-- source: MAME apple/macpdm.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x40000000" end="0x403FFFFF" type="rom" name="rom"/>
+    <region start="0x50F00000" end="0x50F00000" type="io" name="via1_r"/>
+    <region start="0x50F04000" end="0x50F04007" type="io" name="dc_ab_r"/>
+    <region start="0x50F10000" end="0x50F10000" type="io" name="scsi_r"/>
+    <region start="0x50F10100" end="0x50F10101" type="io" name="dma16_swap_r"/>
+    <region start="0x50F14000" end="0x50F1401F" type="io" name="read"/>
+    <region start="0x50F16000" end="0x50F16000" type="io" name="fdc_r"/>
+    <region start="0x50F24000" end="0x50F24003" type="io" name="dac_r"/>
+    <region start="0x50F26002" end="0x50F26003" type="io" name="via2_sifr_r"/>
+    <region start="0x50F26012" end="0x50F26013" type="io" name="via2_sier_r"/>
+    <region start="0x50F28000" end="0x50F28007" type="io" name="vctrl_r"/>
+    <region start="0x50F2A000" end="0x50F2A00F" type="io" name="irq_control_r"/>
+    <region start="0x50F2C000" end="0x50F2DFFF" type="io" name="diag_r"/>
+    <region start="0x50F31000" end="0x50F31003" type="io" name="dma_badr_r"/>
+    <region start="0x50F31C20" end="0x50F31C20" type="io" name="dma_enet_tx_ctrl_r"/>
+    <region start="0x50F32000" end="0x50F32009" type="io" name="dma_scsi_a_base_adr_r"/>
+    <region start="0x50F32010" end="0x50F32017" type="io" name="dma_scsi_a_cur_adr_r"/>
+    <region start="0x50F32028" end="0x50F32028" type="io" name="dma_enet_rx_ctrl_r"/>
+    <region start="0x50F32060" end="0x50F32065" type="io" name="dma_floppy_adr_r"/>
+    <region start="0x50F32068" end="0x50F32068" type="io" name="dma_floppy_ctrl_r"/>
+    <region start="0x50F32088" end="0x50F32088" type="io" name="dma_scc_txa_ctrl_r"/>
+    <region start="0x50F32098" end="0x50F32098" type="io" name="dma_scc_rxa_ctrl_r"/>
+    <region start="0x50F320A8" end="0x50F320A8" type="io" name="dma_scc_txb_ctrl_r"/>
+    <region start="0x50F320B8" end="0x50F320B8" type="io" name="dma_scc_rxb_ctrl_r"/>
+    <region start="0x50F32100" end="0x50F32103" type="io" name="dma_berr_en_r"/>
+    <region start="0x50F40000" end="0x50F4000F" type="io" name="hmc_r"/>
+    <region start="0x5FFFFFF8" end="0x5FFFFFFF" type="io" name="id_r"/>
+    <region start="0xFFC00000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

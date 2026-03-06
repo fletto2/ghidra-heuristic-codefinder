@@ -1,0 +1,12 @@
+<platform name="su2000" cpu="80486">
+  <!-- source: MAME misc/su2000.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0009FFFF" type="ram" name="ram"/>
+    <region start="0x000A0000" end="0x000BFFFF" type="io" name="mem_r"/>
+    <region start="0x000C0000" end="0x000C7FFF" type="rom" name="rom"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x003FFFFF" type="ram" name="ram"/>
+    <region start="0xFFFF0000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

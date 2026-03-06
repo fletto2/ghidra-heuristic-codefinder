@@ -1,0 +1,20 @@
+<platform name="esckidsj" cpu="z80">
+  <!-- source: MAME konami/vendetta.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00005FFF" type="io" name="read"/>
+    <region start="0x00002000" end="0x00002FFF" type="io" name="052109_tilemap_0x00000x0fff"/>
+    <region start="0x00003F80" end="0x00003F83" type="io" name="port"/>
+    <region start="0x00003F92" end="0x00003F93" type="io" name="port"/>
+    <region start="0x00003FA0" end="0x00003FA7" type="io" name="k053246_w"/>
+    <region start="0x00003FB0" end="0x00003FD0" type="io" name="write"/>
+    <region start="0x00003FD2" end="0x00003FD2" type="io" name="eeprom_w"/>
+    <region start="0x00003FD4" end="0x00003FD4" type="io" name="z80_irq_r"/>
+    <region start="0x00003FD6" end="0x00003FD9" type="io" name="main_read"/>
+    <region start="0x00003FDA" end="0x00003FDA" type="unmapped" name="nop_write"/>
+    <region start="0x00004000" end="0x00004FFF" type="io" name="tilemap_mask_rom_bank_selector_mask_rom"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

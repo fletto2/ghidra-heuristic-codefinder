@@ -1,0 +1,45 @@
+<platform name="sfiii3nr1" cpu="sh2">
+  <!-- source: MAME capcom/cps3.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x02000000" end="0x0207FFFF" type="ram" name="mainram"/>
+    <region start="0x03000000" end="0x030003FF" type="ram" name="ram"/>
+    <region start="0x04000000" end="0x0407FFFF" type="ram" name="spriteram"/>
+    <region start="0x04080000" end="0x040BFFFF" type="io" name="colourram_r"/>
+    <region start="0x040C0000" end="0x040C0007" type="unmapped" name="nop_read"/>
+    <region start="0x040C0000" end="0x040C001F" type="ram" name="ppu_gscroll_regs"/>
+    <region start="0x040C000C" end="0x040C000D" type="io" name="dma_status_r"/>
+    <region start="0x040C0020" end="0x040C007F" type="ram" name="ppu_tmap_regs"/>
+    <region start="0x040C0080" end="0x040C008B" type="io" name="spritedma_w"/>
+    <region start="0x040C0094" end="0x040C009B" type="io" name="characterdma_w"/>
+    <region start="0x040C00A0" end="0x040C00AF" type="io" name="palettedma_w"/>
+    <region start="0x040E0000" end="0x040E02FF" type="io" name="sound_r"/>
+    <region start="0x04100000" end="0x043FFFFF" type="io" name="cram_data_r"/>
+    <region start="0x05000000" end="0x05000009" type="io" name="port"/>
+    <region start="0x05000A00" end="0x05000A1F" type="io" name="dev_dipsw_r"/>
+    <region start="0x05001000" end="0x05001203" type="io" name="eeprom_r"/>
+    <region start="0x05040000" end="0x0505002B" type="io" name="ssram_r"/>
+    <region start="0x05100000" end="0x05100003" type="io" name="region_5100000"/>
+    <region start="0x05110000" end="0x05110003" type="io" name="region_5110000"/>
+    <region start="0x05120000" end="0x05120003" type="io" name="unused"/>
+    <region start="0x05130000" end="0x05130003" type="io" name="unused"/>
+    <region start="0x05140000" end="0x05140003" type="io" name="indir_r"/>
+    <region start="0x06000000" end="0x06FFFFFF" type="io" name="flash1_r"/>
+    <region start="0x07FF0048" end="0x07FF004B" type="unmapped" name="nop_write"/>
+    <region start="0xC0000000" end="0xC00003FF" type="ram" name="sh2cache_ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

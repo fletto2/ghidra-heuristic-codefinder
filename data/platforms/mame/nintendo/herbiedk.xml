@@ -1,0 +1,20 @@
+<platform name="herbiedk" cpu="z80">
+  <!-- source: MAME nintendo/dkong.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000077FF" type="ram" name="ram"/>
+    <region start="0x00007800" end="0x0000780F" type="io" name="read"/>
+    <region start="0x00007C00" end="0x00007C00" type="io" name="write"/>
+    <region start="0x00007C80" end="0x00007C87" type="io" name="bit0_w"/>
+    <region start="0x00007C80" end="0x00007C80" type="io" name="dkongjr_gfxbank_w"/>
+    <region start="0x00007D00" end="0x00007D00" type="io" name="dkong_in2_r"/>
+    <region start="0x00007D00" end="0x00007D07" type="io" name="bit0_w"/>
+    <region start="0x00007D80" end="0x00007D87" type="io" name="bit0_w"/>
+    <region start="0x00007D80" end="0x00007D80" type="io" name="dkong_audio_irq_w"/>
+    <region start="0x00007D82" end="0x00007D87" type="io" name="dkong_flipscreen_w"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000B000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000D000" end="0x0000DFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

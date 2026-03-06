@@ -1,0 +1,8 @@
+<platform name="dlair2_300" cpu="8088">
+  <!-- source: MAME cinematronics/dlair2.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000EFFFF" type="ram" name="ram"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

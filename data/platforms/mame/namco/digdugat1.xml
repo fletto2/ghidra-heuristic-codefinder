@@ -1,0 +1,15 @@
+<platform name="digdugat1" cpu="z80">
+  <!-- source: MAME namco/galaga.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00006800" end="0x00006827" type="io" name="pacman_sound_w"/>
+    <region start="0x00006830" end="0x00006830" type="io" name="reset_w"/>
+    <region start="0x00007000" end="0x00007100" type="io" name="data_r"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="videoram"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="digdug_posram"/>
+    <region start="0x00009800" end="0x00009BFF" type="ram" name="digdug_flpram"/>
+    <region start="0x0000A000" end="0x0000A007" type="unmapped" name="nop_read"/>
+    <region start="0x0000B800" end="0x0000B840" type="io" name="earom_read"/>
+  </memory_map>
+</platform>

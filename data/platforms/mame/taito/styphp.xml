@@ -1,0 +1,13 @@
+<platform name="styphp" cpu="ppc">
+  <!-- source: MAME taito/taitotz.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000001F" type="io" name="video_chip_r"/>
+    <region start="0x10000000" end="0x1000001F" type="io" name="video_fifo_r"/>
+    <region start="0x40000000" end="0x40FFFFFF" type="ram" name="work_ram"/>
+    <region start="0xA4000000" end="0xA40000FF" type="io" name="ieee1394_r"/>
+    <region start="0xA8000000" end="0xA8003FFF" type="io" name="ppc_common_r"/>
+    <region start="0xAC000000" end="0xAC0FFFFF" type="rom" name="rom"/>
+    <region start="0xFFF00000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

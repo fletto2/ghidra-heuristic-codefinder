@@ -1,0 +1,8 @@
+<platform name="chopperb" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="cpuA_nmi_trigger_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="dcproto" cpu="arm7_le">
+  <!-- source: MAME sega/dccons.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="io" name="soundram_r"/>
+    <region start="0x00800000" end="0x00807FFF" type="io" name="dc_arm_aica_r"/>
+  </memory_map>
+</platform>

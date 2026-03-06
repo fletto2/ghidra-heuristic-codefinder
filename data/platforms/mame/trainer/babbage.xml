@@ -1,0 +1,8 @@
+<platform name="babbage" cpu="z80">
+  <!-- source: MAME trainer/babbage.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x000017FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

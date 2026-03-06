@@ -1,0 +1,9 @@
+<platform name="rotaryf" cpu="8085">
+  <!-- source: MAME midw8080/rotaryf.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000017FF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x000073FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000A1FF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

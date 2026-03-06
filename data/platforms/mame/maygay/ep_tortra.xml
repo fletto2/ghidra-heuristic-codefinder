@@ -1,0 +1,8 @@
+<platform name="ep_tortra" cpu="h8">
+  <!-- source: MAME maygay/maygayep.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00FE0000" end="0x00FFFD0F" type="ram" name="ram"/>
+  </memory_map>
+</platform>

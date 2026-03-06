@@ -1,0 +1,8 @@
+<platform name="cabaluk" cpu="68000">
+  <!-- source: MAME seibu/cabal.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x000A0008" end="0x000A000F" type="io" name="xy"/>
+    <region start="0x000C0000" end="0x000C0001" type="io" name="reset_xy_w"/>
+  </memory_map>
+</platform>

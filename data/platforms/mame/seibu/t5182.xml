@@ -1,0 +1,9 @@
+<platform name="t5182" cpu="z80">
+  <!-- source: MAME seibu/t5182.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000040FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

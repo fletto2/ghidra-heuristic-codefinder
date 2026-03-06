@@ -1,0 +1,20 @@
+<platform name="bmjr" cpu="6800">
+  <!-- source: MAME hitachi/bmjr.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="work_ram"/>
+    <region start="0x00000100" end="0x000003FF" type="io" name="region_100"/>
+    <region start="0x0000B000" end="0x0000EFFF" type="io" name="region_b000"/>
+    <region start="0x0000E800" end="0x0000E803" type="io" name="map0xe800_0xe803_6820_or_6821_pia"/>
+    <region start="0x0000EE00" end="0x0000EE00" type="io" name="tape_stop_r"/>
+    <region start="0x0000EE20" end="0x0000EE20" type="io" name="tape_start_r"/>
+    <region start="0x0000EE40" end="0x0000EE40" type="io" name="screen_reverse_w"/>
+    <region start="0x0000EE80" end="0x0000EE80" type="io" name="tape_r"/>
+    <region start="0x0000EEC0" end="0x0000EEC0" type="io" name="key_r"/>
+    <region start="0x0000EF00" end="0x0000EF00" type="io" name="timer_r"/>
+    <region start="0x0000EF80" end="0x0000EF80" type="io" name="port"/>
+    <region start="0x0000EFD0" end="0x0000EFD0" type="io" name="bank_mode_r"/>
+    <region start="0x0000EFE0" end="0x0000EFE0" type="io" name="screen_mode_w"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="io" name="region_f000"/>
+  </memory_map>
+</platform>

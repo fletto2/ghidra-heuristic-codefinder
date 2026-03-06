@@ -1,0 +1,9 @@
+<platform name="pipedrmj" cpu="z80">
+  <!-- source: MAME vsystem/pipedrm.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="io" name="fromance_videoram_r"/>
+  </memory_map>
+</platform>

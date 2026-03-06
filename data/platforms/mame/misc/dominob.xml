@@ -1,0 +1,15 @@
+<platform name="dominob" cpu="z80">
+  <!-- source: MAME misc/dominob.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D001" type="io" name="address_data_w"/>
+    <region start="0x0000D001" end="0x0000D001" type="io" name="data_r"/>
+    <region start="0x0000D008" end="0x0000D008" type="io" name="dominob_d008_w"/>
+    <region start="0x0000D00C" end="0x0000D00C" type="io" name="port"/>
+    <region start="0x0000D010" end="0x0000D010" type="unmapped" name="nop_write"/>
+    <region start="0x0000D018" end="0x0000D018" type="unmapped" name="nop_write"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

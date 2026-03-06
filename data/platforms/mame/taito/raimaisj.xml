@@ -1,0 +1,10 @@
+<platform name="raimaisj" cpu="z80">
+  <!-- source: MAME taito/taito_l.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00008000" end="0x00008801" type="io" name="right_r"/>
+    <region start="0x00008C00" end="0x00008C00" type="unmapped" name="nop_read"/>
+    <region start="0x00008C01" end="0x00008C01" type="io" name="master_comm_r"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

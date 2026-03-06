@@ -1,0 +1,19 @@
+<platform name="ddboya" cpu="z80">
+  <!-- source: MAME konami/konmedal.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000C000" end="0x0000C03F" type="io" name="k056832_w"/>
+    <region start="0x0000C100" end="0x0000C100" type="io" name="control2_w"/>
+    <region start="0x0000C200" end="0x0000C200" type="io" name="medalcnt_w"/>
+    <region start="0x0000C300" end="0x0000C300" type="io" name="lamps_w"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="bankswitch_w"/>
+    <region start="0x0000C500" end="0x0000C500" type="unmapped" name="nop_read"/>
+    <region start="0x0000C600" end="0x0000C60F" type="io" name="k056832_b_w"/>
+    <region start="0x0000C700" end="0x0000C703" type="io" name="port"/>
+    <region start="0x0000C800" end="0x0000C80F" type="io" name="read"/>
+    <region start="0x0000D000" end="0x0000D001" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="io" name="vram_r"/>
+  </memory_map>
+</platform>

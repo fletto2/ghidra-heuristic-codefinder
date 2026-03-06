@@ -1,0 +1,18 @@
+<platform name="lethaleneaa" cpu="z80">
+  <!-- source: MAME konami/lethal.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="bank1"/>
+    <region start="0x00004000" end="0x00007FFF" type="io" name="amap8"/>
+    <region start="0x00004000" end="0x000043FF" type="unmapped" name="unmapped"/>
+    <region start="0x00004000" end="0x0000404F" type="io" name="write"/>
+    <region start="0x00004080" end="0x00004080" type="unmapped" name="nop_read"/>
+    <region start="0x00004090" end="0x00004090" type="io" name="sound_irq_r"/>
+    <region start="0x000040A0" end="0x000040A0" type="unmapped" name="nop_read"/>
+    <region start="0x000040C4" end="0x000040C4" type="io" name="control2_w"/>
+    <region start="0x000040C8" end="0x000040D0" type="io" name="palette_control_w"/>
+    <region start="0x000040D4" end="0x000040D9" type="io" name="guns_r"/>
+    <region start="0x000040DB" end="0x000040DC" type="io" name="gunsaux_r"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

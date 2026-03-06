@@ -1,0 +1,30 @@
+<platform name="acheartf" cpu="arm9">
+  <!-- source: MAME misc/nexus3d.cpp -->
+  <!-- year: 2006 -->
+  <memory_map>
+    <region start="0x00000000" end="0x023FFFFF" type="ram" name="mainram"/>
+    <region start="0x03720000" end="0x0373FFFF" type="ram" name="ram"/>
+    <region start="0x046C0000" end="0x046FFFFF" type="ram" name="ram"/>
+    <region start="0x60000000" end="0x67FFFFFF" type="ram" name="ram"/>
+    <region start="0x8C000000" end="0x8C000003" type="io" name="port"/>
+    <region start="0x8C800000" end="0x8C800003" type="io" name="port"/>
+    <region start="0x8D000000" end="0x8D000003" type="io" name="port"/>
+    <region start="0x9C000000" end="0x9C000003" type="io" name="data_r"/>
+    <region start="0x9C000010" end="0x9C000013" type="io" name="command_w"/>
+    <region start="0x9C000018" end="0x9C00001B" type="io" name="address_w"/>
+    <region start="0xC0000200" end="0xC00002BF" type="unmapped" name="nop_read"/>
+    <region start="0xC0000800" end="0xC0000803" type="unmapped" name="nop_write"/>
+    <region start="0xC0000808" end="0xC000080B" type="io" name="int_mask_r"/>
+    <region start="0xC0000810" end="0xC0000817" type="io" name="int_pending_r"/>
+    <region start="0xC0000910" end="0xC0000913" type="io" name="rop_data_w"/>
+    <region start="0xC000091C" end="0xC000091F" type="io" name="rop_register_w"/>
+    <region start="0xC0000D00" end="0xC0000D07" type="io" name="timer_status_r"/>
+    <region start="0xC0000F40" end="0xC0000F4F" type="ram" name="ram"/>
+    <region start="0xC0000F44" end="0xC0000F47" type="io" name="map0xc0000f44_0xc0000f47_nexus3d_unk2_r"/>
+    <region start="0xC0000F4C" end="0xC0000F4F" type="io" name="rop_status_r"/>
+    <region start="0xC0001844" end="0xC0001847" type="io" name="crtc_vblank_r"/>
+    <region start="0xE0000000" end="0xE00000FF" type="io" name="map0xe0000000_0xe00000ff_general__contro"/>
+    <region start="0xE0000014" end="0xE0000017" type="io" name="vrender3d_status_r"/>
+    <region start="0xE0000300" end="0xE00003FF" type="io" name="map0xe0000300_0xe00003ff_gte_constant_ve"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="cchance" cpu="z80">
+  <!-- source: MAME taito/cchance.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="io" name="spritecodelow_r8"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E2FF" type="io" name="spriteylow_r8"/>
+    <region start="0x0000E300" end="0x0000E303" type="ram" name="ram"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="spritebgflag_w8"/>
+    <region start="0x0000F000" end="0x0000F002" type="io" name="region_f000"/>
+    <region start="0x0000F800" end="0x0000F801" type="io" name="address_data_w"/>
+    <region start="0x0000F801" end="0x0000F801" type="io" name="data_r"/>
+  </memory_map>
+</platform>

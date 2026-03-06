@@ -1,0 +1,12 @@
+<platform name="shettle" cpu="z80">
+  <!-- source: MAME nichibutsu/shettle.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00008E00" end="0x000093FF" type="ram" name="ram"/>
+    <region start="0x00009600" end="0x000097FF" type="ram" name="main_sound"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000A100" end="0x0000A107" type="io" name="ports_r"/>
+  </memory_map>
+</platform>

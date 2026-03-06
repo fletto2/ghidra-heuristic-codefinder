@@ -1,0 +1,21 @@
+<platform name="cshooter" cpu="z80">
+  <!-- source: MAME seibu/airraid.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000C004" type="io" name="port"/>
+    <region start="0x0000C500" end="0x0000C500" type="io" name="c500_w"/>
+    <region start="0x0000C600" end="0x0000C600" type="io" name="c600_w"/>
+    <region start="0x0000C700" end="0x0000C700" type="io" name="c700_w"/>
+    <region start="0x0000C801" end="0x0000C801" type="io" name="c801_w"/>
+    <region start="0x0000D000" end="0x0000D8FF" type="ram" name="txram"/>
+    <region start="0x0000DA00" end="0x0000DAFF" type="ram" name="palette_ext"/>
+    <region start="0x0000DC00" end="0x0000DC10" type="ram" name="vregs"/>
+    <region start="0x0000DC11" end="0x0000DC11" type="io" name="bank_w"/>
+    <region start="0x0000DC19" end="0x0000DC19" type="ram" name="ram"/>
+    <region start="0x0000DC1E" end="0x0000DC1F" type="ram" name="ram"/>
+    <region start="0x0000DE00" end="0x0000DE0F" type="io" name="main_r"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="froggerv" cpu="z80">
+  <!-- source: MAME galaxian/galaxold.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="videoram"/>
+    <region start="0x00009800" end="0x000098FF" type="ram" name="attributesram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A004" end="0x0000A007" type="io" name="lfo_freq_w"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
+    <region start="0x0000A800" end="0x0000A803" type="io" name="background_enable_w"/>
+    <region start="0x0000A805" end="0x0000A807" type="io" name="fire_enable_w"/>
+    <region start="0x0000B000" end="0x0000B001" type="io" name="port"/>
+    <region start="0x0000B006" end="0x0000B007" type="io" name="galaxold_flip_screen_y_w"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

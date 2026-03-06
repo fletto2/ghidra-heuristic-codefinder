@@ -1,0 +1,21 @@
+<platform name="magoddsc" cpu="z80">
+  <!-- source: MAME igs/goldstar.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000099FF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000A1FF" type="ram" name="ram"/>
+    <region start="0x0000A900" end="0x0000AAFF" type="ram" name="ram"/>
+    <region start="0x0000B040" end="0x0000B0BF" type="ram" name="ram"/>
+    <region start="0x0000B100" end="0x0000B17F" type="ram" name="ram"/>
+    <region start="0x0000B800" end="0x0000B803" type="io" name="read"/>
+    <region start="0x0000B810" end="0x0000B813" type="io" name="read"/>
+    <region start="0x0000B820" end="0x0000B823" type="io" name="read"/>
+    <region start="0x0000B830" end="0x0000B830" type="io" name="data_r"/>
+    <region start="0x0000B840" end="0x0000B840" type="io" name="address_w"/>
+    <region start="0x0000B850" end="0x0000B850" type="io" name="magodds_outb850_w"/>
+    <region start="0x0000B860" end="0x0000B860" type="io" name="magodds_outb860_w"/>
+    <region start="0x0000B870" end="0x0000B870" type="io" name="write"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

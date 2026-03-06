@@ -1,0 +1,25 @@
+<platform name="skyraid" cpu="6502">
+  <!-- source: MAME atari/skyraid.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000400" end="0x0000040F" type="ram" name="writeonly"/>
+    <region start="0x00000800" end="0x0000087F" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001001" type="io" name="port_0_r"/>
+    <region start="0x00001400" end="0x00001401" type="io" name="port"/>
+    <region start="0x00001C00" end="0x00001C0F" type="ram" name="writeonly"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="scroll_w"/>
+    <region start="0x00004400" end="0x00004400" type="io" name="sound_w"/>
+    <region start="0x00004800" end="0x00004800" type="io" name="range_w"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="reset_w"/>
+    <region start="0x00005800" end="0x00005800" type="io" name="offset_w"/>
+    <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

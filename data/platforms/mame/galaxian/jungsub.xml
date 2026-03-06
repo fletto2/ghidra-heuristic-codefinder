@@ -1,0 +1,18 @@
+<platform name="jungsub" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00005800" end="0x000058FF" type="ram" name="spriteram"/>
+    <region start="0x00005900" end="0x00005AFF" type="unmapped" name="nop_read"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="port"/>
+    <region start="0x00006003" end="0x00006003" type="unmapped" name="nop_write"/>
+    <region start="0x00006184" end="0x00006184" type="io" name="coin_count_0_w"/>
+    <region start="0x00006186" end="0x00006186" type="io" name="coin_count_1_w"/>
+    <region start="0x00006800" end="0x00006800" type="io" name="port"/>
+    <region start="0x00007001" end="0x00007001" type="io" name="irq_enable_w"/>
+    <region start="0x00007006" end="0x00007007" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x00007800" end="0x00007800" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

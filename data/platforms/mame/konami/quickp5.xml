@@ -1,0 +1,8 @@
+<platform name="quickp5" cpu="z80">
+  <!-- source: MAME konami/quickpick5.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x0000D000" end="0x0000D3FF" type="ram" name="nvram"/>
+    <region start="0x0000DDC0" end="0x0000DDC0" type="io" name="serial_io_w"/>
+  </memory_map>
+</platform>

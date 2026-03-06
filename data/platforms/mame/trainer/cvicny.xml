@@ -1,0 +1,9 @@
+<platform name="cvicny" cpu="z80">
+  <!-- source: MAME trainer/cvicny.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x00000BFF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x000027FF" type="io" name="key_r"/>
+  </memory_map>
+</platform>

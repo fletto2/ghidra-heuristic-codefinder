@@ -1,0 +1,10 @@
+<platform name="dg680" cpu="z80">
+  <!-- source: MAME ausnz/dg680.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D7FF" type="rom" name="rom"/>
+    <region start="0x0000D800" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="io" name="mem_r"/>
+  </memory_map>
+</platform>

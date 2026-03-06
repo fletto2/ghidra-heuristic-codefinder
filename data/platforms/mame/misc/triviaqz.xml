@@ -1,0 +1,18 @@
+<platform name="triviaqz" cpu="tms9995">
+  <!-- source: MAME misc/triviaquiz.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00007FFF" type="io" name="amap8"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="region_6000"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="vram_read"/>
+    <region start="0x00008002" end="0x00008002" type="io" name="register_read"/>
+    <region start="0x00008100" end="0x00008100" type="io" name="port"/>
+    <region start="0x00008200" end="0x00008200" type="io" name="port"/>
+    <region start="0x00008300" end="0x00008300" type="io" name="port"/>
+    <region start="0x00008600" end="0x00008600" type="io" name="port"/>
+    <region start="0x00008700" end="0x00008700" type="unmapped" name="nop_read"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="nvram"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

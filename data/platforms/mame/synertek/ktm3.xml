@@ -1,0 +1,11 @@
+<platform name="ktm3" cpu="6502">
+  <!-- source: MAME synertek/ktm3.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000400" type="io" name="allram_r"/>
+    <region start="0x00000800" end="0x00000BFF" type="io" name="keyboard_r"/>
+    <region start="0x00001400" end="0x00001BFF" type="ram" name="ram0"/>
+    <region start="0x00003800" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00005C00" end="0x00005C03" type="io" name="read"/>
+  </memory_map>
+</platform>

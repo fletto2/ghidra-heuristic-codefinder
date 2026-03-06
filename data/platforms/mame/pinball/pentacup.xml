@@ -1,0 +1,8 @@
+<platform name="pentacup" cpu="6800">
+  <!-- source: MAME pinball/micropin.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="cd100b" cpu="6803">
+  <!-- source: MAME skeleton/cd100.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="mech_latch_w"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

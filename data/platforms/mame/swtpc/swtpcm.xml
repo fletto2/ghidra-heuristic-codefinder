@@ -1,0 +1,10 @@
+<platform name="swtpcm" cpu="6800">
+  <!-- source: MAME swtpc/swtpc.cpp -->
+  <!-- year: 1975 -->
+  <memory_map>
+    <region start="0x00008000" end="0x0000801B" type="io" name="read"/>
+    <region start="0x00008018" end="0x0000801F" type="io" name="read"/>
+    <region start="0x0000A000" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E3FF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="matmania" cpu="6502">
+  <!-- source: MAME technos/matmania.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000780" end="0x000007DF" type="ram" name="ram"/>
+    <region start="0x00003040" end="0x00003041" type="io" name="data_r"/>
+  </memory_map>
+</platform>

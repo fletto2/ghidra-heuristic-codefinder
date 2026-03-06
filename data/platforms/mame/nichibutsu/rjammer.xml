@@ -1,0 +1,10 @@
+<platform name="rjammer" cpu="z80">
+  <!-- source: MAME nichibutsu/tubep.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="io" name="textram"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="share1"/>
+  </memory_map>
+</platform>

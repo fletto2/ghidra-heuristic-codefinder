@@ -1,0 +1,13 @@
+<platform name="vip2000b" cpu="80186">
+  <!-- source: MAME misc/bingor.cpp -->
+  <!-- year: 2003 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00040000" end="0x0004FFFF" type="ram" name="blit_ram"/>
+    <region start="0x00040300" end="0x0004031F" type="io" name="write16"/>
+    <region start="0x00050000" end="0x0005FFFF" type="rom" name="rom"/>
+    <region start="0x00060000" end="0x00060003" type="io" name="address_data_w"/>
+    <region start="0x00080000" end="0x000EFFFF" type="io" name="read"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

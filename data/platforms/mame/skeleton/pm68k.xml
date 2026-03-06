@@ -1,0 +1,9 @@
+<platform name="pm68k" cpu="68000">
+  <!-- source: MAME skeleton/pm68k.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="ram" name="rambase"/>
+    <region start="0x00200000" end="0x00205FFF" type="rom" name="rom"/>
+    <region start="0x00600000" end="0x00600007" type="io" name="ba_cd_r"/>
+    <region start="0x00800000" end="0x00800003" type="io" name="read16"/>
+  </memory_map>
+</platform>

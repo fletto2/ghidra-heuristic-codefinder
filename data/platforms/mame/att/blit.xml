@@ -1,0 +1,17 @@
+<platform name="blit" cpu="68000">
+  <!-- source: MAME att/blit.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="p_ram"/>
+    <region start="0x00040000" end="0x00045FFF" type="rom" name="rom"/>
+    <region start="0x00060000" end="0x00060003" type="io" name="mouse_xy"/>
+    <region start="0x00060008" end="0x0006000B" type="io" name="status_r"/>
+    <region start="0x00060010" end="0x00060011" type="io" name="mouse_buttons"/>
+    <region start="0x00060014" end="0x00060015" type="io" name="mouse_buttons"/>
+    <region start="0x00060018" end="0x00060019" type="io" name="start_write"/>
+    <region start="0x00060020" end="0x00060029" type="ram" name="misccr"/>
+    <region start="0x00060028" end="0x00060029" type="io" name="init_write"/>
+    <region start="0x00060030" end="0x00060033" type="io" name="status_r"/>
+    <region start="0x00060038" end="0x00060039" type="io" name="vblank_ack"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,24 @@
+<platform name="ccastles1" cpu="6502">
+  <!-- source: MAME atari/ccastles.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00000002" type="io" name="bitmode_addr_w"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000090FF" type="io" name="nvram_r"/>
+    <region start="0x00009400" end="0x00009403" type="io" name="leta_r"/>
+    <region start="0x00009600" end="0x0000980F" type="io" name="port"/>
+    <region start="0x00009A00" end="0x00009A0F" type="io" name="read"/>
+    <region start="0x00009C00" end="0x00009E87" type="io" name="nvram_recall_w"/>
+    <region start="0x00009F00" end="0x00009F07" type="io" name="video_control_w"/>
+    <region start="0x00009F80" end="0x00009FBF" type="io" name="paletteram_w"/>
+    <region start="0x0000A000" end="0x0000DFFF" type="ram" name="rombank"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

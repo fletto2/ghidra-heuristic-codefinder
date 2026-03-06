@@ -1,0 +1,16 @@
+<platform name="dialog80" cpu="z80">
+  <!-- source: MAME ampex/ampex.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00005400" end="0x00005400" type="io" name="port"/>
+    <region start="0x00005400" end="0x000054FF" type="io" name="54xx"/>
+    <region start="0x00005401" end="0x0000540C" type="io" name="port"/>
+    <region start="0x00005840" end="0x00005843" type="io" name="5840"/>
+    <region start="0x00005846" end="0x00005847" type="io" name="5846"/>
+    <region start="0x00005C00" end="0x00005C0F" type="io" name="read"/>
+    <region start="0x00008000" end="0x000097FF" type="io" name="page_r"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

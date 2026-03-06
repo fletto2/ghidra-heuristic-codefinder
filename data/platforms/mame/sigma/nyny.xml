@@ -1,0 +1,14 @@
+<platform name="nyny" cpu="6809">
+  <!-- source: MAME sigma/nyny.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000A0FF" type="ram" name="videoram1"/>
+    <region start="0x0000A100" end="0x0000A101" type="io" name="address_w"/>
+    <region start="0x0000A200" end="0x0000A20F" type="io" name="nyny_pia_1_2_r"/>
+    <region start="0x0000A300" end="0x0000A300" type="io" name="read"/>
+    <region start="0x0000A400" end="0x0000A7FF" type="unmapped" name="unmapped"/>
+    <region start="0x0000A800" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="ram" name="videoram4"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="vp122" cpu="8085">
+  <!-- source: MAME citoh/cit220.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="nvram"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

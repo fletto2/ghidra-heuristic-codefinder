@@ -1,0 +1,19 @@
+<platform name="esprit3" cpu="6502">
+  <!-- source: MAME skeleton/esprit.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x000081C0" end="0x000081C1" type="io" name="status_r"/>
+    <region start="0x000093C0" end="0x000093C1" type="io" name="read"/>
+    <region start="0x000095C0" end="0x000095C3" type="io" name="read"/>
+    <region start="0x000099C0" end="0x000099C3" type="io" name="read"/>
+    <region start="0x0000B1C0" end="0x0000B1CF" type="io" name="map"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

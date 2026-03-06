@@ -1,0 +1,11 @@
+<platform name="eballd14" cpu="6800">
+  <!-- source: MAME pinball/by35.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="ram" name="ram"/>
+    <region start="0x00000088" end="0x0000008B" type="io" name="read"/>
+    <region start="0x00000090" end="0x00000093" type="io" name="read"/>
+    <region start="0x00000200" end="0x000002FF" type="ram" name="nvram"/>
+    <region start="0x00001000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="maciifx" cpu="68030">
+  <!-- source: MAME apple/maciifx.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x40000000" end="0x4007FFFF" type="io" name="rom_switch_r"/>
+    <region start="0x50000000" end="0x50001FFF" type="io" name="via_r"/>
+    <region start="0x50004000" end="0x50005FFF" type="io" name="host_r"/>
+    <region start="0x50008000" end="0x50009FFF" type="io" name="map"/>
+    <region start="0x50010000" end="0x50013FFF" type="io" name="read"/>
+    <region start="0x50012000" end="0x50013FFF" type="io" name="host_r"/>
+    <region start="0x50018000" end="0x5001BFFF" type="io" name="biu_r"/>
+    <region start="0x50024000" end="0x50027FFF" type="io" name="buserror_r"/>
+    <region start="0x50040000" end="0x50041FFF" type="io" name="via_r"/>
+  </memory_map>
+</platform>

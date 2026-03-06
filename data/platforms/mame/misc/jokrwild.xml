@@ -1,0 +1,15 @@
+<platform name="jokrwild" cpu="6809">
+  <!-- source: MAME misc/jokrwild.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="videoram"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="colorram"/>
+    <region start="0x00004004" end="0x0000400B" type="io" name="read"/>
+    <region start="0x00004010" end="0x00004010" type="unmapped" name="nop_read"/>
+    <region start="0x00006000" end="0x00006001" type="io" name="address_w"/>
+    <region start="0x00006100" end="0x00006100" type="io" name="port"/>
+    <region start="0x00006200" end="0x00006203" type="io" name="rng_r"/>
+    <region start="0x00006300" end="0x00006300" type="io" name="port"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

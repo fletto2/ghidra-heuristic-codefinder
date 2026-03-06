@@ -1,0 +1,8 @@
+<platform name="taiko7" cpu="sh4">
+  <!-- source: MAME namco/namcops2.cpp -->
+  <!-- year: 2005 -->
+  <memory_map>
+    <region start="0x00000000" end="0x01FFFFFF" type="ram" name="ram"/>
+    <region start="0x1FC00000" end="0x1FDFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

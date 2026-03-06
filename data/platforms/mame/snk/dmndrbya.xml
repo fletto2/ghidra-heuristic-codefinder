@@ -1,0 +1,13 @@
+<platform name="dmndrbya" cpu="z80">
+  <!-- source: MAME snk/dmndrby.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x0000C000" end="0x0000C007" type="unmapped" name="unmapped"/>
+    <region start="0x0000C000" end="0x0000C002" type="io" name="port"/>
+    <region start="0x0000C200" end="0x0000C202" type="io" name="port"/>
+    <region start="0x0000C400" end="0x0000C41F" type="unmapped" name="nop_write"/>
+    <region start="0x0000C600" end="0x0000C61F" type="unmapped" name="nop_write"/>
+    <region start="0x0000C800" end="0x0000C801" type="io" name="port"/>
+    <region start="0x0000CA00" end="0x0000CA00" type="io" name="map0xca00_0xca00"/>
+  </memory_map>
+</platform>

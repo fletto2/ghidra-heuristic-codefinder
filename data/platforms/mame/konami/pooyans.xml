@@ -1,0 +1,16 @@
+<platform name="pooyans" cpu="z80">
+  <!-- source: MAME konami/pooyan.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000090FF" type="ram" name="ram"/>
+    <region start="0x00009400" end="0x000094FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A080" end="0x0000A080" type="io" name="port"/>
+    <region start="0x0000A0A0" end="0x0000A0A0" type="io" name="port"/>
+    <region start="0x0000A0C0" end="0x0000A0C0" type="io" name="port"/>
+    <region start="0x0000A0E0" end="0x0000A0E0" type="io" name="port"/>
+    <region start="0x0000A100" end="0x0000A100" type="io" name="sound_data_w"/>
+    <region start="0x0000A180" end="0x0000A187" type="io" name="d0"/>
+  </memory_map>
+</platform>

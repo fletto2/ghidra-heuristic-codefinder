@@ -1,0 +1,25 @@
+<platform name="duet16" cpu="8086">
+  <!-- source: MAME matsushita/duet16.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0008FFFF" type="ram" name="ram"/>
+    <region start="0x000A8000" end="0x000C0FFF" type="ram" name="gvram"/>
+    <region start="0x000F8000" end="0x000F801F" type="io" name="dmapg_r"/>
+    <region start="0x000F8000" end="0x000F8023" type="io" name="read"/>
+    <region start="0x000F8040" end="0x000F804F" type="io" name="read"/>
+    <region start="0x000F8060" end="0x000F8067" type="io" name="read"/>
+    <region start="0x000F8080" end="0x000F8087" type="io" name="ba_cd_r"/>
+    <region start="0x000F80A0" end="0x000F80A3" type="io" name="read"/>
+    <region start="0x000F80C0" end="0x000F80C0" type="io" name="status_r"/>
+    <region start="0x000F80C2" end="0x000F80C2" type="io" name="register_r"/>
+    <region start="0x000F80E0" end="0x000F80E3" type="io" name="upi41_master_r"/>
+    <region start="0x000F8100" end="0x000F8103" type="io" name="map"/>
+    <region start="0x000F8120" end="0x000F8120" type="io" name="rtc_r"/>
+    <region start="0x000F8160" end="0x000F819F" type="io" name="pal_w"/>
+    <region start="0x000F8200" end="0x000F8201" type="io" name="sysstat_r"/>
+    <region start="0x000F8220" end="0x000F8220" type="io" name="fdcctrl_w"/>
+    <region start="0x000F8260" end="0x000F8260" type="io" name="rtc_addr_w"/>
+    <region start="0x000F8280" end="0x000F8280" type="io" name="rtc_stat_r"/>
+    <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

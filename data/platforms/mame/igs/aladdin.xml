@@ -1,0 +1,11 @@
+<platform name="aladdin" cpu="z80">
+  <!-- source: MAME igs/goldstar.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000E83F" type="ram" name="nvram"/>
+    <region start="0x0000EA00" end="0x0000EA3F" type="ram" name="ram"/>
+    <region start="0x0000EC00" end="0x0000EC3F" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

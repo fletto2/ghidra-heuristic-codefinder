@@ -1,0 +1,17 @@
+<platform name="adm31" cpu="6800">
+  <!-- source: MAME learsiegler/adm31.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x00007000" type="unmapped" name="nop_write"/>
+    <region start="0x00007800" end="0x00007803" type="io" name="read"/>
+    <region start="0x00007900" end="0x00007900" type="io" name="port"/>
+    <region start="0x00007A00" end="0x00007A01" type="io" name="read"/>
+    <region start="0x00007C00" end="0x00007C01" type="io" name="read"/>
+    <region start="0x00007D00" end="0x00007D00" type="io" name="port"/>
+    <region start="0x00007E00" end="0x00007E00" type="io" name="port"/>
+    <region start="0x00007F00" end="0x00007F0F" type="io" name="read"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

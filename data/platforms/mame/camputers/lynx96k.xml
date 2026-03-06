@@ -1,0 +1,9 @@
+<platform name="lynx96k" cpu="z80">
+  <!-- source: MAME camputers/camplynx.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="bankr0"/>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="bank1_w"/>
+    <region start="0x00002000" end="0x0000FFFF" type="ram" name="bankr1"/>
+  </memory_map>
+</platform>

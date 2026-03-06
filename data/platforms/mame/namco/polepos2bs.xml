@@ -1,0 +1,10 @@
+<platform name="polepos2bs" cpu="z80">
+  <!-- source: MAME namco/polepos.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002700" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="read"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="acknowledge_r"/>
+  </memory_map>
+</platform>

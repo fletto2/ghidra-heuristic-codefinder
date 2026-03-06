@@ -1,0 +1,16 @@
+<platform name="gtg2j" cpu="68000">
+  <!-- source: MAME itech/itech8.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000100" end="0x00000100" type="io" name="nmi_ack_w"/>
+    <region start="0x00000120" end="0x00000120" type="io" name="page_w"/>
+    <region start="0x00000140" end="0x0000015F" type="io" name="palette_w"/>
+    <region start="0x00000140" end="0x00000140" type="io" name="port"/>
+    <region start="0x00000160" end="0x00000160" type="io" name="grom_bank_w"/>
+    <region start="0x00000180" end="0x0000019F" type="io" name="blitter_r"/>
+    <region start="0x000001C0" end="0x000001C0" type="io" name="gtg2_sound_data_w"/>
+    <region start="0x000001E0" end="0x000001E0" type="io" name="latch_w"/>
+    <region start="0x00001000" end="0x00001FFF" type="io" name="tms34061_r"/>
+    <region start="0x00002000" end="0x0000FFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,21 @@
+<platform name="brubber" cpu="6502">
+  <!-- source: MAME dataeast/btime.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001004" type="io" name="port"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00004FFF" type="io" name="btime_mirrorvideoram_r"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00005400" end="0x00005400" type="io" name="region_5400"/>
+    <region start="0x00005800" end="0x00005800" type="io" name="region_5800"/>
+    <region start="0x00005C00" end="0x00005C0F" type="ram" name="palette"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

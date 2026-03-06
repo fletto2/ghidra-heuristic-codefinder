@@ -1,0 +1,15 @@
+<platform name="quarth" cpu="z80">
+  <!-- source: MAME konami/blockhl.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="io" name="k052109_051960_r"/>
+    <region start="0x00001F84" end="0x00001F84" type="io" name="write"/>
+    <region start="0x00001F88" end="0x00001F88" type="io" name="sound_irq_w"/>
+    <region start="0x00001F8C" end="0x00001F8C" type="io" name="reset_w"/>
+    <region start="0x00001F94" end="0x00001F98" type="io" name="port"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00005800" end="0x00005FFF" type="io" name="region_5800"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

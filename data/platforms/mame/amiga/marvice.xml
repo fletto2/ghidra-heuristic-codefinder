@@ -1,0 +1,8 @@
+<platform name="marvice" cpu="68000">
+  <!-- source: MAME amiga/alg.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00F00000" end="0x00F1FFFF" type="rom" name="rom"/>
+    <region start="0x00F40000" end="0x00F41FFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

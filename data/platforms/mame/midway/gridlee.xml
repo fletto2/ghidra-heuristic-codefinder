@@ -1,0 +1,17 @@
+<platform name="gridlee" cpu="6809">
+  <!-- source: MAME midway/gridlee.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="spriteram"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="region_9000"/>
+    <region start="0x00009200" end="0x00009200" type="io" name="gridlee_palette_select_w"/>
+    <region start="0x00009380" end="0x00009380" type="io" name="reset_w"/>
+    <region start="0x00009500" end="0x00009503" type="io" name="analog_port_r"/>
+    <region start="0x00009600" end="0x00009600" type="io" name="port"/>
+    <region start="0x00009700" end="0x00009700" type="unmapped" name="nop_write"/>
+    <region start="0x00009820" end="0x00009820" type="io" name="random_num_r"/>
+    <region start="0x00009828" end="0x0000993F" type="io" name="gridlee_sound_w"/>
+    <region start="0x00009C00" end="0x00009CFF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

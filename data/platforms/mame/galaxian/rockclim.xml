@@ -1,0 +1,11 @@
+<platform name="rockclim" cpu="z80">
+  <!-- source: MAME galaxian/galaxian_rockclim.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00004000" end="0x00004803" type="io" name="rockclim_vram"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00005800" end="0x00005800" type="io" name="port"/>
+    <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008800" end="0x00008800" type="io" name="port"/>
+  </memory_map>
+</platform>

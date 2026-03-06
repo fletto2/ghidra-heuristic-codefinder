@@ -1,0 +1,8 @@
+<platform name="lnw80" cpu="z80">
+  <!-- source: MAME trs/lnw80.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
+    <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="nabupc_kbd" cpu="6803">
+  <!-- source: MAME misc/nabupc_kbd.cpp -->
+  <memory_map>
+    <region start="0x00005000" end="0x00005300" type="io" name="gameport_r"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="adc_start_w"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="cpu_ack_irq_w"/>
+    <region start="0x0000B000" end="0x0000B700" type="io" name="adc_latch_w"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="data_r"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

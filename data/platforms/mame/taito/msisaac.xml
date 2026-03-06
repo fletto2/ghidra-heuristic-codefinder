@@ -1,0 +1,23 @@
+<platform name="msisaac" cpu="z80">
+  <!-- source: MAME taito/msisaac.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="bg2_textbank_w"/>
+    <region start="0x0000F001" end="0x0000F002" type="unmapped" name="nop_write"/>
+    <region start="0x0000F060" end="0x0000F060" type="io" name="sound_command_w"/>
+    <region start="0x0000F061" end="0x0000F061" type="unmapped" name="nop_write"/>
+    <region start="0x0000F080" end="0x0000F084" type="io" name="port"/>
+    <region start="0x0000F086" end="0x0000F086" type="io" name="port"/>
+    <region start="0x0000F0A3" end="0x0000F0A3" type="io" name="unknown_w"/>
+    <region start="0x0000F0C0" end="0x0000F0C5" type="io" name="fg_scrollx_w"/>
+    <region start="0x0000F0E0" end="0x0000F0E1" type="io" name="mcu_r"/>
+    <region start="0x0000F100" end="0x0000F17F" type="ram" name="spriteram"/>
+    <region start="0x0000F400" end="0x0000FBFF" type="ram" name="ram"/>
+    <region start="0x0000F801" end="0x0000F801" type="io" name="bgcolor_w"/>
+    <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x0000FC00" end="0x0000FC00" type="io" name="flip_screen_w"/>
+    <region start="0x0000FC03" end="0x0000FC04" type="io" name="coin_counter_w"/>
+  </memory_map>
+</platform>

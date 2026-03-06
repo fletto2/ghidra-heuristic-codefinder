@@ -1,0 +1,11 @@
+<platform name="smashdrv" cpu="sh4">
+  <!-- source: MAME gaelco/atvtrack.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00000000" end="0x03FFFFFF" type="rom" name="rom"/>
+    <region start="0x0C000000" end="0x0C7FFFFF" type="ram" name="ram"/>
+    <region start="0x10000000" end="0x100003FF" type="ram" name="sharedmem"/>
+    <region start="0x10000400" end="0x10000407" type="io" name="control_r"/>
+    <region start="0x14000000" end="0x143FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

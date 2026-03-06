@@ -1,0 +1,15 @@
+<platform name="pg685" cpu="80286">
+  <!-- source: MAME siemens/pg685.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000F1FFF" type="ram" name="ram"/>
+    <region start="0x000F9F00" end="0x000F9F01" type="io" name="read"/>
+    <region start="0x000F9F04" end="0x000F9F04" type="io" name="f9f04_r"/>
+    <region start="0x000F9F06" end="0x000F9F09" type="io" name="read"/>
+    <region start="0x000F9F20" end="0x000F9F24" type="io" name="read"/>
+    <region start="0x000F9F28" end="0x000F9F5F" type="io" name="read"/>
+    <region start="0x000F9F70" end="0x000F9F79" type="io" name="read"/>
+    <region start="0x000F9F80" end="0x000F9F81" type="io" name="status_r"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="ram" name="ram"/>
+    <region start="0x00FFC000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

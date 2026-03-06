@@ -1,0 +1,10 @@
+<platform name="svolleybl" cpu="68000">
+  <!-- source: MAME vsystem/rpunch.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00090000" end="0x00090FFF" type="ram" name="ram"/>
+    <region start="0x000B0001" end="0x000B0001" type="io" name="write"/>
+    <region start="0x000C000E" end="0x000C000F" type="io" name="region_c000e"/>
+    <region start="0x000C001E" end="0x000C001F" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

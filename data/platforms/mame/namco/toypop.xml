@@ -1,0 +1,9 @@
+<platform name="toypop" cpu="68000">
+  <!-- source: MAME namco/toypop.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00006000" end="0x0000602F" type="io" name="read"/>
+    <region start="0x00006800" end="0x00006BFF" type="io" name="sharedram_r"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="irq_enable_r"/>
+  </memory_map>
+</platform>

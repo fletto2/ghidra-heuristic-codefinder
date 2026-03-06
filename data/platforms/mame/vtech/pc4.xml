@@ -1,0 +1,8 @@
+<platform name="pc4" cpu="z80">
+  <!-- source: MAME vtech/pc4.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x0000FFFF" type="ram" name="rombank"/>
+  </memory_map>
+</platform>

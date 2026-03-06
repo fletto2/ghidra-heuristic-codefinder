@@ -1,0 +1,18 @@
+<platform name="cms6502" cpu="6502">
+  <!-- source: MAME acorn/cms.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x0000FC00" end="0x0000FDFF" type="io" name="region_fc00"/>
+    <region start="0x0000FC00" end="0x0000FC0F" type="io" name="map"/>
+    <region start="0x0000FC30" end="0x0000FC30" type="io" name="read"/>
+    <region start="0x0000FC70" end="0x0000FC7F" type="io" name="map_select_w"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

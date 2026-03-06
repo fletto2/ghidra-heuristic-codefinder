@@ -1,0 +1,9 @@
+<platform name="osborne1sp" cpu="z80">
+  <!-- source: MAME osborne/osborne1.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="io" name="videoram_w"/>
+  </memory_map>
+</platform>

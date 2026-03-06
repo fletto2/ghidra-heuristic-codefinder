@@ -1,0 +1,24 @@
+<platform name="sb2m600b" cpu="6502">
+  <!-- source: MAME osi/osi.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="ram" name="bank1"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="read"/>
+    <region start="0x0000C010" end="0x0000C011" type="io" name="read"/>
+    <region start="0x0000C704" end="0x0000C70F" type="io" name="read"/>
+    <region start="0x0000D000" end="0x0000D7FF" type="ram" name="video_ram"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="ctrl_w"/>
+    <region start="0x0000DF00" end="0x0000DF00" type="io" name="keyboard_r"/>
+    <region start="0x0000F000" end="0x0000F001" type="io" name="read"/>
+    <region start="0x0000F7C0" end="0x0000F7C0" type="io" name="osi630_sound_w"/>
+    <region start="0x0000F7E0" end="0x0000F7E0" type="io" name="osi630_ctrl_w"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

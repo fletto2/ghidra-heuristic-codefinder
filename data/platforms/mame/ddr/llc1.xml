@@ -1,0 +1,8 @@
+<platform name="llc1" cpu="z80">
+  <!-- source: MAME ddr/llc1.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000013FF" type="rom" name="rom"/>
+    <region start="0x00001400" end="0x00001FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

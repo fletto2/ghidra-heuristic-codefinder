@@ -1,0 +1,16 @@
+<platform name="25pacmano" cpu="z80">
+  <!-- source: MAME namco/20pacgal.cpp -->
+  <!-- year: 2005 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00044000" end="0x00045EFF" type="ram" name="video_ram"/>
+    <region start="0x00045040" end="0x0004505F" type="io" name="pacman_sound_w"/>
+    <region start="0x00045F00" end="0x00045FFF" type="io" name="namcos1_cus30_w"/>
+    <region start="0x00046000" end="0x00046FFF" type="ram" name="char_gfx_ram"/>
+    <region start="0x00047100" end="0x00047100" type="ram" name="ram"/>
+    <region start="0x00048000" end="0x00049FFF" type="ram" name="mainbank"/>
+    <region start="0x0004C000" end="0x0004E17F" type="io" name="sprite_gfx_w"/>
+    <region start="0x0004E180" end="0x0004FEFF" type="unmapped" name="nop_write"/>
+    <region start="0x0004FF00" end="0x0004FFFF" type="io" name="sprite_lookup_w"/>
+  </memory_map>
+</platform>

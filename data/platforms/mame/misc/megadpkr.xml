@@ -1,0 +1,22 @@
+<platform name="megadpkr" cpu="6502">
+  <!-- source: MAME misc/goldnpkr.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00000800" end="0x00000801" type="io" name="address_w"/>
+    <region start="0x00000844" end="0x0000084B" type="io" name="read"/>
+    <region start="0x00001000" end="0x000013FF" type="ram" name="ram"/>
+    <region start="0x000010F4" end="0x000010FB" type="io" name="read"/>
+    <region start="0x00001800" end="0x00001BFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000047FF" type="io" name="read"/>
+    <region start="0x00004000" end="0x00007FFF" type="io" name="region_4000"/>
+    <region start="0x00008000" end="0x0000BFFF" type="unmapped" name="nop_read"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

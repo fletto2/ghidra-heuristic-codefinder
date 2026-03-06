@@ -1,0 +1,9 @@
+<platform name="macjungl" cpu="z80">
+  <!-- source: MAME pinball/macp.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="nvram"/>
+    <region start="0x00006000" end="0x00006001" type="io" name="read"/>
+  </memory_map>
+</platform>

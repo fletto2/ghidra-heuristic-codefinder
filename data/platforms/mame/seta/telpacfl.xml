@@ -1,0 +1,20 @@
+<platform name="telpacfl" cpu="h8">
+  <!-- source: MAME seta/seta2.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="ram"/>
+    <region start="0x00300000" end="0x00303FFF" type="ram" name="nvram"/>
+    <region start="0x00600000" end="0x00600003" type="io" name="port"/>
+    <region start="0x00700000" end="0x00700007" type="io" name="port"/>
+    <region start="0x00700009" end="0x00700009" type="io" name="telpacfl_lamp1_w"/>
+    <region start="0x0070000D" end="0x0070000D" type="io" name="telpacfl_lamp2_w"/>
+    <region start="0x00800001" end="0x00800001" type="io" name="telpacfl_lockout_w"/>
+    <region start="0x00900000" end="0x00903FFF" type="io" name="word_r"/>
+    <region start="0x00B00000" end="0x00B4FFFF" type="ram" name="ram"/>
+    <region start="0x00B60000" end="0x00B6003F" type="ram" name="ram"/>
+    <region start="0x00D00006" end="0x00D00007" type="io" name="reset16_r"/>
+    <region start="0x00E00000" end="0x00E00001" type="io" name="map0xe00000_0xe00001wfuncseta2_state"/>
+    <region start="0x00E00010" end="0x00E0001F" type="io" name="sound_bank_w"/>
+  </memory_map>
+</platform>

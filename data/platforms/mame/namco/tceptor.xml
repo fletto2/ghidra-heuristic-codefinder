@@ -1,0 +1,15 @@
+<platform name="tceptor" cpu="68000">
+  <!-- source: MAME namco/tceptor.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000043FF" type="io" name="namcos1_cus30_r"/>
+    <region start="0x00004800" end="0x00004800" type="io" name="tceptor2_shutter_w"/>
+    <region start="0x00004F00" end="0x00004F07" type="io" name="data_r"/>
+    <region start="0x00005000" end="0x00005006" type="io" name="tceptor_bg_scroll_w"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="m68k_shared_ram"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="m6809_irq_disable_w"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x00008800" end="0x00008800" type="io" name="m6809_irq_enable_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="monymony" cpu="z80">
+  <!-- source: MAME zaccaria/zaccaria.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
+    <region start="0x00006400" end="0x00006407" type="io" name="prot1_r"/>
+    <region start="0x00006800" end="0x0000683F" type="io" name="attributes_w"/>
+    <region start="0x00006840" end="0x0000685F" type="ram" name="ram"/>
+    <region start="0x00006881" end="0x000068C0" type="ram" name="ram"/>
+    <region start="0x00006C00" end="0x00006C07" type="io" name="prot2_r"/>
+    <region start="0x00006E00" end="0x00006E00" type="io" name="dsw_r"/>
+    <region start="0x00007000" end="0x000077FF" type="ram" name="ram"/>
+    <region start="0x00007800" end="0x00007803" type="io" name="read"/>
+    <region start="0x00007C00" end="0x00007C00" type="io" name="reset_r"/>
+    <region start="0x00008000" end="0x0000DFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,16 @@
+<platform name="fiveside" cpu="68000">
+  <!-- source: MAME konami/ultrsprt.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="banked"/>
+    <region start="0x70000000" end="0x70000000" type="io" name="eeprom_r"/>
+    <region start="0x70000020" end="0x70000023" type="io" name="upd1_r"/>
+    <region start="0x70000040" end="0x70000043" type="io" name="upd2_r"/>
+    <region start="0x70000080" end="0x7000008F" type="io" name="host_r"/>
+    <region start="0x700000C0" end="0x700000CF" type="unmapped" name="nop_write"/>
+    <region start="0x700000E0" end="0x700000E3" type="io" name="int_ack_w"/>
+    <region start="0x7F000000" end="0x7F01FFFF" type="ram" name="ram"/>
+    <region start="0x7F700000" end="0x7F703FFF" type="ram" name="palette"/>
+    <region start="0x7F800000" end="0x7F9FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

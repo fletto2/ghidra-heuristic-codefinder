@@ -1,0 +1,9 @@
+<platform name="bradley" cpu="6502">
+  <!-- source: MAME atari/bzone.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000400" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00001808" end="0x0000180A" type="io" name="port"/>
+    <region start="0x00001848" end="0x00001850" type="io" name="analog_select_w"/>
+  </memory_map>
+</platform>

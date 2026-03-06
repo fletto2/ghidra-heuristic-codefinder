@@ -1,0 +1,22 @@
+<platform name="lwriter" cpu="68000">
+  <!-- source: MAME apple/lwriter.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="io" name="bankedarea_r"/>
+    <region start="0x00200000" end="0x002FFFFF" type="rom" name="rom"/>
+    <region start="0x00300000" end="0x003FFFFF" type="io" name="map0x300000_0x3fffff__open_bus"/>
+    <region start="0x00400000" end="0x005FFFFF" type="ram" name="ram"/>
+    <region start="0x00600000" end="0x007FFFFF" type="rom" name="readonly"/>
+    <region start="0x00800000" end="0x00800001" type="io" name="led_out_w"/>
+    <region start="0x00A00000" end="0x00A00000" type="io" name="cb_r"/>
+    <region start="0x00A00002" end="0x00A00002" type="io" name="ca_r"/>
+    <region start="0x00A00004" end="0x00A00004" type="io" name="db_r"/>
+    <region start="0x00A00006" end="0x00A00006" type="io" name="da_r"/>
+    <region start="0x00C00000" end="0x00C00400" type="io" name="eeprom_r"/>
+    <region start="0x00C00001" end="0x00C00001" type="io" name="cb_w"/>
+    <region start="0x00C00003" end="0x00C00003" type="io" name="ca_w"/>
+    <region start="0x00C00005" end="0x00C00005" type="io" name="db_w"/>
+    <region start="0x00C00007" end="0x00C00007" type="io" name="da_w"/>
+    <region start="0x00E00000" end="0x00E0001F" type="io" name="map"/>
+  </memory_map>
+</platform>

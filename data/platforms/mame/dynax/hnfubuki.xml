@@ -1,0 +1,16 @@
+<platform name="hnfubuki" cpu="z80">
+  <!-- source: MAME dynax/hnayayoi.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000077FF" type="rom" name="rom"/>
+    <region start="0x00007800" end="0x00007FFF" type="ram" name="nvram"/>
+    <region start="0x00008000" end="0x0000FEFF" type="rom" name="rom"/>
+    <region start="0x0000FF00" end="0x0000FF04" type="io" name="write"/>
+    <region start="0x0000FF06" end="0x0000FF06" type="io" name="data_w"/>
+    <region start="0x0000FF08" end="0x0000FF0A" type="io" name="address_w"/>
+    <region start="0x0000FF0C" end="0x0000FF0C" type="io" name="dynax_blitter_rev1_clear_w"/>
+    <region start="0x0000FF20" end="0x0000FF27" type="io" name="d0"/>
+    <region start="0x0000FF40" end="0x0000FF43" type="io" name="keyboard_w"/>
+    <region start="0x0000FF60" end="0x0000FF67" type="io" name="palbank_w"/>
+  </memory_map>
+</platform>

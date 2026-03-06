@@ -1,0 +1,22 @@
+<platform name="pcktgalba" cpu="6502">
+  <!-- source: MAME dataeast/pcktgal.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000FFF" type="io" name="pf_data_8bit_r"/>
+    <region start="0x00001000" end="0x000011FF" type="ram" name="ram"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="port"/>
+    <region start="0x00001800" end="0x00001807" type="io" name="pf_control0_8bit_w"/>
+    <region start="0x00001810" end="0x0000181F" type="io" name="pf_control1_8bit_r"/>
+    <region start="0x00001A00" end="0x00001A00" type="io" name="sound_w"/>
+    <region start="0x00001C00" end="0x00001C00" type="io" name="bank_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

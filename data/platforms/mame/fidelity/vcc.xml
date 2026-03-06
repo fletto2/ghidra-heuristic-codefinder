@@ -1,0 +1,8 @@
+<platform name="vcc" cpu="z80">
+  <!-- source: MAME fidelity/vcc.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

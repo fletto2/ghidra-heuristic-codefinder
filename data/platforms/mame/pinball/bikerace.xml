@@ -1,0 +1,12 @@
+<platform name="bikerace" cpu="z80">
+  <!-- source: MAME pinball/sleic.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00020000" end="0x0002FFFF" type="unmapped" name="nop_read"/>
+    <region start="0x00040000" end="0x00070FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00080000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x000A0000" end="0x000A0001" type="unmapped" name="nop_write"/>
+    <region start="0x000A0200" end="0x000A0201" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

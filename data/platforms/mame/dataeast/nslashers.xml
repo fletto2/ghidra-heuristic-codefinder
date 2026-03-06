@@ -1,0 +1,34 @@
+<platform name="nslashers" cpu="z80">
+  <!-- source: MAME dataeast/deco32.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0011FFFF" type="ram" name="ram"/>
+    <region start="0x00120000" end="0x001200FF" type="unmapped" name="unmapped"/>
+    <region start="0x00140000" end="0x00140003" type="io" name="vblank_ack_w"/>
+    <region start="0x00150000" end="0x00150001" type="io" name="eeprom_w"/>
+    <region start="0x00163000" end="0x0016309F" type="io" name="ace_r"/>
+    <region start="0x00164000" end="0x00164000" type="io" name="tilemap_color_bank_w"/>
+    <region start="0x00164004" end="0x00164004" type="io" name="sprite1_color_bank_w"/>
+    <region start="0x00164008" end="0x00164008" type="io" name="sprite2_color_bank_w"/>
+    <region start="0x0016400C" end="0x0016400F" type="unmapped" name="nop_write"/>
+    <region start="0x00168000" end="0x00169FFF" type="io" name="buffered_palette_r"/>
+    <region start="0x0016C000" end="0x0016C003" type="unmapped" name="nop_write"/>
+    <region start="0x0016C008" end="0x0016C00B" type="io" name="palette_dma_w"/>
+    <region start="0x00170000" end="0x00171FFF" type="io" name="region_170000"/>
+    <region start="0x00174000" end="0x00174003" type="unmapped" name="nop_write"/>
+    <region start="0x00174010" end="0x00174013" type="io" name="region_174010"/>
+    <region start="0x00174018" end="0x0017401B" type="unmapped" name="nop_write"/>
+    <region start="0x00178000" end="0x00179FFF" type="io" name="region_178000"/>
+    <region start="0x0017C000" end="0x0017C003" type="unmapped" name="nop_write"/>
+    <region start="0x0017C010" end="0x0017C013" type="io" name="region_17c010"/>
+    <region start="0x0017C018" end="0x0017C01B" type="unmapped" name="nop_write"/>
+    <region start="0x00182000" end="0x00185FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x00192000" end="0x00195FFF" type="ram" name="pf1_rowscroll32"/>
+    <region start="0x001A0000" end="0x001A001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x001C2000" end="0x001C5FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x001D2000" end="0x001D5FFF" type="ram" name="pf3_rowscroll32"/>
+    <region start="0x001E0000" end="0x001E001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x00200000" end="0x00207FFF" type="io" name="ioprot_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="sngkacea" cpu="68020">
+  <!-- source: MAME psikyo/psikyo.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00C00000" end="0x00C0000B" type="io" name="sngkace_input_r"/>
+    <region start="0x00C00013" end="0x00C00013" type="io" name="write"/>
+  </memory_map>
+</platform>

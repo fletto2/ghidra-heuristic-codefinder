@@ -1,0 +1,14 @@
+<platform name="seabattl" cpu="z80">
+  <!-- source: MAME zaccaria/seabattl.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000BFF" type="rom" name="rom"/>
+    <region start="0x00001400" end="0x00001DFF" type="ram" name="colorram"/>
+    <region start="0x00001E00" end="0x00001E02" type="io" name="time_display_w"/>
+    <region start="0x00001E05" end="0x00001E07" type="io" name="port"/>
+    <region start="0x00001F00" end="0x00001FFF" type="io" name="data"/>
+    <region start="0x00001FCC" end="0x00001FCC" type="io" name="port"/>
+    <region start="0x00002000" end="0x00002BFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004BFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006BFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

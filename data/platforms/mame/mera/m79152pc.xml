@@ -1,0 +1,8 @@
+<platform name="m79152pc" cpu="z80">
+  <!-- source: MAME mera/m79152pc.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

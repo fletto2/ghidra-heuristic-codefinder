@@ -1,0 +1,8 @@
+<platform name="m3" cpu="z80">
+  <!-- source: MAME lsi/m3.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

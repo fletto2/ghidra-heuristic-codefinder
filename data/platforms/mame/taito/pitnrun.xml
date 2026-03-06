@@ -1,0 +1,11 @@
+<platform name="pitnrun" cpu="z80">
+  <!-- source: MAME taito/pitnrun.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="inputs_r"/>
+    <region start="0x0000C804" end="0x0000C804" type="io" name="mcu_data_w"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="mcu_data_r"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="mcu_status_r"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

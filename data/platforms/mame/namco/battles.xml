@@ -1,0 +1,13 @@
+<platform name="battles" cpu="z80">
+  <!-- source: MAME namco/galaga.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004003" type="io" name="input_port_r"/>
+    <region start="0x00004001" end="0x00004001" type="io" name="cpu4_coin_w"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="noise_sound_w"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="customio3_r"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="customio_data3_r"/>
+    <region start="0x00008000" end="0x000080FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

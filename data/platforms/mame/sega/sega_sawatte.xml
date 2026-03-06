@@ -1,0 +1,16 @@
+<platform name="sega_sawatte" cpu="6502">
+  <!-- source: MAME sega/sega_sawatte.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000000" type="unmapped" name="nop_read"/>
+    <region start="0x00000008" end="0x0000000A" type="io" name="bank08_w"/>
+    <region start="0x00000011" end="0x00000012" type="io" name="port"/>
+    <region start="0x00000016" end="0x00000016" type="unmapped" name="nop_read"/>
+    <region start="0x00000017" end="0x00000017" type="io" name="irq_status_r"/>
+    <region start="0x00000020" end="0x00000020" type="unmapped" name="nop_write"/>
+    <region start="0x00000022" end="0x00000022" type="unmapped" name="nop_write"/>
+    <region start="0x00000026" end="0x00000027" type="io" name="irq3_timer_w"/>
+    <region start="0x0000002F" end="0x0000002F" type="io" name="irq4_timer_w"/>
+    <region start="0x00000060" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00000200" end="0x00001FFF" type="io" name="fixed_r"/>
+  </memory_map>
+</platform>

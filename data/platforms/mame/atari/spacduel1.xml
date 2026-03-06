@@ -1,0 +1,28 @@
+<platform name="spacduel1" cpu="6502">
+  <!-- source: MAME atari/bwidow.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000800" type="io" name="port"/>
+    <region start="0x00000900" end="0x00000907" type="io" name="spacduel_IN3_r"/>
+    <region start="0x00000905" end="0x00000906" type="unmapped" name="nop_write"/>
+    <region start="0x00000A00" end="0x00000A00" type="io" name="earom_read"/>
+    <region start="0x00000C00" end="0x00000C00" type="io" name="spacduel_coin_counter_w"/>
+    <region start="0x00000C80" end="0x00000C80" type="io" name="go_w"/>
+    <region start="0x00000D00" end="0x00000D00" type="unmapped" name="nop_write"/>
+    <region start="0x00000D80" end="0x00000D80" type="io" name="reset_w"/>
+    <region start="0x00000E00" end="0x00000E00" type="io" name="irq_ack_w"/>
+    <region start="0x00000E80" end="0x00000E80" type="io" name="earom_control_w"/>
+    <region start="0x00000F00" end="0x00000F3F" type="io" name="earom_write"/>
+    <region start="0x00001000" end="0x000010FF" type="io" name="read"/>
+    <region start="0x00001400" end="0x000014FF" type="io" name="read"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00002800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

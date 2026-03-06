@@ -1,0 +1,25 @@
+<platform name="gt3ds192" cpu="68020">
+  <!-- source: MAME itech/itech32.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00080000" end="0x00080003" type="io" name="int1_ack_w"/>
+    <region start="0x00100000" end="0x00100003" type="io" name="port"/>
+    <region start="0x00180000" end="0x00180003" type="io" name="port"/>
+    <region start="0x00200000" end="0x00200003" type="io" name="port"/>
+    <region start="0x00280000" end="0x00280003" type="io" name="port"/>
+    <region start="0x00300003" end="0x00300003" type="io" name="region_300003"/>
+    <region start="0x00380003" end="0x00380003" type="io" name="region_380003"/>
+    <region start="0x00400000" end="0x00400003" type="io" name="reset32_w"/>
+    <region start="0x00480001" end="0x00480001" type="io" name="sound_data_w"/>
+    <region start="0x00500000" end="0x005000FF" type="io" name="bloodstm_video_r"/>
+    <region start="0x00578000" end="0x0057FFFF" type="unmapped" name="nop_read"/>
+    <region start="0x00580000" end="0x0059FFFF" type="ram" name="palette"/>
+    <region start="0x00600000" end="0x0061FFFF" type="ram" name="ram"/>
+    <region start="0x00680000" end="0x00680003" type="unmapped" name="nop_write"/>
+    <region start="0x00680002" end="0x00680002" type="io" name="itech020_prot_result_r"/>
+    <region start="0x00680800" end="0x0068083F" type="rom" name="readonly"/>
+    <region start="0x00700002" end="0x00700002" type="io" name="itech020_plane_w"/>
+    <region start="0x00800000" end="0x00BFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

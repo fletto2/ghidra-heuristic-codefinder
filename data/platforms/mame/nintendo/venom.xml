@@ -1,0 +1,8 @@
+<platform name="venom" cpu="68000">
+  <!-- source: MAME nintendo/snesb.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00781000" end="0x00781021" type="ram" name="ram"/>
+    <region start="0x00781200" end="0x00781221" type="ram" name="ram"/>
+  </memory_map>
+</platform>

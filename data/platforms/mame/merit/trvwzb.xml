@@ -1,0 +1,16 @@
+<platform name="trvwzb" cpu="z80">
+  <!-- source: MAME merit/merit.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004C00" end="0x00004CFF" type="io" name="questions_r"/>
+    <region start="0x00005400" end="0x000054FF" type="io" name="low_offset_w"/>
+    <region start="0x00005800" end="0x000058FF" type="io" name="med_offset_w"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000E001" type="io" name="address_w"/>
+    <region start="0x0000E800" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="io" name="palette_r"/>
+  </memory_map>
+</platform>

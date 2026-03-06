@@ -1,0 +1,17 @@
+<platform name="viprp1pt" cpu="z80">
+  <!-- source: MAME seibu/seibuspi.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000600" end="0x00000603" type="unmapped" name="nop_write"/>
+    <region start="0x00000680" end="0x00000680" type="io" name="data_byte_r"/>
+    <region start="0x00000684" end="0x00000684" type="io" name="sound_fifo_status_r"/>
+    <region start="0x00000688" end="0x00000688" type="io" name="z80_prg_transfer_w"/>
+    <region start="0x0000068C" end="0x0000068C" type="io" name="z80_enable_w"/>
+    <region start="0x0000068E" end="0x0000068E" type="io" name="rf2_layer_bank_w"/>
+    <region start="0x000006D0" end="0x000006D0" type="io" name="_1w_reset_w"/>
+    <region start="0x000006D4" end="0x000006D4" type="io" name="data_w"/>
+    <region start="0x000006D8" end="0x000006D8" type="io" name="clk_w"/>
+    <region start="0x000006DC" end="0x000006DD" type="io" name="data_r"/>
+    <region start="0x00A00000" end="0x013FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

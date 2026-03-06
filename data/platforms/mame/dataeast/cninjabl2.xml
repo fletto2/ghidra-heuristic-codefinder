@@ -1,0 +1,8 @@
+<platform name="cninjabl2" cpu="68000">
+  <!-- source: MAME dataeast/cninja.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00180000" end="0x0018FFFF" type="ram" name="ram"/>
+    <region start="0x001B4000" end="0x001B4001" type="io" name="cninjabl2_sprite_dma_r"/>
+  </memory_map>
+</platform>

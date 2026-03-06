@@ -1,0 +1,8 @@
+<platform name="md2" cpu="z80">
+  <!-- source: MAME morrow/microdec.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00000FFF" type="io" name="region_0"/>
+  </memory_map>
+</platform>

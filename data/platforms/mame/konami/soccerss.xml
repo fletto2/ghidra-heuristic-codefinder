@@ -1,0 +1,16 @@
+<platform name="soccerss" cpu="68020">
+  <!-- source: MAME konami/konamigx.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00CC0000" end="0x00CC0007" type="io" name="type4_prot_w"/>
+    <region start="0x00D90000" end="0x00D97FFF" type="ram" name="ram"/>
+    <region start="0x00E00000" end="0x00E0001F" type="ram" name="k053936_0_ctrl"/>
+    <region start="0x00E20000" end="0x00E20003" type="unmapped" name="nop_write"/>
+    <region start="0x00E40000" end="0x00E40003" type="io" name="type3_bank_w"/>
+    <region start="0x00E60000" end="0x00E60FFF" type="ram" name="k053936_0_line"/>
+    <region start="0x00E80000" end="0x00E83FFF" type="ram" name="paletteram"/>
+    <region start="0x00EA0000" end="0x00EA3FFF" type="ram" name="subpaletteram"/>
+    <region start="0x00EC0000" end="0x00EC0003" type="io" name="type3_sync_r"/>
+    <region start="0x00F00000" end="0x00F07FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

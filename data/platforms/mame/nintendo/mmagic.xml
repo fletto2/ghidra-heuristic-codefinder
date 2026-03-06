@@ -1,0 +1,10 @@
+<platform name="mmagic" cpu="8085">
+  <!-- source: MAME nintendo/mmagic.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000017FF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000021FF" type="ram" name="ram"/>
+    <region start="0x00003000" end="0x000031FF" type="ram" name="tilemap"/>
+    <region start="0x00008002" end="0x00008004" type="io" name="ball_x_w"/>
+  </memory_map>
+</platform>

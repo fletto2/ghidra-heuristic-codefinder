@@ -1,0 +1,8 @@
+<platform name="carnivalha" cpu="z80">
+  <!-- source: MAME sega/vicdual.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00004000" end="0x00007FFF" type="io" name="carnivalh_prot_r"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="io" name="carnivalh_prot_w"/>
+  </memory_map>
+</platform>

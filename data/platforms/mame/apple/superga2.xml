@@ -1,0 +1,10 @@
+<platform name="superga2" cpu="6502">
+  <!-- source: MAME apple/superga2.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="io" name="ram_r"/>
+    <region start="0x0000C000" end="0x0000C000" type="unmapped" name="nop_write"/>
+    <region start="0x0000C030" end="0x0000C030" type="io" name="speaker_toggle_r"/>
+    <region start="0x0000C050" end="0x0000C05F" type="io" name="switches_r"/>
+    <region start="0x0000FFFC" end="0x0000FFFF" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="qvt102" cpu="6800">
+  <!-- source: MAME qume/qvt102.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="nvram"/>
+    <region start="0x00002800" end="0x00002800" type="io" name="ctc_r"/>
+    <region start="0x00003000" end="0x00003000" type="io" name="vsync_ack_r"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="latch_w"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="videoram"/>
+    <region start="0x00008000" end="0x00008001" type="io" name="status_r"/>
+    <region start="0x00009800" end="0x00009801" type="io" name="read"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="kbd_r"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

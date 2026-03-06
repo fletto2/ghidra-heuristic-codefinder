@@ -1,0 +1,7 @@
+<platform name="segabill" cpu="z80">
+  <!-- source: MAME sega/segabill.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

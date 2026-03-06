@@ -1,0 +1,10 @@
+<platform name="hector1" cpu="z80">
+  <!-- source: MAME hec2hrp/hec2hrp.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="bank2"/>
+    <region start="0x00003000" end="0x00003000" type="io" name="cassette_r"/>
+    <region start="0x00003800" end="0x00003807" type="io" name="keyboard_r"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="ram" name="hector_videoram"/>
+  </memory_map>
+</platform>

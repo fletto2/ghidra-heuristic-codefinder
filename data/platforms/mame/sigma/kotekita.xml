@@ -1,0 +1,13 @@
+<platform name="kotekita" cpu="z80">
+  <!-- source: MAME sigma/sigmab98.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0002FFFF" type="rom" name="rom"/>
+    <region start="0x00060000" end="0x00061FFF" type="ram" name="nvram"/>
+    <region start="0x00070000" end="0x00070FFF" type="ram" name="spriteram"/>
+    <region start="0x00072000" end="0x000721FF" type="ram" name="palette"/>
+    <region start="0x00072800" end="0x0007287F" type="ram" name="vtable"/>
+    <region start="0x00073000" end="0x00073021" type="io" name="vregs"/>
+    <region start="0x00073013" end="0x00073013" type="io" name="haekaka_vblank_r"/>
+  </memory_map>
+</platform>

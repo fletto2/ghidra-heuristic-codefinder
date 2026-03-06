@@ -1,0 +1,31 @@
+<platform name="cgc7900" cpu="68000">
+  <!-- source: MAME chromatics/cgc7900.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="ram" name="chrom_ram"/>
+    <region start="0x00800000" end="0x0080FFFF" type="rom" name="rom"/>
+    <region start="0x00810000" end="0x00BFFFFF" type="io" name="unmapped_r"/>
+    <region start="0x00C00000" end="0x00DFFFFF" type="ram" name="plane_ram"/>
+    <region start="0x00E00000" end="0x00E23FFF" type="io" name="color_status_w"/>
+    <region start="0x00E30000" end="0x00E303FF" type="ram" name="clut_ram"/>
+    <region start="0x00E38000" end="0x00E3BFFF" type="ram" name="overlay_ram"/>
+    <region start="0x00E40000" end="0x00E40FFF" type="ram" name="roll_bitmap"/>
+    <region start="0x00EFC440" end="0x00EFC44B" type="io" name="map0xefc440_0xefc441_hvg_load_x"/>
+    <region start="0x00FF8000" end="0x00FF8003" type="io" name="read"/>
+    <region start="0x00FF8040" end="0x00FF8043" type="io" name="read"/>
+    <region start="0x00FF8080" end="0x00FF8081" type="io" name="keyboard_r"/>
+    <region start="0x00FF80C6" end="0x00FF80C7" type="io" name="map0xff80c6_0xff80c7_joystick_x_axis"/>
+    <region start="0x00FF80CA" end="0x00FF80CD" type="io" name="map0xff80ca_0xff80cb_joystick_y_axis"/>
+    <region start="0x00FF8100" end="0x00FF8101" type="io" name="disk_data_r"/>
+    <region start="0x00FF8120" end="0x00FF8121" type="io" name="disk_status_r"/>
+    <region start="0x00FF8140" end="0x00FF8141" type="io" name="port"/>
+    <region start="0x00FF8180" end="0x00FF8180" type="io" name="stt_str_w"/>
+    <region start="0x00FF81C0" end="0x00FF8201" type="io" name="read"/>
+    <region start="0x00FF8240" end="0x00FF824B" type="io" name="map0xff8240_0xff8241_light_pen_enable"/>
+    <region start="0x00FF83C0" end="0x00FF83C0" type="io" name="address_w"/>
+    <region start="0x00FF83C2" end="0x00FF83C2" type="io" name="data_r"/>
+    <region start="0x00FF83C4" end="0x00FF83C4" type="io" name="data_w"/>
+    <region start="0x00FF8500" end="0x00FF8503" type="io" name="map0xff8500_0xff8501_disk_dma_command_re"/>
+    <region start="0x00FF8507" end="0x00FF8507" type="io" name="map0xff8507_0xff8507_disk_dma_controlsta"/>
+  </memory_map>
+</platform>

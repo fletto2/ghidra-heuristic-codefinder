@@ -1,0 +1,18 @@
+<platform name="gakusai2" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00600000" end="0x0067FFFF" type="io" name="v3_map"/>
+    <region start="0x00678836" end="0x00678837" type="unmapped" name="nop_read"/>
+    <region start="0x00678880" end="0x00678883" type="io" name="input_r"/>
+    <region start="0x00678888" end="0x00678889" type="ram" name="writeonly"/>
+    <region start="0x00800000" end="0x00800001" type="unmapped" name="nop_write"/>
+    <region start="0x00900001" end="0x00900001" type="io" name="oki_bank_lo_w"/>
+    <region start="0x00A00001" end="0x00A00001" type="io" name="oki_bank_hi_w"/>
+    <region start="0x00B00001" end="0x00B00001" type="io" name="read"/>
+    <region start="0x00C00000" end="0x00C00003" type="io" name="write"/>
+    <region start="0x00E00001" end="0x00E00001" type="io" name="gakusai_eeprom_r"/>
+    <region start="0x00F00000" end="0x00F0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

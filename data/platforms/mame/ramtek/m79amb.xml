@@ -1,0 +1,13 @@
+<platform name="m79amb" cpu="8080">
+  <!-- source: MAME ramtek/m79amb.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000063FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="_8000_w"/>
+    <region start="0x00008001" end="0x00008001" type="ram" name="mask"/>
+    <region start="0x00008002" end="0x00008005" type="io" name="_8002_w"/>
+    <region start="0x0000C000" end="0x0000C07F" type="ram" name="ram"/>
+    <region start="0x0000C200" end="0x0000C27F" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,16 @@
+<platform name="pyl601" cpu="6800">
+  <!-- source: MAME ussr/pyl601.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000E5FF" type="ram" name="bank1"/>
+    <region start="0x0000E600" end="0x0000E601" type="io" name="status_r"/>
+    <region start="0x0000E628" end="0x0000E62B" type="io" name="keyboard_r"/>
+    <region start="0x0000E62D" end="0x0000E62E" type="io" name="video_mode_r"/>
+    <region start="0x0000E680" end="0x0000E683" type="io" name="vdisk_page_w"/>
+    <region start="0x0000E6C0" end="0x0000E6C0" type="io" name="floppy_r"/>
+    <region start="0x0000E6D0" end="0x0000E6D1" type="io" name="map"/>
+    <region start="0x0000E6F0" end="0x0000E6F0" type="io" name="rom_page_r"/>
+    <region start="0x0000E700" end="0x0000EFFF" type="ram" name="bank4"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

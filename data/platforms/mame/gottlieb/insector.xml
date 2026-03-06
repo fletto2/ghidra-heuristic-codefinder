@@ -1,0 +1,16 @@
+<platform name="insector" cpu="8088">
+  <!-- source: MAME gottlieb/gottlieb.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000020FF" type="ram" name="ram"/>
+    <region start="0x00003000" end="0x000033FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00004FFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x0000601F" type="io" name="map0x5000_0x5fffwfuncgottlieb_state"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="reset_w"/>
+    <region start="0x00007000" end="0x00007001" type="io" name="port"/>
+    <region start="0x00007001" end="0x00007002" type="io" name="port"/>
+    <region start="0x00007002" end="0x00007003" type="io" name="port"/>
+    <region start="0x00007003" end="0x00007004" type="io" name="port"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

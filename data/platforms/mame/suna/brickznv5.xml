@@ -1,0 +1,19 @@
+<platform name="brickznv5" cpu="z80">
+  <!-- source: MAME suna/suna8.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C040" end="0x0000C040" type="io" name="brickzn_rombank_w"/>
+    <region start="0x0000C060" end="0x0000C060" type="io" name="brickzn_sprbank_w"/>
+    <region start="0x0000C0A0" end="0x0000C0A0" type="io" name="brickzn_multi_w"/>
+    <region start="0x0000C0C0" end="0x0000C0C0" type="io" name="brickzn_prot2_w"/>
+    <region start="0x0000C100" end="0x0000C103" type="io" name="port"/>
+    <region start="0x0000C108" end="0x0000C108" type="io" name="port"/>
+    <region start="0x0000C10C" end="0x0000C10C" type="io" name="port"/>
+    <region start="0x0000C140" end="0x0000C140" type="io" name="brickzn_cheats_r"/>
+    <region start="0x0000C600" end="0x0000C7FF" type="io" name="banked_paletteram_r"/>
+    <region start="0x0000C800" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="io" name="banked_spriteram_r"/>
+  </memory_map>
+</platform>

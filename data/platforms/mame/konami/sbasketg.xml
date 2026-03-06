@@ -1,0 +1,19 @@
+<platform name="sbasketg" cpu="z80">
+  <!-- source: MAME konami/sbasketb.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00002000" end="0x00003BFF" type="ram" name="ram"/>
+    <region start="0x00003C00" end="0x00003C00" type="io" name="reset_w"/>
+    <region start="0x00003C10" end="0x00003C10" type="unmapped" name="nop_read"/>
+    <region start="0x00003C20" end="0x00003C20" type="ram" name="writeonly"/>
+    <region start="0x00003C80" end="0x00003C87" type="io" name="d0"/>
+    <region start="0x00003D00" end="0x00003D00" type="io" name="write"/>
+    <region start="0x00003D80" end="0x00003D80" type="io" name="sh_irqtrigger_w"/>
+    <region start="0x00003E00" end="0x00003E02" type="io" name="port"/>
+    <region start="0x00003E03" end="0x00003E03" type="unmapped" name="nop_read"/>
+    <region start="0x00003E80" end="0x00003E80" type="io" name="port"/>
+    <region start="0x00003F00" end="0x00003F00" type="io" name="port"/>
+    <region start="0x00003F80" end="0x00003F80" type="ram" name="writeonly"/>
+    <region start="0x00006000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

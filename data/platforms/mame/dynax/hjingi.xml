@@ -1,0 +1,10 @@
+<platform name="hjingi" cpu="z80">
+  <!-- source: MAME dynax/dynax.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="rom" name="rom"/>
+    <region start="0x00000200" end="0x00001FFF" type="ram" name="nvram"/>
+    <region start="0x00002000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="amap8"/>
+  </memory_map>
+</platform>

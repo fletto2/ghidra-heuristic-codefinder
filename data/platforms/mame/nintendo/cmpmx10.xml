@@ -1,0 +1,15 @@
+<platform name="cmpmx10" cpu="6502">
+  <!-- source: MAME nintendo/vt1682.cpp -->
+  <!-- year: 2007 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="sound_share"/>
+    <region start="0x00002100" end="0x00002103" type="io" name="vt1682_timer_preload_7_0_r"/>
+    <region start="0x00002110" end="0x00002113" type="io" name="vt1682_timer_preload_7_0_r"/>
+    <region start="0x00002118" end="0x0000211C" type="io" name="vt1682_soundcpu_2118_dacleft_7_0_r"/>
+    <region start="0x00002130" end="0x00002137" type="io" name="alu_out_1_r"/>
+    <region start="0x00002140" end="0x00002140" type="io" name="vt1682_soundcpu_2410_ioa_data_r"/>
+    <region start="0x00002144" end="0x00002144" type="io" name="vt1682_soundcpu_2410_iob_data_r"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="sound_share"/>
+    <region start="0x0000FFFE" end="0x0000FFFF" type="io" name="soundcpu_irq_vector_hack_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,17 @@
+<platform name="kncljoe" cpu="z80">
+  <!-- source: MAME seibu/kncljoe.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D001" type="io" name="scroll_w"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="port"/>
+    <region start="0x0000D800" end="0x0000D801" type="io" name="sound_cmd_w"/>
+    <region start="0x0000D801" end="0x0000D802" type="io" name="control_w"/>
+    <region start="0x0000D802" end="0x0000D803" type="io" name="write"/>
+    <region start="0x0000D803" end="0x0000D804" type="io" name="write"/>
+    <region start="0x0000D807" end="0x0000D807" type="unmapped" name="nop_read"/>
+    <region start="0x0000D817" end="0x0000D817" type="unmapped" name="nop_read"/>
+    <region start="0x0000E800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="p47bl" cpu="z80">
+  <!-- source: MAME jaleco/megasys1.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x00040000" end="0x00040001" type="io" name="read"/>
+    <region start="0x00060000" end="0x00060001" type="io" name="write"/>
+    <region start="0x00080000" end="0x00080003" type="io" name="read"/>
+    <region start="0x000A0000" end="0x000A0003" type="unmapped" name="unmapped"/>
+    <region start="0x000C0001" end="0x000C0001" type="io" name="write"/>
+    <region start="0x000C0002" end="0x000C0003" type="unmapped" name="unmapped"/>
+    <region start="0x000E0000" end="0x000FFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

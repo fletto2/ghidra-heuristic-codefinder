@@ -1,0 +1,9 @@
+<platform name="mineswpr" cpu="8080">
+  <!-- source: MAME sega/blockade.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000083FF" type="ram" name="videoram"/>
+    <region start="0x00009000" end="0x000090FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,19 @@
+<platform name="espialn" cpu="z80">
+  <!-- source: MAME orca/espial.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00005800" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006081" end="0x00006084" type="io" name="port"/>
+    <region start="0x00006090" end="0x00006090" type="io" name="read"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="reset_r"/>
+    <region start="0x00007100" end="0x00007100" type="io" name="master_interrupt_mask_w"/>
+    <region start="0x00007200" end="0x00007200" type="io" name="flipscreen_w"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000801F" type="ram" name="ram"/>
+    <region start="0x00008800" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x00008800" end="0x0000880F" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000097FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x0000903F" type="ram" name="ram"/>
+  </memory_map>
+</platform>

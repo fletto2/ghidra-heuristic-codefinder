@@ -1,0 +1,9 @@
+<platform name="tvc64" cpu="z80">
+  <!-- source: MAME videoton/tvc.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="io" name="amap8"/>
+    <region start="0x00004000" end="0x00007FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="amap8"/>
+  </memory_map>
+</platform>

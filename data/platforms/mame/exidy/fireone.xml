@@ -1,0 +1,8 @@
+<platform name="fireone" cpu="z80">
+  <!-- source: MAME exidy/starfire.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="scratch_r"/>
+  </memory_map>
+</platform>

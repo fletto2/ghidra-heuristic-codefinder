@@ -1,0 +1,15 @@
+<platform name="intrepid" cpu="z80">
+  <!-- source: MAME taito/roundup.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00008C00" end="0x00008FFF" type="io" name="intrepid_colorram_mirror_r"/>
+    <region start="0x00009000" end="0x000098FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="input_port_0_r"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="port"/>
+    <region start="0x0000B000" end="0x0000B007" type="io" name="d0"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,19 @@
+<platform name="tp84" cpu="z80">
+  <!-- source: MAME konami/tp84.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00002000" end="0x00002000" type="io" name="reset_w"/>
+    <region start="0x00002800" end="0x00002800" type="ram" name="writeonly"/>
+    <region start="0x00002820" end="0x00002820" type="io" name="port"/>
+    <region start="0x00002840" end="0x00002840" type="io" name="port"/>
+    <region start="0x00002860" end="0x00002860" type="io" name="port"/>
+    <region start="0x00003000" end="0x00003000" type="io" name="port"/>
+    <region start="0x00003000" end="0x00003007" type="io" name="d0"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="sh_irqtrigger_w"/>
+    <region start="0x00003A00" end="0x00003A00" type="io" name="write"/>
+    <region start="0x00003C00" end="0x00003C00" type="ram" name="writeonly"/>
+    <region start="0x00003E00" end="0x00003E00" type="ram" name="writeonly"/>
+    <region start="0x00004000" end="0x000057FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

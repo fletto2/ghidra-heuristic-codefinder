@@ -1,0 +1,8 @@
+<platform name="qiwang" cpu="68000">
+  <!-- source: MAME bmc/popobear.cpp -->
+  <!-- year: 2010 -->
+  <memory_map>
+    <region start="0x00500000" end="0x00500001" type="io" name="todo_while_booting_it_specifically_check"/>
+    <region start="0x00620000" end="0x00620000" type="io" name="region_620000"/>
+  </memory_map>
+</platform>

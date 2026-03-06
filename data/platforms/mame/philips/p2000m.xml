@@ -1,0 +1,8 @@
+<platform name="p2000m" cpu="z80">
+  <!-- source: MAME philips/p2000t.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x0000FFFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

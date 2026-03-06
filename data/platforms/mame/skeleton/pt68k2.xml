@@ -1,0 +1,14 @@
+<platform name="pt68k2" cpu="68000">
+  <!-- source: MAME skeleton/pt68k4.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="ram" name="rambase"/>
+    <region start="0x00C00000" end="0x00DFFFFF" type="io" name="mem_r"/>
+    <region start="0x00F80000" end="0x00F8FFFF" type="rom" name="rom"/>
+    <region start="0x00FA0000" end="0x00FBFFFF" type="io" name="io_r"/>
+    <region start="0x00FE0000" end="0x00FE001F" type="io" name="read"/>
+    <region start="0x00FE0040" end="0x00FE005F" type="io" name="read"/>
+    <region start="0x00FE01C0" end="0x00FE01C3" type="io" name="keyboard_r"/>
+    <region start="0x00FF0000" end="0x00FF0FFF" type="io" name="hiram_r"/>
+  </memory_map>
+</platform>

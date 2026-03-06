@@ -1,0 +1,23 @@
+<platform name="acombat4" cpu="6502">
+  <!-- source: MAME dataeast/astrof.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00003FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="videoram"/>
+    <region start="0x00006000" end="0x00008002" type="unmapped" name="unmapped"/>
+    <region start="0x00008003" end="0x00008003" type="ram" name="astrof_color"/>
+    <region start="0x00008004" end="0x00008006" type="unmapped" name="nop_read"/>
+    <region start="0x00008007" end="0x00008007" type="ram" name="tomahawk_prot"/>
+    <region start="0x0000A000" end="0x0000A001" type="unmapped" name="nop_write"/>
+    <region start="0x0000A002" end="0x0000A003" type="io" name="irq_clear_r"/>
+    <region start="0x0000A004" end="0x0000A007" type="unmapped" name="unmapped"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

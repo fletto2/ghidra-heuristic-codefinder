@@ -1,0 +1,10 @@
+<platform name="alleymas" cpu="z80">
+  <!-- source: MAME cinematronics/leland.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x0000EFFF" type="ram" name="banked"/>
+    <region start="0x0000F000" end="0x0000F3FF" type="io" name="palette"/>
+    <region start="0x0000F800" end="0x0000F801" type="io" name="master_video_addr_w"/>
+  </memory_map>
+</platform>

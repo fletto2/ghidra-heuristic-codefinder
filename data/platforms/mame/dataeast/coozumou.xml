@@ -1,0 +1,23 @@
+<platform name="coozumou" cpu="6502">
+  <!-- source: MAME dataeast/decocass.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000C7FF" type="ram" name="rambase"/>
+    <region start="0x0000C800" end="0x0000CFFF" type="io" name="mirrorvideoram_r"/>
+    <region start="0x0000D000" end="0x0000DBFF" type="ram" name="tileram"/>
+    <region start="0x0000E000" end="0x0000E0FF" type="ram" name="paletteram"/>
+    <region start="0x0000E300" end="0x0000E302" type="io" name="decocass_watchdog_count_w"/>
+    <region start="0x0000E400" end="0x0000E400" type="io" name="decocass_reset_w"/>
+    <region start="0x0000E402" end="0x0000E407" type="io" name="decocass_mode_set_w"/>
+    <region start="0x0000E410" end="0x0000E417" type="io" name="decocass_color_center_bot_w"/>
+    <region start="0x0000E420" end="0x0000E42F" type="io" name="decocass_adc_w"/>
+    <region start="0x0000E500" end="0x0000E701" type="io" name="decocass_e5xx_r"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

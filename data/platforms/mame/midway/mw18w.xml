@@ -1,0 +1,7 @@
+<platform name="mw18w" cpu="z80">
+  <!-- source: MAME midway/mw18w.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

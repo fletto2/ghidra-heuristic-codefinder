@@ -1,0 +1,16 @@
+<platform name="hitpoker" cpu="68hc11">
+  <!-- source: MAME misc/hitpoker.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000B5FF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000B5FF" type="io" name="vram_r"/>
+    <region start="0x0000B800" end="0x0000BDFF" type="ram" name="ram"/>
+    <region start="0x0000BE00" end="0x0000BE7F" type="io" name="direct"/>
+    <region start="0x0000BE00" end="0x0000BEFF" type="io" name="test_r"/>
+    <region start="0x0000BE80" end="0x0000BE81" type="io" name="address_w"/>
+    <region start="0x0000BE90" end="0x0000BE91" type="io" name="data_r"/>
+    <region start="0x0000BEA0" end="0x0000BEA0" type="io" name="port"/>
+    <region start="0x0000BF00" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000EFFF" type="io" name="cram_r"/>
+  </memory_map>
+</platform>

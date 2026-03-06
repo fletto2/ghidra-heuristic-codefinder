@@ -1,0 +1,11 @@
+<platform name="ikki" cpu="z80">
+  <!-- source: MAME sunelectronics/ikki.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000D7FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E005" type="io" name="e000_r"/>
+    <region start="0x0000E008" end="0x0000E009" type="io" name="scrn_ctrl_w"/>
+    <region start="0x0000E00A" end="0x0000E00B" type="ram" name="writeonly"/>
+  </memory_map>
+</platform>

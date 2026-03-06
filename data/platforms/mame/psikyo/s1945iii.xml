@@ -1,0 +1,30 @@
+<platform name="s1945iii" cpu="sh2">
+  <!-- source: MAME psikyo/psikyosh.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x03000000" end="0x03000007" type="io" name="port"/>
+    <region start="0x03000004" end="0x03000004" type="io" name="eeprom_w"/>
+    <region start="0x03100000" end="0x03100007" type="io" name="read"/>
+    <region start="0x04000000" end="0x0400FFFF" type="ram" name="spriteram"/>
+    <region start="0x04040000" end="0x04044FFF" type="ram" name="palette"/>
+    <region start="0x04050000" end="0x040501FF" type="ram" name="zoomram"/>
+    <region start="0x0405FFDC" end="0x0405FFDF" type="unmapped" name="nop_read"/>
+    <region start="0x0405FFE0" end="0x0407FFFF" type="ram" name="vidregs"/>
+    <region start="0x05000000" end="0x0507FFFF" type="rom" name="rom"/>
+    <region start="0x06000000" end="0x060FFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

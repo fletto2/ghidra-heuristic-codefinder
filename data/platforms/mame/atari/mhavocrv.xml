@@ -1,0 +1,8 @@
+<platform name="mhavocrv" cpu="6502">
+  <!-- source: MAME atari/mhavoc.cpp -->
+  <!-- year: 2006 -->
+  <memory_map>
+    <region start="0x00005800" end="0x00005800" type="io" name="speech_data_w"/>
+    <region start="0x00005900" end="0x00005900" type="io" name="speech_strobe_w"/>
+  </memory_map>
+</platform>

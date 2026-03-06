@@ -1,0 +1,14 @@
+<platform name="mgavegas133" cpu="z80">
+  <!-- source: MAME misc/mgavegas.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="a0"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="cso1_w"/>
+    <region start="0x0000C400" end="0x0000C401" type="io" name="cso2_w"/>
+    <region start="0x0000C800" end="0x0000C801" type="io" name="csoki_r"/>
+    <region start="0x0000CC00" end="0x0000CC01" type="io" name="cso3_r"/>
+    <region start="0x0000E000" end="0x0000E003" type="io" name="e0"/>
+  </memory_map>
+</platform>

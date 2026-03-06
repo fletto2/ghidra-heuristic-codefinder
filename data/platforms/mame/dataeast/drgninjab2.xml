@@ -1,0 +1,13 @@
+<platform name="drgninjab2" cpu="68000">
+  <!-- source: MAME dataeast/dec0.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00160010" end="0x00160011" type="io" name="priority_w"/>
+    <region start="0x00180000" end="0x0018000F" type="io" name="dec0_controls_r"/>
+    <region start="0x00180012" end="0x00180013" type="unmapped" name="unmapped"/>
+    <region start="0x00180015" end="0x00180015" type="io" name="write"/>
+    <region start="0x00180018" end="0x00180019" type="unmapped" name="unmapped"/>
+    <region start="0x001A0000" end="0x001A0001" type="io" name="port"/>
+    <region start="0x001A0008" end="0x001A0009" type="io" name="port"/>
+  </memory_map>
+</platform>

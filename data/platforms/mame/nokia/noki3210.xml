@@ -1,0 +1,13 @@
+<platform name="noki3210" cpu="arm7_be">
+  <!-- source: MAME nokia/nokia_3310.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00010FFF" type="io" name="ram_r"/>
+    <region start="0x00020000" end="0x000200FF" type="io" name="mad2_io_r"/>
+    <region start="0x00030000" end="0x00030003" type="io" name="mad2_dspif_r"/>
+    <region start="0x00040000" end="0x00040003" type="io" name="mad2_mcuif_r"/>
+    <region start="0x00100000" end="0x0017FFFF" type="io" name="ram_r"/>
+    <region start="0x00200000" end="0x005FFFFF" type="io" name="read"/>
+    <region start="0x00600000" end="0x00FFFFFF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

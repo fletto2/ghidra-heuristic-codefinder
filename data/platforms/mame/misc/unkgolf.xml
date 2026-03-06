@@ -1,0 +1,7 @@
+<platform name="unkgolf" cpu="z80">
+  <!-- source: MAME misc/unkgolf.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

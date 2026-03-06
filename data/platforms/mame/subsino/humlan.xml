@@ -1,0 +1,9 @@
+<platform name="humlan" cpu="h8">
+  <!-- source: MAME subsino/subsino2.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00410000" end="0x00411FFF" type="io" name="ss9601_videoram_1_hi_lo2_w"/>
+    <region start="0x00414000" end="0x00415FFF" type="io" name="ss9601_videoram_0_hi_lo2_w"/>
+    <region start="0x00600020" end="0x00600020" type="io" name="ss9601_byte_lo2_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,31 @@
+<platform name="ssfindo" cpu="arm7_le">
+  <!-- source: MAME acorn/ssfindo.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x03012E60" end="0x03012E67" type="unmapped" name="unmapped"/>
+    <region start="0x03012FE0" end="0x03012FE3" type="io" name="debug_w"/>
+    <region start="0x03012FF0" end="0x03012FF3" type="unmapped" name="unmapped"/>
+    <region start="0x03012FF4" end="0x03012FF7" type="io" name="ff4_r"/>
+    <region start="0x03012FF8" end="0x03012FFF" type="unmapped" name="unmapped"/>
+    <region start="0x03200000" end="0x032001FF" type="io" name="map"/>
+    <region start="0x03240000" end="0x03240003" type="unmapped" name="nop_write"/>
+    <region start="0x03241000" end="0x03241003" type="unmapped" name="nop_write"/>
+    <region start="0x03242000" end="0x03242003" type="io" name="io_r"/>
+    <region start="0x03243000" end="0x03243003" type="unmapped" name="nop_write"/>
+    <region start="0x03245002" end="0x03245002" type="io" name="sound_w"/>
+    <region start="0x0324F000" end="0x0324F003" type="io" name="SIMPLEIO_r"/>
+    <region start="0x03400000" end="0x037FFFFF" type="io" name="write"/>
+    <region start="0x10000000" end="0x11FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

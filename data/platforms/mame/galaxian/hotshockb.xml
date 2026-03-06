@@ -1,0 +1,17 @@
+<platform name="hotshockb" cpu="z80">
+  <!-- source: MAME galaxian/scramble.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004BFF" type="ram" name="ram"/>
+    <region start="0x00004C00" end="0x00004FFF" type="io" name="galaxold_videoram_r"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="attributesram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="galaxold_coin_counter_2_w"/>
+    <region start="0x00006002" end="0x00006002" type="io" name="galaxold_coin_counter_1_w"/>
+    <region start="0x00006004" end="0x00006006" type="io" name="hotshock_flip_screen_w"/>
+    <region start="0x00006801" end="0x00006801" type="io" name="galaxold_nmi_enable_w"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="reset_w"/>
+    <region start="0x00008000" end="0x00008003" type="io" name="write"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="hotshock_sh_irqtrigger_w"/>
+  </memory_map>
+</platform>

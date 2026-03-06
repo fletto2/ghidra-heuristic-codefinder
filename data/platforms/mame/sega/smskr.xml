@@ -1,0 +1,8 @@
+<platform name="smskr" cpu="z80">
+  <!-- source: MAME sega/sms.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="io" name="cart"/>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="0000"/>
+  </memory_map>
+</platform>

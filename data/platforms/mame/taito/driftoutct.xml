@@ -1,0 +1,9 @@
+<platform name="driftoutct" cpu="68000">
+  <!-- source: MAME taito/taito_f2.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00040000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00300018" end="0x0030001F" type="unmapped" name="nop_read"/>
+    <region start="0x00300018" end="0x0030001B" type="io" name="port"/>
+  </memory_map>
+</platform>

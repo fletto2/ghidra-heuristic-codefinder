@@ -1,0 +1,8 @@
+<platform name="crakndj2" cpu="arm7_le">
+  <!-- source: MAME sega/naomi.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00807FFF" type="io" name="soundram_r"/>
+    <region start="0x00810000" end="0x0081000B" type="io" name="map0x00810000_0x0081000b_accessed_by_spk"/>
+  </memory_map>
+</platform>

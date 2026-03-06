@@ -1,0 +1,14 @@
+<platform name="sexpertc1" cpu="65c02">
+  <!-- source: MAME novag/sexpert.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="nvram"/>
+    <region start="0x00001FF0" end="0x00001FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00001FF0" end="0x00001FF1" type="io" name="input1_r"/>
+    <region start="0x00001FF2" end="0x00001FF3" type="unmapped" name="nop_write"/>
+    <region start="0x00001FF4" end="0x00001FF7" type="io" name="leds_w"/>
+    <region start="0x00001FFC" end="0x00001FFF" type="io" name="read"/>
+    <region start="0x00002000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="rombank"/>
+  </memory_map>
+</platform>

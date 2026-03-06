@@ -1,0 +1,17 @@
+<platform name="teedoff" cpu="z80">
+  <!-- source: MAME tecmo/tehkanwc.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000DA00" end="0x0000DA00" type="io" name="teedoff_unk_r"/>
+    <region start="0x0000F800" end="0x0000F803" type="io" name="track_0_r"/>
+    <region start="0x0000F806" end="0x0000F806" type="io" name="port"/>
+    <region start="0x0000F810" end="0x0000F813" type="io" name="track_1_r"/>
+    <region start="0x0000F820" end="0x0000F820" type="io" name="read"/>
+    <region start="0x0000F840" end="0x0000F840" type="io" name="sub_cpu_reset_w"/>
+    <region start="0x0000F850" end="0x0000F850" type="io" name="sound_cpu_reset_w"/>
+    <region start="0x0000F860" end="0x0000F860" type="io" name="reset_r"/>
+    <region start="0x0000F870" end="0x0000F870" type="io" name="flipscreen_y_w"/>
+  </memory_map>
+</platform>

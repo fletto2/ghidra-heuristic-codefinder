@@ -1,0 +1,9 @@
+<platform name="tecjmon" cpu="z80">
+  <!-- source: MAME ausnz/tec1.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x000037FF" type="ram" name="ram"/>
+    <region start="0x00003800" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

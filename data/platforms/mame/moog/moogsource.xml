@@ -1,0 +1,16 @@
+<platform name="moogsource" cpu="z80">
+  <!-- source: MAME moog/source.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x00000000" type="io" name="edit_latch_w"/>
+    <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="output_latch_a_w"/>
+    <region start="0x00004008" end="0x00004008" type="io" name="output_latch_b_w"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="keyboard_r"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="buttons_a_r"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="buttons_b_r"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="program_latch_w"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="encoder_r"/>
+  </memory_map>
+</platform>

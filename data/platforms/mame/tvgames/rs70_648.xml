@@ -1,0 +1,13 @@
+<platform name="rs70_648" cpu="arm9">
+  <!-- source: MAME tvgames/monkey_king_3b.cpp -->
+  <!-- year: 2019 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="iram0"/>
+    <region start="0x03000000" end="0x0300FFFF" type="ram" name="iram3"/>
+    <region start="0x04000000" end="0x0400FFFF" type="io" name="io4_r"/>
+    <region start="0x07000000" end="0x0700FFFF" type="io" name="io7_r"/>
+    <region start="0x08000000" end="0x0BFFFFFF" type="rom" name="rom"/>
+    <region start="0x10000000" end="0x1000FFFF" type="io" name="io10_r"/>
+    <region start="0x18000000" end="0x18FFFFFF" type="ram" name="sdram"/>
+  </memory_map>
+</platform>

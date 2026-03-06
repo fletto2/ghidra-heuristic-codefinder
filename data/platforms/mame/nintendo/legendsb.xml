@@ -1,0 +1,12 @@
+<platform name="legendsb" cpu="68000">
+  <!-- source: MAME nintendo/snesb.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00770071" end="0x00770071" type="io" name="port"/>
+    <region start="0x00770072" end="0x00770072" type="unmapped" name="nop_read"/>
+    <region start="0x00770073" end="0x00770073" type="io" name="port"/>
+    <region start="0x00770074" end="0x00770074" type="unmapped" name="nop_read"/>
+    <region start="0x00770079" end="0x00770079" type="io" name="port"/>
+    <region start="0x0077007A" end="0x0077007A" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

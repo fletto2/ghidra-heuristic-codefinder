@@ -1,0 +1,8 @@
+<platform name="mz1500" cpu="z80">
+  <!-- source: MAME sharp/mz700.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DFFF" type="ram" name="bankr0"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="io" name="amap8"/>
+  </memory_map>
+</platform>

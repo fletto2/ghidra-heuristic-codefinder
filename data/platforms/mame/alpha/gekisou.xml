@@ -1,0 +1,9 @@
+<platform name="gekisou" cpu="68000">
+  <!-- source: MAME alpha/equites.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00040000" end="0x00040FFF" type="ram" name="nvram"/>
+    <region start="0x00180001" end="0x00180001" type="io" name="sound_command_w"/>
+    <region start="0x00580000" end="0x00580001" type="io" name="unknown_bit_w"/>
+  </memory_map>
+</platform>

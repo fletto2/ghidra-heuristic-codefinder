@@ -1,0 +1,8 @@
+<platform name="ron2" cpu="z80">
+  <!-- source: MAME sanritsu/ron.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="vram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="adacp150p" cpu="z80">
+  <!-- source: MAME skeleton/adacp150.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="bcp_ram_r"/>
+  </memory_map>
+</platform>

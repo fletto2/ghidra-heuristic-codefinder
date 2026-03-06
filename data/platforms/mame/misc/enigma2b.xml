@@ -1,0 +1,11 @@
+<platform name="enigma2b" cpu="8080">
+  <!-- source: MAME misc/enigma2.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="videoram"/>
+    <region start="0x00004000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x000057FF" type="io" name="dip_switch_r"/>
+    <region start="0x00005800" end="0x00005FFF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

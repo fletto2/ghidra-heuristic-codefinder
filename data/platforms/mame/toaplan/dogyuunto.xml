@@ -1,0 +1,13 @@
+<platform name="dogyuunto" cpu="68000">
+  <!-- source: MAME toaplan/dogyuun.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00218000" end="0x00218FFF" type="io" name="shared_ram_r"/>
+    <region start="0x0021C01D" end="0x0021C01D" type="io" name="coin_countlock__z80_reset_line"/>
+    <region start="0x0021C020" end="0x0021C021" type="io" name="port"/>
+    <region start="0x0021C024" end="0x0021C025" type="io" name="port"/>
+    <region start="0x0021C028" end="0x0021C029" type="io" name="port"/>
+    <region start="0x0021C02C" end="0x0021C02D" type="io" name="port"/>
+    <region start="0x0021C030" end="0x0021C031" type="io" name="port"/>
+  </memory_map>
+</platform>

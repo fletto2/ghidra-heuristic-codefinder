@@ -1,0 +1,12 @@
+<platform name="comg236" cpu="6502">
+  <!-- source: MAME misc/calomega.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00001040" end="0x00001041" type="io" name="address_data_w"/>
+    <region start="0x00001080" end="0x00001081" type="io" name="address_w"/>
+    <region start="0x000010C4" end="0x000010CB" type="io" name="read"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="videoram"/>
+    <region start="0x00002800" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

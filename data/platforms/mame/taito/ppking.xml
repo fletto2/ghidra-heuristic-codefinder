@@ -1,0 +1,10 @@
+<platform name="ppking" cpu="z80">
+  <!-- source: MAME taito/gladiatr.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CBFF" type="ram" name="ram"/>
+    <region start="0x0000CC00" end="0x0000CFFF" type="io" name="ppking_video_registers_w"/>
+    <region start="0x0000D000" end="0x0000F7FF" type="ram" name="palette"/>
+  </memory_map>
+</platform>

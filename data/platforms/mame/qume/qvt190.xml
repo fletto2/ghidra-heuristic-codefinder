@@ -1,0 +1,12 @@
+<platform name="qvt190" cpu="6800">
+  <!-- source: MAME qume/qvt190.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00002500" end="0x00002501" type="io" name="read"/>
+    <region start="0x00002600" end="0x00002601" type="io" name="read"/>
+    <region start="0x00002800" end="0x00002801" type="io" name="status_r"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="videoram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

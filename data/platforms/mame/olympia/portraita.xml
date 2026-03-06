@@ -1,0 +1,16 @@
+<platform name="portraita" cpu="z80">
+  <!-- source: MAME olympia/portrait.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000097FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="write"/>
+    <region start="0x0000A004" end="0x0000A004" type="io" name="port"/>
+    <region start="0x0000A008" end="0x0000A008" type="io" name="ctrl_w"/>
+    <region start="0x0000A010" end="0x0000A010" type="unmapped" name="nop_write"/>
+    <region start="0x0000A018" end="0x0000A018" type="unmapped" name="nop_read"/>
+    <region start="0x0000A018" end="0x0000A019" type="io" name="scroll_w"/>
+    <region start="0x0000A800" end="0x0000A83F" type="ram" name="nvram"/>
+    <region start="0x0000FFFF" end="0x0000FFFF" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

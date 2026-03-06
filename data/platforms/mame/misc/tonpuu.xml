@@ -1,0 +1,10 @@
+<platform name="tonpuu" cpu="z80">
+  <!-- source: MAME misc/anes.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x000001FF" type="io" name="blit_rom_w"/>
+    <region start="0x00001000" end="0x000011FF" type="io" name="blit_rom_w"/>
+    <region start="0x00002000" end="0x0000FFFF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

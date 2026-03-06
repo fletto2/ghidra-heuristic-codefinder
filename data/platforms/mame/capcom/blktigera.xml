@@ -1,0 +1,10 @@
+<platform name="blktigera" cpu="z80">
+  <!-- source: MAME capcom/blktiger.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="io" name="bgvideoram_r"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

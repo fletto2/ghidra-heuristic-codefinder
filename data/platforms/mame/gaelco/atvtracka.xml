@@ -1,0 +1,13 @@
+<platform name="atvtracka" cpu="sh4">
+  <!-- source: MAME gaelco/atvtrack.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="sharedmem"/>
+    <region start="0x00020000" end="0x00020007" type="io" name="control_r"/>
+    <region start="0x00020040" end="0x0002007F" type="io" name="map0x00020040_0x0002007f__audio_dac_buff"/>
+    <region start="0x0C000000" end="0x0C7FFFFF" type="ram" name="ram"/>
+    <region start="0x14000000" end="0x14000007" type="io" name="nand_data_r"/>
+    <region start="0x14100000" end="0x14100007" type="io" name="nand_cmd_w"/>
+    <region start="0x14200000" end="0x14200007" type="io" name="nand_addr_w"/>
+  </memory_map>
+</platform>

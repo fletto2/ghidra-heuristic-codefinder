@@ -1,0 +1,10 @@
+<platform name="alcat7100" cpu="z80">
+  <!-- source: MAME skeleton/alcat7100.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00007800" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x0000C800" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

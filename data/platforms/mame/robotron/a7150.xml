@@ -1,0 +1,8 @@
+<platform name="a7150" cpu="8086">
+  <!-- source: MAME robotron/a7150.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000F7FFF" type="ram" name="ram"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

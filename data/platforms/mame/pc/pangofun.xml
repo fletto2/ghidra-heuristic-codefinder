@@ -1,0 +1,14 @@
+<platform name="pangofun" cpu="80486">
+  <!-- source: MAME pc/pangofun.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0009FFFF" type="ram" name="ram"/>
+    <region start="0x000A0000" end="0x000BFFFF" type="io" name="mem_r"/>
+    <region start="0x000C0000" end="0x000C7FFF" type="rom" name="rom"/>
+    <region start="0x000D0000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x01FFFFFF" type="ram" name="ram"/>
+    <region start="0x00100000" end="0x03FFFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x02000000" end="0xFFFEFFFF" type="unmapped" name="unmapped"/>
+    <region start="0xFFFE0000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

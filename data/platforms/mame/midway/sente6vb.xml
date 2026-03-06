@@ -1,0 +1,9 @@
+<platform name="sente6vb" cpu="z80">
+  <!-- source: MAME midway/sente6vb.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006001" type="io" name="write"/>
+    <region start="0x0000E000" end="0x0000E001" type="io" name="read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="tankbust" cpu="z80">
+  <!-- source: MAME valadon/tankbust.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x0000D8FF" type="ram" name="banked"/>
+    <region start="0x0000E000" end="0x0000E007" type="io" name="debug_output_area_r"/>
+    <region start="0x0000E800" end="0x0000E801" type="io" name="yscroll_w"/>
+    <region start="0x0000E801" end="0x0000E802" type="io" name="xscroll_w"/>
+    <region start="0x0000E802" end="0x0000E803" type="io" name="port"/>
+    <region start="0x0000E804" end="0x0000E804" type="unmapped" name="nop_write"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="io" name="from_unmapped_memory"/>
+  </memory_map>
+</platform>

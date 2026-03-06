@@ -1,0 +1,8 @@
+<platform name="fb01" cpu="z80">
+  <!-- source: MAME yamaha/fb01.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

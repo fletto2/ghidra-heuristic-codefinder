@@ -1,0 +1,9 @@
+<platform name="mach3a" cpu="8088">
+  <!-- source: MAME gottlieb/gottlieb.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00005803" end="0x00005803" type="io" name="laserdisc_output_w"/>
+    <region start="0x00005805" end="0x00005807" type="io" name="laserdisc_status_r"/>
+    <region start="0x00005805" end="0x00005806" type="io" name="laserdisc_command_w"/>
+  </memory_map>
+</platform>

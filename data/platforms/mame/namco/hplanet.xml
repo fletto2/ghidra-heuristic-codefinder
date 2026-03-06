@@ -1,0 +1,24 @@
+<platform name="hplanet" cpu="sh2">
+  <!-- source: MAME namco/sg_vga.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0027FFFF" type="rom" name="rom"/>
+    <region start="0x004E0000" end="0x004EFFFF" type="ram" name="ram"/>
+    <region start="0x00800000" end="0x0084FFFF" type="ram" name="spriteram"/>
+    <region start="0x00860000" end="0x0086003F" type="ram" name="vregs"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

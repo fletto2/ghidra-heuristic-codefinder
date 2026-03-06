@@ -1,0 +1,15 @@
+<platform name="jujuba" cpu="z80">
+  <!-- source: MAME seibu/toki.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="io" name="jujuba_z80_data_decrypt"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00004003" type="io" name="pending_w"/>
+    <region start="0x00004007" end="0x00004009" type="io" name="bank_w"/>
+    <region start="0x00004010" end="0x00004013" type="io" name="soundlatch_r"/>
+    <region start="0x00004018" end="0x00004019" type="io" name="main_data_w"/>
+    <region start="0x0000401B" end="0x0000401B" type="io" name="coin_w"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="read"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="seibu_bank"/>
+  </memory_map>
+</platform>

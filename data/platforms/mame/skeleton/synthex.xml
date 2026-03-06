@@ -1,0 +1,26 @@
+<platform name="synthex" cpu="6502">
+  <!-- source: MAME skeleton/synthex.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000400" end="0x00000BFF" type="io" name="ram2_r"/>
+    <region start="0x00000E00" end="0x00000E04" type="io" name="write"/>
+    <region start="0x00000E18" end="0x00000E1F" type="io" name="seq_extkyb_r"/>
+    <region start="0x00001260" end="0x00001260" type="io" name="cs1_komp_r"/>
+    <region start="0x00001262" end="0x00001262" type="io" name="cs2_komp_r"/>
+    <region start="0x00001264" end="0x00001264" type="io" name="cs3_komp_r"/>
+    <region start="0x00001266" end="0x00001266" type="io" name="cs4_komp_r"/>
+    <region start="0x00001460" end="0x00001460" type="io" name="c2_w"/>
+    <region start="0x000014E0" end="0x000014E0" type="io" name="c1_w"/>
+    <region start="0x00001660" end="0x00001660" type="io" name="sh_w"/>
+    <region start="0x000017E0" end="0x000017E0" type="io" name="reset_w"/>
+    <region start="0x00001AE0" end="0x00001AE0" type="io" name="kom_r"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

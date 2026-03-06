@@ -1,0 +1,8 @@
+<platform name="nsubc" cpu="z80">
+  <!-- source: MAME sega/vicdual.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00007F00" end="0x00007F00" type="io" name="region_7f00"/>
+    <region start="0x0000EBE8" end="0x0000EBE8" type="io" name="nsubc_prot_w"/>
+  </memory_map>
+</platform>

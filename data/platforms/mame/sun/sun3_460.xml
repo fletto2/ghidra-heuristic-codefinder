@@ -1,0 +1,23 @@
+<platform name="sun3_460" cpu="68030">
+  <!-- source: MAME sun/sun3x.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x03FFFFFF" type="ram" name="p_ram"/>
+    <region start="0x09000000" end="0x09000003" type="io" name="cause_buserr_r"/>
+    <region start="0x50300000" end="0x50300003" type="io" name="p4id_r"/>
+    <region start="0x50400000" end="0x504FFFFF" type="ram" name="ram"/>
+    <region start="0x5C000F14" end="0x5C000F17" type="io" name="fpa_r"/>
+    <region start="0x60000000" end="0x60001FFF" type="io" name="iommu_r"/>
+    <region start="0x61000000" end="0x61000003" type="io" name="enable_r"/>
+    <region start="0x61000400" end="0x61000403" type="io" name="buserr_r"/>
+    <region start="0x61000800" end="0x61000803" type="io" name="diag_r"/>
+    <region start="0x61001000" end="0x61001007" type="io" name="memreg_r"/>
+    <region start="0x61001400" end="0x61001403" type="io" name="irqctrl_r"/>
+    <region start="0x62000000" end="0x6200000F" type="io" name="ab_dc_r"/>
+    <region start="0x62002000" end="0x6200200F" type="io" name="ab_dc_r"/>
+    <region start="0x63000000" end="0x6301FFFF" type="rom" name="rom"/>
+    <region start="0x64002000" end="0x64002011" type="io" name="read"/>
+    <region start="0x6F00003C" end="0x6F00003F" type="io" name="printer_r"/>
+    <region start="0xFEFE0000" end="0xFEFEFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

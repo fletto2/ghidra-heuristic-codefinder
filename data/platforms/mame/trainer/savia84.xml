@@ -1,0 +1,8 @@
+<platform name="savia84" cpu="z80">
+  <!-- source: MAME trainer/savia84.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00001800" end="0x00001FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

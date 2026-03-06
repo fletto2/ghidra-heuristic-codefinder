@@ -1,0 +1,17 @@
+<platform name="x68000" cpu="68000">
+  <!-- source: MAME sharp/x68k.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00E81FFF" type="io" name="emptyram_r"/>
+    <region start="0x00E82400" end="0x00E91FFF" type="io" name="vid_r"/>
+    <region start="0x00E94000" end="0x00E94007" type="io" name="map"/>
+    <region start="0x00E98000" end="0x00E9E3FF" type="io" name="ab_dc_r"/>
+    <region start="0x00EAFA00" end="0x00EAFA1F" type="io" name="exp_r"/>
+    <region start="0x00EB0000" end="0x00EBFFFF" type="io" name="spritereg_r"/>
+    <region start="0x00ECE000" end="0x00ECE3FF" type="io" name="exp_r"/>
+    <region start="0x00ED0000" end="0x00ED3FFF" type="io" name="sram_r"/>
+    <region start="0x00ED4000" end="0x00EFFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x00F00000" end="0x00FBFFFF" type="rom" name="rom"/>
+    <region start="0x00FE0000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

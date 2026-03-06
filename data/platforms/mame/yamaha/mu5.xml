@@ -1,0 +1,9 @@
+<platform name="mu5" cpu="h8">
+  <!-- source: MAME yamaha/ymmu5.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0021FFFF" type="ram" name="ram"/>
+    <region start="0x00400000" end="0x00400007" type="io" name="read"/>
+  </memory_map>
+</platform>

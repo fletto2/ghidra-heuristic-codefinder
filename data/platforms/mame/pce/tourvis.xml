@@ -1,0 +1,14 @@
+<platform name="tourvis" cpu="8085">
+  <!-- source: MAME pce/tourvis.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008107" type="io" name="memory_r"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="port"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000B000" end="0x0000B000" type="unmapped" name="nop_read"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="port"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="tourvision_8085_d000_w"/>
+    <region start="0x0000E000" end="0x0000E1FF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F000" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

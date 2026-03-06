@@ -1,0 +1,16 @@
+<platform name="freekickb2" cpu="z80">
+  <!-- source: MAME misc/freekick.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000CFFF" type="rom" name="rom"/>
+    <region start="0x0000D000" end="0x0000E8FF" type="ram" name="ram"/>
+    <region start="0x0000EC00" end="0x0000EC03" type="io" name="read"/>
+    <region start="0x0000F000" end="0x0000F003" type="io" name="read"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="port"/>
+    <region start="0x0000F800" end="0x0000F807" type="io" name="d0"/>
+    <region start="0x0000F801" end="0x0000F801" type="io" name="port"/>
+    <region start="0x0000F802" end="0x0000F802" type="unmapped" name="nop_read"/>
+    <region start="0x0000F803" end="0x0000F803" type="io" name="spinner_r"/>
+    <region start="0x0000FC00" end="0x0000FC03" type="io" name="write"/>
+  </memory_map>
+</platform>

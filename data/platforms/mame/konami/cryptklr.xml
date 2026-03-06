@@ -1,0 +1,22 @@
+<platform name="cryptklr" cpu="68000">
+  <!-- source: MAME konami/konamigq.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x1F000000" end="0x1F00001F" type="io" name="map"/>
+    <region start="0x1F100000" end="0x1F10001F" type="io" name="host_r"/>
+    <region start="0x1F180000" end="0x1F180001" type="io" name="eeprom_w"/>
+    <region start="0x1F198000" end="0x1F198003" type="unmapped" name="nop_write"/>
+    <region start="0x1F1A0000" end="0x1F1A0003" type="unmapped" name="nop_write"/>
+    <region start="0x1F200000" end="0x1F200003" type="io" name="port"/>
+    <region start="0x1F208000" end="0x1F208003" type="io" name="port"/>
+    <region start="0x1F210000" end="0x1F210003" type="io" name="port"/>
+    <region start="0x1F218000" end="0x1F218003" type="io" name="port"/>
+    <region start="0x1F220000" end="0x1F220003" type="io" name="port"/>
+    <region start="0x1F228000" end="0x1F228003" type="io" name="port"/>
+    <region start="0x1F230000" end="0x1F230007" type="io" name="port"/>
+    <region start="0x1F238000" end="0x1F238003" type="io" name="port"/>
+    <region start="0x1F300000" end="0x1F5FFFFF" type="io" name="pcmram_r"/>
+    <region start="0x1F680000" end="0x1F68000F" type="io" name="region_1f680000"/>
+    <region start="0x1F780000" end="0x1F780003" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="super6" cpu="z80">
+  <!-- source: MAME adc/super6.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000010" type="io" name="ba_cd_r"/>
+    <region start="0x00000014" end="0x00000018" type="io" name="fdc_r"/>
+    <region start="0x00000040" end="0x00000040" type="io" name="map0x40_0x40"/>
+    <region start="0x000000E0" end="0x000000E7" type="io" name="map0xe0_0xe7_hdc"/>
+  </memory_map>
+</platform>

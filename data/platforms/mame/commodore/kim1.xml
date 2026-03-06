@@ -1,0 +1,10 @@
+<platform name="kim1" cpu="6502">
+  <!-- source: MAME commodore/kim1.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00001700" end="0x0000170F" type="io" name="io_map"/>
+    <region start="0x00001740" end="0x0000174F" type="io" name="io_map"/>
+    <region start="0x00001780" end="0x00001FFF" type="io" name="ram_map"/>
+  </memory_map>
+</platform>

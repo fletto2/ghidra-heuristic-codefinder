@@ -1,0 +1,10 @@
+<platform name="croquisg" cpu="68000">
+  <!-- source: MAME sega/deniam.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00C40001" end="0x00C40001" type="io" name="read"/>
+    <region start="0x00C40007" end="0x00C4000B" type="io" name="oki_rom_bank_w"/>
+    <region start="0x00C44006" end="0x00C44007" type="unmapped" name="nop_read"/>
+    <region start="0x00C4400A" end="0x00C4400B" type="io" name="port"/>
+  </memory_map>
+</platform>

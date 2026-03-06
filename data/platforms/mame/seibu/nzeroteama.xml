@@ -1,0 +1,9 @@
+<platform name="nzeroteama" cpu="z80">
+  <!-- source: MAME seibu/r2dx_v33.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000740" end="0x00000741" type="io" name="port"/>
+    <region start="0x00000744" end="0x00000745" type="io" name="port"/>
+    <region start="0x0000074C" end="0x0000074D" type="io" name="port"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="v4big40k" cpu="68000">
+  <!-- source: MAME barcrest/mpu4vid.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00A00002" end="0x00A00005" type="io" name="mpu4_vid_bt_a00002_w"/>
+    <region start="0x00A00008" end="0x00A00009" type="io" name="mpu4_vid_bt_a00008_w"/>
+  </memory_map>
+</platform>

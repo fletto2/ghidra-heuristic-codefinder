@@ -1,0 +1,9 @@
+<platform name="shuffle" cpu="8080">
+  <!-- source: MAME midw8080/mw8080bw.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="main_ram"/>
+    <region start="0x00004000" end="0x00005FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

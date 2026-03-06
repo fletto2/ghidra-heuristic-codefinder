@@ -1,0 +1,10 @@
+<platform name="hanadojo" cpu="z80">
+  <!-- source: MAME seta/hanadojo.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008800" end="0x00008EFF" type="ram" name="ram"/>
+    <region start="0x00008F00" end="0x00008FFF" type="io" name="region_8f00"/>
+    <region start="0x00009000" end="0x000097FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

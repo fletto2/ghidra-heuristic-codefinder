@@ -1,0 +1,10 @@
+<platform name="multi16" cpu="8086">
+  <!-- source: MAME mitsubishi/multi16.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
+    <region start="0x00040000" end="0x0007FFFF" type="unmapped" name="unmapped"/>
+    <region start="0x000C0000" end="0x000EFFFF" type="ram" name="vram"/>
+    <region start="0x000F0000" end="0x000F3FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="ckongpt2j" cpu="z80">
+  <!-- source: MAME nichibutsu/cclimber.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="sample_rate_w"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="sample_volume_w"/>
+  </memory_map>
+</platform>

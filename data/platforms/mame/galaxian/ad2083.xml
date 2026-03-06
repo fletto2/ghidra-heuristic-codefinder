@@ -1,0 +1,19 @@
+<platform name="ad2083" cpu="z80">
+  <!-- source: MAME galaxian/scramble.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00004BFF" type="io" name="videoram"/>
+    <region start="0x00005000" end="0x0000507F" type="ram" name="attributesram"/>
+    <region start="0x00006004" end="0x00006004" type="io" name="hotshock_flip_screen_w"/>
+    <region start="0x00006800" end="0x00006803" type="io" name="galaxold_coin_counter_2_w"/>
+    <region start="0x00006805" end="0x00006807" type="io" name="galaxold_coin_counter_1_w"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="reset_r"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="write"/>
+    <region start="0x00008000" end="0x00008003" type="io" name="port"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="hotshock_sh_irqtrigger_w"/>
+    <region start="0x0000A000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000E800" end="0x0000EBFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

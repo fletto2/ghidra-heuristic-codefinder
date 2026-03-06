@@ -1,0 +1,21 @@
+<platform name="scrambler" cpu="z80">
+  <!-- source: MAME galaxian/galaxold.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004BFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="videoram"/>
+    <region start="0x00005800" end="0x000058FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="port"/>
+    <region start="0x00006000" end="0x00006001" type="unmapped" name="nop_write"/>
+    <region start="0x00006003" end="0x00006007" type="io" name="galaxold_coin_counter_w"/>
+    <region start="0x00006800" end="0x00006800" type="io" name="port"/>
+    <region start="0x00006800" end="0x00006803" type="io" name="background_enable_w"/>
+    <region start="0x00006805" end="0x00006807" type="io" name="fire_enable_w"/>
+    <region start="0x00007000" end="0x00007004" type="io" name="galaxold_nmi_enable_w"/>
+    <region start="0x00007006" end="0x00007007" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x00007800" end="0x00007800" type="io" name="reset_r"/>
+    <region start="0x00008102" end="0x00008102" type="io" name="scramblb_protection_1_r"/>
+    <region start="0x00008202" end="0x00008202" type="io" name="scrambler_protection_2_r"/>
+  </memory_map>
+</platform>

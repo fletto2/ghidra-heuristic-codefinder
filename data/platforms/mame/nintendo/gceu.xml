@@ -1,0 +1,9 @@
+<platform name="gceu" cpu="ppc">
+  <!-- source: MAME nintendo/gamecube.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x017FFFFF" type="ram" name="ram"/>
+    <region start="0x08000000" end="0x081FFFFF" type="ram" name="ram"/>
+    <region start="0xFFF00000" end="0xFFFFFFFF" type="ram" name="boot"/>
+  </memory_map>
+</platform>

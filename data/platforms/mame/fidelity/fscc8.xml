@@ -1,0 +1,8 @@
+<platform name="fscc8" cpu="z80">
+  <!-- source: MAME fidelity/sc8.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

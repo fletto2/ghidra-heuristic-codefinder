@@ -1,0 +1,9 @@
+<platform name="popshot" cpu="68hc11">
+  <!-- source: MAME misc/skeetsht.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="ay8910_w"/>
+    <region start="0x00002800" end="0x00002807" type="io" name="tms_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="threedsa" cpu="z80">
+  <!-- source: MAME nichibutsu/pastelg.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

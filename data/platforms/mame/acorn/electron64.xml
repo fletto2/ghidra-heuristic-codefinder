@@ -1,0 +1,8 @@
+<platform name="electron64" cpu="6502">
+  <!-- source: MAME acorn/electron.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="ram_r"/>
+    <region start="0x0000FC00" end="0x0000FEFF" type="io" name="io_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,17 @@
+<platform name="miniguay" cpu="8085">
+  <!-- source: MAME cirsa/miniguay.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009400" end="0x0000940F" type="io" name="read"/>
+    <region start="0x00009900" end="0x00009907" type="io" name="io_r"/>
+    <region start="0x00009D00" end="0x00009D07" type="io" name="io_r"/>
+    <region start="0x0000B400" end="0x0000B40F" type="io" name="read"/>
+    <region start="0x0000B409" end="0x0000B409" type="io" name="psg_db_r"/>
+    <region start="0x0000B900" end="0x0000B907" type="io" name="io_r"/>
+    <region start="0x0000BD00" end="0x0000BD07" type="io" name="io_r"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="reset_w"/>
+    <region start="0x0000D000" end="0x0000D000" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,29 @@
+<platform name="starshpp" cpu="6502">
+  <!-- source: MAME atari/starshp1.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00002C00" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="port"/>
+    <region start="0x0000C300" end="0x0000C400" type="io" name="sspic_w"/>
+    <region start="0x0000C400" end="0x0000C4FF" type="io" name="ssadd_w"/>
+    <region start="0x0000C800" end="0x0000C8FF" type="ram" name="ram"/>
+    <region start="0x0000CC00" end="0x0000CC0F" type="ram" name="writeonly"/>
+    <region start="0x0000D000" end="0x0000D00F" type="ram" name="writeonly"/>
+    <region start="0x0000D400" end="0x0000D40F" type="ram" name="writeonly"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="rng_r"/>
+    <region start="0x0000D800" end="0x0000D80F" type="io" name="collision_reset_w"/>
+    <region start="0x0000DC00" end="0x0000DC07" type="io" name="d0"/>
+    <region start="0x0000DD00" end="0x0000DD0F" type="io" name="analog_in_w"/>
+    <region start="0x0000DE00" end="0x0000DE07" type="io" name="d0"/>
+    <region start="0x0000DF00" end="0x0000DF0F" type="io" name="analog_out_w"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

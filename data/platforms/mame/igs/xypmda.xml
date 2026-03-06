@@ -1,0 +1,11 @@
+<platform name="xypmda" cpu="68000">
+  <!-- source: MAME igs/igs_68k_023vid.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00080100" end="0x00080101" type="io" name="unknown_r"/>
+    <region start="0x00080120" end="0x00080121" type="io" name="port"/>
+    <region start="0x00080200" end="0x00080201" type="unmapped" name="nop_write"/>
+    <region start="0x000A0000" end="0x000A0003" type="io" name="unknown2_r"/>
+    <region start="0x000E0000" end="0x000E0003" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

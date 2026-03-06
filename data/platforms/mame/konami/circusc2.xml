@@ -1,0 +1,17 @@
+<platform name="circusc2" cpu="z80">
+  <!-- source: MAME konami/circusc.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000007" type="io" name="d0"/>
+    <region start="0x00000400" end="0x00000400" type="io" name="reset_w"/>
+    <region start="0x00000800" end="0x00000800" type="io" name="write"/>
+    <region start="0x00000C00" end="0x00000C00" type="io" name="sh_irqtrigger_w"/>
+    <region start="0x00001000" end="0x00001002" type="io" name="port"/>
+    <region start="0x00001003" end="0x00001003" type="unmapped" name="nop_read"/>
+    <region start="0x00001400" end="0x00001400" type="io" name="port"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="port"/>
+    <region start="0x00001C00" end="0x00001C00" type="ram" name="writeonly"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

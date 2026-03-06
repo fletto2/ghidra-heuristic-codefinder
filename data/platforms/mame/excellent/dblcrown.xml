@@ -1,0 +1,12 @@
+<platform name="dblcrown" cpu="z80">
+  <!-- source: MAME excellent/dblcrown.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="rom_bank"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="io" name="amap8"/>
+    <region start="0x0000F000" end="0x0000F1FF" type="io" name="palette_r"/>
+    <region start="0x0000FE00" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x0000FF00" end="0x0000FF01" type="io" name="vram_bank_r"/>
+    <region start="0x0000FF04" end="0x0000FF04" type="io" name="irq_source_r"/>
+  </memory_map>
+</platform>

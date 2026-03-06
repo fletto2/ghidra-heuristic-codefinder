@@ -1,0 +1,13 @@
+<platform name="r9751" cpu="68030">
+  <!-- source: MAME rolm/r9751.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00FFFFFF" type="ram" name="main_ram"/>
+    <region start="0x08000000" end="0x0800FFFF" type="rom" name="rom"/>
+    <region start="0x5FF00000" end="0x5FFFFFFF" type="io" name="r9751_mmio_5ff_r"/>
+    <region start="0xFF010000" end="0xFF01FFFF" type="io" name="r9751_mmio_ff01_r"/>
+    <region start="0xFF050000" end="0xFF06FFFF" type="io" name="r9751_mmio_ff05_r"/>
+    <region start="0xFFF80000" end="0xFFF8FFFF" type="io" name="r9751_mmio_fff8_r"/>
+    <region start="0xFFFFFF00" end="0xFFFFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

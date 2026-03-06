@@ -1,0 +1,14 @@
+<platform name="flyball1" cpu="6502">
+  <!-- source: MAME atari/flyball.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000800" type="unmapped" name="unmapped"/>
+    <region start="0x00000801" end="0x00000807" type="io" name="pitcher_pic_w"/>
+    <region start="0x00000900" end="0x00000900" type="io" name="potmask_w"/>
+    <region start="0x00000A00" end="0x00000A07" type="io" name="misc_w"/>
+    <region start="0x00000B00" end="0x00000B00" type="io" name="input_r"/>
+    <region start="0x00000D00" end="0x00000EFF" type="ram" name="playfield_ram"/>
+    <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

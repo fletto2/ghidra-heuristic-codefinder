@@ -1,0 +1,10 @@
+<platform name="unkpacgd" cpu="z80">
+  <!-- source: MAME misc/4enraya.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="nvram"/>
+    <region start="0x00007000" end="0x00007FFF" type="io" name="videoram_w"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

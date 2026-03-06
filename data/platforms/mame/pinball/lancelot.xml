@@ -1,0 +1,8 @@
+<platform name="lancelot" cpu="z80">
+  <!-- source: MAME pinball/lancelot.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

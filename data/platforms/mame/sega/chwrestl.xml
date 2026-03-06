@@ -1,0 +1,8 @@
+<platform name="chwrestl" cpu="z80">
+  <!-- source: MAME sega/sg1000a.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C3FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

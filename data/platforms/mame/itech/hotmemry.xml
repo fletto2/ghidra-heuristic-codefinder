@@ -1,0 +1,21 @@
+<platform name="hotmemry" cpu="68020">
+  <!-- source: MAME itech/itech32.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00080000" end="0x00080001" type="io" name="int1_ack_w"/>
+    <region start="0x00100000" end="0x00100001" type="io" name="port"/>
+    <region start="0x00180000" end="0x00180001" type="io" name="port"/>
+    <region start="0x00200000" end="0x00200001" type="io" name="reset16_w"/>
+    <region start="0x00280000" end="0x00280001" type="io" name="port"/>
+    <region start="0x00300001" end="0x00300001" type="io" name="region_300001"/>
+    <region start="0x00380001" end="0x00380001" type="io" name="region_380001"/>
+    <region start="0x00400000" end="0x00400001" type="io" name="reset16_w"/>
+    <region start="0x00480001" end="0x00480001" type="io" name="sound_data_w"/>
+    <region start="0x00500000" end="0x005000FF" type="io" name="bloodstm_video_r"/>
+    <region start="0x00580000" end="0x0059FFFF" type="ram" name="palette"/>
+    <region start="0x00700001" end="0x00700001" type="io" name="bloodstm_plane_w"/>
+    <region start="0x00780000" end="0x00780001" type="io" name="port"/>
+    <region start="0x00800000" end="0x0087FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

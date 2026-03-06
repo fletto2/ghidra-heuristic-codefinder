@@ -1,0 +1,13 @@
+<platform name="mquake" cpu="68000">
+  <!-- source: MAME amiga/mquake.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00200000" end="0x00203FFF" type="ram" name="nvram"/>
+    <region start="0x00204000" end="0x002041FF" type="io" name="read"/>
+    <region start="0x00282000" end="0x00282003" type="io" name="port"/>
+    <region start="0x00284000" end="0x0028400F" type="io" name="output_w"/>
+    <region start="0x00286000" end="0x0028600F" type="io" name="coin_chip_r"/>
+    <region start="0x00300000" end="0x003BFFFF" type="rom" name="rom"/>
+    <region start="0x00F00000" end="0x00FBFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

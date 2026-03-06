@@ -1,0 +1,15 @@
+<platform name="yumefuda" cpu="z80">
+  <!-- source: MAME seta/albazg.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="banked"/>
+    <region start="0x0000A7FC" end="0x0000A7FC" type="io" name="prot_lock_w"/>
+    <region start="0x0000A7FF" end="0x0000A7FF" type="io" name="port"/>
+    <region start="0x0000AF80" end="0x0000AFFF" type="io" name="custom_ram_r"/>
+    <region start="0x0000B000" end="0x0000B0FF" type="ram" name="palette"/>
+    <region start="0x0000C000" end="0x0000C3FF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D3FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

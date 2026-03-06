@@ -1,0 +1,19 @@
+<platform name="bubsys" cpu="68000">
+  <!-- source: MAME konami/nemesis.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00010000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00020000" end="0x00027FFF" type="io" name="sound_sharedram_word_r"/>
+    <region start="0x00030000" end="0x00040007" type="ram" name="ram"/>
+    <region start="0x00050000" end="0x00057FFF" type="ram" name="ram"/>
+    <region start="0x0005A000" end="0x0005AFFF" type="ram" name="ram"/>
+    <region start="0x0005C001" end="0x0005C001" type="io" name="write"/>
+    <region start="0x0005C402" end="0x0005C407" type="io" name="port"/>
+    <region start="0x0005C800" end="0x0005C801" type="io" name="reset16_w"/>
+    <region start="0x0005CC00" end="0x0005CC05" type="io" name="port"/>
+    <region start="0x0005E000" end="0x0005E00F" type="io" name="d0"/>
+    <region start="0x00070000" end="0x00073FFF" type="ram" name="ram"/>
+    <region start="0x00078000" end="0x0007FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

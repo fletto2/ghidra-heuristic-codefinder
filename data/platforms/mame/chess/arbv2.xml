@@ -1,0 +1,9 @@
+<platform name="arbv2" cpu="65c02">
+  <!-- source: MAME chess/ave_arb.cpp -->
+  <!-- year: 2012 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="io" name="rom"/>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00008000" end="0x0000800F" type="io" name="map"/>
+  </memory_map>
+</platform>

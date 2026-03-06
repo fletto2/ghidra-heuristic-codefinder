@@ -1,0 +1,9 @@
+<platform name="fi8275" cpu="8085">
+  <!-- source: MAME misc/fastinvaders.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x000027FF" type="rom" name="rom"/>
+    <region start="0x00002800" end="0x000033FF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

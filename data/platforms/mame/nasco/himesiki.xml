@@ -1,0 +1,8 @@
+<platform name="himesiki" cpu="z80">
+  <!-- source: MAME nasco/himesiki.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

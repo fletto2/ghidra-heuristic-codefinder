@@ -1,0 +1,16 @@
+<platform name="pushover" cpu="z80">
+  <!-- source: MAME misc/summit.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000017FF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000023FF" type="ram" name="attr"/>
+    <region start="0x00002800" end="0x00002BFF" type="ram" name="vram"/>
+    <region start="0x00003000" end="0x000031FF" type="ram" name="ram"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="port"/>
+    <region start="0x00003880" end="0x00003880" type="io" name="out2_w"/>
+    <region start="0x00003900" end="0x00003900" type="io" name="port"/>
+    <region start="0x00003980" end="0x00003980" type="io" name="lamps1_w"/>
+    <region start="0x00003A00" end="0x00003A00" type="io" name="port"/>
+    <region start="0x00003B00" end="0x00003B00" type="io" name="port"/>
+  </memory_map>
+</platform>

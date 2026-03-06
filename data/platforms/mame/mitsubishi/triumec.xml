@@ -1,0 +1,21 @@
+<platform name="triumec" cpu="arm7_le">
+  <!-- source: MAME mitsubishi/trium.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="rom" name="rom"/>
+    <region start="0x01000000" end="0x0103FFFF" type="ram" name="ram"/>
+    <region start="0x03000000" end="0x03007FFF" type="ram" name="ram"/>
+    <region start="0x04001158" end="0x0400115B" type="ram" name="ram"/>
+    <region start="0x04001698" end="0x04001699" type="io" name="one_r"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

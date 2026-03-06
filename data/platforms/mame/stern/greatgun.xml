@@ -1,0 +1,10 @@
+<platform name="greatgun" cpu="z80">
+  <!-- source: MAME stern/mazerbla.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="share1"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="cfb_zpu_int_req_clr"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

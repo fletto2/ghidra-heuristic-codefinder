@@ -1,0 +1,8 @@
+<platform name="v100" cpu="z80">
+  <!-- source: MAME visual/v100.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

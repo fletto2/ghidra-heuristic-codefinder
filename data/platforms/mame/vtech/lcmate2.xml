@@ -1,0 +1,8 @@
+<platform name="lcmate2" cpu="z80">
+  <!-- source: MAME vtech/lcmate2.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00009FFF" type="ram" name="rombank"/>
+  </memory_map>
+</platform>

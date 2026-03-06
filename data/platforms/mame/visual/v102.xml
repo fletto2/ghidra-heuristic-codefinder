@@ -1,0 +1,10 @@
+<platform name="v102" cpu="z80">
+  <!-- source: MAME visual/v102.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000AFFF" type="ram" name="ram"/>
+    <region start="0x0000B800" end="0x0000B9FF" type="io" name="read"/>
+  </memory_map>
+</platform>

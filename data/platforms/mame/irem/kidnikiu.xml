@@ -1,0 +1,10 @@
+<platform name="kidnikiu" cpu="z80">
+  <!-- source: MAME irem/m62.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000AFFF" type="ram" name="bank1"/>
+    <region start="0x0000C000" end="0x0000C0FF" type="ram" name="spriteram"/>
+    <region start="0x0000D000" end="0x0000EFFF" type="ram" name="m62_textram"/>
+  </memory_map>
+</platform>

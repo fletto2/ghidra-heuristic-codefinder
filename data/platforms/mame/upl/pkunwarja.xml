@@ -1,0 +1,13 @@
+<platform name="pkunwarja" cpu="z80">
+  <!-- source: MAME upl/nova2001.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="spriteram"/>
+    <region start="0x0000A000" end="0x0000A001" type="io" name="address_data_w"/>
+    <region start="0x0000A001" end="0x0000A003" type="io" name="data_r"/>
+    <region start="0x0000A003" end="0x0000A003" type="io" name="data_r"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

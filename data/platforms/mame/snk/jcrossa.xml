@@ -1,0 +1,22 @@
+<platform name="jcrossa" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A100" end="0x0000A100" type="io" name="port"/>
+    <region start="0x0000A200" end="0x0000A200" type="io" name="port"/>
+    <region start="0x0000A300" end="0x0000A300" type="io" name="sgladiat_soundlatch_w"/>
+    <region start="0x0000A400" end="0x0000A400" type="io" name="port"/>
+    <region start="0x0000A500" end="0x0000A500" type="io" name="port"/>
+    <region start="0x0000A600" end="0x0000A600" type="io" name="sgladiat_flipscreen_w"/>
+    <region start="0x0000A700" end="0x0000A700" type="io" name="cpuB_nmi_trigger_r"/>
+    <region start="0x0000D300" end="0x0000D300" type="io" name="jcross_scroll_msb_w"/>
+    <region start="0x0000D400" end="0x0000D400" type="io" name="sp16_scrolly_w"/>
+    <region start="0x0000D500" end="0x0000D500" type="io" name="sp16_scrollx_w"/>
+    <region start="0x0000D600" end="0x0000D600" type="io" name="bg_scrolly_w"/>
+    <region start="0x0000D700" end="0x0000D700" type="io" name="bg_scrollx_w"/>
+    <region start="0x0000D800" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000FFFF" end="0x0000FFFF" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

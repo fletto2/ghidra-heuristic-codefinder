@@ -1,0 +1,20 @@
+<platform name="tutankhmb" cpu="z80">
+  <!-- source: MAME konami/tutankhm.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000800F" type="ram" name="ram"/>
+    <region start="0x00008100" end="0x00008100" type="ram" name="ram"/>
+    <region start="0x00008120" end="0x00008120" type="io" name="reset_r"/>
+    <region start="0x00008160" end="0x00008160" type="io" name="port"/>
+    <region start="0x00008180" end="0x00008180" type="io" name="port"/>
+    <region start="0x000081A0" end="0x000081A0" type="io" name="port"/>
+    <region start="0x000081C0" end="0x000081C0" type="io" name="port"/>
+    <region start="0x000081E0" end="0x000081E0" type="io" name="port"/>
+    <region start="0x00008200" end="0x00008207" type="unmapped" name="nop_read"/>
+    <region start="0x00008300" end="0x00008300" type="io" name="bankselect_w"/>
+    <region start="0x00008600" end="0x00008600" type="io" name="sound_on_w"/>
+    <region start="0x00008700" end="0x00008700" type="io" name="sound_data_w"/>
+    <region start="0x00008800" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

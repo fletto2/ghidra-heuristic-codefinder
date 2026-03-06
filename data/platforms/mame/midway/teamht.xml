@@ -1,0 +1,8 @@
+<platform name="teamht" cpu="68000">
+  <!-- source: MAME midway/balsente.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00009000" end="0x00009007" type="io" name="teamht_multiplex_select_w"/>
+    <region start="0x00009404" end="0x00009404" type="io" name="teamht_extra_r"/>
+  </memory_map>
+</platform>

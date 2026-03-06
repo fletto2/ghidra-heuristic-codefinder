@@ -1,0 +1,11 @@
+<platform name="freewaya" cpu="8088">
+  <!-- source: MAME misc/freeway.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00009FFF" type="io" name="read"/>
+    <region start="0x000A0000" end="0x000A0FFF" type="ram" name="ram"/>
+    <region start="0x000A4000" end="0x000A4FFF" type="ram" name="ram"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

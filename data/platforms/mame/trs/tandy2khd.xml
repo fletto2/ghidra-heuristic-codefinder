@@ -1,0 +1,9 @@
+<platform name="tandy2khd" cpu="80186">
+  <!-- source: MAME trs/tandy2k.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x000E0000" end="0x000E7FFF" type="io" name="read16"/>
+    <region start="0x000F8000" end="0x000FBFFF" type="io" name="char_ram_r"/>
+    <region start="0x000FC000" end="0x000FDFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

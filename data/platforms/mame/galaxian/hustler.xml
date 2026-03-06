@@ -1,0 +1,16 @@
+<platform name="hustler" cpu="z80">
+  <!-- source: MAME galaxian/scobra.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000090FF" type="ram" name="attributesram"/>
+    <region start="0x0000A802" end="0x0000A802" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x0000A804" end="0x0000A804" type="io" name="galaxold_nmi_enable_w"/>
+    <region start="0x0000A806" end="0x0000A806" type="io" name="galaxold_flip_screen_y_w"/>
+    <region start="0x0000A80E" end="0x0000A80E" type="unmapped" name="nop_write"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="reset_r"/>
+    <region start="0x0000D000" end="0x0000D01F" type="io" name="hustler_ppi8255_0_r"/>
+    <region start="0x0000E000" end="0x0000E01F" type="io" name="hustler_ppi8255_1_r"/>
+  </memory_map>
+</platform>

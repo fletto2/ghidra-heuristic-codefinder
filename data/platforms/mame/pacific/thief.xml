@@ -1,0 +1,11 @@
+<platform name="thief" cpu="z80">
+  <!-- source: MAME pacific/thief.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000000" type="io" name="blit_w"/>
+    <region start="0x0000A000" end="0x0000AFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000E008" type="io" name="coprocessor_r"/>
+    <region start="0x0000E010" end="0x0000E02F" type="rom" name="rom"/>
+    <region start="0x0000E080" end="0x0000E0C0" type="io" name="context_ram_r"/>
+  </memory_map>
+</platform>

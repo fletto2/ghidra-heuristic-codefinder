@@ -1,0 +1,9 @@
+<platform name="sgaltropa" cpu="z80">
+  <!-- source: MAME nichibutsu/nightgal.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000080" end="0x00000086" type="io" name="blit_v2_regs"/>
+    <region start="0x00001000" end="0x000013FF" type="io" name="comms_ram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

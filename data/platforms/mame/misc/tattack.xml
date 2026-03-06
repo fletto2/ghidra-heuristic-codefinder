@@ -1,0 +1,15 @@
+<platform name="tattack" cpu="z80">
+  <!-- source: MAME misc/tattack.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="port"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="port"/>
+    <region start="0x00007000" end="0x000073FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="sound_w"/>
+    <region start="0x0000C002" end="0x0000C002" type="unmapped" name="nop_write"/>
+    <region start="0x0000C005" end="0x0000C007" type="io" name="paddle_w"/>
+    <region start="0x0000E000" end="0x0000E3FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

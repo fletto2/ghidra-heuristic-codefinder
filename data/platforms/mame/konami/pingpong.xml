@@ -1,0 +1,17 @@
+<platform name="pingpong" cpu="z80">
+  <!-- source: MAME konami/pingpong.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000097FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="coin_w"/>
+    <region start="0x0000A200" end="0x0000A200" type="unmapped" name="nop_write"/>
+    <region start="0x0000A400" end="0x0000A400" type="io" name="write"/>
+    <region start="0x0000A600" end="0x0000A600" type="io" name="reset_w"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
+    <region start="0x0000A880" end="0x0000A880" type="io" name="port"/>
+    <region start="0x0000A900" end="0x0000A900" type="io" name="port"/>
+    <region start="0x0000A980" end="0x0000A980" type="io" name="port"/>
+  </memory_map>
+</platform>

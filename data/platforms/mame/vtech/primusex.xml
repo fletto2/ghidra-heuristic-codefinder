@@ -1,0 +1,8 @@
+<platform name="primusex" cpu="z80">
+  <!-- source: MAME vtech/primusex.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="ram" name="rombank"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="status_r"/>
+  </memory_map>
+</platform>

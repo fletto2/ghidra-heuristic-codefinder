@@ -1,0 +1,22 @@
+<platform name="sttng_l2" cpu="6809">
+  <!-- source: MAME pinball/wpc_dcs.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="mainram"/>
+    <region start="0x00003000" end="0x00003BFF" type="ram" name="dmd0"/>
+    <region start="0x00003FB8" end="0x00003FBF" type="io" name="registers"/>
+    <region start="0x00003FD4" end="0x00003FD4" type="io" name="out4_w"/>
+    <region start="0x00003FDC" end="0x00003FDD" type="io" name="dcs_data_r"/>
+    <region start="0x00003FE0" end="0x00003FE3" type="io" name="out_w"/>
+    <region start="0x00003FE4" end="0x00003FE5" type="unmapped" name="nop_read"/>
+    <region start="0x00003FE6" end="0x00003FEA" type="io" name="gi_w"/>
+    <region start="0x00003FF2" end="0x00003FF2" type="io" name="led_w"/>
+    <region start="0x00003FF3" end="0x00003FF3" type="unmapped" name="nop_read"/>
+    <region start="0x00003FF4" end="0x00003FF8" type="io" name="registers"/>
+    <region start="0x00003FFA" end="0x00003FFC" type="io" name="rtc_r"/>
+    <region start="0x00003FFD" end="0x00003FFE" type="unmapped" name="unmapped"/>
+    <region start="0x00003FFF" end="0x00003FFF" type="io" name="zc_r"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="rombank"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

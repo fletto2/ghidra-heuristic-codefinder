@@ -1,0 +1,9 @@
+<platform name="itt1700" cpu="z80">
+  <!-- source: MAME skeleton/itt1700.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00007FFF" type="ram" name="videoram"/>
+    <region start="0x00008000" end="0x00008000" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

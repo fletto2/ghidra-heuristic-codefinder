@@ -1,0 +1,17 @@
+<platform name="bmxstunts" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x000013FF" type="ram" name="videoram"/>
+    <region start="0x00001800" end="0x000018FF" type="ram" name="spriteram"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="port"/>
+    <region start="0x00002000" end="0x00002003" type="io" name="start_lamp_w"/>
+    <region start="0x00002800" end="0x00002800" type="io" name="port"/>
+    <region start="0x00003000" end="0x00003001" type="io" name="port"/>
+    <region start="0x00003006" end="0x00003007" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="reset_r"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="snsnd_w"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

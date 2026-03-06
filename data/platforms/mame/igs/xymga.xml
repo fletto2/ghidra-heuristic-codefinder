@@ -1,0 +1,8 @@
+<platform name="xymga" cpu="68000">
+  <!-- source: MAME igs/igs011.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00700000" end="0x00700005" type="io" name="port"/>
+    <region start="0x00700002" end="0x00700003" type="io" name="lhb_inputs_w"/>
+  </memory_map>
+</platform>

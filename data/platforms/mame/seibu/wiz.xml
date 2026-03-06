@@ -1,0 +1,9 @@
+<platform name="wiz" cpu="z80">
+  <!-- source: MAME seibu/wiz.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x0000C800" end="0x0000C801" type="io" name="wiz_coin_counter_w"/>
+    <region start="0x0000D400" end="0x0000D400" type="io" name="wiz_protection_r"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="wiz_sprite_bank_w"/>
+  </memory_map>
+</platform>

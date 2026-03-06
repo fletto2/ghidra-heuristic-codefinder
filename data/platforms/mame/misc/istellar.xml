@@ -1,0 +1,8 @@
+<platform name="istellar" cpu="z80">
+  <!-- source: MAME misc/istellar.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000B1FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="vparadis2" cpu="68000">
+  <!-- source: MAME misc/umipoker.cpp -->
+  <!-- year: 2005 -->
+  <memory_map>
+    <region start="0x00E0000C" end="0x00E0000D" type="io" name="lamps_w"/>
+    <region start="0x00E00010" end="0x00E00011" type="io" name="saiyu_counters_w"/>
+  </memory_map>
+</platform>

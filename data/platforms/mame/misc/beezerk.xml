@@ -1,0 +1,13 @@
+<platform name="beezerk" cpu="68000">
+  <!-- source: MAME misc/vlc34010.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x007FFFFF" type="io" name="region_0"/>
+    <region start="0x00A10001" end="0x00A10001" type="io" name="reset_r"/>
+    <region start="0x00A70001" end="0x00A70001" type="io" name="switch_w"/>
+    <region start="0x00B10001" end="0x00B10001" type="io" name="region_b10001"/>
+    <region start="0x00B20001" end="0x00B20001" type="io" name="region_b20001"/>
+    <region start="0x00B30001" end="0x00B30001" type="io" name="region_b30001"/>
+    <region start="0x00F00000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

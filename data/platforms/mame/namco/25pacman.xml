@@ -1,0 +1,13 @@
+<platform name="25pacman" cpu="z80">
+  <!-- source: MAME namco/20pacgal.cpp -->
+  <!-- year: 2006 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="io" name="read"/>
+    <region start="0x00004000" end="0x00006FFF" type="ram" name="video_ram"/>
+    <region start="0x00007000" end="0x0000717F" type="io" name="sprite_ram_w"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="mainbank"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="io" name="sprite_gfx_w"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="unmapped" name="nop_write"/>
+    <region start="0x0001C000" end="0x0001FFFF" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

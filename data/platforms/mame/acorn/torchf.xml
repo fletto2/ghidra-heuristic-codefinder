@@ -1,0 +1,23 @@
+<platform name="torchf" cpu="6502">
+  <!-- source: MAME acorn/bbcb.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x0000FC00" end="0x0000FDFF" type="io" name="fred_r"/>
+    <region start="0x0000FE00" end="0x0000FEFF" type="unmapped" name="nop_write"/>
+    <region start="0x0000FE00" end="0x0000FE01" type="io" name="status_r"/>
+    <region start="0x0000FE08" end="0x0000FE09" type="io" name="read"/>
+    <region start="0x0000FE10" end="0x0000FE17" type="io" name="read"/>
+    <region start="0x0000FE20" end="0x0000FE4F" type="io" name="video_ula_w"/>
+    <region start="0x0000FE60" end="0x0000FE6F" type="io" name="map"/>
+    <region start="0x0000FE80" end="0x0000FE9F" type="io" name="read"/>
+    <region start="0x0000FEC0" end="0x0000FEC3" type="io" name="read"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

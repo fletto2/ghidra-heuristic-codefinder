@@ -1,0 +1,14 @@
+<platform name="pbo" cpu="68010">
+  <!-- source: MAME philips/philipsbo.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="ram"/>
+    <region start="0x00080000" end="0x00BFFFFF" type="io" name="berr_r"/>
+    <region start="0x00F80000" end="0x00F8FFFF" type="rom" name="rom"/>
+    <region start="0x00FA0000" end="0x00FA0007" type="io" name="read"/>
+    <region start="0x00FA0011" end="0x00FA0011" type="io" name="floppy_select_w"/>
+    <region start="0x00FA0030" end="0x00FA0037" type="io" name="ab_dc_r"/>
+    <region start="0x00FA0100" end="0x00FA0101" type="io" name="fa0101_read"/>
+    <region start="0x00FA8400" end="0x00FA840F" type="io" name="read"/>
+  </memory_map>
+</platform>

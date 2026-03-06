@@ -1,0 +1,17 @@
+<platform name="prosporta" cpu="6502">
+  <!-- source: MAME dataeast/liberate.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00001FFF" type="io" name="prosport_charram_r"/>
+    <region start="0x00002400" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000800F" type="io" name="prosport_io_w"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

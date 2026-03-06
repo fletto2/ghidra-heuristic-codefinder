@@ -1,0 +1,9 @@
+<platform name="honooinv" cpu="z80">
+  <!-- source: MAME taito/sbmjb.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F00F" type="io" name="read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="phc20" cpu="z80">
+  <!-- source: MAME sanyo/phc20.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00002FFF" type="ram" name="ram"/>
+    <region start="0x00003800" end="0x00003808" type="io" name="port"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="videoram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="system_r"/>
+  </memory_map>
+</platform>

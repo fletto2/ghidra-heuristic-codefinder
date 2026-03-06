@@ -1,0 +1,10 @@
+<platform name="mjkinjas" cpu="z80">
+  <!-- source: MAME misc/homedata.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008080" end="0x00008080" type="io" name="mrokumei_sound_bank_w"/>
+    <region start="0x0000FFBF" end="0x0000FFBF" type="io" name="mrokumei_sound_bank_w"/>
+    <region start="0x0000FFFC" end="0x0000FFFD" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

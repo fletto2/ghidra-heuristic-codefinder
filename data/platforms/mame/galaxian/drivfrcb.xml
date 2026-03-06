@@ -1,0 +1,20 @@
+<platform name="drivfrcb" cpu="z80">
+  <!-- source: MAME galaxian/galaxold.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="port"/>
+    <region start="0x00008000" end="0x0000887F" type="ram" name="ram"/>
+    <region start="0x00008880" end="0x00008BFF" type="unmapped" name="nop_write"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="videoram"/>
+    <region start="0x00009800" end="0x00009800" type="io" name="reset_r"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A7FF" end="0x0000A800" type="io" name="port"/>
+    <region start="0x0000A803" end="0x0000A803" type="io" name="galaxold_coin_counter_w"/>
+    <region start="0x0000A805" end="0x0000A807" type="io" name="fire_enable_w"/>
+    <region start="0x0000B000" end="0x0000B001" type="io" name="port"/>
+    <region start="0x0000B004" end="0x0000B004" type="io" name="galaxold_stars_enable_w"/>
+    <region start="0x0000B006" end="0x0000B007" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="scudau" cpu="ppc">
+  <!-- source: MAME sega/model3.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0xF0180000" end="0xF019FFFF" type="ram" name="ram"/>
+    <region start="0xF01A0000" end="0xF01A003F" type="io" name="iomap_64be"/>
+  </memory_map>
+</platform>

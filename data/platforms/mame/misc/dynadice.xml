@@ -1,0 +1,8 @@
+<platform name="dynadice" cpu="8080">
+  <!-- source: MAME misc/dynadice.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000023FF" type="ram" name="videoram"/>
+    <region start="0x00004000" end="0x000040FF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

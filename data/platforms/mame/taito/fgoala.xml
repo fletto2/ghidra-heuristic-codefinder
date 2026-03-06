@@ -1,0 +1,21 @@
+<platform name="fgoala" cpu="6800">
+  <!-- source: MAME taito/fgoal.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000EF" type="ram" name="ram"/>
+    <region start="0x000000F0" end="0x000000F0" type="io" name="row_r"/>
+    <region start="0x000000F0" end="0x000000F1" type="io" name="row_w"/>
+    <region start="0x000000F1" end="0x000000F2" type="io" name="col_w"/>
+    <region start="0x000000F2" end="0x000000F3" type="io" name="row_w"/>
+    <region start="0x000000F3" end="0x000000F4" type="io" name="col_w"/>
+    <region start="0x000000F4" end="0x000000F7" type="io" name="shift_data_w"/>
+    <region start="0x000000F5" end="0x000000FB" type="io" name="address_lo_r"/>
+    <region start="0x000000F8" end="0x000000FF" type="io" name="sound1_w"/>
+    <region start="0x000000FC" end="0x000000FF" type="io" name="sound2_w"/>
+    <region start="0x00000100" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008002" type="io" name="ypos_w"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

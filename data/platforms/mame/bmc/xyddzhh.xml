@@ -1,0 +1,11 @@
+<platform name="xyddzhh" cpu="68000">
+  <!-- source: MAME bmc/bmcpokr.cpp -->
+  <!-- year: 2006 -->
+  <memory_map>
+    <region start="0x0000EEC6" end="0x0000EEC9" type="unmapped" name="nop_write"/>
+    <region start="0x00330000" end="0x00330001" type="io" name="xyddzhh_prot_r"/>
+    <region start="0x00340009" end="0x00340009" type="io" name="andib__7f_so_returning_0x00_stops_it_fro"/>
+    <region start="0x00360000" end="0x00360001" type="io" name="xyddzhh_dsw_r"/>
+    <region start="0x00370000" end="0x00370001" type="io" name="mahjong_key_r"/>
+  </memory_map>
+</platform>

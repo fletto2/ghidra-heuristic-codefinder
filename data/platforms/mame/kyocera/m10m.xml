@@ -1,0 +1,9 @@
+<platform name="m10m" cpu="8085">
+  <!-- source: MAME kyocera/kyocera.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="bank1"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="ram" name="bank2"/>
+  </memory_map>
+</platform>

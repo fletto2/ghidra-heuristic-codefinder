@@ -1,0 +1,16 @@
+<platform name="smpc" cpu="sh2">
+  <!-- source: MAME sega/smpc.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="io" name="region_0"/>
+    <region start="0x00000000" end="0x0000000D" type="io" name="ireg_w"/>
+    <region start="0x0000001F" end="0x0000005F" type="io" name="command_register_w"/>
+    <region start="0x00000061" end="0x00000061" type="io" name="status_register_r"/>
+    <region start="0x00000063" end="0x00000063" type="io" name="status_flag_r"/>
+    <region start="0x00000075" end="0x00000075" type="io" name="pdr1_r"/>
+    <region start="0x00000077" end="0x00000077" type="io" name="pdr2_r"/>
+    <region start="0x00000079" end="0x00000079" type="io" name="ddr1_w"/>
+    <region start="0x0000007B" end="0x0000007B" type="io" name="ddr2_w"/>
+    <region start="0x0000007D" end="0x0000007D" type="io" name="iosel_w"/>
+    <region start="0x0000007F" end="0x0000007F" type="io" name="exle_w"/>
+  </memory_map>
+</platform>

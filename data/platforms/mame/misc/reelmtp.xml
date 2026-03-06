@@ -1,0 +1,16 @@
+<platform name="reelmtp" cpu="68hc11">
+  <!-- source: MAME misc/hitpoker.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000100" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x0000B7FF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000B5FF" type="io" name="vram_r"/>
+    <region start="0x0000B800" end="0x0000B881" type="io" name="direct"/>
+    <region start="0x0000B890" end="0x0000B891" type="io" name="data_r"/>
+    <region start="0x0000B8A0" end="0x0000B8A0" type="io" name="port"/>
+    <region start="0x0000B8C1" end="0x0000B8C1" type="io" name="map0xb8c1_0xb8c1w__todo"/>
+    <region start="0x0000B8E1" end="0x0000B8E1" type="io" name="map0xb8e1_0xb8e1w__todo"/>
+    <region start="0x0000B900" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000EFFF" type="io" name="cram_r"/>
+  </memory_map>
+</platform>

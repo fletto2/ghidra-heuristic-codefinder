@@ -1,0 +1,9 @@
+<platform name="ataxxj" cpu="z80">
+  <!-- source: MAME cinematronics/leland.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x0000F7FF" type="ram" name="banked"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="io" name="palette"/>
+  </memory_map>
+</platform>

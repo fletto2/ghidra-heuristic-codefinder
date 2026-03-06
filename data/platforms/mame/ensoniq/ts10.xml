@@ -1,0 +1,13 @@
+<platform name="ts10" cpu="68000">
+  <!-- source: MAME ensoniq/esqkt.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="osram"/>
+    <region start="0x00200000" end="0x0020001F" type="io" name="read"/>
+    <region start="0x00300000" end="0x0030007F" type="io" name="read"/>
+    <region start="0x00380000" end="0x003801FF" type="io" name="host_r"/>
+    <region start="0x00400000" end="0x00BFFFFF" type="ram" name="ram"/>
+    <region start="0x00C00000" end="0x00CFFFFF" type="rom" name="rom"/>
+    <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

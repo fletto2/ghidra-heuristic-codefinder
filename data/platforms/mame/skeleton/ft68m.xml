@@ -1,0 +1,12 @@
+<platform name="ft68m" cpu="68000">
+  <!-- source: MAME skeleton/ft68m.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="ram" name="rambase"/>
+    <region start="0x00200000" end="0x00201FFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x00401FFF" type="rom" name="rom"/>
+    <region start="0x00600000" end="0x00600007" type="io" name="ba_cd_r"/>
+    <region start="0x00800000" end="0x00800003" type="io" name="read16"/>
+    <region start="0x00A00000" end="0x00DFFFFF" type="ram" name="ram"/>
+    <region start="0x00E00000" end="0x00FFFFFF" type="io" name="switches_r"/>
+  </memory_map>
+</platform>

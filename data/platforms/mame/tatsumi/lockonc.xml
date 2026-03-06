@@ -1,0 +1,18 @@
+<platform name="lockonc" cpu="z80">
+  <!-- source: MAME tatsumi/lockon.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00004003" type="io" name="lockon_crtc_r"/>
+    <region start="0x00006000" end="0x00006001" type="io" name="port"/>
+    <region start="0x00008000" end="0x000081FF" type="ram" name="hud_ram"/>
+    <region start="0x00009000" end="0x00009FFF" type="ram" name="char_ram"/>
+    <region start="0x0000A000" end="0x0000A001" type="io" name="adrst_w"/>
+    <region start="0x0000B000" end="0x0000CFFF" type="io" name="lockon_rotate_w"/>
+    <region start="0x0000E000" end="0x0000E001" type="io" name="inten_w"/>
+    <region start="0x0000F000" end="0x0000F001" type="io" name="emres_w"/>
+    <region start="0x00010000" end="0x0001FFFF" type="unmapped" name="nop_read"/>
+    <region start="0x00020000" end="0x0004FFFF" type="io" name="main_z80_r"/>
+    <region start="0x00050000" end="0x0007FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

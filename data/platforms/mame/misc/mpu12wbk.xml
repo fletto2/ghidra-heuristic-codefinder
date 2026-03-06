@@ -1,0 +1,15 @@
+<platform name="mpu12wbk" cpu="6809">
+  <!-- source: MAME misc/mpu12wbk.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="nvram"/>
+    <region start="0x00001000" end="0x00001000" type="io" name="port"/>
+    <region start="0x00001004" end="0x00001004" type="io" name="port"/>
+    <region start="0x00001008" end="0x00001008" type="io" name="port"/>
+    <region start="0x0000100C" end="0x00001018" type="io" name="mp12wbk_outport"/>
+    <region start="0x00001100" end="0x00001100" type="io" name="port"/>
+    <region start="0x00001300" end="0x00001301" type="io" name="data_r"/>
+    <region start="0x00001400" end="0x00001401" type="io" name="address_w"/>
+    <region start="0x00001800" end="0x00003FFF" type="ram" name="nvram2"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

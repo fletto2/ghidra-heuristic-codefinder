@@ -1,0 +1,14 @@
+<platform name="tecnodar" cpu="z80">
+  <!-- source: MAME misc/tecnodar.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="rombank"/>
+    <region start="0x00008002" end="0x00008002" type="io" name="ppi_r"/>
+    <region start="0x00008004" end="0x00008004" type="io" name="data_w"/>
+    <region start="0x00008008" end="0x00008008" type="io" name="data_r"/>
+    <region start="0x0000800C" end="0x0000800C" type="io" name="address_w"/>
+    <region start="0x00008010" end="0x00008011" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="triplex" cpu="68010">
+  <!-- source: MAME torch/triplex.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x00040000" end="0x00040007" type="io" name="ab_dc_r"/>
+    <region start="0x00060000" end="0x00060000" type="io" name="map0x060000_0x060000__iack"/>
+    <region start="0x00080000" end="0x0008003F" type="io" name="read"/>
+    <region start="0x000A0000" end="0x000A00FF" type="io" name="read"/>
+    <region start="0x000C0000" end="0x000C0003" type="io" name="regs_r"/>
+    <region start="0x000E0000" end="0x000E000F" type="io" name="read"/>
+    <region start="0x00100000" end="0x002FFFFF" type="ram" name="ram"/>
+    <region start="0x00300000" end="0x007FFFFF" type="io" name="buserror_r"/>
+  </memory_map>
+</platform>

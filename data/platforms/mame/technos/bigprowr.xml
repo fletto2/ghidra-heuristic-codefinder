@@ -1,0 +1,17 @@
+<platform name="bigprowr" cpu="6502">
+  <!-- source: MAME technos/tagteam.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002003" type="io" name="flipscreen_w"/>
+    <region start="0x00004000" end="0x000047FF" type="io" name="mirrorvideoram_r"/>
+    <region start="0x00004800" end="0x00004FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

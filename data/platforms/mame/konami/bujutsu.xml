@@ -1,0 +1,14 @@
+<platform name="bujutsu" cpu="ppc">
+  <!-- source: MAME konami/cobra.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="ram" name="main_ram"/>
+    <region start="0x07C00000" end="0x07FFFFFF" type="ram" name="ram"/>
+    <region start="0x80000CF8" end="0x80000CFF" type="io" name="64be"/>
+    <region start="0xC0000000" end="0xC03FFFFF" type="ram" name="gfx_main_ram_0"/>
+    <region start="0xC7C00000" end="0xC7FFFFFF" type="ram" name="gfx_main_ram_1"/>
+    <region start="0xFFF00000" end="0xFFF7FFFF" type="rom" name="rom"/>
+    <region start="0xFFF80000" end="0xFFFBFFFF" type="io" name="main_comram_r"/>
+    <region start="0xFFFF0000" end="0xFFFF0007" type="io" name="main_fifo_r"/>
+  </memory_map>
+</platform>

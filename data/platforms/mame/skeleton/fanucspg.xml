@@ -1,0 +1,15 @@
+<platform name="fanucspg" cpu="8086">
+  <!-- source: MAME skeleton/fanucspmg.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00081FFF" type="ram" name="ram"/>
+    <region start="0x00088000" end="0x00088001" type="unmapped" name="unmapped"/>
+    <region start="0x000F0000" end="0x000F0029" type="io" name="read"/>
+    <region start="0x000F0042" end="0x000F0043" type="io" name="magic_r"/>
+    <region start="0x000F0046" end="0x000F0046" type="io" name="dma_page_w"/>
+    <region start="0x000F0048" end="0x000F004F" type="io" name="read"/>
+    <region start="0x000F2000" end="0x000F2003" type="io" name="read"/>
+    <region start="0x000F8000" end="0x000F9FFF" type="io" name="shared_r"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,20 @@
+<platform name="timekill132i" cpu="68020">
+  <!-- source: MAME itech/itech32.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00040000" end="0x00040001" type="io" name="port"/>
+    <region start="0x00048000" end="0x00048001" type="io" name="port"/>
+    <region start="0x00050000" end="0x00050001" type="io" name="port"/>
+    <region start="0x00050001" end="0x00050001" type="io" name="timekill_intensity_w"/>
+    <region start="0x00058000" end="0x00058001" type="io" name="reset16_w"/>
+    <region start="0x00060000" end="0x00060003" type="io" name="timekill_colora_w"/>
+    <region start="0x00068000" end="0x00068003" type="io" name="timekill_colorbc_w"/>
+    <region start="0x00070000" end="0x00070001" type="unmapped" name="nop_write"/>
+    <region start="0x00078001" end="0x00078001" type="io" name="sound_data_w"/>
+    <region start="0x00080000" end="0x0008007F" type="io" name="video_r"/>
+    <region start="0x000A0000" end="0x000A0001" type="io" name="int1_ack_w"/>
+    <region start="0x000C0000" end="0x000C7FFF" type="ram" name="palette"/>
+    <region start="0x00100000" end="0x0017FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

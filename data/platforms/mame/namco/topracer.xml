@@ -1,0 +1,18 @@
+<platform name="topracer" cpu="z80">
+  <!-- source: MAME namco/polepos.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00003000" end="0x000037FF" type="ram" name="nvram"/>
+    <region start="0x00004000" end="0x000057FF" type="io" name="sprite_r"/>
+    <region start="0x00008000" end="0x000083BF" type="ram" name="ram"/>
+    <region start="0x000083C0" end="0x000083FF" type="io" name="polepos_sound_r"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="data_r"/>
+    <region start="0x00009100" end="0x00009100" type="io" name="ctrl_r"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="ready_r"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000A100" end="0x0000A100" type="io" name="reset_w"/>
+    <region start="0x0000A200" end="0x0000A200" type="io" name="polepos_engine_sound_lsb_w"/>
+    <region start="0x0000A300" end="0x0000A300" type="io" name="polepos_engine_sound_msb_w"/>
+  </memory_map>
+</platform>

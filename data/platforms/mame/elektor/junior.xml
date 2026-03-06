@@ -1,0 +1,9 @@
+<platform name="junior" cpu="6502">
+  <!-- source: MAME elektor/junior.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00001A00" end="0x00001A9F" type="io" name="ram_map"/>
+    <region start="0x00001C00" end="0x00001FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

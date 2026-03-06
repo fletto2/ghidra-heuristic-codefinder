@@ -1,0 +1,11 @@
+<platform name="visual50" cpu="z80">
+  <!-- source: MAME visual/v50.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000083FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A03F" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="recall_r"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="store_r"/>
+  </memory_map>
+</platform>

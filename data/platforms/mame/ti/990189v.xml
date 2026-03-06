@@ -1,0 +1,10 @@
+<platform name="990189v" cpu="tms9980">
+  <!-- source: MAME ti/tm990189.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x00002FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00003000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

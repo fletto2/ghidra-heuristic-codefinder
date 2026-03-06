@@ -1,0 +1,9 @@
+<platform name="rimrockn12b" cpu="68000">
+  <!-- source: MAME itech/itech8.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000161" end="0x00000165" type="io" name="port"/>
+    <region start="0x000001A0" end="0x000001A0" type="io" name="rimrockn_bank_w"/>
+    <region start="0x000001C0" end="0x000001DF" type="io" name="blitter_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,22 @@
+<platform name="alibaba" cpu="z80">
+  <!-- source: MAME pacman/pacman.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="videoram"/>
+    <region start="0x00004800" end="0x00004BFF" type="io" name="pacman_read_nop"/>
+    <region start="0x00004C00" end="0x00004FFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x00005007" type="io" name="d0"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="reset_w"/>
+    <region start="0x00005040" end="0x0000506F" type="io" name="sound_w"/>
+    <region start="0x00005040" end="0x00005040" type="io" name="port"/>
+    <region start="0x00005050" end="0x0000505F" type="ram" name="spriteram2"/>
+    <region start="0x00005070" end="0x0000507F" type="unmapped" name="nop_write"/>
+    <region start="0x00005080" end="0x00005080" type="io" name="mystery_w"/>
+    <region start="0x000050C0" end="0x000050C7" type="io" name="d0"/>
+    <region start="0x000050C0" end="0x000050FF" type="io" name="mystery_1_r"/>
+    <region start="0x00008000" end="0x00008FFF" type="rom" name="rom"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

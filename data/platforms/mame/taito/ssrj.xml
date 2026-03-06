@@ -1,0 +1,14 @@
+<platform name="ssrj" cpu="z80">
+  <!-- source: MAME taito/ssrj.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F002" type="io" name="port"/>
+    <region start="0x0000F003" end="0x0000F003" type="unmapped" name="nop_write"/>
+    <region start="0x0000F400" end="0x0000F401" type="io" name="address_data_w"/>
+    <region start="0x0000F401" end="0x0000F401" type="io" name="data_r"/>
+    <region start="0x0000F800" end="0x0000F800" type="unmapped" name="nop_write"/>
+    <region start="0x0000FC00" end="0x0000FC00" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

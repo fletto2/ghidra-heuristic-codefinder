@@ -1,0 +1,9 @@
+<platform name="pignewt" cpu="z80">
+  <!-- source: MAME sega/segag80r.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C800" end="0x0000CFFF" type="ram" name="mainram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="pc9801" cpu="8086">
+  <!-- source: MAME nec/pc9801.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000A4FFF" type="io" name="read"/>
+    <region start="0x000A8000" end="0x000BFFFF" type="io" name="pc9821_grcg_gvram_r"/>
+    <region start="0x000CC000" end="0x000CFFFF" type="rom" name="rom"/>
+    <region start="0x000D8000" end="0x000D9FFF" type="rom" name="rom"/>
+    <region start="0x000DA000" end="0x000DBFFF" type="ram" name="ram"/>
+    <region start="0x000E0000" end="0x013FFFFF" type="io" name="pc9821_grcg_gvram0_r"/>
+    <region start="0xFFEE8000" end="0xFFEFFFFF" type="io" name="amap16"/>
+    <region start="0xFFFE8000" end="0xFFFFFFFF" type="io" name="amap16"/>
+  </memory_map>
+</platform>

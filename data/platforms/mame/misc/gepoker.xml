@@ -1,0 +1,18 @@
+<platform name="gepoker" cpu="z80">
+  <!-- source: MAME misc/gei.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000047FF" type="ram" name="banked"/>
+    <region start="0x00004800" end="0x00004803" type="io" name="read"/>
+    <region start="0x00005000" end="0x00005003" type="io" name="read"/>
+    <region start="0x000060EF" end="0x000060EF" type="io" name="region_60ef"/>
+    <region start="0x000060F7" end="0x000060F7" type="io" name="region_60f7"/>
+    <region start="0x000060FB" end="0x000060FB" type="io" name="region_60fb"/>
+    <region start="0x000060FD" end="0x000060FE" type="io" name="region_60fd"/>
+    <region start="0x00008000" end="0x00008002" type="io" name="drawctrl_w"/>
+    <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,25 @@
+<platform name="gp2x" cpu="arm9">
+  <!-- source: MAME gamepark/gp2x.cpp -->
+  <!-- year: 2005 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x01000000" end="0x04FFFFFF" type="ram" name="ram"/>
+    <region start="0x9C000000" end="0x9C00001F" type="io" name="nand_r"/>
+    <region start="0xC0000A00" end="0xC0000A03" type="io" name="timer_r"/>
+    <region start="0xC0001208" end="0xC000120B" type="io" name="tx_status_r"/>
+    <region start="0xC0001210" end="0xC0001213" type="io" name="tx_xmit_w"/>
+    <region start="0xC0001508" end="0xC000150B" type="io" name="sdcard_r"/>
+    <region start="0xC0002800" end="0xC00029FF" type="io" name="gp2x_lcdc_r"/>
+    <region start="0xC0003A38" end="0xC0003A3B" type="io" name="nand_ctrl_r"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

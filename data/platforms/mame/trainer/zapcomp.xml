@@ -1,0 +1,8 @@
+<platform name="zapcomp" cpu="z80">
+  <!-- source: MAME trainer/zapcomputer.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="rom" name="rom"/>
+    <region start="0x00000400" end="0x000023FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

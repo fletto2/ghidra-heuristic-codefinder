@@ -1,0 +1,35 @@
+<platform name="bakubaku" cpu="sh2">
+  <!-- source: MAME sega/stv.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0010007F" type="io" name="io_map"/>
+    <region start="0x00180000" end="0x0018FFFF" type="io" name="share1"/>
+    <region start="0x00200000" end="0x002FFFFF" type="ram" name="workram_l"/>
+    <region start="0x00400000" end="0x0040003F" type="io" name="ioga_r"/>
+    <region start="0x01000000" end="0x01FFFFFF" type="io" name="minit_w"/>
+    <region start="0x02000000" end="0x04FFFFFF" type="rom" name="rom"/>
+    <region start="0x05A00000" end="0x05B00FFF" type="io" name="soundram_r"/>
+    <region start="0x05C00000" end="0x05CBFFFF" type="io" name="vdp1_vram_r"/>
+    <region start="0x05D00000" end="0x05D0001F" type="io" name="vdp1_regs_r"/>
+    <region start="0x05E00000" end="0x05E7FFFF" type="io" name="vdp2_vram_r"/>
+    <region start="0x05F00000" end="0x05FBFFFF" type="io" name="vdp2_cram_r"/>
+    <region start="0x05FE0000" end="0x05FE00CF" type="io" name="regs_map"/>
+    <region start="0x06000000" end="0x060FFFFF" type="ram" name="workram_h"/>
+    <region start="0x60000000" end="0x600003FF" type="unmapped" name="nop_write"/>
+    <region start="0xC0000000" end="0xC00007FF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

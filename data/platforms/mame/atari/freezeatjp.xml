@@ -1,0 +1,9 @@
+<platform name="freezeatjp" cpu="68000">
+  <!-- source: MAME atari/jaguar.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x04800000" end="0x04DFFFFF" type="ram" name="maingfxbank"/>
+    <region start="0x04D001F0" end="0x04D001F7" type="io" name="cs0_w"/>
+    <region start="0x04D003F0" end="0x04D003F7" type="io" name="cs1_w"/>
+  </memory_map>
+</platform>

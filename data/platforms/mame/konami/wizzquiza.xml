@@ -1,0 +1,17 @@
+<platform name="wizzquiza" cpu="z80">
+  <!-- source: MAME konami/trackfld.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001000" type="io" name="reset_r"/>
+    <region start="0x00001080" end="0x00001087" type="io" name="d0"/>
+    <region start="0x00001100" end="0x00001100" type="io" name="write"/>
+    <region start="0x00001200" end="0x00001200" type="io" name="port"/>
+    <region start="0x00001280" end="0x00001283" type="io" name="port"/>
+    <region start="0x00001800" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002800" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x0000DFFF" type="ram" name="bank1"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="questions_bank_w"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

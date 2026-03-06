@@ -1,0 +1,10 @@
+<platform name="missamer" cpu="8085">
+  <!-- source: MAME pinball/missamer.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000027FF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000040FF" type="ram" name="nvram"/>
+    <region start="0x00004100" end="0x000043FF" type="io" name="memory_r"/>
+    <region start="0x0000C100" end="0x0000C3FF" type="io" name="io_r"/>
+  </memory_map>
+</platform>

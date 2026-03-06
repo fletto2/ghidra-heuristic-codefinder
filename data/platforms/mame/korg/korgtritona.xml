@@ -1,0 +1,27 @@
+<platform name="korgtritona" cpu="sh2">
+  <!-- source: MAME korg/korgtriton.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x007FFFFF" type="rom" name="rom"/>
+    <region start="0x00800000" end="0x009FFFFF" type="ram" name="ram"/>
+    <region start="0x00A00000" end="0x00BFFFFF" type="io" name="lcdcio_r"/>
+    <region start="0x00D00000" end="0x00DFFFFF" type="io" name="moss_r"/>
+    <region start="0x00E00000" end="0x00EFFFFF" type="ram" name="ram"/>
+    <region start="0x00F00000" end="0x00F00001" type="io" name="read"/>
+    <region start="0x01000000" end="0x01FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

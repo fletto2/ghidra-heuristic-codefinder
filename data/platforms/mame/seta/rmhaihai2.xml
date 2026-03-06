@@ -1,0 +1,11 @@
+<platform name="rmhaihai2" cpu="z80">
+  <!-- source: MAME seta/rmhaihai.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000B7FF" type="ram" name="nvram"/>
+    <region start="0x0000B83C" end="0x0000B83C" type="unmapped" name="nop_write"/>
+    <region start="0x0000BC00" end="0x0000BC00" type="unmapped" name="nop_write"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

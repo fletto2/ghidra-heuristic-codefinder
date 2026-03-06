@@ -1,0 +1,12 @@
+<platform name="mvme162" cpu="68040">
+  <!-- source: MAME motorola/mvme162.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000007" type="ram" name="ram"/>
+    <region start="0x00000008" end="0x003FFFFF" type="ram" name="ram"/>
+    <region start="0xFF800000" end="0xFFBFFFFF" type="rom" name="rom"/>
+    <region start="0xFFE00000" end="0xFFE1FFFF" type="ram" name="ram"/>
+    <region start="0xFFF45000" end="0xFFF457FF" type="io" name="ab_dc_r"/>
+    <region start="0xFFFC0000" end="0xFFFC7FFF" type="io" name="read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="nimbus" cpu="80186">
+  <!-- source: MAME rm/rmnimbus.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000EFFFF" type="ram" name="banked"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

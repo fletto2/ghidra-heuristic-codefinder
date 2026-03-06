@@ -1,0 +1,14 @@
+<platform name="benberob" cpu="z80">
+  <!-- source: MAME taito/halleys.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00004801" type="io" name="address_data_w"/>
+    <region start="0x00004801" end="0x00004803" type="io" name="data_r"/>
+    <region start="0x00004803" end="0x00004805" type="io" name="data_r"/>
+    <region start="0x00004805" end="0x00004805" type="io" name="data_r"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

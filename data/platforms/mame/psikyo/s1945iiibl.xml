@@ -1,0 +1,26 @@
+<platform name="s1945iiibl" cpu="sh2">
+  <!-- source: MAME psikyo/psikyosh.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x04003000" end="0x040031FF" type="ram" name="zoomram"/>
+    <region start="0x04050000" end="0x040501FF" type="unmapped" name="unmapped"/>
+    <region start="0x04053FDC" end="0x04053FDF" type="unmapped" name="nop_read"/>
+    <region start="0x04053FE0" end="0x04053FFF" type="ram" name="vidregs"/>
+    <region start="0x0405FFDC" end="0x0405FFFF" type="unmapped" name="unmapped"/>
+    <region start="0x05000000" end="0x0507FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

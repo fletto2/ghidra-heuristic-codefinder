@@ -1,0 +1,18 @@
+<platform name="pacmanblci" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000047FF" type="ram" name="banked"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="videoram"/>
+    <region start="0x00005800" end="0x000058FF" type="ram" name="spriteram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="port"/>
+    <region start="0x00006000" end="0x00006007" type="io" name="videight_gfxbank_w"/>
+    <region start="0x00006800" end="0x00006800" type="io" name="port"/>
+    <region start="0x00006800" end="0x00006807" type="io" name="sound_w"/>
+    <region start="0x00006808" end="0x000068FF" type="unmapped" name="nop_write"/>
+    <region start="0x00007000" end="0x00007007" type="io" name="port"/>
+    <region start="0x00007008" end="0x00007008" type="unmapped" name="nop_write"/>
+    <region start="0x00007800" end="0x00007FFF" type="io" name="reset_r"/>
+    <region start="0x00007800" end="0x00007800" type="io" name="pitch_w"/>
+  </memory_map>
+</platform>

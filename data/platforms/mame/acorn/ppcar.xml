@@ -1,0 +1,30 @@
+<platform name="ppcar" cpu="arm7_le">
+  <!-- source: MAME acorn/ssfindo.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x03012BE0" end="0x03012BE0" type="io" name="sound_w"/>
+    <region start="0x03012BF4" end="0x03012BF7" type="io" name="randomized_r"/>
+    <region start="0x03012DE0" end="0x03012DE3" type="io" name="port"/>
+    <region start="0x03012E60" end="0x03012E67" type="unmapped" name="nop_write"/>
+    <region start="0x03012FF8" end="0x03012FFB" type="unmapped" name="nop_write"/>
+    <region start="0x03200000" end="0x032001FF" type="io" name="map"/>
+    <region start="0x032C0000" end="0x032C0003" type="unmapped" name="nop_write"/>
+    <region start="0x03340000" end="0x03340007" type="unmapped" name="nop_write"/>
+    <region start="0x03341000" end="0x0334101F" type="unmapped" name="nop_write"/>
+    <region start="0x033C0000" end="0x033C0003" type="io" name="io_r"/>
+    <region start="0x03400000" end="0x037FFFFF" type="io" name="write"/>
+    <region start="0x08000000" end="0x08FFFFFF" type="ram" name="ram"/>
+    <region start="0x10000000" end="0x10FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="dkong3" cpu="z80">
+  <!-- source: MAME nintendo/dkong.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000077FF" type="ram" name="ram"/>
+    <region start="0x00007C00" end="0x00007C00" type="io" name="write"/>
+    <region start="0x00007C80" end="0x00007C80" type="io" name="write"/>
+    <region start="0x00007D00" end="0x00007D00" type="io" name="write"/>
+    <region start="0x00007D80" end="0x00007D80" type="io" name="dkong3_2a03_reset_w"/>
+    <region start="0x00007E80" end="0x00007E87" type="io" name="dkong3_coin_counter_w"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

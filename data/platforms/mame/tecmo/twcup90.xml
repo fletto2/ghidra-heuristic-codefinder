@@ -1,0 +1,21 @@
+<platform name="twcup90" cpu="z80">
+  <!-- source: MAME tecmo/wc90.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000FBFF" type="ram" name="ram"/>
+    <region start="0x0000FC00" end="0x0000FC00" type="io" name="port"/>
+    <region start="0x0000FC02" end="0x0000FC02" type="io" name="port"/>
+    <region start="0x0000FC02" end="0x0000FC03" type="ram" name="writeonly"/>
+    <region start="0x0000FC05" end="0x0000FC06" type="io" name="port"/>
+    <region start="0x0000FC06" end="0x0000FC06" type="ram" name="writeonly"/>
+    <region start="0x0000FC07" end="0x0000FC07" type="io" name="port"/>
+    <region start="0x0000FC22" end="0x0000FC23" type="ram" name="writeonly"/>
+    <region start="0x0000FC26" end="0x0000FC27" type="ram" name="writeonly"/>
+    <region start="0x0000FC42" end="0x0000FC43" type="ram" name="writeonly"/>
+    <region start="0x0000FC46" end="0x0000FC47" type="ram" name="writeonly"/>
+    <region start="0x0000FCC0" end="0x0000FCC0" type="io" name="write"/>
+    <region start="0x0000FCD0" end="0x0000FCD0" type="io" name="reset_w"/>
+    <region start="0x0000FCE0" end="0x0000FCE0" type="io" name="bankswitch_w"/>
+  </memory_map>
+</platform>

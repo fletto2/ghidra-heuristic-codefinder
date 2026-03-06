@@ -1,0 +1,12 @@
+<platform name="suprgolfj" cpu="z80">
+  <!-- source: MAME nasco/suprgolf.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="bank1"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="rom2_bank_select_w"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank2"/>
+    <region start="0x0000C000" end="0x0000F000" type="io" name="bg_vram_r"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

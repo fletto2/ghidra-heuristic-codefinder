@@ -1,0 +1,13 @@
+<platform name="rdfts" cpu="z80">
+  <!-- source: MAME seibu/seibuspi.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000680" end="0x00000680" type="io" name="sb_coin_r"/>
+    <region start="0x00000684" end="0x00000684" type="io" name="sound_fifo_status_r"/>
+    <region start="0x00000688" end="0x0000068F" type="unmapped" name="unmapped"/>
+    <region start="0x000006D0" end="0x000006D0" type="io" name="_1w_reset_w"/>
+    <region start="0x000006D4" end="0x000006D4" type="io" name="data_w"/>
+    <region start="0x000006D8" end="0x000006D8" type="io" name="clk_w"/>
+    <region start="0x000006DC" end="0x000006DD" type="io" name="data_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="gnga" cpu="z80">
+  <!-- source: MAME capcom/gng.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="ram" name="ram"/>
+    <region start="0x00003000" end="0x00003004" type="io" name="port"/>
+    <region start="0x00003800" end="0x00003A00" type="io" name="palette_ext"/>
+    <region start="0x00003B08" end="0x00003B0B" type="io" name="bgscrollx_w"/>
+    <region start="0x00003C00" end="0x00003C00" type="io" name="write"/>
+    <region start="0x00003D00" end="0x00003D07" type="io" name="d0"/>
+    <region start="0x00003E00" end="0x00003E00" type="io" name="bankswitch_w"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="banked"/>
+    <region start="0x00006000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

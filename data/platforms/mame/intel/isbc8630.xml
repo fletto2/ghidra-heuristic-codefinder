@@ -1,0 +1,8 @@
+<platform name="isbc8630" cpu="80286">
+  <!-- source: MAME intel/isbc.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000EFFFF" type="ram" name="ram"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

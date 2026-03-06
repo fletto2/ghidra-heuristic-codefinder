@@ -1,0 +1,11 @@
+<platform name="z100" cpu="8088">
+  <!-- source: MAME heathzenith/z100.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="io" name="ram"/>
+    <region start="0x000B0000" end="0x000BFFFF" type="rom" name="rom"/>
+    <region start="0x000C0000" end="0x000F0FFF" type="io" name="z100_vram_r"/>
+    <region start="0x000F4000" end="0x000FBFFF" type="io" name="map0xf40000xf7fff__mtret100_firmware_i_e"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

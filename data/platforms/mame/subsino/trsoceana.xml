@@ -1,0 +1,18 @@
+<platform name="trsoceana" cpu="z80">
+  <!-- source: MAME subsino/subsino.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="ram" name="nvram"/>
+    <region start="0x0000D000" end="0x0000D002" type="io" name="read"/>
+    <region start="0x0000D004" end="0x0000D006" type="io" name="read"/>
+    <region start="0x0000D008" end="0x0000D008" type="ram" name="stbsub_out_c"/>
+    <region start="0x0000D009" end="0x0000D00A" type="io" name="out_b_w"/>
+    <region start="0x0000D00C" end="0x0000D00C" type="io" name="port"/>
+    <region start="0x0000D010" end="0x0000D012" type="io" name="index_w"/>
+    <region start="0x0000D018" end="0x0000D018" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="colorram"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="io" name="reel_scrollattr_r"/>
+    <region start="0x0000F800" end="0x0000FDFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

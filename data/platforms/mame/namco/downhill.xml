@@ -1,0 +1,13 @@
+<platform name="downhill" cpu="h8">
+  <!-- source: MAME namco/namcos23.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00080000" end="0x0008FFFF" type="io" name="sharedram_sub_r"/>
+    <region start="0x00280000" end="0x00287FFF" type="io" name="read"/>
+    <region start="0x00300000" end="0x00300003" type="unmapped" name="unmapped"/>
+    <region start="0x00300010" end="0x00300011" type="unmapped" name="unmapped"/>
+    <region start="0x00300020" end="0x00300021" type="io" name="sub_interrupt_main_w"/>
+    <region start="0x00300030" end="0x00300031" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

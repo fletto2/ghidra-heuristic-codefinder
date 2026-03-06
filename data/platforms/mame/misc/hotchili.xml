@@ -1,0 +1,16 @@
+<platform name="hotchili" cpu="z80">
+  <!-- source: MAME misc/hotchili.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000E303" type="ram" name="bank"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="spritebgflag_w8"/>
+    <region start="0x0000F000" end="0x0000F00C" type="io" name="extram_r"/>
+    <region start="0x0000F200" end="0x0000F200" type="io" name="outp2_w"/>
+    <region start="0x0000F300" end="0x0000F300" type="io" name="bankswitch_w"/>
+    <region start="0x0000F400" end="0x0000F40C" type="io" name="outp1_w"/>
+    <region start="0x0000F500" end="0x0000F501" type="io" name="inport0_r"/>
+    <region start="0x0000F600" end="0x0000F601" type="io" name="port"/>
+    <region start="0x0000F700" end="0x0000F700" type="unmapped" name="unmapped"/>
+    <region start="0x0000F800" end="0x0000F801" type="io" name="data_r"/>
+  </memory_map>
+</platform>

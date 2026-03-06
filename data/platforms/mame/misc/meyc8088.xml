@@ -1,0 +1,17 @@
+<platform name="meyc8088" cpu="8088">
+  <!-- source: MAME misc/meyc8088.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00070000" end="0x00077FFF" type="ram" name="vram"/>
+    <region start="0x000B0000" end="0x000B00FF" type="io" name="memory_r"/>
+    <region start="0x000B0800" end="0x000B0807" type="io" name="io_r"/>
+    <region start="0x000B1000" end="0x000B10FF" type="io" name="memory_r"/>
+    <region start="0x000B1800" end="0x000B1807" type="io" name="io_r"/>
+    <region start="0x000B2000" end="0x000B2000" type="io" name="drive_w"/>
+    <region start="0x000B3000" end="0x000B3000" type="unmapped" name="unmapped"/>
+    <region start="0x000B3800" end="0x000B3800" type="unmapped" name="unmapped"/>
+    <region start="0x000B4000" end="0x000B4000" type="io" name="screen_flip_r"/>
+    <region start="0x000B5000" end="0x000B5000" type="io" name="video5_flip_r"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="tricep" cpu="68000">
+  <!-- source: MAME morrow/tricep.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="mainram"/>
+    <region start="0x00FD0000" end="0x00FD1FFF" type="rom" name="rom"/>
+    <region start="0x00FF0028" end="0x00FF002B" type="io" name="usart_r"/>
+    <region start="0x00FF002E" end="0x00FF002F" type="unmapped" name="nop_read"/>
+    <region start="0x00FF002F" end="0x00FF002F" type="io" name="usart_select_w"/>
+  </memory_map>
+</platform>

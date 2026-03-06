@@ -1,0 +1,8 @@
+<platform name="mz2200" cpu="z80">
+  <!-- source: MAME sharp/mz2000.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="map0xc000_0xffffviewm_vram_view"/>
+  </memory_map>
+</platform>

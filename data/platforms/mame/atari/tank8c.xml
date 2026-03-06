@@ -1,0 +1,19 @@
+<platform name="tank8c" cpu="6800">
+  <!-- source: MAME atari/tank8.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000400" end="0x000017FF" type="rom" name="rom"/>
+    <region start="0x00001800" end="0x00001C00" type="io" name="video_ram_w"/>
+    <region start="0x00001C00" end="0x00001C0F" type="ram" name="writeonly"/>
+    <region start="0x00001C01" end="0x00001C0B" type="io" name="port"/>
+    <region start="0x00001C0F" end="0x00001C0F" type="io" name="port"/>
+    <region start="0x00001C10" end="0x00001C2F" type="ram" name="writeonly"/>
+    <region start="0x00001C30" end="0x00001C37" type="unmapped" name="nop_read"/>
+    <region start="0x00001D00" end="0x00001D04" type="unmapped" name="nop_read"/>
+    <region start="0x00001D05" end="0x00001D05" type="ram" name="writeonly"/>
+    <region start="0x00001D06" end="0x00001D06" type="unmapped" name="nop_read"/>
+    <region start="0x00001E00" end="0x00001E07" type="unmapped" name="nop_read"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

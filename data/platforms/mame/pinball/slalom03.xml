@@ -1,0 +1,17 @@
+<platform name="slalom03" cpu="z80">
+  <!-- source: MAME pinball/joctronic.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+    <region start="0x00009000" end="0x00009007" type="io" name="d0"/>
+    <region start="0x0000A008" end="0x0000A008" type="io" name="display_strobe_w"/>
+    <region start="0x0000A010" end="0x0000A018" type="io" name="drivers_w"/>
+    <region start="0x0000A020" end="0x0000A020" type="io" name="inputs_r"/>
+    <region start="0x0000A028" end="0x0000A028" type="unmapped" name="nop_read"/>
+    <region start="0x0000A030" end="0x0000A030" type="unmapped" name="nop_read"/>
+    <region start="0x0000A038" end="0x0000A038" type="io" name="ports_r"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="csint_r"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="soundlatch_nmi_pulse_w"/>
+  </memory_map>
+</platform>

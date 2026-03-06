@@ -1,0 +1,8 @@
+<platform name="seljan" cpu="z80">
+  <!-- source: MAME dynax/royalmah.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00008FFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

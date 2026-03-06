@@ -1,0 +1,19 @@
+<platform name="accomm" cpu="65816">
+  <!-- source: MAME acorn/accomm.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="io" name="ram_r"/>
+    <region start="0x00200000" end="0x003FFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x00400000" end="0x00400001" type="io" name="read"/>
+    <region start="0x00410000" end="0x00410000" type="ram" name="ram"/>
+    <region start="0x00420000" end="0x0042000F" type="io" name="map"/>
+    <region start="0x00430000" end="0x00430003" type="io" name="read"/>
+    <region start="0x00440000" end="0x00440000" type="io" name="region_440000"/>
+    <region start="0x00450000" end="0x0045FFFF" type="io" name="read"/>
+    <region start="0x00460000" end="0x00467FFF" type="ram" name="nvram"/>
+    <region start="0x00470000" end="0x00470003" type="io" name="read"/>
+    <region start="0x00480000" end="0x00BFFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x00C00000" end="0x00F1FFFF" type="rom" name="rom"/>
+    <region start="0x00F80000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

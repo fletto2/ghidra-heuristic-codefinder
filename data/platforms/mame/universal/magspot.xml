@@ -1,0 +1,14 @@
+<platform name="magspot" cpu="z80">
+  <!-- source: MAME universal/cosmic.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00003800" end="0x00003807" type="io" name="magspot_coinage_dip_r"/>
+    <region start="0x00004000" end="0x0000401F" type="ram" name="spriteram"/>
+    <region start="0x00004800" end="0x00004800" type="io" name="dac_w"/>
+    <region start="0x0000480C" end="0x0000480D" type="io" name="cosmic_color_register_w"/>
+    <region start="0x0000480F" end="0x0000480F" type="io" name="flip_screen_w"/>
+    <region start="0x00005000" end="0x00005003" type="io" name="port"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

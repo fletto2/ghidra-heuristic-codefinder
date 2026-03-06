@@ -1,0 +1,9 @@
+<platform name="shippumd" cpu="68000">
+  <!-- source: MAME toaplan/raizing.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x0021C008" end="0x0021C009" type="unmapped" name="nop_write"/>
+    <region start="0x0021C01D" end="0x0021C01D" type="io" name="shippumd_coin_w"/>
+    <region start="0x00401000" end="0x004017FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

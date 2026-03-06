@@ -1,0 +1,7 @@
+<platform name="cleartone" cpu="z80">
+  <!-- source: MAME misc/cleartone.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000017FF" type="rom" name="rom"/>
+    <region start="0x00001800" end="0x000018FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

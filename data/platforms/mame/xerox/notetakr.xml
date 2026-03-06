@@ -1,0 +1,12 @@
+<platform name="notetakr" cpu="8086">
+  <!-- source: MAME xerox/notetaker.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x000FFFFF" type="io" name="iop_r"/>
+    <region start="0x00001000" end="0x0003FFFF" type="ram" name="mainram"/>
+    <region start="0x000FF000" end="0x000FFFE7" type="rom" name="rom"/>
+    <region start="0x000FFFEA" end="0x000FFFEF" type="io" name="cpuCtl_w"/>
+    <region start="0x000FFFF0" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

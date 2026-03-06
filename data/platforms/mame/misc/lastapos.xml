@@ -1,0 +1,15 @@
+<platform name="lastapos" cpu="z80">
+  <!-- source: MAME misc/homedata.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00006FFF" type="ram" name="ram"/>
+    <region start="0x00007800" end="0x00007800" type="ram" name="ram"/>
+    <region start="0x00007801" end="0x00007803" type="io" name="port"/>
+    <region start="0x00007FF0" end="0x00007FFD" type="ram" name="vreg"/>
+    <region start="0x00007FFE" end="0x00008000" type="io" name="reikaids_blitter_bank_w"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x00008002" end="0x00008002" type="io" name="write"/>
+    <region start="0x00008005" end="0x00008006" type="io" name="reikaids_gfx_bank_w"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

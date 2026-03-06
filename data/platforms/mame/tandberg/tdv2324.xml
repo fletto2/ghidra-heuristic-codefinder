@@ -1,0 +1,10 @@
+<platform name="tdv2324" cpu="8085">
+  <!-- source: MAME tandberg/tdv2324.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="video_ram"/>
+  </memory_map>
+</platform>

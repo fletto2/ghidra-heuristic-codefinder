@@ -1,0 +1,22 @@
+<platform name="buster" cpu="z80">
+  <!-- source: MAME misc/buster.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="wram"/>
+    <region start="0x00005000" end="0x00005FFF" type="ram" name="vram"/>
+    <region start="0x00006000" end="0x00006001" type="io" name="address_w"/>
+    <region start="0x00007C00" end="0x00007CFF" type="ram" name="ram"/>
+    <region start="0x00007C80" end="0x00007C80" type="io" name="port"/>
+    <region start="0x00007C82" end="0x00007C82" type="io" name="port"/>
+    <region start="0x00007C84" end="0x00007C84" type="io" name="port"/>
+    <region start="0x00007C86" end="0x00007C86" type="io" name="port"/>
+    <region start="0x00007C88" end="0x00007C88" type="io" name="port"/>
+    <region start="0x00007C8A" end="0x00007C8A" type="io" name="port"/>
+    <region start="0x00007C8C" end="0x00007C8C" type="io" name="port"/>
+    <region start="0x00007C8E" end="0x00007C8E" type="io" name="port"/>
+    <region start="0x00007CB0" end="0x00007CB7" type="io" name="coin_output_w"/>
+    <region start="0x00008800" end="0x00008FFF" type="ram" name="wram"/>
+    <region start="0x0000A000" end="0x0000A0FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="startrip" cpu="z80">
+  <!-- source: MAME pinball/gp_1.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00008C00" end="0x00008CFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

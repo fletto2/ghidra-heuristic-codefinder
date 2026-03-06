@@ -1,0 +1,17 @@
+<platform name="retofinvbv" cpu="z80">
+  <!-- source: MAME taito/retofinv.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00007FFF" end="0x00007FFF" type="io" name="coincounter_w"/>
+    <region start="0x00008000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000B800" end="0x0000B802" type="io" name="gfx_ctrl_w"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="port"/>
+    <region start="0x0000C002" end="0x0000C002" type="unmapped" name="nop_read"/>
+    <region start="0x0000C004" end="0x0000C007" type="io" name="port"/>
+    <region start="0x0000C800" end="0x0000C807" type="io" name="d0"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="reset_w"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="write"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="cpu0_mf800_r"/>
+  </memory_map>
+</platform>

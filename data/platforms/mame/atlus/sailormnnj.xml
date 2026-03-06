@@ -1,0 +1,62 @@
+<platform name="sailormnnj" cpu="68000">
+  <!-- source: MAME atlus/cave.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x00110001" type="ram" name="ram"/>
+    <region start="0x00200000" end="0x003FFFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x00410001" type="ram" name="ram"/>
+    <region start="0x00500000" end="0x00510001" type="ram" name="ram"/>
+    <region start="0x00600000" end="0x00600003" type="io" name="sailormn_input0_r"/>
+    <region start="0x00700000" end="0x00700000" type="io" name="sailormn_eeprom_w"/>
+    <region start="0x00800000" end="0x00807FFF" type="io" name="vram_map"/>
+    <region start="0x00880000" end="0x00887FFF" type="io" name="vram_map"/>
+    <region start="0x00900000" end="0x00907FFF" type="io" name="vram_map"/>
+    <region start="0x00908000" end="0x00908001" type="ram" name="ram"/>
+    <region start="0x00A00000" end="0x00A00005" type="io" name="vregs_r"/>
+    <region start="0x00A80000" end="0x00A80005" type="io" name="vregs_r"/>
+    <region start="0x00B00000" end="0x00B00005" type="io" name="vregs_r"/>
+    <region start="0x00B80000" end="0x00B8007F" type="io" name="video_regs"/>
+    <region start="0x00B80000" end="0x00B80007" type="io" name="irq_cause_r"/>
+    <region start="0x00B8006C" end="0x00B8006F" type="io" name="soundflags_ack_r"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+    <entry index="10" name="line_a"/>
+    <entry index="11" name="line_f"/>
+    <entry index="24" name="spurious_irq"/>
+    <entry index="25" name="autovector_1" irq="true"/>
+    <entry index="26" name="autovector_2" irq="true"/>
+    <entry index="27" name="autovector_3" irq="true"/>
+    <entry index="28" name="autovector_4" irq="true"/>
+    <entry index="29" name="autovector_5" irq="true"/>
+    <entry index="30" name="autovector_6" irq="true"/>
+    <entry index="31" name="autovector_7" irq="true"/>
+    <entry index="32" name="trap_0"/>
+    <entry index="33" name="trap_1"/>
+    <entry index="34" name="trap_2"/>
+    <entry index="35" name="trap_3"/>
+    <entry index="36" name="trap_4"/>
+    <entry index="37" name="trap_5"/>
+    <entry index="38" name="trap_6"/>
+    <entry index="39" name="trap_7"/>
+    <entry index="40" name="trap_8"/>
+    <entry index="41" name="trap_9"/>
+    <entry index="42" name="trap_10"/>
+    <entry index="43" name="trap_11"/>
+    <entry index="44" name="trap_12"/>
+    <entry index="45" name="trap_13"/>
+    <entry index="46" name="trap_14"/>
+    <entry index="47" name="trap_15"/>
+  </vectors>
+</platform>

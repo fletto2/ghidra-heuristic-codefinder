@@ -1,0 +1,15 @@
+<platform name="sym1" cpu="6502">
+  <!-- source: MAME synertek/sym1.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A00F" type="io" name="map"/>
+    <region start="0x0000A400" end="0x0000A41F" type="io" name="io_map"/>
+    <region start="0x0000A600" end="0x0000A67F" type="ram" name="bank0"/>
+    <region start="0x0000A800" end="0x0000A80F" type="io" name="map"/>
+    <region start="0x0000AC00" end="0x0000AC0F" type="io" name="map"/>
+    <region start="0x0000B000" end="0x0000EFFF" type="rom" name="rom"/>
+    <region start="0x0000FF80" end="0x0000FFFF" type="ram" name="bank8"/>
+  </memory_map>
+</platform>

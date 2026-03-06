@@ -1,0 +1,13 @@
+<platform name="eaglshot" cpu="v60">
+  <!-- source: MAME seta/ssv.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00180000" end="0x001BFFFF" type="io" name="gfxram_r"/>
+    <region start="0x00210000" end="0x00210003" type="unmapped" name="nop_read"/>
+    <region start="0x0021000E" end="0x0021000F" type="io" name="lockout_inv_w"/>
+    <region start="0x00800000" end="0x00800000" type="io" name="gfxrom_bank_w"/>
+    <region start="0x00900000" end="0x00900000" type="io" name="trackball_w"/>
+    <region start="0x00A00000" end="0x00C007FF" type="ram" name="banked"/>
+    <region start="0x00D00000" end="0x00D00000" type="io" name="d_r"/>
+  </memory_map>
+</platform>

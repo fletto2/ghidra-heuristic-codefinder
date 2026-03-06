@@ -1,0 +1,14 @@
+<platform name="taito_en" cpu="68000">
+  <!-- source: MAME taito/taito_en.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="osram"/>
+    <region start="0x00140000" end="0x00140FFF" type="io" name="right_r"/>
+    <region start="0x00200000" end="0x0020001F" type="io" name="read"/>
+    <region start="0x00260000" end="0x002601FF" type="io" name="host_r"/>
+    <region start="0x00280000" end="0x0028001F" type="io" name="read"/>
+    <region start="0x00300000" end="0x0030003F" type="io" name="otisbank"/>
+    <region start="0x00340000" end="0x00340003" type="io" name="en_volume_w"/>
+    <region start="0x00C00000" end="0x00C7FFFF" type="ram" name="cpubank1"/>
+    <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="osram"/>
+  </memory_map>
+</platform>

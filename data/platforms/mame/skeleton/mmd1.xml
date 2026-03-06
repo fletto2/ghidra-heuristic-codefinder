@@ -1,0 +1,9 @@
+<platform name="mmd1" cpu="8080">
+  <!-- source: MAME skeleton/mmd1.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="rom" name="rom"/>
+    <region start="0x00000200" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00001800" end="0x00001FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

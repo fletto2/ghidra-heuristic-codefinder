@@ -1,0 +1,32 @@
+<platform name="memorymoog" cpu="z80">
+  <!-- source: MAME moog/memorymoog.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00003000" end="0x00003FFF" type="io" name="map0x3000_0x3fff___s4x_rom"/>
+    <region start="0x00004000" end="0x000057FF" type="ram" name="ram"/>
+    <region start="0x00005800" end="0x00007FFF" type="io" name="map0x5800_0x5fff___u8_6116_but_slot_was"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="u26_low4_r"/>
+    <region start="0x0000C100" end="0x0000C100" type="io" name="keyboard_r"/>
+    <region start="0x0000C200" end="0x0000C200" type="io" name="port"/>
+    <region start="0x0000C300" end="0x0000C300" type="io" name="tape_relay_w"/>
+    <region start="0x0000C400" end="0x0000C500" type="io" name="unused_map0xc400_0xc4ff"/>
+    <region start="0x0000C600" end="0x0000C600" type="io" name="write"/>
+    <region start="0x0000C700" end="0x0000C700" type="io" name="write"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="write"/>
+    <region start="0x0000C900" end="0x0000C900" type="io" name="write"/>
+    <region start="0x0000CA00" end="0x0000CA00" type="io" name="write"/>
+    <region start="0x0000CB00" end="0x0000CB00" type="io" name="write"/>
+    <region start="0x0000CC00" end="0x0000CC00" type="io" name="write"/>
+    <region start="0x0000CD00" end="0x0000CD00" type="io" name="write"/>
+    <region start="0x0000CE00" end="0x0000CE00" type="io" name="write"/>
+    <region start="0x0000CF00" end="0x0000CF00" type="io" name="write"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="led_drive_w"/>
+    <region start="0x0000D100" end="0x0000D100" type="io" name="led_latch_w"/>
+    <region start="0x0000D200" end="0x0000D200" type="io" name="char_latch_a_w"/>
+    <region start="0x0000D300" end="0x0000D300" type="io" name="char_latch_b_w"/>
+    <region start="0x0000D400" end="0x0000D400" type="io" name="digit_latch_w"/>
+    <region start="0x0000D500" end="0x0000D600" type="io" name="todo_map0xd500_0xd5ff_not_labelled_conne"/>
+    <region start="0x0000D700" end="0x0000D700" type="io" name="switches_a_r"/>
+  </memory_map>
+</platform>

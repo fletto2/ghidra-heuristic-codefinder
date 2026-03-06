@@ -1,0 +1,8 @@
+<platform name="onna34ro" cpu="z80">
+  <!-- source: MAME taito/flstory.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="data_r"/>
+    <region start="0x0000D805" end="0x0000D805" type="io" name="flstory_mcu_status_r"/>
+  </memory_map>
+</platform>

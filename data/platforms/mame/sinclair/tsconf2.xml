@@ -1,0 +1,8 @@
+<platform name="tsconf2" cpu="z80">
+  <!-- source: MAME sinclair/tsconf.cpp -->
+  <!-- year: 2024 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+  </memory_map>
+</platform>

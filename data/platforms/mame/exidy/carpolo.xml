@@ -1,0 +1,22 @@
+<platform name="carpolo" cpu="6502">
+  <!-- source: MAME exidy/carpolo.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00003000" end="0x000030FF" type="ram" name="writeonly"/>
+    <region start="0x00004000" end="0x0000400F" type="ram" name="writeonly"/>
+    <region start="0x00005400" end="0x00005403" type="io" name="read"/>
+    <region start="0x00005800" end="0x00005803" type="io" name="read"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="ball_screen_collision_cause_r"/>
+    <region start="0x0000B000" end="0x0000B001" type="io" name="ball_screen_interrupt_clear_w"/>
+    <region start="0x0000B003" end="0x0000B006" type="io" name="car_car_interrupt_clear_w"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="interrupt_cause_r"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

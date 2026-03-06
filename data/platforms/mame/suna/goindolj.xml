@@ -1,0 +1,21 @@
+<platform name="goindolj" cpu="z80">
+  <!-- source: MAME suna/goindol.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000C7FF" type="ram" name="banked"/>
+    <region start="0x0000C800" end="0x0000C800" type="unmapped" name="nop_read"/>
+    <region start="0x0000C810" end="0x0000C810" type="io" name="bankswitch_w"/>
+    <region start="0x0000C820" end="0x0000C820" type="ram" name="writeonly"/>
+    <region start="0x0000C830" end="0x0000C830" type="ram" name="writeonly"/>
+    <region start="0x0000C834" end="0x0000C834" type="io" name="port"/>
+    <region start="0x0000D000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="port"/>
+    <region start="0x0000F422" end="0x0000F422" type="io" name="prot_f422_r"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="port"/>
+    <region start="0x0000FC44" end="0x0000FC44" type="io" name="prot_fc44_w"/>
+    <region start="0x0000FC66" end="0x0000FC66" type="io" name="prot_fc66_w"/>
+    <region start="0x0000FCB0" end="0x0000FCB0" type="io" name="prot_fcb0_w"/>
+    <region start="0x0000FD99" end="0x0000FD99" type="io" name="prot_fd99_w"/>
+  </memory_map>
+</platform>

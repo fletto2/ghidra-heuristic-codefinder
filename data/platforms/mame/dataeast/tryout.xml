@@ -1,0 +1,26 @@
+<platform name="tryout" cpu="6502">
+  <!-- source: MAME dataeast/tryout.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x000017FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="banked"/>
+    <region start="0x00004000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C800" end="0x0000C87F" type="ram" name="ram"/>
+    <region start="0x0000CC00" end="0x0000CC7F" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D7FF" type="io" name="vram_r"/>
+    <region start="0x0000E000" end="0x0000E003" type="io" name="port"/>
+    <region start="0x0000E301" end="0x0000E302" type="io" name="flipscreen_w"/>
+    <region start="0x0000E401" end="0x0000E401" type="io" name="vram_bankswitch_w"/>
+    <region start="0x0000E402" end="0x0000E404" type="ram" name="writeonly"/>
+    <region start="0x0000E414" end="0x0000E414" type="io" name="write"/>
+    <region start="0x0000E417" end="0x0000E417" type="io" name="nmi_ack_w"/>
+    <region start="0x0000FFF0" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

@@ -1,0 +1,13 @@
+<platform name="aces1" cpu="z80">
+  <!-- source: MAME misc/aces1.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x0000ADF0" end="0x0000ADF3" type="io" name="data_r"/>
+    <region start="0x0000AFB0" end="0x0000AFB3" type="io" name="read"/>
+    <region start="0x0000AFD0" end="0x0000AFD3" type="io" name="read"/>
+    <region start="0x0000AFE0" end="0x0000AFE3" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="aces1_unk_r"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="aces1_nmi_counter_reset_r"/>
+  </memory_map>
+</platform>

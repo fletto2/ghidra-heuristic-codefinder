@@ -1,0 +1,9 @@
+<platform name="mjsenka" cpu="z80">
+  <!-- source: MAME dynax/royalmah.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00006FFF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x0000FFFF" type="ram" name="nvram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="writeonly"/>
+  </memory_map>
+</platform>

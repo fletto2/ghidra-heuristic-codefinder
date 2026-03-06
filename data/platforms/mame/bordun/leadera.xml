@@ -1,0 +1,14 @@
+<platform name="leadera" cpu="z80">
+  <!-- source: MAME bordun/skylncr.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000A7FF" type="ram" name="nvram"/>
+    <region start="0x0000AA55" end="0x0000AA55" type="io" name="ret_ff"/>
+    <region start="0x0000B000" end="0x0000B03F" type="ram" name="ram"/>
+    <region start="0x0000B200" end="0x0000B23F" type="ram" name="ram"/>
+    <region start="0x0000B400" end="0x0000B43F" type="ram" name="ram"/>
+    <region start="0x0000B600" end="0x0000B63F" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="s1945iiibla" cpu="sh2">
+  <!-- source: MAME psikyo/psikyosh.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x04003000" end="0x040031FF" type="ram" name="zoomram"/>
+    <region start="0x04030000" end="0x040301FF" type="ram" name="ram"/>
+    <region start="0x04053FDC" end="0x04053FDF" type="unmapped" name="nop_read"/>
+    <region start="0x04053FE0" end="0x04053FFF" type="ram" name="vidregs"/>
+    <region start="0x0405FFDC" end="0x0405FFFF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

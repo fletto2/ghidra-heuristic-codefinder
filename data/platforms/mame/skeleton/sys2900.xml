@@ -1,0 +1,8 @@
+<platform name="sys2900" cpu="z80">
+  <!-- source: MAME skeleton/sys2900.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

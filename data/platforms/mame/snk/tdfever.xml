@@ -1,0 +1,28 @@
+<platform name="tdfever" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="port"/>
+    <region start="0x0000C080" end="0x0000C080" type="io" name="port"/>
+    <region start="0x0000C100" end="0x0000C100" type="io" name="port"/>
+    <region start="0x0000C180" end="0x0000C180" type="io" name="port"/>
+    <region start="0x0000C200" end="0x0000C200" type="io" name="port"/>
+    <region start="0x0000C280" end="0x0000C280" type="io" name="port"/>
+    <region start="0x0000C300" end="0x0000C300" type="io" name="port"/>
+    <region start="0x0000C380" end="0x0000C380" type="io" name="port"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="port"/>
+    <region start="0x0000C480" end="0x0000C480" type="io" name="port"/>
+    <region start="0x0000C500" end="0x0000C500" type="io" name="soundlatch_w"/>
+    <region start="0x0000C580" end="0x0000C580" type="io" name="port"/>
+    <region start="0x0000C600" end="0x0000C600" type="io" name="port"/>
+    <region start="0x0000C680" end="0x0000C680" type="io" name="tdfever_coin_counter_w"/>
+    <region start="0x0000C700" end="0x0000C700" type="io" name="cpuB_nmi_trigger_r"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="bg_scrolly_w"/>
+    <region start="0x0000C840" end="0x0000C840" type="io" name="bg_scrollx_w"/>
+    <region start="0x0000C880" end="0x0000C880" type="io" name="gwara_videoattrs_w"/>
+    <region start="0x0000C900" end="0x0000C900" type="io" name="tdfever_sp_scroll_msb_w"/>
+    <region start="0x0000C980" end="0x0000C980" type="io" name="sp32_scrolly_w"/>
+    <region start="0x0000C9C0" end="0x0000C9C0" type="io" name="sp32_scrollx_w"/>
+  </memory_map>
+</platform>

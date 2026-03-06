@@ -1,0 +1,16 @@
+<platform name="gunsmokeuc" cpu="z80">
+  <!-- source: MAME capcom/gunsmoke.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000C004" type="io" name="port"/>
+    <region start="0x0000C4C9" end="0x0000C4CB" type="io" name="protection_r"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="write"/>
+    <region start="0x0000C804" end="0x0000C804" type="io" name="control_w"/>
+    <region start="0x0000C806" end="0x0000C806" type="io" name="write"/>
+    <region start="0x0000D000" end="0x0000D802" type="ram" name="ram"/>
+    <region start="0x0000D806" end="0x0000D806" type="io" name="layer_w"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

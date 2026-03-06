@@ -1,0 +1,13 @@
+<platform name="micro20" cpu="68020">
+  <!-- source: MAME skeleton/micro20.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="ram" name="mainram"/>
+    <region start="0x00200000" end="0x002FFFFF" type="io" name="buserror_r"/>
+    <region start="0x00800000" end="0x0083FFFF" type="rom" name="rom"/>
+    <region start="0xFFFF8000" end="0xFFFF8003" type="io" name="status_r"/>
+    <region start="0xFFFF8080" end="0xFFFF808F" type="io" name="read"/>
+    <region start="0xFFFF80A0" end="0xFFFF80AF" type="io" name="read"/>
+    <region start="0xFFFF80C0" end="0xFFFF80DF" type="io" name="read"/>
+  </memory_map>
+</platform>

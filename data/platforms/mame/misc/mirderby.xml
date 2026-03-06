@@ -1,0 +1,10 @@
+<platform name="mirderby" cpu="z80">
+  <!-- source: MAME misc/mirderby.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="io" name="shared_map"/>
+    <region start="0x00007FFD" end="0x00007FFD" type="io" name="region_7ffd"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="region_8000"/>
+  </memory_map>
+</platform>

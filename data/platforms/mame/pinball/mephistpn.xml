@@ -1,0 +1,16 @@
+<platform name="mephistpn" cpu="8088">
+  <!-- source: MAME pinball/mephistp.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00010000" end="0x000107FF" type="ram" name="nvram"/>
+    <region start="0x00012000" end="0x0001201F" type="io" name="read"/>
+    <region start="0x00013000" end="0x000130FF" type="io" name="memory_r"/>
+    <region start="0x00013800" end="0x00013807" type="io" name="io_r"/>
+    <region start="0x00014000" end="0x000140FF" type="io" name="memory_r"/>
+    <region start="0x00014800" end="0x00014807" type="io" name="io_r"/>
+    <region start="0x00016000" end="0x00016000" type="io" name="shift_load_w"/>
+    <region start="0x00017000" end="0x00017001" type="unmapped" name="nop_write"/>
+    <region start="0x000F0000" end="0x000F7FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

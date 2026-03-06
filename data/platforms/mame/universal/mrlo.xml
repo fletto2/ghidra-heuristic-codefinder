@@ -1,0 +1,12 @@
+<platform name="mrlo" cpu="z80">
+  <!-- source: MAME universal/mrdo.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000090FF" type="ram" name="bgvideoram"/>
+    <region start="0x00009800" end="0x00009803" type="io" name="flipscreen_w"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="port"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="io" name="scrollx_w"/>
+  </memory_map>
+</platform>

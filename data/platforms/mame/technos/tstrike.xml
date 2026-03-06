@@ -1,0 +1,8 @@
+<platform name="tstrike" cpu="z80">
+  <!-- source: MAME technos/ddragon.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00003808" end="0x00003808" type="io" name="bankswitch_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="io" name="amap8"/>
+  </memory_map>
+</platform>

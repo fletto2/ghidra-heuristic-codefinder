@@ -1,0 +1,8 @@
+<platform name="m20_8086" cpu="8086">
+  <!-- source: MAME olivetti/m20_8086.cpp -->
+  <memory_map>
+    <region start="0x000E0000" end="0x000E3FFF" type="ram" name="vram2"/>
+    <region start="0x000F0000" end="0x000F7FFF" type="ram" name="highram"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

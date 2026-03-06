@@ -1,0 +1,9 @@
+<platform name="blktch2" cpu="z80">
+  <!-- source: MAME sunelectronics/shanghai.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000041FF" type="io" name="palette"/>
+    <region start="0x00080000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

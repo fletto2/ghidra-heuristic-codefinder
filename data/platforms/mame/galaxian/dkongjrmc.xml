@@ -1,0 +1,21 @@
+<platform name="dkongjrmc" cpu="z80">
+  <!-- source: MAME galaxian/galaxold.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006FFF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x000070FF" type="io" name="attributesram"/>
+    <region start="0x00007100" end="0x000071FF" type="ram" name="spriteram"/>
+    <region start="0x00007400" end="0x000077FF" type="ram" name="videoram"/>
+    <region start="0x00007800" end="0x00007802" type="io" name="port"/>
+    <region start="0x00007804" end="0x00007804" type="io" name="galaxold_gfxbank_w"/>
+    <region start="0x00007806" end="0x00007807" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x00007D00" end="0x00007D03" type="io" name="background_enable_w"/>
+    <region start="0x00007D05" end="0x00007D07" type="io" name="fire_enable_w"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="port"/>
+    <region start="0x00008100" end="0x00008100" type="io" name="port"/>
+    <region start="0x00008103" end="0x00008107" type="io" name="galaxold_coin_counter_w"/>
+    <region start="0x00008200" end="0x00008200" type="io" name="pitch_w"/>
+    <region start="0x00009000" end="0x00009FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

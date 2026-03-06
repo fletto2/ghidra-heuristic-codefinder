@@ -1,0 +1,12 @@
+<platform name="bublboblp" cpu="z80">
+  <!-- source: MAME taito/bublbobl.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x0000FA00" end="0x0000FA00" type="io" name="reset_w"/>
+    <region start="0x0000FA03" end="0x0000FA07" type="io" name="port"/>
+    <region start="0x0000FA80" end="0x0000FA80" type="io" name="tokio_bankswitch_w"/>
+    <region start="0x0000FB00" end="0x0000FB00" type="io" name="tokio_videoctrl_w"/>
+    <region start="0x0000FB80" end="0x0000FB80" type="io" name="bublbobl_nmitrigger_w"/>
+    <region start="0x0000FC00" end="0x0000FC00" type="io" name="read"/>
+  </memory_map>
+</platform>

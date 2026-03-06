@@ -1,0 +1,29 @@
+<platform name="tunhunt" cpu="6502">
+  <!-- source: MAME atari/tunhunt.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00001080" end="0x00001081" type="io" name="scan_rom_start_for_mobj_unused"/>
+    <region start="0x00001083" end="0x0000108F" type="io" name="lines_horiz_start"/>
+    <region start="0x00001200" end="0x00001203" type="io" name="shell_vstretch_like_mst_obj_strecth"/>
+    <region start="0x00001280" end="0x00001280" type="io" name="shell_picture_code_d3d0"/>
+    <region start="0x00001280" end="0x00001281" type="io" name="region_1280"/>
+    <region start="0x00001283" end="0x0000128F" type="io" name="line_color_4_bits_d0d3"/>
+    <region start="0x00001400" end="0x0000140F" type="io" name="shell_v_startnormal_screen"/>
+    <region start="0x00001480" end="0x0000148F" type="io" name="shell_v_stop_normal_screen"/>
+    <region start="0x00001600" end="0x0000160F" type="ram" name="writeonly"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="shell_h_positon_normal_screen"/>
+    <region start="0x00001802" end="0x00001802" type="io" name="starting_line_for_ram_scan_on_mobj"/>
+    <region start="0x00001A00" end="0x00001A00" type="io" name="region_1a00"/>
+    <region start="0x00001C00" end="0x00001C00" type="io" name="v_position_screen_on_side"/>
+    <region start="0x00001E00" end="0x00001EFF" type="io" name="videoram_w"/>
+    <region start="0x00002000" end="0x00002000" type="unmapped" name="nop_write"/>
+    <region start="0x00002000" end="0x00002007" type="io" name="button_r"/>
+    <region start="0x00002400" end="0x00002400" type="unmapped" name="nop_write"/>
+    <region start="0x00002800" end="0x00002800" type="io" name="control_w"/>
+    <region start="0x00002C00" end="0x00002FFF" type="ram" name="writeonly"/>
+    <region start="0x00003000" end="0x0000300F" type="io" name="read"/>
+    <region start="0x00004000" end="0x0000400F" type="io" name="read"/>
+    <region start="0x00005000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

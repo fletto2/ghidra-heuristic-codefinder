@@ -1,0 +1,10 @@
+<platform name="jsk" cpu="v60">
+  <!-- source: MAME seta/ssv.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00050000" end="0x0005FFFF" type="io" name="mainram_r"/>
+    <region start="0x00210000" end="0x00210001" type="io" name="reset16_w"/>
+    <region start="0x00400000" end="0x0047FFFF" type="ram" name="ram"/>
+    <region start="0x00900000" end="0x00900007" type="io" name="latch16_r"/>
+  </memory_map>
+</platform>

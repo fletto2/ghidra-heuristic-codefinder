@@ -1,0 +1,8 @@
+<platform name="sstar28k" cpu="6502">
+  <!-- source: MAME saitek/superstar.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00004000" end="0x00005FFF" type="io" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

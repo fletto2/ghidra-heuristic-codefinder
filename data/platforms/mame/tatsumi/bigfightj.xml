@@ -1,0 +1,9 @@
+<platform name="bigfightj" cpu="68000">
+  <!-- source: MAME tatsumi/cyclwarr.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="master_ram"/>
+    <region start="0x0003E000" end="0x0003EFFF" type="ram" name="ram"/>
+    <region start="0x00040000" end="0x0004FFFF" type="ram" name="slave_ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,23 @@
+<platform name="ikarijp" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="port"/>
+    <region start="0x0000C100" end="0x0000C100" type="io" name="port"/>
+    <region start="0x0000C200" end="0x0000C200" type="io" name="port"/>
+    <region start="0x0000C300" end="0x0000C300" type="io" name="ikari_coin_counter_w"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="soundlatch_w"/>
+    <region start="0x0000C500" end="0x0000C500" type="io" name="port"/>
+    <region start="0x0000C600" end="0x0000C600" type="io" name="port"/>
+    <region start="0x0000C700" end="0x0000C700" type="io" name="cpuB_nmi_trigger_r"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="bg_scrolly_w"/>
+    <region start="0x0000C880" end="0x0000C880" type="io" name="bg_scrollx_w"/>
+    <region start="0x0000C900" end="0x0000C900" type="io" name="ikari_bg_scroll_msb_w"/>
+    <region start="0x0000CA00" end="0x0000CA00" type="io" name="sp16_scrolly_w"/>
+    <region start="0x0000CA80" end="0x0000CA80" type="io" name="sp16_scrollx_w"/>
+    <region start="0x0000CB00" end="0x0000CB00" type="io" name="sp32_scrolly_w"/>
+    <region start="0x0000CB80" end="0x0000CB80" type="io" name="sp32_scrollx_w"/>
+    <region start="0x0000CD00" end="0x0000CD00" type="io" name="ikari_sp_scroll_msb_w"/>
+  </memory_map>
+</platform>

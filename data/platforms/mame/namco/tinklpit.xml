@@ -1,0 +1,11 @@
+<platform name="tinklpit" cpu="68000">
+  <!-- source: MAME namco/namcona1.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00D00000" end="0x00D00001" type="unmapped" name="nop_write"/>
+    <region start="0x00D40000" end="0x00D40001" type="unmapped" name="nop_write"/>
+    <region start="0x00D80001" end="0x00D80001" type="io" name="printer_r"/>
+    <region start="0x00DC0000" end="0x00DC001F" type="io" name="read"/>
+    <region start="0x00E00000" end="0x00E03FFF" type="io" name="read"/>
+  </memory_map>
+</platform>

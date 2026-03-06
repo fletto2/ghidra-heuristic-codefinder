@@ -1,0 +1,10 @@
+<platform name="spirit76" cpu="6800">
+  <!-- source: MAME pinball/spirit76.cpp -->
+  <!-- year: 1975 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000200" end="0x00000203" type="io" name="read"/>
+    <region start="0x00000400" end="0x00000400" type="io" name="sw_r"/>
+    <region start="0x00000600" end="0x00000FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

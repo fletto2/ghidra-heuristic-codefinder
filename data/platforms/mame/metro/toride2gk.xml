@@ -1,0 +1,14 @@
+<platform name="toride2gk" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x0040FFFF" type="ram" name="ram"/>
+    <region start="0x00800000" end="0x00800001" type="io" name="port"/>
+    <region start="0x00800001" end="0x00800003" type="io" name="soundstatus_w"/>
+    <region start="0x00800002" end="0x00800009" type="io" name="coin_lockout_4words_w"/>
+    <region start="0x00800004" end="0x00800007" type="io" name="port"/>
+    <region start="0x00C00000" end="0x00C7FFFF" type="io" name="v2_map"/>
+    <region start="0x00C788A9" end="0x00C788A9" type="io" name="sound_data_w"/>
+  </memory_map>
+</platform>

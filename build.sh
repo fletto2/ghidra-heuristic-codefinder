@@ -42,11 +42,11 @@ javac -cp "$CP" -d "$BUILD/classes" "$SCRIPT_DIR"/src/main/java/heuristic/*.java
 echo "  $(find "$BUILD/classes" -name '*.class' | wc -l) classes compiled"
 
 # Package JAR
-mkdir -p "$BUILD/staging/$EXTNAME/lib" "$BUILD/staging/$EXTNAME/data/platforms"
+mkdir -p "$BUILD/staging/$EXTNAME/lib"
 jar cf "$BUILD/staging/$EXTNAME/lib/$EXTNAME.jar" -C "$BUILD/classes" .
 cp "$SCRIPT_DIR/extension.properties" "$BUILD/staging/$EXTNAME/"
 cp "$SCRIPT_DIR/Module.manifest" "$BUILD/staging/$EXTNAME/"
-cp "$SCRIPT_DIR/data/platforms/"*.xml "$BUILD/staging/$EXTNAME/data/platforms/"
+cp -r "$SCRIPT_DIR/data" "$BUILD/staging/$EXTNAME/"
 
 # Create installable zip
 mkdir -p "$DIST"

@@ -1,0 +1,10 @@
+<platform name="naomigd" cpu="sh4">
+  <!-- source: MAME sega/naomigd.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x04000000" end="0x040000FF" type="io" name="registers_r"/>
+    <region start="0x0C000000" end="0x0CFFFFFF" type="ram" name="ram"/>
+    <region start="0x10000000" end="0x103FFFFF" type="io" name="shared_6154_sdram_r"/>
+    <region start="0x14000000" end="0x1BFFFFFF" type="io" name="region_14000000"/>
+  </memory_map>
+</platform>

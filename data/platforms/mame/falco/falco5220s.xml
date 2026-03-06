@@ -1,0 +1,9 @@
+<platform name="falco5220s" cpu="z80">
+  <!-- source: MAME falco/falco500.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000DFFF" type="ram" name="rombank"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="io" name="amap8"/>
+  </memory_map>
+</platform>

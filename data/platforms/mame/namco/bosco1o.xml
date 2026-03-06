@@ -1,0 +1,19 @@
+<platform name="bosco1o" cpu="z80">
+  <!-- source: MAME namco/galaga.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00006800" end="0x00006807" type="io" name="bosco_dsw_r"/>
+    <region start="0x00006800" end="0x00006827" type="io" name="pacman_sound_w"/>
+    <region start="0x00006830" end="0x00006830" type="io" name="reset_w"/>
+    <region start="0x00007000" end="0x00007100" type="io" name="data_r"/>
+    <region start="0x00007800" end="0x00008FFF" type="ram" name="share1"/>
+    <region start="0x00009000" end="0x00009100" type="io" name="data_r"/>
+    <region start="0x00009800" end="0x0000980F" type="ram" name="bosco_radarattr"/>
+    <region start="0x00009810" end="0x00009810" type="io" name="bosco_scrollx_w"/>
+    <region start="0x00009820" end="0x00009820" type="io" name="bosco_scrolly_w"/>
+    <region start="0x00009830" end="0x00009830" type="ram" name="starcontrol"/>
+    <region start="0x00009840" end="0x00009840" type="io" name="bosco_starclr_w"/>
+    <region start="0x00009870" end="0x00009877" type="io" name="d0"/>
+  </memory_map>
+</platform>

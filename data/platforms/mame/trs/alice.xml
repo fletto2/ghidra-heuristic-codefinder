@@ -1,0 +1,9 @@
+<platform name="alice" cpu="6803">
+  <!-- source: MAME trs/mc10.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x0000BF20" end="0x0000BF29" type="io" name="data_r"/>
+    <region start="0x0000BFFF" end="0x0000BFFF" type="io" name="alice90_bfff_r"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

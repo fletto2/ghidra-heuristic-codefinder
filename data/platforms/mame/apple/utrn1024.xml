@@ -1,0 +1,14 @@
+<platform name="utrn1024" cpu="68000">
+  <!-- source: MAME apple/mac128.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="io" name="ram_r"/>
+    <region start="0x00400000" end="0x004FFFFF" type="rom" name="rom"/>
+    <region start="0x00580000" end="0x005FFFFF" type="io" name="macse_scsi_r"/>
+    <region start="0x00900000" end="0x009FFFFF" type="io" name="dc_ab_r"/>
+    <region start="0x00B00000" end="0x00BFFFFF" type="io" name="dc_ab_w"/>
+    <region start="0x00D00000" end="0x00DFFFFF" type="io" name="mac_iwm_r"/>
+    <region start="0x00E80000" end="0x00EFFFFF" type="io" name="vpa_sync"/>
+    <region start="0x00FFFFF0" end="0x00FFFFFF" type="io" name="mac_autovector_r"/>
+  </memory_map>
+</platform>

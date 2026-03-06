@@ -1,0 +1,11 @@
+<platform name="flstory" cpu="z80">
+  <!-- source: MAME taito/flstory.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="data_r"/>
+    <region start="0x0000D805" end="0x0000D805" type="io" name="flstory_mcu_status_r"/>
+    <region start="0x0000DA00" end="0x0000DA00" type="ram" name="writeonly"/>
+    <region start="0x0000DCC0" end="0x0000DCFF" type="ram" name="ram"/>
+    <region start="0x0000DF03" end="0x0000DF03" type="io" name="flstory_gfxctrl_w"/>
+  </memory_map>
+</platform>

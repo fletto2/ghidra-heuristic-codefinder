@@ -1,0 +1,16 @@
+<platform name="darkmist" cpu="z80">
+  <!-- source: MAME seibu/darkmist.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C801" end="0x0000C804" type="io" name="port"/>
+    <region start="0x0000C805" end="0x0000C805" type="ram" name="writeonly"/>
+    <region start="0x0000C806" end="0x0000C808" type="io" name="port"/>
+    <region start="0x0000D000" end="0x0000D0FF" type="ram" name="palette"/>
+    <region start="0x0000D200" end="0x0000D2FF" type="ram" name="palette_ext"/>
+    <region start="0x0000D400" end="0x0000D41F" type="ram" name="ram"/>
+    <region start="0x0000D600" end="0x0000D683" type="io" name="sharedram_r"/>
+    <region start="0x0000D800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

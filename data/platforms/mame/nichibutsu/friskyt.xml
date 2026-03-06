@@ -1,0 +1,10 @@
+<platform name="friskyt" cpu="z80">
+  <!-- source: MAME nichibutsu/seicross.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00001000" end="0x000010FF" type="ram" name="nvram"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="dac_w"/>
+    <region start="0x00008000" end="0x0000F7FF" type="rom" name="rom"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

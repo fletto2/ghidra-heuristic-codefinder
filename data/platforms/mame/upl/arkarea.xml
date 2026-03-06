@@ -1,0 +1,16 @@
+<platform name="arkarea" cpu="z80">
+  <!-- source: MAME upl/ninjakd2.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="write"/>
+    <region start="0x0000C001" end="0x0000C006" type="io" name="soundreset_w"/>
+    <region start="0x0000C100" end="0x0000C105" type="io" name="region_c100"/>
+    <region start="0x0000C1E7" end="0x0000C1E7" type="io" name="unk_r"/>
+    <region start="0x0000C200" end="0x0000C205" type="io" name="region_c200"/>
+    <region start="0x0000C300" end="0x0000C305" type="io" name="region_c300"/>
+    <region start="0x0000C400" end="0x0000CFFF" type="io" name="banked"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="ram" name="fg_videoram"/>
+  </memory_map>
+</platform>

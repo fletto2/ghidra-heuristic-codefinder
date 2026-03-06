@@ -1,0 +1,9 @@
+<platform name="bm7thmix" cpu="68020">
+  <!-- source: MAME konami/djmain.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00C00000" end="0x00C02047" type="io" name="ram_word_r"/>
+    <region start="0x00F00000" end="0x00F0000F" type="io" name="cs0_r"/>
+    <region start="0x00F40000" end="0x00F4000F" type="io" name="cs1_r"/>
+  </memory_map>
+</platform>

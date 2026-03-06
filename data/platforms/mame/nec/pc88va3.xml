@@ -1,0 +1,9 @@
+<platform name="pc88va3" cpu="z80">
+  <!-- source: MAME nec/pc88va.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0009FFFF" type="ram" name="workram"/>
+    <region start="0x000A0000" end="0x000DFFFF" type="io" name="amap16"/>
+    <region start="0x000E0000" end="0x000FFFFF" type="ram" name="rom00_bank"/>
+  </memory_map>
+</platform>

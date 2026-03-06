@@ -1,0 +1,9 @@
+<platform name="mcg85" cpu="8085">
+  <!-- source: MAME trainer/mcg85.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x000020FF" type="io" name="memory_r"/>
+  </memory_map>
+</platform>

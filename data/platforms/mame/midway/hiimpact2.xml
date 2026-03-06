@@ -1,0 +1,9 @@
+<platform name="hiimpact2" cpu="z80">
+  <!-- source: MAME midway/midyunit.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x0000A7FF" type="io" name="yawdim_oki_bank_w"/>
+  </memory_map>
+</platform>

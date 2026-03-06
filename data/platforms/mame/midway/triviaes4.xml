@@ -1,0 +1,18 @@
+<platform name="triviaes4" cpu="68000">
+  <!-- source: MAME midway/balsente.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="spriteram"/>
+    <region start="0x00000100" end="0x00000103" type="io" name="port"/>
+    <region start="0x00000320" end="0x00000323" type="io" name="alt"/>
+    <region start="0x00000340" end="0x00000341" type="io" name="status_r"/>
+    <region start="0x00000360" end="0x00000360" type="io" name="random_reset_w"/>
+    <region start="0x00000380" end="0x00000380" type="io" name="random_num_r"/>
+    <region start="0x000003A0" end="0x000003A0" type="io" name="rombank_select_w"/>
+    <region start="0x000003C0" end="0x000003C0" type="io" name="palette_select_w"/>
+    <region start="0x000003E0" end="0x000003E0" type="io" name="reset_w"/>
+    <region start="0x00000800" end="0x000083FF" type="ram" name="videoram"/>
+    <region start="0x00008800" end="0x00008FFF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="ram" name="bankab"/>
+  </memory_map>
+</platform>

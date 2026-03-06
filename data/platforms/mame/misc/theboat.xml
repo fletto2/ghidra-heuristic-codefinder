@@ -1,0 +1,9 @@
+<platform name="theboat" cpu="z80">
+  <!-- source: MAME misc/tvg01.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="bank_r"/>
+  </memory_map>
+</platform>

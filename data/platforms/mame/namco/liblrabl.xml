@@ -1,0 +1,9 @@
+<platform name="liblrabl" cpu="68000">
+  <!-- source: MAME namco/toypop.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00006000" end="0x000063FF" type="io" name="sharedram_r"/>
+    <region start="0x00006800" end="0x0000682F" type="io" name="read"/>
+    <region start="0x00007000" end="0x00007FFF" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,17 @@
+<platform name="exeriont" cpu="z80">
+  <!-- source: MAME jaleco/exerion.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
+    <region start="0x00006008" end="0x0000600B" type="io" name="protection_r"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="port"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="videoreg_w"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="write"/>
+    <region start="0x0000D000" end="0x0000D001" type="io" name="address_data_w"/>
+    <region start="0x0000D800" end="0x0000D802" type="io" name="address_data_w"/>
+  </memory_map>
+</platform>

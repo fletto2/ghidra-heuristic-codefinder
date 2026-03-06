@@ -1,0 +1,8 @@
+<platform name="sdk86" cpu="8086">
+  <!-- source: MAME intel/sdk86.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

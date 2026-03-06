@@ -1,0 +1,8 @@
+<platform name="thayers" cpu="z80">
+  <!-- source: MAME misc/thayers.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

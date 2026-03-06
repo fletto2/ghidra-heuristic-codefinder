@@ -1,0 +1,8 @@
+<platform name="zexall" cpu="z80">
+  <!-- source: MAME homebrew/zexall.cpp -->
+  <!-- year: 2009 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="main_ram"/>
+    <region start="0x0000FFFD" end="0x0000FFFF" type="io" name="output_ack_r"/>
+  </memory_map>
+</platform>

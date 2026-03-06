@@ -1,0 +1,10 @@
+<platform name="s1945a" cpu="68020">
+  <!-- source: MAME psikyo/psikyo.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00C00000" end="0x00C00007" type="io" name="s1945_input_r"/>
+    <region start="0x00C00006" end="0x00C00009" type="io" name="s1945_mcu_data_w"/>
+    <region start="0x00C0000B" end="0x00C0000B" type="io" name="s1945_mcu_command_w"/>
+    <region start="0x00C00011" end="0x00C00011" type="io" name="write"/>
+  </memory_map>
+</platform>

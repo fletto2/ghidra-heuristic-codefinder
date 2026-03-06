@@ -1,0 +1,20 @@
+<platform name="prosoccr" cpu="6502">
+  <!-- source: MAME dataeast/liberate.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00007FFF" type="io" name="prosoccr_bank_r"/>
+    <region start="0x00004000" end="0x000047FF" type="io" name="colorram"/>
+    <region start="0x00004C00" end="0x00004FFF" type="ram" name="spriteram"/>
+    <region start="0x00006200" end="0x000067FF" type="ram" name="scratchram"/>
+    <region start="0x00008000" end="0x00009800" type="io" name="prosoccr_charram_r"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

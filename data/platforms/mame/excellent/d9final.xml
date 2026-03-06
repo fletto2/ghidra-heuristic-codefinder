@@ -1,0 +1,10 @@
+<platform name="d9final" cpu="z80">
+  <!-- source: MAME excellent/d9final.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000E7FF" type="ram" name="banked"/>
+    <region start="0x0000F000" end="0x0000F007" type="io" name="prot_latch_r"/>
+    <region start="0x0000F800" end="0x0000F80F" type="io" name="read"/>
+  </memory_map>
+</platform>

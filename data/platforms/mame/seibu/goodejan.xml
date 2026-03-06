@@ -1,0 +1,10 @@
+<platform name="goodejan" cpu="z80">
+  <!-- source: MAME seibu/goodejan.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000AFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000EFFF" type="ram" name="sc0_vram"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="sprite_ram"/>
+    <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

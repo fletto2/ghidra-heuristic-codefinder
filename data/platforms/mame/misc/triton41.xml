@@ -1,0 +1,9 @@
+<platform name="triton41" cpu="8080">
+  <!-- source: MAME misc/triton.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000013FF" type="io" name="rom_r"/>
+    <region start="0x00001400" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

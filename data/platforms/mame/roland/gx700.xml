@@ -1,0 +1,9 @@
+<platform name="gx700" cpu="h8">
+  <!-- source: MAME roland/boss_sx700.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x00020000" end="0x00027FFF" type="ram" name="ram"/>
+    <region start="0x00028000" end="0x0003FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

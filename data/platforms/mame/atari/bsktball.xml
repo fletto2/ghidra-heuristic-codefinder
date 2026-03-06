@@ -1,0 +1,14 @@
+<platform name="bsktball" cpu="6502">
+  <!-- source: MAME atari/bsktball.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000800" type="io" name="bsktball_in0_r"/>
+    <region start="0x00000802" end="0x00000803" type="io" name="port"/>
+    <region start="0x00001000" end="0x00001000" type="unmapped" name="nop_write"/>
+    <region start="0x00001010" end="0x00001010" type="io" name="bsktball_bounce_w"/>
+    <region start="0x00001020" end="0x00001030" type="io" name="a0"/>
+    <region start="0x00001800" end="0x00001CFF" type="ram" name="videoram"/>
+    <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

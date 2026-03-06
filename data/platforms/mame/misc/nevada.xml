@@ -1,0 +1,22 @@
+<platform name="nevada" cpu="68000">
+  <!-- source: MAME misc/vlc.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00021FFF" type="ram" name="ram62256"/>
+    <region start="0x00900001" end="0x00900001" type="io" name="address_w"/>
+    <region start="0x00908001" end="0x00908001" type="io" name="register_w"/>
+    <region start="0x00A00000" end="0x00A00001" type="io" name="io_board_r"/>
+    <region start="0x00A08000" end="0x00A08001" type="io" name="io_board_x"/>
+    <region start="0x00A10000" end="0x00A10001" type="io" name="reset16_w"/>
+    <region start="0x00A20001" end="0x00A20001" type="io" name="address_w"/>
+    <region start="0x00A28001" end="0x00A28001" type="io" name="data_w"/>
+    <region start="0x00A30000" end="0x00A30001" type="io" name="rtc_r"/>
+    <region start="0x00A40000" end="0x00A40001" type="io" name="nevada_sec_r"/>
+    <region start="0x00B00000" end="0x00B03FFF" type="ram" name="vram"/>
+    <region start="0x00B10000" end="0x00B10001" type="io" name="lower_byte"/>
+    <region start="0x00B20000" end="0x00B20001" type="io" name="lower_byte"/>
+    <region start="0x00E00000" end="0x00E00001" type="io" name="upper_byte"/>
+    <region start="0x00FA0000" end="0x00FBFFFF" type="ram" name="ram"/>
+    <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

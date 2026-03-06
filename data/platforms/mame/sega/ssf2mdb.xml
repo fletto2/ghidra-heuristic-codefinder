@@ -1,0 +1,9 @@
+<platform name="ssf2mdb" cpu="68000">
+  <!-- source: MAME sega/megadriv_acbl.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00400000" end="0x005FFFFF" type="rom" name="rom"/>
+    <region start="0x00770070" end="0x00770075" type="io" name="dsw_r"/>
+    <region start="0x00A130F0" end="0x00A130FF" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

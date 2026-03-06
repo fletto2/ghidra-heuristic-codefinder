@@ -1,0 +1,11 @@
+<platform name="mmahjong" cpu="z80">
+  <!-- source: MAME tvgames/micom_mahjong.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x000063FF" type="io" name="vram_w"/>
+    <region start="0x00007001" end="0x00007002" type="io" name="input_r"/>
+    <region start="0x00007004" end="0x00007004" type="io" name="sound_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,20 @@
+<platform name="momokoe" cpu="z80">
+  <!-- source: MAME jaleco/momoko.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D064" end="0x0000D0FF" type="ram" name="ram"/>
+    <region start="0x0000D400" end="0x0000D400" type="unmapped" name="nop_write"/>
+    <region start="0x0000D402" end="0x0000D402" type="io" name="flipscreen_w"/>
+    <region start="0x0000D404" end="0x0000D404" type="io" name="reset_w"/>
+    <region start="0x0000D406" end="0x0000D407" type="io" name="write"/>
+    <region start="0x0000D800" end="0x0000DBFF" type="ram" name="palette"/>
+    <region start="0x0000DC00" end="0x0000DC02" type="io" name="fg_scrolly_w"/>
+    <region start="0x0000E000" end="0x0000E3FF" type="ram" name="ram"/>
+    <region start="0x0000E800" end="0x0000E801" type="io" name="text_scrolly_w"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="banked"/>
+    <region start="0x0000F000" end="0x0000F004" type="io" name="bg_scrolly_w"/>
+    <region start="0x0000F006" end="0x0000F007" type="io" name="bg_select_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="ms9540" cpu="68000">
+  <!-- source: MAME skeleton/ms9540.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
+    <region start="0x00010000" end="0x00013FFF" type="rom" name="rom"/>
+    <region start="0x00018000" end="0x00018FFF" type="ram" name="ram"/>
+    <region start="0x0001E001" end="0x0001E001" type="io" name="latch_1e001_r"/>
+    <region start="0x0001F001" end="0x0001F001" type="io" name="latch_1f001_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="ace" cpu="8080">
+  <!-- source: MAME alliedleisure/ace.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000009FF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000020FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x000080FF" type="ram" name="ram"/>
+    <region start="0x00008300" end="0x000083FF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C005" type="ram" name="writeonly"/>
+    <region start="0x0000C008" end="0x0000C017" type="io" name="region_c008"/>
+    <region start="0x0000C013" end="0x0000C013" type="unmapped" name="nop_read"/>
+    <region start="0x0000C018" end="0x0000C019" type="io" name="port"/>
+    <region start="0x0000C020" end="0x0000C026" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

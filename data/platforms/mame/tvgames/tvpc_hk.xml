@@ -1,0 +1,32 @@
+<platform name="tvpc_hk" cpu="6502">
+  <!-- source: MAME tvgames/xavix.cpp -->
+  <!-- year: 2004 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="mainram"/>
+    <region start="0x00004000" end="0x00004FFF" type="io" name="xavix_memoryemu_txarray_r"/>
+    <region start="0x00006000" end="0x00006A1F" type="ram" name="fragment_sprite"/>
+    <region start="0x00006FC8" end="0x00006FD8" type="io" name="tmap1_regs_r"/>
+    <region start="0x00006FE0" end="0x00006FE2" type="io" name="spritefragment_dma_status_r"/>
+    <region start="0x00006FE5" end="0x00006FE6" type="io" name="spritefragment_dma_params_2_w"/>
+    <region start="0x00006FE8" end="0x00006FEA" type="io" name="arena_start_r"/>
+    <region start="0x00006FF0" end="0x00006FF2" type="ram" name="colmix_sh"/>
+    <region start="0x00006FF8" end="0x00006FF9" type="io" name="dispctrl_6ff8_r"/>
+    <region start="0x00006FFA" end="0x00006FFB" type="ram" name="posirq_x"/>
+    <region start="0x00006FFC" end="0x00006FFF" type="io" name="lightgun_r"/>
+    <region start="0x00007400" end="0x0000757F" type="ram" name="ram"/>
+    <region start="0x000075F0" end="0x000075FF" type="io" name="sound_voice_startstop_r"/>
+    <region start="0x00007810" end="0x00007810" type="io" name="slotreg_7810_w"/>
+    <region start="0x00007900" end="0x00007902" type="io" name="extintrf_790x_r"/>
+    <region start="0x00007980" end="0x00007980" type="io" name="rom_dmastat_r"/>
+    <region start="0x00007981" end="0x00007987" type="ram" name="rom_dma_src"/>
+    <region start="0x00007A00" end="0x00007A03" type="io" name="io0_data_r"/>
+    <region start="0x00007A80" end="0x00007A81" type="io" name="ioevent_enable_r"/>
+    <region start="0x00007B00" end="0x00007B01" type="io" name="mouse_7b00_r"/>
+    <region start="0x00007B10" end="0x00007B11" type="io" name="mouse_7b10_r"/>
+    <region start="0x00007B18" end="0x00007B1B" type="io" name="map0x7b18_0x7b1b"/>
+    <region start="0x00007B80" end="0x00007B83" type="io" name="adc_7b80_r"/>
+    <region start="0x00007C00" end="0x00007C03" type="io" name="timer_status_r"/>
+    <region start="0x00007FF0" end="0x00007FF6" type="io" name="barrel_r"/>
+    <region start="0x00007FF9" end="0x00007FFF" type="io" name="vector_enable_w"/>
+  </memory_map>
+</platform>

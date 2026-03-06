@@ -1,0 +1,23 @@
+<platform name="cball" cpu="6800">
+  <!-- source: MAME atari/cball.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="io" name="wram_r"/>
+    <region start="0x00000400" end="0x000007FF" type="ram" name="video_ram"/>
+    <region start="0x00001001" end="0x00001001" type="io" name="port"/>
+    <region start="0x00001003" end="0x00001003" type="io" name="port"/>
+    <region start="0x00001020" end="0x00001020" type="io" name="port"/>
+    <region start="0x00001040" end="0x00001040" type="io" name="port"/>
+    <region start="0x00001060" end="0x00001060" type="io" name="port"/>
+    <region start="0x00001800" end="0x00001800" type="unmapped" name="unmapped"/>
+    <region start="0x00001810" end="0x00001811" type="unmapped" name="unmapped"/>
+    <region start="0x00001820" end="0x00001821" type="unmapped" name="unmapped"/>
+    <region start="0x00001830" end="0x00001831" type="unmapped" name="unmapped"/>
+    <region start="0x00001840" end="0x00001841" type="unmapped" name="unmapped"/>
+    <region start="0x00001850" end="0x00001851" type="unmapped" name="unmapped"/>
+    <region start="0x00001870" end="0x00001871" type="unmapped" name="unmapped"/>
+    <region start="0x00002000" end="0x00002001" type="unmapped" name="unmapped"/>
+    <region start="0x00002800" end="0x00002800" type="io" name="port"/>
+    <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

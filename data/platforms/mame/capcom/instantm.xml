@@ -1,0 +1,16 @@
+<platform name="instantm" cpu="z80">
+  <!-- source: MAME capcom/instantm.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="wfuncinstantm_state"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="wfuncinstantm_state"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="wfuncinstantm_state"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="wfuncinstantm_state"/>
+    <region start="0x0000CC00" end="0x0000CC00" type="io" name="wfuncinstantm_state"/>
+    <region start="0x0000EC00" end="0x0000EC00" type="io" name="rfuncinstantm_state"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="rfuncinstantm_state"/>
+    <region start="0x0000F400" end="0x0000F400" type="io" name="rfuncinstantm_state"/>
+    <region start="0x0000FC00" end="0x0000FC00" type="io" name="rfuncinstantm_state"/>
+  </memory_map>
+</platform>

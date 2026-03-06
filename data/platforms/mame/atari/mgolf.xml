@@ -1,0 +1,20 @@
+<platform name="mgolf" cpu="6502">
+  <!-- source: MAME atari/mgolf.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000009" type="unmapped" name="nop_write"/>
+    <region start="0x00000024" end="0x00000024" type="unmapped" name="nop_write"/>
+    <region start="0x00000028" end="0x00000028" type="unmapped" name="nop_write"/>
+    <region start="0x00000040" end="0x00000041" type="io" name="port"/>
+    <region start="0x00000042" end="0x00000042" type="unmapped" name="nop_write"/>
+    <region start="0x00000044" end="0x00000044" type="unmapped" name="nop_write"/>
+    <region start="0x00000046" end="0x00000046" type="unmapped" name="nop_write"/>
+    <region start="0x00000060" end="0x00000060" type="unmapped" name="nop_write"/>
+    <region start="0x00000061" end="0x00000061" type="io" name="misc_r"/>
+    <region start="0x0000006A" end="0x0000006A" type="unmapped" name="nop_write"/>
+    <region start="0x0000006C" end="0x0000006D" type="unmapped" name="nop_write"/>
+    <region start="0x00000080" end="0x000000FF" type="io" name="wram_r"/>
+    <region start="0x00000800" end="0x00000BFF" type="ram" name="video_ram"/>
+    <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

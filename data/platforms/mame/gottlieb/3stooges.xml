@@ -1,0 +1,8 @@
+<platform name="3stooges" cpu="8088">
+  <!-- source: MAME gottlieb/gottlieb.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00001000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

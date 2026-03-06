@@ -1,0 +1,11 @@
+<platform name="paso1600" cpu="8086">
+  <!-- source: MAME toshiba/paso1600.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="ram"/>
+    <region start="0x000B0000" end="0x000B0FFF" type="ram" name="vram"/>
+    <region start="0x000BFFF0" end="0x000BFFFF" type="io" name="paso1600_pcg_r"/>
+    <region start="0x000C0000" end="0x000DFFFF" type="ram" name="gvram"/>
+    <region start="0x000E0000" end="0x000EFFFF" type="rom" name="rom"/>
+    <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

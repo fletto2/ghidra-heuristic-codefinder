@@ -1,0 +1,10 @@
+<platform name="rotra" cpu="80486">
+  <!-- source: MAME bfm/rastersp.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x007FFFFF" type="ram" name="dram"/>
+    <region start="0x01000000" end="0x01000003" type="io" name="aux_port0_w"/>
+    <region start="0x01000000" end="0x01000007" type="io" name="port"/>
+    <region start="0x01000004" end="0x01000013" type="io" name="port"/>
+  </memory_map>
+</platform>

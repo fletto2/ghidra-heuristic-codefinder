@@ -1,0 +1,13 @@
+<platform name="octopus" cpu="8088">
+  <!-- source: MAME lsi/octopus.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000CFFFF" type="io" name="read"/>
+    <region start="0x000D0000" end="0x000DFFFF" type="ram" name="vram"/>
+    <region start="0x000E0000" end="0x000E3FFF" type="unmapped" name="unmapped"/>
+    <region start="0x000E4000" end="0x000E5FFF" type="ram" name="fram"/>
+    <region start="0x000E6000" end="0x000E7FFF" type="rom" name="rom"/>
+    <region start="0x000E8000" end="0x000FBFFF" type="unmapped" name="unmapped"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,16 @@
+<platform name="luna_68k" cpu="68030">
+  <!-- source: MAME omron/luna_68k.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00000007" type="io" name="region_0"/>
+    <region start="0x20200000" end="0x20200003" type="io" name="region_20200000"/>
+    <region start="0x30000BA0" end="0x30000BA3" type="io" name="region_30000ba0"/>
+    <region start="0x40000000" end="0x4001FFFF" type="rom" name="rom"/>
+    <region start="0x50000000" end="0x50000007" type="io" name="ba_cd_r"/>
+    <region start="0x58000000" end="0x5800007F" type="io" name="direct"/>
+    <region start="0x60000000" end="0x60000003" type="io" name="read16"/>
+    <region start="0x70000000" end="0x70000003" type="io" name="port"/>
+    <region start="0x78000000" end="0x78000003" type="io" name="cpu_leds_w"/>
+    <region start="0x80000000" end="0xFFFFFFFF" type="io" name="bus_error_r"/>
+  </memory_map>
+</platform>

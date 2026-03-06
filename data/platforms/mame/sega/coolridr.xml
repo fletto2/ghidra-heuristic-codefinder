@@ -1,0 +1,8 @@
+<platform name="coolridr" cpu="sh2">
+  <!-- source: MAME sega/coolridr.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x03C00000" end="0x03C1FFFF" type="ram" name="fb_vram"/>
+    <region start="0x03F00000" end="0x03F0FFFF" type="ram" name="share3"/>
+  </memory_map>
+</platform>

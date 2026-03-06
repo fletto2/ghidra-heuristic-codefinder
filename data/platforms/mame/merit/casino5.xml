@@ -1,0 +1,15 @@
+<platform name="casino5" cpu="z80">
+  <!-- source: MAME merit/merit.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00006FFF" type="ram" name="banked"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="bank_w"/>
+    <region start="0x00007001" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000E001" type="io" name="address_w"/>
+    <region start="0x0000E800" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="io" name="palette_r"/>
+  </memory_map>
+</platform>

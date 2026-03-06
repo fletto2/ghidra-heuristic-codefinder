@@ -1,0 +1,9 @@
+<platform name="clxvme186" cpu="80186">
+  <!-- source: MAME skeleton/clxvme186.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
+    <region start="0x00040000" end="0x000CFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x000F0000" end="0x000F7FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,19 @@
+<platform name="pockstat" cpu="arm7_le">
+  <!-- source: MAME sony/pockstat.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x02000000" end="0x02FFFFFF" type="io" name="rombank_r"/>
+    <region start="0x04000000" end="0x04003FFF" type="rom" name="rom"/>
+    <region start="0x06000000" end="0x06000307" type="io" name="ftlb_r"/>
+    <region start="0x08000000" end="0x0801FFFF" type="io" name="flash_r"/>
+    <region start="0x0A000000" end="0x0A000013" type="io" name="intc_r"/>
+    <region start="0x0A800000" end="0x0A80002B" type="io" name="timer_r"/>
+    <region start="0x0B000000" end="0x0B000007" type="io" name="clock_r"/>
+    <region start="0x0B800000" end="0x0B80000F" type="io" name="rtc_r"/>
+    <region start="0x0D000000" end="0x0D000003" type="io" name="lcd_r"/>
+    <region start="0x0D000100" end="0x0D00017F" type="ram" name="lcd_buffer"/>
+    <region start="0x0D80000C" end="0x0D80000F" type="io" name="audio_r"/>
+    <region start="0x0D800014" end="0x0D800015" type="io" name="data_w"/>
+  </memory_map>
+</platform>

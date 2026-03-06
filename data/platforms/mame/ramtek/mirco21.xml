@@ -1,0 +1,11 @@
+<platform name="mirco21" cpu="8080">
+  <!-- source: MAME ramtek/hitme.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000009FF" type="rom" name="rom"/>
+    <region start="0x00000C00" end="0x00000EFF" type="ram" name="videoram"/>
+    <region start="0x00001000" end="0x000010FF" type="ram" name="ram"/>
+    <region start="0x00001400" end="0x000019FF" type="io" name="hitme_port_0_r"/>
+    <region start="0x00001D00" end="0x00001FFF" type="io" name="output_port_0_w"/>
+  </memory_map>
+</platform>

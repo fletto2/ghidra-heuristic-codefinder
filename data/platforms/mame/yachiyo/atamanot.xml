@@ -1,0 +1,14 @@
+<platform name="atamanot" cpu="z80">
+  <!-- source: MAME yachiyo/ssingles.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x000008FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x000060FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000083FF" type="io" name="atamanot_prot_r"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

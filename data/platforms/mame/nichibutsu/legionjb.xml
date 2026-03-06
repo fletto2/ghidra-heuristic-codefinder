@@ -1,0 +1,9 @@
+<platform name="legionjb" cpu="68000">
+  <!-- source: MAME nichibutsu/armedf.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00040000" end="0x0004003F" type="io" name="legionjb_fg_scroll_w"/>
+    <region start="0x00068000" end="0x00069FFF" type="io" name="text_videoram_r"/>
+    <region start="0x0007C000" end="0x0007C001" type="io" name="armedf_io_w"/>
+  </memory_map>
+</platform>

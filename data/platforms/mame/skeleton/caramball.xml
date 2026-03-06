@@ -1,0 +1,12 @@
+<platform name="caramball" cpu="8085">
+  <!-- source: MAME skeleton/caramball.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000A107" type="io" name="memory_r"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="data_r"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="address_w"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="f000_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="cirsa820xxx" cpu="8085">
+  <!-- source: MAME cirsa/cirsa820xxx.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
+    <region start="0x00007403" end="0x00007403" type="unmapped" name="nop_write"/>
+    <region start="0x00007800" end="0x00007801" type="io" name="address_data_w"/>
+  </memory_map>
+</platform>

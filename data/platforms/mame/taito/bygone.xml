@@ -1,0 +1,8 @@
+<platform name="bygone" cpu="z80">
+  <!-- source: MAME taito/lkage.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x0000F062" end="0x0000F062" type="io" name="data_r"/>
+    <region start="0x0000F087" end="0x0000F087" type="io" name="mcu_status_r"/>
+  </memory_map>
+</platform>

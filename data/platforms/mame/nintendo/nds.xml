@@ -1,0 +1,21 @@
+<platform name="nds" cpu="arm7_le">
+  <!-- source: MAME nintendo/nds.cpp -->
+  <!-- year: 2004 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x02000000" end="0x023FFFFF" type="ram" name="mainram"/>
+    <region start="0x03000000" end="0x03007FFF" type="io" name="amap32"/>
+    <region start="0x03800000" end="0x0380FFFF" type="ram" name="arm7ram"/>
+    <region start="0x04000000" end="0x0410FFFF" type="io" name="arm7_io_r"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

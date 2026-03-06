@@ -1,0 +1,10 @@
+<platform name="myaatari" cpu="arm9">
+  <!-- source: MAME tvgames/myaatari.cpp -->
+  <!-- year: 2021 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00FFFFFF" type="ram" name="ram"/>
+    <region start="0x03000000" end="0x03001FFF" type="ram" name="ram"/>
+    <region start="0x08000000" end="0x08FFFFFF" type="rom" name="rom"/>
+    <region start="0x18F00000" end="0x18F3FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

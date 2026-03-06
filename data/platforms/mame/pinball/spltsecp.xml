@@ -1,0 +1,15 @@
+<platform name="spltsecp" cpu="6800">
+  <!-- source: MAME pinball/st_mp200.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="ram" name="ram"/>
+    <region start="0x00000088" end="0x0000008B" type="io" name="read"/>
+    <region start="0x00000090" end="0x00000093" type="io" name="read"/>
+    <region start="0x00002000" end="0x0000207F" type="ram" name="ram"/>
+    <region start="0x00002104" end="0x0000210B" type="io" name="read"/>
+    <region start="0x00002110" end="0x00002113" type="io" name="read"/>
+    <region start="0x00002120" end="0x00002123" type="io" name="read"/>
+    <region start="0x00002140" end="0x00002143" type="io" name="read"/>
+    <region start="0x00003000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

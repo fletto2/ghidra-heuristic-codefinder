@@ -1,0 +1,8 @@
+<platform name="shrike" cpu="68000">
+  <!-- source: MAME midway/balsente.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00009E00" end="0x00009FFF" type="io" name="shrike_shared_6809_r"/>
+    <region start="0x00009E01" end="0x00009E01" type="io" name="shrike_sprite_select_w"/>
+  </memory_map>
+</platform>

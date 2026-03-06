@@ -1,0 +1,16 @@
+<platform name="applix" cpu="68000">
+  <!-- source: MAME ausnz/applix.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0047FFFF" type="ram" name="expansion"/>
+    <region start="0x00500000" end="0x0051FFFF" type="rom" name="rom"/>
+    <region start="0x00600000" end="0x006001FF" type="io" name="palette_w"/>
+    <region start="0x00700000" end="0x00700007" type="io" name="ab_dc_r"/>
+    <region start="0x00700080" end="0x0070011F" type="io" name="applix_inputs_r"/>
+    <region start="0x00700180" end="0x00700180" type="io" name="status_r"/>
+    <region start="0x00700182" end="0x00700182" type="io" name="register_r"/>
+    <region start="0x00FFFFC0" end="0x00FFFFC3" type="io" name="fdc_data_r"/>
+    <region start="0x00FFFFC8" end="0x00FFFFCD" type="io" name="fdc_stat_r"/>
+    <region start="0x00FFFFD0" end="0x00FFFFD1" type="io" name="fdc_cmd_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="gforce2" cpu="z80">
+  <!-- source: MAME sega/segaybd.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00080000" end="0x00080007" type="io" name="read"/>
+    <region start="0x00082001" end="0x00082001" type="io" name="write"/>
+    <region start="0x00084000" end="0x0008401F" type="io" name="read"/>
+    <region start="0x00086000" end="0x00087FFF" type="io" name="map0x086000_0x087fff_dea0"/>
+    <region start="0x000C0000" end="0x000CFFFF" type="ram" name="shareram"/>
+    <region start="0x00100000" end="0x0010001F" type="io" name="read"/>
+    <region start="0x00100040" end="0x00100047" type="io" name="d7_r"/>
+    <region start="0x001F0000" end="0x001FFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

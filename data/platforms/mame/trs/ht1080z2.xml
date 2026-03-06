@@ -1,0 +1,10 @@
+<platform name="ht1080z2" cpu="z80">
+  <!-- source: MAME trs/trs80.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000037FF" type="rom" name="rom"/>
+    <region start="0x000037DE" end="0x000037EF" type="io" name="sys80_f9_r"/>
+    <region start="0x00003800" end="0x00003BFF" type="io" name="keyboard_r"/>
+    <region start="0x00003C00" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

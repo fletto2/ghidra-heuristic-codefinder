@@ -1,0 +1,9 @@
+<platform name="ptrmj" cpu="8085">
+  <!-- source: MAME irem/m14.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="video_ram"/>
+  </memory_map>
+</platform>

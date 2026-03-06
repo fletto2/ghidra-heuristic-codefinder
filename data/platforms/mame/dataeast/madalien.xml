@@ -1,0 +1,21 @@
+<platform name="madalien" cpu="6502">
+  <!-- source: MAME dataeast/madalien.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="videoram"/>
+    <region start="0x00008000" end="0x00008001" type="io" name="address_w"/>
+    <region start="0x00008004" end="0x00008004" type="ram" name="video_control"/>
+    <region start="0x00008005" end="0x00008006" type="io" name="madalien_output_w"/>
+    <region start="0x00008008" end="0x00008009" type="ram" name="shift_hi"/>
+    <region start="0x0000800B" end="0x0000800F" type="ram" name="video_flags"/>
+    <region start="0x00009000" end="0x00009002" type="io" name="port"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

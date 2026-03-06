@@ -1,0 +1,9 @@
+<platform name="mraker" cpu="8080">
+  <!-- source: MAME midw8080/8080bw.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="ram" name="banked"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="eeprom_r"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="bank_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="monkelf" cpu="68000">
+  <!-- source: MAME jaleco/megasys1.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00044200" end="0x00044205" type="io" name="monkelf_scroll0_w"/>
+    <region start="0x00044208" end="0x0004420D" type="io" name="monkelf_scroll1_w"/>
+    <region start="0x000E0002" end="0x000E000B" type="io" name="port"/>
+  </memory_map>
+</platform>

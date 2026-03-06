@@ -1,0 +1,8 @@
+<platform name="efo_zsu" cpu="z80">
+  <!-- source: MAME shared/efo_zsu.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00006FFF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x000077FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="rombank"/>
+  </memory_map>
+</platform>

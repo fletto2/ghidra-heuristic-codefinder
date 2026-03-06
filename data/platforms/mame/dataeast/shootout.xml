@@ -1,0 +1,20 @@
+<platform name="shootout" cpu="6502">
+  <!-- source: MAME dataeast/shootout.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001003" type="io" name="port"/>
+    <region start="0x00001004" end="0x000017FF" type="ram" name="ram"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="coincounter_w"/>
+    <region start="0x00002000" end="0x000021FF" type="ram" name="ram"/>
+    <region start="0x00002800" end="0x00002801" type="io" name="read"/>
+    <region start="0x00003000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

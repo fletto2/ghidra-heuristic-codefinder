@@ -1,0 +1,19 @@
+<platform name="pturn" cpu="z80">
+  <!-- source: MAME jaleco/pturn.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000C800" end="0x0000CFFF" type="io" name="custom_r"/>
+    <region start="0x0000DFE0" end="0x0000DFE0" type="unmapped" name="unmapped"/>
+    <region start="0x0000E000" end="0x0000E3FF" type="ram" name="videoram"/>
+    <region start="0x0000E400" end="0x0000E400" type="io" name="fgpalette_w"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="write"/>
+    <region start="0x0000F000" end="0x0000F0FF" type="ram" name="spriteram"/>
+    <region start="0x0000F400" end="0x0000F400" type="io" name="bg_scrollx_w"/>
+    <region start="0x0000F800" end="0x0000F800" type="unmapped" name="nop_write"/>
+    <region start="0x0000F801" end="0x0000F805" type="io" name="bgcolor_w"/>
+    <region start="0x0000F806" end="0x0000F806" type="unmapped" name="nop_read"/>
+    <region start="0x0000FC00" end="0x0000FC07" type="io" name="d0"/>
+  </memory_map>
+</platform>

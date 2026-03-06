@@ -1,0 +1,12 @@
+<platform name="bingowav" cpu="z80">
+  <!-- source: MAME taito/bingowav.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0010FFFF" type="ram" name="ram"/>
+    <region start="0x00120000" end="0x0012001F" type="io" name="read"/>
+    <region start="0x00140000" end="0x00140001" type="unmapped" name="nop_read"/>
+    <region start="0x00150001" end="0x00150001" type="io" name="master_port_w"/>
+    <region start="0x00150003" end="0x00150003" type="io" name="master_comm_r"/>
+  </memory_map>
+</platform>

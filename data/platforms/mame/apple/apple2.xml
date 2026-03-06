@@ -1,0 +1,14 @@
+<platform name="apple2" cpu="6502">
+  <!-- source: MAME apple/apple2.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000C000" type="io" name="ram_r"/>
+    <region start="0x0000C010" end="0x0000C010" type="io" name="keyb_clr_strobe_r"/>
+    <region start="0x0000C020" end="0x0000C020" type="io" name="cassette_toggle_r"/>
+    <region start="0x0000C030" end="0x0000C030" type="io" name="speaker_toggle_r"/>
+    <region start="0x0000C040" end="0x0000C040" type="io" name="utility_strobe_r"/>
+    <region start="0x0000C050" end="0x0000C067" type="io" name="switches_r"/>
+    <region start="0x0000C070" end="0x0000C070" type="io" name="controller_strobe_r"/>
+    <region start="0x0000C080" end="0x0000FFFF" type="io" name="c080_r"/>
+  </memory_map>
+</platform>

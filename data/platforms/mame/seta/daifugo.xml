@@ -1,0 +1,11 @@
+<platform name="daifugo" cpu="z80">
+  <!-- source: MAME seta/speedatk.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00008000" end="0x00008001" type="io" name="daifugo_key_matrix_r"/>
+    <region start="0x00008464" end="0x00008465" type="io" name="region_8464"/>
+    <region start="0x00008469" end="0x00008469" type="io" name="region_8469"/>
+    <region start="0x00008471" end="0x00008471" type="io" name="region_8471"/>
+    <region start="0x00008630" end="0x00008630" type="io" name="region_8630"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="majorpkr" cpu="z80">
+  <!-- source: MAME misc/majorpkr.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000F7FF" type="ram" name="banked"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="io" name="region_f800"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="debutm" cpu="8086">
+  <!-- source: MAME ussr/debut.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

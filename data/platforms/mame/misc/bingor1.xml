@@ -1,0 +1,11 @@
+<platform name="bingor1" cpu="80186">
+  <!-- source: MAME misc/bingor.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00090000" end="0x0009FFFF" type="rom" name="rom"/>
+    <region start="0x000A0000" end="0x000AFFFF" type="ram" name="blit_ram"/>
+    <region start="0x000A0300" end="0x000A031F" type="io" name="write16"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

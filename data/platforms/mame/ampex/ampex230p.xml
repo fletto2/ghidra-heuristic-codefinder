@@ -1,0 +1,9 @@
+<platform name="ampex230p" cpu="z80">
+  <!-- source: MAME ampex/ampex210.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008007" type="io" name="read"/>
+    <region start="0x0000A000" end="0x0000DFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

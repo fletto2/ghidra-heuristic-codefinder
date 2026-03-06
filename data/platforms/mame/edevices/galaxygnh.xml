@@ -1,0 +1,13 @@
+<platform name="galaxygnh" cpu="8088">
+  <!-- source: MAME edevices/fantland.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00010000" end="0x0002FFFF" type="rom" name="rom"/>
+    <region start="0x00052000" end="0x000521FF" type="ram" name="palette"/>
+    <region start="0x00053000" end="0x00053003" type="io" name="nmi_enable_w"/>
+    <region start="0x00054000" end="0x000567FF" type="ram" name="spriteram"/>
+    <region start="0x00060000" end="0x0006FFFF" type="ram" name="spriteram2"/>
+    <region start="0x00070000" end="0x0007FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

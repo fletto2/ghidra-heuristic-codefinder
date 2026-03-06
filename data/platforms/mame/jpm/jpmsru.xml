@@ -1,0 +1,8 @@
+<platform name="jpmsru" cpu="tms9980">
+  <!-- source: MAME jpm/jpmsru.cpp -->
+  <memory_map>
+    <region start="0x00001000" end="0x000013FF" type="rom" name="rom"/>
+    <region start="0x00001400" end="0x000014FF" type="ram" name="nvram"/>
+    <region start="0x00001800" end="0x00001FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

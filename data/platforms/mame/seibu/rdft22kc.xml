@@ -1,0 +1,9 @@
+<platform name="rdft22kc" cpu="z80">
+  <!-- source: MAME seibu/seibuspi.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x0000068E" end="0x0000068F" type="io" name="spi_layerbanks_eeprom_w"/>
+    <region start="0x01200000" end="0x01200000" type="io" name="read"/>
+    <region start="0x01200004" end="0x01200004" type="io" name="read"/>
+  </memory_map>
+</platform>

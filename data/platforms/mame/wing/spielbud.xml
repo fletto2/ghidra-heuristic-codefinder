@@ -1,0 +1,20 @@
+<platform name="spielbud" cpu="z80">
+  <!-- source: MAME wing/slotcarn.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006FFF" type="ram" name="backup_ram"/>
+    <region start="0x00007000" end="0x0000AFFF" type="rom" name="rom"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="address_w"/>
+    <region start="0x0000B100" end="0x0000B100" type="io" name="data_r"/>
+    <region start="0x0000B800" end="0x0000B803" type="io" name="read"/>
+    <region start="0x0000BA00" end="0x0000BA03" type="io" name="read"/>
+    <region start="0x0000BC00" end="0x0000BC03" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="port"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="port"/>
+    <region start="0x0000D800" end="0x0000D81F" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E001" type="io" name="address_w"/>
+    <region start="0x0000E800" end="0x0000F7FF" type="ram" name="raattr"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="io" name="palette_r"/>
+  </memory_map>
+</platform>

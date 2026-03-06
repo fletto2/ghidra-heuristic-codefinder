@@ -1,0 +1,9 @@
+<platform name="yakyuken" cpu="z80">
+  <!-- source: MAME omori/yakyuken.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000037FF" type="rom" name="rom"/>
+    <region start="0x00006400" end="0x000067FF" type="ram" name="nvram"/>
+    <region start="0x00007000" end="0x000073FF" type="io" name="vram_w"/>
+  </memory_map>
+</platform>

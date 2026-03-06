@@ -1,0 +1,20 @@
+<platform name="cmmb162" cpu="65c02">
+  <!-- source: MAME atari/cmmb.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x000013C0" end="0x000013FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00009FFF" type="io" name="amap8"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="port"/>
+    <region start="0x0000C003" end="0x0000C003" type="io" name="region_c003"/>
+    <region start="0x0000C00E" end="0x0000C00F" type="io" name="port"/>
+    <region start="0x0000C010" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

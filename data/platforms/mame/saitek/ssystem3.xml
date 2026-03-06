@@ -1,0 +1,10 @@
+<platform name="ssystem3" cpu="6502">
+  <!-- source: MAME saitek/ssystem3.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000040FF" type="ram" name="nvram"/>
+    <region start="0x00006000" end="0x0000600F" type="io" name="map"/>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

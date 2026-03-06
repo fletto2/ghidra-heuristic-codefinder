@@ -1,0 +1,7 @@
+<platform name="dsb46" cpu="z80">
+  <!-- source: MAME skeleton/dsb46.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

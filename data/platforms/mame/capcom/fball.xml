@@ -1,0 +1,13 @@
+<platform name="fball" cpu="z80">
+  <!-- source: MAME capcom/lwings.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000F7FF" type="ram" name="bank2"/>
+    <region start="0x0000F808" end="0x0000F808" type="io" name="port"/>
+    <region start="0x0000F808" end="0x0000F809" type="io" name="lwings_bg1_scrollx_w"/>
+    <region start="0x0000F809" end="0x0000F80A" type="io" name="port"/>
+    <region start="0x0000F80A" end="0x0000F80B" type="io" name="lwings_bg1_scrolly_w"/>
+    <region start="0x0000F80B" end="0x0000F80E" type="io" name="port"/>
+    <region start="0x0000F80E" end="0x0000F80E" type="io" name="lwings_bankswitch_w"/>
+  </memory_map>
+</platform>

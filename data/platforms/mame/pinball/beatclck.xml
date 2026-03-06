@@ -1,0 +1,10 @@
+<platform name="beatclck" cpu="6803">
+  <!-- source: MAME pinball/by6803.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000020" end="0x00000023" type="io" name="read"/>
+    <region start="0x00000040" end="0x00000043" type="io" name="read"/>
+    <region start="0x00001000" end="0x000017FF" type="ram" name="nvram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

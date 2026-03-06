@@ -1,0 +1,9 @@
+<platform name="mpc60" cpu="80186">
+  <!-- source: MAME akai/mpc60.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="ram"/>
+    <region start="0x000BF000" end="0x000BFFFF" type="io" name="nvram_r"/>
+    <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

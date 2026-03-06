@@ -1,0 +1,23 @@
+<platform name="multiped" cpu="6502">
+  <!-- source: MAME atari/centiped.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="rombank"/>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000400" end="0x0000080F" type="io" name="multiped_0xxx_r"/>
+    <region start="0x00001000" end="0x000013FF" type="ram" name="videoram"/>
+    <region start="0x00001400" end="0x0000140F" type="io" name="read"/>
+    <region start="0x00002000" end="0x00003FFF" type="io" name="multiped_2xxx_r"/>
+    <region start="0x00002480" end="0x0000249F" type="io" name="paletteram"/>
+    <region start="0x00002500" end="0x00002507" type="io" name="d7"/>
+    <region start="0x00002600" end="0x00002600" type="io" name="irq_ack_w"/>
+    <region start="0x00002680" end="0x00002680" type="io" name="reset_w"/>
+    <region start="0x00002700" end="0x00002700" type="unmapped" name="nop_write"/>
+    <region start="0x00002780" end="0x000027BF" type="unmapped" name="nop_write"/>
+    <region start="0x0000A000" end="0x0000A001" type="io" name="centiped_IN0_r"/>
+    <region start="0x0000A010" end="0x0000A011" type="io" name="milliped_IN2_r"/>
+    <region start="0x0000A030" end="0x0000A030" type="unmapped" name="nop_read"/>
+    <region start="0x0000D000" end="0x0000D800" type="io" name="multiped_eeprom_w"/>
+    <region start="0x0000DC00" end="0x0000DC00" type="io" name="multiped_gfxbank_w"/>
+  </memory_map>
+</platform>

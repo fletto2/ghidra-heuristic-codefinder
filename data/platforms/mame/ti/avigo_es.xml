@@ -1,0 +1,8 @@
+<platform name="avigo_es" cpu="z80">
+  <!-- source: MAME ti/avigo.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="ram" name="bank2"/>
+  </memory_map>
+</platform>

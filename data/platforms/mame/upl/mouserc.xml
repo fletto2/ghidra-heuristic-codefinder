@@ -1,0 +1,16 @@
+<platform name="mouserc" cpu="z80">
+  <!-- source: MAME upl/mouser.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006BFF" type="ram" name="ram"/>
+    <region start="0x00008800" end="0x000088FF" type="unmapped" name="nop_write"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="ram"/>
+    <region start="0x00009800" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="port"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="write"/>
+  </memory_map>
+</platform>

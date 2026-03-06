@@ -1,0 +1,9 @@
+<platform name="truco" cpu="6809">
+  <!-- source: MAME misc/truco.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="io" name="read"/>
+    <region start="0x00001800" end="0x00007BFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008005" type="io" name="read"/>
+    <region start="0x00008008" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

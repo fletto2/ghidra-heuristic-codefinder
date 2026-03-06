@@ -1,0 +1,11 @@
+<platform name="coronatn" cpu="68000">
+  <!-- source: MAME jpm/jpmimpct.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x004800A6" end="0x004800A7" type="io" name="slides_video_w"/>
+    <region start="0x004800E0" end="0x004800E1" type="io" name="unk_w"/>
+    <region start="0x004801DC" end="0x004801FF" type="io" name="unk_r"/>
+    <region start="0x00800000" end="0x00800007" type="io" name="host_r"/>
+    <region start="0x00C00000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

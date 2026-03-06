@@ -1,0 +1,8 @@
+<platform name="wcbowl140" cpu="68020">
+  <!-- source: MAME itech/itech32.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00300000" end="0x00300003" type="io" name="region_300000"/>
+    <region start="0x00380000" end="0x00380003" type="io" name="region_380000"/>
+  </memory_map>
+</platform>

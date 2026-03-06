@@ -1,0 +1,11 @@
+<platform name="konin" cpu="8080">
+  <!-- source: MAME mera/konin.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x0000F200" end="0x0000F200" type="unmapped" name="nop_write"/>
+    <region start="0x0000F400" end="0x0000FBFF" type="ram" name="ram"/>
+    <region start="0x0000FC80" end="0x0000FC87" type="io" name="read"/>
+    <region start="0x0000FF00" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="pc100" cpu="8086">
+  <!-- source: MAME nec/pc100.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000BFFFF" type="ram" name="ram"/>
+    <region start="0x000C0000" end="0x000DFFFF" type="io" name="pc100_vram_r"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

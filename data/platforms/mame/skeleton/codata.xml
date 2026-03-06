@@ -1,0 +1,13 @@
+<platform name="codata" cpu="68000">
+  <!-- source: MAME skeleton/codata.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="ram" name="mainram"/>
+    <region start="0x00200000" end="0x00203FFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x00403FFF" type="rom" name="rom"/>
+    <region start="0x00600000" end="0x00600007" type="io" name="ba_cd_r"/>
+    <region start="0x00800000" end="0x00800003" type="io" name="read16"/>
+    <region start="0x00A00000" end="0x00E00001" type="io" name="map0xa00000_0xbfffff_page_map_rw"/>
+    <region start="0x00E00000" end="0x00FFFFFF" type="io" name="map0xe00000_0xffffff_context_register_w"/>
+  </memory_map>
+</platform>

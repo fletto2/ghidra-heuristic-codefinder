@@ -1,0 +1,24 @@
+<platform name="progolfa" cpu="6502">
+  <!-- source: MAME dataeast/progolf.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00007FFF" type="io" name="charram_r"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="videoram"/>
+    <region start="0x00008000" end="0x00009000" type="io" name="region_8000"/>
+    <region start="0x00009200" end="0x00009200" type="io" name="scrollx_hi_w"/>
+    <region start="0x00009400" end="0x00009400" type="io" name="scrollx_lo_w"/>
+    <region start="0x00009600" end="0x00009600" type="io" name="flip_screen_w"/>
+    <region start="0x00009800" end="0x00009800" type="io" name="port"/>
+    <region start="0x00009800" end="0x00009801" type="io" name="address_w"/>
+    <region start="0x00009A00" end="0x00009A00" type="io" name="write"/>
+    <region start="0x00009E00" end="0x00009E00" type="unmapped" name="nop_write"/>
+    <region start="0x0000B000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

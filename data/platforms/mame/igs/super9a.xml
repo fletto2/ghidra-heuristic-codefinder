@@ -1,0 +1,25 @@
+<platform name="super9a" cpu="z80">
+  <!-- source: MAME igs/goldstar.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000B7FF" type="rom" name="rom"/>
+    <region start="0x0000B800" end="0x0000BFFF" type="ram" name="nvram"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="rom" name="rom"/>
+    <region start="0x0000C800" end="0x0000D9FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E1FF" type="ram" name="ram"/>
+    <region start="0x0000E800" end="0x0000E9FF" type="ram" name="ram"/>
+    <region start="0x0000EA00" end="0x0000EAFF" type="rom" name="rom"/>
+    <region start="0x0000F040" end="0x0000F0FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F802" type="io" name="port"/>
+    <region start="0x0000F803" end="0x0000F805" type="unmapped" name="nop_read"/>
+    <region start="0x0000F806" end="0x0000F806" type="io" name="port"/>
+    <region start="0x0000F810" end="0x0000F811" type="io" name="port"/>
+    <region start="0x0000F820" end="0x0000F820" type="io" name="port"/>
+    <region start="0x0000F830" end="0x0000F830" type="io" name="data_r"/>
+    <region start="0x0000F840" end="0x0000F840" type="io" name="address_w"/>
+    <region start="0x0000F900" end="0x0000F900" type="io" name="p1_lamps_w"/>
+    <region start="0x0000FA00" end="0x0000FA00" type="io" name="goldstar_fa00_w"/>
+    <region start="0x0000FC00" end="0x0000FDFF" type="rom" name="rom"/>
+    <region start="0x0000FE00" end="0x0000FFFF" type="ram" name="palette"/>
+  </memory_map>
+</platform>

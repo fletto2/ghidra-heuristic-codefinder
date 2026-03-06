@@ -1,0 +1,12 @@
+<platform name="bcs3c" cpu="z80">
+  <!-- source: MAME ddr/bcs3.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x000013FF" type="io" name="keyboard_r"/>
+    <region start="0x00001400" end="0x000017FF" type="unmapped" name="unmapped"/>
+    <region start="0x00001800" end="0x00001BFF" type="io" name="zx_r"/>
+    <region start="0x00003C00" end="0x00007FFF" type="ram" name="videoram"/>
+    <region start="0x0000F000" end="0x0000F3FF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

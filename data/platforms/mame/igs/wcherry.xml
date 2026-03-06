@@ -1,0 +1,25 @@
+<platform name="wcherry" cpu="z80">
+  <!-- source: MAME igs/goldstar.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000B7FF" type="rom" name="rom"/>
+    <region start="0x0000B800" end="0x0000D9FF" type="ram" name="nvram"/>
+    <region start="0x0000E000" end="0x0000E1FF" type="ram" name="ram"/>
+    <region start="0x0000E800" end="0x0000E9FF" type="ram" name="ram"/>
+    <region start="0x0000F040" end="0x0000F0BF" type="ram" name="ram"/>
+    <region start="0x0000F100" end="0x0000F13F" type="ram" name="ram"/>
+    <region start="0x0000F600" end="0x0000F601" type="ram" name="ram"/>
+    <region start="0x0000F603" end="0x0000F603" type="ram" name="ram"/>
+    <region start="0x0000F610" end="0x0000F612" type="ram" name="ram"/>
+    <region start="0x0000F620" end="0x0000F622" type="ram" name="ram"/>
+    <region start="0x0000F650" end="0x0000F650" type="ram" name="ram"/>
+    <region start="0x0000F680" end="0x0000F684" type="ram" name="ram"/>
+    <region start="0x0000F830" end="0x0000F830" type="io" name="data_r"/>
+    <region start="0x0000F840" end="0x0000F840" type="io" name="address_w"/>
+    <region start="0x0000F850" end="0x0000F850" type="io" name="p1_lamps_w"/>
+    <region start="0x0000F860" end="0x0000F860" type="io" name="p2_lamps_w"/>
+    <region start="0x0000F880" end="0x0000F881" type="io" name="port"/>
+    <region start="0x0000F883" end="0x0000F885" type="io" name="port"/>
+    <region start="0x0000FC00" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

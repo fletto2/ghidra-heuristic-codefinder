@@ -1,0 +1,24 @@
+<platform name="dim68k" cpu="68000">
+  <!-- source: MAME microcraft/dim68k.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x007FFFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x00FF0000" end="0x00FF1FFF" type="rom" name="rom"/>
+    <region start="0x00FF2000" end="0x00FF7FFF" type="ram" name="ram"/>
+    <region start="0x00FF8001" end="0x00FF8001" type="io" name="status_r"/>
+    <region start="0x00FF8003" end="0x00FF8005" type="io" name="register_r"/>
+    <region start="0x00FF8008" end="0x00FF800B" type="io" name="dim68k_video_control_w"/>
+    <region start="0x00FF8800" end="0x00FFB7FF" type="rom" name="rom"/>
+    <region start="0x00FFC400" end="0x00FFC41F" type="io" name="read"/>
+    <region start="0x00FFC800" end="0x00FFC801" type="io" name="dim68k_speaker_r"/>
+    <region start="0x00FFCC00" end="0x00FFCC00" type="io" name="joy_port_w"/>
+    <region start="0x00FFCC10" end="0x00FFCC1F" type="io" name="dim68k_game_switches_r"/>
+    <region start="0x00FFD000" end="0x00FFD003" type="io" name="map"/>
+    <region start="0x00FFD000" end="0x00FFD000" type="io" name="region_ffd000"/>
+    <region start="0x00FFD004" end="0x00FFD005" type="io" name="dim68k_fdc_r"/>
+    <region start="0x00FFD400" end="0x00FFD403" type="io" name="map0x00ffd400_0x00ffd403_emulation_trap"/>
+    <region start="0x00FFD800" end="0x00FFD801" type="io" name="dim68k_printer_strobe_w"/>
+    <region start="0x00FFDC00" end="0x00FFDC01" type="io" name="dim68k_banksw_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,29 @@
+<platform name="wcvol95" cpu="arm7_le">
+  <!-- source: MAME dataeast/deco156.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0010001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x00110000" end="0x00111FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x00114000" end="0x00115FFF" type="io" name="pf2_data_dword_r"/>
+    <region start="0x00120000" end="0x00120FFF" type="io" name="region_120000"/>
+    <region start="0x00124000" end="0x00124FFF" type="io" name="region_124000"/>
+    <region start="0x00130000" end="0x00137FFF" type="ram" name="ram"/>
+    <region start="0x00140000" end="0x00140003" type="io" name="port"/>
+    <region start="0x00150000" end="0x00150003" type="io" name="port"/>
+    <region start="0x00160000" end="0x00161FFF" type="io" name="spriteram_r"/>
+    <region start="0x00170000" end="0x00170003" type="unmapped" name="unmapped"/>
+    <region start="0x00180000" end="0x00180FFF" type="rom" name="palette"/>
+    <region start="0x001A0000" end="0x001A0007" type="io" name="read"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

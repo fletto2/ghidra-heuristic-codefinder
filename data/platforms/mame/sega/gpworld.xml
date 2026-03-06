@@ -1,0 +1,12 @@
+<platform name="gpworld" cpu="z80">
+  <!-- source: MAME sega/gpworld.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000D7FF" type="ram" name="sprite_ram"/>
+    <region start="0x0000D800" end="0x0000D801" type="io" name="ldp_read"/>
+    <region start="0x0000DA00" end="0x0000DA02" type="io" name="port"/>
+    <region start="0x0000DA20" end="0x0000DA20" type="io" name="pedal_in"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

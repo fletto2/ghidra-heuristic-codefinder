@@ -1,0 +1,15 @@
+<platform name="nuretemi" cpu="h8">
+  <!-- source: MAME nichibutsu/hrdvd.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x00200001" type="io" name="port"/>
+    <region start="0x00200000" end="0x00200000" type="io" name="sound_host_command_w"/>
+    <region start="0x00200200" end="0x00200201" type="io" name="hrdvd_mux_r"/>
+    <region start="0x00200400" end="0x00200401" type="io" name="port"/>
+    <region start="0x00200600" end="0x00200607" type="io" name="read"/>
+    <region start="0x00800000" end="0x00BFFFFF" type="rom" name="rom"/>
+    <region start="0x00C80000" end="0x00CBFFFF" type="ram" name="ram"/>
+    <region start="0x00E80000" end="0x00EFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

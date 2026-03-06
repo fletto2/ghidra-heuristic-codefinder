@@ -1,0 +1,9 @@
+<platform name="bingpty" cpu="68000">
+  <!-- source: MAME sega/segasm1.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00340000" end="0x00340FFF" type="io" name="right_r"/>
+    <region start="0x00E40000" end="0x00E40003" type="io" name="port"/>
+    <region start="0x00E40008" end="0x00E40009" type="io" name="port"/>
+  </memory_map>
+</platform>

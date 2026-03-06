@@ -1,0 +1,18 @@
+<platform name="miraxa" cpu="z80">
+  <!-- source: MAME misc/mirax.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C800" end="0x0000D7FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E3FF" type="ram" name="ram"/>
+    <region start="0x0000E800" end="0x0000EA3F" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="port"/>
+    <region start="0x0000F100" end="0x0000F100" type="io" name="port"/>
+    <region start="0x0000F200" end="0x0000F200" type="io" name="port"/>
+    <region start="0x0000F300" end="0x0000F300" type="unmapped" name="nop_read"/>
+    <region start="0x0000F400" end="0x0000F400" type="io" name="port"/>
+    <region start="0x0000F500" end="0x0000F507" type="io" name="d0"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="sound_cmd_w"/>
+    <region start="0x0000F900" end="0x0000F900" type="io" name="map0xf900_0xf900__sound_cmd_mirror_ack"/>
+  </memory_map>
+</platform>

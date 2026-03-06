@@ -1,0 +1,16 @@
+<platform name="sprint2a" cpu="6502">
+  <!-- source: MAME atari/sprint2.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="io" name="wram_r"/>
+    <region start="0x00000400" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000818" end="0x0000081F" type="io" name="input_a_r"/>
+    <region start="0x00000828" end="0x00000837" type="io" name="input_b_r"/>
+    <region start="0x00000840" end="0x000008FF" type="io" name="port"/>
+    <region start="0x00000C00" end="0x00000FFF" type="io" name="sync_r"/>
+    <region start="0x00000C00" end="0x00000F7F" type="io" name="output_latch_w"/>
+    <region start="0x00001000" end="0x000017FF" type="io" name="region_1000"/>
+    <region start="0x00001800" end="0x00001800" type="unmapped" name="nop_read"/>
+    <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

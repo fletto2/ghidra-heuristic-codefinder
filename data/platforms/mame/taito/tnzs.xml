@@ -1,0 +1,13 @@
+<platform name="tnzs" cpu="z80">
+  <!-- source: MAME taito/tnzs.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000DFFF" type="io" name="region_8000"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="share1"/>
+    <region start="0x0000F000" end="0x0000F303" type="io" name="spriteylow_r8"/>
+    <region start="0x0000F400" end="0x0000F400" type="io" name="spritebgflag_w8"/>
+    <region start="0x0000F600" end="0x0000F600" type="unmapped" name="nop_read"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

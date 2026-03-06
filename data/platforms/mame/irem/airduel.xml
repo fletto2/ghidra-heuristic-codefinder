@@ -1,0 +1,17 @@
+<platform name="airduel" cpu="z80">
+  <!-- source: MAME irem/m72.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x000A0000" end="0x000A03FF" type="ram" name="ram"/>
+    <region start="0x000A4000" end="0x000A4BFF" type="io" name="region_a4000"/>
+    <region start="0x000AC000" end="0x000C03FF" type="ram" name="ram"/>
+    <region start="0x000C8000" end="0x000C83FF" type="ram" name="ram"/>
+    <region start="0x000CC000" end="0x000CCBFF" type="io" name="region_cc000"/>
+    <region start="0x000D0000" end="0x000D3FFF" type="ram" name="ram"/>
+    <region start="0x000E0000" end="0x000E0001" type="io" name="irq_line_w"/>
+    <region start="0x000E4000" end="0x000E4001" type="unmapped" name="nop_write"/>
+    <region start="0x000EC000" end="0x000EC000" type="io" name="dmaon_w"/>
+    <region start="0x000FFFF0" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,26 @@
+<platform name="teradrive" cpu="68000">
+  <!-- source: MAME pc/teradrive.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x007FFFFF" type="io" name="map0x000000_0x7fffffviewm_cart_view"/>
+    <region start="0x00000000" end="0x00000FFF" type="io" name="region_0"/>
+    <region start="0x00800000" end="0x00A07FFF" type="io" name="map0x800000_0x9fffff_unmapped_or_32x"/>
+    <region start="0x00A07F00" end="0x00A100FF" type="io" name="map0xa07f00_0xa07fff_z80_vdp_space_freez"/>
+    <region start="0x00A10000" end="0x00A100FF" type="io" name="md_ioctrl_map"/>
+    <region start="0x00A11000" end="0x00A111FF" type="io" name="map0xa11000_0xa110ff_memory_mode_registe"/>
+    <region start="0x00A11100" end="0x00A11101" type="io" name="region_a11100"/>
+    <region start="0x00A11200" end="0x00A112FF" type="io" name="map0xa11200_0xa112ff_z80_reset"/>
+    <region start="0x00A11200" end="0x00A11201" type="io" name="region_a11200"/>
+    <region start="0x00A11300" end="0x00A1DFFF" type="io" name="map0xa11300_0xa113ff_open_bus"/>
+    <region start="0x00A12000" end="0x00A120FF" type="io" name="map0xa12000_0xa120ffmm_exp_funcfdc_map"/>
+    <region start="0x00A13000" end="0x00A130FF" type="io" name="time_r"/>
+    <region start="0x00A14000" end="0x00A14003" type="io" name="map0xa14000_0xa14003_tmss_lock"/>
+    <region start="0x00A15100" end="0x00A153FF" type="io" name="map0xa15100_0xa153ff_32x_registers_if_pr"/>
+    <region start="0x00AE0000" end="0x00AE0003" type="io" name="map0xae0000_0xae0003_teradrive_bus_switc"/>
+    <region start="0x00AE0001" end="0x00AE0001" type="io" name="region_ae0001"/>
+    <region start="0x00AE0003" end="0x00AE0003" type="io" name="region_ae0003"/>
+    <region start="0x00AF0000" end="0x00DFFFFF" type="io" name="io16_swap_r"/>
+    <region start="0x00C00000" end="0x00C0001F" type="io" name="if16_map"/>
+    <region start="0x00E00000" end="0x00E0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

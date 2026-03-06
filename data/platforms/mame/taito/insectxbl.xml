@@ -1,0 +1,8 @@
+<platform name="insectxbl" cpu="z80">
+  <!-- source: MAME taito/tnzs.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="insectx_bankswitch1_w"/>
+    <region start="0x0000C000" end="0x0000C002" type="io" name="port"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="gambl186d" cpu="80186">
+  <!-- source: MAME misc/gambl186.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="nvram"/>
+    <region start="0x00040000" end="0x0007FFFF" type="ram" name="banked"/>
+    <region start="0x000A0000" end="0x000BFFFF" type="io" name="mem_r"/>
+    <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

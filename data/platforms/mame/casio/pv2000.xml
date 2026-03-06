@@ -1,0 +1,10 @@
+<platform name="pv2000" cpu="z80">
+  <!-- source: MAME casio/pv2000.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004001" type="io" name="read"/>
+    <region start="0x00007000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="map0x8000_0xbfff_ext_ram"/>
+  </memory_map>
+</platform>

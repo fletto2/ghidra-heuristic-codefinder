@@ -1,0 +1,29 @@
+<platform name="alphaone" cpu="6502">
+  <!-- source: MAME atari/mhavoc.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00001020" end="0x0000103F" type="io" name="dual_pokey_r"/>
+    <region start="0x00001040" end="0x00001040" type="unmapped" name="nop_write"/>
+    <region start="0x00001060" end="0x00001060" type="io" name="port"/>
+    <region start="0x00001080" end="0x00001080" type="io" name="port"/>
+    <region start="0x000010A0" end="0x000010A0" type="io" name="out_0_w"/>
+    <region start="0x000010A4" end="0x000010A4" type="io" name="go_w"/>
+    <region start="0x000010A8" end="0x000010A8" type="io" name="reset_w"/>
+    <region start="0x000010AC" end="0x000010AC" type="io" name="reset_w"/>
+    <region start="0x000010B0" end="0x000010B0" type="io" name="alpha_irq_ack_w"/>
+    <region start="0x000010B4" end="0x000010B4" type="io" name="rom_banksel_w"/>
+    <region start="0x000010B8" end="0x000010B8" type="io" name="ram_banksel_w"/>
+    <region start="0x000010E0" end="0x000010FF" type="ram" name="writeonly"/>
+    <region start="0x00001800" end="0x000018FF" type="io" name="read"/>
+    <region start="0x00002000" end="0x00004FFF" type="ram" name="banked"/>
+    <region start="0x00005000" end="0x00006FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

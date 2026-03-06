@@ -1,0 +1,13 @@
+<platform name="a7800p" cpu="6502">
+  <!-- source: MAME atari/a7800.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x0000003F" type="io" name="tia_r"/>
+    <region start="0x00000280" end="0x0000029F" type="io" name="io_map"/>
+    <region start="0x00000480" end="0x000004FF" type="io" name="ram_map"/>
+    <region start="0x00001800" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002200" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x0000FFFF" type="io" name="40xx"/>
+  </memory_map>
+</platform>

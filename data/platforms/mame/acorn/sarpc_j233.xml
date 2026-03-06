@@ -1,0 +1,24 @@
+<platform name="sarpc_j233" cpu="arm7_le">
+  <!-- source: MAME acorn/riscpc.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="rom" name="rom"/>
+    <region start="0x01000000" end="0x01FFFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x02000000" end="0x027FFFFF" type="ram" name="ram"/>
+    <region start="0x03200000" end="0x032001FF" type="io" name="map"/>
+    <region start="0x03310000" end="0x03310003" type="io" name="port"/>
+    <region start="0x03400000" end="0x037FFFFF" type="io" name="write"/>
+    <region start="0x10000000" end="0x18FFFFFF" type="ram" name="ram"/>
+    <region start="0x1C000000" end="0x1CFFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

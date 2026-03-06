@@ -1,0 +1,10 @@
+<platform name="drgnwrldv11ha" cpu="68000">
+  <!-- source: MAME igs/igs011.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00001600" end="0x0000167F" type="io" name="igs012_prot_swap_w"/>
+    <region start="0x0000D400" end="0x0000D4FF" type="io" name="igs011_prot2_dec_w"/>
+    <region start="0x00902000" end="0x00902FFF" type="io" name="igs012_prot_reset_w"/>
+    <region start="0x00902000" end="0x00902005" type="io" name="igs012_prot_fake_r"/>
+  </memory_map>
+</platform>

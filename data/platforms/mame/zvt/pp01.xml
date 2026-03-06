@@ -1,0 +1,8 @@
+<platform name="pp01" cpu="8080">
+  <!-- source: MAME zvt/pp01.cpp -->
+  <memory_map>
+    <region start="0x000000C0" end="0x000000C9" type="io" name="read"/>
+    <region start="0x000000CC" end="0x000000DB" type="io" name="video_write_mode_w"/>
+    <region start="0x000000E0" end="0x000000EF" type="io" name="mem_block_r"/>
+  </memory_map>
+</platform>

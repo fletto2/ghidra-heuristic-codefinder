@@ -1,0 +1,10 @@
+<platform name="sryudens" cpu="z80">
+  <!-- source: MAME dynax/ddenlovr.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00000051" end="0x00000051" type="io" name="magic_r"/>
+    <region start="0x00006000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x000081FF" type="io" name="ddenlovr_palette_w"/>
+  </memory_map>
+</platform>

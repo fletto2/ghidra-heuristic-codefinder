@@ -1,0 +1,21 @@
+<platform name="hikaru" cpu="arm7_le">
+  <!-- source: MAME sega/hikaru.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00000000" end="0x03FFFFFF" type="io" name="region_0"/>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x04000000" end="0x040000FF" type="io" name="registers_r"/>
+    <region start="0x0C000000" end="0x0DFFFFFF" type="ram" name="main_ram"/>
+    <region start="0x14000000" end="0x1BFFFFFF" type="io" name="region_14000000"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

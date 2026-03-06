@@ -1,0 +1,10 @@
+<platform name="bm3final" cpu="68000">
+  <!-- source: MAME konami/firebeat.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x70000000" end="0x70001FFF" type="io" name="midi_uart_r"/>
+    <region start="0x70008000" end="0x7000807F" type="io" name="read"/>
+    <region start="0x7D000330" end="0x7D00033F" type="unmapped" name="nop_write"/>
+    <region start="0x7D000340" end="0x7D00035F" type="io" name="sensor_r"/>
+  </memory_map>
+</platform>

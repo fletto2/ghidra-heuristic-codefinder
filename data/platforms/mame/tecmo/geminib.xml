@@ -1,0 +1,11 @@
+<platform name="geminib" cpu="z80">
+  <!-- source: MAME tecmo/tecmo.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A001" type="io" name="write"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="read"/>
+    <region start="0x0000CC00" end="0x0000CC00" type="io" name="acknowledge_w"/>
+  </memory_map>
+</platform>

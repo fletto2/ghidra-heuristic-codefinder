@@ -1,0 +1,19 @@
+<platform name="tumblep" cpu="68000">
+  <!-- source: MAME dataeast/supbtime.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="writeonly"/>
+    <region start="0x00100001" end="0x00100001" type="io" name="write"/>
+    <region start="0x00120000" end="0x00123FFF" type="ram" name="ram"/>
+    <region start="0x00140000" end="0x001407FF" type="ram" name="palette"/>
+    <region start="0x00180000" end="0x00180003" type="io" name="port"/>
+    <region start="0x00180008" end="0x0018000B" type="io" name="port"/>
+    <region start="0x0018000A" end="0x0018000D" type="unmapped" name="nop_write"/>
+    <region start="0x001A0000" end="0x001A07FF" type="ram" name="ram"/>
+    <region start="0x00300000" end="0x0030000F" type="io" name="pf_control_w"/>
+    <region start="0x00320000" end="0x00320FFF" type="io" name="pf1_data_r"/>
+    <region start="0x00322000" end="0x00322FFF" type="io" name="pf2_data_r"/>
+    <region start="0x00340000" end="0x003407FF" type="ram" name="writeonly"/>
+    <region start="0x00342000" end="0x003427FF" type="ram" name="writeonly"/>
+  </memory_map>
+</platform>

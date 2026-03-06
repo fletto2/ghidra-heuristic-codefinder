@@ -1,0 +1,10 @@
+<platform name="saturn_cd_hle" cpu="sh2">
+  <!-- source: MAME sega/saturn_cd_hle.cpp -->
+  <memory_map>
+    <region start="0x00018000" end="0x00018003" type="io" name="datatrns_r"/>
+    <region start="0x0008502A" end="0x0008502A" type="io" name="region_8502a"/>
+    <region start="0x00090000" end="0x00090003" type="io" name="datatrns_r"/>
+    <region start="0x00090008" end="0x0009000F" type="io" name="hirq_r"/>
+    <region start="0x00090018" end="0x00090027" type="io" name="dr1_r"/>
+  </memory_map>
+</platform>

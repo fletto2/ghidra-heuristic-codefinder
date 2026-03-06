@@ -1,0 +1,12 @@
+<platform name="regence" cpu="z80">
+  <!-- source: MAME chess/regence.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="rom" name="rom"/>
+    <region start="0x0000D000" end="0x0000D7FF" type="ram" name="nvram"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="input_r"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="leds_w"/>
+  </memory_map>
+</platform>

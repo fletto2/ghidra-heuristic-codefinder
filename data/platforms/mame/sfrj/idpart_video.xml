@@ -1,0 +1,7 @@
+<platform name="idpart_video" cpu="8085">
+  <!-- source: MAME sfrj/idpart_video.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

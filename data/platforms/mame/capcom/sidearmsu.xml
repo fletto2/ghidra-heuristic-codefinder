@@ -1,0 +1,12 @@
+<platform name="sidearmsu" cpu="z80">
+  <!-- source: MAME capcom/sidearms.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000C7FF" type="ram" name="bank1"/>
+    <region start="0x0000C800" end="0x0000C806" type="io" name="write"/>
+    <region start="0x0000C808" end="0x0000C80B" type="ram" name="bg_scrollx"/>
+    <region start="0x0000C80C" end="0x0000C80C" type="io" name="gfxctrl_w"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

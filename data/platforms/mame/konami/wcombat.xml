@@ -1,0 +1,30 @@
+<platform name="wcombat" cpu="ppc">
+  <!-- source: MAME konami/viper.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00FFFFFF" type="ram" name="workram"/>
+    <region start="0x80000000" end="0x800FFFFF" type="io" name="mpc8240_soc_map"/>
+    <region start="0x82000000" end="0x85FFFFFF" type="io" name="voodoo3_r"/>
+    <region start="0xFE800000" end="0xFE8000FF" type="io" name="voodoo3_io_r"/>
+    <region start="0xFEC00000" end="0xFEEFFFFF" type="io" name="pci_config_addr_r"/>
+    <region start="0xFFE00000" end="0xFFE0000F" type="io" name="read"/>
+    <region start="0xFFE08000" end="0xFFE08007" type="unmapped" name="nop_write"/>
+    <region start="0xFFE10000" end="0xFFE10007" type="io" name="input_r"/>
+    <region start="0xFFE20000" end="0xFFE20007" type="unmapped" name="nop_write"/>
+    <region start="0xFFE28000" end="0xFFE28007" type="unmapped" name="nop_write"/>
+    <region start="0xFFE28000" end="0xFFE2801F" type="unmapped" name="nop_read"/>
+    <region start="0xFFE30000" end="0xFFE31FFF" type="io" name="read"/>
+    <region start="0xFFE40000" end="0xFFE40007" type="unmapped" name="unmapped"/>
+    <region start="0xFFE50000" end="0xFFE50007" type="io" name="unk2_w"/>
+    <region start="0xFFE60000" end="0xFFE60007" type="unmapped" name="unmapped"/>
+    <region start="0xFFE70000" end="0xFFE70000" type="io" name="ds2430_r"/>
+    <region start="0xFFE78000" end="0xFFE78000" type="io" name="ds2430_ext_r"/>
+    <region start="0xFFE80000" end="0xFFE80007" type="io" name="unk1a_w"/>
+    <region start="0xFFE88000" end="0xFFE88007" type="io" name="unk1b_w"/>
+    <region start="0xFFE98000" end="0xFFE98007" type="io" name="regs_map"/>
+    <region start="0xFFE9A000" end="0xFFE9BFFF" type="io" name="ram_r"/>
+    <region start="0xFFEA0000" end="0xFFEA0007" type="io" name="region_ffea0000"/>
+    <region start="0xFFEA8000" end="0xFFEA8007" type="unmapped" name="nop_write"/>
+    <region start="0xFFF00000" end="0xFFF3FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

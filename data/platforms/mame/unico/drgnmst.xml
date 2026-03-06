@@ -1,0 +1,8 @@
+<platform name="drgnmst" cpu="68000">
+  <!-- source: MAME unico/drgnmst.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00800181" end="0x00800181" type="io" name="snd_command_w"/>
+    <region start="0x00800189" end="0x00800189" type="io" name="snd_flag_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="wingwar" cpu="v60">
+  <!-- source: MAME sega/model1.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00B00000" end="0x00B01000" type="io" name="share_r"/>
+    <region start="0x00B01002" end="0x00B01002" type="io" name="fg_r"/>
+  </memory_map>
+</platform>

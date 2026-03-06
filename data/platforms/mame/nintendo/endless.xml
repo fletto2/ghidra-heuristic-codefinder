@@ -1,0 +1,9 @@
+<platform name="endless" cpu="68000">
+  <!-- source: MAME nintendo/snesb.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x0000800B" end="0x0000800C" type="io" name="endless_800b_r"/>
+    <region start="0x00580000" end="0x00580FFF" type="io" name="endless_580xxx_r"/>
+    <region start="0x00624B7F" end="0x00624B7F" type="io" name="prot_cnt_r"/>
+  </memory_map>
+</platform>

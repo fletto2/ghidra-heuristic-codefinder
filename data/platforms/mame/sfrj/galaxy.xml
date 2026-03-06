@@ -1,0 +1,10 @@
+<platform name="galaxy" cpu="z80">
+  <!-- source: MAME sfrj/galaxy.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x0000203F" type="io" name="keyboard_r"/>
+    <region start="0x00002800" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,21 @@
+<platform name="fax2" cpu="6502">
+  <!-- source: MAME exidy/exidy.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000400" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00001A00" end="0x00001A00" type="io" name="port"/>
+    <region start="0x00001C00" end="0x00001C00" type="io" name="port"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="fax_bank_select_w"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="banked"/>
+    <region start="0x00005200" end="0x0000520F" type="io" name="read"/>
+    <region start="0x00005213" end="0x00005217" type="unmapped" name="nop_write"/>
+    <region start="0x00006000" end="0x00006FFF" type="ram" name="characterram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

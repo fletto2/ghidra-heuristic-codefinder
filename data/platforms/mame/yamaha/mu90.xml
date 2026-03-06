@@ -1,0 +1,9 @@
+<platform name="mu90" cpu="h8">
+  <!-- source: MAME yamaha/ymmu90.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="ram"/>
+    <region start="0x00400000" end="0x00401FFF" type="io" name="map"/>
+  </memory_map>
+</platform>

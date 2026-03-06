@@ -1,0 +1,16 @@
+<platform name="goldline" cpu="z80">
+  <!-- source: MAME misc/cointek.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000D7FF" type="ram" name="banked"/>
+    <region start="0x0000D800" end="0x0000EFFF" type="io" name="region_d800"/>
+    <region start="0x0000F040" end="0x0000F13F" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="ram" name="ram"/>
+    <region start="0x0000F804" end="0x0000F804" type="io" name="if_bit_0_is_set_it_stops_updating_vblank"/>
+    <region start="0x0000F808" end="0x0000F808" type="io" name="some_kind_of_flag_from_the_audio_cpu"/>
+    <region start="0x0000F810" end="0x0000F815" type="io" name="protection_involving_the_audio_cpu_uploa"/>
+    <region start="0x0000FA00" end="0x0000FA00" type="io" name="control_w"/>
+    <region start="0x0000FF00" end="0x0000FF00" type="io" name="map0xff00_0xff00r"/>
+  </memory_map>
+</platform>

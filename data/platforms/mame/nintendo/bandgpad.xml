@@ -1,0 +1,18 @@
+<platform name="bandgpad" cpu="6502">
+  <!-- source: MAME nintendo/nes_sh6578.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002008" type="io" name="read"/>
+    <region start="0x00002040" end="0x0000207F" type="io" name="palette_read"/>
+    <region start="0x00004000" end="0x00004017" type="io" name="write"/>
+    <region start="0x00004014" end="0x00004017" type="io" name="spriteram_dma"/>
+    <region start="0x00004020" end="0x00004020" type="io" name="timing_setting_control_w"/>
+    <region start="0x00004026" end="0x00004026" type="io" name="extio_r"/>
+    <region start="0x00004027" end="0x00004027" type="ram" name="ram"/>
+    <region start="0x00004031" end="0x00004035" type="io" name="initial_startup_w"/>
+    <region start="0x00004040" end="0x0000404F" type="io" name="bankswitch_r"/>
+    <region start="0x00005000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="bank0_r"/>
+  </memory_map>
+</platform>

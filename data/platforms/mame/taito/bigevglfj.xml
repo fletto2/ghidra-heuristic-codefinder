@@ -1,0 +1,12 @@
+<platform name="bigevglfj" cpu="z80">
+  <!-- source: MAME taito/bigevglf.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000DBFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="io" name="palette_w"/>
+    <region start="0x0000E800" end="0x0000EFFF" type="ram" name="writeonly"/>
+    <region start="0x0000F000" end="0x0000F0FF" type="io" name="vidram_r"/>
+    <region start="0x0000F840" end="0x0000F8FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

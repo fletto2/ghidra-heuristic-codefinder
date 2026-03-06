@@ -1,0 +1,8 @@
+<platform name="cutefght" cpu="68020">
+  <!-- source: MAME misc/dreamwld.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00C00028" end="0x00C00028" type="io" name="read"/>
+    <region start="0x00C0002F" end="0x00C0002F" type="io" name="sfx"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="suprpokra" cpu="z80">
+  <!-- source: MAME misc/gei.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="nvram"/>
+    <region start="0x00004800" end="0x00004803" type="io" name="read"/>
+    <region start="0x00005000" end="0x00005003" type="io" name="read"/>
+    <region start="0x00006200" end="0x00006200" type="io" name="signature_w"/>
+    <region start="0x00006400" end="0x00006400" type="io" name="signature_r"/>
+    <region start="0x00008000" end="0x00008002" type="io" name="drawctrl_w"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="bitmap_w"/>
+  </memory_map>
+</platform>

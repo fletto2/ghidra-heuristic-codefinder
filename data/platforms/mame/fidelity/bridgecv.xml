@@ -1,0 +1,9 @@
+<platform name="bridgecv" cpu="z80">
+  <!-- source: MAME fidelity/card.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000063FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="speech_w"/>
+  </memory_map>
+</platform>

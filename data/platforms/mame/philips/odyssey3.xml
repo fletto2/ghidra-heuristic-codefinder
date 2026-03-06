@@ -1,0 +1,8 @@
+<platform name="odyssey3" cpu="8048">
+  <!-- source: MAME philips/odyssey2.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="rom" name="rom"/>
+    <region start="0x00000400" end="0x00000FFF" type="io" name="rom04"/>
+  </memory_map>
+</platform>

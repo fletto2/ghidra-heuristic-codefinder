@@ -1,0 +1,14 @@
+<platform name="mustachei" cpu="z80">
+  <!-- source: MAME seibu/mustache.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="io" name="data_r"/>
+    <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D003" type="io" name="sound_irq_w"/>
+    <region start="0x0000D400" end="0x0000D4FF" type="io" name="sharedram_r"/>
+    <region start="0x0000D800" end="0x0000D804" type="io" name="port"/>
+    <region start="0x0000D806" end="0x0000D807" type="io" name="scroll_w"/>
+    <region start="0x0000E800" end="0x0000FFFF" type="ram" name="writeonly"/>
+  </memory_map>
+</platform>

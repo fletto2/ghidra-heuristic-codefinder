@@ -1,0 +1,15 @@
+<platform name="ddragon2u" cpu="z80">
+  <!-- source: MAME technos/ddragon.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x000021FF" type="io" name="comram_r"/>
+    <region start="0x00002800" end="0x000037FF" type="ram" name="ram"/>
+    <region start="0x00003800" end="0x00003804" type="io" name="port"/>
+    <region start="0x00003808" end="0x00003808" type="io" name="bankswitch_w"/>
+    <region start="0x00003809" end="0x0000380A" type="ram" name="writeonly"/>
+    <region start="0x0000380B" end="0x0000380F" type="io" name="interrupt_r"/>
+    <region start="0x00003C00" end="0x00007FFF" type="ram" name="palette"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

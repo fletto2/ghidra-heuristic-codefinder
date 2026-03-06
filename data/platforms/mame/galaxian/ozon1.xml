@@ -1,0 +1,13 @@
+<platform name="ozon1" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00004BFF" type="ram" name="videoram"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="spriteram"/>
+    <region start="0x00006801" end="0x00006802" type="io" name="irq_enable_w"/>
+    <region start="0x00006806" end="0x00006807" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x00008100" end="0x00008103" type="io" name="read"/>
+  </memory_map>
+</platform>

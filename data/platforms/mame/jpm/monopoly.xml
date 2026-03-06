@@ -1,0 +1,10 @@
+<platform name="monopoly" cpu="68000">
+  <!-- source: MAME jpm/jpmsys5.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x0001FFFE" end="0x0001FFFF" type="io" name="rombank_w"/>
+    <region start="0x00020000" end="0x0003FFFF" type="ram" name="bank1"/>
+    <region start="0x000460E0" end="0x000460E5" type="io" name="ramdac_w"/>
+    <region start="0x00800000" end="0x00CFFFFF" type="io" name="sys5_tms34061_r"/>
+  </memory_map>
+</platform>

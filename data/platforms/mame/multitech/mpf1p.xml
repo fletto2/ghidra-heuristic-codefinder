@@ -1,0 +1,9 @@
+<platform name="mpf1p" cpu="z80">
+  <!-- source: MAME multitech/mpf1p.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00003FFF" type="io" name="rom"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

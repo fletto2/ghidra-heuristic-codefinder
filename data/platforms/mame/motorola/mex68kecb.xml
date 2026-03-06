@@ -1,0 +1,11 @@
+<platform name="mex68kecb" cpu="68000">
+  <!-- source: MAME motorola/mex68kecb.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00000007" type="io" name="region_0"/>
+    <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x00010000" end="0x00010043" type="io" name="read"/>
+    <region start="0x00010040" end="0x00010043" type="io" name="read"/>
+  </memory_map>
+</platform>

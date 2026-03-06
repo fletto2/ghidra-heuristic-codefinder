@@ -1,0 +1,19 @@
+<platform name="chusenoh" cpu="z80">
+  <!-- source: MAME konami/konmedal.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000C000" end="0x0000C03F" type="io" name="k056832_w"/>
+    <region start="0x0000C100" end="0x0000C100" type="io" name="control2_w"/>
+    <region start="0x0000C200" end="0x0000C201" type="io" name="read"/>
+    <region start="0x0000C300" end="0x0000C300" type="io" name="chusenoh_bankswitch_w"/>
+    <region start="0x0000C500" end="0x0000C500" type="io" name="port"/>
+    <region start="0x0000C600" end="0x0000C60F" type="io" name="k056832_b_w"/>
+    <region start="0x0000C600" end="0x0000C600" type="unmapped" name="nop_read"/>
+    <region start="0x0000C800" end="0x0000C80F" type="io" name="read"/>
+    <region start="0x0000CC00" end="0x0000CC00" type="io" name="read"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="scc_enable_w"/>
+    <region start="0x0000D800" end="0x0000FFFF" type="io" name="region_d800"/>
+  </memory_map>
+</platform>

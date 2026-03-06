@@ -1,0 +1,9 @@
+<platform name="mjdialq2" cpu="z80">
+  <!-- source: MAME dynax/dynax.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="bank1"/>
+  </memory_map>
+</platform>

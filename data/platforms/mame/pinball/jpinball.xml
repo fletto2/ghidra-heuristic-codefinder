@@ -1,0 +1,19 @@
+<platform name="jpinball" cpu="z80">
+  <!-- source: MAME pinball/joctronic.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+    <region start="0x00009000" end="0x00009007" type="io" name="csin_r"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="display_1_w"/>
+    <region start="0x0000C008" end="0x0000C008" type="io" name="display_2_w"/>
+    <region start="0x0000C010" end="0x0000C010" type="io" name="display_3_w"/>
+    <region start="0x0000C018" end="0x0000C018" type="io" name="display_4_w"/>
+    <region start="0x0000C020" end="0x0000C020" type="io" name="display_a_w"/>
+    <region start="0x0000C028" end="0x0000C028" type="io" name="drivers_l_w"/>
+    <region start="0x0000C030" end="0x0000C030" type="io" name="drivers_b_w"/>
+    <region start="0x0000C038" end="0x0000C03F" type="io" name="drivers_w"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="soundlatch_nmi_w"/>
+  </memory_map>
+</platform>

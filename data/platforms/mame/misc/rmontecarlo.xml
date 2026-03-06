@@ -1,0 +1,9 @@
+<platform name="rmontecarlo" cpu="8085">
+  <!-- source: MAME misc/falgas_m89.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00008FFF" type="rom" name="rom"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F8FF" type="io" name="memory_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,13 @@
+<platform name="clshroad" cpu="z80">
+  <!-- source: MAME nichibutsu/clshroad.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000A100" end="0x0000A107" type="io" name="input_r"/>
+    <region start="0x0000A800" end="0x0000B001" type="ram" name="ram"/>
+    <region start="0x0000B002" end="0x0000B003" type="io" name="color_bank_w"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

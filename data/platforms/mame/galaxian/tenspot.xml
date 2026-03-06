@@ -1,0 +1,9 @@
+<platform name="tenspot" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="banked"/>
+    <region start="0x00006002" end="0x00006002" type="io" name="artic_gfxbank_w"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="dsw_read"/>
+  </memory_map>
+</platform>

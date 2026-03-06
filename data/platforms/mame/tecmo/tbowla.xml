@@ -1,0 +1,18 @@
+<platform name="tbowla" cpu="z80">
+  <!-- source: MAME tecmo/tbowl.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="unknown_write"/>
+    <region start="0x0000F000" end="0x0000FBFF" type="ram" name="banked"/>
+    <region start="0x0000FC00" end="0x0000FC01" type="io" name="boardb_bankswitch_w"/>
+    <region start="0x0000FC01" end="0x0000FC02" type="io" name="unknown_write"/>
+    <region start="0x0000FC02" end="0x0000FC03" type="io" name="unknown_write"/>
+    <region start="0x0000FC05" end="0x0000FC08" type="io" name="unknown_write"/>
+    <region start="0x0000FC08" end="0x0000FC0A" type="io" name="unknown_write"/>
+    <region start="0x0000FC0A" end="0x0000FC0A" type="io" name="unknown_write"/>
+    <region start="0x0000FC0D" end="0x0000FC0D" type="io" name="write"/>
+    <region start="0x0000FC10" end="0x0000FC17" type="io" name="region_fc10"/>
+  </memory_map>
+</platform>

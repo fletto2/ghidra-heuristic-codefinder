@@ -1,0 +1,9 @@
+<platform name="uts20" cpu="z80">
+  <!-- source: MAME unisys/univac.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="io" name="bank_r"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="videoram"/>
+  </memory_map>
+</platform>

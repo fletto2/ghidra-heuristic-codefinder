@@ -1,0 +1,14 @@
+<platform name="saturn_scu" cpu="sh2">
+  <!-- source: MAME sega/saturn_scu.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000017" type="io" name="dma_lv0_r"/>
+    <region start="0x00000020" end="0x00000037" type="io" name="dma_lv1_r"/>
+    <region start="0x00000040" end="0x00000057" type="io" name="dma_lv2_r"/>
+    <region start="0x0000005C" end="0x00000063" type="io" name="dma_status_r"/>
+    <region start="0x0000007C" end="0x00000097" type="io" name="dma_status_r"/>
+    <region start="0x0000009A" end="0x0000009B" type="io" name="t1_mode_w"/>
+    <region start="0x000000A0" end="0x000000AB" type="io" name="irq_mask_r"/>
+    <region start="0x000000B0" end="0x000000BB" type="io" name="abus_set_r"/>
+    <region start="0x000000C4" end="0x000000CB" type="io" name="sdram_r"/>
+  </memory_map>
+</platform>

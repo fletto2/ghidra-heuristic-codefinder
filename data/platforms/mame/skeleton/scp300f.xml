@@ -1,0 +1,8 @@
+<platform name="scp300f" cpu="8086">
+  <!-- source: MAME skeleton/seattlecmp.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FF7FF" type="ram" name="ram"/>
+    <region start="0x000FF800" end="0x000FFFFF" type="io" name="region_ff800"/>
+  </memory_map>
+</platform>

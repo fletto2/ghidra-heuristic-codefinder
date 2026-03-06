@@ -1,0 +1,16 @@
+<platform name="puzzli" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0017FFFF" type="io" name="v2_map"/>
+    <region start="0x00200000" end="0x00200001" type="io" name="port"/>
+    <region start="0x00200001" end="0x00200003" type="io" name="vmetal_control_w"/>
+    <region start="0x00300000" end="0x0031FFFF" type="io" name="balcube_dsw_r"/>
+    <region start="0x00400001" end="0x00400001" type="io" name="read"/>
+    <region start="0x00400003" end="0x00400003" type="io" name="write"/>
+    <region start="0x00500000" end="0x00500000" type="io" name="es8712_reset_w"/>
+    <region start="0x00500000" end="0x0050000D" type="io" name="write"/>
+    <region start="0x00F00000" end="0x00F0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

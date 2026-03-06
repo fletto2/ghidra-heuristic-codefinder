@@ -1,0 +1,9 @@
+<platform name="sapizps3" cpu="8080">
+  <!-- source: MAME tesla/sapi1.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000F7FF" type="ram" name="bank1"/>
+    <region start="0x0000F800" end="0x0000FDFF" type="rom" name="rom"/>
+    <region start="0x0000FE00" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

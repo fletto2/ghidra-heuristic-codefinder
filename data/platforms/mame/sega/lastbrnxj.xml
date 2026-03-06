@@ -1,0 +1,20 @@
+<platform name="lastbrnxj" cpu="68000">
+  <!-- source: MAME sega/model2.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00200000" end="0x0023FFFF" type="ram" name="ram"/>
+    <region start="0x00804000" end="0x00807FFF" type="io" name="geo_prg_r"/>
+    <region start="0x00840000" end="0x00840FFF" type="io" name="geo_sharc_iop_w"/>
+    <region start="0x00880000" end="0x00887FFF" type="io" name="copro_function_port_w"/>
+    <region start="0x008C0000" end="0x008C0FFF" type="io" name="external_iop_write"/>
+    <region start="0x00980000" end="0x00980003" type="io" name="copro_ctl1_r"/>
+    <region start="0x00980008" end="0x0098000B" type="io" name="geo_ctl1_w"/>
+    <region start="0x00980014" end="0x00980017" type="io" name="copro_status_r"/>
+    <region start="0x00980020" end="0x00980023" type="unmapped" name="unmapped"/>
+    <region start="0x009C0000" end="0x009C0007" type="io" name="model2_serial_r"/>
+    <region start="0x01C00000" end="0x01C0001F" type="io" name="read"/>
+    <region start="0x01C00040" end="0x01C00043" type="unmapped" name="nop_write"/>
+    <region start="0x11000000" end="0x113FFFFF" type="ram" name="textureram0"/>
+    <region start="0x11400000" end="0x1140FFFF" type="io" name="lumaram_r"/>
+  </memory_map>
+</platform>

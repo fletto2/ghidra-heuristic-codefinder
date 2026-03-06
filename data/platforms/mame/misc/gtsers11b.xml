@@ -1,0 +1,22 @@
+<platform name="gtsers11b" cpu="z80">
+  <!-- source: MAME misc/gei.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="catchall"/>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="nvram"/>
+    <region start="0x00004800" end="0x00004803" type="io" name="read"/>
+    <region start="0x00005000" end="0x00005003" type="io" name="read"/>
+    <region start="0x0000601F" end="0x0000601F" type="io" name="region_601f"/>
+    <region start="0x0000602F" end="0x0000602F" type="io" name="region_602f"/>
+    <region start="0x00006037" end="0x00006037" type="io" name="region_6037"/>
+    <region start="0x0000603B" end="0x0000603B" type="io" name="region_603b"/>
+    <region start="0x0000603D" end="0x0000603E" type="io" name="region_603d"/>
+    <region start="0x00006200" end="0x00006200" type="io" name="signature_w"/>
+    <region start="0x00006400" end="0x00006400" type="io" name="signature_r"/>
+    <region start="0x00007800" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x00008002" type="io" name="drawctrl_w"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="bitmap_w"/>
+  </memory_map>
+</platform>

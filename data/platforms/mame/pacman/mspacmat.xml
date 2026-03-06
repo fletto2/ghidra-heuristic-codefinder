@@ -1,0 +1,26 @@
+<platform name="mspacmat" cpu="z80">
+  <!-- source: MAME pacman/pacman.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="bank1"/>
+    <region start="0x00000038" end="0x0000003F" type="io" name="mspacman_disable_decode_w"/>
+    <region start="0x000003B0" end="0x000003B7" type="io" name="mspacman_disable_decode_w"/>
+    <region start="0x00001600" end="0x00001607" type="io" name="mspacman_disable_decode_w"/>
+    <region start="0x00002120" end="0x00002127" type="io" name="mspacman_disable_decode_w"/>
+    <region start="0x00003FF0" end="0x00003FFF" type="io" name="mspacman_disable_decode_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="videoram"/>
+    <region start="0x00004800" end="0x00004BFF" type="io" name="pacman_read_nop"/>
+    <region start="0x00004C00" end="0x00004FFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x00005007" type="io" name="d0"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="port"/>
+    <region start="0x00005040" end="0x0000505F" type="io" name="pacman_sound_w"/>
+    <region start="0x00005040" end="0x00005040" type="io" name="port"/>
+    <region start="0x00005060" end="0x0000506F" type="ram" name="spriteram2"/>
+    <region start="0x00005070" end="0x00005080" type="unmapped" name="nop_write"/>
+    <region start="0x00005080" end="0x00005080" type="io" name="port"/>
+    <region start="0x000050C0" end="0x000050C0" type="io" name="reset_w"/>
+    <region start="0x00008000" end="0x00008007" type="io" name="mspacman_disable_decode_w"/>
+    <region start="0x000097F0" end="0x000097F7" type="io" name="mspacman_disable_decode_w"/>
+  </memory_map>
+</platform>

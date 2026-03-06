@@ -1,0 +1,8 @@
+<platform name="fsoccer" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="status_r"/>
+    <region start="0x0000F400" end="0x0000F400" type="io" name="data_w"/>
+  </memory_map>
+</platform>

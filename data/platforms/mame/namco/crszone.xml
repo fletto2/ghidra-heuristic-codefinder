@@ -1,0 +1,9 @@
+<platform name="crszone" cpu="h8">
+  <!-- source: MAME namco/namcos23.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x0E400000" end="0x0E400003" type="io" name="sh2_trigger_r"/>
+    <region start="0x0E600000" end="0x0E600003" type="io" name="mips_sh2_unk_r"/>
+    <region start="0x0E700000" end="0x0E70FFFF" type="io" name="mips_to_sh2_shared_r"/>
+  </memory_map>
+</platform>

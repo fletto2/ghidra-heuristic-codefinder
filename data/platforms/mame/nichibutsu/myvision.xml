@@ -1,0 +1,10 @@
+<platform name="myvision" cpu="z80">
+  <!-- source: MAME nichibutsu/myvision.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="io" name="map0x0000_0x5fff_______mapped_by_the_car"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="vram_read"/>
+    <region start="0x0000E002" end="0x0000E002" type="io" name="register_read"/>
+  </memory_map>
+</platform>

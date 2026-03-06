@@ -1,0 +1,10 @@
+<platform name="prophet5rev30" cpu="z80">
+  <!-- source: MAME sequential/prophet5.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x000013FF" type="ram" name="ram"/>
+    <region start="0x00001800" end="0x00001803" type="io" name="read"/>
+    <region start="0x00008C00" end="0x00008FFF" type="io" name="region_8c00"/>
+  </memory_map>
+</platform>

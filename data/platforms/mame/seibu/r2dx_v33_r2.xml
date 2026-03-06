@@ -1,0 +1,26 @@
+<platform name="r2dx_v33_r2" cpu="z80">
+  <!-- source: MAME seibu/r2dx_v33.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000400" end="0x00000406" type="io" name="tilemapdma_w"/>
+    <region start="0x00000420" end="0x00000429" type="io" name="dx_w"/>
+    <region start="0x00000430" end="0x00000437" type="io" name="angle_r"/>
+    <region start="0x00000600" end="0x000006BF" type="io" name="read"/>
+    <region start="0x0000068E" end="0x0000068F" type="io" name="write"/>
+    <region start="0x000006B0" end="0x000006B3" type="io" name="mcu_prog_w"/>
+    <region start="0x000006B4" end="0x000006B7" type="unmapped" name="nop_write"/>
+    <region start="0x000006BC" end="0x000006BD" type="io" name="mcu_prog_offs_w"/>
+    <region start="0x000006BE" end="0x000006BF" type="unmapped" name="nop_write"/>
+    <region start="0x000006C0" end="0x000006C3" type="io" name="sprite_prot_off_r"/>
+    <region start="0x000006C6" end="0x000006C7" type="io" name="sprite_prot_dst1_w"/>
+    <region start="0x000006D8" end="0x000006DF" type="io" name="sprite_prot_x_w"/>
+    <region start="0x00000700" end="0x00000700" type="io" name="rdx_v33_eeprom_w"/>
+    <region start="0x00000740" end="0x00000741" type="io" name="r2dx_debug_r"/>
+    <region start="0x00000744" end="0x00000745" type="io" name="port"/>
+    <region start="0x0000074C" end="0x0000074D" type="io" name="port"/>
+    <region start="0x00000762" end="0x00000763" type="io" name="sprite_prot_dst1_r"/>
+    <region start="0x00000780" end="0x00000780" type="io" name="read"/>
+    <region start="0x00000800" end="0x000FFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

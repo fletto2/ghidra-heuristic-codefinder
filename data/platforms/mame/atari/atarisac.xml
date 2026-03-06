@@ -1,0 +1,23 @@
+<platform name="atarisac" cpu="6502">
+  <!-- source: MAME atari/atarisac.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002001" type="io" name="read"/>
+    <region start="0x00002800" end="0x00002800" type="io" name="write"/>
+    <region start="0x00002802" end="0x00002802" type="io" name="sound_irq_ack_r"/>
+    <region start="0x00002804" end="0x00002804" type="io" name="sound_response_w"/>
+    <region start="0x00002806" end="0x00002806" type="io" name="wrio_w"/>
+    <region start="0x00002C00" end="0x00002C00" type="io" name="sound_command_r"/>
+    <region start="0x00002C02" end="0x00002C02" type="io" name="rdio_r"/>
+    <region start="0x00002C04" end="0x00002C04" type="io" name="read"/>
+    <region start="0x00002C06" end="0x00002C06" type="io" name="pstat_r"/>
+    <region start="0x00003000" end="0x00003FFF" type="ram" name="cpubank"/>
+    <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

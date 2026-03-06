@@ -1,0 +1,11 @@
+<platform name="dogyuunb" cpu="68000">
+  <!-- source: MAME toaplan/dogyuun.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00200010" end="0x00200011" type="io" name="port"/>
+    <region start="0x00200014" end="0x00200015" type="io" name="port"/>
+    <region start="0x00200018" end="0x00200019" type="io" name="port"/>
+    <region start="0x0020001D" end="0x0020001D" type="io" name="coin_countlock__v25_reset_line"/>
+    <region start="0x00210000" end="0x0021FFFF" type="io" name="shared_ram_r"/>
+  </memory_map>
+</platform>

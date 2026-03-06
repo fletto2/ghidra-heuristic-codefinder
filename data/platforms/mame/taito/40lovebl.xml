@@ -1,0 +1,19 @@
+<platform name="40lovebl" cpu="z80">
+  <!-- source: MAME taito/40love.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00008801" end="0x00008804" type="io" name="shift_count_w"/>
+    <region start="0x00008804" end="0x00008805" type="io" name="write"/>
+    <region start="0x00008807" end="0x00008807" type="unmapped" name="nop_read"/>
+    <region start="0x00008808" end="0x0000880C" type="io" name="port"/>
+    <region start="0x0000880D" end="0x0000880D" type="unmapped" name="nop_write"/>
+    <region start="0x00009000" end="0x000097FF" type="io" name="videoram"/>
+    <region start="0x00009800" end="0x0000987F" type="ram" name="video_ctrl"/>
+    <region start="0x00009880" end="0x000098BF" type="io" name="colorram"/>
+    <region start="0x000098C0" end="0x000098FF" type="ram" name="spriteram2"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000BF00" end="0x0000FFFF" type="io" name="map0xbf00_0xbfff_writes_here_when_zoomsi"/>
+  </memory_map>
+</platform>

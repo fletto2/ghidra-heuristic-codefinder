@@ -1,0 +1,13 @@
+<platform name="shtzone" cpu="z80">
+  <!-- source: MAME sega/shtzone.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00008001" type="io" name="cart_r"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="todo_is_it_or_is_it_coin_counter_other_b"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="cart_select_r"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="port"/>
+    <region start="0x0000DC00" end="0x0000DC00" type="io" name="port"/>
+  </memory_map>
+</platform>

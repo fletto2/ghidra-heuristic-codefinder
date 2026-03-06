@@ -1,0 +1,14 @@
+<platform name="m4001" cpu="z80">
+  <!-- source: MAME sega/segafruit.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x00009001" type="io" name="map0x9000_0x9000rw"/>
+    <region start="0x00009001" end="0x00009001" type="io" name="write"/>
+    <region start="0x00009800" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A004" type="io" name="map0xa000_0xa000r__inputs"/>
+    <region start="0x0000C000" end="0x0000C04F" type="unmapped" name="nop_write"/>
+    <region start="0x0000E000" end="0x0000E00F" type="io" name="read"/>
+  </memory_map>
+</platform>

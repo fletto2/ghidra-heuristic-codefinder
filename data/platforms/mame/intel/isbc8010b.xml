@@ -1,0 +1,8 @@
+<platform name="isbc8010b" cpu="8080">
+  <!-- source: MAME intel/isbc8010.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003BFF" type="rom" name="rom"/>
+    <region start="0x00003C00" end="0x00003FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,20 @@
+<platform name="dlair" cpu="z80">
+  <!-- source: MAME cinematronics/dlair.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="videoram"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="wt_led_1"/>
+    <region start="0x0000E008" end="0x0000E008" type="io" name="wt_led_2"/>
+    <region start="0x0000E010" end="0x0000E010" type="io" name="led_den1_w"/>
+    <region start="0x0000E018" end="0x0000E018" type="io" name="led_den2_w"/>
+    <region start="0x0000E020" end="0x0000E020" type="io" name="laserdisc_w"/>
+    <region start="0x0000E028" end="0x0000E028" type="io" name="dleuro_misc_w"/>
+    <region start="0x0000E030" end="0x0000E030" type="io" name="reset_w"/>
+    <region start="0x0000E080" end="0x0000E080" type="io" name="port"/>
+    <region start="0x0000E088" end="0x0000E088" type="io" name="port"/>
+    <region start="0x0000E090" end="0x0000E090" type="io" name="port"/>
+    <region start="0x0000E098" end="0x0000E098" type="io" name="port"/>
+    <region start="0x0000E0A0" end="0x0000E0A0" type="io" name="laserdisc_r"/>
+  </memory_map>
+</platform>

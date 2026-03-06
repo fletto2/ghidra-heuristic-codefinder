@@ -1,0 +1,10 @@
+<platform name="froggermc" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00008400" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x0000A003" end="0x0000A003" type="io" name="coin_count_0_w"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="write"/>
+    <region start="0x0000B001" end="0x0000B001" type="io" name="froggermc_sound_control_w"/>
+  </memory_map>
+</platform>

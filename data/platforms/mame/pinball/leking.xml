@@ -1,0 +1,9 @@
+<platform name="leking" cpu="z80">
+  <!-- source: MAME pinball/jeutel.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="nvram"/>
+    <region start="0x0000E000" end="0x0000E003" type="io" name="read"/>
+  </memory_map>
+</platform>

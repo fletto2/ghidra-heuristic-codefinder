@@ -1,0 +1,15 @@
+<platform name="myangel" cpu="h8">
+  <!-- source: MAME seta/seta2.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="ram"/>
+    <region start="0x00700000" end="0x00700007" type="io" name="port"/>
+    <region start="0x00700200" end="0x00700201" type="unmapped" name="nop_write"/>
+    <region start="0x00700300" end="0x00700303" type="io" name="port"/>
+    <region start="0x00700310" end="0x0070031F" type="io" name="sound_bank_w"/>
+    <region start="0x00B00000" end="0x00B03FFF" type="io" name="word_r"/>
+    <region start="0x00C00000" end="0x00C4FFFF" type="ram" name="ram"/>
+    <region start="0x00C60000" end="0x00C6003F" type="ram" name="ram"/>
+  </memory_map>
+</platform>

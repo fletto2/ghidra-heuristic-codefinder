@@ -1,0 +1,8 @@
+<platform name="tosh1000" cpu="8088">
+  <!-- source: MAME pc/tosh1000.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x000A0000" end="0x000AFFFF" type="io" name="read8"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

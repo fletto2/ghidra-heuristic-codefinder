@@ -1,0 +1,15 @@
+<platform name="chqflag" cpu="z80">
+  <!-- source: MAME konami/chqflag.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="k007232_bankswitch_w"/>
+    <region start="0x0000A000" end="0x0000A00D" type="io" name="read"/>
+    <region start="0x0000A01C" end="0x0000A01C" type="io" name="k007232_extvolume_w"/>
+    <region start="0x0000B000" end="0x0000B00D" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="read"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="read"/>
+    <region start="0x0000F000" end="0x0000F000" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,26 @@
+<platform name="720r2" cpu="6502">
+  <!-- source: MAME atari/atarisy2.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x000011FF" type="io" name="read"/>
+    <region start="0x00001800" end="0x00001813" type="io" name="read"/>
+    <region start="0x00001830" end="0x00001840" type="io" name="read"/>
+    <region start="0x00001850" end="0x00001851" type="io" name="read"/>
+    <region start="0x00001860" end="0x00001860" type="io" name="sound_6502_r"/>
+    <region start="0x00001870" end="0x00001870" type="io" name="tms5220_w"/>
+    <region start="0x00001872" end="0x00001874" type="io" name="tms5220_strobe_w"/>
+    <region start="0x00001876" end="0x00001876" type="io" name="coincount_w"/>
+    <region start="0x00001878" end="0x00001878" type="io" name="sound_irq_ack_w"/>
+    <region start="0x0000187A" end="0x0000187A" type="io" name="mixer_w"/>
+    <region start="0x0000187C" end="0x0000187C" type="io" name="switch_6502_w"/>
+    <region start="0x0000187E" end="0x0000187E" type="io" name="sndrst_6502_w"/>
+    <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

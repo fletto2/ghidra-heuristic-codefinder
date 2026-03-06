@@ -1,0 +1,21 @@
+<platform name="600" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="videoram"/>
+    <region start="0x00009800" end="0x000098FF" type="ram" name="spriteram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="scramble_background_red_w"/>
+    <region start="0x0000A008" end="0x0000A008" type="io" name="irq_enable_w"/>
+    <region start="0x0000A010" end="0x0000A010" type="io" name="galaxian_flip_screen_y_w"/>
+    <region start="0x0000A018" end="0x0000A018" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x0000A020" end="0x0000A020" type="io" name="scramble_background_green_w"/>
+    <region start="0x0000A028" end="0x0000A028" type="io" name="scramble_background_blue_w"/>
+    <region start="0x0000A030" end="0x0000A030" type="io" name="coin_count_0_w"/>
+    <region start="0x0000A038" end="0x0000A038" type="io" name="coin_count_1_w"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="reset_r"/>
+    <region start="0x0000B000" end="0x0000B03F" type="io" name="turtles_ppi8255_0_r"/>
+    <region start="0x0000B800" end="0x0000B83F" type="io" name="turtles_ppi8255_1_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="sdk85" cpu="8085">
+  <!-- source: MAME intel/sdk85.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="io" name="memory_r"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="data_r"/>
+    <region start="0x00001900" end="0x00001900" type="io" name="status_r"/>
+    <region start="0x00002000" end="0x000020FF" type="io" name="memory_r"/>
+    <region start="0x00002800" end="0x000028FF" type="io" name="memory_r"/>
+  </memory_map>
+</platform>

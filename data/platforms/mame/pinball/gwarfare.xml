@@ -1,0 +1,8 @@
+<platform name="gwarfare" cpu="z80">
+  <!-- source: MAME pinball/gp_2.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00008C00" end="0x00008DFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

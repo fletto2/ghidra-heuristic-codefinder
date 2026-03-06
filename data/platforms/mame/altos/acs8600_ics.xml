@@ -1,0 +1,8 @@
+<platform name="acs8600_ics" cpu="z80">
+  <!-- source: MAME altos/acs8600_ics.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x000017FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="hostram_r"/>
+  </memory_map>
+</platform>

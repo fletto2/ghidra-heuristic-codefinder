@@ -1,0 +1,14 @@
+<platform name="zaxxonb" cpu="z80">
+  <!-- source: MAME sega/zaxxon.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="videoram"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="port"/>
+    <region start="0x0000C008" end="0x0000C008" type="io" name="port"/>
+    <region start="0x0000C018" end="0x0000C029" type="io" name="d0"/>
+    <region start="0x0000C030" end="0x0000C033" type="io" name="congo_sprite_custom_w"/>
+    <region start="0x0000C038" end="0x0000C03F" type="io" name="write"/>
+  </memory_map>
+</platform>

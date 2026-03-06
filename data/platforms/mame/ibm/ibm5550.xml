@@ -1,0 +1,10 @@
+<platform name="ibm5550" cpu="8086">
+  <!-- source: MAME ibm/ibm5550.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
+    <region start="0x000D8000" end="0x000D8FFF" type="ram" name="gfxram"/>
+    <region start="0x000E0000" end="0x000E0FFF" type="ram" name="vram"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

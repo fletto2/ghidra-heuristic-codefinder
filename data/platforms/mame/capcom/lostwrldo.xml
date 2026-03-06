@@ -1,0 +1,10 @@
+<platform name="lostwrldo" cpu="68000">
+  <!-- source: MAME capcom/cps1.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00800041" end="0x00800041" type="io" name="reset_x_w"/>
+    <region start="0x00800049" end="0x00800049" type="io" name="reset_y_w"/>
+    <region start="0x00800052" end="0x00800055" type="io" name="x"/>
+    <region start="0x0080005A" end="0x0080005D" type="io" name="y"/>
+  </memory_map>
+</platform>

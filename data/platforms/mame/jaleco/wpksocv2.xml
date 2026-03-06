@@ -1,0 +1,18 @@
+<platform name="wpksocv2" cpu="v70">
+  <!-- source: MAME jaleco/ms32.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0xFCE00800" end="0xFCE0085F" type="ram" name="ram"/>
+    <region start="0xFCE00E00" end="0xFCE00E03" type="io" name="ms32_irq5_guess_w"/>
+    <region start="0xFD0C0000" end="0xFD0C0FFF" type="ram" name="ram"/>
+    <region start="0xFD0D0000" end="0xFD0D0003" type="io" name="port"/>
+    <region start="0xFD0E0000" end="0xFD0E0003" type="io" name="analog_r"/>
+    <region start="0xFD0F0000" end="0xFD0F0003" type="io" name="ms32_irq2_guess_w"/>
+    <region start="0xFD100000" end="0xFD105FFF" type="ram" name="ram"/>
+    <region start="0xFD140000" end="0xFD145FFF" type="ram" name="ram"/>
+    <region start="0xFD440000" end="0xFD47FFFF" type="ram" name="ram"/>
+    <region start="0xFDC00000" end="0xFDC1FFFF" type="io" name="road_vram_r16"/>
+    <region start="0xFDE00000" end="0xFDE1FFFF" type="ram" name="ram"/>
+    <region start="0xFE202000" end="0xFE2FFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="macqd950" cpu="68040">
+  <!-- source: MAME apple/macquadra700.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x40000000" end="0x400FFFFF" type="io" name="rom_switch_r"/>
+    <region start="0x50000000" end="0x50003FFF" type="io" name="via_r"/>
+    <region start="0x50008000" end="0x50008007" type="io" name="ethernet_mac_r"/>
+    <region start="0x5000A000" end="0x5000B0FF" type="io" name="map"/>
+    <region start="0x5000C000" end="0x5000CFFF" type="io" name="host_r"/>
+    <region start="0x5000F000" end="0x5000F101" type="io" name="region_5000f000"/>
+    <region start="0x5000F400" end="0x5000F4FF" type="io" name="region_5000f400"/>
+    <region start="0x5000F502" end="0x5000F503" type="io" name="region_5000f502"/>
+    <region start="0x50014000" end="0x50015FFF" type="io" name="read"/>
+    <region start="0x5001E000" end="0x5001EFFF" type="io" name="host_r"/>
+    <region start="0xF9000000" end="0xF91FFFFF" type="io" name="vram_r"/>
+    <region start="0xF9800000" end="0xF98003FF" type="io" name="map"/>
+  </memory_map>
+</platform>

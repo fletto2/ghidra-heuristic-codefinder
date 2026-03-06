@@ -1,0 +1,8 @@
+<platform name="beta" cpu="6502">
+  <!-- source: MAME pitronics/beta.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="io" name="ram_map"/>
+    <region start="0x00008000" end="0x000087FF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

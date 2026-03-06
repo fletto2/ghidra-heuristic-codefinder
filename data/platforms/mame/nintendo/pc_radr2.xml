@@ -1,0 +1,8 @@
+<platform name="pc_radr2" cpu="z80">
+  <!-- source: MAME nintendo/playch10.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="gboard_rom_switch_w"/>
+  </memory_map>
+</platform>

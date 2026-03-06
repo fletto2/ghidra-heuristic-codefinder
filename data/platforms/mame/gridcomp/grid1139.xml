@@ -1,0 +1,19 @@
+<platform name="grid1139" cpu="8086">
+  <!-- source: MAME gridcomp/gridcomp.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00090000" end="0x00097FFF" type="unmapped" name="unmapped"/>
+    <region start="0x0009FF00" end="0x0009FF0F" type="unmapped" name="unmapped"/>
+    <region start="0x000C0000" end="0x000CFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x000DFA00" end="0x000DFDFF" type="io" name="grid_dma_r"/>
+    <region start="0x000DFE00" end="0x000DFE1F" type="unmapped" name="unmapped"/>
+    <region start="0x000DFE40" end="0x000DFE4F" type="unmapped" name="unmapped"/>
+    <region start="0x000DFE80" end="0x000DFE83" type="io" name="read"/>
+    <region start="0x000DFEA0" end="0x000DFEAF" type="unmapped" name="unmapped"/>
+    <region start="0x000DFEC0" end="0x000DFECF" type="io" name="grid_modem_r"/>
+    <region start="0x000DFF40" end="0x000DFF5F" type="io" name="read"/>
+    <region start="0x000DFF80" end="0x000DFF8F" type="io" name="read"/>
+    <region start="0x000DFFC0" end="0x000DFFCF" type="io" name="grid_keyb_r"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

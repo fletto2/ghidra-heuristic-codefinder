@@ -1,0 +1,8 @@
+<platform name="bgareggat" cpu="68000">
+  <!-- source: MAME toaplan/raizing.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x0021C01D" end="0x0021C01D" type="io" name="coin_w"/>
+    <region start="0x00600001" end="0x00600001" type="io" name="write"/>
+  </memory_map>
+</platform>

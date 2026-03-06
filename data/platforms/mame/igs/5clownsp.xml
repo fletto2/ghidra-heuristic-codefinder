@@ -1,0 +1,24 @@
+<platform name="5clownsp" cpu="6502">
+  <!-- source: MAME igs/5clown.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00000800" end="0x00000801" type="io" name="address_w"/>
+    <region start="0x00000844" end="0x0000084B" type="io" name="read"/>
+    <region start="0x00001000" end="0x000013FF" type="ram" name="ram"/>
+    <region start="0x00001800" end="0x00001BFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C048" end="0x0000C048" type="io" name="cpu_c048_w"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="port"/>
+    <region start="0x0000CC00" end="0x0000CC00" type="io" name="port"/>
+    <region start="0x0000D400" end="0x0000D400" type="io" name="port"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="cpu_d800_w"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

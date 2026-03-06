@@ -1,0 +1,16 @@
+<platform name="tek4052a" cpu="6800">
+  <!-- source: MAME tektronix/tek405x.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000877F" type="rom" name="rom"/>
+    <region start="0x0000878C" end="0x0000878F" type="io" name="read"/>
+    <region start="0x00008794" end="0x0000879B" type="io" name="read"/>
+    <region start="0x000087A8" end="0x000087AB" type="io" name="read"/>
+    <region start="0x000087B0" end="0x000087B3" type="io" name="read"/>
+    <region start="0x000087C0" end="0x000087C0" type="io" name="lbs_w"/>
+    <region start="0x000087C0" end="0x000087C5" type="io" name="read"/>
+    <region start="0x000087C8" end="0x000087D3" type="io" name="map0x87c8_0x87cb_xpc2"/>
+    <region start="0x00008800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

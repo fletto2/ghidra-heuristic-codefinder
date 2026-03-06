@@ -1,0 +1,8 @@
+<platform name="couple" cpu="z80">
+  <!-- source: MAME merit/merit.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000B000" end="0x0000B7FF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

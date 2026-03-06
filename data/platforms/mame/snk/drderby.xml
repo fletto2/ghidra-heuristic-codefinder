@@ -1,0 +1,10 @@
+<platform name="drderby" cpu="8085">
+  <!-- source: MAME snk/drderby.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000037FF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000040FF" type="io" name="memory_r"/>
+    <region start="0x00006000" end="0x00007FFF" type="ram" name="vram"/>
+    <region start="0x00008000" end="0x000087FF" type="io" name="colorram_r"/>
+  </memory_map>
+</platform>

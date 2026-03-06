@@ -1,0 +1,17 @@
+<platform name="m660b" cpu="z80">
+  <!-- source: MAME taito/tsamurai.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D803" end="0x0000D803" type="io" name="m660_unknown_d803_r"/>
+    <region start="0x0000D806" end="0x0000D806" type="io" name="unknown_d806_r"/>
+    <region start="0x0000D900" end="0x0000D900" type="io" name="unknown_d900_r"/>
+    <region start="0x0000D938" end="0x0000D938" type="io" name="unknown_d938_r"/>
+    <region start="0x0000E000" end="0x0000F3FF" type="ram" name="videoram"/>
+    <region start="0x0000F400" end="0x0000F400" type="unmapped" name="nop_write"/>
+    <region start="0x0000F401" end="0x0000F403" type="io" name="m660_sound_command3_w"/>
+    <region start="0x0000F800" end="0x0000F805" type="io" name="port"/>
+    <region start="0x0000FC00" end="0x0000FC07" type="io" name="d0"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="nycaptor" cpu="z80">
+  <!-- source: MAME taito/nycaptor.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000C7FF" type="ram" name="bank1"/>
+    <region start="0x0000D000" end="0x0000D002" type="io" name="data_r"/>
+    <region start="0x0000D400" end="0x0000D400" type="io" name="read"/>
+    <region start="0x0000D401" end="0x0000D401" type="unmapped" name="nop_read"/>
+    <region start="0x0000D403" end="0x0000D403" type="io" name="sound_cpu_reset_w"/>
+    <region start="0x0000D800" end="0x0000D807" type="io" name="port"/>
+    <region start="0x0000DC00" end="0x0000DCBF" type="ram" name="spriteram"/>
+    <region start="0x0000DCE1" end="0x0000DCE1" type="unmapped" name="nop_write"/>
+    <region start="0x0000DD00" end="0x0000DEFF" type="io" name="nycaptor_palette_r"/>
+    <region start="0x0000DF03" end="0x0000DF03" type="io" name="nycaptor_gfxctrl_r"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="sharedram"/>
+  </memory_map>
+</platform>

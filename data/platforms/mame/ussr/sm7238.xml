@@ -1,0 +1,13 @@
+<platform name="sm7238" cpu="8080">
+  <!-- source: MAME ussr/sm7238.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000B000" end="0x0000B3FF" type="ram" name="nvram"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="text_control_w"/>
+    <region start="0x0000BC00" end="0x0000BC00" type="io" name="control_w"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="ram" name="charram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="io" name="amap8"/>
+  </memory_map>
+</platform>

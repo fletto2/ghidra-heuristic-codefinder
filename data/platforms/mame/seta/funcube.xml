@@ -1,0 +1,16 @@
+<platform name="funcube" cpu="h8">
+  <!-- source: MAME seta/seta2.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="ram"/>
+    <region start="0x00400002" end="0x00400003" type="io" name="debug_r"/>
+    <region start="0x00400006" end="0x00400007" type="io" name="reset16_r"/>
+    <region start="0x00500001" end="0x00500001" type="io" name="status"/>
+    <region start="0x00500003" end="0x00500003" type="io" name="tmp_register"/>
+    <region start="0x00800000" end="0x0083FFFF" type="io" name="spriteram_r"/>
+    <region start="0x00840000" end="0x0084FFFF" type="ram" name="palette"/>
+    <region start="0x00860000" end="0x0086003F" type="io" name="vregs_r"/>
+    <region start="0x00C00000" end="0x00C002FF" type="io" name="nvram_r"/>
+  </memory_map>
+</platform>

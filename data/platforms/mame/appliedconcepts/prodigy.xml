@@ -1,0 +1,9 @@
+<platform name="prodigy" cpu="6502">
+  <!-- source: MAME appliedconcepts/prodigy.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x0000200F" type="io" name="map"/>
+    <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

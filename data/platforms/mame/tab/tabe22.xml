@@ -1,0 +1,9 @@
+<platform name="tabe22" cpu="8085">
+  <!-- source: MAME tab/tabe22.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="io" name="read8"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

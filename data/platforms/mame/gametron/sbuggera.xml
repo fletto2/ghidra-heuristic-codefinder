@@ -1,0 +1,10 @@
+<platform name="sbuggera" cpu="8085">
+  <!-- source: MAME gametron/sbugger.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000037FF" type="rom" name="rom"/>
+    <region start="0x0000C800" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E0FF" type="io" name="memory_r"/>
+    <region start="0x0000F400" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

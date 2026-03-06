@@ -1,0 +1,25 @@
+<platform name="hideseek" cpu="sh2">
+  <!-- source: MAME misc/hideseek.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0023FFFF" type="ram" name="ram"/>
+    <region start="0x00400000" end="0x005FFFFF" type="rom" name="rom"/>
+    <region start="0x01000000" end="0x01FFFFFF" type="ram" name="ram"/>
+    <region start="0x06000000" end="0x07FFFFFF" type="rom" name="rom"/>
+    <region start="0xFFFF8000" end="0xFFFF87FF" type="ram" name="ram"/>
+    <region start="0xFFFFF000" end="0xFFFFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

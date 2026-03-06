@@ -1,0 +1,15 @@
+<platform name="balcube" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00300000" end="0x0030000B" type="io" name="write"/>
+    <region start="0x00300001" end="0x00300001" type="io" name="read"/>
+    <region start="0x00400000" end="0x0041FFFF" type="io" name="balcube_dsw_r"/>
+    <region start="0x00500000" end="0x00500003" type="io" name="port"/>
+    <region start="0x00500002" end="0x00500009" type="io" name="coin_lockout_4words_w"/>
+    <region start="0x00500006" end="0x00500007" type="unmapped" name="nop_read"/>
+    <region start="0x00600000" end="0x0067FFFF" type="io" name="v2_map"/>
+    <region start="0x00F00000" end="0x00F0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

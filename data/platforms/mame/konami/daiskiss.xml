@@ -1,0 +1,8 @@
+<platform name="daiskiss" cpu="68020">
+  <!-- source: MAME konami/konamigx.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00CC0000" end="0x00CC0003" type="io" name="esc_w"/>
+    <region start="0x00D90000" end="0x00D97FFF" type="ram" name="palette"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,24 @@
+<platform name="bagmanf" cpu="z80">
+  <!-- source: MAME nichibutsu/cclimber.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006BFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="port"/>
+    <region start="0x00008800" end="0x000088FF" type="ram" name="bigspriteram"/>
+    <region start="0x00008800" end="0x00008800" type="io" name="port"/>
+    <region start="0x00008900" end="0x00008BFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="videoram"/>
+    <region start="0x00009800" end="0x00009BFF" type="ram" name="colorram"/>
+    <region start="0x00009800" end="0x0000981F" type="ram" name="spriteram"/>
+    <region start="0x00009800" end="0x00009800" type="io" name="port"/>
+    <region start="0x000098DC" end="0x000098DF" type="ram" name="bigspritectrl"/>
+    <region start="0x00009C00" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="should_this_actually_use_the_same_pal16r"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000A800" end="0x0000A800" type="unmapped" name="nop_read"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="sample_volume_w"/>
+    <region start="0x0000B800" end="0x0000B800" type="unmapped" name="nop_read"/>
+    <region start="0x0000FFE0" end="0x0000FFFF" type="ram" name="column_scroll"/>
+  </memory_map>
+</platform>

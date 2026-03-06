@@ -1,0 +1,14 @@
+<platform name="pleiadsgmp" cpu="8085">
+  <!-- source: MAME phoenix/phoenix.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004FFF" type="ram" name="bank1"/>
+    <region start="0x00005000" end="0x000053FF" type="io" name="phoenix_videoreg_w"/>
+    <region start="0x00005800" end="0x00005BFF" type="io" name="phoenix_scroll_w"/>
+    <region start="0x00006000" end="0x000063FF" type="io" name="control_a_w"/>
+    <region start="0x00006800" end="0x00006BFF" type="io" name="control_b_w"/>
+    <region start="0x00007000" end="0x000073FF" type="io" name="port"/>
+    <region start="0x00007800" end="0x00007BFF" type="io" name="port"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="gigasm2" cpu="z80">
+  <!-- source: MAME misc/freekick.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="port"/>
+    <region start="0x0000E000" end="0x0000E007" type="io" name="d0"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="port"/>
+    <region start="0x0000F000" end="0x0000F000" type="unmapped" name="nop_write"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="port"/>
+    <region start="0x0000FC00" end="0x0000FC03" type="io" name="write"/>
+  </memory_map>
+</platform>

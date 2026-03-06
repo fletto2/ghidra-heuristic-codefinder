@@ -1,0 +1,8 @@
+<platform name="shanghai" cpu="z80">
+  <!-- source: MAME sunelectronics/shanghai.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00080000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

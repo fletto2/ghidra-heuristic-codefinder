@@ -1,0 +1,29 @@
+<platform name="liberatrp" cpu="6502">
+  <!-- source: MAME atari/liberatr.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000001" type="ram" name="ram"/>
+    <region start="0x00000002" end="0x00000002" type="io" name="bitmap_xy_r"/>
+    <region start="0x00000003" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x0000403F" type="io" name="earom_r"/>
+    <region start="0x00005000" end="0x00005001" type="io" name="port0_r"/>
+    <region start="0x00006000" end="0x0000600F" type="ram" name="writeonly"/>
+    <region start="0x00006200" end="0x0000621F" type="ram" name="writeonly"/>
+    <region start="0x00006400" end="0x00006400" type="unmapped" name="nop_write"/>
+    <region start="0x00006600" end="0x00006600" type="io" name="earom_control_w"/>
+    <region start="0x00006800" end="0x00006800" type="ram" name="writeonly"/>
+    <region start="0x00006A00" end="0x00006A00" type="io" name="reset_w"/>
+    <region start="0x00006C00" end="0x00006C07" type="io" name="output_latch_w"/>
+    <region start="0x00006E00" end="0x00006E3F" type="unmapped" name="nop_read"/>
+    <region start="0x00007000" end="0x0000701F" type="io" name="read"/>
+    <region start="0x00007800" end="0x0000781F" type="io" name="read"/>
+    <region start="0x00008000" end="0x0000EFFF" type="rom" name="rom"/>
+    <region start="0x0000FFFA" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

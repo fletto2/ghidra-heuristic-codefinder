@@ -1,0 +1,21 @@
+<platform name="bbcbp" cpu="z80">
+  <!-- source: MAME acorn/bbcbp.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="io" name="read"/>
+    <region start="0x00003000" end="0x0000BFFF" type="io" name="30007fff_________________20k_shadow_ram"/>
+    <region start="0x00008000" end="0x0000AFFF" type="io" name="8000afff_________________12k_paged_ram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="mos_r"/>
+    <region start="0x0000FC00" end="0x0000FDFF" type="io" name="fred_r"/>
+    <region start="0x0000FE00" end="0x0000FEFF" type="unmapped" name="nop_write"/>
+    <region start="0x0000FE00" end="0x0000FE01" type="io" name="status_r"/>
+    <region start="0x0000FE08" end="0x0000FE09" type="io" name="read"/>
+    <region start="0x0000FE10" end="0x0000FE1F" type="io" name="read"/>
+    <region start="0x0000FE18" end="0x0000FE2F" type="io" name="w_fe18fe1f__intoff_________econet_interr"/>
+    <region start="0x0000FE20" end="0x0000FE4F" type="io" name="video_ula_w"/>
+    <region start="0x0000FE60" end="0x0000FE6F" type="io" name="map"/>
+    <region start="0x0000FE80" end="0x0000FEA3" type="io" name="drive_control_w"/>
+    <region start="0x0000FEC0" end="0x0000FEC3" type="io" name="read"/>
+    <region start="0x0000FEE0" end="0x0000FEFF" type="io" name="host_r"/>
+  </memory_map>
+</platform>

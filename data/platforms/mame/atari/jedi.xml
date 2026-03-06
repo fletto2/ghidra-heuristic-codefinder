@@ -1,0 +1,32 @@
+<platform name="jedi" cpu="6502">
+  <!-- source: MAME atari/jedi.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x000008FF" type="io" name="novram_data_r"/>
+    <region start="0x00000C00" end="0x00000C01" type="unmapped" name="nop_write"/>
+    <region start="0x00001000" end="0x000013FF" type="unmapped" name="unmapped"/>
+    <region start="0x00001400" end="0x00001400" type="io" name="read"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="data_r"/>
+    <region start="0x00001C00" end="0x00001C01" type="unmapped" name="nop_read"/>
+    <region start="0x00001C80" end="0x00001C87" type="unmapped" name="nop_read"/>
+    <region start="0x00001D00" end="0x00001D00" type="unmapped" name="nop_read"/>
+    <region start="0x00001D80" end="0x00001D80" type="unmapped" name="nop_read"/>
+    <region start="0x00001E00" end="0x00001E00" type="unmapped" name="nop_read"/>
+    <region start="0x00001E80" end="0x00001E87" type="unmapped" name="nop_read"/>
+    <region start="0x00001F00" end="0x00001F00" type="unmapped" name="nop_read"/>
+    <region start="0x00001F80" end="0x00001F80" type="unmapped" name="nop_read"/>
+    <region start="0x00002000" end="0x00003BFF" type="ram" name="ram"/>
+    <region start="0x00003C00" end="0x00003C01" type="unmapped" name="nop_read"/>
+    <region start="0x00003D00" end="0x00003D01" type="unmapped" name="nop_read"/>
+    <region start="0x00003E00" end="0x00003E00" type="ram" name="smoothing_table"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

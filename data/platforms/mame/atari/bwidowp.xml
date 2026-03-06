@@ -1,0 +1,28 @@
+<platform name="bwidowp" cpu="6502">
+  <!-- source: MAME atari/bwidow.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x0000081F" type="io" name="read"/>
+    <region start="0x00001000" end="0x00001000" type="io" name="bwidowp_in_r"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="port"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="go_w"/>
+    <region start="0x00002800" end="0x00002800" type="io" name="reset_w"/>
+    <region start="0x00003000" end="0x00003000" type="io" name="reset_w"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="bwidow_misc_w"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00006FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="irq_ack_w"/>
+    <region start="0x00008000" end="0x0000803F" type="io" name="earom_write"/>
+    <region start="0x00008800" end="0x00008800" type="io" name="earom_control_w"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="earom_read"/>
+    <region start="0x00009800" end="0x00009800" type="unmapped" name="nop_write"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

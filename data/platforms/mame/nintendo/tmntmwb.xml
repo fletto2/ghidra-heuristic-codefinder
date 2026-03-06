@@ -1,0 +1,11 @@
+<platform name="tmntmwb" cpu="68000">
+  <!-- source: MAME nintendo/snesb.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x007010F1" end="0x007010F2" type="io" name="tmntmwb_7010f1_r"/>
+    <region start="0x007065F0" end="0x007065F1" type="io" name="tmntmwb_7065f0_r"/>
+    <region start="0x007103CD" end="0x007103CE" type="io" name="tmntmwb_7103cd_r"/>
+    <region start="0x007132CC" end="0x007132CD" type="io" name="tmntmwb_7132cc_r"/>
+    <region start="0x00781000" end="0x007810FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,41 @@
+<platform name="dragngun" cpu="z80">
+  <!-- source: MAME dataeast/deco32.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0011FFFF" type="ram" name="ram"/>
+    <region start="0x00120000" end="0x00127FFF" type="io" name="ioprot_r"/>
+    <region start="0x001204C0" end="0x001204C3" type="io" name="sound_w"/>
+    <region start="0x00128000" end="0x0012800F" type="io" name="map"/>
+    <region start="0x00130000" end="0x00131FFF" type="ram" name="paletteram"/>
+    <region start="0x00138000" end="0x00138003" type="unmapped" name="unmapped"/>
+    <region start="0x00138008" end="0x0013800B" type="io" name="palette_dma_w"/>
+    <region start="0x00150000" end="0x00150003" type="unmapped" name="nop_write"/>
+    <region start="0x00160000" end="0x00160003" type="io" name="pri_w"/>
+    <region start="0x0017002C" end="0x0017002F" type="unmapped" name="nop_write"/>
+    <region start="0x00170038" end="0x0017003B" type="unmapped" name="nop_write"/>
+    <region start="0x00170100" end="0x00170103" type="unmapped" name="nop_write"/>
+    <region start="0x00170224" end="0x00170227" type="unmapped" name="nop_write"/>
+    <region start="0x00180000" end="0x0018001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x00190000" end="0x00191FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x00194000" end="0x00195FFF" type="io" name="pf2_data_dword_r"/>
+    <region start="0x001A0000" end="0x001A5FFF" type="ram" name="pf1_rowscroll32"/>
+    <region start="0x001C0000" end="0x001C001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x001D0000" end="0x001D1FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x001D4000" end="0x001D5FFF" type="io" name="pf2_data_dword_r"/>
+    <region start="0x001E0000" end="0x001E5FFF" type="ram" name="pf3_rowscroll32"/>
+    <region start="0x00300000" end="0x003FFFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x00400000" type="io" name="read"/>
+    <region start="0x00410000" end="0x00410000" type="io" name="lc7535_volume_w"/>
+    <region start="0x00418000" end="0x00418003" type="io" name="speaker_switch_w"/>
+    <region start="0x00420000" end="0x00420000" type="io" name="eeprom_r"/>
+    <region start="0x00430000" end="0x0043001F" type="io" name="lightgun_w"/>
+    <region start="0x00438000" end="0x00438003" type="io" name="lightgun_r"/>
+    <region start="0x00440000" end="0x00440003" type="io" name="port"/>
+    <region start="0x00500000" end="0x00500003" type="io" name="sprite_control_w"/>
+    <region start="0x01000000" end="0x01000007" type="io" name="unk_video_r"/>
+    <region start="0x01000100" end="0x01007FFF" type="ram" name="ram"/>
+    <region start="0x010B0000" end="0x010B01FF" type="ram" name="ram"/>
+    <region start="0x01400000" end="0x01FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

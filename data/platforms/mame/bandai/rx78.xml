@@ -1,0 +1,10 @@
+<platform name="rx78" cpu="z80">
+  <!-- source: MAME bandai/rx78.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00005FFF" type="io" name="map0x2000_0x5fff_______mapped_by_the_car"/>
+    <region start="0x00006000" end="0x0000EBFF" type="ram" name="ram"/>
+    <region start="0x0000EC00" end="0x0000FFFF" type="io" name="vram_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="fm7" cpu="8086">
+  <!-- source: MAME fujitsu/fm7.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FBFFF" type="ram" name="ram"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

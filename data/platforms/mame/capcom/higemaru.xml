@@ -1,0 +1,12 @@
+<platform name="higemaru" cpu="z80">
+  <!-- source: MAME capcom/higemaru.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C004" type="io" name="port"/>
+    <region start="0x0000C800" end="0x0000C804" type="io" name="control_w"/>
+    <region start="0x0000D000" end="0x0000D7FF" type="ram" name="ram"/>
+    <region start="0x0000D880" end="0x0000D9FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

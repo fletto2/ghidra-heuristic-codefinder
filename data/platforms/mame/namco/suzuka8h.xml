@@ -1,0 +1,17 @@
+<platform name="suzuka8h" cpu="68000">
+  <!-- source: MAME namco/namcos2.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="audiobank"/>
+    <region start="0x00004000" end="0x00004001" type="io" name="read"/>
+    <region start="0x00005000" end="0x000051FF" type="io" name="c140_r"/>
+    <region start="0x00006000" end="0x000061FF" type="io" name="c140_r"/>
+    <region start="0x00007000" end="0x000077FF" type="io" name="dpram"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="unmapped" name="nop_write"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="sound_bankselect_w"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x0000D001" end="0x0000D001" type="unmapped" name="nop_write"/>
+    <region start="0x0000E000" end="0x0000E000" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

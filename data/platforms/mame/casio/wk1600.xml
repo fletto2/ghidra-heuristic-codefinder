@@ -1,0 +1,9 @@
+<platform name="wk1600" cpu="h8">
+  <!-- source: MAME casio/wk1800.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00040000" end="0x00040003" type="io" name="map"/>
+    <region start="0x00060000" end="0x0007FFFF" type="io" name="dma_r"/>
+    <region start="0x00080000" end="0x000BFFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

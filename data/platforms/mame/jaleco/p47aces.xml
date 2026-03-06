@@ -1,0 +1,33 @@
+<platform name="p47aces" cpu="v70">
+  <!-- source: MAME jaleco/ms32.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0xC0000000" end="0xC01FFFFF" type="io" name="ms32_nvram_r8"/>
+    <region start="0xC1180000" end="0xC11BFFFF" type="io" name="ms32_priram_r8"/>
+    <region start="0xC1400000" end="0xC145FFFF" type="io" name="ms32_palram_r16"/>
+    <region start="0xC2000000" end="0xC23FFFFF" type="io" name="ms32_rozram_r16"/>
+    <region start="0xC2800000" end="0xC29FFFFF" type="io" name="ms32_sprram_r16"/>
+    <region start="0xC2C00000" end="0xC2DFFFFF" type="io" name="ms32_txram_r16"/>
+    <region start="0xC2E00000" end="0xC2E1FFFF" type="ram" name="ram"/>
+    <region start="0xC3E00000" end="0xC3FFFFFF" type="rom" name="rom"/>
+    <region start="0xFC800000" end="0xFC800003" type="unmapped" name="nop_read"/>
+    <region start="0xFCC00000" end="0xFCC0001F" type="io" name="map0xfcc00000_0xfcc0001f"/>
+    <region start="0xFCC00004" end="0xFCC00007" type="io" name="port"/>
+    <region start="0xFCC00010" end="0xFCC00013" type="io" name="port"/>
+    <region start="0xFCE00000" end="0xFCE0005F" type="io" name="amap"/>
+    <region start="0xFCE00200" end="0xFCE0027F" type="ram" name="ram"/>
+    <region start="0xFCE00280" end="0xFCE0028F" type="io" name="ms32_brightness_w"/>
+    <region start="0xFCE00400" end="0xFCE0045F" type="io" name="map0xfce00400_0xfce0045f"/>
+    <region start="0xFCE00600" end="0xFCE0065F" type="ram" name="ram"/>
+    <region start="0xFCE00A00" end="0xFCE00A17" type="ram" name="ram"/>
+    <region start="0xFCE00A20" end="0xFCE00A37" type="ram" name="ram"/>
+    <region start="0xFCE00A7C" end="0xFCE00A7F" type="io" name="bgmode_w"/>
+    <region start="0xFCE00C00" end="0xFCE00C1F" type="io" name="map0xfce00c00_0xfce00c1f"/>
+    <region start="0xFCE00E00" end="0xFCE00E03" type="io" name="coin_counter_w"/>
+    <region start="0xFD000000" end="0xFD000003" type="io" name="sound_result_r"/>
+    <region start="0xFD040000" end="0xFD040003" type="io" name="map0xfd040000_0xfd040003"/>
+    <region start="0xFD080000" end="0xFD080003" type="io" name="map0xfd080000_0xfd080003"/>
+    <region start="0xFD0C0000" end="0xFD0C0003" type="io" name="map0xfd0c0000_0xfd0c0003"/>
+    <region start="0xFD1C0000" end="0xFD1C0003" type="ram" name="writeonly"/>
+  </memory_map>
+</platform>

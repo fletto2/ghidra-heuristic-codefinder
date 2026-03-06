@@ -1,0 +1,33 @@
+<platform name="hvysmsh" cpu="arm7_le">
+  <!-- source: MAME dataeast/deco156.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x00107FFF" type="ram" name="ram"/>
+    <region start="0x00120000" end="0x00120003" type="io" name="port"/>
+    <region start="0x00120000" end="0x00120000" type="io" name="hvysmsh_volume_w"/>
+    <region start="0x00120004" end="0x00120007" type="io" name="hvysmsh_eeprom_w"/>
+    <region start="0x00120008" end="0x0012000B" type="unmapped" name="nop_write"/>
+    <region start="0x0012000C" end="0x0012000F" type="io" name="hvysmsh_oki_0_bank_w"/>
+    <region start="0x00140000" end="0x00140000" type="io" name="read"/>
+    <region start="0x00160000" end="0x00160000" type="io" name="read"/>
+    <region start="0x00180000" end="0x0018001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x00190000" end="0x00191FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x00194000" end="0x00195FFF" type="io" name="pf2_data_dword_r"/>
+    <region start="0x001A0000" end="0x001A0FFF" type="io" name="region_1a0000"/>
+    <region start="0x001A4000" end="0x001A4FFF" type="io" name="region_1a4000"/>
+    <region start="0x001C0000" end="0x001C0FFF" type="ram" name="palette"/>
+    <region start="0x001D0010" end="0x001D002F" type="unmapped" name="nop_read"/>
+    <region start="0x001E0000" end="0x001E1FFF" type="io" name="spriteram_r"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

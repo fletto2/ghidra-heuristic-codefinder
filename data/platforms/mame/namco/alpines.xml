@@ -1,0 +1,8 @@
+<platform name="alpines" cpu="68020">
+  <!-- source: MAME namco/namcos22.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00200000" end="0x003FFFFF" type="ram" name="banked"/>
+    <region start="0x00300000" end="0x00300003" type="io" name="rombank_w"/>
+  </memory_map>
+</platform>

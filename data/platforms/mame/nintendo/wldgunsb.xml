@@ -1,0 +1,13 @@
+<platform name="wldgunsb" cpu="68000">
+  <!-- source: MAME nintendo/snesb.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00721197" end="0x00721197" type="io" name="wldgunsb_721197_r"/>
+    <region start="0x00722262" end="0x00722262" type="io" name="wldgunsb_722262_r"/>
+    <region start="0x00723363" end="0x00723363" type="io" name="wldgunsb_723364_r"/>
+    <region start="0x0072443A" end="0x0072443A" type="io" name="wldgunsb_72443a_r"/>
+    <region start="0x0072553B" end="0x0072553B" type="io" name="wldgunsb_72553b_r"/>
+    <region start="0x00781000" end="0x00781021" type="ram" name="ram"/>
+    <region start="0x007BF45B" end="0x007BF45B" type="io" name="prot_cnt_r"/>
+  </memory_map>
+</platform>

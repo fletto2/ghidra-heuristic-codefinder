@@ -1,0 +1,8 @@
+<platform name="magnum" cpu="80186">
+  <!-- source: MAME ausnz/magnum.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
+    <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

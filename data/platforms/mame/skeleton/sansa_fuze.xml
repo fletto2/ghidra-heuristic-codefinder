@@ -1,0 +1,18 @@
+<platform name="sansa_fuze" cpu="arm7_le">
+  <!-- source: MAME skeleton/sansa_fuze.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x80000000" end="0x8001FFFF" type="rom" name="rom"/>
+    <region start="0x81000000" end="0x81FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

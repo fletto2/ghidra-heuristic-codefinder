@@ -1,0 +1,14 @@
+<platform name="max80" cpu="z80">
+  <!-- source: MAME trs/max80.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x000001FF" type="rom" name="rom"/>
+    <region start="0x000007D0" end="0x000007E1" type="io" name="str_w"/>
+    <region start="0x000007E4" end="0x000007E7" type="io" name="ba_cd_r"/>
+    <region start="0x000007EC" end="0x000007FB" type="io" name="read"/>
+    <region start="0x000007F8" end="0x000007FF" type="io" name="beep_w"/>
+    <region start="0x00003800" end="0x00003BFF" type="io" name="keyboard_r"/>
+    <region start="0x00003C00" end="0x00003FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

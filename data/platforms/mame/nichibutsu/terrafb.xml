@@ -1,0 +1,10 @@
+<platform name="terrafb" cpu="68000">
+  <!-- source: MAME nichibutsu/armedf.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x0007C000" end="0x0007C001" type="io" name="armedf_io_w"/>
+    <region start="0x0007C006" end="0x0007C006" type="io" name="terrafb_fg_scrolly_w"/>
+    <region start="0x0007C008" end="0x0007C008" type="io" name="terrafb_fg_scrollx_w"/>
+    <region start="0x000C0000" end="0x000C0000" type="io" name="terrafb_fg_scroll_msb_arm_w"/>
+  </memory_map>
+</platform>

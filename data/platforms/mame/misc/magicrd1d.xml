@@ -1,0 +1,20 @@
+<platform name="magicrd1d" cpu="68070">
+  <!-- source: MAME misc/magicard.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="io" name="map"/>
+    <region start="0x00000000" end="0x0017FFFF" type="io" name="mcu_dram_r"/>
+    <region start="0x00180000" end="0x001DFFFF" type="rom" name="rom"/>
+    <region start="0x001E0000" end="0x001E7FFF" type="io" name="nvram_r"/>
+    <region start="0x001FFC00" end="0x001FFC01" type="io" name="port"/>
+    <region start="0x001FFC40" end="0x001FFC41" type="io" name="port"/>
+    <region start="0x001FFC80" end="0x001FFC81" type="io" name="output_w"/>
+    <region start="0x001FFD01" end="0x001FFD01" type="io" name="index_w"/>
+    <region start="0x001FFD03" end="0x001FFD03" type="io" name="pal_w"/>
+    <region start="0x001FFD05" end="0x001FFD05" type="io" name="mask_w"/>
+    <region start="0x001FFD40" end="0x001FFD43" type="io" name="write"/>
+    <region start="0x001FFD80" end="0x001FFD81" type="io" name="ds1207"/>
+    <region start="0x001FFF80" end="0x001FFFBF" type="ram" name="ram"/>
+    <region start="0x00200000" end="0x003FFFFF" type="io" name="ipa_r"/>
+  </memory_map>
+</platform>

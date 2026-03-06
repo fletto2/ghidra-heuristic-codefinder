@@ -1,0 +1,9 @@
+<platform name="sxyreac2" cpu="v60">
+  <!-- source: MAME seta/ssv.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00500002" end="0x00500004" type="io" name="ballswitch_r"/>
+    <region start="0x00500004" end="0x00500005" type="io" name="motor_w"/>
+    <region start="0x00520000" end="0x00520000" type="io" name="dial_w"/>
+  </memory_map>
+</platform>

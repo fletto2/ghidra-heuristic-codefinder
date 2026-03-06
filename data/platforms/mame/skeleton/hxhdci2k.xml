@@ -1,0 +1,32 @@
+<platform name="hxhdci2k" cpu="arm9">
+  <!-- source: MAME skeleton/cxhumax.cpp -->
+  <!-- year: 2008 -->
+  <memory_map>
+    <region start="0x00000000" end="0x03FFFFFF" type="ram" name="ram"/>
+    <region start="0xE0000000" end="0xE0010037" type="io" name="cx_hsx_r"/>
+    <region start="0xE0010040" end="0xE0010047" type="io" name="cx_pci_r"/>
+    <region start="0xE0010080" end="0xE00100FF" type="io" name="cx_extdesc_r"/>
+    <region start="0xE0400014" end="0xE0400017" type="io" name="cx_remap_w"/>
+    <region start="0xE0400024" end="0xE0400027" type="io" name="cx_scratch_r"/>
+    <region start="0xE0411000" end="0xE0411033" type="io" name="cx_uart2_r"/>
+    <region start="0xE0430000" end="0xE0430103" type="io" name="cx_timers_r"/>
+    <region start="0xE0440000" end="0xE0440013" type="io" name="cx_pll_r"/>
+    <region start="0xE0440020" end="0xE0440037" type="io" name="cx_clkdiv_r"/>
+    <region start="0xE0440094" end="0xE0440097" type="io" name="cx_pllprescale_r"/>
+    <region start="0xE0440100" end="0xE0440173" type="io" name="cx_chipcontrol_r"/>
+    <region start="0xE0450000" end="0xE0450037" type="io" name="cx_intctrl_r"/>
+    <region start="0xE0490000" end="0xE0490017" type="io" name="cx_ss_r"/>
+    <region start="0xE04E0000" end="0xE04E001F" type="io" name="cx_i2c0_r"/>
+    <region start="0xE04E1000" end="0xE04E101F" type="io" name="cx_i2c1_r"/>
+    <region start="0xE04E2000" end="0xE04E201F" type="io" name="cx_i2c2_r"/>
+    <region start="0xE0500300" end="0xE050030B" type="io" name="cx_mc_cfg_r"/>
+    <region start="0xE0560000" end="0xE05600FB" type="io" name="cx_drm0_r"/>
+    <region start="0xE0570000" end="0xE05700FB" type="io" name="cx_drm1_r"/>
+    <region start="0xE05D0800" end="0xE05D0BFF" type="io" name="cx_hdmi_r"/>
+    <region start="0xE0600000" end="0xE063FFFF" type="io" name="cx_gxa_r"/>
+    <region start="0xE4017000" end="0xE40173FF" type="ram" name="ram"/>
+    <region start="0xE4080000" end="0xE4083FFF" type="ram" name="ram"/>
+    <region start="0xF0000000" end="0xF03FFFFF" type="io" name="flash_r"/>
+    <region start="0xF4000000" end="0xF43FFFFF" type="io" name="dummy_flash_r"/>
+  </memory_map>
+</platform>

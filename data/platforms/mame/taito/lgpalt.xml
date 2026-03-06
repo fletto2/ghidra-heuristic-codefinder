@@ -1,0 +1,17 @@
+<platform name="lgpalt" cpu="z80">
+  <!-- source: MAME taito/lgp.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="tile_ram"/>
+    <region start="0x0000EF00" end="0x0000EF00" type="io" name="port"/>
+    <region start="0x0000EF80" end="0x0000EF80" type="io" name="ldp_read"/>
+    <region start="0x0000EFB8" end="0x0000EFB8" type="unmapped" name="nop_read"/>
+    <region start="0x0000EFC0" end="0x0000EFC0" type="io" name="port"/>
+    <region start="0x0000EFC8" end="0x0000EFC8" type="io" name="port"/>
+    <region start="0x0000EFD0" end="0x0000EFD0" type="io" name="port"/>
+    <region start="0x0000EFD8" end="0x0000EFD8" type="io" name="port"/>
+    <region start="0x0000EFE0" end="0x0000EFE0" type="io" name="port"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

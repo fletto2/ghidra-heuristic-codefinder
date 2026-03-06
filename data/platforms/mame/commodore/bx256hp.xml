@@ -1,0 +1,8 @@
+<platform name="bx256hp" cpu="8088">
+  <!-- source: MAME commodore/cbm2.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000EFFFF" type="io" name="ext_read"/>
+    <region start="0x000F0000" end="0x000F0FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

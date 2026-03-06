@@ -1,0 +1,17 @@
+<platform name="atomboy" cpu="z80">
+  <!-- source: MAME irem/m63.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="snd_status_r"/>
+    <region start="0x0000F000" end="0x0000F001" type="io" name="snd_irq_w"/>
+    <region start="0x0000F001" end="0x0000F001" type="unmapped" name="nop_write"/>
+    <region start="0x0000F002" end="0x0000F002" type="io" name="port"/>
+    <region start="0x0000F002" end="0x0000F003" type="io" name="write"/>
+    <region start="0x0000F800" end="0x0000F807" type="io" name="d0"/>
+    <region start="0x0000F807" end="0x0000F807" type="io" name="fghtbskt_samples_w"/>
+  </memory_map>
+</platform>

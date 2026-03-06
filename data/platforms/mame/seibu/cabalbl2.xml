@@ -1,0 +1,16 @@
+<platform name="cabalbl2" cpu="z80">
+  <!-- source: MAME seibu/cabal.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00004001" end="0x00004003" type="io" name="irq_clear_w"/>
+    <region start="0x00004005" end="0x00004006" type="io" name="adr_w"/>
+    <region start="0x00004008" end="0x00004009" type="io" name="ym_r"/>
+    <region start="0x00004010" end="0x00004013" type="io" name="soundlatch_r"/>
+    <region start="0x00004018" end="0x0000401B" type="io" name="main_data_w"/>
+    <region start="0x00006005" end="0x00006006" type="io" name="adr_w"/>
+    <region start="0x0000601A" end="0x0000601A" type="io" name="ctl_w"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

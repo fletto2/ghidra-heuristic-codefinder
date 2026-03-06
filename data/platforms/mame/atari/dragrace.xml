@@ -1,0 +1,14 @@
+<platform name="dragrace" cpu="6800">
+  <!-- source: MAME atari/dragrace.cpp -->
+  <memory_map>
+    <region start="0x00000080" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x0000083F" type="io" name="input_r"/>
+    <region start="0x00000900" end="0x0000093F" type="io" name="d0"/>
+    <region start="0x00000A00" end="0x00000BFF" type="ram" name="writeonly"/>
+    <region start="0x00000C00" end="0x00000C00" type="io" name="steering_r"/>
+    <region start="0x00000D00" end="0x00000D00" type="io" name="scanline_r"/>
+    <region start="0x00000E00" end="0x00000EFF" type="io" name="reset_w"/>
+    <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

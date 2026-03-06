@@ -1,0 +1,14 @@
+<platform name="trvquest" cpu="6809">
+  <!-- source: MAME alliedleisure/trvquest.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000027FF" type="ram" name="nvram"/>
+    <region start="0x00002800" end="0x00002800" type="unmapped" name="nop_read"/>
+    <region start="0x00003800" end="0x00003831" type="io" name="map"/>
+    <region start="0x00003840" end="0x00003841" type="io" name="address_data_w"/>
+    <region start="0x00003850" end="0x00003850" type="unmapped" name="nop_read"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="banked"/>
+    <region start="0x0000A000" end="0x0000A000" type="unmapped" name="nop_read"/>
+    <region start="0x0000B000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

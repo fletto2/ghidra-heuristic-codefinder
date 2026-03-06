@@ -1,0 +1,13 @@
+<platform name="trvmadns" cpu="z80">
+  <!-- source: MAME misc/trvmadns.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00007FFF" type="io" name="amap8"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
+    <region start="0x0000A000" end="0x0000A7FF" type="ram" name="tileram"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="address_w"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="unknown_w"/>
+    <region start="0x0000E004" end="0x0000E004" type="io" name="lamps_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="poundforu" cpu="z80">
+  <!-- source: MAME irem/m72.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x000C8000" end="0x000C8BFF" type="io" name="region_c8000"/>
+    <region start="0x000D0000" end="0x000D7FFF" type="ram" name="ram"/>
+    <region start="0x000D8000" end="0x000D8BFF" type="io" name="region_d8000"/>
+  </memory_map>
+</platform>

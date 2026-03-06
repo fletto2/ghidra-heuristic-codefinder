@@ -1,0 +1,8 @@
+<platform name="bob85" cpu="8085">
+  <!-- source: MAME trainer/bob85.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000002FF" type="rom" name="rom"/>
+    <region start="0x00000600" end="0x000009FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

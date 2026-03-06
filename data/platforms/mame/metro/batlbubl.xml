@@ -1,0 +1,15 @@
+<platform name="batlbubl" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0017FFFF" type="io" name="v2_map"/>
+    <region start="0x00200000" end="0x00200003" type="io" name="port"/>
+    <region start="0x00200002" end="0x00200009" type="io" name="coin_lockout_4words_w"/>
+    <region start="0x00200004" end="0x00200007" type="io" name="port"/>
+    <region start="0x00300000" end="0x0031FFFF" type="io" name="balcube_dsw_r"/>
+    <region start="0x00400000" end="0x0040000B" type="io" name="write"/>
+    <region start="0x00400001" end="0x00400001" type="io" name="read"/>
+    <region start="0x00F00000" end="0x00F0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

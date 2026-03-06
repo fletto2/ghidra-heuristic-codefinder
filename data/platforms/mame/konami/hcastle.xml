@@ -1,0 +1,19 @@
+<platform name="hcastle" cpu="z80">
+  <!-- source: MAME konami/hcastle.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000007" type="io" name="ctrl_w"/>
+    <region start="0x00000020" end="0x0000005F" type="io" name="scroll_r"/>
+    <region start="0x00000200" end="0x00000207" type="io" name="ctrl_w"/>
+    <region start="0x00000220" end="0x0000025F" type="io" name="scroll_r"/>
+    <region start="0x00000400" end="0x00000400" type="io" name="bankswitch_w"/>
+    <region start="0x00000404" end="0x00000404" type="io" name="write"/>
+    <region start="0x00000408" end="0x00000408" type="io" name="soundirq_w"/>
+    <region start="0x0000040C" end="0x0000040C" type="io" name="reset_w"/>
+    <region start="0x00000410" end="0x00000415" type="io" name="port"/>
+    <region start="0x00000418" end="0x00000418" type="io" name="gfxbank_r"/>
+    <region start="0x00000600" end="0x000006FF" type="ram" name="palette"/>
+    <region start="0x00000800" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

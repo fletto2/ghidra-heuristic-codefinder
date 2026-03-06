@@ -1,0 +1,8 @@
+<platform name="zephyr" cpu="8085">
+  <!-- source: MAME skeleton/zms8085.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x00001FFF" type="ram" name="mainram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="bangball" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00B00000" end="0x00B0000B" type="io" name="write"/>
+    <region start="0x00B00001" end="0x00B00001" type="io" name="read"/>
+    <region start="0x00C00000" end="0x00C1FFFF" type="io" name="balcube_dsw_r"/>
+    <region start="0x00D00000" end="0x00D00003" type="io" name="port"/>
+    <region start="0x00D00002" end="0x00D00009" type="io" name="coin_lockout_4words_w"/>
+    <region start="0x00D00006" end="0x00D00007" type="unmapped" name="nop_read"/>
+    <region start="0x00E00000" end="0x00E7FFFF" type="io" name="v2_map"/>
+    <region start="0x00F00000" end="0x00F0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

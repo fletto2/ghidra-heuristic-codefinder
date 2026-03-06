@@ -1,0 +1,11 @@
+<platform name="strnskil" cpu="z80">
+  <!-- source: MAME sunelectronics/markham.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00006000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000C800" end="0x0000CFFF" type="ram" name="share1"/>
+    <region start="0x0000D800" end="0x0000D805" type="io" name="strnskil_d800_r"/>
+    <region start="0x0000D808" end="0x0000D809" type="io" name="strnskil_master_output_w"/>
+    <region start="0x0000D80A" end="0x0000D80B" type="ram" name="xscroll"/>
+  </memory_map>
+</platform>

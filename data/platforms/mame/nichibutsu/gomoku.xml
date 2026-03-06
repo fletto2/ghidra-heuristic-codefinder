@@ -1,0 +1,13 @@
+<platform name="gomoku" cpu="z80">
+  <!-- source: MAME nichibutsu/gomoku.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000047FF" type="rom" name="rom"/>
+    <region start="0x00004800" end="0x000058FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x0000601F" type="io" name="sound1_w"/>
+    <region start="0x00006800" end="0x0000681F" type="io" name="sound2_w"/>
+    <region start="0x00007000" end="0x00007007" type="io" name="d1"/>
+    <region start="0x00007800" end="0x00007807" type="io" name="input_port_r"/>
+    <region start="0x00007800" end="0x00007800" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

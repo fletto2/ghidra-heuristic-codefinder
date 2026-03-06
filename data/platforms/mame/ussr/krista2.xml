@@ -1,0 +1,9 @@
+<platform name="krista2" cpu="8080">
+  <!-- source: MAME ussr/vector06.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="bank1"/>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="bank2"/>
+    <region start="0x0000A000" end="0x0000DFFF" type="ram" name="bank3"/>
+  </memory_map>
+</platform>

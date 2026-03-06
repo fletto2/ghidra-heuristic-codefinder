@@ -1,0 +1,9 @@
+<platform name="xjinhuang" cpu="z80">
+  <!-- source: MAME igs/spoker.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="nvram"/>
+    <region start="0x00010000" end="0x0001FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

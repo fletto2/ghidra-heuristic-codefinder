@@ -1,0 +1,14 @@
+<platform name="wiping" cpu="z80">
+  <!-- source: MAME nichibutsu/wiping.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="main_sound1"/>
+    <region start="0x00009800" end="0x00009BFF" type="ram" name="main_sound2"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000A800" end="0x0000A807" type="io" name="ports_r"/>
+    <region start="0x0000B000" end="0x0000B7FF" type="ram" name="ram"/>
+    <region start="0x0000B800" end="0x0000B800" type="io" name="reset_w"/>
+  </memory_map>
+</platform>

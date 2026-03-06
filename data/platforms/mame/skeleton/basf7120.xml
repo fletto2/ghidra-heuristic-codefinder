@@ -1,0 +1,10 @@
+<platform name="basf7120" cpu="z80">
+  <!-- source: MAME skeleton/basf7100.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="ram" name="shared_ram"/>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x0000FF00" end="0x0000FFFF" type="io" name="mmio_r"/>
+  </memory_map>
+</platform>

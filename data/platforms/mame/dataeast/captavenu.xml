@@ -1,0 +1,25 @@
+<platform name="captavenu" cpu="z80">
+  <!-- source: MAME dataeast/deco32.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x00100007" type="io" name="_71_r"/>
+    <region start="0x00100000" end="0x00100003" type="io" name="region_100000"/>
+    <region start="0x00108000" end="0x00108003" type="unmapped" name="nop_write"/>
+    <region start="0x00110000" end="0x00111FFF" type="io" name="region_110000"/>
+    <region start="0x00120000" end="0x00127FFF" type="ram" name="ram"/>
+    <region start="0x00128000" end="0x0012FFFF" type="io" name="ioprot_r"/>
+    <region start="0x00130000" end="0x00131FFF" type="ram" name="palette"/>
+    <region start="0x00148000" end="0x0014800F" type="io" name="map"/>
+    <region start="0x00160000" end="0x00167FFF" type="ram" name="ram"/>
+    <region start="0x00168000" end="0x00168003" type="io" name="region_168000"/>
+    <region start="0x00178000" end="0x00178003" type="io" name="pri_w"/>
+    <region start="0x00180000" end="0x0018001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x00190000" end="0x00195FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x001A0000" end="0x001A5FFF" type="ram" name="pf1_rowscroll32"/>
+    <region start="0x001C0000" end="0x001C001F" type="io" name="pf_control_dword_r"/>
+    <region start="0x001D0000" end="0x001D1FFF" type="io" name="pf1_data_dword_r"/>
+    <region start="0x001D4000" end="0x001D5FFF" type="io" name="pf2_data_dword_r"/>
+    <region start="0x001E0000" end="0x001E5FFF" type="ram" name="pf3_rowscroll32"/>
+  </memory_map>
+</platform>

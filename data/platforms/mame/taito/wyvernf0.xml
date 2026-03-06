@@ -1,0 +1,18 @@
+<platform name="wyvernf0" cpu="z80">
+  <!-- source: MAME taito/wyvernf0.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D000" type="unmapped" name="nop_write"/>
+    <region start="0x0000D100" end="0x0000D100" type="io" name="rambank_w"/>
+    <region start="0x0000D200" end="0x0000D200" type="io" name="rombank_w"/>
+    <region start="0x0000D300" end="0x0000D303" type="ram" name="ram"/>
+    <region start="0x0000D400" end="0x0000D401" type="io" name="data_r"/>
+    <region start="0x0000D500" end="0x0000D5FF" type="ram" name="ram"/>
+    <region start="0x0000D600" end="0x0000D607" type="io" name="port"/>
+    <region start="0x0000D610" end="0x0000D610" type="io" name="read"/>
+    <region start="0x0000D800" end="0x0000DBFF" type="ram" name="palette"/>
+    <region start="0x0000DC00" end="0x0000DC00" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

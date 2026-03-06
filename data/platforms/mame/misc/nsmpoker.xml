@@ -1,0 +1,9 @@
+<platform name="nsmpoker" cpu="tms9995">
+  <!-- source: MAME misc/nsmpoker.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00009000" end="0x0000AFFF" type="ram" name="ram"/>
+    <region start="0x0000B000" end="0x0000CFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

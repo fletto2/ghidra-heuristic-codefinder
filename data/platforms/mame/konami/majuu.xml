@@ -1,0 +1,8 @@
+<platform name="majuu" cpu="68000">
+  <!-- source: MAME konami/twin16.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x000B0000" end="0x000B03FF" type="ram" name="banked"/>
+    <region start="0x000B0400" end="0x000B0400" type="io" name="nvram_bank_w"/>
+  </memory_map>
+</platform>

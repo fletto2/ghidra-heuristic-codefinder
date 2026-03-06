@@ -1,0 +1,14 @@
+<platform name="qvt201" cpu="z80">
+  <!-- source: MAME qume/qvt201.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008800" end="0x00008FFF" type="ram" name="nvram"/>
+    <region start="0x00009000" end="0x00009007" type="io" name="read"/>
+    <region start="0x00009800" end="0x0000980F" type="io" name="read"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="offset_w"/>
+    <region start="0x0000A800" end="0x0000A800" type="io" name="keyboard_w"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="keyboard_r"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="ram" name="dataram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="term2la1" cpu="z80">
+  <!-- source: MAME midway/midyunit.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x01C00000" end="0x01C0005F" type="io" name="term2_input_r"/>
+    <region start="0x01E00000" end="0x01E0001F" type="io" name="term2_sound_w"/>
+  </memory_map>
+</platform>

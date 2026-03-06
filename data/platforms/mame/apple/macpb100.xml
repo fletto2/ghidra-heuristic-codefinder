@@ -1,0 +1,13 @@
+<platform name="macpb100" cpu="68000">
+  <!-- source: MAME apple/macprtb.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00900000" end="0x0093FFFF" type="io" name="rom_switch_r"/>
+    <region start="0x00F60000" end="0x00F7FFFF" type="io" name="iwm_r"/>
+    <region start="0x00F90000" end="0x00F9FFFF" type="io" name="scsi_r"/>
+    <region start="0x00FA8000" end="0x00FAFFFF" type="ram" name="vram"/>
+    <region start="0x00FB0000" end="0x00FDFFFF" type="io" name="read"/>
+    <region start="0x00FE0000" end="0x00FE0001" type="unmapped" name="unmapped"/>
+    <region start="0x00FFFFF0" end="0x00FFFFFF" type="io" name="autovector_r"/>
+  </memory_map>
+</platform>

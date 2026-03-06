@@ -1,0 +1,24 @@
+<platform name="changela" cpu="z80">
+  <!-- source: MAME taito/changela.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000083FF" type="ram" name="spriteram"/>
+    <region start="0x00009000" end="0x000097FF" type="ram" name="videoram"/>
+    <region start="0x0000A000" end="0x0000A07F" type="io" name="colorram"/>
+    <region start="0x0000B000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="io" name="changela_mem_device_r"/>
+    <region start="0x0000C800" end="0x0000C800" type="unmapped" name="nop_write"/>
+    <region start="0x0000C900" end="0x0000C900" type="io" name="changela_mem_device_select_w"/>
+    <region start="0x0000CA00" end="0x0000CA00" type="io" name="changela_slope_rom_addr_hi_w"/>
+    <region start="0x0000CB00" end="0x0000CB00" type="io" name="changela_slope_rom_addr_lo_w"/>
+    <region start="0x0000D000" end="0x0000D001" type="io" name="data_r"/>
+    <region start="0x0000D010" end="0x0000D011" type="io" name="data_r"/>
+    <region start="0x0000D020" end="0x0000D027" type="io" name="d0"/>
+    <region start="0x0000D024" end="0x0000D025" type="io" name="changela_24_r"/>
+    <region start="0x0000D028" end="0x0000D028" type="io" name="mcu_r"/>
+    <region start="0x0000D02C" end="0x0000D02D" type="io" name="port"/>
+    <region start="0x0000D030" end="0x0000D031" type="io" name="changela_30_r"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="reset_w"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

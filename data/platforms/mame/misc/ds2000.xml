@@ -1,0 +1,10 @@
+<platform name="ds2000" cpu="z80">
+  <!-- source: MAME misc/ds2000.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x00001FFF" type="io" name="dp8350_w"/>
+    <region start="0x0000E000" end="0x0000E3FF" type="io" name="kbd_r"/>
+    <region start="0x0000E400" end="0x0000EFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

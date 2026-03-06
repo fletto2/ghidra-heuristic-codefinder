@@ -1,0 +1,8 @@
+<platform name="getaway" cpu="tms9900">
+  <!-- source: MAME universal/getaway.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00003800" end="0x00003FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

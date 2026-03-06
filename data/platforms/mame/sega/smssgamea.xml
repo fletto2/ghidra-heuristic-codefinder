@@ -1,0 +1,9 @@
+<platform name="smssgamea" cpu="z80">
+  <!-- source: MAME sega/sms_bootleg.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFF7" type="ram" name="game_bank1"/>
+    <region start="0x0000FFFC" end="0x0000FFFF" type="io" name="sms_mapper_r"/>
+    <region start="0x0000FFFE" end="0x0000FFFF" type="io" name="region_fffe"/>
+  </memory_map>
+</platform>

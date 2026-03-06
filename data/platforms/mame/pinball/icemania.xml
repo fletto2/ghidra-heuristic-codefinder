@@ -1,0 +1,8 @@
+<platform name="icemania" cpu="tms9995">
+  <!-- source: MAME pinball/jvh.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003BFF" type="rom" name="rom"/>
+    <region start="0x00003C00" end="0x00003CFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

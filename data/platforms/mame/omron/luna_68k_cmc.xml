@@ -1,0 +1,8 @@
+<platform name="luna_68k_cmc" cpu="68020">
+  <!-- source: MAME omron/luna_68k_cmc.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00000007" type="io" name="region_0"/>
+    <region start="0x00400000" end="0x00407FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

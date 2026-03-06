@@ -1,0 +1,11 @@
+<platform name="msbc1" cpu="68000">
+  <!-- source: MAME omnibyte/msbc1.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x005FFFFF" type="ram" name="ram"/>
+    <region start="0x00F80000" end="0x00F87FFF" type="rom" name="rom"/>
+    <region start="0x00FFFA00" end="0x00FFFA3F" type="io" name="read"/>
+    <region start="0x00FFFC00" end="0x00FFFC3F" type="io" name="read"/>
+    <region start="0x00FFFE00" end="0x00FFFE3F" type="io" name="read"/>
+  </memory_map>
+</platform>

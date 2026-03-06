@@ -1,0 +1,12 @@
+<platform name="ht68k" cpu="68000">
+  <!-- source: MAME skeleton/ht68k.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="mainram"/>
+    <region start="0x00080000" end="0x000FFFFF" type="io" name="map0x00080000_0x000fffff__expansion"/>
+    <region start="0x00D80000" end="0x00D8FFFF" type="io" name="map0x00d80000_0x00d8ffff__printer"/>
+    <region start="0x00E00000" end="0x00E00007" type="io" name="read"/>
+    <region start="0x00E80000" end="0x00E800FF" type="io" name="read"/>
+    <region start="0x00F00000" end="0x00F07FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

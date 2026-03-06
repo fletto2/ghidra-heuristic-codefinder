@@ -1,0 +1,18 @@
+<platform name="turkhunt" cpu="h8">
+  <!-- source: MAME seta/seta2.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="ram"/>
+    <region start="0x00300000" end="0x0030FFFF" type="ram" name="nvram"/>
+    <region start="0x00400000" end="0x00400003" type="io" name="port"/>
+    <region start="0x00400300" end="0x0040030F" type="io" name="sound_bank_w"/>
+    <region start="0x00500000" end="0x00500001" type="io" name="port"/>
+    <region start="0x00580000" end="0x00580001" type="io" name="port"/>
+    <region start="0x00700000" end="0x00700005" type="io" name="port"/>
+    <region start="0x00700005" end="0x00700007" type="io" name="samshoot_coin_w"/>
+    <region start="0x00800000" end="0x0084FFFF" type="ram" name="ram"/>
+    <region start="0x00860000" end="0x0086003F" type="ram" name="ram"/>
+    <region start="0x00900000" end="0x00903FFF" type="io" name="word_r"/>
+  </memory_map>
+</platform>

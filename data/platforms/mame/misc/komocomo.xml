@@ -1,0 +1,11 @@
+<platform name="komocomo" cpu="68000">
+  <!-- source: MAME misc/oneshot.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00190026" end="0x00190027" type="io" name="region_190026"/>
+    <region start="0x0019002E" end="0x0019002F" type="io" name="region_19002e"/>
+    <region start="0x00190036" end="0x00190037" type="io" name="region_190036"/>
+    <region start="0x0019003E" end="0x0019003F" type="io" name="region_19003e"/>
+    <region start="0x0019C020" end="0x0019C021" type="io" name="in0_word_r"/>
+  </memory_map>
+</platform>

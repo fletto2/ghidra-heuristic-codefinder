@@ -1,0 +1,15 @@
+<platform name="galagamw" cpu="z80">
+  <!-- source: MAME namco/galaga.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00006800" end="0x00006807" type="io" name="bosco_dsw_r"/>
+    <region start="0x00006800" end="0x00006827" type="io" name="pacman_sound_w"/>
+    <region start="0x00006830" end="0x00006830" type="io" name="reset_w"/>
+    <region start="0x00007000" end="0x00007100" type="io" name="data_r"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="videoram"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="galaga_ram2"/>
+    <region start="0x00009800" end="0x00009BFF" type="ram" name="galaga_ram3"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+  </memory_map>
+</platform>

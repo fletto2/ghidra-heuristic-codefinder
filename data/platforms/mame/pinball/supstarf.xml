@@ -1,0 +1,9 @@
+<platform name="supstarf" cpu="8085">
+  <!-- source: MAME pinball/supstarf.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

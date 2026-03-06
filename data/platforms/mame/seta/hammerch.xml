@@ -1,0 +1,9 @@
+<platform name="hammerch" cpu="h8">
+  <!-- source: MAME seta/namcoeva.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="sharedram"/>
+    <region start="0x00A00000" end="0x00A07FFF" type="io" name="read"/>
+  </memory_map>
+</platform>

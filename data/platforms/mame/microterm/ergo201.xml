@@ -1,0 +1,16 @@
+<platform name="ergo201" cpu="z80">
+  <!-- source: MAME microterm/ergo201.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x00001000" type="unmapped" name="nop_write"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="screen_brightness"/>
+    <region start="0x00003000" end="0x0000300F" type="io" name="write"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="earom_latch_w"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="transmit"/>
+    <region start="0x00006000" end="0x00006001" type="io" name="receive"/>
+    <region start="0x00007000" end="0x000077FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

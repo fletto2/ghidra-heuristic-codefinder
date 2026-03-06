@@ -1,0 +1,11 @@
+<platform name="bullion2" cpu="z80">
+  <!-- source: MAME skeleton/bullion2.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00004804" end="0x00004804" type="io" name="map0x4804_0x4804rw"/>
+    <region start="0x00004900" end="0x00004907" type="io" name="map0x4900_0x4907w__latch_for_lamps_and_r"/>
+    <region start="0x00004B00" end="0x00004B00" type="io" name="write"/>
+  </memory_map>
+</platform>

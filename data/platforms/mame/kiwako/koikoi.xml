@@ -1,0 +1,11 @@
+<platform name="koikoi" cpu="z80">
+  <!-- source: MAME kiwako/koikoi.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x000077FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="port"/>
+    <region start="0x00009000" end="0x00009007" type="io" name="io_r"/>
+  </memory_map>
+</platform>

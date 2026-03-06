@@ -1,0 +1,27 @@
+<platform name="triothepj" cpu="6502">
+  <!-- source: MAME dataeast/actfancr.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00040000" end="0x00040007" type="io" name="pf_control0_8bit_w"/>
+    <region start="0x00040010" end="0x0004001F" type="io" name="pf_control1_8bit_swap_w"/>
+    <region start="0x00044000" end="0x00045FFF" type="io" name="pf_data_8bit_swap_r"/>
+    <region start="0x00046400" end="0x000467FF" type="io" name="pf_rowscroll_8bit_swap_r"/>
+    <region start="0x00060000" end="0x00060007" type="io" name="pf_control0_8bit_w"/>
+    <region start="0x00060010" end="0x0006001F" type="io" name="pf_control1_8bit_swap_w"/>
+    <region start="0x00064000" end="0x000647FF" type="io" name="pf_data_8bit_swap_r"/>
+    <region start="0x00066400" end="0x000667FF" type="io" name="pf_rowscroll_8bit_swap_r"/>
+    <region start="0x00100000" end="0x00100000" type="io" name="write"/>
+    <region start="0x00110000" end="0x00110001" type="io" name="buffer_spriteram_w"/>
+    <region start="0x00120000" end="0x001207FF" type="ram" name="spriteram"/>
+    <region start="0x00130000" end="0x001305FF" type="ram" name="palette"/>
+    <region start="0x00140000" end="0x00140001" type="unmapped" name="nop_read"/>
+    <region start="0x001F0000" end="0x001F3FFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

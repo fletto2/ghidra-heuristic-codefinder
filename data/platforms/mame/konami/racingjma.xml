@@ -1,0 +1,16 @@
+<platform name="racingjma" cpu="68000">
+  <!-- source: MAME konami/nwk-tr.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="ram" name="ram"/>
+    <region start="0x74000000" end="0x7407FFFF" type="io" name="region_74000000"/>
+    <region start="0x78000000" end="0x7800FFFF" type="io" name="cgboard_dsp_shared_r_ppc"/>
+    <region start="0x780C0000" end="0x780C0003" type="io" name="cgboard_dsp_comm_r_ppc"/>
+    <region start="0x7D000000" end="0x7D021FFF" type="io" name="sysreg_r"/>
+    <region start="0x7D030000" end="0x7D03000F" type="io" name="host_r"/>
+    <region start="0x7D040000" end="0x7D05FFFF" type="io" name="lanc1_r"/>
+    <region start="0x7E000000" end="0x7E7FFFFF" type="rom" name="rom"/>
+    <region start="0x7F000000" end="0x7F1FFFFF" type="rom" name="rom"/>
+    <region start="0x7FE00000" end="0x7FFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

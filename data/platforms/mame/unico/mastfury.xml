@@ -1,0 +1,8 @@
+<platform name="mastfury" cpu="68000">
+  <!-- source: MAME unico/drgnmst.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00800180" end="0x00800183" type="io" name="read"/>
+    <region start="0x00800189" end="0x00800189" type="io" name="read"/>
+  </memory_map>
+</platform>

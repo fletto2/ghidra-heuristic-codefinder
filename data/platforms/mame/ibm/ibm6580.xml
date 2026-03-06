@@ -1,0 +1,9 @@
+<platform name="ibm6580" cpu="8086">
+  <!-- source: MAME ibm/ibm6580.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00090000" end="0x00090001" type="io" name="unk_latch_w"/>
+    <region start="0x000EF000" end="0x000EFFFF" type="ram" name="videoram"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

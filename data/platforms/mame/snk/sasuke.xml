@@ -1,0 +1,17 @@
+<platform name="sasuke" cpu="6502">
+  <!-- source: MAME snk/snk6502.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00003000" end="0x00003001" type="io" name="address_w"/>
+    <region start="0x00004000" end="0x00008FFF" type="rom" name="rom"/>
+    <region start="0x0000B000" end="0x0000B007" type="io" name="sound_w"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

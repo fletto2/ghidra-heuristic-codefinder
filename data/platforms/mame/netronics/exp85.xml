@@ -1,0 +1,10 @@
+<platform name="exp85" cpu="8085">
+  <!-- source: MAME netronics/exp85.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="io" name="region_0"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="rom" name="rom"/>
+    <region start="0x0000F800" end="0x0000F8FF" type="io" name="memory_r"/>
+  </memory_map>
+</platform>

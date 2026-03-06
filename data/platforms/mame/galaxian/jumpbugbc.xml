@@ -1,0 +1,17 @@
+<platform name="jumpbugbc" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004BFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="spriteram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="port"/>
+    <region start="0x00006002" end="0x00006006" type="io" name="galaxian_gfxbank_w"/>
+    <region start="0x00006800" end="0x00006800" type="io" name="port"/>
+    <region start="0x00007000" end="0x00007002" type="io" name="port"/>
+    <region start="0x00007004" end="0x00007004" type="io" name="galaxian_stars_enable_w"/>
+    <region start="0x00007006" end="0x00007007" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x00008000" end="0x0000AFFF" type="rom" name="rom"/>
+    <region start="0x0000B000" end="0x0000BFFF" type="io" name="jumpbug_protection_r"/>
+  </memory_map>
+</platform>

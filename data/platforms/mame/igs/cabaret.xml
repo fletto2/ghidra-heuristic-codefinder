@@ -1,0 +1,8 @@
+<platform name="cabaret" cpu="z80">
+  <!-- source: MAME igs/cabaret.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000EFFF" type="rom" name="rom"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

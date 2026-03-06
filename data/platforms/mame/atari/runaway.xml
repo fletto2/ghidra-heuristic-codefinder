@@ -1,0 +1,9 @@
+<platform name="runaway" cpu="6502">
+  <!-- source: MAME atari/runaway.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00001400" end="0x0000143F" type="io" name="earom_write"/>
+    <region start="0x00001800" end="0x00001800" type="io" name="earom_control_w"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="earom_read"/>
+  </memory_map>
+</platform>

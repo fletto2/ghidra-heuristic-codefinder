@@ -1,0 +1,13 @@
+<platform name="ob68k1a" cpu="68000">
+  <!-- source: MAME omnibyte/ob68k1a.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00FE0000" end="0x00FEFFFF" type="rom" name="rom"/>
+    <region start="0x00FFFF00" end="0x00FFFF03" type="io" name="read"/>
+    <region start="0x00FFFF10" end="0x00FFFF10" type="io" name="str_stt_w"/>
+    <region start="0x00FFFF20" end="0x00FFFF23" type="io" name="read"/>
+    <region start="0x00FFFF40" end="0x00FFFF47" type="io" name="read"/>
+    <region start="0x00FFFF60" end="0x00FFFF6F" type="io" name="read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,12 @@
+<platform name="smkmikke" cpu="arm9">
+  <!-- source: MAME tvgames/generalplus_gp327902.cpp -->
+  <!-- year: 2021 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="ram" name="ram"/>
+    <region start="0xC0020070" end="0xC0020073" type="io" name="c0020070_unk_r"/>
+    <region start="0xC0060000" end="0xC0060003" type="io" name="c0060000_unk_w"/>
+    <region start="0xC008000C" end="0xC008000F" type="io" name="c008000c_unk_r"/>
+    <region start="0xD000003C" end="0xD000003F" type="io" name="d000003c_unk_r"/>
+    <region start="0xF8000000" end="0xF80003FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="dc_g2if" cpu="sh4">
+  <!-- source: MAME sega/dc_g2if.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000083" type="io" name="region_0"/>
+    <region start="0x00000090" end="0x0000009F" type="io" name="map0x90_0x93rw_sb_g2dsto_ds_timeout"/>
+    <region start="0x000000BC" end="0x000000CB" type="io" name="g2apro_w"/>
+    <region start="0x000000D0" end="0x000000DB" type="io" name="map0xd0_0xdbr_sb_e1d_live_register_reads"/>
+    <region start="0x000000E0" end="0x000000EB" type="io" name="map0xe0_0xebr_sb_e2d_live_register_reads"/>
+    <region start="0x000000F0" end="0x000000FB" type="io" name="map0xf0_0xfbr_sb_ddd_live_register_reads"/>
+  </memory_map>
+</platform>

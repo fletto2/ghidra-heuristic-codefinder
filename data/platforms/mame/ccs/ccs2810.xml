@@ -1,0 +1,8 @@
+<platform name="ccs2810" cpu="z80">
+  <!-- source: MAME ccs/ccs2810.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="bank1"/>
+  </memory_map>
+</platform>

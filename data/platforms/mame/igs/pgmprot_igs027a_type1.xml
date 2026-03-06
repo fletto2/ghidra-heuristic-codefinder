@@ -1,0 +1,23 @@
+<platform name="pgmprot_igs027a_type1" cpu="arm7_le">
+  <!-- source: MAME igs/pgmprot_igs027a_type1.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x08100000" end="0x083FFFFF" type="io" name="arm7_type1_exrom_r"/>
+    <region start="0x10000000" end="0x100003FF" type="ram" name="ram"/>
+    <region start="0x40000000" end="0x40000003" type="io" name="arm7_type1_protlatch_r"/>
+    <region start="0x40000008" end="0x4000000B" type="unmapped" name="nop_write"/>
+    <region start="0x4000000C" end="0x4000000F" type="io" name="arm7_type1_unk_r"/>
+    <region start="0x50000000" end="0x500003FF" type="ram" name="ram"/>
+    <region start="0x50800000" end="0x5080003F" type="io" name="arm7_shareram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

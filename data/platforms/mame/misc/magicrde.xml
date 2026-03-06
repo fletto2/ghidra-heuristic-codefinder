@@ -1,0 +1,22 @@
+<platform name="magicrde" cpu="68070">
+  <!-- source: MAME misc/magicard.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="io" name="map"/>
+    <region start="0x00000000" end="0x0017FFFF" type="io" name="mcu_dram_r"/>
+    <region start="0x001FFF80" end="0x001FFFBF" type="ram" name="ram"/>
+    <region start="0x00200000" end="0x00400001" type="io" name="ipa_r"/>
+    <region start="0x00401000" end="0x00401001" type="io" name="port"/>
+    <region start="0x00402000" end="0x00402001" type="io" name="output_w"/>
+    <region start="0x00403001" end="0x00403001" type="io" name="index_w"/>
+    <region start="0x00403003" end="0x00403003" type="io" name="pal_w"/>
+    <region start="0x00403005" end="0x00403005" type="io" name="mask_w"/>
+    <region start="0x00403007" end="0x00403007" type="io" name="index_w"/>
+    <region start="0x00404003" end="0x00404003" type="io" name="pal_r"/>
+    <region start="0x00405003" end="0x00405003" type="io" name="data_w"/>
+    <region start="0x00406001" end="0x00406001" type="io" name="address_w"/>
+    <region start="0x00407000" end="0x00407020" type="io" name="read"/>
+    <region start="0x00500000" end="0x0050FFFF" type="ram" name="nvram"/>
+    <region start="0x00600000" end="0x0067FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

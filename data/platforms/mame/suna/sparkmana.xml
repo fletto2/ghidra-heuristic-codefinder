@@ -1,0 +1,15 @@
+<platform name="sparkmana" cpu="z80">
+  <!-- source: MAME suna/suna8.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="port"/>
+    <region start="0x0000C080" end="0x0000C080" type="io" name="port"/>
+    <region start="0x0000C0A3" end="0x0000C0A3" type="io" name="sparkman_c0a3_r"/>
+    <region start="0x0000C200" end="0x0000C480" type="io" name="sparkman_spritebank_w"/>
+    <region start="0x0000C500" end="0x0000C57F" type="io" name="starfigh_sound_latch_w"/>
+    <region start="0x0000C600" end="0x0000DFFF" type="ram" name="palette"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="io" name="banked_spriteram_r"/>
+  </memory_map>
+</platform>

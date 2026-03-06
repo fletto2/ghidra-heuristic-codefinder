@@ -1,0 +1,32 @@
+<platform name="sams64_2" cpu="z80">
+  <!-- source: MAME snk/hng64.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00FFFFFF" type="ram" name="ram"/>
+    <region start="0x04000000" end="0x05FFFFFF" type="rom" name="rom"/>
+    <region start="0x1F700000" end="0x1F70111F" type="io" name="sysregs_r"/>
+    <region start="0x1F701200" end="0x1F70127F" type="io" name="dmac_r"/>
+    <region start="0x1F702100" end="0x1F70217F" type="io" name="rtc_r"/>
+    <region start="0x1F7021C4" end="0x1F7021C7" type="io" name="mips_to_iomcu_irq_w"/>
+    <region start="0x1F800000" end="0x1F803FFF" type="ram" name="nvram"/>
+    <region start="0x1F808000" end="0x1F8087FF" type="io" name="dualport_r"/>
+    <region start="0x1FC00000" end="0x1FC7FFFF" type="rom" name="rom"/>
+    <region start="0x20000000" end="0x2000BFFF" type="ram" name="ram"/>
+    <region start="0x2000D800" end="0x2000EFFF" type="io" name="sprite_clear_even_w"/>
+    <region start="0x20010000" end="0x20010013" type="ram" name="ram"/>
+    <region start="0x20100000" end="0x2017FFFF" type="ram" name="ram"/>
+    <region start="0x20190000" end="0x20190037" type="ram" name="ram"/>
+    <region start="0x20200000" end="0x20203FFF" type="ram" name="ram"/>
+    <region start="0x20208000" end="0x2020805F" type="io" name="tcram_w"/>
+    <region start="0x20300000" end="0x20300203" type="io" name="dl_w"/>
+    <region start="0x20300210" end="0x2030021B" type="io" name="dl_unk_w"/>
+    <region start="0x30000000" end="0x3000002F" type="io" name="fbcontrol_r"/>
+    <region start="0x30100000" end="0x3015FFFF" type="io" name="fbram1_r"/>
+    <region start="0x30200000" end="0x3025FFFF" type="io" name="fbram2_r"/>
+    <region start="0x60000000" end="0x603FFFFF" type="io" name="soundram2_r"/>
+    <region start="0x68000000" end="0x6800000F" type="io" name="main_sound_comms_r"/>
+    <region start="0x6F000000" end="0x6F000003" type="io" name="soundcpu_enable_w"/>
+    <region start="0xC0000000" end="0xC0000FFF" type="io" name="com_ram"/>
+    <region start="0xC0001000" end="0xC0001007" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="supdrapoa" cpu="z80">
+  <!-- source: MAME stern/supdrapo.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="col_line"/>
+    <region start="0x00005700" end="0x000058FF" type="ram" name="col_line"/>
+    <region start="0x00006000" end="0x00007BFF" type="ram" name="ram"/>
+    <region start="0x00007C00" end="0x00007C00" type="io" name="debug7c00_w"/>
+    <region start="0x00008000" end="0x00008006" type="io" name="wdog8000_w"/>
+    <region start="0x00009000" end="0x000090FF" type="ram" name="nvram"/>
+    <region start="0x00009400" end="0x00009400" type="io" name="rng_r"/>
+    <region start="0x00009800" end="0x00009801" type="io" name="data_address_w"/>
+  </memory_map>
+</platform>

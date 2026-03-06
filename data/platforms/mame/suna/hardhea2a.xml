@@ -1,0 +1,27 @@
+<platform name="hardhea2a" cpu="z80">
+  <!-- source: MAME suna/suna8.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="port"/>
+    <region start="0x0000C080" end="0x0000C080" type="io" name="port"/>
+    <region start="0x0000C200" end="0x0000C200" type="io" name="hardhea2_spritebank_w"/>
+    <region start="0x0000C280" end="0x0000C280" type="io" name="hardhea2_rombank_w"/>
+    <region start="0x0000C28C" end="0x0000C28C" type="io" name="hardhea2_rombank_w"/>
+    <region start="0x0000C300" end="0x0000C300" type="io" name="hardhea2_flipscreen_w"/>
+    <region start="0x0000C380" end="0x0000C380" type="io" name="hardhea2_nmi_w"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="hardhea2_leds_w"/>
+    <region start="0x0000C480" end="0x0000C480" type="unmapped" name="nop_write"/>
+    <region start="0x0000C500" end="0x0000C500" type="io" name="write"/>
+    <region start="0x0000C507" end="0x0000C508" type="io" name="region_c507"/>
+    <region start="0x0000C50F" end="0x0000C50F" type="io" name="region_c50f"/>
+    <region start="0x0000C522" end="0x0000C522" type="io" name="region_c522"/>
+    <region start="0x0000C528" end="0x0000C528" type="io" name="region_c528"/>
+    <region start="0x0000C533" end="0x0000C533" type="io" name="region_c533"/>
+    <region start="0x0000C556" end="0x0000C556" type="io" name="region_c556"/>
+    <region start="0x0000C560" end="0x0000C560" type="io" name="region_c560"/>
+    <region start="0x0000C600" end="0x0000DFFF" type="ram" name="palette"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="io" name="banked_spriteram_r"/>
+  </memory_map>
+</platform>

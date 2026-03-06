@@ -1,0 +1,22 @@
+<platform name="bishjan" cpu="h8">
+  <!-- source: MAME subsino/subsino2.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00080000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x00207FFF" type="ram" name="nvram"/>
+    <region start="0x00412000" end="0x004131FF" type="io" name="ss9601_videoram_1_lo_r"/>
+    <region start="0x00416000" end="0x004171FF" type="io" name="ss9601_reelram_lo_r"/>
+    <region start="0x00422000" end="0x004231FF" type="io" name="ss9601_videoram_1_hi_r"/>
+    <region start="0x00426000" end="0x004271FF" type="io" name="ss9601_reelram_hi_r"/>
+    <region start="0x00430000" end="0x004331FF" type="io" name="ss9601_videoram_1_hi_lo_w"/>
+    <region start="0x00434000" end="0x004371FF" type="io" name="ss9601_videoram_0_hi_lo_w"/>
+    <region start="0x00600000" end="0x00600000" type="io" name="bishjan_sound_r"/>
+    <region start="0x00600040" end="0x00600040" type="io" name="ss9601_scrollctrl_w"/>
+    <region start="0x00600060" end="0x00600062" type="io" name="index_w"/>
+    <region start="0x00600080" end="0x00600080" type="io" name="ss9601_tilesize_w"/>
+    <region start="0x006000A0" end="0x006000A0" type="io" name="ss9601_byte_lo_w"/>
+    <region start="0x00A0001F" end="0x00A00025" type="io" name="ss9601_disable_w"/>
+    <region start="0x00C00000" end="0x00C0001F" type="io" name="read"/>
+  </memory_map>
+</platform>

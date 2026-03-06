@@ -1,0 +1,14 @@
+<platform name="superwng" cpu="z80">
+  <!-- source: MAME wing/superwng.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00008FFF" type="ram" name="banked"/>
+    <region start="0x00009800" end="0x000099FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="hopper_w"/>
+    <region start="0x0000A080" end="0x0000A080" type="io" name="port"/>
+    <region start="0x0000A100" end="0x0000A100" type="io" name="write"/>
+    <region start="0x0000A180" end="0x0000A180" type="io" name="port"/>
+    <region start="0x0000A181" end="0x0000A187" type="io" name="nmi_enable_w"/>
+  </memory_map>
+</platform>

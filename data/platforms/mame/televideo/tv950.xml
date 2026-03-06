@@ -1,0 +1,21 @@
+<platform name="tv950" cpu="6502">
+  <!-- source: MAME televideo/tv950.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="vram"/>
+    <region start="0x00008100" end="0x00008101" type="io" name="status_r"/>
+    <region start="0x00009000" end="0x00009000" type="io" name="row_addr_w"/>
+    <region start="0x00009300" end="0x00009303" type="io" name="read"/>
+    <region start="0x00009500" end="0x00009503" type="io" name="read"/>
+    <region start="0x00009900" end="0x00009903" type="io" name="read"/>
+    <region start="0x0000B100" end="0x0000B10F" type="io" name="map"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

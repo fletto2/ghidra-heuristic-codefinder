@@ -1,0 +1,8 @@
+<platform name="ti931" cpu="z80">
+  <!-- source: MAME ti/ti931.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="charram"/>
+  </memory_map>
+</platform>

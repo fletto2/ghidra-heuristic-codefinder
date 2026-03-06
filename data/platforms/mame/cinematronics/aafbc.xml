@@ -1,0 +1,11 @@
+<platform name="aafbc" cpu="z80">
+  <!-- source: MAME cinematronics/leland.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="slave_large_banksw_w"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F802" type="io" name="slave_video_addr_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,17 @@
+<platform name="dokyusei" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x0047FFFF" type="io" name="v3_map"/>
+    <region start="0x00478836" end="0x00478837" type="unmapped" name="nop_write"/>
+    <region start="0x00478880" end="0x00478887" type="io" name="input_r"/>
+    <region start="0x00478888" end="0x00478889" type="ram" name="writeonly"/>
+    <region start="0x00800001" end="0x00800001" type="io" name="oki_bank_hi_w"/>
+    <region start="0x00900000" end="0x00900001" type="unmapped" name="nop_write"/>
+    <region start="0x00A00001" end="0x00A00001" type="io" name="oki_bank_lo_w"/>
+    <region start="0x00C00000" end="0x00C00003" type="io" name="write"/>
+    <region start="0x00D00001" end="0x00D00001" type="io" name="read"/>
+    <region start="0x00F00000" end="0x00F0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

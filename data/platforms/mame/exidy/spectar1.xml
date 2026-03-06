@@ -1,0 +1,16 @@
+<platform name="spectar1" cpu="6502">
+  <!-- source: MAME exidy/exidy.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000800" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004800" end="0x00004FFF" type="ram" name="characterram"/>
+    <region start="0x00005200" end="0x00005201" type="io" name="spectar_audio_1_w"/>
+    <region start="0x0000FF00" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

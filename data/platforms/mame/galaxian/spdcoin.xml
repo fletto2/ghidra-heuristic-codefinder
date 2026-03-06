@@ -1,0 +1,13 @@
+<platform name="spdcoin" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000090FF" type="ram" name="spriteram"/>
+    <region start="0x00009800" end="0x00009803" type="io" name="read"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="read"/>
+    <region start="0x0000A801" end="0x0000A807" type="io" name="irq_enable_w"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="reset_r"/>
+  </memory_map>
+</platform>

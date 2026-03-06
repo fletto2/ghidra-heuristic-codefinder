@@ -1,0 +1,11 @@
+<platform name="linndrum" cpu="z80">
+  <!-- source: MAME linn/linndrum.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001F7F" type="rom" name="rom"/>
+    <region start="0x00001F80" end="0x00001F80" type="io" name="inport_r"/>
+    <region start="0x00001F80" end="0x00001F8F" type="io" name="u23_latch"/>
+    <region start="0x00001FC0" end="0x00001FFF" type="io" name="keyboard_r"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="fastdraw_130" cpu="68000">
+  <!-- source: MAME amiga/alg.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00F00000" end="0x00F3FFFF" type="rom" name="rom"/>
+    <region start="0x00F7C000" end="0x00F7DFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

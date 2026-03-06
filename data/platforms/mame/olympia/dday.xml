@@ -1,0 +1,18 @@
+<platform name="dday" cpu="z80">
+  <!-- source: MAME olympia/dday.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="sl_control_w"/>
+    <region start="0x00005000" end="0x00005BFF" type="ram" name="ram"/>
+    <region start="0x00005C00" end="0x00005FFF" type="io" name="colorram_r"/>
+    <region start="0x00006000" end="0x000063FF" type="ram" name="ram"/>
+    <region start="0x00006400" end="0x00006401" type="io" name="address_data_w"/>
+    <region start="0x00006800" end="0x00006801" type="io" name="address_data_w"/>
+    <region start="0x00006C00" end="0x00006C00" type="io" name="port"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="port"/>
+    <region start="0x00007400" end="0x00007400" type="io" name="port"/>
+    <region start="0x00007800" end="0x00007800" type="io" name="countdown_timer_r"/>
+    <region start="0x00007C00" end="0x00007C00" type="io" name="port"/>
+  </memory_map>
+</platform>

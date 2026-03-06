@@ -1,0 +1,8 @@
+<platform name="hp2645" cpu="8080">
+  <!-- source: MAME hp/hp2640.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00007000" end="0x000077FF" type="rom" name="rom"/>
+    <region start="0x00009000" end="0x000090FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

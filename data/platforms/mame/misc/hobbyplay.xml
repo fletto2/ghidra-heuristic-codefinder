@@ -1,0 +1,9 @@
+<platform name="hobbyplay" cpu="z80">
+  <!-- source: MAME misc/hobbyplay.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x00000BFF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001003" type="io" name="read"/>
+    <region start="0x00001800" end="0x00001803" type="io" name="read"/>
+  </memory_map>
+</platform>

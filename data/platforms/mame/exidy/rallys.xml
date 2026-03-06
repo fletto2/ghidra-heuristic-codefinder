@@ -1,0 +1,24 @@
+<platform name="rallys" cpu="6502">
+  <!-- source: MAME exidy/exidy.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="videoram"/>
+    <region start="0x00004800" end="0x00005001" type="ram" name="characterram"/>
+    <region start="0x00005100" end="0x00005100" type="io" name="port"/>
+    <region start="0x00005101" end="0x00005101" type="io" name="port"/>
+    <region start="0x00005103" end="0x00005103" type="io" name="exidy_interrupt_r"/>
+    <region start="0x00005200" end="0x00005201" type="io" name="spectar_audio_1_w"/>
+    <region start="0x00005210" end="0x00005212" type="ram" name="color_latch"/>
+    <region start="0x00005213" end="0x00005213" type="io" name="port"/>
+    <region start="0x00005300" end="0x00005301" type="ram" name="sprite2_xpos"/>
+    <region start="0x0000FF00" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

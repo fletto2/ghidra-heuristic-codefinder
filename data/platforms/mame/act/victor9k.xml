@@ -1,0 +1,22 @@
+<platform name="victor9k" cpu="8088">
+  <!-- source: MAME act/victor9k.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00020000" end="0x000DFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x000E0000" end="0x000E0001" type="io" name="read"/>
+    <region start="0x000E0020" end="0x000E0023" type="io" name="read"/>
+    <region start="0x000E0040" end="0x000E0043" type="io" name="cd_ba_r"/>
+    <region start="0x000E8000" end="0x000E8001" type="io" name="status_r"/>
+    <region start="0x000E8020" end="0x000E802F" type="io" name="map"/>
+    <region start="0x000E8040" end="0x000E804F" type="io" name="map"/>
+    <region start="0x000E8060" end="0x000E8061" type="io" name="read"/>
+    <region start="0x000E8080" end="0x000E808F" type="io" name="map"/>
+    <region start="0x000E80A0" end="0x000E80AF" type="io" name="cs5_r"/>
+    <region start="0x000E80C0" end="0x000E80CF" type="io" name="cs6_r"/>
+    <region start="0x000E80E0" end="0x000E80EF" type="io" name="cs7_r"/>
+    <region start="0x000EF300" end="0x000EF3FF" type="io" name="read"/>
+    <region start="0x000F0000" end="0x000F0FFF" type="ram" name="video_ram"/>
+    <region start="0x000F8000" end="0x000F9FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

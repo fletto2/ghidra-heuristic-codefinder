@@ -1,0 +1,20 @@
+<platform name="milanoa" cpu="65c02">
+  <!-- source: MAME hegenerglaser/milano.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="nvram"/>
+    <region start="0x00001FC0" end="0x00001FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00001FC0" end="0x00001FC0" type="io" name="latch_w"/>
+    <region start="0x00001FD0" end="0x00001FD0" type="io" name="board_w"/>
+    <region start="0x00001FD8" end="0x00001FE0" type="io" name="keys_r"/>
+    <region start="0x00001FE8" end="0x00001FEF" type="unmapped" name="nop_read"/>
+    <region start="0x00001FF0" end="0x00001FF0" type="io" name="io_w"/>
+    <region start="0x00002000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

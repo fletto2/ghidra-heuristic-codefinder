@@ -1,0 +1,11 @@
+<platform name="prophet3" cpu="6502">
+  <!-- source: MAME acorn/atom.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x0000B000" end="0x0000B003" type="io" name="read"/>
+    <region start="0x0000B400" end="0x0000BFF0" type="io" name="region_b400"/>
+    <region start="0x0000B800" end="0x0000B80F" type="io" name="map"/>
+    <region start="0x0000BFFD" end="0x0000BFFF" type="io" name="port"/>
+  </memory_map>
+</platform>

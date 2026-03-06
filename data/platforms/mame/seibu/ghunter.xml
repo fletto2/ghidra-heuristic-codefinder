@@ -1,0 +1,8 @@
+<platform name="ghunter" cpu="z80">
+  <!-- source: MAME seibu/deadang.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00080000" end="0x00080001" type="io" name="ghunter_trackball_low_r"/>
+    <region start="0x000B0000" end="0x000B0001" type="io" name="ghunter_trackball_high_r"/>
+  </memory_map>
+</platform>

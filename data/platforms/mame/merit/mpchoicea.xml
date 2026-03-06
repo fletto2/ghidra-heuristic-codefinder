@@ -1,0 +1,13 @@
+<platform name="mpchoicea" cpu="z80">
+  <!-- source: MAME merit/merit.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000E001" type="io" name="address_w"/>
+    <region start="0x0000E800" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="io" name="palette_r"/>
+  </memory_map>
+</platform>

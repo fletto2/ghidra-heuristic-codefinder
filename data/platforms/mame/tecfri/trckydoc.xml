@@ -1,0 +1,17 @@
+<platform name="trckydoc" cpu="z80">
+  <!-- source: MAME tecfri/sauro.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000EBFF" type="ram" name="nvram"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="port"/>
+    <region start="0x0000F808" end="0x0000F808" type="io" name="port"/>
+    <region start="0x0000F810" end="0x0000F810" type="io" name="port"/>
+    <region start="0x0000F818" end="0x0000F818" type="io" name="port"/>
+    <region start="0x0000F820" end="0x0000F821" type="io" name="write"/>
+    <region start="0x0000F828" end="0x0000F828" type="io" name="reset_r"/>
+    <region start="0x0000F830" end="0x0000F830" type="io" name="scroll_bg_w"/>
+    <region start="0x0000F838" end="0x0000F83F" type="io" name="d0"/>
+  </memory_map>
+</platform>

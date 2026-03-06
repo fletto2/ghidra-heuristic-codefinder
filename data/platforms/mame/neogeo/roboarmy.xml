@@ -1,0 +1,11 @@
+<platform name="roboarmy" cpu="68000">
+  <!-- source: MAME neogeo/neogeo.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="io" name="banked_vectors_r"/>
+    <region start="0x00100000" end="0x0010FFFF" type="ram" name="ram"/>
+    <region start="0x00800000" end="0x00BFFFFF" type="io" name="memcard_r"/>
+    <region start="0x00C00000" end="0x00C1FFFF" type="rom" name="rom"/>
+    <region start="0x00D00000" end="0x00FFFFFF" type="io" name="unmapped_r"/>
+  </memory_map>
+</platform>

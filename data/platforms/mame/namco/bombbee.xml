@@ -1,0 +1,11 @@
+<platform name="bombbee" cpu="8080">
+  <!-- source: MAME namco/warpwarp.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="videoram"/>
+    <region start="0x00004800" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006037" type="io" name="warpwarp_sw_r"/>
+  </memory_map>
+</platform>

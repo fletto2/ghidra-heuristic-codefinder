@@ -1,0 +1,9 @@
+<platform name="tairyodk" cpu="h8">
+  <!-- source: MAME namco/sweetland4.cpp -->
+  <!-- year: 2000 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020000F" type="io" name="read"/>
+    <region start="0x0040000F" end="0x0040000F" type="io" name="lcdc_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,26 @@
+<platform name="pentevo" cpu="z80">
+  <!-- source: MAME sinclair/pentevo.cpp -->
+  <!-- year: 2009 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x00000010" end="0x00000011" type="io" name="region_10"/>
+    <region start="0x0000001F" end="0x0000001F" type="io" name="todo_kepmston_joystick"/>
+    <region start="0x00000057" end="0x00000057" type="io" name="spi_port_57_r"/>
+    <region start="0x00000077" end="0x00000077" type="io" name="spi_port_77_w"/>
+    <region start="0x000000BD" end="0x000000BE" type="io" name="pentevo_port_0nbd_r"/>
+    <region start="0x000000BE" end="0x000000BF" type="io" name="region_be"/>
+    <region start="0x000000C8" end="0x000000C8" type="io" name="region_c8"/>
+    <region start="0x000000F6" end="0x000000F6" type="io" name="spectrum_ula_r"/>
+    <region start="0x000000FB" end="0x000000FB" type="io" name="write"/>
+    <region start="0x000000FD" end="0x000000FD" type="io" name="atm_port_7ffd_w"/>
+    <region start="0x000010BD" end="0x000010BE" type="io" name="pentevo_port_1nbd_r"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="data_w"/>
+    <region start="0x0000BFF7" end="0x0000BFF7" type="io" name="gluk_data_r"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="data_r"/>
+    <region start="0x0000DFF7" end="0x0000DFF7" type="io" name="region_dff7"/>
+    <region start="0x0000EFF7" end="0x0000EFF7" type="io" name="pentevo_port_eff7_w"/>
+    <region start="0x0000FADF" end="0x0000FADF" type="io" name="region_fadf"/>
+    <region start="0x0000FBDF" end="0x0000FBDF" type="io" name="region_fbdf"/>
+    <region start="0x0000FFDF" end="0x0000FFDF" type="io" name="region_ffdf"/>
+  </memory_map>
+</platform>

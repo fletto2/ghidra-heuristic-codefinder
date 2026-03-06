@@ -1,0 +1,17 @@
+<platform name="pkspirit" cpu="z80">
+  <!-- source: MAME taito/pkspirit.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0010001F" type="io" name="read"/>
+    <region start="0x00200000" end="0x00200001" type="io" name="port"/>
+    <region start="0x00300000" end="0x0030FFFF" type="ram" name="mainram"/>
+    <region start="0x00800001" end="0x00800001" type="io" name="master_port_w"/>
+    <region start="0x00800003" end="0x00800003" type="io" name="master_comm_r"/>
+    <region start="0x00900000" end="0x00900001" type="io" name="map0x900000_0x900001w"/>
+    <region start="0x00A00000" end="0x00A0003F" type="ram" name="ram"/>
+    <region start="0x00A04000" end="0x00A057FF" type="ram" name="palette"/>
+    <region start="0x00B00000" end="0x00B1087F" type="ram" name="vidram"/>
+    <region start="0x00B20000" end="0x00B2001F" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,19 @@
+<platform name="zoar" cpu="6502">
+  <!-- source: MAME dataeast/btime.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="writeonly"/>
+    <region start="0x00008800" end="0x00009000" type="io" name="btime_mirrorvideoram_w"/>
+    <region start="0x00009800" end="0x00009800" type="io" name="zoar_dsw1_read"/>
+    <region start="0x00009800" end="0x00009803" type="ram" name="zoar_scrollram"/>
+    <region start="0x00009801" end="0x00009806" type="io" name="port"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="speedspn" cpu="z80">
+  <!-- source: MAME tch/speedspn.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="palette"/>
+    <region start="0x00009000" end="0x00009FFF" type="io" name="ram_fix__ram_objects_selected_by_bit_0_o"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

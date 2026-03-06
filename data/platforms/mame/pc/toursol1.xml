@@ -1,0 +1,15 @@
+<platform name="toursol1" cpu="80486">
+  <!-- source: MAME pc/pcat_dyn.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0009FFFF" type="ram" name="ram"/>
+    <region start="0x000A0000" end="0x000BFFFF" type="io" name="mem_r"/>
+    <region start="0x000C0000" end="0x000C7FFF" type="rom" name="rom"/>
+    <region start="0x000D0000" end="0x000D1FFF" type="rom" name="rom"/>
+    <region start="0x000D2000" end="0x000D3FFF" type="ram" name="prgbank"/>
+    <region start="0x000DF400" end="0x000DF8FF" type="ram" name="ram"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x001FFFFF" type="ram" name="ram"/>
+    <region start="0xFFFF0000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

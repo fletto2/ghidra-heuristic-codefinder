@@ -1,0 +1,34 @@
+<platform name="future32a" cpu="68030">
+  <!-- source: MAME sord/future32.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="ram" name="ram"/>
+    <region start="0x00400000" end="0x009FFFFF" type="io" name="region_400000"/>
+    <region start="0x00A00000" end="0x00A7FFFF" type="ram" name="ram"/>
+    <region start="0x00E00000" end="0x00E07FFF" type="rom" name="rom"/>
+    <region start="0x00E10000" end="0x00E1000F" type="io" name="read"/>
+    <region start="0x00E20000" end="0x00E20000" type="io" name="region_e20000"/>
+    <region start="0x00E30000" end="0x00E31FFF" type="io" name="region_e30000"/>
+    <region start="0x00E40000" end="0x00E4007F" type="io" name="map"/>
+    <region start="0x00E50000" end="0x00E50007" type="io" name="map"/>
+    <region start="0x00E60000" end="0x00E61FFF" type="ram" name="ram"/>
+    <region start="0x00E62000" end="0x00E6203F" type="io" name="font_r"/>
+    <region start="0x00E70000" end="0x00E7000F" type="io" name="read"/>
+    <region start="0x00E70201" end="0x00E70201" type="io" name="status_r"/>
+    <region start="0x00E70203" end="0x00E70203" type="io" name="register_r"/>
+    <region start="0x00E70301" end="0x00E70301" type="io" name="ca_r"/>
+    <region start="0x00E70303" end="0x00E70303" type="io" name="da_r"/>
+    <region start="0x00E70305" end="0x00E70305" type="io" name="cb_r"/>
+    <region start="0x00E70307" end="0x00E70307" type="io" name="db_r"/>
+    <region start="0x00E70800" end="0x00E70801" type="io" name="font_base_w"/>
+    <region start="0x00E70901" end="0x00E70901" type="io" name="beeper_here_possibly_timer_too"/>
+    <region start="0x00E80101" end="0x00E80101" type="io" name="ca_r"/>
+    <region start="0x00E80103" end="0x00E80103" type="io" name="da_r"/>
+    <region start="0x00E80105" end="0x00E80105" type="io" name="cb_r"/>
+    <region start="0x00E80107" end="0x00E80107" type="io" name="db_r"/>
+    <region start="0x00EC0000" end="0x00EC000F" type="io" name="map"/>
+    <region start="0x00EC0100" end="0x00EC0103" type="io" name="map"/>
+    <region start="0x00EC0400" end="0x00EC0403" type="io" name="port"/>
+    <region start="0x00F00000" end="0x00F0FFFF" type="io" name="region_f00000"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,23 @@
+<platform name="aim65" cpu="6502">
+  <!-- source: MAME rockwell/aim65.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00001000" end="0x00003FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00004000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="unmapped" name="unmapped"/>
+    <region start="0x0000A000" end="0x0000A00F" type="io" name="map"/>
+    <region start="0x0000A400" end="0x0000A497" type="io" name="ram_map"/>
+    <region start="0x0000A498" end="0x0000A7FF" type="unmapped" name="unmapped"/>
+    <region start="0x0000A800" end="0x0000A80F" type="io" name="map"/>
+    <region start="0x0000AC00" end="0x0000AC03" type="io" name="read"/>
+    <region start="0x0000AC04" end="0x0000AC43" type="ram" name="ram"/>
+    <region start="0x0000AC44" end="0x0000AFFF" type="unmapped" name="unmapped"/>
+    <region start="0x0000B000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

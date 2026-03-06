@@ -1,0 +1,8 @@
+<platform name="ice_tbd" cpu="z80">
+  <!-- source: MAME ice/ice_tbd.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="vigilantbl" cpu="z80">
+  <!-- source: MAME irem/vigilant.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C020" end="0x0000C0DF" type="ram" name="ram"/>
+    <region start="0x0000C800" end="0x0000EFFF" type="ram" name="paletteram"/>
+  </memory_map>
+</platform>

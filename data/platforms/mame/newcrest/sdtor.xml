@@ -1,0 +1,8 @@
+<platform name="sdtor" cpu="65c02">
+  <!-- source: MAME newcrest/dominator.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00004008" end="0x00004008" type="io" name="control_w"/>
+    <region start="0x00004010" end="0x00004010" type="io" name="region_4010"/>
+  </memory_map>
+</platform>

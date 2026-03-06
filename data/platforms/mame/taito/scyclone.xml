@@ -1,0 +1,10 @@
+<platform name="scyclone" cpu="z80">
+  <!-- source: MAME taito/scyclone.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00004400" end="0x00005FFF" type="io" name="vram_r"/>
+    <region start="0x00006000" end="0x000060FF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

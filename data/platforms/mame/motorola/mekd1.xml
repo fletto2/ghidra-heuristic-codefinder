@@ -1,0 +1,11 @@
+<platform name="mekd1" cpu="6800">
+  <!-- source: MAME motorola/mekd1.cpp -->
+  <!-- year: 1975 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000027F" type="ram" name="ram"/>
+    <region start="0x00008004" end="0x0000800B" type="io" name="read"/>
+    <region start="0x00008010" end="0x00008011" type="io" name="read"/>
+    <region start="0x0000A000" end="0x0000A07F" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E1FF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

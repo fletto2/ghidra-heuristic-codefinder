@@ -1,0 +1,16 @@
+<platform name="hanaroku" cpu="z80">
+  <!-- source: MAME seta/albazc.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="io" name="spritecodelow_r8"/>
+    <region start="0x00009000" end="0x000097FF" type="io" name="spritecodehigh_r8"/>
+    <region start="0x0000A000" end="0x0000A303" type="io" name="spriteylow_r8"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="spritebgflag_w8"/>
+    <region start="0x0000C000" end="0x0000C4FF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="data_r"/>
+    <region start="0x0000D000" end="0x0000D001" type="io" name="address_data_w"/>
+    <region start="0x0000E000" end="0x0000E002" type="io" name="out_0_w"/>
+    <region start="0x0000E004" end="0x0000E004" type="io" name="out_2_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="atlantol" cpu="z80">
+  <!-- source: MAME konami/trackfld.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="read"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="trackfld_sh_timer_r"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="konami_SN76489a_latch_w"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="trackfld_SN76489a_r"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="data_w"/>
+    <region start="0x0000E001" end="0x0000E001" type="unmapped" name="unmapped"/>
+    <region start="0x0000E002" end="0x0000E004" type="io" name="trackfld_speech_r"/>
+  </memory_map>
+</platform>

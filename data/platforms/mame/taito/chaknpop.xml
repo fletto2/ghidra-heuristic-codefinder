@@ -1,0 +1,14 @@
+<platform name="chaknpop" cpu="z80">
+  <!-- source: MAME taito/chaknpop.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00008800" end="0x00008802" type="io" name="data_r"/>
+    <region start="0x00008804" end="0x0000880D" type="io" name="data_r"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="ram"/>
+    <region start="0x00009800" end="0x000098FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

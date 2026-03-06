@@ -1,0 +1,19 @@
+<platform name="sfexp" cpu="68000">
+  <!-- source: MAME sony/zn.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x1FA00000" end="0x1FA00003" type="io" name="port"/>
+    <region start="0x1FA00100" end="0x1FA00103" type="io" name="port"/>
+    <region start="0x1FA00200" end="0x1FA00203" type="io" name="port"/>
+    <region start="0x1FA00300" end="0x1FA00303" type="io" name="port"/>
+    <region start="0x1FA10000" end="0x1FA10003" type="io" name="port"/>
+    <region start="0x1FA10100" end="0x1FA10103" type="io" name="port"/>
+    <region start="0x1FA10200" end="0x1FA10200" type="io" name="boardconfig_r"/>
+    <region start="0x1FA10300" end="0x1FA10300" type="io" name="znsecsel_r"/>
+    <region start="0x1FA20000" end="0x1FA20000" type="io" name="coin_r"/>
+    <region start="0x1FA30000" end="0x1FA30003" type="unmapped" name="unmapped"/>
+    <region start="0x1FA40000" end="0x1FA40003" type="unmapped" name="nop_read"/>
+    <region start="0x1FAF0000" end="0x1FAF07FF" type="io" name="read"/>
+    <region start="0x1FB20000" end="0x1FB20007" type="io" name="unknown_r"/>
+  </memory_map>
+</platform>

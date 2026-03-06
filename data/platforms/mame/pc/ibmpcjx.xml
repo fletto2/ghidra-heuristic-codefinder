@@ -1,0 +1,11 @@
+<platform name="ibmpcjx" cpu="8088">
+  <!-- source: MAME pc/ibmpcjr.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00080000" end="0x0009FFFF" type="ram" name="vram"/>
+    <region start="0x00080000" end="0x000B7FFF" type="rom" name="rom"/>
+    <region start="0x000B8000" end="0x000BFFFF" type="io" name="vram_window_r"/>
+    <region start="0x000D0000" end="0x000DFFFF" type="io" name="rom"/>
+    <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

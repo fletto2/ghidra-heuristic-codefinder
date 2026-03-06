@@ -1,0 +1,9 @@
+<platform name="x1twin" cpu="z80">
+  <!-- source: MAME sharp/x1twin.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x001F0000" end="0x001F1FFF" type="ram" name="ram"/>
+    <region start="0x001FE000" end="0x001FE7FF" type="io" name="vdc_r"/>
+  </memory_map>
+</platform>

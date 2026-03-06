@@ -1,0 +1,14 @@
+<platform name="berenstn" cpu="6502">
+  <!-- source: MAME misc/tugboat.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00001060" end="0x00001061" type="io" name="address_data_w"/>
+    <region start="0x000010A0" end="0x000010A1" type="io" name="region_10a0"/>
+    <region start="0x000010C0" end="0x000010C1" type="io" name="region_10c0"/>
+    <region start="0x000011E4" end="0x000011EB" type="io" name="read"/>
+    <region start="0x000018E0" end="0x000018EF" type="unmapped" name="nop_read"/>
+    <region start="0x00002000" end="0x00002FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

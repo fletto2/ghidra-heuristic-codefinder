@@ -1,0 +1,11 @@
+<platform name="mp68a" cpu="6800">
+  <!-- source: MAME skeleton/didact.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000500" end="0x00000503" type="io" name="read"/>
+    <region start="0x00000600" end="0x00000603" type="io" name="read"/>
+    <region start="0x00000700" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000BFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

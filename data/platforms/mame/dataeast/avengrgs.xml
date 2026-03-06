@@ -1,0 +1,35 @@
+<platform name="avengrgs" cpu="sh2">
+  <!-- source: MAME dataeast/deco_mlc.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0011FFFF" type="ram" name="mainram"/>
+    <region start="0x00200000" end="0x00200003" type="io" name="mlc_200000_r"/>
+    <region start="0x00200000" end="0x0020007F" type="io" name="irq_ram"/>
+    <region start="0x00200004" end="0x00200007" type="io" name="mlc_200004_r"/>
+    <region start="0x00200070" end="0x00200077" type="io" name="mlc_200070_r"/>
+    <region start="0x0020007C" end="0x0020007F" type="io" name="mlc_20007c_r"/>
+    <region start="0x00200080" end="0x002000FF" type="ram" name="clip_ram"/>
+    <region start="0x00204000" end="0x00206FFF" type="io" name="spriteram_r"/>
+    <region start="0x00280000" end="0x0029FFFF" type="ram" name="vram"/>
+    <region start="0x00300000" end="0x00307FFF" type="io" name="palette"/>
+    <region start="0x00400000" end="0x00400003" type="io" name="port"/>
+    <region start="0x00440000" end="0x0044000B" type="io" name="port"/>
+    <region start="0x0044001C" end="0x0044001F" type="io" name="mlc_44001c_r"/>
+    <region start="0x00500000" end="0x00500003" type="io" name="eeprom_w"/>
+    <region start="0x00600000" end="0x00600007" type="io" name="read"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

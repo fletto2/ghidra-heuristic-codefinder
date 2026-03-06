@@ -1,0 +1,9 @@
+<platform name="ssf2tbj" cpu="68000">
+  <!-- source: MAME capcom/cps2.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00620000" end="0x00620001" type="io" name="usart_data_r"/>
+    <region start="0x00620008" end="0x00620009" type="io" name="route_w"/>
+    <region start="0x00620020" end="0x00620021" type="io" name="usart_status_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="landhigh" cpu="ppc">
+  <!-- source: MAME taito/taitotz.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00200000" end="0x0021FFFF" type="ram" name="ram"/>
+    <region start="0x00400000" end="0x00401FFF" type="ram" name="nvram"/>
+    <region start="0x00404000" end="0x0040400F" type="io" name="tlcs_rtc_r"/>
+    <region start="0x00900000" end="0x00901FFF" type="io" name="tlcs_common_r"/>
+    <region start="0x00908000" end="0x0090800F" type="io" name="cs0_w"/>
+    <region start="0x00910000" end="0x00910FFF" type="ram" name="mbox_ram"/>
+    <region start="0x00918000" end="0x0091800F" type="io" name="cs1_w"/>
+    <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

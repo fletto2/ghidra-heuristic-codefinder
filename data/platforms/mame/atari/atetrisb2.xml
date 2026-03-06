@@ -1,0 +1,27 @@
+<platform name="atetrisb2" cpu="6502">
+  <!-- source: MAME atari/atetris.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000020FF" type="ram" name="ram"/>
+    <region start="0x00002400" end="0x000025FF" type="io" name="read"/>
+    <region start="0x00002802" end="0x00002802" type="io" name="write"/>
+    <region start="0x00002804" end="0x00002804" type="io" name="write"/>
+    <region start="0x00002806" end="0x00002806" type="io" name="write"/>
+    <region start="0x00002808" end="0x00002808" type="io" name="port"/>
+    <region start="0x00002808" end="0x0000280F" type="unmapped" name="nop_write"/>
+    <region start="0x00002818" end="0x00002818" type="io" name="port"/>
+    <region start="0x00002818" end="0x0000281F" type="unmapped" name="nop_write"/>
+    <region start="0x00003000" end="0x00003000" type="io" name="reset_w"/>
+    <region start="0x00003400" end="0x00003400" type="io" name="unlock_write8"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="irq_ack_w"/>
+    <region start="0x00003C00" end="0x00003C00" type="io" name="coincount_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

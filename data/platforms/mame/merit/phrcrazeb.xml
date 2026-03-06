@@ -1,0 +1,15 @@
+<platform name="phrcrazeb" cpu="z80">
+  <!-- source: MAME merit/merit.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000C008" end="0x0000C00F" type="io" name="read"/>
+    <region start="0x0000CE00" end="0x0000CEFF" type="io" name="questions_r"/>
+    <region start="0x0000D600" end="0x0000D6FF" type="io" name="low_offset_w"/>
+    <region start="0x0000DA00" end="0x0000DAFF" type="io" name="med_offset_w"/>
+    <region start="0x0000E000" end="0x0000E001" type="io" name="address_w"/>
+    <region start="0x0000E800" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="io" name="palette_r"/>
+  </memory_map>
+</platform>

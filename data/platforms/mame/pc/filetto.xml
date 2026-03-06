@@ -1,0 +1,8 @@
+<platform name="filetto" cpu="8088">
+  <!-- source: MAME pc/filetto.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x000C0000" end="0x000CFFFF" type="io" name="amap8"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

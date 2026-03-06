@@ -1,0 +1,9 @@
+<platform name="xxmissio" cpu="z80">
+  <!-- source: MAME upl/xxmissio.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000A002" end="0x0000A002" type="io" name="status_m_w"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="workram1"/>
+  </memory_map>
+</platform>

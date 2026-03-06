@@ -1,0 +1,17 @@
+<platform name="stuntair" cpu="z80">
+  <!-- source: MAME misc/stuntair.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CBFF" type="ram" name="nvram"/>
+    <region start="0x0000D000" end="0x0000D3FF" type="ram" name="bgram"/>
+    <region start="0x0000D800" end="0x0000DFFF" type="ram" name="sprram"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="stuntair_coin_w"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="stuntair_bgxscroll_w"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="port"/>
+    <region start="0x0000F000" end="0x0000F007" type="io" name="d0"/>
+    <region start="0x0000F002" end="0x0000F003" type="io" name="port"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="ram" name="fgram"/>
+    <region start="0x0000FC03" end="0x0000FC03" type="io" name="stuntair_sound_w"/>
+  </memory_map>
+</platform>

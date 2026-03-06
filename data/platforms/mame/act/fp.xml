@@ -1,0 +1,8 @@
+<platform name="fp" cpu="8086">
+  <!-- source: MAME act/apricotp.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000F7FFF" type="io" name="mem_r"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

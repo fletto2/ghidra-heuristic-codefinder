@@ -1,0 +1,8 @@
+<platform name="mpf1_88" cpu="8088">
+  <!-- source: MAME multitech/mpf1_88.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x000F4000" end="0x000FBFFF" type="io" name="rom"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

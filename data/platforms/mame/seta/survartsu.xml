@@ -1,0 +1,12 @@
+<platform name="survartsu" cpu="v60">
+  <!-- source: MAME seta/ssv.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00210000" end="0x00210001" type="io" name="reset16_r"/>
+    <region start="0x00210002" end="0x00210003" type="unmapped" name="nop_write"/>
+    <region start="0x00290000" end="0x00290001" type="unmapped" name="nop_read"/>
+    <region start="0x002A0000" end="0x002A0001" type="unmapped" name="nop_read"/>
+    <region start="0x00400000" end="0x0043FFFF" type="ram" name="ram"/>
+    <region start="0x00500008" end="0x00500009" type="io" name="port"/>
+  </memory_map>
+</platform>

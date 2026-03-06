@@ -1,9 +1,8 @@
 # Heuristic Code Finder — Ghidra Extension
 
-**Pre-alpha.** Core pipeline works but only a handful of platform descriptions
-are included. More machine definitions, heuristic refinements, and
-functionality will be added in future releases. Machine-specific heuristics
-(Tier 3) will be added as soon as automatic platform detection is working.
+**Pre-alpha.** Core pipeline works but heuristic refinements and
+functionality will continue to be added. Machine-specific heuristics
+(Tier 3) are being tuned alongside automatic platform detection.
 
 Cross-architecture heuristic code/data block identification for Ghidra. Finds
 code in flat ROMs and headerless binaries using P-code analysis — works on any
@@ -18,6 +17,23 @@ identify code blocks, function boundaries, and data regions automatically.
 The heuristics were developed and validated across three standalone
 disassemblers for 68000, Z80, and 6502, then abstracted to operate on Ghidra's
 P-code intermediate representation — making them ISA-independent.
+
+### Automatic platform detection
+
+When analyzing a ROM, the extension automatically:
+
+1. **Detects byte-swap issues** — Scans for characteristic instruction opcodes
+   (RTS, RTE, NOP, BX LR, etc.) in native vs byte-swapped byte order. If a
+   swapped interpretation has significantly more hits, it warns that the ROM
+   needs byte-swapping. Supports 68000, SH2, ARM, MIPS, TMS9900, H8, PowerPC,
+   and V60. Reports specific swap type (16-bit swap, 32-bit reversal, or
+   16-bit pair swap within 32-bit words).
+
+2. **Identifies the target platform** — Matches P-code memory access patterns
+   against a library of 13,500+ machine descriptions (generated from MAME
+   source). Shows the top matches ranked by score. The best match is
+   automatically used for Tier 3 heuristics (vector tables, memory map
+   validation, hardware register identification).
 
 ### 9-pass pipeline
 
@@ -45,7 +61,7 @@ Download the latest zip from [Releases](../../releases) or use the one in `dist/
 
 1. In Ghidra: **File → Install Extensions**
 2. Click the **+** button
-3. Select `ghidra_<version>_PUBLIC_<date>_HeuristicCodeFinder.zip`
+3. Select `HeuristicCodeFinder.zip`
 4. Restart Ghidra
 
 ### Build from source
@@ -89,12 +105,26 @@ Both produce a zip in `dist/`.
 
 6. Click **Analyze** — the extension runs after standard analysis
 
+### Headless mode
+
+```bash
+analyzeHeadless /project/dir ProjectName -import rom.bin \
+  -processor "68000:BE:32:MC68020" \
+  -preScript EnableHeuristic.java
+```
+
+The analyzer is disabled by default; the pre-script enables it. Copy
+`EnableHeuristic.java` to a Ghidra script directory or use `-scriptPath`.
+
 ## Platform descriptions
 
-For best results on embedded/console targets, provide a platform description
-XML file that defines the memory map, vector table, and hardware registers.
+The extension includes 13,500+ platform descriptions auto-generated from
+MAME source code, covering arcade, console, and computer systems across
+272 manufacturers. These are matched automatically based on CPU type and
+memory access patterns.
 
-Included platforms in `data/platforms/`:
+Hand-crafted platform files with full vector tables and hardware registers
+are also included:
 
 | File | Target | CPU |
 |------|--------|-----|
@@ -131,6 +161,25 @@ Included platforms in `data/platforms/`:
 Vector formats: `abs32_be`, `abs32_le`, `abs16_be`, `abs16_le`
 
 Memory types: `rom`, `ram`, `io`, `unmapped`
+
+## Byte-swap detection
+
+For 16-bit and 32-bit platforms, ROM dumps are sometimes stored in
+non-native byte order (e.g., MAME ROM sets often have byte-swapped
+68000 ROMs). The extension detects this by counting characteristic
+instruction opcodes in both native and swapped byte orders:
+
+| CPU | Opcodes checked |
+|-----|----------------|
+| 68000 | RTS (0x4E75), RTE (0x4E73), NOP (0x4E71), JSR (0x4EB9), JMP (0x4EF9) |
+| SH2/SH4 | RTS (0x000B), RTE (0x002B), NOP (0x0009) |
+| ARM | BX LR (0xE12FFF1E), MOV PC,LR (0xE1A0F00E) |
+| MIPS | JR RA (0x03E00008) |
+| TMS9900 | B *R11 (0x045B), NOP (0x1000) |
+| H8 | RTS (0x5470), RTE (0x5670) |
+| PowerPC | BLR (0x4E800020) |
+
+8-bit CPUs (Z80, 6502, 6809, 8080) are not affected by byte-swap issues.
 
 ## Heuristic reference
 

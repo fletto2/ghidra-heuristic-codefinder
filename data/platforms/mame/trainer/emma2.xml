@@ -1,0 +1,12 @@
+<platform name="emma2" cpu="6502">
+  <!-- source: MAME trainer/emma2.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000900" end="0x0000090F" type="io" name="map"/>
+    <region start="0x00000A00" end="0x00000A03" type="io" name="read"/>
+    <region start="0x00000C00" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000097FF" type="rom" name="rom"/>
+    <region start="0x0000D800" end="0x0000DFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

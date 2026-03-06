@@ -1,0 +1,8 @@
+<platform name="v550" cpu="z80">
+  <!-- source: MAME visual/v550.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007BFF" type="rom" name="rom"/>
+    <region start="0x00007C00" end="0x000087FF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

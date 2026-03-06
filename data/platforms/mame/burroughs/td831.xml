@@ -1,0 +1,10 @@
+<platform name="td831" cpu="6800">
+  <!-- source: MAME burroughs/td831.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00004FFF" type="ram" name="ram"/>
+    <region start="0x00007F00" end="0x00007FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

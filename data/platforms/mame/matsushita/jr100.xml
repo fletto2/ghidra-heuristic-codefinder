@@ -1,0 +1,12 @@
+<platform name="jr100" cpu="6800">
+  <!-- source: MAME matsushita/jr100.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C3FF" type="ram" name="pcg"/>
+    <region start="0x0000C800" end="0x0000C80F" type="io" name="map"/>
+    <region start="0x0000CC00" end="0x0000CFFF" type="io" name="map0xcc00_0xcfff___expansion_io"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

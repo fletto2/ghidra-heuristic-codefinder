@@ -1,0 +1,15 @@
+<platform name="raiders5" cpu="z80">
+  <!-- source: MAME upl/nova2001.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="spriteram"/>
+    <region start="0x00009000" end="0x000097FF" type="io" name="bg_videoram"/>
+    <region start="0x0000A000" end="0x0000A002" type="io" name="scroll_x_w"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="address_data_w"/>
+    <region start="0x0000C001" end="0x0000C003" type="io" name="data_r"/>
+    <region start="0x0000C003" end="0x0000C003" type="io" name="data_r"/>
+    <region start="0x0000D000" end="0x0000D1FF" type="io" name="paletteram_r"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="share1"/>
+  </memory_map>
+</platform>

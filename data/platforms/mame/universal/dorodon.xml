@@ -1,0 +1,14 @@
+<platform name="dorodon" cpu="z80">
+  <!-- source: MAME universal/ladybug.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006FFF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x000073FF" type="io" name="spr_w"/>
+    <region start="0x00008000" end="0x00008FFF" type="unmapped" name="nop_read"/>
+    <region start="0x00009000" end="0x00009003" type="io" name="port"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
+    <region start="0x0000B000" end="0x0000D7FF" type="io" name="write"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="port"/>
+  </memory_map>
+</platform>

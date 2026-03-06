@@ -1,0 +1,13 @@
+<platform name="soccer" cpu="6502">
+  <!-- source: MAME atari/atarifb.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000BFF" type="ram" name="field_videoram"/>
+    <region start="0x00001000" end="0x00001000" type="ram" name="scroll_register"/>
+    <region start="0x00001001" end="0x00001002" type="io" name="soccer_out1_w"/>
+    <region start="0x00001004" end="0x00001005" type="io" name="intack_w"/>
+    <region start="0x00001800" end="0x00001803" type="io" name="atarifb4_in0_r"/>
+    <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

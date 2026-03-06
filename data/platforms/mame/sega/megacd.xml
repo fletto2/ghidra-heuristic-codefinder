@@ -1,0 +1,13 @@
+<platform name="megacd" cpu="68000">
+  <!-- source: MAME sega/megacd.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000DFFFF" type="io" name="region_0"/>
+    <region start="0x00FE0000" end="0x00FE3FFF" type="io" name="backupram_r"/>
+    <region start="0x00FF0000" end="0x00FF3FFF" type="io" name="rf5c164_map"/>
+    <region start="0x00FF8000" end="0x00FF804B" type="io" name="segacd_sub_led_ready_r"/>
+    <region start="0x00FF804D" end="0x00FF804D" type="io" name="font_color_r"/>
+    <region start="0x00FF804E" end="0x00FF804F" type="ram" name="font_bits"/>
+    <region start="0x00FF8050" end="0x00FF8069" type="io" name="font_converted_r"/>
+    <region start="0x00FF8100" end="0x00FF81FF" type="io" name="map0xff8100_0xff817f__subcode_buffer_are"/>
+  </memory_map>
+</platform>

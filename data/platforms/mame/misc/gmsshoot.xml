@@ -1,0 +1,22 @@
+<platform name="gmsshoot" cpu="65c02">
+  <!-- source: MAME misc/gamemasters.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00001100" end="0x00001100" type="io" name="output_1100"/>
+    <region start="0x00001300" end="0x00001300" type="io" name="output_1300"/>
+    <region start="0x00001400" end="0x00001400" type="io" name="port"/>
+    <region start="0x00001500" end="0x00001500" type="io" name="port"/>
+    <region start="0x00001520" end="0x00001520" type="io" name="output_1520"/>
+    <region start="0x00001540" end="0x00001540" type="io" name="output_1540"/>
+    <region start="0x00001600" end="0x00001601" type="io" name="data_address_w"/>
+    <region start="0x00001601" end="0x00001601" type="io" name="data_r"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

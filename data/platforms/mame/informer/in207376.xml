@@ -1,0 +1,16 @@
+<platform name="in207376" cpu="6809">
+  <!-- source: MAME informer/informer_207_376.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008001" type="io" name="status_r"/>
+    <region start="0x00008400" end="0x00008400" type="io" name="unk_8400_w"/>
+    <region start="0x00008802" end="0x00008805" type="io" name="read"/>
+    <region start="0x00008C00" end="0x00008C00" type="io" name="crt_brightness_w"/>
+    <region start="0x00009000" end="0x00009003" type="io" name="read"/>
+    <region start="0x00009400" end="0x00009403" type="io" name="ab_dc_r"/>
+    <region start="0x00009800" end="0x00009800" type="io" name="novram_recall_r"/>
+    <region start="0x00009C00" end="0x00009CFF" type="io" name="novram_r"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

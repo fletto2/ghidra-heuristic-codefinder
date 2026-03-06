@@ -1,0 +1,13 @@
+<platform name="minifram" cpu="68010">
+  <!-- source: MAME skeleton/miniframe.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="io" name="amap16"/>
+    <region start="0x00400000" end="0x004007FF" type="ram" name="mapram"/>
+    <region start="0x00450000" end="0x00450001" type="io" name="general_ctrl_w"/>
+    <region start="0x00800000" end="0x0081FFFF" type="rom" name="rom"/>
+    <region start="0x00C00000" end="0x00C00007" type="io" name="read"/>
+    <region start="0x00C40000" end="0x00C40007" type="io" name="read"/>
+    <region start="0x00C90000" end="0x00C90003" type="io" name="read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="futflasha" cpu="z80">
+  <!-- source: MAME misc/laserbas.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000F7FF" type="rom" name="rom"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="io" name="z1_r"/>
+    <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

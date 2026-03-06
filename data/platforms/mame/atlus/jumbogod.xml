@@ -1,0 +1,8 @@
+<platform name="jumbogod" cpu="68000">
+  <!-- source: MAME atlus/cave.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00900001" end="0x00900001" type="io" name="read"/>
+    <region start="0x00C00001" end="0x00C00001" type="io" name="jumbogod_leds_w"/>
+  </memory_map>
+</platform>

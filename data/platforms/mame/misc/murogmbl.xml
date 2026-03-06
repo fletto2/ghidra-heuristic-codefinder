@@ -1,0 +1,14 @@
+<platform name="murogmbl" cpu="z80">
+  <!-- source: MAME misc/murogmbl.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00004BFF" type="ram" name="ram"/>
+    <region start="0x00005800" end="0x00005FFF" type="ram" name="video"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="port"/>
+    <region start="0x00006800" end="0x00006800" type="io" name="port"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="port"/>
+    <region start="0x00007800" end="0x00007800" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,17 @@
+<platform name="isgsm" cpu="68000">
+  <!-- source: MAME sega/segas16b_isgsm.cpp -->
+  <!-- year: 2006 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="ram" name="mainbank"/>
+    <region start="0x00200000" end="0x0023FFFF" type="ram" name="ram"/>
+    <region start="0x003F0000" end="0x00410FFF" type="io" name="rom_5704_bank_w"/>
+    <region start="0x00440000" end="0x004407FF" type="ram" name="sprites"/>
+    <region start="0x00840000" end="0x00840FFF" type="ram" name="paletteram"/>
+    <region start="0x00C40000" end="0x00C43FFF" type="io" name="standard_io_r"/>
+    <region start="0x00E00000" end="0x00E00007" type="io" name="data_w"/>
+    <region start="0x00E80000" end="0x00E8000B" type="io" name="cart_data_r"/>
+    <region start="0x00EE0000" end="0x00EFFFFF" type="rom" name="rom"/>
+    <region start="0x00FE0006" end="0x00FE000B" type="io" name="sound_w16"/>
+    <region start="0x00FFC000" end="0x00FFFFFF" type="ram" name="workram"/>
+  </memory_map>
+</platform>

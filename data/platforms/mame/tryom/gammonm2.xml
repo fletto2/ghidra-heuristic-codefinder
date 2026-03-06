@@ -1,0 +1,12 @@
+<platform name="gammonm2" cpu="6800">
+  <!-- source: MAME tryom/gammonm.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x0000400F" type="io" name="led_w"/>
+    <region start="0x00006000" end="0x0000601F" type="io" name="input_r"/>
+    <region start="0x00008000" end="0x0000800F" type="io" name="digit_w"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="rom" name="rom"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

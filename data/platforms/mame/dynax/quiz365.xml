@@ -1,0 +1,27 @@
+<platform name="quiz365" cpu="z80">
+  <!-- source: MAME dynax/ddenlovr.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0017FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x002003FF" type="io" name="ddenlovr_palette_w"/>
+    <region start="0x00200C02" end="0x00200C03" type="io" name="quiz365_protection_r"/>
+    <region start="0x00200E0A" end="0x00200E0D" type="io" name="quiz365_protection_w"/>
+    <region start="0x00201000" end="0x002017FF" type="unmapped" name="nop_write"/>
+    <region start="0x00300201" end="0x00300201" type="io" name="ddenlovr_select2_w"/>
+    <region start="0x00300203" end="0x00300207" type="io" name="quiz365_coincounter_w"/>
+    <region start="0x00300240" end="0x0030025F" type="io" name="ddenlovr_palette_base_w"/>
+    <region start="0x00300269" end="0x00300269" type="io" name="ddenlovr_bgcolor_w"/>
+    <region start="0x0030026B" end="0x0030026B" type="io" name="ddenlovr_priority_w"/>
+    <region start="0x0030026D" end="0x0030026D" type="io" name="ddenlovr_layer_enable_w"/>
+    <region start="0x00300271" end="0x00300271" type="io" name="unk_r"/>
+    <region start="0x00300280" end="0x00300283" type="io" name="ddenlovr_blitter_w"/>
+    <region start="0x00300287" end="0x00300287" type="io" name="ddenlovr_gfxrom_r"/>
+    <region start="0x003002C1" end="0x003002C1" type="io" name="read"/>
+    <region start="0x00300300" end="0x00300303" type="io" name="write"/>
+    <region start="0x00300340" end="0x0030035F" type="io" name="read"/>
+    <region start="0x00300380" end="0x00300383" type="io" name="address_data_w"/>
+    <region start="0x00300385" end="0x00300385" type="io" name="data_r"/>
+    <region start="0x003003C0" end="0x003003CF" type="io" name="d0"/>
+    <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

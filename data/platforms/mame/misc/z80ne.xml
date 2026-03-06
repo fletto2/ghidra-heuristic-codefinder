@@ -1,0 +1,9 @@
+<platform name="z80ne" cpu="z80">
+  <!-- source: MAME misc/z80ne.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000DFFF" type="ram" name="bank1"/>
+    <region start="0x0000EC00" end="0x0000EDFF" type="ram" name="videoram"/>
+    <region start="0x0000F000" end="0x0000F3FF" type="ram" name="bank4"/>
+  </memory_map>
+</platform>

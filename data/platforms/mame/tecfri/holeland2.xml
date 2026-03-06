@@ -1,0 +1,11 @@
+<platform name="holeland2" cpu="z80">
+  <!-- source: MAME tecfri/holeland.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="nvram"/>
+    <region start="0x0000E000" end="0x0000EBFF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="scroll_w"/>
+    <region start="0x0000F800" end="0x0000F807" type="io" name="d0"/>
+  </memory_map>
+</platform>

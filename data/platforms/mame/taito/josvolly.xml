@@ -1,0 +1,13 @@
+<platform name="josvolly" cpu="z80">
+  <!-- source: MAME taito/gsword.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00008FFF" type="rom" name="rom"/>
+    <region start="0x00009000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000A980" end="0x0000A980" type="io" name="charbank_w"/>
+    <region start="0x0000AA80" end="0x0000AA80" type="io" name="videoctrl_w"/>
+    <region start="0x0000AB00" end="0x0000AB00" type="io" name="scroll_w"/>
+    <region start="0x0000AB80" end="0x0000ABFF" type="ram" name="spriteattram"/>
+    <region start="0x0000B000" end="0x0000B7FF" type="rom" name="videoram"/>
+  </memory_map>
+</platform>

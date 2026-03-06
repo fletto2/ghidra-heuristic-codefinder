@@ -1,0 +1,9 @@
+<platform name="cc10c" cpu="8080">
+  <!-- source: MAME fidelity/cc1.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x000011FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

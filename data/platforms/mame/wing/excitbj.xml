@@ -1,0 +1,19 @@
+<platform name="excitbj" cpu="z80">
+  <!-- source: MAME wing/lucky74.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000EFFF" type="ram" name="nvram"/>
+    <region start="0x0000F000" end="0x0000F003" type="io" name="read"/>
+    <region start="0x0000F080" end="0x0000F083" type="io" name="read"/>
+    <region start="0x0000F0C0" end="0x0000F0C3" type="io" name="read"/>
+    <region start="0x0000F100" end="0x0000F100" type="io" name="write"/>
+    <region start="0x0000F200" end="0x0000F203" type="io" name="read"/>
+    <region start="0x0000F300" end="0x0000F300" type="io" name="write"/>
+    <region start="0x0000F400" end="0x0000F400" type="io" name="address_w"/>
+    <region start="0x0000F500" end="0x0000F500" type="io" name="write"/>
+    <region start="0x0000F600" end="0x0000F600" type="io" name="data_r"/>
+    <region start="0x0000F700" end="0x0000F701" type="io" name="usart_8251_r"/>
+    <region start="0x0000F800" end="0x0000F803" type="io" name="copro_sm7831_r"/>
+  </memory_map>
+</platform>

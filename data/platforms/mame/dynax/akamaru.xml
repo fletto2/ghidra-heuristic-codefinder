@@ -1,0 +1,31 @@
+<platform name="akamaru" cpu="z80">
+  <!-- source: MAME dynax/ddenlovr.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x00213570" end="0x00213571" type="io" name="akamaru_protection1_w"/>
+    <region start="0x00624680" end="0x00624681" type="io" name="akamaru_protection1_r"/>
+    <region start="0x00D00000" end="0x00D003FF" type="io" name="ddenlovr_palette_w"/>
+    <region start="0x00D00E00" end="0x00D00E09" type="unmapped" name="nop_write"/>
+    <region start="0x00D01000" end="0x00D017FF" type="unmapped" name="nop_write"/>
+    <region start="0x00E00040" end="0x00E0005F" type="io" name="ddenlovr_palette_base_w"/>
+    <region start="0x00E00069" end="0x00E00069" type="io" name="ddenlovr_bgcolor_w"/>
+    <region start="0x00E0006B" end="0x00E0006B" type="io" name="ddenlovr_priority_w"/>
+    <region start="0x00E0006D" end="0x00E0006D" type="io" name="ddenlovr_bgcolor_w"/>
+    <region start="0x00E00071" end="0x00E00071" type="io" name="unk_r"/>
+    <region start="0x00E00080" end="0x00E00083" type="io" name="ddenlovr_blitter_w"/>
+    <region start="0x00E00087" end="0x00E00087" type="io" name="ddenlovr_gfxrom_r"/>
+    <region start="0x00E00100" end="0x00E00107" type="io" name="port"/>
+    <region start="0x00E00108" end="0x00E0010B" type="ram" name="protection2"/>
+    <region start="0x00E0010C" end="0x00E0010D" type="io" name="akamaru_e0010d_r"/>
+    <region start="0x00E00200" end="0x00E00201" type="io" name="akamaru_dsw_r"/>
+    <region start="0x00E00204" end="0x00E00205" type="io" name="akamaru_blitter_r"/>
+    <region start="0x00E00300" end="0x00E0030F" type="unmapped" name="nop_read"/>
+    <region start="0x00E00400" end="0x00E00403" type="io" name="write"/>
+    <region start="0x00E00500" end="0x00E0051F" type="io" name="read"/>
+    <region start="0x00E00600" end="0x00E00603" type="io" name="address_data_w"/>
+    <region start="0x00E00605" end="0x00E00605" type="io" name="data_r"/>
+    <region start="0x00E00701" end="0x00E00701" type="io" name="read"/>
+    <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

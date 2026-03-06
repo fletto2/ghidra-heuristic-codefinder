@@ -1,0 +1,13 @@
+<platform name="pbaction2" cpu="z80">
+  <!-- source: MAME tecmo/pbaction.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000E07F" type="ram" name="ram"/>
+    <region start="0x0000E400" end="0x0000E5FF" type="ram" name="palette"/>
+    <region start="0x0000E600" end="0x0000E602" type="io" name="nmi_mask_w"/>
+    <region start="0x0000E604" end="0x0000E605" type="io" name="flipscreen_w"/>
+    <region start="0x0000E606" end="0x0000E606" type="unmapped" name="nop_read"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="sh_command_w"/>
+  </memory_map>
+</platform>

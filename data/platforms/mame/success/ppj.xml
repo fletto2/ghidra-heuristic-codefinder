@@ -1,0 +1,8 @@
+<platform name="ppj" cpu="z80">
+  <!-- source: MAME success/kurukuru.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x0000FFFF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

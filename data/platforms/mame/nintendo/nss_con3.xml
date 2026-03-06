@@ -1,0 +1,9 @@
+<platform name="nss_con3" cpu="z80">
+  <!-- source: MAME nintendo/nss.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x007DFFFF" type="io" name="snes_r_bank1"/>
+    <region start="0x007E0000" end="0x007FFFFF" type="ram" name="wram"/>
+    <region start="0x00800000" end="0x00FFFFFF" type="io" name="snes_r_bank2"/>
+  </memory_map>
+</platform>

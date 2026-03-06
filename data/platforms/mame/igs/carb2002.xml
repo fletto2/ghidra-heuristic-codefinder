@@ -1,0 +1,8 @@
+<platform name="carb2002" cpu="z80">
+  <!-- source: MAME igs/goldstar.cpp -->
+  <!-- year: 2002 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000CFFF" type="rom" name="rom"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

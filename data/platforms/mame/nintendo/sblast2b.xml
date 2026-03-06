@@ -1,0 +1,9 @@
+<platform name="sblast2b" cpu="68000">
+  <!-- source: MAME nintendo/snesb.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00007000" end="0x00007FFF" type="io" name="sb2b_7xxx_r"/>
+    <region start="0x006A6000" end="0x006A6FFF" type="io" name="sb2b_6a6xxx_r"/>
+    <region start="0x0075BD37" end="0x0075BD37" type="io" name="prot_cnt_r"/>
+  </memory_map>
+</platform>

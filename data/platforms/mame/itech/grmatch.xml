@@ -1,0 +1,9 @@
+<platform name="grmatch" cpu="68000">
+  <!-- source: MAME itech/itech8.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000160" end="0x00000160" type="io" name="palette_w"/>
+    <region start="0x00000180" end="0x00000180" type="io" name="xscroll_w"/>
+    <region start="0x000001E0" end="0x000001FF" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

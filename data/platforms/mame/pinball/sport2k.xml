@@ -1,0 +1,16 @@
+<platform name="sport2k" cpu="8088">
+  <!-- source: MAME pinball/mephistp.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x00020000" end="0x00021FFF" type="ram" name="nvram"/>
+    <region start="0x0002A000" end="0x0002A01F" type="io" name="read"/>
+    <region start="0x0002B000" end="0x0002B0FF" type="io" name="memory_r"/>
+    <region start="0x0002B800" end="0x0002B807" type="io" name="io_r"/>
+    <region start="0x0002C000" end="0x0002C0FF" type="io" name="memory_r"/>
+    <region start="0x0002C800" end="0x0002C807" type="io" name="io_r"/>
+    <region start="0x0002E000" end="0x0002E000" type="io" name="shift_load_w"/>
+    <region start="0x0002F000" end="0x0002F001" type="unmapped" name="nop_write"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

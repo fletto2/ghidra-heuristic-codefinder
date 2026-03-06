@@ -1,0 +1,8 @@
+<platform name="miconkit" cpu="8080">
+  <!-- source: MAME snk/miconkit.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x00007FFF" type="ram" name="vram"/>
+  </memory_map>
+</platform>

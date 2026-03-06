@@ -1,0 +1,16 @@
+<platform name="1942p" cpu="z80">
+  <!-- source: MAME capcom/1942.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000C804" end="0x0000C805" type="io" name="control_w"/>
+    <region start="0x0000CE00" end="0x0000DBFF" type="ram" name="spriteram"/>
+    <region start="0x0000DC02" end="0x0000DC03" type="io" name="scroll_w"/>
+    <region start="0x0000E000" end="0x0000F3FF" type="ram" name="ram"/>
+    <region start="0x0000F400" end="0x0000F400" type="io" name="bankswitch_w"/>
+    <region start="0x0000F500" end="0x0000F500" type="io" name="write"/>
+    <region start="0x0000F600" end="0x0000F600" type="unmapped" name="nop_write"/>
+    <region start="0x0000F700" end="0x0000F704" type="io" name="port"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="adm36" cpu="z80">
+  <!-- source: MAME learsiegler/adm36.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="vram0"/>
+  </memory_map>
+</platform>

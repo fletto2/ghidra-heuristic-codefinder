@@ -1,0 +1,17 @@
+<platform name="rackemup" cpu="z80">
+  <!-- source: MAME konami/battlnts.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000023FF" type="io" name="read"/>
+    <region start="0x00002400" end="0x000024FF" type="ram" name="palette"/>
+    <region start="0x00002600" end="0x00002607" type="io" name="vreg_w"/>
+    <region start="0x00002E00" end="0x00002E04" type="io" name="port"/>
+    <region start="0x00002E08" end="0x00002E08" type="io" name="bankswitch_w"/>
+    <region start="0x00002E0C" end="0x00002E0C" type="io" name="spritebank_w"/>
+    <region start="0x00002E10" end="0x00002E10" type="io" name="reset_w"/>
+    <region start="0x00002E14" end="0x00002E14" type="io" name="write"/>
+    <region start="0x00002E18" end="0x00002E18" type="io" name="sh_irqtrigger_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

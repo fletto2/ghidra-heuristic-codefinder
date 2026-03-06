@@ -1,0 +1,19 @@
+<platform name="champbwl" cpu="z80">
+  <!-- source: MAME seta/champbwl.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000087FF" type="ram" name="banked"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000E2FF" type="ram" name="ram"/>
+    <region start="0x0000E300" end="0x0000E303" type="io" name="spritectrl_w8"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="spritebgflag_w8"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="trackball_r"/>
+    <region start="0x0000F002" end="0x0000F002" type="io" name="region_f002"/>
+    <region start="0x0000F004" end="0x0000F004" type="io" name="trackball_reset_r"/>
+    <region start="0x0000F006" end="0x0000F006" type="io" name="port"/>
+    <region start="0x0000F007" end="0x0000F007" type="io" name="port"/>
+    <region start="0x0000F800" end="0x0000F800" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,23 @@
+<platform name="staraudi" cpu="h8">
+  <!-- source: MAME seta/seta2.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0023FFFF" type="ram" name="ram"/>
+    <region start="0x00400000" end="0x0045FFFF" type="io" name="tileram"/>
+    <region start="0x00500000" end="0x0053FFFF" type="ram" name="ram"/>
+    <region start="0x00500000" end="0x0057FFFF" type="ram" name="ram"/>
+    <region start="0x00540000" end="0x0057FFFF" type="ram" name="ram"/>
+    <region start="0x00600001" end="0x00600001" type="io" name="camera_w"/>
+    <region start="0x00700000" end="0x00700007" type="io" name="port"/>
+    <region start="0x00700101" end="0x00700101" type="io" name="lamps1_w"/>
+    <region start="0x00700180" end="0x0070018F" type="io" name="read"/>
+    <region start="0x00700201" end="0x00700201" type="io" name="lamps2_w"/>
+    <region start="0x00700300" end="0x00700301" type="io" name="port"/>
+    <region start="0x00700300" end="0x0070030F" type="io" name="sound_bank_w"/>
+    <region start="0x00700302" end="0x00700303" type="io" name="port"/>
+    <region start="0x00800000" end="0x009FFFFF" type="io" name="read"/>
+    <region start="0x00B00000" end="0x00B03FFF" type="io" name="word_r"/>
+    <region start="0x00C00000" end="0x00C6003F" type="ram" name="spriteram"/>
+  </memory_map>
+</platform>

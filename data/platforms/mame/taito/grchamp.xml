@@ -1,0 +1,10 @@
+<platform name="grchamp" cpu="z80">
+  <!-- source: MAME taito/grchamp.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00004800" end="0x00004BFF" type="ram" name="radarram"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="videoram"/>
+    <region start="0x00005800" end="0x000058FF" type="ram" name="spriteram"/>
+  </memory_map>
+</platform>

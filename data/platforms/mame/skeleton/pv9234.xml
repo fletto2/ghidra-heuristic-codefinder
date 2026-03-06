@@ -1,0 +1,31 @@
+<platform name="pv9234" cpu="arm7_le">
+  <!-- source: MAME skeleton/pv9234.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x00000033" type="io" name="map0x00000000_0x00000033wfuncpv9234_stat"/>
+    <region start="0x00000044" end="0x00000047" type="io" name="map0x00000044_0x00000047wfuncpv9234_stat"/>
+    <region start="0x00000060" end="0x0000006B" type="io" name="map0x00000060_0x0000006bwfuncpv9234_stat"/>
+    <region start="0x00007000" end="0x00007003" type="io" name="map0x00007000_0x00007003wfuncpv9234_stat"/>
+    <region start="0x00008000" end="0x00008003" type="io" name="map0x00008000_0x00008003wfuncpv9234_stat"/>
+    <region start="0x00008000" end="0x000080FF" type="unmapped" name="unmapped"/>
+    <region start="0x00008014" end="0x00008017" type="io" name="debug1_w"/>
+    <region start="0x00008020" end="0x00008027" type="io" name="map0x00008020_0x00008027wfuncpv9234_stat"/>
+    <region start="0x000080C0" end="0x000080DF" type="io" name="ins8250_r"/>
+    <region start="0x000080CC" end="0x000080CC" type="io" name="region_80cc"/>
+    <region start="0x0003E000" end="0x0003EFFF" type="ram" name="p_ram"/>
+    <region start="0x00080000" end="0x00087FFF" type="ram" name="share1"/>
+    <region start="0xE0000000" end="0xE0007FFF" type="ram" name="share1"/>
+    <region start="0xFFFFFF00" end="0xFFFFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

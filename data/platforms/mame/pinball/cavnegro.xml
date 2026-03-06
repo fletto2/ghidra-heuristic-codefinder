@@ -1,0 +1,11 @@
+<platform name="cavnegro" cpu="8080">
+  <!-- source: MAME pinball/taito.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001000" end="0x000010FF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x0000101F" type="io" name="io_r"/>
+    <region start="0x00001400" end="0x00001407" type="io" name="port"/>
+    <region start="0x00001800" end="0x00001BFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

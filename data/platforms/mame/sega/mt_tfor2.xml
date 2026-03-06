@@ -1,0 +1,15 @@
+<platform name="mt_tfor2" cpu="z80">
+  <!-- source: MAME sega/megatech.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00003000" end="0x00003FFF" type="io" name="banked_ram_r"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="mt_z80_bank_w"/>
+    <region start="0x00006400" end="0x00006407" type="io" name="read"/>
+    <region start="0x00006800" end="0x00006807" type="io" name="read"/>
+    <region start="0x00007000" end="0x000077FF" type="rom" name="rom"/>
+    <region start="0x00007800" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00009FFF" type="io" name="68k_banked_data"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="magipur" cpu="68000">
+  <!-- source: MAME dataeast/tumbleb.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
+    <region start="0x00100010" end="0x00100011" type="unmapped" name="nop_write"/>
+    <region start="0x00F00000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

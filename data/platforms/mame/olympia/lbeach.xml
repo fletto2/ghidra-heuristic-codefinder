@@ -1,0 +1,17 @@
+<platform name="lbeach" cpu="6800">
+  <!-- source: MAME olympia/lbeach.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="nvram"/>
+    <region start="0x00004000" end="0x000041FF" type="ram" name="bg_vram"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="port"/>
+    <region start="0x00004200" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="port"/>
+    <region start="0x00008000" end="0x00008002" type="ram" name="scroll_y"/>
+    <region start="0x00008003" end="0x00008005" type="unmapped" name="nop_write"/>
+    <region start="0x00008007" end="0x00008007" type="unmapped" name="nop_write"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A003" end="0x0000A003" type="unmapped" name="nop_read"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="rom" name="rom"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

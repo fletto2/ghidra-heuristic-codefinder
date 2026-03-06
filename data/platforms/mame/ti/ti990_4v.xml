@@ -1,0 +1,10 @@
+<platform name="ti990_4v" cpu="tms9900">
+  <!-- source: MAME ti/ti990_4.cpp -->
+  <!-- year: 1976 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000F7FF" type="unmapped" name="unmapped"/>
+    <region start="0x0000F800" end="0x0000FBFF" type="ram" name="ram"/>
+    <region start="0x0000FC00" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

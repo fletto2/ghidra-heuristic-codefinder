@@ -1,0 +1,11 @@
+<platform name="exe10102" cpu="8088">
+  <!-- source: MAME esprit/executive10.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002FFF" type="ram" name="cram"/>
+    <region start="0x00004000" end="0x00004FFF" type="ram" name="aram"/>
+    <region start="0x00006000" end="0x000060FF" type="io" name="read"/>
+    <region start="0x0000B000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

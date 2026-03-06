@@ -1,0 +1,28 @@
+<platform name="buggychl" cpu="z80">
+  <!-- source: MAME taito/buggychl.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x00009FFF" type="io" name="sprite_lookup_w"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C800" end="0x0000CFFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D000" type="unmapped" name="nop_write"/>
+    <region start="0x0000D100" end="0x0000D100" type="io" name="ctrl_w"/>
+    <region start="0x0000D200" end="0x0000D200" type="io" name="bankswitch_w"/>
+    <region start="0x0000D300" end="0x0000D300" type="io" name="reset_w"/>
+    <region start="0x0000D303" end="0x0000D303" type="io" name="sprite_lookup_bank_w"/>
+    <region start="0x0000D304" end="0x0000D307" type="unmapped" name="nop_write"/>
+    <region start="0x0000D400" end="0x0000D401" type="io" name="data_r"/>
+    <region start="0x0000D500" end="0x0000D57F" type="ram" name="writeonly"/>
+    <region start="0x0000D600" end="0x0000D603" type="io" name="port"/>
+    <region start="0x0000D608" end="0x0000D60B" type="io" name="port"/>
+    <region start="0x0000D610" end="0x0000D611" type="io" name="read"/>
+    <region start="0x0000D613" end="0x0000D613" type="io" name="sound_reset_w"/>
+    <region start="0x0000D618" end="0x0000D618" type="unmapped" name="nop_write"/>
+    <region start="0x0000D700" end="0x0000D77F" type="io" name="palette"/>
+    <region start="0x0000D820" end="0x0000D85F" type="ram" name="ram"/>
+    <region start="0x0000DB00" end="0x0000DBFF" type="ram" name="writeonly"/>
+    <region start="0x0000DC04" end="0x0000DC04" type="unmapped" name="nop_write"/>
+    <region start="0x0000DC06" end="0x0000DC06" type="io" name="bg_scrollx_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="avtbingo" cpu="z80">
+  <!-- source: MAME misc/avt.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="colorram"/>
+  </memory_map>
+</platform>

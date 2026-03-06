@@ -1,0 +1,7 @@
+<platform name="chance32" cpu="z80">
+  <!-- source: MAME misc/chance32.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000CFFF" type="rom" name="rom"/>
+    <region start="0x0000D800" end="0x0000FFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,14 @@
+<platform name="bfm_adr2" cpu="6809">
+  <!-- source: MAME bfm/bfm_adr2.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000000" type="io" name="screen_page_w"/>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000917F" type="io" name="region_8000"/>
+    <region start="0x00009180" end="0x00009FFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C001" type="io" name="rom_page_w"/>
+    <region start="0x0000C101" end="0x0000C101" type="io" name="vbl_ctrl_r"/>
+    <region start="0x0000C103" end="0x0000C103" type="io" name="irq_r"/>
+    <region start="0x0000C200" end="0x0000C201" type="io" name="uart_ctrl_r"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

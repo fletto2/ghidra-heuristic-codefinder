@@ -1,0 +1,11 @@
+<platform name="cops" cpu="6502">
+  <!-- source: MAME atari/cops.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00009FFF" type="rom" name="rom"/>
+    <region start="0x0000A000" end="0x0000B00F" type="io" name="io1_r"/>
+    <region start="0x0000C000" end="0x0000C00F" type="unmapped" name="unmapped"/>
+    <region start="0x0000D000" end="0x0000D003" type="io" name="map"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="sysbank1"/>
+  </memory_map>
+</platform>

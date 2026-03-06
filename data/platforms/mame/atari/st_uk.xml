@@ -1,0 +1,27 @@
+<platform name="st_uk" cpu="68000">
+  <!-- source: MAME atari/atarist.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="ram" name="ram"/>
+    <region start="0x00D40000" end="0x00D7FFFF" type="rom" name="rom"/>
+    <region start="0x00E00000" end="0x00E3FFFF" type="rom" name="rom"/>
+    <region start="0x00E80000" end="0x00EBFFFF" type="rom" name="rom"/>
+    <region start="0x00F00000" end="0x00F1FFFF" type="io" name="stbook_ide_r"/>
+    <region start="0x00FA0000" end="0x00FEFFFF" type="rom" name="rom"/>
+    <region start="0x00FF8000" end="0x00FF8001" type="io" name="stbook_mmu_r"/>
+    <region start="0x00FF8200" end="0x00FF820A" type="io" name="stbook_shifter_base_r"/>
+    <region start="0x00FF820C" end="0x00FF820F" type="io" name="stbook_shifter_base_low_r"/>
+    <region start="0x00FF8240" end="0x00FF8241" type="io" name="stbook_shifter_palette_r"/>
+    <region start="0x00FF8260" end="0x00FF8260" type="io" name="stbook_shifter_mode_r"/>
+    <region start="0x00FF8264" end="0x00FF8265" type="io" name="stbook_shifter_pixelofs_r"/>
+    <region start="0x00FF827E" end="0x00FF827F" type="io" name="lcd_control_w"/>
+    <region start="0x00FF8800" end="0x00FF8800" type="io" name="data_r"/>
+    <region start="0x00FF8802" end="0x00FF8802" type="io" name="data_w"/>
+    <region start="0x00FF8901" end="0x00FF8913" type="io" name="sound_dma_control_r"/>
+    <region start="0x00FF8921" end="0x00FF8925" type="io" name="sound_mode_r"/>
+    <region start="0x00FF8A00" end="0x00FF8A3D" type="io" name="halftone_r"/>
+    <region start="0x00FF9200" end="0x00FF9203" type="io" name="config_r"/>
+    <region start="0x00FF9210" end="0x00FF9211" type="io" name="power_r"/>
+    <region start="0x00FF9214" end="0x00FF9215" type="io" name="reference_r"/>
+  </memory_map>
+</platform>

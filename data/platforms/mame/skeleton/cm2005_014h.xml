@@ -1,0 +1,20 @@
+<platform name="cm2005_014h" cpu="arm7_le">
+  <!-- source: MAME skeleton/dyna_d0404.cpp -->
+  <!-- year: 2005 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020BFFF" type="ram" name="ram"/>
+    <region start="0x00240000" end="0x0024FFFF" type="ram" name="ram"/>
+    <region start="0xFFFF0000" end="0xFFFFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

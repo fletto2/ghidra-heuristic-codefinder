@@ -1,0 +1,13 @@
+<platform name="sqrack" cpu="68000">
+  <!-- source: MAME ensoniq/esq5505.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="io" name="lower_r"/>
+    <region start="0x00200000" end="0x0020001F" type="io" name="read"/>
+    <region start="0x00260000" end="0x002601FF" type="io" name="host_r"/>
+    <region start="0x00280000" end="0x0028001F" type="io" name="read"/>
+    <region start="0x00330000" end="0x003BFFFF" type="ram" name="ram"/>
+    <region start="0x00C00000" end="0x00C3FFFF" type="rom" name="rom"/>
+    <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="osram"/>
+  </memory_map>
+</platform>

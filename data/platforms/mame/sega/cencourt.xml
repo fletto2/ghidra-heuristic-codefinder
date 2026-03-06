@@ -1,0 +1,10 @@
+<platform name="cencourt" cpu="z80">
+  <!-- source: MAME sega/segas16b.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000DFFF" type="ram" name="soundbank"/>
+    <region start="0x0000E800" end="0x0000E800" type="io" name="pread"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

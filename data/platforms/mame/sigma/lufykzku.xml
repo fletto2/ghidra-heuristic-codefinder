@@ -1,0 +1,13 @@
+<platform name="lufykzku" cpu="z80">
+  <!-- source: MAME sigma/sigmab98.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="rom" name="rom"/>
+    <region start="0x00080000" end="0x00083FFF" type="ram" name="nvram"/>
+    <region start="0x000C0000" end="0x000C2FFF" type="ram" name="spriteram"/>
+    <region start="0x000C3000" end="0x000C3021" type="io" name="vregs"/>
+    <region start="0x000C3013" end="0x000C3013" type="io" name="d013_r"/>
+    <region start="0x000C3021" end="0x000C3021" type="io" name="d021_r"/>
+    <region start="0x000C3400" end="0x000C347F" type="ram" name="vtable"/>
+  </memory_map>
+</platform>

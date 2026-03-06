@@ -1,0 +1,17 @@
+<platform name="parodiuse" cpu="z80">
+  <!-- source: MAME konami/parodius.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="io" name="amap8"/>
+    <region start="0x00000800" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00005FFF" type="io" name="read"/>
+    <region start="0x00002000" end="0x000027FF" type="io" name="region_2000"/>
+    <region start="0x00003F8C" end="0x00003F90" type="io" name="port"/>
+    <region start="0x00003FA0" end="0x00003FC0" type="io" name="k053244_r"/>
+    <region start="0x00003FC4" end="0x00003FC4" type="io" name="videobank_w"/>
+    <region start="0x00003FC8" end="0x00003FC8" type="io" name="sh_irqtrigger_w"/>
+    <region start="0x00003FCC" end="0x00003FCD" type="io" name="main_read"/>
+    <region start="0x00006000" end="0x00009FFF" type="ram" name="banked"/>
+    <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,12 @@
+<platform name="dynamski" cpu="z80">
+  <!-- source: MAME misc/shangkid.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000CBFF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000DBFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E007" type="io" name="d0"/>
+    <region start="0x0000E800" end="0x0000E803" type="io" name="port"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

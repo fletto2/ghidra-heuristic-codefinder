@@ -1,0 +1,28 @@
+<platform name="feversoc" cpu="sh2">
+  <!-- source: MAME seibu/feversoc.cpp -->
+  <!-- year: 2004 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x02000000" end="0x0203DFFF" type="ram" name="ram"/>
+    <region start="0x0203E000" end="0x0203FFFF" type="io" name="spriteram_r"/>
+    <region start="0x06000000" end="0x06000003" type="io" name="output_w"/>
+    <region start="0x06000006" end="0x0600000B" type="io" name="irq_ack_w"/>
+    <region start="0x0600000D" end="0x0600000D" type="io" name="read"/>
+    <region start="0x06010000" end="0x0601007F" type="io" name="read"/>
+    <region start="0x06010060" end="0x06010063" type="unmapped" name="nop_write"/>
+    <region start="0x06018000" end="0x06019FFF" type="ram" name="palette"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

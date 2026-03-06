@@ -1,0 +1,20 @@
+<platform name="4in1" cpu="z80">
+  <!-- source: MAME galaxian/galaxold.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000047FF" type="ram" name="bank1"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="videoram"/>
+    <region start="0x00005400" end="0x000057FF" type="io" name="galaxold_videoram_r"/>
+    <region start="0x00005800" end="0x000058FF" type="ram" name="attributesram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="port"/>
+    <region start="0x00006000" end="0x00006007" type="io" name="galaxold_leds_w"/>
+    <region start="0x00006800" end="0x00006800" type="io" name="port"/>
+    <region start="0x00006800" end="0x00006807" type="io" name="sound_w"/>
+    <region start="0x00007000" end="0x00007001" type="io" name="port"/>
+    <region start="0x00007004" end="0x00007004" type="io" name="galaxold_stars_enable_w"/>
+    <region start="0x00007006" end="0x00007007" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x00007800" end="0x000078FF" type="io" name="reset_r"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="_4in1_bank_w"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

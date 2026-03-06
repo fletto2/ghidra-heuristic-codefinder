@@ -1,0 +1,12 @@
+<platform name="overrevb" cpu="68000">
+  <!-- source: MAME sega/model2.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="soundram"/>
+    <region start="0x00100000" end="0x00100FFF" type="io" name="read"/>
+    <region start="0x00400000" end="0x00400001" type="io" name="model2snd_ctrl"/>
+    <region start="0x00600000" end="0x0067FFFF" type="rom" name="rom"/>
+    <region start="0x00800000" end="0x009FFFFF" type="rom" name="rom"/>
+    <region start="0x00A00000" end="0x00FFFFFF" type="ram" name="bank4"/>
+  </memory_map>
+</platform>

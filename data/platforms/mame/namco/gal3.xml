@@ -1,0 +1,96 @@
+<platform name="gal3" cpu="68000">
+  <!-- source: MAME namco/gal3.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x0010FFFF" type="ram" name="ram"/>
+    <region start="0x00180000" end="0x00183FFF" type="ram" name="ram"/>
+    <region start="0x001C0000" end="0x001C0001" type="ram" name="ram"/>
+    <region start="0x001C2000" end="0x001C2001" type="ram" name="ram"/>
+    <region start="0x001C4000" end="0x001C4001" type="ram" name="ram"/>
+    <region start="0x001C6000" end="0x001C6001" type="ram" name="ram"/>
+    <region start="0x001C8000" end="0x001C8001" type="ram" name="ram"/>
+    <region start="0x001CA000" end="0x001CA001" type="ram" name="ram"/>
+    <region start="0x001CC000" end="0x001CC001" type="ram" name="ram"/>
+    <region start="0x001CE000" end="0x001CE001" type="ram" name="ram"/>
+    <region start="0x001D2000" end="0x001D2001" type="ram" name="ram"/>
+    <region start="0x001D4000" end="0x001D4001" type="ram" name="ram"/>
+    <region start="0x001D6000" end="0x001D6001" type="ram" name="ram"/>
+    <region start="0x001DE000" end="0x001DE001" type="ram" name="ram"/>
+    <region start="0x001E4000" end="0x001E4001" type="ram" name="ram"/>
+    <region start="0x001E6000" end="0x001E6001" type="ram" name="ram"/>
+    <region start="0x00200000" end="0x00200001" type="ram" name="ram"/>
+    <region start="0x002C0000" end="0x002C0001" type="ram" name="ram"/>
+    <region start="0x002C0800" end="0x002C0801" type="ram" name="ram"/>
+    <region start="0x002C1000" end="0x002C1001" type="ram" name="ram"/>
+    <region start="0x002C1800" end="0x002C1801" type="ram" name="ram"/>
+    <region start="0x002C2000" end="0x002C2001" type="ram" name="ram"/>
+    <region start="0x002C2800" end="0x002C2801" type="ram" name="ram"/>
+    <region start="0x002C3000" end="0x002C3001" type="ram" name="ram"/>
+    <region start="0x002C3800" end="0x002C3801" type="ram" name="ram"/>
+    <region start="0x002C4000" end="0x002C4001" type="ram" name="ram"/>
+    <region start="0x00300000" end="0x00300FFF" type="ram" name="rso_shared_ram"/>
+    <region start="0x00400000" end="0x00400017" type="ram" name="ram"/>
+    <region start="0x00480000" end="0x00480017" type="ram" name="ram"/>
+    <region start="0x00500000" end="0x00500017" type="ram" name="ram"/>
+    <region start="0x00580000" end="0x00580017" type="ram" name="ram"/>
+    <region start="0x00600000" end="0x00600017" type="ram" name="ram"/>
+    <region start="0x00680000" end="0x00680017" type="ram" name="ram"/>
+    <region start="0x00800000" end="0x0080000F" type="ram" name="ram"/>
+    <region start="0x00840000" end="0x00843FFF" type="ram" name="ram"/>
+    <region start="0x00880000" end="0x0088000F" type="ram" name="ram"/>
+    <region start="0x008C0000" end="0x008C3FFF" type="ram" name="ram"/>
+    <region start="0x00900000" end="0x0090000F" type="ram" name="ram"/>
+    <region start="0x00940000" end="0x00943FFF" type="ram" name="ram"/>
+    <region start="0x00980000" end="0x0098000F" type="ram" name="ram"/>
+    <region start="0x009C0000" end="0x009C3FFF" type="ram" name="ram"/>
+    <region start="0x00A00000" end="0x00A0000F" type="ram" name="ram"/>
+    <region start="0x00A40000" end="0x00A43FFF" type="ram" name="ram"/>
+    <region start="0x00A80000" end="0x00A8000F" type="ram" name="ram"/>
+    <region start="0x00AC0000" end="0x00AC3FFF" type="ram" name="ram"/>
+    <region start="0x00B00000" end="0x00B0000F" type="ram" name="ram"/>
+    <region start="0x00B40000" end="0x00B43FFF" type="ram" name="ram"/>
+    <region start="0x00B80000" end="0x00B8000F" type="ram" name="ram"/>
+    <region start="0x00BC0000" end="0x00BC3FFF" type="ram" name="ram"/>
+    <region start="0x00C00000" end="0x00C0000F" type="ram" name="ram"/>
+    <region start="0x00C40000" end="0x00FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+    <entry index="10" name="line_a"/>
+    <entry index="11" name="line_f"/>
+    <entry index="24" name="spurious_irq"/>
+    <entry index="25" name="autovector_1" irq="true"/>
+    <entry index="26" name="autovector_2" irq="true"/>
+    <entry index="27" name="autovector_3" irq="true"/>
+    <entry index="28" name="autovector_4" irq="true"/>
+    <entry index="29" name="autovector_5" irq="true"/>
+    <entry index="30" name="autovector_6" irq="true"/>
+    <entry index="31" name="autovector_7" irq="true"/>
+    <entry index="32" name="trap_0"/>
+    <entry index="33" name="trap_1"/>
+    <entry index="34" name="trap_2"/>
+    <entry index="35" name="trap_3"/>
+    <entry index="36" name="trap_4"/>
+    <entry index="37" name="trap_5"/>
+    <entry index="38" name="trap_6"/>
+    <entry index="39" name="trap_7"/>
+    <entry index="40" name="trap_8"/>
+    <entry index="41" name="trap_9"/>
+    <entry index="42" name="trap_10"/>
+    <entry index="43" name="trap_11"/>
+    <entry index="44" name="trap_12"/>
+    <entry index="45" name="trap_13"/>
+    <entry index="46" name="trap_14"/>
+    <entry index="47" name="trap_15"/>
+  </vectors>
+</platform>

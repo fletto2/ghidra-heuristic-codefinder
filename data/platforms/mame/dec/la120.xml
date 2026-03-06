@@ -1,0 +1,12 @@
+<platform name="la120" cpu="8080">
+  <!-- source: MAME dec/decwritr.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000027FF" type="rom" name="rom"/>
+    <region start="0x00003000" end="0x0000301F" type="io" name="la120_KBD_r"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x000067FF" type="io" name="la120_NVR_r"/>
+    <region start="0x00007000" end="0x00007003" type="io" name="la120_DC305_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="vendetta2pw" cpu="z80">
+  <!-- source: MAME konami/vendetta.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="banked"/>
+    <region start="0x00004000" end="0x00007FFF" type="io" name="read"/>
+    <region start="0x00004000" end="0x00004FFF" type="io" name="region_4000"/>
+    <region start="0x00005F80" end="0x00005FB7" type="io" name="map"/>
+    <region start="0x00005FC0" end="0x00005FC3" type="io" name="port"/>
+    <region start="0x00005FD0" end="0x00005FD1" type="io" name="port"/>
+    <region start="0x00005FE0" end="0x00005FE0" type="io" name="_5fe0_w"/>
+    <region start="0x00005FE2" end="0x00005FE2" type="io" name="eeprom_w"/>
+    <region start="0x00005FE4" end="0x00005FE4" type="io" name="z80_irq_r"/>
+    <region start="0x00005FE6" end="0x00005FEA" type="io" name="main_read"/>
+    <region start="0x00006000" end="0x00006FFF" type="io" name="region_6000"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

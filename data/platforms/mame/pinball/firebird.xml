@@ -1,0 +1,11 @@
+<platform name="firebird" cpu="tms9995">
+  <!-- source: MAME pinball/nsm.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="nvram"/>
+    <region start="0x0000E600" end="0x0000E601" type="io" name="e600_w"/>
+    <region start="0x0000E800" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000FFEC" end="0x0000FFEF" type="io" name="address_data_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="fzeroax" cpu="ppc">
+  <!-- source: MAME sega/triforce.cpp -->
+  <!-- year: 2003 -->
+  <memory_map>
+    <region start="0x00000000" end="0x017FFFFF" type="ram" name="ram"/>
+    <region start="0x0C003000" end="0x0C003FFF" type="io" name="gc_pi_r"/>
+    <region start="0x0C006800" end="0x0C0068FF" type="io" name="gc_exi_r"/>
+    <region start="0xFFF00000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

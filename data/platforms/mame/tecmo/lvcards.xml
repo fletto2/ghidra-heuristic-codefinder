@@ -1,0 +1,12 @@
+<platform name="lvcards" cpu="z80">
+  <!-- source: MAME tecmo/lvcards.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000067FF" type="ram" name="nvram"/>
+    <region start="0x00009000" end="0x000097FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="port"/>
+    <region start="0x0000A001" end="0x0000A002" type="unmapped" name="nop_write"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

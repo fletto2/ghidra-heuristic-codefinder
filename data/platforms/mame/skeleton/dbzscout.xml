@@ -1,0 +1,22 @@
+<platform name="dbzscout" cpu="arm9">
+  <!-- source: MAME skeleton/koto_zevio.cpp -->
+  <!-- year: 2007 -->
+  <memory_map>
+    <region start="0x00000000" end="0x007FFFFF" type="rom" name="rom"/>
+    <region start="0x10000000" end="0x10FFFFFF" type="ram" name="ram"/>
+    <region start="0x900A0F04" end="0x900A0F07" type="unmapped" name="nop_write"/>
+    <region start="0x900B0014" end="0x900B0017" type="io" name="z900b0014_r"/>
+    <region start="0xB8000024" end="0xB8000027" type="io" name="zb8000024_r"/>
+    <region start="0xB8000800" end="0xB8000FFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

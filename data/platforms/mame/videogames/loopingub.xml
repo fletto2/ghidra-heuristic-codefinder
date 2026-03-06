@@ -1,0 +1,13 @@
+<platform name="loopingub" cpu="tms9995">
+  <!-- source: MAME videogames/looping.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x00007007" type="io" name="protection_r"/>
+    <region start="0x00009000" end="0x000093FF" type="ram" name="ram"/>
+    <region start="0x00009800" end="0x000098FF" type="ram" name="ram"/>
+    <region start="0x0000B000" end="0x0000B007" type="io" name="d0"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F803" type="io" name="out_0_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,15 @@
+<platform name="datacast" cpu="80186">
+  <!-- source: MAME skeleton/datacast.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="ram" name="ram"/>
+    <region start="0x000C0000" end="0x000C0000" type="io" name="keypad_r"/>
+    <region start="0x000C0080" end="0x000C0080" type="io" name="unknown_purpose"/>
+    <region start="0x000C0100" end="0x000C010F" type="unmapped" name="unmapped"/>
+    <region start="0x000C0180" end="0x000C0180" type="io" name="i2c_r"/>
+    <region start="0x000C0200" end="0x000C0203" type="io" name="read"/>
+    <region start="0x000C0280" end="0x000C0280" type="io" name="stt_str_w"/>
+    <region start="0x000C0300" end="0x000C0303" type="io" name="read"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

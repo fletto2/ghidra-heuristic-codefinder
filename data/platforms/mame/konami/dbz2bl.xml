@@ -1,0 +1,15 @@
+<platform name="dbz2bl" cpu="68000">
+  <!-- source: MAME konami/dbz.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x004CC000" end="0x004CC03F" type="io" name="region_4cc000"/>
+    <region start="0x004CCF00" end="0x004CCF3F" type="io" name="word_w"/>
+    <region start="0x004D4000" end="0x004D401F" type="io" name="region_4d4000"/>
+    <region start="0x004D4F00" end="0x004D4F1F" type="io" name="ctrl_w"/>
+    <region start="0x004E0004" end="0x004E0005" type="io" name="region_4e0004"/>
+    <region start="0x004E3011" end="0x004E3011" type="io" name="write"/>
+    <region start="0x004E4000" end="0x004E4001" type="unmapped" name="nop_read"/>
+    <region start="0x004F0000" end="0x004F0001" type="io" name="region_4f0000"/>
+    <region start="0x004F4000" end="0x004F4001" type="io" name="the_bootleg_nops_this_so_sound_doesnt_wo"/>
+  </memory_map>
+</platform>

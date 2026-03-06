@@ -1,0 +1,10 @@
+<platform name="granny" cpu="6800">
+  <!-- source: MAME pinball/byvid.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000000B" type="io" name="sound_data_r"/>
+    <region start="0x00002000" end="0x000027FF" type="ram" name="ram"/>
+    <region start="0x00002801" end="0x00002801" type="unmapped" name="nop_read"/>
+    <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

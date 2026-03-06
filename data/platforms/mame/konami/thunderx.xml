@@ -1,0 +1,8 @@
+<platform name="thunderx" cpu="z80">
+  <!-- source: MAME konami/thunderx.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00001F80" end="0x00001F80" type="io" name="thunderx_videobank_w"/>
+    <region start="0x00001F98" end="0x00001F98" type="io" name="_1f98_r"/>
+  </memory_map>
+</platform>

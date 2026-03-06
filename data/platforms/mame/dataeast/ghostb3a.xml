@@ -1,0 +1,27 @@
+<platform name="ghostb3a" cpu="65c02">
+  <!-- source: MAME dataeast/dec8.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x000027FF" type="io" name="pf_data_8bit_r"/>
+    <region start="0x00002800" end="0x00002BFF" type="ram" name="ram"/>
+    <region start="0x00002C00" end="0x00002FFF" type="io" name="pf_rowscroll_8bit_r"/>
+    <region start="0x00003000" end="0x000037FF" type="ram" name="spriteram"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="port"/>
+    <region start="0x00003800" end="0x00003803" type="io" name="sound_w"/>
+    <region start="0x00003820" end="0x00003820" type="io" name="port"/>
+    <region start="0x00003820" end="0x00003827" type="io" name="pf_control0_8bit_w"/>
+    <region start="0x00003830" end="0x00003840" type="io" name="pf_control1_8bit_r"/>
+    <region start="0x00003840" end="0x00003840" type="io" name="ghostb_bank_w"/>
+    <region start="0x00003860" end="0x00003860" type="io" name="i8751_lo_r"/>
+    <region start="0x00003860" end="0x00003861" type="io" name="i8751_hi_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

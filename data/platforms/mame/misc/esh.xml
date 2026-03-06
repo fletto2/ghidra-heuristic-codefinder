@@ -1,0 +1,9 @@
+<platform name="esh" cpu="z80">
+  <!-- source: MAME misc/esh.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000E7FF" type="ram" name="nvram"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="ram" name="tile_ram"/>
+  </memory_map>
+</platform>

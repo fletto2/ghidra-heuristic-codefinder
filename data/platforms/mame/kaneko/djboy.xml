@@ -1,0 +1,10 @@
+<platform name="djboy" cpu="z80">
+  <!-- source: MAME kaneko/djboy.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000AFFF" type="ram" name="banked"/>
+    <region start="0x0000B000" end="0x0000BFFF" type="io" name="spriteram_r"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

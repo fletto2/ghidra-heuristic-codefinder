@@ -1,0 +1,11 @@
+<platform name="srmp4o" cpu="v60">
+  <!-- source: MAME seta/ssv.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00210000" end="0x00210001" type="io" name="reset16_r"/>
+    <region start="0x00210002" end="0x00210003" type="unmapped" name="nop_write"/>
+    <region start="0x00C0000A" end="0x00C0000B" type="io" name="srmp4_input_r"/>
+    <region start="0x00C0000E" end="0x00C0000F" type="ram" name="writeonly"/>
+    <region start="0x00C00010" end="0x00C00011" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

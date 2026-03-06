@@ -1,0 +1,7 @@
+<platform name="pimps" cpu="8085">
+  <!-- source: MAME homebrew/pimps.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000EFFF" type="ram" name="mainram"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

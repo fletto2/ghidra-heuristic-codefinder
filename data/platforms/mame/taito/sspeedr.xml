@@ -1,0 +1,8 @@
+<platform name="sspeedr" cpu="z80">
+  <!-- source: MAME taito/sspeedr.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000021FF" type="ram" name="ram"/>
+    <region start="0x00007F00" end="0x00007F17" type="io" name="score_w"/>
+  </memory_map>
+</platform>

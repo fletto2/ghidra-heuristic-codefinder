@@ -1,0 +1,9 @@
+<platform name="mightguy" cpu="z80">
+  <!-- source: MAME nichibutsu/cop01.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000E0FF" type="ram" name="ram"/>
+    <region start="0x0000F000" end="0x0000F3FF" type="io" name="foreground_w"/>
+  </memory_map>
+</platform>

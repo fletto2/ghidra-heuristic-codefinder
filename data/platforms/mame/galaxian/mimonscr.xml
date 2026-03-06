@@ -1,0 +1,17 @@
+<platform name="mimonscr" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004BFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="spriteram"/>
+    <region start="0x00006800" end="0x00006802" type="io" name="galaxian_gfxbank_w"/>
+    <region start="0x00006801" end="0x00006801" type="io" name="irq_enable_w"/>
+    <region start="0x00006804" end="0x00006804" type="io" name="scramble_background_enable_w"/>
+    <region start="0x00006806" end="0x00006807" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="reset_r"/>
+    <region start="0x00008100" end="0x00008103" type="io" name="read"/>
+    <region start="0x00008200" end="0x00008203" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

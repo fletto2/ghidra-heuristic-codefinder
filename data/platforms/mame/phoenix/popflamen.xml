@@ -1,0 +1,11 @@
+<platform name="popflamen" cpu="z80">
+  <!-- source: MAME phoenix/naughtyb.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x000097FF" type="io" name="naughtyb_videoreg_w"/>
+    <region start="0x00009800" end="0x00009FFF" type="ram" name="scrollreg"/>
+    <region start="0x0000A000" end="0x0000BFFF" type="io" name="control_a_w"/>
+  </memory_map>
+</platform>

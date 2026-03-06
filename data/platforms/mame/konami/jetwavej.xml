@@ -1,0 +1,19 @@
+<platform name="jetwavej" cpu="68000">
+  <!-- source: MAME konami/zr107.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="ram" name="ram"/>
+    <region start="0x74000000" end="0x740000FF" type="io" name="reg_r"/>
+    <region start="0x74010000" end="0x7401FFFF" type="ram" name="palette"/>
+    <region start="0x74020000" end="0x7407FFFF" type="io" name="tile_r"/>
+    <region start="0x78000000" end="0x7801FFFF" type="io" name="cgboard_dsp_shared_r_ppc"/>
+    <region start="0x78040000" end="0x7804000F" type="io" name="read"/>
+    <region start="0x78080000" end="0x7808000F" type="io" name="read"/>
+    <region start="0x780C0000" end="0x780C0007" type="io" name="cgboard_dsp_comm_r_ppc"/>
+    <region start="0x7E000000" end="0x7E003FFF" type="io" name="sysreg_r"/>
+    <region start="0x7E008000" end="0x7E00C00F" type="io" name="regs_map"/>
+    <region start="0x7F000000" end="0x7F3FFFFF" type="rom" name="rom"/>
+    <region start="0x7F800000" end="0x7F9FFFFF" type="rom" name="rom"/>
+    <region start="0x7FE00000" end="0x7FFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="ar_argh" cpu="68000">
+  <!-- source: MAME amiga/arsystems.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00800000" end="0x009FEFFF" type="rom" name="rom"/>
+    <region start="0x009FF000" end="0x009FFFFF" type="ram" name="nvram"/>
+    <region start="0x00F00000" end="0x00F7FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

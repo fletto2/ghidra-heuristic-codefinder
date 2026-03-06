@@ -1,0 +1,8 @@
+<platform name="pc3086" cpu="8086">
+  <!-- source: MAME amstrad/amstr_pc.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x000C0000" end="0x000C9FFF" type="rom" name="rom"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

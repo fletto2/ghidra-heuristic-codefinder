@@ -1,0 +1,12 @@
+<platform name="kickc" cpu="z80">
+  <!-- source: MAME midway/mcr.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00006FFF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x000077FF" type="ram" name="nvram"/>
+    <region start="0x0000F000" end="0x0000F1FF" type="ram" name="spriteram"/>
+    <region start="0x0000F400" end="0x0000F41F" type="io" name="palette"/>
+    <region start="0x0000F800" end="0x0000F81F" type="io" name="palette_ext"/>
+    <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

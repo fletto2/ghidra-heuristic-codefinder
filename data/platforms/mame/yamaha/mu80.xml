@@ -1,0 +1,11 @@
+<platform name="mu80" cpu="h8">
+  <!-- source: MAME yamaha/ymmu80.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00200000" end="0x0020FFFF" type="ram" name="ram"/>
+    <region start="0x00400000" end="0x0040003F" type="io" name="map"/>
+    <region start="0x00440000" end="0x0044001F" type="io" name="map"/>
+    <region start="0x00460000" end="0x0046003F" type="io" name="map"/>
+  </memory_map>
+</platform>

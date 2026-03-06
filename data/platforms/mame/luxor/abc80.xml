@@ -1,0 +1,10 @@
+<platform name="abc80" cpu="z80">
+  <!-- source: MAME luxor/abc80.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="io" name="region_0"/>
+    <region start="0x00002000" end="0x000023FF" type="io" name="region_2000"/>
+    <region start="0x00005800" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00007C00" end="0x00007FFF" type="io" name="map_only_the_upper_1k_of_char_ram"/>
+  </memory_map>
+</platform>

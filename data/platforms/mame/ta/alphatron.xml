@@ -1,0 +1,10 @@
+<platform name="alphatron" cpu="z80">
+  <!-- source: MAME ta/alphatro.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x00000000" end="0x00005FFF" type="io" name="amap8"/>
+    <region start="0x0000A000" end="0x0000DFFF" type="io" name="amap8"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="io" name="amap8"/>
+  </memory_map>
+</platform>

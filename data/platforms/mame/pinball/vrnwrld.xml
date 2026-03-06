@@ -1,0 +1,15 @@
+<platform name="vrnwrld" cpu="z80">
+  <!-- source: MAME pinball/spinb.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00009FFF" type="ram" name="nvram"/>
+    <region start="0x0000C000" end="0x0000C003" type="io" name="read"/>
+    <region start="0x0000C400" end="0x0000C403" type="io" name="read"/>
+    <region start="0x0000C800" end="0x0000C803" type="io" name="read"/>
+    <region start="0x0000CC00" end="0x0000CC03" type="io" name="read"/>
+    <region start="0x0000CC20" end="0x0000CC45" type="io" name="sndcmd_w"/>
+    <region start="0x0000CC60" end="0x0000CC60" type="io" name="disp_w"/>
+    <region start="0x0000CCE0" end="0x0000CCE0" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,13 @@
+<platform name="radionic" cpu="z80">
+  <!-- source: MAME trs/radionic.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000037FF" type="rom" name="rom"/>
+    <region start="0x00003400" end="0x00003401" type="io" name="read"/>
+    <region start="0x00003500" end="0x00003603" type="io" name="cctrl_w"/>
+    <region start="0x000037E0" end="0x000037E3" type="io" name="irq_status_r"/>
+    <region start="0x000037E8" end="0x000037EF" type="io" name="printer_r"/>
+    <region start="0x00003800" end="0x00003FFF" type="io" name="keyboard_r"/>
+    <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

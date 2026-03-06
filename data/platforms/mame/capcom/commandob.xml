@@ -1,0 +1,13 @@
+<platform name="commandob" cpu="z80">
+  <!-- source: MAME capcom/commando.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C004" type="io" name="port"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="write"/>
+    <region start="0x0000C804" end="0x0000C804" type="io" name="control_w"/>
+    <region start="0x0000C806" end="0x0000C806" type="io" name="write"/>
+    <region start="0x0000C808" end="0x0000C80B" type="io" name="scrollx_w"/>
+    <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

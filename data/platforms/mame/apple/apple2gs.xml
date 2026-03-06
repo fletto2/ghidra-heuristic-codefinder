@@ -1,0 +1,8 @@
+<platform name="apple2gs" cpu="65816">
+  <!-- source: MAME apple/apple2gs.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00E1FFFF" type="io" name="region_0"/>
+    <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

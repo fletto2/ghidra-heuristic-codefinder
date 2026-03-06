@@ -1,0 +1,15 @@
+<platform name="popper" cpu="z80">
+  <!-- source: MAME omori/popper.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="unmapped" name="unmapped"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
+    <region start="0x0000E000" end="0x0000E003" type="io" name="inputs_r"/>
+    <region start="0x0000E000" end="0x0000E007" type="io" name="d0"/>
+    <region start="0x0000E400" end="0x0000E400" type="io" name="subcpu_nmi_r"/>
+    <region start="0x0000E800" end="0x0000F7FF" type="unmapped" name="unmapped"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="subcpu_reset_r"/>
+    <region start="0x0000FC00" end="0x0000FC00" type="io" name="watchdog_clear_r"/>
+  </memory_map>
+</platform>

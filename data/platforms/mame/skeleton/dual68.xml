@@ -1,0 +1,11 @@
+<platform name="dual68" cpu="68000">
+  <!-- source: MAME skeleton/dual68.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
+    <region start="0x00080000" end="0x00081FFF" type="rom" name="rom"/>
+    <region start="0x007F0000" end="0x007F0001" type="io" name="sio_direct_r"/>
+    <region start="0x007F00C0" end="0x007F00C0" type="io" name="fdc_status_r"/>
+    <region start="0x00800000" end="0x00801FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

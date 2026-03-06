@@ -1,0 +1,19 @@
+<platform name="kpontoon" cpu="z80">
+  <!-- source: MAME konami/kpontoon.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000E000" end="0x0000F1FF" type="ram" name="ram"/>
+    <region start="0x0000F405" end="0x0000F407" type="io" name="sprrom_adr_l"/>
+    <region start="0x0000F410" end="0x0000F411" type="io" name="sprrom_r"/>
+    <region start="0x0000F420" end="0x0000F42F" type="io" name="read"/>
+    <region start="0x0000F450" end="0x0000F450" type="io" name="charrom_bank_w"/>
+    <region start="0x0000F470" end="0x0000F470" type="unmapped" name="nop_write"/>
+    <region start="0x0000F810" end="0x0000F810" type="io" name="main_to_snd_w"/>
+    <region start="0x0000F820" end="0x0000F820" type="io" name="snd_to_main_r"/>
+    <region start="0x0000F830" end="0x0000F830" type="io" name="control_w"/>
+    <region start="0x0000F851" end="0x0000F851" type="io" name="vbl_r"/>
+  </memory_map>
+</platform>

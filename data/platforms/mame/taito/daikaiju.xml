@@ -1,0 +1,13 @@
+<platform name="daikaiju" cpu="z80">
+  <!-- source: MAME taito/lsasquad.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000E7FF" type="ram" name="banked"/>
+    <region start="0x0000E800" end="0x0000E801" type="io" name="port"/>
+    <region start="0x0000E803" end="0x0000E807" type="io" name="daikaiju_mcu_status_r"/>
+    <region start="0x0000EA00" end="0x0000EA00" type="io" name="bankswitch_w"/>
+    <region start="0x0000EC00" end="0x0000EC00" type="io" name="write"/>
+    <region start="0x0000EE00" end="0x0000EE00" type="io" name="data_r"/>
+  </memory_map>
+</platform>

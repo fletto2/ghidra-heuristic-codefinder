@@ -1,0 +1,9 @@
+<platform name="sqixu" cpu="z80">
+  <!-- source: MAME taito/superqix.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="spriteram"/>
+  </memory_map>
+</platform>

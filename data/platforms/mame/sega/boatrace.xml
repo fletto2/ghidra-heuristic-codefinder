@@ -1,0 +1,17 @@
+<platform name="boatrace" cpu="z80">
+  <!-- source: MAME sega/speedbsk.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008003" type="io" name="xy"/>
+    <region start="0x00008200" end="0x00008203" type="io" name="xy"/>
+    <region start="0x00008600" end="0x00008600" type="io" name="port"/>
+    <region start="0x00008800" end="0x00008800" type="io" name="port"/>
+    <region start="0x00008A00" end="0x00008A0F" type="io" name="read"/>
+    <region start="0x00008A80" end="0x00008A83" type="io" name="read"/>
+    <region start="0x00008AC0" end="0x00008AC1" type="io" name="read"/>
+    <region start="0x00008B00" end="0x00008B03" type="io" name="read"/>
+    <region start="0x00008B40" end="0x00008B43" type="io" name="read"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

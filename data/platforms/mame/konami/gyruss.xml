@@ -1,0 +1,16 @@
+<platform name="gyruss" cpu="z80">
+  <!-- source: MAME konami/gyruss.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00009000" end="0x0000A7FF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000C000" type="unmapped" name="nop_write"/>
+    <region start="0x0000C080" end="0x0000C080" type="io" name="sh_irqtrigger_w"/>
+    <region start="0x0000C0A0" end="0x0000C0A0" type="io" name="port"/>
+    <region start="0x0000C0C0" end="0x0000C0C0" type="io" name="port"/>
+    <region start="0x0000C0E0" end="0x0000C0E0" type="io" name="port"/>
+    <region start="0x0000C100" end="0x0000C100" type="io" name="write"/>
+    <region start="0x0000C180" end="0x0000C187" type="io" name="d0"/>
+  </memory_map>
+</platform>

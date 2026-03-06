@@ -1,0 +1,8 @@
+<platform name="hpz80unk" cpu="z80">
+  <!-- source: MAME hp/hpz80unk.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,8 @@
+<platform name="mjsikakd" cpu="z80">
+  <!-- source: MAME nichibutsu/nbmj8688.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000F7FF" type="rom" name="rom"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="ram" name="nvram"/>
+  </memory_map>
+</platform>

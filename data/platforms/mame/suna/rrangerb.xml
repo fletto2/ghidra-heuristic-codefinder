@@ -1,0 +1,15 @@
+<platform name="rrangerb" cpu="z80">
+  <!-- source: MAME suna/suna8.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="reset_r"/>
+    <region start="0x0000C002" end="0x0000C002" type="io" name="rranger_bankswitch_w"/>
+    <region start="0x0000C002" end="0x0000C004" type="io" name="port"/>
+    <region start="0x0000C200" end="0x0000C200" type="unmapped" name="nop_read"/>
+    <region start="0x0000C280" end="0x0000C280" type="unmapped" name="nop_write"/>
+    <region start="0x0000C2C0" end="0x0000C2C0" type="io" name="port"/>
+    <region start="0x0000C600" end="0x0000FFFF" type="ram" name="palette"/>
+  </memory_map>
+</platform>

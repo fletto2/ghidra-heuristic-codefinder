@@ -1,0 +1,8 @@
+<platform name="mtd1256" cpu="68hc11">
+  <!-- source: MAME skeleton/mtd1256.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="io" name="amap8"/>
+    <region start="0x00002000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

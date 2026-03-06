@@ -1,0 +1,16 @@
+<platform name="pippin" cpu="ppc">
+  <!-- source: MAME apple/pippin.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x005FFFFF" type="ram" name="ram"/>
+    <region start="0x00C00000" end="0x00C01007" type="ram" name="ram"/>
+    <region start="0x01C00000" end="0x01C01007" type="ram" name="ram"/>
+    <region start="0x02C00000" end="0x02C01007" type="ram" name="ram"/>
+    <region start="0x03C00000" end="0x03C01007" type="ram" name="ram"/>
+    <region start="0x40000000" end="0x403FFFFF" type="rom" name="rom"/>
+    <region start="0x40000000" end="0x40000000" type="io" name="hack_to_make_flash_rom_status_check_pass"/>
+    <region start="0x5FFFFFFC" end="0x5FFFFFFF" type="io" name="region_5ffffffc"/>
+    <region start="0xF0000000" end="0xF00FFFFF" type="ram" name="ram"/>
+    <region start="0xFFC00000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

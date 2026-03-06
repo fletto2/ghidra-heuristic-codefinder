@@ -1,0 +1,14 @@
+<platform name="dyndukea" cpu="z80">
+  <!-- source: MAME seibu/dynduke.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000080FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000AFFF" type="ram" name="share"/>
+    <region start="0x0000B000" end="0x0000B003" type="io" name="port"/>
+    <region start="0x0000B004" end="0x0000B005" type="unmapped" name="nop_write"/>
+    <region start="0x0000B006" end="0x0000B007" type="io" name="control_w"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000D000" end="0x0000D00D" type="io" name="main_r"/>
+    <region start="0x000A0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

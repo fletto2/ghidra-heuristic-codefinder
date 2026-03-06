@@ -1,0 +1,9 @@
+<platform name="eballdlxp2" cpu="6803">
+  <!-- source: MAME pinball/by68701.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000FFFF" type="unmapped" name="unmapped"/>
+    <region start="0x00000400" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00007000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

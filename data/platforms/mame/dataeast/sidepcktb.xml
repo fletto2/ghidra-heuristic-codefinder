@@ -1,0 +1,19 @@
+<platform name="sidepcktb" cpu="6502">
+  <!-- source: MAME dataeast/sidepckt.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000013FF" type="ram" name="ram"/>
+    <region start="0x00001800" end="0x00001BFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x000020FF" type="ram" name="ram"/>
+    <region start="0x00002100" end="0x000024FF" type="unmapped" name="nop_write"/>
+    <region start="0x00003000" end="0x00003004" type="io" name="port"/>
+    <region start="0x0000300C" end="0x0000300C" type="io" name="scroll_y_r"/>
+    <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

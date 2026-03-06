@@ -1,0 +1,32 @@
+<platform name="hotgmck3" cpu="sh2">
+  <!-- source: MAME psikyo/psikyo4.cpp -->
+  <!-- year: 1999 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x02000000" end="0x021FFFFF" type="rom" name="rom"/>
+    <region start="0x03000000" end="0x030037FF" type="ram" name="spriteram"/>
+    <region start="0x03003FE0" end="0x03003FE3" type="io" name="port"/>
+    <region start="0x03003FE1" end="0x03003FE1" type="io" name="eeprom_w"/>
+    <region start="0x03003FE4" end="0x03003FEF" type="ram" name="vidregs"/>
+    <region start="0x03003FE4" end="0x03003FE7" type="unmapped" name="nop_read"/>
+    <region start="0x03003FF3" end="0x03003FF7" type="io" name="screen_1_brightness"/>
+    <region start="0x03003FFB" end="0x03003FFF" type="io" name="screen_2_brightness"/>
+    <region start="0x03004000" end="0x03007FFF" type="ram" name="paletteram"/>
+    <region start="0x05000000" end="0x05000007" type="io" name="read"/>
+    <region start="0x05800000" end="0x0580000A" type="io" name="port"/>
+    <region start="0x06000000" end="0x060FFFFF" type="ram" name="ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

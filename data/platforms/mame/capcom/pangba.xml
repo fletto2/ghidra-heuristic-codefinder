@@ -1,0 +1,13 @@
+<platform name="pangba" cpu="z80">
+  <!-- source: MAME capcom/mitchell.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
+    <region start="0x0000E000" end="0x0000E000" type="io" name="sound_bankswitch_w"/>
+    <region start="0x0000E400" end="0x0000E400" type="io" name="ba_w"/>
+    <region start="0x0000EC00" end="0x0000EC01" type="io" name="write"/>
+    <region start="0x0000F000" end="0x0000F4FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="read"/>
+  </memory_map>
+</platform>

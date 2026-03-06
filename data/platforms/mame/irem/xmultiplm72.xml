@@ -1,0 +1,9 @@
+<platform name="xmultiplm72" cpu="z80">
+  <!-- source: MAME irem/m72.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00080000" end="0x00083FFF" type="ram" name="ram"/>
+    <region start="0x000B0000" end="0x000B0FFF" type="io" name="left_r"/>
+  </memory_map>
+</platform>

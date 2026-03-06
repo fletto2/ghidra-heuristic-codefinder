@@ -1,0 +1,11 @@
+<platform name="lortium" cpu="z80">
+  <!-- source: MAME pinball/jp.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="nvram"/>
+    <region start="0x00006000" end="0x00006002" type="io" name="address_w"/>
+    <region start="0x0000A000" end="0x0000A007" type="io" name="out1_w"/>
+    <region start="0x0000C000" end="0x0000C007" type="io" name="out2_w"/>
+  </memory_map>
+</platform>

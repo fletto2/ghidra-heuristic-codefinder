@@ -1,0 +1,18 @@
+<platform name="rygar" cpu="z80">
+  <!-- source: MAME tecmo/tecmo.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="port"/>
+    <region start="0x0000F800" end="0x0000F802" type="io" name="fgscroll_w"/>
+    <region start="0x0000F801" end="0x0000F803" type="io" name="port"/>
+    <region start="0x0000F803" end="0x0000F805" type="io" name="bgscroll_w"/>
+    <region start="0x0000F804" end="0x0000F806" type="io" name="port"/>
+    <region start="0x0000F806" end="0x0000F807" type="io" name="write"/>
+    <region start="0x0000F807" end="0x0000F808" type="io" name="flipscreen_w"/>
+    <region start="0x0000F808" end="0x0000F809" type="io" name="bankswitch_w"/>
+    <region start="0x0000F80B" end="0x0000F80B" type="io" name="reset_w"/>
+    <region start="0x0000F80F" end="0x0000F80F" type="io" name="port"/>
+  </memory_map>
+</platform>

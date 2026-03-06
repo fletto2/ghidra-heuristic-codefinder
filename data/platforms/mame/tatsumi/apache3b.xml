@@ -1,0 +1,13 @@
+<platform name="apache3b" cpu="68000">
+  <!-- source: MAME tatsumi/apache3.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="ram" name="videoram"/>
+    <region start="0x0000E800" end="0x0000E803" type="io" name="hd6445_crt_w"/>
+    <region start="0x0000F000" end="0x0000F001" type="io" name="port"/>
+    <region start="0x0000F800" end="0x0000F801" type="io" name="apache3_bank_r"/>
+    <region start="0x00010000" end="0x0002FFFF" type="io" name="apache3_v30_v20_r"/>
+    <region start="0x00080000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

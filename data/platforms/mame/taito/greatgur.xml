@@ -1,0 +1,10 @@
+<platform name="greatgur" cpu="z80">
+  <!-- source: MAME taito/gladiatr.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x0000CBFF" type="ram" name="banked"/>
+    <region start="0x0000CC00" end="0x0000CFFF" type="io" name="gladiatr_video_registers_w"/>
+    <region start="0x0000D000" end="0x0000F7FF" type="ram" name="palette"/>
+  </memory_map>
+</platform>

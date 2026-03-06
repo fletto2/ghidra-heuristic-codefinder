@@ -1,0 +1,10 @@
+<platform name="koikois2" cpu="v60">
+  <!-- source: MAME seta/ssv.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00210000" end="0x00210003" type="unmapped" name="nop_write"/>
+    <region start="0x00210006" end="0x00210007" type="unmapped" name="nop_read"/>
+    <region start="0x00800000" end="0x00800001" type="ram" name="writeonly"/>
+    <region start="0x00800002" end="0x00800003" type="io" name="srmp4_input_r"/>
+  </memory_map>
+</platform>

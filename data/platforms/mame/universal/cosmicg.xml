@@ -1,0 +1,12 @@
+<platform name="cosmicg" cpu="tms9980">
+  <!-- source: MAME universal/cosmicg.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="videoram"/>
+    <region start="0x00003FF0" end="0x00003FF7" type="unmapped" name="unmapped"/>
+    <region start="0x00003FF1" end="0x00003FF1" type="io" name="address_w"/>
+    <region start="0x00003FF5" end="0x00003FF5" type="io" name="register_w"/>
+    <region start="0x00003FF7" end="0x00003FF7" type="io" name="register_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,10 @@
+<platform name="cortex" cpu="tms9995">
+  <!-- source: MAME skeleton/cortex.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000EFFF" type="ram" name="ram"/>
+    <region start="0x0000F100" end="0x0000F11F" type="ram" name="ram"/>
+    <region start="0x0000F120" end="0x0000F121" type="io" name="read"/>
+    <region start="0x0000F140" end="0x0000F147" type="io" name="map0xf140_0xf147__fdc_tms9909"/>
+  </memory_map>
+</platform>

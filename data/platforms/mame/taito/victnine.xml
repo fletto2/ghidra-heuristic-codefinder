@@ -1,0 +1,12 @@
+<platform name="victnine" cpu="z80">
+  <!-- source: MAME taito/flstory.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="data_r"/>
+    <region start="0x0000D805" end="0x0000D805" type="io" name="victnine_mcu_status_r"/>
+    <region start="0x0000D807" end="0x0000D807" type="io" name="port"/>
+    <region start="0x0000DA00" end="0x0000DA00" type="ram" name="writeonly"/>
+    <region start="0x0000DCE0" end="0x0000DCE0" type="io" name="victnine_gfxctrl_r"/>
+    <region start="0x0000DCE1" end="0x0000DCE1" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

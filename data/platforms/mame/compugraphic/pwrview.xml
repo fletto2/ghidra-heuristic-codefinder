@@ -1,0 +1,9 @@
+<platform name="pwrview" cpu="80186">
+  <!-- source: MAME compugraphic/pwrview.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000F7FFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x000003FF" type="io" name="bank0_r"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="io" name="amap16"/>
+  </memory_map>
+</platform>

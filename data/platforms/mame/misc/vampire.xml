@@ -1,0 +1,19 @@
+<platform name="vampire" cpu="6502">
+  <!-- source: MAME misc/vampire.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x000007F0" end="0x000007F5" type="io" name="port"/>
+    <region start="0x000007F8" end="0x000007F8" type="io" name="blitter_flags_w"/>
+    <region start="0x000007FA" end="0x000007FB" type="io" name="blitter_control_w"/>
+    <region start="0x00000814" end="0x00000815" type="io" name="io814_r"/>
+    <region start="0x00001000" end="0x00001FFF" type="io" name="blitter_r"/>
+    <region start="0x00002000" end="0x00003FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="apc" cpu="8086">
+  <!-- source: MAME nec/apc.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000A0FFF" type="ram" name="ram"/>
+    <region start="0x000A1000" end="0x000CFFFF" type="io" name="map0xa1000_0xbffff_mirror_cmos"/>
+    <region start="0x000D8000" end="0x000D9FFF" type="ram" name="aux_pcg"/>
+    <region start="0x000E0000" end="0x000EFFFF" type="io" name="map0xe0000_0xeffff_special_character_ram"/>
+    <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

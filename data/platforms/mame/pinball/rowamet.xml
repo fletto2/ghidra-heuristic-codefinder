@@ -1,0 +1,9 @@
+<platform name="rowamet" cpu="z80">
+  <!-- source: MAME pinball/rowamet.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00002800" end="0x00002807" type="io" name="port"/>
+    <region start="0x00004000" end="0x000040FF" type="ram" name="ram"/>
+    <region start="0x00004080" end="0x0000409F" type="io" name="io_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,23 @@
+<platform name="magicrd2c" cpu="65c02">
+  <!-- source: MAME funworld/funworld.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00000800" end="0x00000803" type="io" name="read"/>
+    <region start="0x00000A00" end="0x00000A03" type="io" name="read"/>
+    <region start="0x00000C00" end="0x00000C00" type="io" name="data_r"/>
+    <region start="0x00000C00" end="0x00000C01" type="io" name="address_data_w"/>
+    <region start="0x00000E00" end="0x00000E01" type="io" name="address_w"/>
+    <region start="0x00002C00" end="0x00002CFF" type="ram" name="ram"/>
+    <region start="0x00003600" end="0x000036FF" type="ram" name="ram"/>
+    <region start="0x00003C00" end="0x00003CFF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="videoram"/>
+    <region start="0x00006000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

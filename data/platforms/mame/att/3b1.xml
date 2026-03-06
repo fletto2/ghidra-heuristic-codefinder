@@ -1,0 +1,26 @@
+<platform name="3b1" cpu="68010">
+  <!-- source: MAME att/unixpc.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="io" name="region_0"/>
+    <region start="0x00400000" end="0x004007FF" type="ram" name="mapram"/>
+    <region start="0x00410000" end="0x00410001" type="io" name="gsr_r"/>
+    <region start="0x00420000" end="0x00427FFF" type="ram" name="videoram"/>
+    <region start="0x00450000" end="0x00450001" type="io" name="tsr_r"/>
+    <region start="0x00460000" end="0x00460001" type="io" name="diskdma_size_r"/>
+    <region start="0x00470000" end="0x00470001" type="io" name="line_printer_r"/>
+    <region start="0x00480000" end="0x00480001" type="io" name="rtc_w"/>
+    <region start="0x00490000" end="0x00490001" type="io" name="tcr_w"/>
+    <region start="0x004A0000" end="0x004A0000" type="io" name="write"/>
+    <region start="0x004D0000" end="0x004D7FFF" type="io" name="diskdma_ptr_w"/>
+    <region start="0x004E0001" end="0x004E0001" type="io" name="disk_control_w"/>
+    <region start="0x004F0001" end="0x004F0001" type="io" name="write"/>
+    <region start="0x00800000" end="0x00803FFF" type="rom" name="rom"/>
+    <region start="0x00E00000" end="0x00E0000F" type="io" name="read"/>
+    <region start="0x00E10000" end="0x00E10007" type="io" name="read"/>
+    <region start="0x00E30000" end="0x00E30001" type="io" name="rtc_r"/>
+    <region start="0x00E40000" end="0x00E40001" type="io" name="gcr_w"/>
+    <region start="0x00E50000" end="0x00E50007" type="io" name="cd_ba_r"/>
+    <region start="0x00E70000" end="0x00E70003" type="io" name="read"/>
+  </memory_map>
+</platform>

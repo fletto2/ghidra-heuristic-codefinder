@@ -1,0 +1,8 @@
+<platform name="trs80dt1" cpu="8051">
+  <!-- source: MAME trs/trs80dt1.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00002000" end="0x000027FF" type="io" name="dma_r"/>
+  </memory_map>
+</platform>

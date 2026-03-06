@@ -1,0 +1,25 @@
+<platform name="alpine" cpu="z80">
+  <!-- source: MAME taito/taitosj.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x000087FF" type="ram" name="banked"/>
+    <region start="0x00008800" end="0x00008801" type="io" name="fake_data_r"/>
+    <region start="0x00009000" end="0x0000BFFF" type="io" name="characterram_w"/>
+    <region start="0x0000C000" end="0x0000D05F" type="ram" name="ram"/>
+    <region start="0x0000D100" end="0x0000D27F" type="ram" name="ram"/>
+    <region start="0x0000D300" end="0x0000D300" type="ram" name="writeonly"/>
+    <region start="0x0000D400" end="0x0000D403" type="rom" name="readonly"/>
+    <region start="0x0000D404" end="0x0000D404" type="io" name="gfxrom_r"/>
+    <region start="0x0000D408" end="0x0000D40F" type="io" name="port"/>
+    <region start="0x0000D40F" end="0x0000D40F" type="io" name="data_r"/>
+    <region start="0x0000D500" end="0x0000D507" type="ram" name="writeonly"/>
+    <region start="0x0000D508" end="0x0000D508" type="io" name="collision_reg_clear_w"/>
+    <region start="0x0000D509" end="0x0000D50A" type="ram" name="writeonly"/>
+    <region start="0x0000D50B" end="0x0000D50E" type="io" name="soundlatch_w"/>
+    <region start="0x0000D50F" end="0x0000D50F" type="unmapped" name="nop_write"/>
+    <region start="0x0000D600" end="0x0000D600" type="ram" name="writeonly"/>
+    <region start="0x0000D700" end="0x0000DFFF" type="unmapped" name="unmapped"/>
+    <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

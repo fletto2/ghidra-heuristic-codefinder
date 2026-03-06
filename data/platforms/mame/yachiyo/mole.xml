@@ -1,0 +1,20 @@
+<platform name="mole" cpu="6502">
+  <!-- source: MAME yachiyo/mole.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x000008FF" type="io" name="protection_r"/>
+    <region start="0x00000800" end="0x00000800" type="unmapped" name="nop_write"/>
+    <region start="0x00000820" end="0x00000820" type="unmapped" name="nop_write"/>
+    <region start="0x00005000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000083FF" type="unmapped" name="nop_read"/>
+    <region start="0x00008400" end="0x00008400" type="io" name="tilebank_w"/>
+    <region start="0x00008C00" end="0x00008C01" type="io" name="data_address_w"/>
+    <region start="0x00008C40" end="0x00008C40" type="unmapped" name="nop_write"/>
+    <region start="0x00008C80" end="0x00008C81" type="unmapped" name="nop_write"/>
+    <region start="0x00008D00" end="0x00008D00" type="io" name="irqack_w"/>
+    <region start="0x00008D40" end="0x00008D40" type="io" name="port"/>
+    <region start="0x00008D80" end="0x00008D80" type="io" name="port"/>
+    <region start="0x00008DC0" end="0x00008DC0" type="io" name="flipscreen_w"/>
+  </memory_map>
+</platform>

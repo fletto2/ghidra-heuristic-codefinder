@@ -1,0 +1,18 @@
+<platform name="cndypuzl" cpu="68020">
+  <!-- source: MAME amiga/cubo.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="io" name="amap32"/>
+    <region start="0x00600000" end="0x00601FFF" type="io" name="region_600000"/>
+    <region start="0x00800000" end="0x00800003" type="io" name="port"/>
+    <region start="0x00800008" end="0x0080000B" type="io" name="port"/>
+    <region start="0x00800010" end="0x00800013" type="io" name="port"/>
+    <region start="0x00800018" end="0x0080001B" type="io" name="port"/>
+    <region start="0x00A80000" end="0x00B7FFFF" type="unmapped" name="unmapped"/>
+    <region start="0x00B80000" end="0x00B8003F" type="io" name="read"/>
+    <region start="0x00BF0000" end="0x00DFFFFF" type="io" name="cia_r"/>
+    <region start="0x00E00000" end="0x00E7FFFF" type="rom" name="rom"/>
+    <region start="0x00E80000" end="0x00F7FFFF" type="unmapped" name="unmapped"/>
+    <region start="0x00F80000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

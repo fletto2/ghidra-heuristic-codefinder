@@ -1,0 +1,14 @@
+<platform name="mp_soni2" cpu="z80">
+  <!-- source: MAME sega/megaplay.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="game_w"/>
+    <region start="0x00006200" end="0x00006207" type="io" name="read"/>
+    <region start="0x00006400" end="0x00006407" type="io" name="read"/>
+    <region start="0x00006600" end="0x00006600" type="io" name="bios_6600_r"/>
+    <region start="0x00006800" end="0x000077FF" type="ram" name="ic3_ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="io" name="bank_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="wangpc" cpu="8086">
+  <!-- source: MAME wang/wangpc.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00040000" end="0x000F3FFF" type="io" name="mrdc_r"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

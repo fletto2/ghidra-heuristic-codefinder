@@ -1,0 +1,12 @@
+<platform name="mtu130" cpu="6502">
+  <!-- source: MAME misc/mtu130.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000BFFF" type="io" name="view_to_writeprotect_the_top_of_the_main"/>
+    <region start="0x0000BE00" end="0x0000FFFF" type="io" name="io_dynamically_overrides_part_of_the_mai"/>
+    <region start="0x0000FFFE" end="0x0000FFFF" type="io" name="io_enable_w"/>
+    <region start="0x0001C000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00020000" end="0x0003FFFF" type="io" name="region_20000"/>
+  </memory_map>
+</platform>

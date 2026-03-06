@@ -1,0 +1,11 @@
+<platform name="tankbattb" cpu="6502">
+  <!-- source: MAME namco/tankbatt.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000BFF" type="ram" name="ram"/>
+    <region start="0x00000C00" end="0x00000C10" type="io" name="d0"/>
+    <region start="0x00000C18" end="0x00000C1F" type="io" name="dsw_r"/>
+    <region start="0x00000C18" end="0x00000C18" type="io" name="reset_w"/>
+    <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

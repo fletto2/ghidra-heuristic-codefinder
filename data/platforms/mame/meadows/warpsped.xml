@@ -1,0 +1,7 @@
+<platform name="warpsped" cpu="z80">
+  <!-- source: MAME meadows/warpsped.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000DFF" type="rom" name="rom"/>
+    <region start="0x00001800" end="0x00001CFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

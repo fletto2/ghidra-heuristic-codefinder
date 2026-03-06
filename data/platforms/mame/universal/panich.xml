@@ -1,0 +1,11 @@
+<platform name="panich" cpu="z80">
+  <!-- source: MAME universal/cosmic.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x0000601F" type="ram" name="videoram"/>
+    <region start="0x00006800" end="0x00006803" type="io" name="port"/>
+    <region start="0x00007000" end="0x0000700F" type="io" name="panic_sound_output_w"/>
+    <region start="0x00007800" end="0x00007801" type="io" name="panic_sound_output2_w"/>
+  </memory_map>
+</platform>

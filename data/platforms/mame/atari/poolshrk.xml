@@ -1,0 +1,13 @@
+<platform name="poolshrk" cpu="6800">
+  <!-- source: MAME atari/poolshrk.cpp -->
+  <!-- year: 1977 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000000FF" type="ram" name="ram"/>
+    <region start="0x00000400" end="0x0000080F" type="ram" name="writeonly"/>
+    <region start="0x00000C00" end="0x00000C0F" type="ram" name="writeonly"/>
+    <region start="0x00001000" end="0x00001FFF" type="io" name="input_r"/>
+    <region start="0x00004000" end="0x00004000" type="unmapped" name="unmapped"/>
+    <region start="0x00006000" end="0x00006FFF" type="io" name="da_latch_w"/>
+    <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

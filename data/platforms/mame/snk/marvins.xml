@@ -1,0 +1,16 @@
+<platform name="marvins" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006000" type="io" name="marvins_palette_bank_w"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="port"/>
+    <region start="0x00008100" end="0x00008100" type="io" name="port"/>
+    <region start="0x00008200" end="0x00008200" type="io" name="port"/>
+    <region start="0x00008300" end="0x00008300" type="io" name="write"/>
+    <region start="0x00008400" end="0x00008400" type="io" name="port"/>
+    <region start="0x00008500" end="0x00008500" type="io" name="port"/>
+    <region start="0x00008600" end="0x00008600" type="io" name="marvins_flipscreen_w"/>
+    <region start="0x00008700" end="0x00008700" type="io" name="cpuB_nmi_trigger_r"/>
+  </memory_map>
+</platform>

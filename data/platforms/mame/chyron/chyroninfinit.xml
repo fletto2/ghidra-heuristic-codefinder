@@ -1,0 +1,34 @@
+<platform name="chyroninfinit" cpu="68040">
+  <!-- source: MAME chyron/chyroninfinit.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000007" type="ram" name="ram"/>
+    <region start="0x00000008" end="0x003FFFFF" type="ram" name="dram"/>
+    <region start="0x00400000" end="0x007FFFFF" type="io" name="dram_absent_r"/>
+    <region start="0x25000000" end="0x257FFFFF" type="io" name="display_r"/>
+    <region start="0x26000000" end="0x26000003" type="io" name="doom_fb_trigger_w"/>
+    <region start="0x26000004" end="0x26000103" type="ram" name="doompal"/>
+    <region start="0x40000000" end="0x4007FFFF" type="io" name="flash_config_r"/>
+    <region start="0x81000000" end="0x81000003" type="io" name="page_table_cfg_r"/>
+    <region start="0x81010000" end="0x81011FFF" type="io" name="page_table_a_r"/>
+    <region start="0x81200000" end="0x81202001" type="io" name="clut_r"/>
+    <region start="0x81202004" end="0x81202005" type="io" name="video_mode_r"/>
+    <region start="0x82100000" end="0x82100009" type="io" name="tms_host_r"/>
+    <region start="0x82101000" end="0x82102FFF" type="io" name="transcoder_r"/>
+    <region start="0x82102001" end="0x8210205F" type="io" name="arcnet_r"/>
+    <region start="0x82102801" end="0x8210285F" type="io" name="arcnet_r"/>
+    <region start="0xDEADDEA0" end="0xDEADDEAF" type="io" name="deaddead_trap_r"/>
+    <region start="0xFF800000" end="0xFF9FFFFF" type="io" name="flash_r"/>
+    <region start="0xFFA00000" end="0xFFDFFFFF" type="rom" name="rom"/>
+    <region start="0xFFE00000" end="0xFFE7FFFF" type="ram" name="ram"/>
+    <region start="0xFFF40000" end="0xFFF401FF" type="io" name="vmechip2_lcsr_r"/>
+    <region start="0xFFF42000" end="0xFFF420FF" type="io" name="mcchip_r"/>
+    <region start="0xFFF43000" end="0xFFF431FF" type="io" name="memc0_r"/>
+    <region start="0xFFF45000" end="0xFFF457FF" type="io" name="scc_r"/>
+    <region start="0xFFF46000" end="0xFFF46FFF" type="unmapped" name="unmapped"/>
+    <region start="0xFFF47000" end="0xFFF47FFF" type="io" name="scsi_reg_r"/>
+    <region start="0xFFF58000" end="0xFFF580FF" type="ram" name="ip2regs"/>
+    <region start="0xFFFC0000" end="0xFFFC7FFF" type="io" name="read"/>
+    <region start="0xFFFFF000" end="0xFFFFFFFF" type="ram" name="ipram"/>
+  </memory_map>
+</platform>

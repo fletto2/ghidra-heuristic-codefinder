@@ -1,0 +1,14 @@
+<platform name="paraca" cpu="8085">
+  <!-- source: MAME misc/paracaidista.cpp -->
+  <!-- year: 1979 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000023FF" type="rom" name="rom"/>
+    <region start="0x00003400" end="0x0000342F" type="io" name="dma_read"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="port"/>
+    <region start="0x00003C00" end="0x00003C00" type="io" name="muxed_input_r"/>
+    <region start="0x00003E00" end="0x00003EFF" type="ram" name="nvram"/>
+    <region start="0x00004000" end="0x00005FFF" type="ram" name="vram"/>
+    <region start="0x00006000" end="0x000060FF" type="io" name="memory_r"/>
+    <region start="0x00007001" end="0x00007001" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

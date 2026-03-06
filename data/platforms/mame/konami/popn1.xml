@@ -1,0 +1,9 @@
+<platform name="popn1" cpu="68020">
+  <!-- source: MAME konami/djmain.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00C00000" end="0x00C0000F" type="io" name="cs0_r"/>
+    <region start="0x00C40000" end="0x00C4000F" type="io" name="cs1_r"/>
+    <region start="0x00F00000" end="0x00F01FFF" type="io" name="ram_word_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="dynablstb3" cpu="z80">
+  <!-- source: MAME irem/m90.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00060000" end="0x00060FFF" type="ram" name="spriteram"/>
+    <region start="0x000A0000" end="0x000A3FFF" type="ram" name="ram"/>
+    <region start="0x000D0000" end="0x000E03FF" type="ram" name="video_data"/>
+    <region start="0x000FFFF0" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

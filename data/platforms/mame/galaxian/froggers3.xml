@@ -1,0 +1,17 @@
+<platform name="froggers3" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x00008800" end="0x00008800" type="io" name="reset_r"/>
+    <region start="0x0000A800" end="0x0000ABFF" type="ram" name="videoram"/>
+    <region start="0x0000B000" end="0x0000B0FF" type="ram" name="spriteram"/>
+    <region start="0x0000B808" end="0x0000B808" type="io" name="irq_enable_w"/>
+    <region start="0x0000B80C" end="0x0000B80C" type="io" name="galaxian_flip_screen_y_w"/>
+    <region start="0x0000B810" end="0x0000B810" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x0000B818" end="0x0000B818" type="io" name="coin_count_0_w"/>
+    <region start="0x0000B81C" end="0x0000B81C" type="io" name="coin_count_1_w"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="frogger_ppi8255_r"/>
+  </memory_map>
+</platform>

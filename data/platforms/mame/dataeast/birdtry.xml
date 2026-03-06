@@ -1,0 +1,12 @@
+<platform name="birdtry" cpu="68000">
+  <!-- source: MAME dataeast/dec0.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00300001" end="0x00300001" type="io" name="reset_x_w"/>
+    <region start="0x00300009" end="0x00300009" type="io" name="reset_y_w"/>
+    <region start="0x00300010" end="0x00300017" type="io" name="xy"/>
+    <region start="0x00300011" end="0x00300011" type="io" name="reset_x_w"/>
+    <region start="0x00300018" end="0x0030001F" type="io" name="xy"/>
+    <region start="0x00300019" end="0x00300019" type="io" name="reset_y_w"/>
+  </memory_map>
+</platform>

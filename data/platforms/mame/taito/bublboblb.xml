@@ -1,0 +1,17 @@
+<platform name="bublboblb" cpu="z80">
+  <!-- source: MAME taito/bublbobl.cpp -->
+  <!-- year: 2013 -->
+  <memory_map>
+    <region start="0x0000FA00" end="0x0000FA01" type="io" name="read"/>
+    <region start="0x0000FA03" end="0x0000FA03" type="io" name="bublbobl_soundcpu_reset_w"/>
+    <region start="0x0000FA80" end="0x0000FA80" type="io" name="reset_w"/>
+    <region start="0x0000FB00" end="0x0000FB00" type="io" name="bublbobl_nmitrigger_w"/>
+    <region start="0x0000FB40" end="0x0000FB40" type="io" name="bublbobl_bankswitch_w"/>
+    <region start="0x0000FC00" end="0x0000FDFF" type="ram" name="ram"/>
+    <region start="0x0000FE00" end="0x0000FE03" type="io" name="boblbobl_ic43_a_r"/>
+    <region start="0x0000FE80" end="0x0000FE83" type="io" name="boblbobl_ic43_b_r"/>
+    <region start="0x0000FF00" end="0x0000FF03" type="io" name="port"/>
+    <region start="0x0000FF94" end="0x0000FF94" type="unmapped" name="nop_write"/>
+    <region start="0x0000FF98" end="0x0000FF98" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

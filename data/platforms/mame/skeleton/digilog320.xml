@@ -1,0 +1,10 @@
+<platform name="digilog320" cpu="80186">
+  <!-- source: MAME skeleton/digilog320.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00080000" end="0x00083FFF" type="ram" name="vram"/>
+    <region start="0x00090000" end="0x00091FFF" type="ram" name="nvram"/>
+    <region start="0x000A0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

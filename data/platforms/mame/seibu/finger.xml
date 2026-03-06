@@ -1,0 +1,10 @@
+<platform name="finger" cpu="z80">
+  <!-- source: MAME seibu/wiz.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x0000F008" end="0x0000F00F" type="unmapped" name="nop_write"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="reset_r"/>
+    <region start="0x0000F808" end="0x0000F808" type="io" name="explosion_w"/>
+    <region start="0x0000F80A" end="0x0000F80A" type="io" name="shot_w"/>
+  </memory_map>
+</platform>

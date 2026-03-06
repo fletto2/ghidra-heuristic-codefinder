@@ -1,0 +1,9 @@
+<platform name="yamato" cpu="z80">
+  <!-- source: MAME nichibutsu/cclimber.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
+    <region start="0x0000FFFF" end="0x0000FFFF" type="unmapped" name="nop_read"/>
+  </memory_map>
+</platform>

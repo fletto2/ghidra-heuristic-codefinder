@@ -1,0 +1,18 @@
+<platform name="namenayo" cpu="z80">
+  <!-- source: MAME galaxian/galaxian.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004FFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x00006FFF" type="rom" name="rom"/>
+    <region start="0x0000C800" end="0x0000C8FF" type="ram" name="spriteram"/>
+    <region start="0x0000D000" end="0x0000D3FF" type="ram" name="videoram"/>
+    <region start="0x0000D800" end="0x0000D800" type="io" name="namenayo_unk_d800_w"/>
+    <region start="0x0000E000" end="0x0000E01F" type="ram" name="extattrram"/>
+    <region start="0x0000E801" end="0x0000E801" type="io" name="irq_enable_w"/>
+    <region start="0x0000E806" end="0x0000E807" type="io" name="galaxian_flip_screen_x_w"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="reset_r"/>
+    <region start="0x0000F900" end="0x0000F903" type="io" name="read"/>
+    <region start="0x0000FA00" end="0x0000FA03" type="io" name="read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="igs_m027xa" cpu="arm7_le">
+  <!-- source: MAME igs/igs_m027xa.cpp -->
+  <memory_map>
+    <region start="0x08000000" end="0x081FFFFF" type="rom" name="rom"/>
+    <region start="0x18000000" end="0x18007FFF" type="ram" name="nvram"/>
+    <region start="0x38000000" end="0x38008003" type="io" name="read"/>
+    <region start="0x38009000" end="0x38009003" type="io" name="read"/>
+    <region start="0x50000000" end="0x500003FF" type="io" name="xor_table_w"/>
+    <region start="0x58000000" end="0x58000003" type="io" name="response_r"/>
+  </memory_map>
+</platform>

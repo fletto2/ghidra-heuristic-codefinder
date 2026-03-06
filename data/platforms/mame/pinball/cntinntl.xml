@@ -1,0 +1,9 @@
+<platform name="cntinntl" cpu="80186">
+  <!-- source: MAME pinball/bingo.cpp -->
+  <!-- year: 1980 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="unmapped" name="unmapped"/>
+    <region start="0x00000000" end="0x00001EFF" type="rom" name="rom"/>
+    <region start="0x00001F00" end="0x00001FFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

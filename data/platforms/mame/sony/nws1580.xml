@@ -1,0 +1,34 @@
+<platform name="nws1580" cpu="68030">
+  <!-- source: MAME sony/news_68k.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0xE0000000" end="0xE000FFFF" type="rom" name="rom"/>
+    <region start="0xE0C80000" end="0xE0C80003" type="io" name="map"/>
+    <region start="0xE0C80100" end="0xE0C80100" type="io" name="dma_r"/>
+    <region start="0xE0CC0000" end="0xE0CC0007" type="io" name="map"/>
+    <region start="0xE0D00000" end="0xE0D00007" type="io" name="map_68k"/>
+    <region start="0xE0D40000" end="0xE0D40003" type="io" name="ab_dc_r"/>
+    <region start="0xE0D80000" end="0xE0D807FF" type="io" name="read"/>
+    <region start="0xE0DC0000" end="0xE0DC0000" type="io" name="region_e0dc0000"/>
+    <region start="0xE0E00000" end="0xE0E03FFF" type="io" name="region_e0e00000"/>
+    <region start="0xE0E80000" end="0xE0E80017" type="io" name="map"/>
+    <region start="0xE0F00000" end="0xE0F00003" type="io" name="regs_r"/>
+    <region start="0xE0F40000" end="0xE0F40000" type="io" name="map0xe0f40000_0xe0f40000lr8__return_0xfb"/>
+    <region start="0xE1000000" end="0xE1000000" type="io" name="timer_w"/>
+    <region start="0xE1080000" end="0xE1080000" type="io" name="region_e1080000"/>
+    <region start="0xE1180000" end="0xE1180000" type="io" name="region_e1180000"/>
+    <region start="0xE1200000" end="0xE1200000" type="io" name="region_e1200000"/>
+    <region start="0xE1280000" end="0xE1280000" type="io" name="region_e1280000"/>
+    <region start="0xE1300000" end="0xE1300000" type="io" name="region_e1300000"/>
+    <region start="0xE1900000" end="0xE1900000" type="io" name="region_e1900000"/>
+    <region start="0xE1A00000" end="0xE1A00000" type="io" name="region_e1a00000"/>
+    <region start="0xE1C00000" end="0xE1C000FF" type="rom" name="rom"/>
+    <region start="0xE1C00100" end="0xE1C00103" type="io" name="region_e1c00100"/>
+    <region start="0xE1C00200" end="0xE1C00200" type="io" name="region_e1c00200"/>
+    <region start="0xF0000000" end="0xFFFFFFFF" type="io" name="bus_error_r"/>
+    <region start="0xF0FC0000" end="0xF0FC0003" type="unmapped" name="unmapped"/>
+    <region start="0xF0FC0000" end="0xF0FC0001" type="io" name="lower_2_bits_give_busy_state"/>
+    <region start="0xF0FC0000" end="0xF10BFFFF" type="rom" name="rom"/>
+    <region start="0xF0FC4000" end="0xF0FC4007" type="io" name="map"/>
+  </memory_map>
+</platform>

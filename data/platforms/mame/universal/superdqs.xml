@@ -1,0 +1,9 @@
+<platform name="superdqs" cpu="z80">
+  <!-- source: MAME universal/superdq.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
+    <region start="0x00005C00" end="0x00005FFF" type="ram" name="videoram"/>
+  </memory_map>
+</platform>

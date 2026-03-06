@@ -1,0 +1,9 @@
+<platform name="v4mdicen" cpu="68000">
+  <!-- source: MAME barcrest/mpu4vid.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00A00001" end="0x00A00001" type="io" name="data_r"/>
+    <region start="0x00A00002" end="0x00A00003" type="unmapped" name="nop_read"/>
+    <region start="0x00A00003" end="0x00A00003" type="io" name="address_w"/>
+  </memory_map>
+</platform>

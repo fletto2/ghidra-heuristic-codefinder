@@ -1,0 +1,18 @@
+<platform name="pairsnb" cpu="z80">
+  <!-- source: MAME nichibutsu/nbmj8891.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x0000EC00" end="0x0000EDFF" type="io" name="palette_type3_r"/>
+    <region start="0x0000F800" end="0x0000FEFF" type="ram" name="nvram"/>
+    <region start="0x0000FF00" end="0x0000FF1F" type="unmapped" name="unmapped"/>
+    <region start="0x0000FF20" end="0x0000FF20" type="io" name="taiwanmb_unk_r"/>
+    <region start="0x0000FF21" end="0x0000FF2F" type="unmapped" name="nop_read"/>
+    <region start="0x0000FF21" end="0x0000FF21" type="unmapped" name="nop_write"/>
+    <region start="0x0000FF22" end="0x0000FF29" type="io" name="taiwanmb_blitter_w"/>
+    <region start="0x0000FF2A" end="0x0000FF2A" type="unmapped" name="nop_write"/>
+    <region start="0x0000FF2B" end="0x0000FF2B" type="io" name="clutsel_w"/>
+    <region start="0x0000FF2C" end="0x0000FF2F" type="unmapped" name="nop_write"/>
+    <region start="0x0000FF30" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

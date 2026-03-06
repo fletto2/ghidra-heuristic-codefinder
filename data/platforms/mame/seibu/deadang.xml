@@ -1,0 +1,17 @@
+<platform name="deadang" cpu="z80">
+  <!-- source: MAME seibu/deadang.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="ram" name="ram"/>
+    <region start="0x00005000" end="0x00005FFF" type="unmapped" name="nop_write"/>
+    <region start="0x00006000" end="0x0000600F" type="io" name="main_r"/>
+    <region start="0x00006010" end="0x00007FFF" type="unmapped" name="nop_write"/>
+    <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A003" type="io" name="port"/>
+    <region start="0x0000C000" end="0x0000CFFF" type="io" name="palette"/>
+    <region start="0x0000D000" end="0x0000DFFF" type="unmapped" name="nop_write"/>
+    <region start="0x0000E000" end="0x0000E0FF" type="ram" name="ram"/>
+    <region start="0x0000E100" end="0x0000FFFF" type="unmapped" name="nop_write"/>
+    <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

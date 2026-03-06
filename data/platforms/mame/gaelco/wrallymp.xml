@@ -1,0 +1,20 @@
+<platform name="wrallymp" cpu="68000">
+  <!-- source: MAME gaelco/wrally_ms.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="prgbank"/>
+    <region start="0x00020000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00100000" end="0x001007FF" type="ram" name="spriteram"/>
+    <region start="0x00200000" end="0x002007FF" type="ram" name="palette"/>
+    <region start="0x00300000" end="0x00301FFF" type="ram" name="vram"/>
+    <region start="0x00340000" end="0x00341FFF" type="ram" name="bg_vram"/>
+    <region start="0x00380000" end="0x00381FFF" type="ram" name="bg2_vram"/>
+    <region start="0x003C0000" end="0x003C000F" type="ram" name="scrollregs"/>
+    <region start="0x00400000" end="0x00400009" type="io" name="port"/>
+    <region start="0x0040000C" end="0x0040000D" type="io" name="unk_r"/>
+    <region start="0x00600000" end="0x00600001" type="io" name="unk2_r"/>
+    <region start="0x00600081" end="0x00600081" type="io" name="read"/>
+    <region start="0x00600101" end="0x00600101" type="io" name="okim6295_bankswitch_w"/>
+    <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

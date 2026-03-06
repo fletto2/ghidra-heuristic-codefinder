@@ -1,0 +1,11 @@
+<platform name="touryuu" cpu="arm9">
+  <!-- source: MAME eolith/ghosteo.cpp -->
+  <!-- year: 2005 -->
+  <memory_map>
+    <region start="0x10000000" end="0x10000003" type="io" name="touryuu_port_10000000_r"/>
+    <region start="0x10100000" end="0x10100003" type="io" name="port"/>
+    <region start="0x10200000" end="0x10200003" type="io" name="port"/>
+    <region start="0x10300000" end="0x10300000" type="io" name="write"/>
+    <region start="0x30000000" end="0x31FFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

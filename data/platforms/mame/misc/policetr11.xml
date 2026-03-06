@@ -1,0 +1,21 @@
+<platform name="policetr11" cpu="r3000">
+  <!-- source: MAME misc/policetr.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00200000" end="0x00200003" type="io" name="bsmt2000_data_w"/>
+    <region start="0x00300001" end="0x00300001" type="io" name="address_w"/>
+    <region start="0x00320001" end="0x00320001" type="io" name="palette_w"/>
+    <region start="0x00340001" end="0x00340001" type="io" name="mask_w"/>
+    <region start="0x00400000" end="0x00400003" type="io" name="video_r"/>
+    <region start="0x00500000" end="0x00500003" type="unmapped" name="nop_write"/>
+    <region start="0x00600002" end="0x00600002" type="io" name="bsmt2000_data_r"/>
+    <region start="0x00700000" end="0x00700003" type="io" name="bsmt2000_reg_w"/>
+    <region start="0x00800000" end="0x0080000F" type="io" name="video_w"/>
+    <region start="0x00A00000" end="0x00A00003" type="io" name="control_w"/>
+    <region start="0x00A20000" end="0x00A20003" type="io" name="port"/>
+    <region start="0x00A40000" end="0x00A40003" type="io" name="port"/>
+    <region start="0x00E00000" end="0x00E00003" type="unmapped" name="nop_write"/>
+    <region start="0x1FC00000" end="0x1FCFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

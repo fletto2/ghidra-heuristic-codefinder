@@ -1,0 +1,15 @@
+<platform name="tkinga" cpu="65c02">
+  <!-- source: MAME saitek/stratos.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002000" type="io" name="select_w"/>
+    <region start="0x00002200" end="0x00002200" type="io" name="chessboard_r"/>
+    <region start="0x00002400" end="0x00002400" type="io" name="leds_w"/>
+    <region start="0x00002600" end="0x00002600" type="io" name="control_r"/>
+    <region start="0x00002800" end="0x000037FF" type="ram" name="nvrambank"/>
+    <region start="0x00003800" end="0x00003800" type="io" name="lcd_data_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="io" name="extrom_r"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="rombank"/>
+  </memory_map>
+</platform>

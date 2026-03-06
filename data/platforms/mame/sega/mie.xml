@@ -1,0 +1,8 @@
+<platform name="mie" cpu="z80">
+  <!-- source: MAME sega/mie.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x0000703F" type="io" name="ff"/>
+    <region start="0x00007800" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

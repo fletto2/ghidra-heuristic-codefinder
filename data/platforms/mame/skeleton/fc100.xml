@@ -1,0 +1,9 @@
+<platform name="fc100" cpu="z80">
+  <!-- source: MAME skeleton/fc100.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006FFF" type="io" name="map0x6000_0x6fff_______mapped_by_the_car"/>
+    <region start="0x00007800" end="0x0000FFFF" type="ram" name="bankr"/>
+  </memory_map>
+</platform>

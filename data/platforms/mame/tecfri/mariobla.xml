@@ -1,0 +1,12 @@
+<platform name="mariobla" cpu="z80">
+  <!-- source: MAME tecfri/ambush.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A000" type="io" name="reset_r"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="port"/>
+    <region start="0x0000CC00" end="0x0000CC07" type="io" name="output_latches_w"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,9 @@
+<platform name="t1000tl" cpu="80286">
+  <!-- source: MAME pc/tandy1t.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x000B8000" end="0x000BFFFF" type="io" name="vram_window16_r"/>
+    <region start="0x000E0000" end="0x000EFFFF" type="ram" name="banked"/>
+    <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

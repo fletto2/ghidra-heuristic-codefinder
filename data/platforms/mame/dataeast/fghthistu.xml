@@ -1,0 +1,12 @@
+<platform name="fghthistu" cpu="z80">
+  <!-- source: MAME dataeast/deco32.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
+    <region start="0x0000A000" end="0x0000A001" type="io" name="read"/>
+    <region start="0x0000B000" end="0x0000B000" type="io" name="read"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="read"/>
+    <region start="0x0000D000" end="0x0000D000" type="io" name="soundlatch_r"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,16 @@
+<platform name="tek_msu_fdc" cpu="6502">
+  <!-- source: MAME tektronix/tek_msu_fdc.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="ram"/>
+    <region start="0x00000800" end="0x00000801" type="io" name="status_r"/>
+    <region start="0x00000803" end="0x00000805" type="io" name="region_803"/>
+    <region start="0x00000806" end="0x00000806" type="unmapped" name="nop_write"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

@@ -1,0 +1,13 @@
+<platform name="kothello" cpu="z80">
+  <!-- source: MAME sunelectronics/shanghai.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008010" end="0x00008013" type="io" name="read16"/>
+    <region start="0x00009010" end="0x00009015" type="io" name="port"/>
+    <region start="0x00009016" end="0x0000901F" type="unmapped" name="nop_write"/>
+    <region start="0x0000A000" end="0x0000A1FF" type="io" name="palette"/>
+    <region start="0x0000B010" end="0x0000B01F" type="io" name="main_r"/>
+    <region start="0x00080000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,11 @@
+<platform name="macqd800" cpu="68040">
+  <!-- source: MAME apple/macquadra800.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0xFFFFFFFF" type="io" name="map"/>
+    <region start="0x50000000" end="0x5FFFFFFF" type="io" name="map"/>
+    <region start="0x50008000" end="0x50008007" type="io" name="ethernet_mac_r"/>
+    <region start="0x5000A000" end="0x5000B0FF" type="io" name="map"/>
+    <region start="0x5000C000" end="0x5000DFFF" type="io" name="mac_scc_r"/>
+  </memory_map>
+</platform>

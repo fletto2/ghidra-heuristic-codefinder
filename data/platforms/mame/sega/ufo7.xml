@@ -1,0 +1,8 @@
+<platform name="ufo7" cpu="h8">
+  <!-- source: MAME sega/segaufoh8.cpp -->
+  <!-- year: 2003 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x0040001F" type="io" name="read"/>
+  </memory_map>
+</platform>

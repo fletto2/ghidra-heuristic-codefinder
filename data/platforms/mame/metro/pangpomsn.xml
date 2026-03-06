@@ -1,0 +1,13 @@
+<platform name="pangpomsn" cpu="h8">
+  <!-- source: MAME metro/metro.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x0047FFFF" type="io" name="map"/>
+    <region start="0x004788A9" end="0x004788A9" type="io" name="sound_data_w"/>
+    <region start="0x00800001" end="0x00800001" type="io" name="soundstatus_r"/>
+    <region start="0x00800002" end="0x00800003" type="unmapped" name="nop_read"/>
+    <region start="0x00800003" end="0x0080000F" type="io" name="coin_lockout_1word_w"/>
+    <region start="0x00C00000" end="0x00C0FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

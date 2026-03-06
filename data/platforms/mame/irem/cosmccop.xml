@@ -1,0 +1,9 @@
+<platform name="cosmccop" cpu="z80">
+  <!-- source: MAME irem/m72.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00080000" end="0x00087FFF" type="ram" name="ram"/>
+    <region start="0x000A0000" end="0x000A0BFF" type="io" name="region_a0000"/>
+    <region start="0x000A8000" end="0x000A8BFF" type="io" name="region_a8000"/>
+  </memory_map>
+</platform>

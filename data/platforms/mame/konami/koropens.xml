@@ -1,0 +1,8 @@
+<platform name="koropens" cpu="68000">
+  <!-- source: MAME konami/konmedal68k.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00B00000" end="0x00B03FFF" type="ram" name="palette"/>
+    <region start="0x00C00000" end="0x00C01FFF" type="io" name="vrom_koropens_r"/>
+  </memory_map>
+</platform>

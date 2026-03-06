@@ -1,0 +1,16 @@
+<platform name="poker72" cpu="z80">
+  <!-- source: MAME misc/poker72.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000FDFF" type="ram" name="ram"/>
+    <region start="0x0000FE08" end="0x0000FE0A" type="io" name="port"/>
+    <region start="0x0000FE0C" end="0x0000FE0E" type="io" name="port"/>
+    <region start="0x0000FE17" end="0x0000FE17" type="unmapped" name="nop_read"/>
+    <region start="0x0000FE20" end="0x0000FE20" type="io" name="output_w"/>
+    <region start="0x0000FE22" end="0x0000FE22" type="io" name="tile_bank_w"/>
+    <region start="0x0000FE40" end="0x0000FE40" type="io" name="data_r"/>
+    <region start="0x0000FE60" end="0x0000FE60" type="io" name="address_w"/>
+    <region start="0x0000FF00" end="0x0000FFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

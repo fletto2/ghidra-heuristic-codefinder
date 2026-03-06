@@ -1,0 +1,13 @@
+<platform name="babypac" cpu="6800">
+  <!-- source: MAME pinball/byvid.cpp -->
+  <!-- year: 1982 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="ram" name="ram"/>
+    <region start="0x00000088" end="0x0000008B" type="io" name="read"/>
+    <region start="0x00000090" end="0x00000093" type="io" name="read"/>
+    <region start="0x00000200" end="0x000003FF" type="ram" name="nvram"/>
+    <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x00005FFF" type="rom" name="rom"/>
+    <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

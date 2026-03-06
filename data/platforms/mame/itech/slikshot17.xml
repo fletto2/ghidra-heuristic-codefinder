@@ -1,0 +1,8 @@
+<platform name="slikshot17" cpu="68000">
+  <!-- source: MAME itech/itech8.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000180" end="0x00000180" type="io" name="z80_r"/>
+    <region start="0x000001CF" end="0x000001CF" type="io" name="z80_control_r"/>
+  </memory_map>
+</platform>

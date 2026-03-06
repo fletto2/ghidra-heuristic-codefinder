@@ -1,0 +1,33 @@
+<platform name="bermudat" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="port"/>
+    <region start="0x0000C100" end="0x0000C100" type="io" name="port"/>
+    <region start="0x0000C200" end="0x0000C200" type="io" name="port"/>
+    <region start="0x0000C300" end="0x0000C300" type="io" name="ikari_coin_counter_w"/>
+    <region start="0x0000C400" end="0x0000C400" type="io" name="soundlatch_w"/>
+    <region start="0x0000C500" end="0x0000C500" type="io" name="port"/>
+    <region start="0x0000C600" end="0x0000C600" type="io" name="port"/>
+    <region start="0x0000C700" end="0x0000C700" type="io" name="cpuB_nmi_trigger_r"/>
+    <region start="0x0000CA00" end="0x0000CA00" type="io" name="turbocheck16_1_w"/>
+    <region start="0x0000CA40" end="0x0000CA40" type="io" name="turbocheck16_2_w"/>
+    <region start="0x0000CAC0" end="0x0000CAC0" type="io" name="sprite_split_point_w"/>
+    <region start="0x0000CB00" end="0x0000CB00" type="io" name="region_cb00"/>
+    <region start="0x0000CB10" end="0x0000CB10" type="io" name="region_cb10"/>
+    <region start="0x0000CB20" end="0x0000CB20" type="io" name="region_cb20"/>
+    <region start="0x0000CB30" end="0x0000CB30" type="io" name="region_cb30"/>
+    <region start="0x0000CB40" end="0x0000CB40" type="io" name="region_cb40"/>
+    <region start="0x0000CB50" end="0x0000CB50" type="io" name="region_cb50"/>
+    <region start="0x0000CB60" end="0x0000CB60" type="io" name="region_cb60"/>
+    <region start="0x0000CB70" end="0x0000CB70" type="io" name="region_cb70"/>
+    <region start="0x0000CC00" end="0x0000CC00" type="io" name="turbocheck32_1_w"/>
+    <region start="0x0000CC40" end="0x0000CC40" type="io" name="turbocheck32_2_w"/>
+    <region start="0x0000CC80" end="0x0000CC80" type="io" name="turbocheck_msb_w"/>
+    <region start="0x0000CCC0" end="0x0000CCC0" type="io" name="region_ccc0"/>
+    <region start="0x0000CCD0" end="0x0000CCD0" type="io" name="region_ccd0"/>
+    <region start="0x0000CCE0" end="0x0000CCE0" type="io" name="region_cce0"/>
+    <region start="0x0000CCF0" end="0x0000CCF0" type="io" name="region_ccf0"/>
+  </memory_map>
+</platform>

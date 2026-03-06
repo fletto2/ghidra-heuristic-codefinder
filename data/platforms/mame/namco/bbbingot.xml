@@ -1,0 +1,8 @@
+<platform name="bbbingot" cpu="68000">
+  <!-- source: MAME namco/namcona1.cpp -->
+  <!-- year: 1996 -->
+  <memory_map>
+    <region start="0x00D00000" end="0x00D00001" type="io" name="zelos_ctrl_w"/>
+    <region start="0x00D40000" end="0x00D40001" type="io" name="map0xd40000_0xd40001wfuncnamcona2_state"/>
+  </memory_map>
+</platform>

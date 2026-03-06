@@ -1,0 +1,15 @@
+<platform name="luna_68k_ioc" cpu="68000">
+  <!-- source: MAME omron/luna_68k_ioc.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0001FFFF" type="ram" name="ram"/>
+    <region start="0x00000000" end="0x00000FFF" type="io" name="region_0"/>
+    <region start="0x00100000" end="0x0011FFFF" type="ram" name="ram"/>
+    <region start="0x00F86001" end="0x00F86001" type="io" name="m2i_int_clear"/>
+    <region start="0x00F87000" end="0x00F87001" type="io" name="i2m_w"/>
+    <region start="0x00FC0000" end="0x00FCFFFF" type="rom" name="rom"/>
+    <region start="0x00FE0000" end="0x00FE0FFF" type="rom" name="rom"/>
+    <region start="0x00FEF300" end="0x00FEF307" type="io" name="read"/>
+    <region start="0x00FEF400" end="0x00FEF403" type="io" name="da_r"/>
+    <region start="0x00FEF600" end="0x00FEF607" type="io" name="read"/>
+  </memory_map>
+</platform>

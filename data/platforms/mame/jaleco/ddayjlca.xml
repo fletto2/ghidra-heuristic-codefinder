@@ -1,0 +1,15 @@
+<platform name="ddayjlca" cpu="z80">
+  <!-- source: MAME jaleco/dday.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000DFFF" type="ram" name="mainram"/>
+    <region start="0x0000E000" end="0x0000E008" type="io" name="read"/>
+    <region start="0x0000F000" end="0x0000F000" type="io" name="write"/>
+    <region start="0x0000F080" end="0x0000F081" type="io" name="char_bank_w"/>
+    <region start="0x0000F083" end="0x0000F086" type="io" name="region_f083"/>
+    <region start="0x0000F100" end="0x0000F105" type="io" name="sound_irq_w"/>
+    <region start="0x0000F180" end="0x0000F180" type="io" name="port"/>
+    <region start="0x0000F200" end="0x0000F200" type="io" name="port"/>
+  </memory_map>
+</platform>

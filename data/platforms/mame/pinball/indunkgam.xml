@@ -1,0 +1,15 @@
+<platform name="indunkgam" cpu="z80">
+  <!-- source: MAME pinball/inder.cpp -->
+  <!-- year: 1991 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="nvram"/>
+    <region start="0x00006000" end="0x00006003" type="io" name="read"/>
+    <region start="0x00006400" end="0x00006403" type="io" name="read"/>
+    <region start="0x00006800" end="0x00006803" type="io" name="read"/>
+    <region start="0x00006C00" end="0x00006C03" type="io" name="read"/>
+    <region start="0x00006C20" end="0x00006C3F" type="io" name="sndcmd_w"/>
+    <region start="0x00006C60" end="0x00006C7F" type="io" name="disp_w"/>
+    <region start="0x00006CE0" end="0x00006CE0" type="unmapped" name="nop_write"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,18 @@
+<platform name="bottom9n" cpu="z80">
+  <!-- source: MAME konami/bottom9.cpp -->
+  <!-- year: 1989 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="io" name="k052109_051960_r"/>
+    <region start="0x00000000" end="0x000007FF" type="io" name="region_0"/>
+    <region start="0x00001F80" end="0x00001F80" type="io" name="bankswitch_w"/>
+    <region start="0x00001F90" end="0x00001F90" type="io" name="_1f90_w"/>
+    <region start="0x00001FA0" end="0x00001FA0" type="io" name="reset_w"/>
+    <region start="0x00001FB0" end="0x00001FB0" type="io" name="write"/>
+    <region start="0x00001FC0" end="0x00001FC0" type="io" name="sh_irqtrigger_w"/>
+    <region start="0x00001FD0" end="0x00001FD3" type="io" name="port"/>
+    <region start="0x00001FE0" end="0x00001FE0" type="io" name="port"/>
+    <region start="0x00001FF0" end="0x000027FF" type="io" name="ctrl_w"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

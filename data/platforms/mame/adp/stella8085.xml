@@ -1,0 +1,9 @@
+<platform name="stella8085" cpu="8085">
+  <!-- source: MAME adp/stella8085.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00005000" end="0x00005FFF" type="ram" name="ram"/>
+    <region start="0x00006000" end="0x0000633F" type="io" name="direct"/>
+    <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

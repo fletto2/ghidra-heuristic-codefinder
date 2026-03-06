@@ -1,0 +1,16 @@
+<platform name="gamate" cpu="6502">
+  <!-- source: MAME bitcorp/gamate.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x0000400F" type="io" name="sound_r"/>
+    <region start="0x00004400" end="0x00004400" type="io" name="port"/>
+    <region start="0x00004800" end="0x00004800" type="io" name="gamate_nmi_r"/>
+    <region start="0x00005000" end="0x00005007" type="io" name="regs_map"/>
+    <region start="0x00005800" end="0x00005800" type="io" name="card_available_set"/>
+    <region start="0x00005900" end="0x00005900" type="io" name="card_reset"/>
+    <region start="0x00005A00" end="0x00005A00" type="io" name="card_available_check"/>
+    <region start="0x00006000" end="0x0000DFFF" type="io" name="cart"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

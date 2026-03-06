@@ -1,0 +1,9 @@
+<platform name="stmpc" cpu="80186">
+  <!-- source: MAME stm/stmpc.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
+    <region start="0x000B8000" end="0x000BFFFF" type="ram" name="ram"/>
+    <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

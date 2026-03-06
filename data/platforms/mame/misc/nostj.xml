@@ -1,0 +1,8 @@
+<platform name="nostj" cpu="z80">
+  <!-- source: MAME misc/mcatadv.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x0000DFFF" type="ram" name="banked"/>
+  </memory_map>
+</platform>

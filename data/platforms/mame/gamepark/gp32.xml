@@ -1,0 +1,36 @@
+<platform name="gp32" cpu="arm9">
+  <!-- source: MAME gamepark/gp32.cpp -->
+  <!-- year: 2001 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x0C000000" end="0x0C7FFFFF" type="ram" name="s3c240x_ram"/>
+    <region start="0x14000000" end="0x1400003B" type="io" name="s3c240x_memcon_r"/>
+    <region start="0x14200000" end="0x1420005B" type="io" name="s3c240x_usb_host_r"/>
+    <region start="0x14400000" end="0x14400017" type="io" name="s3c240x_irq_r"/>
+    <region start="0x14600000" end="0x1460007B" type="io" name="s3c240x_dma_r"/>
+    <region start="0x14800000" end="0x14800017" type="io" name="s3c240x_clkpow_r"/>
+    <region start="0x14A00000" end="0x14A007FF" type="io" name="s3c240x_lcd_r"/>
+    <region start="0x15000000" end="0x1500002B" type="io" name="s3c240x_uart_0_r"/>
+    <region start="0x15004000" end="0x1500402B" type="io" name="s3c240x_uart_1_r"/>
+    <region start="0x15100000" end="0x15100043" type="io" name="s3c240x_pwm_r"/>
+    <region start="0x15200140" end="0x152001FB" type="io" name="s3c240x_usb_device_r"/>
+    <region start="0x15300000" end="0x1530000B" type="io" name="s3c240x_watchdog_r"/>
+    <region start="0x15400000" end="0x1540000F" type="io" name="s3c240x_iic_r"/>
+    <region start="0x15508000" end="0x15508013" type="io" name="s3c240x_iis_r"/>
+    <region start="0x15600000" end="0x1560005B" type="io" name="s3c240x_gpio_r"/>
+    <region start="0x15700040" end="0x1570008B" type="io" name="s3c240x_rtc_r"/>
+    <region start="0x15800000" end="0x15800007" type="io" name="s3c240x_adc_r"/>
+    <region start="0x15900000" end="0x15900017" type="io" name="s3c240x_spi_r"/>
+    <region start="0x15A00000" end="0x15A0003F" type="io" name="s3c240x_mmc_r"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

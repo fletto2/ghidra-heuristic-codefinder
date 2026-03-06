@@ -1,0 +1,26 @@
+<platform name="madcrash" cpu="z80">
+  <!-- source: MAME snk/snk.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="port"/>
+    <region start="0x00008100" end="0x00008100" type="io" name="port"/>
+    <region start="0x00008200" end="0x00008200" type="io" name="port"/>
+    <region start="0x00008300" end="0x00008300" type="io" name="write"/>
+    <region start="0x00008400" end="0x00008400" type="io" name="port"/>
+    <region start="0x00008500" end="0x00008500" type="io" name="port"/>
+    <region start="0x00008600" end="0x00008600" type="io" name="marvins_flipscreen_w"/>
+    <region start="0x00008700" end="0x00008700" type="io" name="cpuB_nmi_trigger_r"/>
+    <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
+    <region start="0x0000C800" end="0x0000C800" type="io" name="marvins_palette_bank_w"/>
+    <region start="0x0000D000" end="0x0000F7FF" type="ram" name="ram"/>
+    <region start="0x0000F800" end="0x0000F800" type="io" name="bg_scrolly_w"/>
+    <region start="0x0000F900" end="0x0000F900" type="io" name="bg_scrollx_w"/>
+    <region start="0x0000FA00" end="0x0000FA00" type="io" name="sprite_split_point_w"/>
+    <region start="0x0000FB00" end="0x0000FB00" type="io" name="marvins_scroll_msb_w"/>
+    <region start="0x0000FC00" end="0x0000FC00" type="io" name="sp16_scrolly_w"/>
+    <region start="0x0000FD00" end="0x0000FD00" type="io" name="sp16_scrollx_w"/>
+    <region start="0x0000FE00" end="0x0000FE00" type="io" name="fg_scrolly_w"/>
+    <region start="0x0000FF00" end="0x0000FF00" type="io" name="fg_scrollx_w"/>
+  </memory_map>
+</platform>

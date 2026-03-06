@@ -1,0 +1,21 @@
+<platform name="spcwarp" cpu="z80">
+  <!-- source: MAME galaxian/galaxold.cpp -->
+  <!-- year: 1983 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x00001480" end="0x000014FF" type="ram" name="attributesram"/>
+    <region start="0x00001500" end="0x00001500" type="io" name="port"/>
+    <region start="0x00001500" end="0x00001507" type="io" name="galaxold_leds_w"/>
+    <region start="0x00001580" end="0x00001580" type="io" name="port"/>
+    <region start="0x00001580" end="0x00001587" type="io" name="sound_w"/>
+    <region start="0x00001680" end="0x00001680" type="io" name="reset_r"/>
+    <region start="0x00001700" end="0x00001701" type="io" name="port"/>
+    <region start="0x00001704" end="0x00001704" type="io" name="galaxold_stars_enable_w"/>
+    <region start="0x00001706" end="0x00001707" type="io" name="galaxold_flip_screen_x_w"/>
+    <region start="0x00001800" end="0x00001BFF" type="io" name="videoram"/>
+    <region start="0x00001C00" end="0x00001FFF" type="ram" name="ram"/>
+    <region start="0x00002000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004FFF" type="rom" name="rom"/>
+    <region start="0x00006000" end="0x00006FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

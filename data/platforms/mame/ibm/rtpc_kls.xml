@@ -1,0 +1,7 @@
+<platform name="rtpc_kls" cpu="8051">
+  <!-- source: MAME ibm/rtpc_kls.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
+    <region start="0x0000F800" end="0x0000FFFF" type="io" name="region_f800"/>
+  </memory_map>
+</platform>

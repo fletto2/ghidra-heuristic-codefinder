@@ -1,0 +1,12 @@
+<platform name="dai" cpu="8080">
+  <!-- source: MAME dai/dai.cpp -->
+  <!-- year: 1978 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="ram" name="mainram"/>
+    <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
+    <region start="0x0000E000" end="0x0000EFFF" type="ram" name="bank2"/>
+    <region start="0x0000F000" end="0x0000F7FF" type="io" name="stack_interrupt_circuit_w"/>
+    <region start="0x0000F800" end="0x0000F8FF" type="ram" name="ram"/>
+    <region start="0x0000FB00" end="0x0000FF0F" type="io" name="amd9511_r"/>
+  </memory_map>
+</platform>

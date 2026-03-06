@@ -1,6 +1,7 @@
 /* Licensed under the Apache License, Version 2.0 */
 package heuristic;
 
+import java.io.File;
 import java.util.*;
 
 import ghidra.app.cmd.disassemble.DisassembleCommand;
@@ -157,6 +158,11 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		Memory memory = program.getMemory();
 		PseudoDisassembler pseudo = new PseudoDisassembler(program);
 		AddressSpace defaultSpace = program.getAddressFactory().getDefaultAddressSpace();
+
+		// ============================================================
+		// Platform detection and endianness check
+		// ============================================================
+		runPlatformDetection(program, monitor, log);
 
 		int totalFound = 0;
 
@@ -866,6 +872,125 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		// Reject if >30% of references are invalid
 		if (totalRefs > 0 && (double) invalidRefs / totalRefs > 0.30) return false;
 		return true;
+	}
+
+	// ================================================================
+	// Platform detection & endianness check
+	// ================================================================
+
+	private void runPlatformDetection(Program program, TaskMonitor monitor, MessageLog log) {
+		try {
+			// Find the extension's data/platforms directory
+			File platformDir = findPlatformDir(program);
+
+			// --- Endianness check ---
+			monitor.setMessage("Checking ROM byte order...");
+			PlatformDetector.EndiannessResult endianness = PlatformDetector.detectEndianness(program, monitor);
+			if (endianness.isSwapped()) {
+				String warning = "WARNING: " + endianness.description;
+				Msg.warn(this, warning);
+				log.appendMsg("Heuristic Code Finder: " + warning);
+			} else {
+				Msg.info(this, "Endianness check: " + endianness.description);
+			}
+
+			// --- Platform detection ---
+			if (platformDir != null && platformDir.isDirectory()) {
+				List<PlatformDetector.DetectionResult> results =
+					PlatformDetector.detect(program, platformDir, 5000, 3, monitor);
+
+				if (!results.isEmpty()) {
+					StringBuilder msg = new StringBuilder();
+					msg.append("Top platform matches:\n\n");
+					int rank = 1;
+					for (PlatformDetector.DetectionResult r : results) {
+						String line = String.format("  %d. %s  (score: %.1f%%, %d/%d addresses matched)\n",
+							rank++, r.toString(), r.score * 100.0, r.addressesMatched, r.addressesTested);
+						msg.append(line);
+					}
+
+					if (endianness.isSwapped()) {
+						msg.append("\n  Note: ROM byte order issue detected — results may be less reliable.\n");
+					}
+
+					String resultMsg = msg.toString();
+					Msg.info(this, resultMsg);
+					log.appendMsg("Heuristic Code Finder: " + resultMsg.replace('\n', ' '));
+
+					// If user hasn't specified a platform file, use the best match
+					if ((platformFile == null || platformFile.isEmpty()) &&
+							results.get(0).score > 0.3 && results.get(0).platform != null) {
+						platform = results.get(0).platform;
+						Msg.info(this, "Auto-selected platform: " + results.get(0).platformName);
+					}
+				} else {
+					Msg.info(this, "Platform detection: no strong matches found");
+				}
+			}
+		} catch (Exception e) {
+			Msg.warn(this, "Platform detection failed: " + e.getMessage());
+		}
+	}
+
+	/**
+	 * Locate the data/platforms directory within the extension's installation.
+	 * Ghidra extensions are installed under the user's .ghidra dir or Ghidra install dir.
+	 */
+	private File findPlatformDir(Program program) {
+		// Try to find platform data from the extension's own data directory
+		// The extension jar is typically at ExtName/lib/ExtName.jar
+		// and data files at ExtName/data/platforms/
+		try {
+			// Method 1: Look in the extension's class loader resources
+			java.net.URL url = getClass().getProtectionDomain().getCodeSource().getLocation();
+			if (url != null) {
+				File jarFile = new File(url.toURI());
+				// jar is in ExtName/lib/ExtName.jar -> go up to ExtName, then data/platforms
+				File extDir = jarFile.getParentFile().getParentFile();
+				File dataDir = new File(extDir, "data/platforms");
+				if (dataDir.isDirectory()) return dataDir;
+			}
+		} catch (Exception e) {
+			// Fall through
+		}
+
+		// Method 2: Check Ghidra's extension install locations
+		String[] searchPaths = {
+			System.getProperty("user.home") + "/.ghidra",
+			System.getenv("GHIDRA_INSTALL_DIR")
+		};
+		for (String base : searchPaths) {
+			if (base == null) continue;
+			try {
+				// Search for HeuristicCodeFinder/data/platforms under this path
+				File baseDir = new File(base);
+				File found = findRecursive(baseDir, "HeuristicCodeFinder", 4);
+				if (found != null) {
+					File dataDir = new File(found, "data/platforms");
+					if (dataDir.isDirectory()) return dataDir;
+				}
+			} catch (Exception e) {
+				// ignore
+			}
+		}
+
+		return null;
+	}
+
+	private File findRecursive(File dir, String name, int depth) {
+		if (depth <= 0 || !dir.isDirectory()) return null;
+		File[] children = dir.listFiles();
+		if (children == null) return null;
+		for (File child : children) {
+			if (child.isDirectory() && child.getName().equals(name)) return child;
+		}
+		for (File child : children) {
+			if (child.isDirectory()) {
+				File found = findRecursive(child, name, depth - 1);
+				if (found != null) return found;
+			}
+		}
+		return null;
 	}
 
 	// ================================================================

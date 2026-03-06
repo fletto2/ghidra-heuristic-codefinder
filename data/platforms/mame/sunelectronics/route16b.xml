@@ -1,0 +1,13 @@
+<platform name="route16b" cpu="z80">
+  <!-- source: MAME sunelectronics/route16.cpp -->
+  <!-- year: 1981 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
+    <region start="0x00003000" end="0x00003001" type="io" name="route16_prot_r"/>
+    <region start="0x00004000" end="0x000043FF" type="ram" name="sharedram"/>
+    <region start="0x00004800" end="0x00004800" type="io" name="out0_w"/>
+    <region start="0x00005000" end="0x00005000" type="io" name="out1_w"/>
+    <region start="0x00005800" end="0x00005800" type="io" name="port"/>
+    <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,70 @@
+<platform name="dbz" cpu="68000">
+  <!-- source: MAME konami/dbz.cpp -->
+  <!-- year: 1993 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000FFFFF" type="rom" name="rom"/>
+    <region start="0x00480000" end="0x0048FFFF" type="ram" name="ram"/>
+    <region start="0x00490000" end="0x00491FFF" type="io" name="ram_word_r"/>
+    <region start="0x00498000" end="0x004A0FFF" type="io" name="rom_word_8000_r"/>
+    <region start="0x004A1000" end="0x004A3FFF" type="ram" name="ram"/>
+    <region start="0x004A8000" end="0x004ABFFF" type="ram" name="palette"/>
+    <region start="0x004C0000" end="0x004C0001" type="io" name="k053246_r"/>
+    <region start="0x004C0000" end="0x004C0007" type="io" name="k053246_w"/>
+    <region start="0x004C8000" end="0x004C8007" type="io" name="b_word_w"/>
+    <region start="0x004CC000" end="0x004CC03F" type="io" name="word_w"/>
+    <region start="0x004D0000" end="0x004D001F" type="io" name="ctrl_w"/>
+    <region start="0x004D4000" end="0x004D401F" type="io" name="ctrl_w"/>
+    <region start="0x004E0000" end="0x004E0003" type="io" name="port"/>
+    <region start="0x004E4000" end="0x004E4001" type="io" name="region_4e4000"/>
+    <region start="0x004E8000" end="0x004E8001" type="unmapped" name="unmapped"/>
+    <region start="0x004EC000" end="0x004EC001" type="io" name="control_w"/>
+    <region start="0x004F0000" end="0x004F0000" type="io" name="write"/>
+    <region start="0x004F4000" end="0x004F4001" type="io" name="sound_cause_nmi_w"/>
+    <region start="0x004F8000" end="0x004F801F" type="io" name="read"/>
+    <region start="0x004FC000" end="0x004FC01F" type="io" name="write"/>
+    <region start="0x00500000" end="0x00501FFF" type="ram" name="ram"/>
+    <region start="0x00508000" end="0x00509FFF" type="ram" name="ram"/>
+    <region start="0x00510000" end="0x00513FFF" type="io" name="linectrl_r"/>
+    <region start="0x00518000" end="0x0051BFFF" type="io" name="linectrl_r"/>
+    <region start="0x00600000" end="0x007FFFFF" type="unmapped" name="nop_read"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="initial_ssp"/>
+    <entry index="1" name="reset_pc"/>
+    <entry index="2" name="bus_error"/>
+    <entry index="3" name="address_error"/>
+    <entry index="4" name="illegal_instr"/>
+    <entry index="5" name="divide_by_zero"/>
+    <entry index="6" name="chk"/>
+    <entry index="7" name="trapv"/>
+    <entry index="8" name="privilege"/>
+    <entry index="9" name="trace"/>
+    <entry index="10" name="line_a"/>
+    <entry index="11" name="line_f"/>
+    <entry index="24" name="spurious_irq"/>
+    <entry index="25" name="autovector_1" irq="true"/>
+    <entry index="26" name="autovector_2" irq="true"/>
+    <entry index="27" name="autovector_3" irq="true"/>
+    <entry index="28" name="autovector_4" irq="true"/>
+    <entry index="29" name="autovector_5" irq="true"/>
+    <entry index="30" name="autovector_6" irq="true"/>
+    <entry index="31" name="autovector_7" irq="true"/>
+    <entry index="32" name="trap_0"/>
+    <entry index="33" name="trap_1"/>
+    <entry index="34" name="trap_2"/>
+    <entry index="35" name="trap_3"/>
+    <entry index="36" name="trap_4"/>
+    <entry index="37" name="trap_5"/>
+    <entry index="38" name="trap_6"/>
+    <entry index="39" name="trap_7"/>
+    <entry index="40" name="trap_8"/>
+    <entry index="41" name="trap_9"/>
+    <entry index="42" name="trap_10"/>
+    <entry index="43" name="trap_11"/>
+    <entry index="44" name="trap_12"/>
+    <entry index="45" name="trap_13"/>
+    <entry index="46" name="trap_14"/>
+    <entry index="47" name="trap_15"/>
+  </vectors>
+</platform>

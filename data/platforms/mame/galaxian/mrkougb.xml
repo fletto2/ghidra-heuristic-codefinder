@@ -1,0 +1,16 @@
+<platform name="mrkougb" cpu="z80">
+  <!-- source: MAME galaxian/scramble.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x00004BFF" type="ram" name="ram"/>
+    <region start="0x00004C00" end="0x00004FFF" type="io" name="galaxold_videoram_r"/>
+    <region start="0x00005000" end="0x000050FF" type="ram" name="attributesram"/>
+    <region start="0x00006800" end="0x00006801" type="io" name="galaxold_coin_counter_1_w"/>
+    <region start="0x00006808" end="0x00006809" type="io" name="galaxold_coin_counter_0_w"/>
+    <region start="0x0000680B" end="0x0000680B" type="io" name="galaxold_flip_screen_y_w"/>
+    <region start="0x00007000" end="0x00007000" type="io" name="reset_r"/>
+    <region start="0x00008100" end="0x0000810F" type="io" name="mars_ppi8255_0_r"/>
+    <region start="0x00008200" end="0x0000820F" type="io" name="mars_ppi8255_1_r"/>
+  </memory_map>
+</platform>

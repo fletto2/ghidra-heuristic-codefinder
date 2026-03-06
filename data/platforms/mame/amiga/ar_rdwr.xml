@@ -1,0 +1,10 @@
+<platform name="ar_rdwr" cpu="68000">
+  <!-- source: MAME amiga/arsystems.cpp -->
+  <!-- year: 1988 -->
+  <memory_map>
+    <region start="0x00800000" end="0x009FBFFF" type="rom" name="rom"/>
+    <region start="0x009FC000" end="0x009FFFFD" type="ram" name="nvram"/>
+    <region start="0x009FFFFE" end="0x009FFFFF" type="io" name="arcadia_multibios_change_game"/>
+    <region start="0x00F00000" end="0x00F7FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

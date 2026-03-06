@@ -1,0 +1,12 @@
+<platform name="ddragonbl" cpu="z80">
+  <!-- source: MAME technos/ddragon.cpp -->
+  <!-- year: 1987 -->
+  <memory_map>
+    <region start="0x00000005" end="0x00000005" type="unmapped" name="nop_write"/>
+    <region start="0x00000016" end="0x00000016" type="unmapped" name="nop_write"/>
+    <region start="0x00000017" end="0x00000017" type="io" name="sub_port6_w"/>
+    <region start="0x00000020" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00008000" end="0x000081FF" type="ram" name="ram"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

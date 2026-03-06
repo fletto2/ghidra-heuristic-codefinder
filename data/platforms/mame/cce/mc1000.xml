@@ -1,0 +1,8 @@
+<platform name="mc1000" cpu="z80">
+  <!-- source: MAME cce/mc1000.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="ram" name="bank1"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

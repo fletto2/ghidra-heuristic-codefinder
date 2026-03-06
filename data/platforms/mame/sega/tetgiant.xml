@@ -1,0 +1,31 @@
+<platform name="tetgiant" cpu="sh4">
+  <!-- source: MAME sega/segasp.cpp -->
+  <!-- year: 2009 -->
+  <memory_map>
+    <region start="0x00000000" end="0x001FFFFF" type="rom" name="rom"/>
+    <region start="0x005F6800" end="0x005F69FF" type="io" name="dc_sysctrl_r"/>
+    <region start="0x005F6C00" end="0x005F6CFF" type="io" name="amap"/>
+    <region start="0x005F7000" end="0x005F70FF" type="io" name="submap"/>
+    <region start="0x005F7400" end="0x005F74FF" type="io" name="amap"/>
+    <region start="0x005F7800" end="0x005F78FF" type="io" name="amap"/>
+    <region start="0x005F7C00" end="0x005F7CFF" type="io" name="pd_dma_map"/>
+    <region start="0x005F8000" end="0x005F9FFF" type="io" name="ta_map"/>
+    <region start="0x00600000" end="0x006007FF" type="io" name="dc_modem_r"/>
+    <region start="0x00700000" end="0x00707FFF" type="io" name="dc_aica_reg_r"/>
+    <region start="0x00710000" end="0x0071000F" type="io" name="read"/>
+    <region start="0x00800000" end="0x00FFFFFF" type="io" name="soundram_r"/>
+    <region start="0x01000000" end="0x0100FFFF" type="ram" name="ram"/>
+    <region start="0x01010000" end="0x01010007" type="io" name="sp_bank_r"/>
+    <region start="0x01010080" end="0x01010087" type="io" name="map0x01010080_0x01010087_irq_pendingrese"/>
+    <region start="0x01010100" end="0x0101012F" type="io" name="sp_io_r"/>
+    <region start="0x01010150" end="0x01010157" type="io" name="sp_rombdflg_r"/>
+    <region start="0x01010180" end="0x010101AF" type="io" name="map0x01010180_0x010101af_custom_uart_1"/>
+    <region start="0x010101C0" end="0x010101EF" type="io" name="map0x010101c0_0x010101ef_custom_uart_2"/>
+    <region start="0x04000000" end="0x05FFFFFF" type="ram" name="dc_texture_ram"/>
+    <region start="0x08000000" end="0x09FFFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x0C000000" end="0x0DFFFFFF" type="ram" name="dc_ram"/>
+    <region start="0x10000000" end="0x11FFFFFF" type="io" name="ta_fifo_poly_w"/>
+    <region start="0x13000000" end="0x13FFFFFF" type="io" name="ta_texture_directpath1_w"/>
+    <region start="0x14000000" end="0x1FFFFFFF" type="unmapped" name="unmapped"/>
+  </memory_map>
+</platform>

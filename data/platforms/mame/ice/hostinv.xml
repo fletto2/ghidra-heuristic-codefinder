@@ -1,0 +1,14 @@
+<platform name="hostinv" cpu="pentium">
+  <!-- source: MAME ice/calchase.cpp -->
+  <!-- year: 1998 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0009FFFF" type="ram" name="ram"/>
+    <region start="0x000A0000" end="0x000BFFFF" type="io" name="mem_r"/>
+    <region start="0x000C0000" end="0x000C7FFF" type="rom" name="rom"/>
+    <region start="0x000C8000" end="0x000CFFFF" type="unmapped" name="unmapped"/>
+    <region start="0x000D0000" end="0x000D0FFF" type="io" name="map0x000d0000_0x000d0fff_isa_custom_jamm"/>
+    <region start="0x000E0000" end="0x03FFFFFF" type="ram" name="bios_ext"/>
+    <region start="0x04000000" end="0x28FFFFFF" type="unmapped" name="unmapped"/>
+    <region start="0xFFFE0000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

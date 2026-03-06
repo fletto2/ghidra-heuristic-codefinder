@@ -1,0 +1,21 @@
+<platform name="quizard2" cpu="68070">
+  <!-- source: MAME philips/cdi.cpp -->
+  <!-- year: 1995 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00FFFFFF" type="io" name="bus_error_r"/>
+    <region start="0x00000000" end="0x0007FFFF" type="io" name="plane0"/>
+    <region start="0x00200000" end="0x0027FFFF" type="io" name="plane1"/>
+    <region start="0x00300000" end="0x00303BFF" type="io" name="ram_r"/>
+    <region start="0x00301400" end="0x00301403" type="io" name="uart_loopback_enable"/>
+    <region start="0x00303C00" end="0x00303FFF" type="io" name="regs_r"/>
+    <region start="0x00310000" end="0x00317FFF" type="io" name="slave_r"/>
+    <region start="0x00318000" end="0x0031FFFF" type="unmapped" name="unmapped"/>
+    <region start="0x00320000" end="0x00323FFF" type="io" name="read"/>
+    <region start="0x00400000" end="0x0047FFFF" type="io" name="main_rom_r"/>
+    <region start="0x004FFFE0" end="0x004FFFFF" type="io" name="map"/>
+    <region start="0x00500000" end="0x0057FFFF" type="ram" name="ram"/>
+    <region start="0x00D00000" end="0x00DFFFFF" type="ram" name="ram"/>
+    <region start="0x00E00000" end="0x00E7FFFF" type="io" name="dvc_r"/>
+    <region start="0x00E80000" end="0x00EFFFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

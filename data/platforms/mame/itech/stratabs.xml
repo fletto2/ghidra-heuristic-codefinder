@@ -1,0 +1,8 @@
+<platform name="stratabs" cpu="68000">
+  <!-- source: MAME itech/itech8.cpp -->
+  <!-- year: 1990 -->
+  <memory_map>
+    <region start="0x00001180" end="0x00001180" type="io" name="z80_r"/>
+    <region start="0x000011CF" end="0x000011CF" type="io" name="z80_control_r"/>
+  </memory_map>
+</platform>

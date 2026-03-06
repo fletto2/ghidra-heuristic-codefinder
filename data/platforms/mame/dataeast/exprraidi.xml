@@ -1,0 +1,21 @@
+<platform name="exprraidi" cpu="6502">
+  <!-- source: MAME dataeast/exprraid.cpp -->
+  <!-- year: 1986 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00000FFF" type="ram" name="main_ram"/>
+    <region start="0x00001800" end="0x00001803" type="io" name="port"/>
+    <region start="0x00002000" end="0x00002002" type="io" name="int_clear_w"/>
+    <region start="0x00002003" end="0x00002003" type="unmapped" name="nop_write"/>
+    <region start="0x00002800" end="0x00002800" type="io" name="prot_data_r"/>
+    <region start="0x00002800" end="0x00002803" type="io" name="bgselect_w"/>
+    <region start="0x00002801" end="0x00002801" type="io" name="prot_status_r"/>
+    <region start="0x00002804" end="0x00002807" type="io" name="scrolly_w"/>
+    <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

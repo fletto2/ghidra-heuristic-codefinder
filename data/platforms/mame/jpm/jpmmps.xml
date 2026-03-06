@@ -1,0 +1,8 @@
+<platform name="jpmmps" cpu="tms9995">
+  <!-- source: MAME jpm/jpmmps.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
+    <region start="0x0000C000" end="0x0000C00F" type="io" name="read"/>
+    <region start="0x0000E800" end="0x0000EFFF" type="ram" name="ram"/>
+  </memory_map>
+</platform>

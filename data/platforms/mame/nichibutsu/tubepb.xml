@@ -1,0 +1,11 @@
+<platform name="tubepb" cpu="z80">
+  <!-- source: MAME nichibutsu/tubep.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000003FF" type="ram" name="sprite_cram"/>
+    <region start="0x00000800" end="0x00000FFF" type="ram" name="share2"/>
+    <region start="0x00002000" end="0x00002009" type="io" name="sprite_control_w"/>
+    <region start="0x0000200A" end="0x0000200B" type="unmapped" name="nop_write"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

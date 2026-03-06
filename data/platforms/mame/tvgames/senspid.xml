@@ -1,0 +1,15 @@
+<platform name="senspid" cpu="65816">
+  <!-- source: MAME tvgames/trkfldch.cpp -->
+  <!-- year: 2007 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="ram" name="mainram"/>
+    <region start="0x00006800" end="0x00006CFF" type="ram" name="spriteram"/>
+    <region start="0x00007000" end="0x000072FF" type="ram" name="palram"/>
+    <region start="0x00007800" end="0x0000781A" type="io" name="sysregs_r"/>
+    <region start="0x00007820" end="0x00007843" type="io" name="tmap0_scroll_window_r"/>
+    <region start="0x00007854" end="0x00007856" type="io" name="tilemapbase_r"/>
+    <region start="0x00007860" end="0x0000786D" type="io" name="dmaregs_r"/>
+    <region start="0x00007870" end="0x000078FF" type="io" name="unkregs_r"/>
+    <region start="0x00008000" end="0x00FFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,20 @@
+<platform name="copsnrob" cpu="6502">
+  <!-- source: MAME atari/copsnrob.cpp -->
+  <memory_map>
+    <region start="0x00000000" end="0x000001FF" type="ram" name="ram"/>
+    <region start="0x00000500" end="0x00000507" type="io" name="d0"/>
+    <region start="0x00000600" end="0x00000600" type="ram" name="writeonly"/>
+    <region start="0x00000700" end="0x00000903" type="ram" name="writeonly"/>
+    <region start="0x00000A00" end="0x00000A03" type="ram" name="writeonly"/>
+    <region start="0x00000B00" end="0x00000FFF" type="ram" name="ram"/>
+    <region start="0x00001000" end="0x00001000" type="io" name="misc_r"/>
+    <region start="0x00001002" end="0x00001002" type="io" name="port"/>
+    <region start="0x00001006" end="0x00001006" type="io" name="port"/>
+    <region start="0x0000100A" end="0x0000100A" type="io" name="port"/>
+    <region start="0x0000100E" end="0x0000100E" type="io" name="port"/>
+    <region start="0x00001012" end="0x00001012" type="io" name="port"/>
+    <region start="0x00001016" end="0x00001016" type="io" name="port"/>
+    <region start="0x0000101A" end="0x0000101A" type="io" name="port"/>
+    <region start="0x00001200" end="0x00001FFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

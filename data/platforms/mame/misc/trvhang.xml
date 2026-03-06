@@ -1,0 +1,14 @@
+<platform name="trvhang" cpu="8088">
+  <!-- source: MAME misc/smsmcorp.cpp -->
+  <!-- year: 1984 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
+    <region start="0x00000800" end="0x00000803" type="io" name="read"/>
+    <region start="0x00001000" end="0x00001007" type="io" name="video_w"/>
+    <region start="0x00001800" end="0x00001803" type="io" name="link_r"/>
+    <region start="0x00004000" end="0x00007FFF" type="ram" name="bank1"/>
+    <region start="0x00004000" end="0x00004000" type="io" name="bankswitch_w"/>
+    <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
+    <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

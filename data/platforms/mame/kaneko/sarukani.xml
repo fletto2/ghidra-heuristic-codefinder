@@ -1,0 +1,40 @@
+<platform name="sarukani" cpu="sh2">
+  <!-- source: MAME kaneko/suprnova.cpp -->
+  <!-- year: 1997 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
+    <region start="0x00400000" end="0x0040000F" type="io" name="io_w"/>
+    <region start="0x00400000" end="0x00400007" type="io" name="port"/>
+    <region start="0x0040000C" end="0x0040000F" type="io" name="port"/>
+    <region start="0x00800000" end="0x00801FFF" type="ram" name="nvram"/>
+    <region start="0x00C00000" end="0x00C00001" type="io" name="read"/>
+    <region start="0x01000000" end="0x0100000F" type="io" name="read"/>
+    <region start="0x01800000" end="0x01800003" type="io" name="hit2_w"/>
+    <region start="0x02000000" end="0x02003FFF" type="ram" name="spriteram"/>
+    <region start="0x02100000" end="0x0210003F" type="ram" name="spc_regs"/>
+    <region start="0x02400000" end="0x0240007F" type="ram" name="v3_regs"/>
+    <region start="0x02500000" end="0x02507FFF" type="ram" name="tilemapa_ram"/>
+    <region start="0x02600000" end="0x02607FFF" type="ram" name="v3slc_ram"/>
+    <region start="0x02A00000" end="0x02A0001F" type="ram" name="pal_regs"/>
+    <region start="0x02A40000" end="0x02A5FFFF" type="ram" name="palette_ram"/>
+    <region start="0x02F00000" end="0x02F000FF" type="io" name="hit_r"/>
+    <region start="0x04000000" end="0x041FFFFF" type="rom" name="rom"/>
+    <region start="0x04800000" end="0x0483FFFF" type="ram" name="v3t_ram"/>
+    <region start="0x05000000" end="0x05000003" type="unmapped" name="nop_write"/>
+    <region start="0x06000000" end="0x060FFFFF" type="ram" name="main_ram"/>
+    <region start="0xC0000000" end="0xC0000FFF" type="ram" name="cache_ram"/>
+  </memory_map>
+
+  <vectors format="abs32_be" base="0x00000000">
+    <entry index="0" name="power_on_pc"/>
+    <entry index="1" name="power_on_sp"/>
+    <entry index="2" name="manual_reset_pc"/>
+    <entry index="3" name="manual_reset_sp"/>
+    <entry index="4" name="general_illegal"/>
+    <entry index="6" name="slot_illegal"/>
+    <entry index="9" name="cpu_addr_error"/>
+    <entry index="10" name="dma_addr_error"/>
+    <entry index="11" name="nmi" irq="true"/>
+    <entry index="12" name="user_break"/>
+  </vectors>
+</platform>

@@ -1,0 +1,24 @@
+<platform name="btoads" cpu="z80">
+  <!-- source: MAME rare/btoads.cpp -->
+  <!-- year: 1994 -->
+  <memory_map>
+    <region start="0x00000000" end="0x003FFFFF" type="ram" name="ram"/>
+    <region start="0x20000000" end="0x2000007F" type="io" name="port"/>
+    <region start="0x20000000" end="0x200000FF" type="ram" name="writeonly"/>
+    <region start="0x20000080" end="0x2000017F" type="io" name="port"/>
+    <region start="0x20000100" end="0x2000017F" type="ram" name="writeonly"/>
+    <region start="0x20000180" end="0x200001FF" type="io" name="port"/>
+    <region start="0x20000180" end="0x2000027F" type="io" name="display_control_w"/>
+    <region start="0x20000200" end="0x200002FF" type="io" name="region_20000200"/>
+    <region start="0x20000280" end="0x2000047F" type="io" name="region_20000280"/>
+    <region start="0x40000000" end="0x4000001F" type="unmapped" name="nop_write"/>
+    <region start="0x60000000" end="0x6003FFFF" type="io" name="nvram_r"/>
+    <region start="0xA0000000" end="0xA03FFFFF" type="io" name="vram_fg_display_r"/>
+    <region start="0xA4000000" end="0xA43FFFFF" type="io" name="vram_fg_draw_r"/>
+    <region start="0xA8000000" end="0xA87FFFFF" type="ram" name="vram_fg_data"/>
+    <region start="0xA8800000" end="0xA8FFFFFF" type="unmapped" name="nop_write"/>
+    <region start="0xB0000000" end="0xB03FFFFF" type="io" name="region_b0000000"/>
+    <region start="0xB4000000" end="0xB43FFFFF" type="io" name="region_b4000000"/>
+    <region start="0xFC000000" end="0xFFFFFFFF" type="rom" name="rom"/>
+  </memory_map>
+</platform>

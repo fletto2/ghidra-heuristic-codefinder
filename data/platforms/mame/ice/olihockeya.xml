@@ -1,0 +1,18 @@
+<platform name="olihockeya" cpu="6502">
+  <!-- source: MAME ice/chexx.cpp -->
+  <!-- year: 1985 -->
+  <memory_map>
+    <region start="0x00000000" end="0x0000007F" type="ram" name="ram"/>
+    <region start="0x00004000" end="0x0000400F" type="io" name="map"/>
+    <region start="0x00008000" end="0x00008000" type="io" name="input_r"/>
+    <region start="0x0000A000" end="0x0000A001" type="io" name="ay_w"/>
+    <region start="0x0000C000" end="0x0000C000" type="io" name="lamp_w"/>
+    <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
+  </memory_map>
+
+  <vectors format="abs16_le" base="0x0000FFFA">
+    <entry index="0" name="nmi" irq="true"/>
+    <entry index="1" name="reset"/>
+    <entry index="2" name="irq" irq="true"/>
+  </vectors>
+</platform>

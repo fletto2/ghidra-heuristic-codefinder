@@ -1,0 +1,9 @@
+<platform name="xmenj" cpu="68000">
+  <!-- source: MAME konami/xmen.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00103FFE" end="0x00103FFF" type="io" name="map0x103ffe_0x103fff__sound_related_too"/>
+    <region start="0x0010804D" end="0x0010804D" type="io" name="todo_verify_once_oki_rom_1_is_redumped"/>
+    <region start="0x0010804F" end="0x0010804F" type="io" name="read"/>
+  </memory_map>
+</platform>

@@ -1,0 +1,20 @@
+<platform name="gizmondo" cpu="arm9">
+  <!-- source: MAME tigertel/gizmondo.cpp -->
+  <!-- year: 2005 -->
+  <memory_map>
+    <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
+    <region start="0x00000800" end="0x00001FFF" type="io" name="sec_1_r"/>
+    <region start="0x30000000" end="0x33FFFFFF" type="ram" name="ram"/>
+    <region start="0x34000000" end="0x3413FFFF" type="io" name="read"/>
+  </memory_map>
+
+  <vectors format="abs32_le" base="0x00000000">
+    <entry index="0" name="reset"/>
+    <entry index="1" name="undef"/>
+    <entry index="2" name="swi"/>
+    <entry index="3" name="prefetch_abort"/>
+    <entry index="4" name="data_abort"/>
+    <entry index="6" name="irq" irq="true"/>
+    <entry index="7" name="fiq" irq="true"/>
+  </vectors>
+</platform>

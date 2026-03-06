@@ -1,0 +1,17 @@
+<platform name="sprtauth" cpu="z80">
+  <!-- source: MAME misc/gei.cpp -->
+  <!-- year: 1992 -->
+  <memory_map>
+    <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
+    <region start="0x00004000" end="0x000047FF" type="ram" name="nvram"/>
+    <region start="0x00004800" end="0x00004803" type="io" name="read"/>
+    <region start="0x00005000" end="0x00005003" type="io" name="read"/>
+    <region start="0x00005600" end="0x00005600" type="io" name="signature_r"/>
+    <region start="0x00005800" end="0x00005800" type="io" name="signature_w"/>
+    <region start="0x00005A00" end="0x00005CFF" type="io" name="geimulti_bank_w"/>
+    <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
+    <region start="0x00008000" end="0x00008002" type="io" name="drawctrl_w"/>
+    <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
+    <region start="0x0000C000" end="0x0000FFFF" type="io" name="bitmap_w"/>
+  </memory_map>
+</platform>
