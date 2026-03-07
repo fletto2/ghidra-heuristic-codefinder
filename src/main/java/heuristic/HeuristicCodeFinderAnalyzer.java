@@ -1343,6 +1343,26 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			} else {
 				Msg.info(this, String.format("ROM SHA1 lookup: no match (%d entries in database)",
 					romId.getEntryCount()));
+
+				// Check if the ROM fills the entire address space — likely a
+				// bank-switched ROM that was truncated by Ghidra's loader
+				AddressSpace space = program.getAddressFactory().getDefaultAddressSpace();
+				long spaceSize = space.getMaxAddress().getOffset() - space.getMinAddress().getOffset() + 1;
+				Memory mem = program.getMemory();
+				long loadedSize = 0;
+				for (ghidra.program.model.mem.MemoryBlock b : mem.getBlocks()) {
+					if (b.isInitialized()) loadedSize += b.getSize();
+				}
+				if (spaceSize <= 0x10000 && loadedSize == spaceSize) {
+					String truncWarn = String.format(
+						"WARNING: ROM fills the entire %d-bit address space (%dKB). " +
+						"If the original file is larger, it uses bank switching and was " +
+						"truncated by Ghidra's loader. SHA1 identification will not work. " +
+						"Only the first %dKB (bank 0) is loaded.",
+						space.getSize(), loadedSize / 1024, loadedSize / 1024);
+					Msg.warn(this, truncWarn);
+					log.appendMsg("Heuristic Code Finder: " + truncWarn);
+				}
 			}
 
 			// --- Use ROM identification to load matching platform XML ---
