@@ -338,6 +338,37 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				vectorAddrs.add(romBase);
 				armVectorSeeds++;
 			}
+			// If no B/LDR PC vectors were found, the ROM may use a non-standard
+			// header (e.g., RISC OS ROMs start with condition=0xF markers).
+			// Scan the first 256 bytes for the first word with condition AL (0xE)
+			// that looks like a data-processing or MOV instruction.
+			if (armVectorSeeds <= 1) {
+				for (int off = 4; off < 256; off += 4) {
+					long scanAddr = romBase + off;
+					try {
+						Address sa = defaultSpace.getAddress(scanAddr);
+						if (!memory.contains(sa)) continue;
+						byte[] sbuf = new byte[4];
+						memory.getBytes(sa, sbuf);
+						long sw;
+						if (bigEndian) {
+							sw = ((sbuf[0] & 0xFFL) << 24) | ((sbuf[1] & 0xFFL) << 16) |
+								 ((sbuf[2] & 0xFFL) << 8) | (sbuf[3] & 0xFFL);
+						} else {
+							sw = (sbuf[0] & 0xFFL) | ((sbuf[1] & 0xFFL) << 8) |
+								 ((sbuf[2] & 0xFFL) << 16) | ((sbuf[3] & 0xFFL) << 24);
+						}
+						int sc = (int) ((sw >> 28) & 0xF);
+						if (sc == 0xE && sw != 0xE1A00000L) { // AL condition, not NOP
+							vectorAddrs.add(scanAddr);
+							armVectorSeeds++;
+							Msg.info(this, "ARM fallback entry at 0x" +
+								Long.toHexString(scanAddr) + " (first AL instruction after header)");
+							break;
+						}
+					} catch (Exception e) { /* skip */ }
+				}
+			}
 			if (armVectorSeeds > 0) {
 				Msg.info(this, "ARM exception vectors: " + armVectorSeeds +
 					" entry points added from vector table at 0x" + Long.toHexString(romBase));
@@ -567,6 +598,22 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			}
 		} catch (Exception e) {
 			Msg.warn(this, "Function classification failed: " + e.getMessage());
+		}
+
+		// Check for compressed/encrypted ROM: if code coverage is very low relative
+		// to ROM size, the ROM is likely compressed or encrypted.
+		long romSize = memory.getBlocks()[0].getSize();
+		int instrSize = program.getLanguage().getInstructionAlignment();
+		if (instrSize < 2) instrSize = 2;
+		long maxPossible = romSize / instrSize;
+		double coverage = maxPossible > 0 ? (double) totalFound / maxPossible : 0;
+		if (totalFound < 100 && romSize >= 65536 && coverage < 0.01) {
+			String compWarn = String.format(
+				"WARNING: Very low code coverage (%.2f%%, %d instructions in %dKB ROM). " +
+				"This ROM may be compressed, encrypted, or require decompression before analysis.",
+				coverage * 100, totalFound, romSize / 1024);
+			Msg.warn(this, compWarn);
+			log.appendMsg("Heuristic Code Finder: " + compWarn);
 		}
 
 		Msg.info(this, "Heuristic Code Finder complete: " + totalFound + " total instructions found" +
@@ -1296,6 +1343,38 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			} else {
 				Msg.info(this, String.format("ROM SHA1 lookup: no match (%d entries in database)",
 					romId.getEntryCount()));
+			}
+
+			// --- Use ROM identification to load matching platform XML ---
+			if (!romMatches.isEmpty() && platformDir != null && platformDir.isDirectory()) {
+				String machName = romMatches.get(0).machine;
+				java.io.File mameDir = new java.io.File(platformDir, "mame");
+				java.io.File matchedXml = null;
+				if (mameDir.isDirectory()) {
+					java.io.File[] mfrDirs = mameDir.listFiles(java.io.File::isDirectory);
+					if (mfrDirs != null) {
+						for (java.io.File mfrDir : mfrDirs) {
+							java.io.File candidate = new java.io.File(mfrDir, machName + ".xml");
+							if (candidate.exists()) {
+								matchedXml = candidate;
+								break;
+							}
+						}
+					}
+				}
+				if (matchedXml == null) {
+					java.io.File candidate = new java.io.File(platformDir, machName + ".xml");
+					if (candidate.exists()) matchedXml = candidate;
+				}
+				if (matchedXml != null) {
+					try (java.io.FileInputStream fis = new java.io.FileInputStream(matchedXml)) {
+						platform = PlatformDescription.loadFromXml(fis);
+						Msg.info(this, "Loaded platform from ROM ID: " + matchedXml.getName() +
+							" (" + platform.getPlatformName() + ")");
+					} catch (Exception e) {
+						Msg.warn(this, "Failed to load platform XML " + matchedXml + ": " + e.getMessage());
+					}
+				}
 			}
 
 			// --- Endianness check ---

@@ -1005,25 +1005,8 @@ public class PcodeVectorDatabase {
 			return RomDomain.COMPUTER_BOOT;
 		}
 
-		// Manufacturer-based
-		if (mfr.contains("sega") || mfr.contains("nintendo") || mfr.contains("snk") ||
-			mfr.contains("konami") || mfr.contains("capcom") || mfr.contains("namco") ||
-			mfr.contains("taito") || mfr.contains("atari") || mfr.contains("midway") ||
-			mfr.contains("irem") || mfr.contains("toaplan") || mfr.contains("cave") ||
-			mfr.contains("hudson") || mfr.contains("nec") || mfr.contains("bandai")) {
-			// Could be console or arcade
-			if (machine.contains("genesis") || machine.contains("megadriv") ||
-				machine.contains("nes") || machine.contains("famicom") ||
-				machine.contains("snes") || machine.contains("sufami") ||
-				machine.contains("gba") || machine.contains("gb") ||
-				machine.contains("saturn") || machine.contains("dreamcast") ||
-				machine.contains("pce") || machine.contains("ngp")) {
-				return RomDomain.GAME_CONSOLE;
-			}
-			return RomDomain.ARCADE;
-		}
-
-		// Console-specific machine names
+		// Console-specific machine names (check before manufacturer to avoid
+		// misclassifying known consoles as ARCADE)
 		if (machine.contains("genesis") || machine.contains("megadriv") ||
 			machine.contains("nes") || machine.contains("famicom") ||
 			machine.contains("snes") || machine.contains("sufami") ||
@@ -1036,8 +1019,30 @@ public class PcodeVectorDatabase {
 			machine.contains("atari5200") || machine.contains("atari7800") ||
 			machine.contains("jaguar") || machine.contains("lynx") ||
 			machine.contains("neogeo") || machine.contains("pce") ||
-			machine.contains("vectrex") || machine.contains("intv")) {
+			machine.contains("vectrex") || machine.contains("intv") ||
+			machine.contains("loopy") || machine.contains("gameboy") ||
+			machine.contains("gamecube") || machine.contains("wii") ||
+			machine.contains("n64") || machine.contains("xbox") ||
+			machine.contains("3do") || machine.contains("pcfx") ||
+			machine.contains("wonderswan") || machine.contains("gamegear") ||
+			machine.contains("mastersystem") || machine.contains("sms") ||
+			machine.contains("sg1000") || machine.contains("sc3000") ||
+			machine.contains("segacd") || machine.contains("mega_cd") ||
+			machine.contains("32x")) {
 			return RomDomain.GAME_CONSOLE;
+		}
+
+		// Manufacturer-based (game/arcade companies — if machine name
+		// wasn't caught above as a known console, default to ARCADE)
+		if (mfr.contains("sega") || mfr.contains("nintendo") || mfr.contains("snk") ||
+			mfr.contains("konami") || mfr.contains("capcom") || mfr.contains("namco") ||
+			mfr.contains("taito") || mfr.contains("atari") || mfr.contains("midway") ||
+			mfr.contains("irem") || mfr.contains("toaplan") || mfr.contains("cave") ||
+			mfr.contains("hudson") || mfr.contains("nec") || mfr.contains("bandai") ||
+			mfr.contains("casio") || mfr.contains("mattel") || mfr.contains("coleco") ||
+			mfr.contains("jaleco") || mfr.contains("tecmo") || mfr.contains("data east") ||
+			mfr.contains("eighting") || mfr.contains("treasure") || mfr.contains("compile")) {
+			return RomDomain.ARCADE;
 		}
 
 		// Apollo workstations (DN/DSP series)
@@ -1048,12 +1053,21 @@ public class PcodeVectorDatabase {
 
 		// Computer boot ROMs
 		if (machine.contains("mac") || machine.contains("lisa") ||
-			machine.contains("sun") ||
-			machine.contains("hp9000") || machine.contains("mvme") ||
-			machine.contains("vme") || machine.contains("sbc") ||
-			machine.contains("ibmpc") || machine.contains("pc_") ||
+			machine.contains("sun") || machine.contains("imac") ||
+			machine.contains("hp9000") || machine.contains("hp16") ||
+			machine.contains("mvme") || machine.contains("vme") || machine.contains("sbc") ||
+			machine.contains("ibmpc") || machine.contains("ibm5") || machine.contains("pc_") ||
+			machine.startsWith("nws") || machine.startsWith("ip") ||
+			machine.startsWith("o2") || machine.startsWith("next") ||
+			machine.startsWith("aa") || machine.startsWith("rpc") ||
+			machine.startsWith("a7000") || machine.startsWith("risc") ||
+			machine.contains("mmr4") || machine.contains("decstation") ||
+			machine.contains("alpha") || machine.contains("vaxstation") ||
+			machine.startsWith("pm") || machine.contains("indigo") ||
+			machine.contains("indy") || machine.contains("octane") ||
 			region.contains("bootstrap") || region.contains("bios") ||
-			region.contains("monitor") || region.contains("firmware")) {
+			region.contains("monitor") || region.contains("firmware") ||
+			region.contains("prom") || region.contains("eprom")) {
 			return RomDomain.COMPUTER_BOOT;
 		}
 
