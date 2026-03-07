@@ -174,6 +174,26 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		// ============================================================
 		monitor.setMessage("Heuristic Pass 1: Vector table entry points");
 		List<Long> vectorAddrs = platform.readVectorEntries(program);
+
+		// x86 reset vector: CPU starts execution at FFFF:0000 (8086) or
+		// FFFFFFF0 (386+). Add as entry point if it falls within ROM.
+		String procName = program.getLanguage().getProcessor().toString();
+		if (procName.contains("x86") || procName.contains("8086") ||
+				procName.contains("8088") || procName.contains("80186") ||
+				procName.contains("80286") || procName.contains("80386")) {
+			long resetAddr;
+			if (procName.contains("80386") || procName.contains("80486")) {
+				resetAddr = 0xFFFFFFF0L;
+			} else {
+				resetAddr = 0xFFFF0L; // FFFF:0000 physical
+			}
+			if (memory.contains(defaultSpace.getAddress(resetAddr))) {
+				vectorAddrs.add(resetAddr);
+				Msg.info(this, "x86 reset vector at 0x" + Long.toHexString(resetAddr) +
+					" added as entry point");
+			}
+		}
+
 		int vectorSeeds = 0;
 		for (Long addr : vectorAddrs) {
 			monitor.checkCancelled();
@@ -448,8 +468,8 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			if (redundancy > redundancyMax) return null;
 		}
 
-		// H33: Memory map validation (Tier 3)
-		if (!platform.getMemoryMap().isEmpty()) {
+		// H33: Memory map validation (Tier 3) — skip for trusted seeds
+		if (!trusted && !platform.getMemoryMap().isEmpty()) {
 			if (!validateReferences(allPcode, program)) return null;
 		}
 
@@ -982,12 +1002,34 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			monitor.setMessage("Inferring ROM base address...");
 			PlatformDetector.BaseAddressResult baseResult =
 				PlatformDetector.inferBaseAddress(program, monitor);
-			if (baseResult.inferredBase != program.getMemory().getBlocks()[0].getStart().getOffset()
-					&& baseResult.confidence > 0.15 && baseResult.targetsInRange >= 3) {
+			long currentBase = program.getMemory().getBlocks()[0].getStart().getOffset();
+			if (baseResult.inferredBase != currentBase
+					&& baseResult.confidence > 0.15
+					&& (baseResult.targetsInRange >= 3 || baseResult.confidence >= 0.90)) {
 				String baseMsg = String.format("ROM BASE ADDRESS: %s (confidence: %.0f%%)",
 					baseResult.description, baseResult.confidence * 100);
 				Msg.warn(this, baseMsg);
 				log.appendMsg("Heuristic Code Finder: " + baseMsg);
+
+				// Relocate memory block to inferred base address
+				if (baseResult.confidence >= 0.50
+						&& (baseResult.targetsInRange >= 5 || baseResult.confidence >= 0.90)) {
+					try {
+						ghidra.program.model.mem.MemoryBlock block =
+							program.getMemory().getBlocks()[0];
+						Address newBase = program.getAddressFactory()
+							.getDefaultAddressSpace().getAddress(baseResult.inferredBase);
+						program.getMemory().moveBlock(block, newBase, monitor);
+						String relocMsg = String.format(
+							"Relocated ROM from 0x%X to 0x%X (confidence %.0f%%, %d targets)",
+							currentBase, baseResult.inferredBase,
+							baseResult.confidence * 100, baseResult.targetsInRange);
+						Msg.info(this, relocMsg);
+						log.appendMsg("Heuristic Code Finder: " + relocMsg);
+					} catch (Exception e) {
+						Msg.warn(this, "Failed to relocate ROM: " + e.getMessage());
+					}
+				}
 			} else {
 				Msg.info(this, "Base address check: " + baseResult.description);
 			}

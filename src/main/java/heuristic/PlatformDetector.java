@@ -955,6 +955,41 @@ public class PlatformDetector {
 			}
 		}
 
+		// --- x86 BIOS reset vector heuristic ---
+		// x86 CPUs start execution at FFFF:0000 (physical 0xFFFF0 for 8086/286,
+		// 0xFFFFFFF0 for 386+). If ROM is loaded at 0x0, we can check the reset
+		// vector location (romSize - 16) for a JMP instruction. If found, the ROM
+		// maps to (top_of_space - romSize).
+		String processor = program.getLanguage().getProcessor().toString();
+		boolean isX86 = processor.contains("x86") || processor.contains("8086") ||
+			processor.contains("8088") || processor.contains("80186") ||
+			processor.contains("80286") || processor.contains("80386");
+		if (isX86 && currentBase == 0 && romSize >= 1024) {
+			long top;
+			if (processor.contains("80386") || processor.contains("80486")) {
+				top = 0x100000000L;
+			} else if (processor.contains("80286")) {
+				top = 0x01000000L;
+			} else {
+				top = 0x00100000L; // 1MB for 8086/8088/80186
+			}
+			long x86Base = top - romSize;
+			// Check if byte at (romSize - 16) is a JMP (0xEA = far jump, 0xE9 = near jump)
+			try {
+				Address resetAddr = blocks[0].getStart().add(romSize - 16);
+				byte resetByte = memory.getByte(resetAddr);
+				int opcode = resetByte & 0xFF;
+				if (opcode == 0xEA || opcode == 0xE9 || opcode == 0xEB) {
+					// Valid x86 JMP at reset vector location — high confidence
+					return new BaseAddressResult(x86Base, romSize, 1, 1, 0.95,
+						String.format("x86 BIOS: reset vector at 0x%X has JMP (0x%02X), ROM belongs at 0x%X",
+							top - 16, opcode, x86Base));
+				}
+			} catch (Exception e) {
+				// ignore
+			}
+		}
+
 		if (targets.isEmpty()) {
 			return new BaseAddressResult(currentBase, romSize, 0, 0, 0,
 				"No absolute address references found");
@@ -982,7 +1017,6 @@ public class PlatformDetector {
 		}
 
 		// Also try common base addresses for well-known architectures
-		String processor = program.getLanguage().getProcessor().toString();
 		long[] commonBases = getCommonBases(processor, romSize, addrSpaceMax);
 		for (long base : commonBases) {
 			if (!baseCounts.containsKey(base)) {
@@ -1080,6 +1114,23 @@ public class PlatformDetector {
 		} else if (processor.contains("WE32100") || processor.contains("WE32")) {
 			// WE32100: ROM always at $00000000 (reset reads PCBP from $80)
 			return new long[]{ 0x00000000L };
+		} else if (processor.contains("x86") || processor.contains("8086") ||
+				   processor.contains("8088") || processor.contains("80186") ||
+				   processor.contains("80286") || processor.contains("80386")) {
+			// x86 BIOSes map to top of address space (reset at FFFF:0000)
+			// For 16-bit real mode (8086/8088/80186): top of 1MB
+			// Compute candidate bases: (address_space - romSize) aligned to romSize
+			long top;
+			if (processor.contains("80386") || processor.contains("80486")) {
+				top = 0x100000000L; // 4GB
+			} else if (processor.contains("80286")) {
+				top = 0x01000000L; // 16MB
+			} else {
+				top = 0x00100000L; // 1MB
+			}
+			long base = top - romSize;
+			// Also try common BIOS locations
+			return new long[]{ base, 0xF0000L, 0xFC000L, 0xFE000L, 0xFF000L, 0xF8000L };
 		}
 		return new long[]{};
 	}
