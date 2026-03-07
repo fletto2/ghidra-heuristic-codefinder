@@ -6,7 +6,8 @@ functionality will continue to be added. Machine-specific heuristics
 
 Cross-architecture heuristic code/data block identification for Ghidra. Finds
 code in flat ROMs and headerless binaries using P-code analysis — works on any
-SLEIGH-supported ISA without per-architecture configuration.
+SLEIGH-supported ISA without per-architecture configuration. Tested across
+68000, Z80, 6502, ARM, MIPS, PowerPC, SH-2, and WE32100 ROMs.
 
 ## What it does
 
@@ -48,8 +49,13 @@ When analyzing a ROM, the extension automatically:
    match fails, it splits the binary into even/odd bytes (16-bit interleave),
    4-way byte split (32-bit interleave), or word-pair split (32-bit word
    interleave) and checks each piece. A SHA1 match instantly provides CPU
-   type, machine name, manufacturer, and ROM region — bypassing heuristic
-   platform detection entirely.
+   type, machine name, manufacturer, and ROM region — and loads the
+   corresponding MAME platform XML as ground truth for memory map, vectors,
+   and hardware registers.
+
+5. **Detects compressed/encrypted ROMs** — If code coverage is extremely low
+   (< 1%, < 100 instructions in a ≥ 64KB ROM), warns that the ROM may be
+   compressed, encrypted, or require decompression before analysis.
 
 ### 10-pass pipeline
 
@@ -62,7 +68,7 @@ When analyzing a ROM, the extension automatically:
 7. **Gap filling** — Close small gaps between adjacent code blocks
 8. **Overlap resolution** — Ghidra's Listing handles this implicitly
 9. **Confidence assignment** — Tag blocks by discovery method (100=vector, 99=call, ..., 78=boundary)
-10. **Function classification** — 280 rule-based detectors + 274 feature-vector signatures classify functions by algorithmic purpose (memcpy, checksum, decompression, sprite renderer, I2C, FFT, FAT, TCP, MIDI, HMAC, pathfinding, etc.) and label hardware register accesses
+10. **Function classification** — 280 rule-based detectors + 274 feature-vector signatures classify functions by algorithmic purpose (memcpy, checksum, decompression, sprite renderer, I2C, FFT, FAT, TCP, MIDI, HMAC, pathfinding, etc.) and label hardware register accesses. Game-specific detectors (sprite, tile, particle, animation, collision, physics, pathfinding, score, etc.) only run when the ROM is confirmed as a game console or arcade board — preventing false positives on workstation/server boot ROMs
 
 ### Heuristic tiers
 

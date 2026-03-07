@@ -862,14 +862,41 @@ Passes 2-4 iterate until no new blocks are discovered (fixed-point).
 After code/data identification (Passes 1-9), Pass 10 classifies discovered functions
 by their algorithmic purpose using P-code operation distribution analysis.
 
-### Two-phase classification
+### ROM domain classification
 
-1. **Phase 1 — Rule-based detectors** (280 detectors): Each detector examines the
+Before running detectors, the ROM is classified into a domain based on SHA1
+identification or platform heuristics:
+
+| Domain | Description | Example ROMs |
+|--------|-------------|-------------|
+| `GAME_CONSOLE` | Home console cartridge/BIOS | Genesis, SNES, GBA, Casio Loopy, Jaguar |
+| `ARCADE` | Arcade board ROM | CPS1, Neo Geo, Taito |
+| `COMPUTER_BOOT` | Workstation/server boot ROM | NeXT, SGI O2, iMac G3, Sony NEWS, MVME162 |
+| `TYPESETTER` | Typesetter/RIP firmware | AGFA 9000PS |
+| `INDUSTRIAL` | Industrial controller | Gilbarco PAM 1000, FPS-3000 |
+| `NETWORK_DEVICE` | Network equipment | Routers, bridges |
+| `AUDIO_DEVICE` | Sound processor ROM | YM, SPC audio CPUs |
+| `GENERIC` | Unknown — conservative rules only | Unidentified ROMs |
+
+The domain gates which detectors run: game-specific detectors (sprite renderer,
+tile decoder, particle system, animation update, collision, physics, pathfinding,
+score update, etc.) **only fire for GAME_CONSOLE or ARCADE domains**. This
+prevents hundreds of false positives on workstation and server boot ROMs.
+
+### Three-phase classification
+
+1. **Phase 0 — P-code vector database** (primary, 1086 signatures): TF-IDF
+   weighted cosine similarity on P-code bigram/trigram n-grams against a reference
+   database of known functions. Filtered by ROM domain.
+
+2. **Phase 1 — Rule-based detectors** (280 detectors): Each detector examines the
    P-code operation profile (op-class proportions, structural features, constant
    analysis, IO region tracking) and returns a classification with confidence score
-   when specific thresholds are met. Minimum 20 P-code ops per function.
+   when specific thresholds are met. Minimum 20 P-code ops per function. Only runs
+   as fallback when the vector database finds nothing. ~60 game-specific detectors
+   are gated on GAME_CONSOLE/ARCADE domain.
 
-2. **Phase 2 — Feature-vector similarity** (274 reference signatures): Functions that
+3. **Phase 2 — Feature-vector similarity** (274 reference signatures): Functions that
    don't match any rule are compared against 25-dimensional reference fingerprints
    (10 op-class proportions + 5 structural features + 10 discriminative bigrams)
    using cosine similarity with threshold 0.80.
