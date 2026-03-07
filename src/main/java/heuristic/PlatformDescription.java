@@ -97,12 +97,17 @@ public class PlatformDescription {
 	 * Must be in ROM or RAM (executable), not I/O.
 	 */
 	public boolean isValidCodeAddress(long addr) {
+		if (memoryMap.isEmpty()) return true;
+		// Check if address falls in any rom or ram region.
+		// Must check ALL regions because catch-all io regions (0x0-0xFFFFFFFF)
+		// may overlap with specific rom/ram regions.
 		for (MemoryRegion region : memoryMap) {
-			if (addr >= region.start && addr <= region.end) {
-				return "rom".equals(region.type) || "ram".equals(region.type);
+			if (addr >= region.start && addr <= region.end &&
+				("rom".equals(region.type) || "ram".equals(region.type))) {
+				return true;
 			}
 		}
-		return memoryMap.isEmpty(); // if no map, assume valid
+		return false;
 	}
 
 	/**

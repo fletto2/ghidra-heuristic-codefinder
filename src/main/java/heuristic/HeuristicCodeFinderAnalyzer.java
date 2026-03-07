@@ -174,6 +174,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		// ============================================================
 		monitor.setMessage("Heuristic Pass 1: Vector table entry points");
 		List<Long> vectorAddrs = platform.readVectorEntries(program);
+		int vectorSeeds = 0;
 		for (Long addr : vectorAddrs) {
 			monitor.checkCancelled();
 			Address entryAddr = defaultSpace.getAddress(addr);
@@ -182,9 +183,11 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				entryPoints.add(entryAddr);
 				functionEntries.add(entryAddr);
 				confidence.put(entryAddr, CONF_VECTOR);
+				vectorSeeds++;
 			}
 		}
-		Msg.info(this, "Pass 1: " + vectorAddrs.size() + " vector entry points");
+		Msg.info(this, "Pass 1: " + vectorAddrs.size() + " vector entry points" +
+			" (" + vectorSeeds + " new seeds, " + (vectorAddrs.size() - vectorSeeds) + " already disassembled)");
 
 		// ============================================================
 		// Pass 2: Forward trace from seeds (H01-H05, H07, H08, H21, H23)
@@ -195,7 +198,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 
 		for (Address seed : new ArrayList<>(entryPoints)) {
 			monitor.checkCancelled();
-			AddressSet traced = traceForward(program, pseudo, seed, newTargets, monitor);
+			AddressSet traced = traceForward(program, pseudo, seed, newTargets, monitor, true);
 			if (traced != null && !traced.isEmpty()) {
 				pass2Found += disassembleSet(program, traced, monitor);
 			}
@@ -221,7 +224,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				if (listing.getInstructionAt(target) != null) continue;
 				if (!memory.contains(target)) continue;
 
-				AddressSet traced = traceForward(program, pseudo, target, nextTargets, monitor);
+				AddressSet traced = traceForward(program, pseudo, target, nextTargets, monitor, true);
 				if (traced != null && !traced.isEmpty()) {
 					pass3Round += disassembleSet(program, traced, monitor);
 				}
@@ -339,6 +342,11 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 	 */
 	private AddressSet traceForward(Program program, PseudoDisassembler pseudo,
 			Address seed, Set<Address> newTargets, TaskMonitor monitor) {
+		return traceForward(program, pseudo, seed, newTargets, monitor, false);
+	}
+
+	private AddressSet traceForward(Program program, PseudoDisassembler pseudo,
+			Address seed, Set<Address> newTargets, TaskMonitor monitor, boolean trusted) {
 
 		Memory memory = program.getMemory();
 		Listing listing = program.getListing();
@@ -411,21 +419,21 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 
 		if (block.isEmpty()) return null;
 
-		// Apply data filters
-		if (totalBytes < minBlockSize) return null; // Too small
+		// Apply data filters (relaxed for trusted seeds from vectors/references)
+		if (!trusted && totalBytes < minBlockSize) return null;
 
-		// H23: Valid decode ratio
+		// H23: Valid decode ratio (always apply)
 		if (totalBytes > 0 && (double) validBytes / totalBytes < validRatioMin) return null;
 
-		// H07: Data run detection
+		// H07: Data run detection (always apply — repeated identical bytes)
 		if (hasDataRuns(blockBytes, blockByteLen)) return null;
 
-		// H21: Byte density check
-		if (hasHighNullDensity(blockBytes, blockByteLen)) return null;
+		// H21: Byte density check (skip for trusted seeds)
+		if (!trusted && hasHighNullDensity(blockBytes, blockByteLen)) return null;
 
-		// H08: Byte entropy filtering
+		// H08: Byte entropy filtering (skip for trusted seeds and small blocks)
 		double entropy = byteEntropy(blockBytes, blockByteLen);
-		if (blockByteLen >= 16 && (entropy < entropyLo || entropy > entropyHi)) return null;
+		if (!trusted && blockByteLen >= 64 && (entropy < entropyLo || entropy > entropyHi)) return null;
 
 		// H16: P-code class entropy
 		PcodeOp[] pcodeArray = allPcode.toArray(new PcodeOp[0]);
