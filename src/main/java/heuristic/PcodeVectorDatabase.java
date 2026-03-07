@@ -1028,21 +1028,10 @@ public class PcodeVectorDatabase {
 			machine.contains("mastersystem") || machine.contains("sms") ||
 			machine.contains("sg1000") || machine.contains("sc3000") ||
 			machine.contains("segacd") || machine.contains("mega_cd") ||
-			machine.contains("32x")) {
+			machine.contains("32x") ||
+			machine.contains("vsmile") || machine.contains("vsmilem") ||
+			machine.contains("vsmilpro") || machine.contains("vtech_storio")) {
 			return RomDomain.GAME_CONSOLE;
-		}
-
-		// Manufacturer-based (game/arcade companies — if machine name
-		// wasn't caught above as a known console, default to ARCADE)
-		if (mfr.contains("sega") || mfr.contains("nintendo") || mfr.contains("snk") ||
-			mfr.contains("konami") || mfr.contains("capcom") || mfr.contains("namco") ||
-			mfr.contains("taito") || mfr.contains("atari") || mfr.contains("midway") ||
-			mfr.contains("irem") || mfr.contains("toaplan") || mfr.contains("cave") ||
-			mfr.contains("hudson") || mfr.contains("nec") || mfr.contains("bandai") ||
-			mfr.contains("casio") || mfr.contains("mattel") || mfr.contains("coleco") ||
-			mfr.contains("jaleco") || mfr.contains("tecmo") || mfr.contains("data east") ||
-			mfr.contains("eighting") || mfr.contains("treasure") || mfr.contains("compile")) {
-			return RomDomain.ARCADE;
 		}
 
 		// Apollo workstations (DN/DSP series)
@@ -1051,7 +1040,8 @@ public class PcodeVectorDatabase {
 			return RomDomain.COMPUTER_BOOT;
 		}
 
-		// Computer boot ROMs
+		// Computer boot ROMs (must come before manufacturer-based arcade check,
+		// since NEC/Atari/Casio etc. make both arcade boards and home computers)
 		if (machine.contains("mac") || machine.contains("lisa") ||
 			machine.contains("sun") || machine.contains("imac") ||
 			machine.contains("hp9000") || machine.contains("hp16") ||
@@ -1065,10 +1055,51 @@ public class PcodeVectorDatabase {
 			machine.contains("alpha") || machine.contains("vaxstation") ||
 			machine.startsWith("pm") || machine.contains("indigo") ||
 			machine.contains("indy") || machine.contains("octane") ||
+			machine.startsWith("pc6") || machine.startsWith("pc8") ||
+			machine.startsWith("pc9") || machine.startsWith("pc88") ||
+			machine.startsWith("pc98") || machine.startsWith("pc100") ||
+			machine.startsWith("elwro") || machine.startsWith("svi") ||
+			machine.startsWith("cpc") || machine.startsWith("zx") ||
+			machine.startsWith("bbc") || machine.startsWith("electron") ||
+			machine.startsWith("atom") || machine.startsWith("dragon") ||
+			machine.startsWith("coco") || machine.startsWith("trs80") ||
+			machine.startsWith("ti99") || machine.startsWith("apple") ||
+			machine.startsWith("vic") || machine.startsWith("cbm") ||
+			machine.startsWith("pet") || machine.startsWith("plus4") ||
+			machine.startsWith("x1") || machine.startsWith("x68") ||
+			machine.startsWith("fm7") || machine.startsWith("fm77") ||
+			machine.startsWith("mz") || machine.startsWith("sharp") ||
+			machine.startsWith("oric") || machine.startsWith("samcoupe") ||
+			machine.startsWith("tutor") || machine.startsWith("aquarius") ||
+			machine.startsWith("einstein") || machine.startsWith("kaypro") ||
+			machine.startsWith("osborne") || machine.startsWith("adam") ||
+			machine.startsWith("ql") || machine.startsWith("psion") ||
+			machine.contains("gl2000") || machine.contains("gl3000") ||
+			machine.contains("gl4000") || machine.contains("gl5000") ||
+			machine.contains("genius") ||
 			region.contains("bootstrap") || region.contains("bios") ||
 			region.contains("monitor") || region.contains("firmware") ||
 			region.contains("prom") || region.contains("eprom")) {
 			return RomDomain.COMPUTER_BOOT;
+		}
+
+		// Audio/music devices
+		if (mfr.contains("korg") || mfr.contains("roland") || mfr.contains("yamaha") ||
+			mfr.contains("kurzweil") || mfr.contains("ensoniq") || mfr.contains("akai") ||
+			mfr.contains("e-mu") || mfr.contains("oberheim") || mfr.contains("sequential") ||
+			machine.contains("synth") || machine.contains("wavestation") ||
+			machine.contains("dx7") || machine.contains("d50") || machine.contains("jv") ||
+			machine.contains("triton") || machine.contains("motif")) {
+			return RomDomain.AUDIO_DEVICE;
+		}
+
+		// Office equipment (typewriters, printers, word processors)
+		if (mfr.contains("brother") || mfr.contains("canon") || mfr.contains("epson") ||
+			mfr.contains("olivetti") || mfr.contains("smith corona") ||
+			(machine.startsWith("lw") && machine.length() <= 6) ||
+			machine.contains("dreamwrit") || machine.contains("wordproc") ||
+			machine.contains("typewr")) {
+			return RomDomain.GENERIC;
 		}
 
 		// Typesetter/printing
@@ -1076,6 +1107,19 @@ public class PcodeVectorDatabase {
 			mfr.contains("linotype") || mfr.contains("xerox") ||
 			machine.contains("rip") || machine.contains("postscript")) {
 			return RomDomain.TYPESETTER;
+		}
+
+		// Manufacturer-based (game/arcade companies — if machine name
+		// wasn't caught above as a known console/computer, default to ARCADE)
+		if (mfr.contains("sega") || mfr.contains("nintendo") || mfr.contains("snk") ||
+			mfr.contains("konami") || mfr.contains("capcom") || mfr.contains("namco") ||
+			mfr.contains("taito") || mfr.contains("atari") || mfr.contains("midway") ||
+			mfr.contains("irem") || mfr.contains("toaplan") || mfr.contains("cave") ||
+			mfr.contains("hudson") || mfr.contains("nec") || mfr.contains("bandai") ||
+			mfr.contains("casio") || mfr.contains("mattel") || mfr.contains("coleco") ||
+			mfr.contains("jaleco") || mfr.contains("tecmo") || mfr.contains("data east") ||
+			mfr.contains("eighting") || mfr.contains("treasure") || mfr.contains("compile")) {
+			return RomDomain.ARCADE;
 		}
 
 		// Network
@@ -1093,16 +1137,19 @@ public class PcodeVectorDatabase {
 			return RomDomain.INDUSTRIAL;
 		}
 
-		// CPU-based fallback
-		if (cpu.contains("z80") || cpu.contains("6502") || cpu.contains("65c816")) {
-			// These CPUs are mostly used in games/consoles
-			return RomDomain.GAME_CONSOLE;
-		}
-		if (cpu.contains("68000") || cpu.contains("68k") || cpu.contains("m68")) {
-			// 68000 is used everywhere — can't determine domain from CPU alone
+		// Terminals/serial devices
+		if (machine.contains("wy") && machine.length() <= 8 ||
+			machine.contains("vt100") || machine.contains("vt220") ||
+			machine.contains("vt320") || machine.contains("vt52") ||
+			mfr.contains("wyse") || mfr.contains("lear siegler") ||
+			mfr.contains("televideo") || mfr.contains("hazeltine") ||
+			machine.contains("terminal") || machine.contains("freedom")) {
 			return RomDomain.GENERIC;
 		}
 
+		// CPU-based fallback — only when no other category matched.
+		// Z80/6502 are used in both games and computers, so this is
+		// just a weak heuristic for truly unknown ROMs.
 		return RomDomain.GENERIC;
 	}
 
@@ -1116,12 +1163,9 @@ public class PcodeVectorDatabase {
 		String cpu = cpuName.toLowerCase();
 
 		if (cpu.contains("we32100")) return RomDomain.COMPUTER_BOOT;
-		if (cpu.contains("6502") && !cpu.contains("65c816")) return RomDomain.GAME_CONSOLE;
-		if (cpu.contains("65c816") || cpu.contains("65816")) return RomDomain.GAME_CONSOLE;
-		if (cpu.contains("z80")) return RomDomain.GAME_CONSOLE;
 		if (cpu.contains("sh1") || cpu.contains("sh2")) return RomDomain.GAME_CONSOLE;
 
-		// Check platform for hints
+		// Check platform for hints (more specific than CPU alone)
 		if (platform != null) {
 			String platName = platform.getPlatformName() != null ? platform.getPlatformName().toLowerCase() : "";
 			if (platName.contains("genesis") || platName.contains("nes") ||
@@ -1135,6 +1179,8 @@ public class PcodeVectorDatabase {
 			}
 		}
 
+		// Z80 and 6502 are used in games AND computers/terminals/peripherals.
+		// Without a ROM ID match or platform hint, we can't tell — use GENERIC.
 		return RomDomain.GENERIC;
 	}
 
