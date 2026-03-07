@@ -17,4 +17,23 @@
     <region start="0x00008800" end="0x00009FFF" type="ram" name="ram"/>
     <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Tutankham
+driver by Mirko Buffoni
+based on original work by Rob Jarrett
+I include here the document based on Rob Jarrett's research because it's
+really exhaustive.
+Sound board: uses the same board as Pooyan.
+Note:
+The sound board uses a 14.318 MHz xtal.
+The cpu/video board uses a 18.432 MHz xtal.
+Todo:
+Discrete filters
+Starfield
+Custom Chip 084 (Starfield generation)
+----------------------
+NE555 1Hz      | 10              24 | VCC
+|                    |
+|                    |
+18Mhz      401 | 1 ... -->
 </platform>

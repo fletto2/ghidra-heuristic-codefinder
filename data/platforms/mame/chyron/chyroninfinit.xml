@@ -31,4 +31,22 @@
     <region start="0xFFFC0000" end="0xFFFC7FFF" type="io" name="read"/>
     <region start="0xFFFFF000" end="0xFFFFFFFF" type="ram" name="ipram"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Chyron iNFiNiT! / MAX!&gt; / MAXINE! Broadcast Character Generator
+The Chyron iNFiNiT! is a broadcast television character generator (CG)
+used for on-air graphics in TV production. It generates graphics fill
+and key signals for downstream keying into program video.
+Hardware:
+- MVME162-513A VME single-board computer
+- MC68040 @ 25 MHz (with FPU, IP2 ASIC variant)
+- 8 MB DRAM, 128 KB battery-backed SRAM, 512 KB Flash
+- NCR 53C710 SCSI controller
+- Intel 82596 Ethernet
+- MK48T08 NVRAM/RTC
+- Transco... -->
 </platform>

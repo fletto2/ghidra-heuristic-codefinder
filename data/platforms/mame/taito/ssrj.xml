@@ -11,4 +11,27 @@
     <region start="0x0000F800" end="0x0000F800" type="unmapped" name="nop_write"/>
     <region start="0x0000FC00" end="0x0000FC00" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Super Speed Race Jr (c) 1985 Taito
+driver by  Tomasz Slanina
+TODO:
+- colors (missing proms)
+- dips
+- when a car sprite goes outside of the screen it gets stuck for a split frame on top of screen
+HW info :
+0000-7fff ROM
+c000-dfff VRAM ( 4 tilemaps (4 x $800) )
+e000-e7ff RAM
+e800-efff SCROLL RAM
+f003      ??
+f400-f401 AY 8910
+fc00      ??
+f800      ??
+Scroll RAM contains x and y offsets for each tileline,
+as well as other data (priorities ? additional flags ?)
+All moving objects (cars, etc) are di... -->
 </platform>

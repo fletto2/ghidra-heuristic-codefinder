@@ -17,4 +17,24 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Chang Yu Electronic (CYE) misc gambling games
+TODO:
+- hookup UM5100, merge from pc/filetto.cpp;
+- DIPs;
+- Both games have card GFXs, verify existance of a stealth mode for enabling them;
+- changyu: verify contents of the unsorted rom space;
+===================================================================================================
+unknown Chang Yu Electronic gambling game 1:
+main components:
+main PCB (FAN-21 sticker):
+1 x R6502P
+1 x 12 MHz XTAL
+3 x 8-dip banks
+1 x XILINK XC2064-33 (origi... -->
 </platform>

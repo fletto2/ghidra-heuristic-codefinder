@@ -4,4 +4,13 @@
     <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Electrocoin 'OXO' hardware type (Phoenix?)
+at least some of these are multiple part cabs, with both top and bottom units all linked together
+see the 'Top Box Roms' in some of the sets.
+This HW seems similar, but not identical to the Pyramid HW in ecoinf3.c -->
 </platform>

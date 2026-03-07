@@ -9,4 +9,16 @@
     <region start="0x0008A000" end="0x0008A003" type="io" name="host_scsi_r"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- The Alphatronic PC 16 was modeled after the earlier 8 bit Alphatronic PC – on the outside
+a typical "breadbox" home computer case with an integrated keyboard and external floppy disk drives.
+Coming from a typewriter company, it had ambitions for office use - its high price and mismatched
+intended use and design coupled with its release date gave it little success. It was released
+in the early phase of DOS computers, when IBM’s standard was not yet set into stone, but would
+vanquish all "incompat... -->
 </platform>

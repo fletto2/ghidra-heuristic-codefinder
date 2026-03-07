@@ -13,4 +13,14 @@
     <region start="0x00007000" end="0x000073FF" type="io" name="palette"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <!-- Speed Rumbler
+86610-A-1 + 86610-B-1 PCBs
+Driver provided by Paul Leaman
+M6809 for game, Z80 and YM-2203 for sound.
+TODO:
+- Verify screen refresh rate, it's assumed to be similar to lastduel.cpp
+(although the PCB only has a 16MHz XTAL). Start a game (wait for credit
+sound to finish), and at the intro, the music theme should change at
+the same time Zapper's love letter is shown. -->
 </platform>

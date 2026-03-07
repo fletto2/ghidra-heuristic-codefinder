@@ -7,4 +7,20 @@
     <region start="0x00003000" end="0x000031FF" type="ram" name="tilemap"/>
     <region start="0x00008002" end="0x00008004" type="io" name="ball_x_w"/>
   </memory_map>
+
+  <!-- "Monkey Magic" © 1979 Nintendo
+Dumping info provided by Andrew Welburn:
+TZF-MP  - Main Board
+TZF-SOU - Sound Board
+#   device  Label   PCB     filename
+-------------------------------------------
+4   i2708   1AI*    2A      1AI.2A
+5   i2708   2AI*    3A      2AI.3A
+6   i2708   3AI*    4A      3AI.4A
+7   i2708   4AI*    4/5A    4AI.45A
+8   i2708   5AI*    5A      5AI.5A
+22  H7641   6H      6HI     6H.6HI
+23  ?? **   7H      7HI     7H.7HI
+24  H7641   6J      6JK     6J.6JK
+25  H7641   6H***   7JK... -->
 </platform>

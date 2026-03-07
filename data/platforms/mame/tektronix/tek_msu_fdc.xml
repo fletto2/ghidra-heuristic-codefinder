@@ -13,4 +13,13 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Tektronix 4404 Mass Storage Unit
+The MSU contains a 5 1/4" floppy drive, a 40MB hard disk and controllers
+which implement the SASI protocol to communicate with the host system. This
+device emulates the floppy disk portion, which consists of a 6502 CPU, EPROM,
+RAM and a μPD765-compatible floppy drive controller chip. SASI signals are
+directly controlled by the CPU using discrete logic.
+Sources:
+- 4404 Artificial Intelligence System, Component-Level Service Manual, Part No. 070-5610-01, Product Gr... -->
 </platform>

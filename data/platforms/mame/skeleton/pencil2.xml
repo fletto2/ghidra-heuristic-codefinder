@@ -7,4 +7,25 @@
     <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="region_8000"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Hanimex Pencil II
+Manufactured by Soundic, Hong Kong.
+2012-11-06 [Robbbert]
+Computer kindly donated for MAME by Ian Farquhar.
+Accessories:
+- PEN-216 : 16k RAM expansion
+- PEN-264 : 64k RAM expansion
+- PEN-511 : Data Cassette Recorder
+- ???     : Printer
+- ???     : Floppy Disk Drive (5.25)
+- ???     : Floppy Disk Controller
+- ???     : RS-232C Serial Interface
+- ???     : Coleco Adapter*
+- PEN-8xx : Various software on Cassette or Floppy Disk
+- ???     : Game Controller (joystick and 14 buttons)... -->
 </platform>

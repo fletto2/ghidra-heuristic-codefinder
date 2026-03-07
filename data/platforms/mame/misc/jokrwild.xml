@@ -12,4 +12,23 @@
     <region start="0x00006300" end="0x00006300" type="io" name="port"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- JOKER'S WILD - SIGMA (1988)
+Preliminary driver by Roberto Fresca.
+Hardware Notes (guessed):
+------------------------
+CPU:    1x M6809
+Video:  1x M6845 CRTC or similar.
+I/O:    2x PIAs ?? (there is code to initialize PIAs at $8033)
+Game Notes ***
+RND old notes:
+Game is trying to boot, and after approx. 90 seconds an error message appear
+on screen: "Random number generator is defective", then stuck here.
+See code at $9859
+Currently the game spit an error about bad RAM, and after approx 90 seconds
+... -->
 </platform>

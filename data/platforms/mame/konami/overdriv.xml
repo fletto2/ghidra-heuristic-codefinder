@@ -64,4 +64,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Over Drive (GX789) (c) 1990 Konami
+driver by Nicola Salmoria
+Notes:
+- irq source for main CPU aren't understood, needs HW tests.
+- Missing road (two unemulated K053250)
+- Visible area and relative placement of sprites and tiles is most likely wrong.
+- Test mode doesn't work well with 3 IRQ5 per frame, the ROM check doesn't work
+and the coin A setting isn't shown. It's OK with 1 IRQ5 per frame.
+- The "Continue?" sprites are not visible until you press start
+- priorities
+The issues below are both ... -->
 </platform>

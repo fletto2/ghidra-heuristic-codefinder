@@ -13,4 +13,19 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Le Pendu.
+Avenir Amusement Inc.
+Very rare French/English bilingual hangman style game.
+Sequel of "Le Super Pendu", with better graphics among other things...
+Runs in a heavily modified Bonanza Enterprises hardware.
+Driver by Roberto Fresca &amp; Grull Osgo.
+Games supported:
+Le Pendu (Bilingue, Version 04),                198?, Avenir Amusement Inc.
+Code Magik (Ver 5.5) / Super 7 (stealth game),  198?, Voyageur de L'Espace Inc.
+The "mini-boy" poker games made by Bonanza Enterprises were very popu... -->
 </platform>

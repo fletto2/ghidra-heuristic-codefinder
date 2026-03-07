@@ -21,4 +21,22 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <!-- Irem M119 PCB
+Main components:
+on main PCB:
+HD6417708S (SH3)
+2x 62265 RAM (for the CPU)
+UPD65840GJ CMOS-8L ASIC
+YMZ280BB-F
+2x PLD's
+4-dip bank
+on sub PCB:
+UPD94244-210 VDP
+2x 62256 RAM (for the VDP)
+Clocks:
+UPD65840 - 15 MHz
+UPD94244 - 26.6666 MHz
+SH2 - ?? MHz
+SG3032 XTAL (32.768 kHz) for the SH3 RTC -->
 </platform>

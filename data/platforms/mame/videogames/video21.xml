@@ -5,4 +5,16 @@
     <region start="0x0000E000" end="0x0000E3FF" type="ram" name="ram"/>
     <region start="0x0000FF00" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <!-- Video 21 blackjack game
+VIDEO-GAMES - LICH/GERMANY 1017a
+NEC D8080AFC (i8080), 20.79MHz xtal, bank of 7 dips. 10x 4-bit proms, type F93453 (=82S137)
+Video Ram = 7 x 2102 (bit 7 omitted). Main Ram = 2x MCM145101 (=M5101L).
+The game has sound (there's a LM380N visible), looks like there's a bunch of TTL chips
+involved, and a 555.
+TODO:
+- improve sound, it's definitely beeper pitch control, but sounds off-tune
+- identify all dips (7 total)
+- confirm CPU clock
+When booted, press Key out (mapped to W... -->
 </platform>

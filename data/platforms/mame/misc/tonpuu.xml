@@ -7,4 +7,21 @@
     <region start="0x00001000" end="0x000011FF" type="io" name="blit_rom_w"/>
     <region start="0x00002000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <!-- Sanma - San-nin Uchi Mahjong (Japan) by ANES
+Ton Puu Mahjong (Japan) by ANES
+TODO:
+- refine blitter emulation;
+- flip screen;
+- player 2 inputs;
+- verify sanma dips translations;
+- 1x Z0840008PSC Z80 CPU
+- 1x 16.000 XTAL near the Z80
+- 1x YM2413 sound chip
+- 1x 3.579545 XTAL near the YM2413
+- 1x Xilinx XC7354 CPLD
+- 1x 17128EPC configuration bitstream for the Xilinx
+- 2x ISSI IS61C64AH 8k x8 SRAM
+- 1x HM6265LK-70
+- 1x unknown 160 pin device labeled "ANES ORIGINAL SEAL NO. A199." for tonpuu, "ANE... -->
 </platform>

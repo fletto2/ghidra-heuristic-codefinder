@@ -16,4 +16,24 @@
     <region start="0x0000F700" end="0x0000F701" type="io" name="usart_8251_r"/>
     <region start="0x0000F800" end="0x0000F803" type="io" name="copro_sm7831_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- LUCKY 74 - WING CO.,LTD.
+------------------------
+Driver by Roberto Fresca.
+Games running on this hardware:
+Lucky 74 (bootleg, set 1), 1988, Wing Co.,Ltd.
+Lucky 74 (bootleg, set 2), 1988, Wing Co.,Ltd.
+Lucky 74 (bootleg, set 3), 1988, Wing Co.,Ltd.
+Exciting Black Jack,       1989, Sega.
+Special thanks to Grull Osgo that helped a lot with the whole audio system and custom IC's
+reverse-engineering, and Tomasz Slanina that found how NMI interrupts are triggered.
+Hardware Notes:
+---------------
+CPU:... -->
 </platform>

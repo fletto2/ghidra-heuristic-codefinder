@@ -18,4 +18,12 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Mephisto Polgar
+Hardware notes:
+- RP65C02G @ 4.91MHz
+- 64KB ROM (25% unused)
+- Mephisto modular display module
+- Mephisto modular chessboard
+The 10MHz version has a W65C02P-8 @ 9.83MHz. -->
 </platform>

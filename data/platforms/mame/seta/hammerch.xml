@@ -6,4 +6,27 @@
     <region start="0x00200000" end="0x0020FFFF" type="ram" name="sharedram"/>
     <region start="0x00A00000" end="0x00A07FFF" type="io" name="read"/>
   </memory_map>
+
+  <!-- Hammer Champ
+Namco 1997
+https://www.youtube.com/watch?v=gs1pAe5S0gY
+main board:
+NAMCO EVA PCB 8826960100 - P0-135B
+with
+- TMP68301AF-16 (main)
+- 3x NEC DX-102
+- Hitachi H8/3002 (sound)
+- Namco C352
+- Namco C416
+- MACH111 PLD (KC026)
+- 2x banks of 8 DIP switches
+- 50 MHz XTAL
+- 26.670 MHz XTAL (possibly for the video chips)
+I/O board:
+NAMCO M136 I/O PCB - hi-pric P41 B - 1423961101 (1423971101)
+with
+- Motorola MC68HC11K1
+- Fuji MB8422 DPRAM
+- 8 MHz XTAL
+On real hardware, the game runs without IO ... -->
 </platform>

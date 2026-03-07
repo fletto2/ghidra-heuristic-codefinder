@@ -14,4 +14,15 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- http://www.sprow.co.uk/bbc/minib.htm
+The board comes with the following features:
+- 6502A processor, at 2MHz (slowed to 1MHz during i/o accesses)
+- 6522 versatile interface adapter for timers and interruptible latched i/o ports
+- Interface for a 20x4 LCD display
+- 32kbyte high speed SRAM
+- 128kbyte in circuit programmable flash ROM (16k for main operating system, 112k for other ROM based applications)
+- PS/2 keyboard interface
+- Real time clock (year 2000 compliant), on a shared I²C bus
+- Full i... -->
 </platform>

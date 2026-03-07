@@ -5,4 +5,27 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000A7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Toaplan Slap Fight hardware
+Driver by K.Wilkins Jan 1998
+Games supported:
+Alcon / Slap Fight
+Guardian / Get Star
+Performan
+Tiger-Heli
+TODO:
+- proper MCU emulation (see toaplan/slapfght_m.cpp)
+Main CPU Memory Map
+-------------------
+$0000-$3fff    ROM (SF_S19)
+$4000-$7fff    ROM (SF_S20)
+$8000-$bfff    ROM (SF_SH) - This is a 32K ROM - Paged ????? How ????
+$c000-$c7ff    2K RAM
+$c800-$cfff    READ:Unknown H/W  WRITE:Unknown H/W (Upper PCB)
+$d000-$d7ff    Background RAM1
+$d800-$dfff    Background ... -->
 </platform>

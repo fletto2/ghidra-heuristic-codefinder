@@ -12,4 +12,20 @@
     <region start="0x00100000" end="0x001FFFFF" type="ram" name="ram"/>
     <region start="0xFFFF0000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="8250"/>
+  </devices>
+
+  <!-- Tournament Solitaire (c) 1995 Dynamo
+Unmodified 486 PC-AT HW.
+Jet Way Information Co. OP495SLC motherboard
+- AMD Am486-DX40 CPU
+- Trident TVGA9000i video card
+- Breve Technologies audio adapter, WSS+Sound Blaster
+- CH Products RollerMouse serial trackball, Mouse Systems compatible
+preliminary driver by Angelo Salese
+Notes:
+Data from the 99378275.SN file on the rom filesystem is scrambled and written to DF80:0000-0100 then read back.
+If the output isn't satisfactory, it prints "I/O BOARD FAILURE"... -->
 </platform>

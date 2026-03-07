@@ -54,4 +54,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Cyberstorm hardware
+driver by Aaron Giles and Phil Bennett
+Games supported:
+Cyberstorm (prototype) (1993)
+Known bugs:
+STAIN effect not 100% correct
+Possible bugs:
+Tilemap offsets shifted by 1 pixel? -->
 </platform>

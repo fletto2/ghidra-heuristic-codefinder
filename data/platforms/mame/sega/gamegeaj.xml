@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x0000BFFF" type="io" name="cart"/>
     <region start="0x00000000" end="0x0000FFFF" type="io" name="0000"/>
   </memory_map>
+
+  <!-- Contributors:
+Marat Fayzullin (MG source)
+Charles MacDonald
+Mathis Rosenhauer
+Brad Oliver
+Michael Luong
+Wilbert Pol
+Fabio Priuli
+Enik Land
+To do:
+- SIO interface for Game Gear (needs netplay, I guess)
+- Support for other DE-9 compatible controllers, like the Mega Drive 6-Button
+that has homebrew software support
+- On sms1kr (without FM), verify if Rapid uses C-Sync and PSG can be muted like on smsj
+- Accurate GG vertical scaling in SMS mode (h-scaling seems right for subpixel rendering)
+- Softwa... -->
 </platform>

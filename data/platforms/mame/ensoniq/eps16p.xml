@@ -10,4 +10,20 @@
     <region start="0x00C00000" end="0x00C3FFFF" type="rom" name="rom"/>
     <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="osram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- esq5505.cpp - Ensoniq ES5505 + ES5510 based synthesizers and samplers
+Ensoniq VFX, VFX-SD, EPS, EPS-16 Plus, SD-1, SD-1 32, SQ-1 and SQ-R (SQ-1 Plus,
+SQ-2, and KS-32 are known to also be this architecture).
+The Taito sound system in taito_en.cpp is directly derived from the 32-voice version
+of the SD-1.
+Driver by R. Belmont and Parduz with thanks to Christian Brunschen, and Phil Bennett
+Memory map:
+0x000000-0x007fff   work RAM low (64k for SQ-1 and later)
+0x200000-0x20001f   OTIS (5505) regs
+0x2... -->
 </platform>

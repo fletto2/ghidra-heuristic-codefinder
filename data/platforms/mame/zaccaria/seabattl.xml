@@ -11,4 +11,21 @@
     <region start="0x00004000" end="0x00004BFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x00006BFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Sea Battle by Zaccaria
+driver by Mariusz Wojcieszek, hap, Phil Bennett and David Haywood
+TODO:
+- correct colors (note: the flyer screenshots look faked; not a good reference)
+- should it have a horizon/sky?
+- video timing
+- video offsets
+- discrete sound
+2650 + 2636
+sea b b_1 *.prg are 2650 progamm
+sea b blu.prg is obj blue data
+sea b red.prg is obj red data
+sea b green.prg is obj green data
+sea b wawe.prg is sea wave data
+sea b screen.prg is tile data
+the sound board should be fully discrete. -->
 </platform>

@@ -51,4 +51,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Kaneko EXPRO-02 board
+Used by the newer (or possibly older/original) revisions of Gals Panic
+also the basis of the various Comad clones
+Fantasia         1994 Comad
+Super Model      1994 Comad
+New Fantasia     1994 Comad
+New Fantasia     1995 Comad (set 2)
+Fantasy '95      1995 Hi-max Technology Inc. (Running on a Comad PCB)
+Miss World '96   1996 Comad
+Ms/Mr World '96  1996 Comad
+Fantasia II      1997 Comad
+Fantasia II      1998 Comad
+The following seem similar but could have other changes
+Pocket... -->
 </platform>

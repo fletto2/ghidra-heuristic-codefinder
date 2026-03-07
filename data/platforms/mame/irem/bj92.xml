@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Irem M78
+Black Jack (1992)
+Flyers show this game has a main screen and 5 user screens.
+Is this the main unit or the satellite one?
+TODO:
+- I/O section;
+- video registers;
+- Undumped sound ROMs. The sound program is almost identical to the one of irem/shisen.cpp games.
+Copied over sound handling from there for now;
+- comms;
+===================================================================================================
+2-PCB stack with IREM markings
+Main components:
+on main PCB:
+2x Z0840004PSC... -->
 </platform>

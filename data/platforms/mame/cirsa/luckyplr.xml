@@ -9,4 +9,17 @@
     <region start="0x00008800" end="0x00008907" type="io" name="memory_r"/>
     <region start="0x00009000" end="0x00009002" type="io" name="data_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for Cirsa "Mini Super Fruits" slot machines and clones.
+Known games on this hardware:
+________________________________________________________________________
+| Dumped | Game              | Manufacturer       | Notes              |
++--------+-------------------+--------------------+--------------------|
+| YES    | Mini Super Fruits | Cirsa              | Cirsa PCB 810601 A |
+| YES    | Lucky Player      | Cirsa              | Cirsa PCB 810702 A |
+| YES    | Miss Bamby        | Au... -->
 </platform>

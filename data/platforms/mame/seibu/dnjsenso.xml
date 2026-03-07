@@ -5,4 +5,28 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Banpresto Z80-based medal games with Seibu customs
+SCZ80 PCB
+Main components:
+- Z84C0006PEC main CPU
+- 12.000 MHz XTAL
+- 2x LH5168D-80L (near CPU)
+- 2x HM6116LK-90 (near a pair of GFX ROMs)
+- 2x bank of 8 switches
+- SEI0181 9149 ABDB custom
+- BP-SC001 TC110G26AF gate array
+- SEI0200 TC110G21AF gate array
+- HB-52 color DAC
+- 2x HM6116LK-90 (near the two gate arrays)
+- HM6116LK-90 (near other pair of GFX ROMs)
+- OKI M6295
+TODO:
+- hopper (stops the game from working)
+- sprites' priority
+- check vis... -->
 </platform>

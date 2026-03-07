@@ -6,4 +6,24 @@
     <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
     <region start="0x0000F000" end="0x0000FFFF" type="io" name="videoram_w"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="acia6850"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Osborne-1 driver file
+The Osborne-1 memory is divided into 3 "banks".
+Bank 1 simply consists of 64KB of RAM. The upper 4KB is used for the lower 8
+bit of video RAM entries.
+Bank 2 holds the BIOS ROM and I/O area. Only addresses 0000-3FFF are used
+by bank 2 (4000-FFFF mirrors bank 1). Bank 2 is divided as follows:
+3000-3FFF Nominally unused but acts as mirror of 2000-2FFF
+2C00-2C03 Video PIA
+2A00-2A01 Serial interface
+2900-2903 488 PIA
+2400-2400 SCREEN-PAC (if present)
+2201-2280 Keyboard
+2100-210... -->
 </platform>

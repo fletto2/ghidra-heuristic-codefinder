@@ -15,4 +15,18 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Bartop 5200 prototype system
+Driver by Mariusz Wojcieszek
+Based on Atari 400/800 MAME Driver by Juergen Buchmueller
+Hardware was based on Atari 5200 game console with additional coin and timer hardware.
+System was intented to run in barrooms and taverns. Software was based on Atari 5200
+Realsports cartridges.
+Barroom Baseball is modified version of Realsports Baseball.
+Coins and timer were handled by Bartop system bios. Since bios dump is not available,
+regular Atari 5200 bios is used and ... -->
 </platform>

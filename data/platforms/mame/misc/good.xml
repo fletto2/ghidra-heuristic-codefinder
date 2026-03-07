@@ -50,4 +50,27 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- 'Good' Driver by David Haywood
+todo: finish inputs etc.
++----------------------------+
+|    voice.rom  6116         |
+|      M6295    6116         |
+|J             HY6264        |
+|A             HY6264 grp-01 |
+|M DSW1 DSW2 A40MX04  grp-02 |
+|M                    grp-03 |
+|A IS61C256x2         grp-04 |
+| s1 s2                      |
+| 68000      16MHz 12MHz     |
++----------------------------+
+Motorola MC68000P8
+OKI M6295 (badged as AD-65)
+Actel A40MX04-F PL84
+Silk screened under the roms:
+syste... -->
 </platform>

@@ -6,4 +6,21 @@
     <region start="0x0000E000" end="0x0000E801" type="io" name="nvram_r"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- New Carrera, Version 2000.
+JT Amusement
+This is a stealth gambling machine disguised as a standard arcade game. Players initially interact
+with what appears to be a legitimate arcade game, until they enter a hidden password. Once activated,
+the game reveals its true nature: a fully functional video slots gambling game.
+The game's code resides in a PSD312-B (an MCU peripheral), while an AT90S8515 MCU handles:
+Screen rendering
+Symbol placement
+Reel animation
+Input processing
+Management of hardcode... -->
 </platform>

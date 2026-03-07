@@ -11,4 +11,13 @@
     <region start="0x00006800" end="0x000077FF" type="ram" name="ic3_ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="bank_r"/>
   </memory_map>
+
+  <!-- About MegaPlay:
+Megaplay games are specially designed Genesis games, produced for arcade use.
+The code of these games has significant modifications when compared to the Genesis
+releases and in many cases the games are cut-down versions of the games that were
+released for the home system.  For example, Sonic has less zones, and no special
+stages, thus making it impossible to get all the chaos emeralds.  Zones also have a
+strict timer.
+Coins buy you credits on Megaplay games, meaning if you lose a... -->
 </platform>

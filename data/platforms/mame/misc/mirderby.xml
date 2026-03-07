@@ -7,4 +7,23 @@
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00008000" type="io" name="region_8000"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Miracle Derby - Ascot
+TODO:
+- complete sprites;
+- NVRAM;
+- Pinpoint actual NMI sources;
+- Game pukes if more than one key is pressed, and MAME input defaults for 2p side
+clashes with the remapped p1 keys.
+For now user has to workaround by mapping p2 keys manually,
+actual fix would be to define a horse betting layout in MAME input defs.
+- Missing inputs, namely 10 and 100 Yen tokens. These comes from the Z80 x70coin subsystem.
+Old Haze note:
+- has the same GX61A01 custom (blitter?) as homedata.cp... -->
 </platform>

@@ -16,4 +16,14 @@
     <region start="0x1FAF0000" end="0x1FAF07FF" type="io" name="read"/>
     <region start="0x1FB20000" end="0x1FB20007" type="io" name="unknown_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="sound" name="ym2610"/>
+  </devices>
+
+  <!-- Sony ZN-1/ZN-2 - Arcade PlayStation Hardware
+--------------------------------------------
+Board notes by The Guru
+Thanks to Zinc Team, Peter Ferrie, Amuse &amp; Miguel Angel Horna -->
 </platform>

@@ -12,4 +12,19 @@
     <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="io" name="from_unmapped_memory"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Tank Busters
+6009-A + 6009-B PCBs
+driver by Jarek Burczynski
+Note:
+To enter the test mode:
+reset the game and keep start1 and start2 buttons pressed.
+To do:
+- verify colors: PROM to output mapping is unknown, resistor values are guess
+- remove the 'some_changing_input' hack (see below)
+- from time to time the game just hangs -->
 </platform>

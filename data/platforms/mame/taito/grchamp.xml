@@ -7,4 +7,22 @@
     <region start="0x00005000" end="0x000053FF" type="ram" name="videoram"/>
     <region start="0x00005800" end="0x000058FF" type="ram" name="spriteram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Grand Champion
+(C) 1981 Taito
+MAME driver by Ernesto Corvi and Phil Stroffolino
+Known Issues:
+-   pc3259 handling (for collision detection) is not accurate.
+Collision detection does work, but there are bits which define
+the type of collision (and determine whether a pit stop is
+required) that I don't know how to handle.
+-   sound: missing engine noise
+-   "radar" is probably wrong
+-   LED and tachometer display are missing/faked
+Note that a dipswitch setting allows score to be displayed
+onscreen... -->
 </platform>

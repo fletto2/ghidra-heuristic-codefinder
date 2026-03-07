@@ -4,4 +4,25 @@
     <region start="0x00000000" end="0x0000CFFF" type="rom" name="rom"/>
     <region start="0x0000D800" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Chance 32
+PAL System Co, Ltd.
+Osaka, Japan.
+TODO:
+- some blanks in I/O section;
+- DIPs;
+- Need to flip everything in video/gfx code, is it possible to untangle?
+- hook up RTC (is it used?)
+===================================================================================================
+1x Z84C0008PEC
+1x HD46505SP / HD6845SP
+1x Oki M58321 RTC
+5x banks of 8 switches (S1-S5)
+1x switch (S6)
+XTAL: 12.000 Mhz -->
 </platform>

@@ -17,4 +17,9 @@
     <region start="0x00FFC4C0" end="0x00FFC4C7" type="io" name="read"/>
     <region start="0x00FFC500" end="0x00FFC7FF" type="io" name="map0xffc500_0xffc7ff__winchester_drive_p"/>
   </memory_map>
+
+  <!-- Sage II
+For memory map look at :
+http://www.thebattles.net/sage/img/SDT.pdf  (pages 14-)
+06/12/2009 Skeleton driver. -->
 </platform>

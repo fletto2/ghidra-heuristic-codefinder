@@ -7,4 +7,18 @@
     <region start="0x00006600" end="0x00006600" type="io" name="apf_dischw_w"/>
     <region start="0x0000A000" end="0x0000DFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Driver completely rewritten by Robbbert in a process begun on 2014-01-22.
+Based on the previous work done by PeT around February 2008, and possible others prior.
+added apfm1000 cartridge loading
+fixed apfm1000 pads
+added apf video mode
+APF M1000/MP1000 and Imagination Machine
+----------------------------------------
+- The M1000 contains the video RAM, ROM, CPU, PIA0, handsets, Video and cart slot, and thus was a TV Game computer.
+- The MPA-10 was a base unit containing the main keyboard, custom ... -->
 </platform>

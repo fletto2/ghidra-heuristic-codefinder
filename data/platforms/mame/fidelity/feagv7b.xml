@@ -50,4 +50,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity 68000-based Elite Avant Garde driver
+For 6502-based EAG, see elite.cpp
+Excel 68000 I/O is very similar to EAG, so it's handled in this driver as well
+TODO:
+- unemulated waitstates with DTACK
+- V10 CPU emulation is too slow, MAME 68040 opcode timing is same as 68030 but in
+reality it is much faster, same goes for V11 of course (see note below)
+- V11 CPU should be M68EC060, not yet emulated. Now using M68EC040 in its place
+- V11 beeper is too high pitched, related to wrong CPU type too?
+m... -->
 </platform>

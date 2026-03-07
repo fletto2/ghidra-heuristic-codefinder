@@ -13,4 +13,21 @@
     <region start="0x0000BF00" end="0x0000FFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000EFFF" type="io" name="cram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Hit Poker (c) 1997 Accept LTD
+preliminary driver by Angelo Salese &amp; David Haywood
+Many thanks to Olivier Galibert for the CPU identify effort ;-)
+TODO:
+- CPU core bugs?
+- Protection controls inputs;
+- Hangs during attract mode due to unemulated PIC protection;
+- complete video HW (unknown bits and hblank);
+- 24Khz monitor isn't supported, it changes the resolution to 648 x 480 and
+changes the register 9 (raster lines x character lines) from 7 to 0xf.
+- sound (I've heard something reasonable ... -->
 </platform>

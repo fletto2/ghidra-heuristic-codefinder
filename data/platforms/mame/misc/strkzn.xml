@@ -5,4 +5,8 @@
     <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Strike Zone (1994)
+Hoop Shot (undumped)
+Redemption games by Purple Star Inc. using infrared light curtains. -->
 </platform>

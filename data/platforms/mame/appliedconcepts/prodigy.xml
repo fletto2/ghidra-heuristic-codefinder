@@ -6,4 +6,18 @@
     <region start="0x00002000" end="0x0000200F" type="io" name="map"/>
     <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Applied Concepts Destiny Prodigy
+The chess engine is Morphy, which in turn is based on Sargon 2.5.
+Not counting The Mate, a chess game with chessboard peripheral for the Apple II,
+this is the only known Destiny series chesscomputer. ACI also announced Destiny
+Laser Chess, but it was never released.
+PCB notes:
++-----------------------------------------------------------------------------------+
+|LEDS------------------------------------------+        +-----------------+         |
+| | |            ... -->
 </platform>

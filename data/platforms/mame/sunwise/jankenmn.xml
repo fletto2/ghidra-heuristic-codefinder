@@ -5,4 +5,20 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- JANKENMAN UNIT
+Driver by Roberto Fresca.
+With further improvements by MAME Team.
+Coin-operated Z80-CTC + DAC system. No screen, just artwork with lamps + LEDs.
+Janken man is coming from Jankenpon, the rock-paper-scissors game.
+There are several versions of this game, the most notable difference being in
+the artwork and bonus lamps. The kid's voice and hand are the same among all.
+Control panel is composed of buttons:
+Guu (rock), Choki (scissors), Paa (paper).
+Some cabs have a Start button and/or... -->
 </platform>

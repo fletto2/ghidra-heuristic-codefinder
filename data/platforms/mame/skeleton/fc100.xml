@@ -6,4 +6,25 @@
     <region start="0x00006000" end="0x00006FFF" type="io" name="map0x6000_0x6fff_______mapped_by_the_car"/>
     <region start="0x00007800" end="0x0000FFFF" type="ram" name="bankr"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Goldstar FC-100 (FC stands for Famicom)
+2014/04/20 Skeleton driver.
+Known chips: M5C6847P, AY-3-8910, 8251. XTALS 7.15909, 4.9152
+No manuals or schematics available.
+Shift-Run to BREAK out of CLOAD.
+Cassette uses the uart.
+There is an inbuilt Monitor. MON to enter. Commands are D,G,M,R,S,X.
+Test of semigraphic 6
+10 SCREEN 2:CLS
+20 FOR I=0 TO 360
+30 PSET(128+SIN(I)*90,91-COS(I)*90), 1
+40 NEXT
+RUN
+TODO:
+- Cassette can be 600 or 1200 baud, how is 600 baud selected?
+- Hookup Graphics modes and colou... -->
 </platform>

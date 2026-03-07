@@ -19,4 +19,23 @@
     <region start="0xFE0FE000" end="0xFE0FE0FF" type="io" name="ext_video_r"/>
     <region start="0xFE100000" end="0xFE17FFFF" type="ram" name="ext_vram"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- macpwrbk030.cpp
+Mac PowerBooks with a 68030 CPU and M50753 PMU
+By R. Belmont
+These are basically late-period Mac IIs without NuBus and with
+Egret/Cuda replaced by the PMU.
+Generation 1:
+PowerBook 140: 16 MHz 68030, 2 MiB RAM, no FPU, passive-matrix screen
+PowerBook 145: 140 with 25 MHz 68030
+PowerBook 145B: 140 with 25 MHz 68030 and 4 MiB of RAM standard
+PowerBook 170: 140, with 25 MHz 68030, 68881 FPU, active-matrix screen
+Generation 2: (all models include external monitor support)
+PowerBook 16... -->
 </platform>

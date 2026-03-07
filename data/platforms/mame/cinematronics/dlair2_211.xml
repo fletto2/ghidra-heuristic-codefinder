@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x000EFFFF" type="ram" name="ram"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Skeleton driver for Dragon's Lair II: Time Warp
+by Leland Corporation
+Notes:
+- two irqs, timer (vector 0x20/4) and serial (vector 0x2c/4)
+Some information from
+http://www.dragons-lair-project.com/tech/pages/dl2.asp
+Service Mode:
+Press and hold the "Sword" button and "Service switch"
+(located inside coin door) - Release both buttons
+Rom version determines LD Image to use:
+ROM revision 2.00 works only with a Dragon's Lair II/Space Ace '91 proto disc,
+and an AMOA prototype board with DL2 BIOS ROM.
+... -->
 </platform>

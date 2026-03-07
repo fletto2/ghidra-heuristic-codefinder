@@ -6,4 +6,19 @@
     <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
     <region start="0x00004000" end="0x00005FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Misc early Z80 games with simple color bitmap graphics
+- Space King 2    (c) Konami
+- Kosmo Killer    bootleg
+- Kamikaze        (c) Leijac Corporation
+- Astro Invader   (c) Stern Electronics
+- Space Intruder  (c) Shoei
+Space Intruder emulation by Lee Taylor (lee@defender.demon.co.uk),
+December 1998.
+DIP locations verified for:
+- astinvad (manual) -->
 </platform>

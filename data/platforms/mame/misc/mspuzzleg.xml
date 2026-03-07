@@ -50,4 +50,13 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Gumbo (c)1994 Min Corp (Main Corp written on PCB)
+Miss Bingo (c)1994 Min Corp
+Miss Puzzle (c)1994 Min Corp
+argh they have the same music as news (misc/news.cpp) -->
 </platform>

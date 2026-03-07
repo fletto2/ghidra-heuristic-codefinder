@@ -52,4 +52,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Toki
+driver by Jarek Parchanski
+Mametesters bug tokiu056gre - "tokiu: "0000000" is always displayed as the top hiscore during gameplay,
+regardless of what it actually is. This does not happen in the other Toki sets."
+Notes by bmcphail@vcmame.net, 1/1/2008
+Toki stores high score at $60008 in main RAM (init code at $ADA, compared with player score at $1A1BA)
+Tokiu stores high score at $60010 instead (init code at $B16, equivalent compare code at $1a204), $60008
+is used for different purposes in ma... -->
 </platform>

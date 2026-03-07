@@ -28,4 +28,7 @@
     <region start="0x00FF8500" end="0x00FF8503" type="io" name="map0xff8500_0xff8501_disk_dma_command_re"/>
     <region start="0x00FF8507" end="0x00FF8507" type="io" name="map0xff8507_0xff8507_disk_dma_controlsta"/>
   </memory_map>
+
+  <!-- Chromatics CGC 7900
+05/04/2010 Skeleton driver. -->
 </platform>

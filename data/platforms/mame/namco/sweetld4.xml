@@ -6,4 +6,22 @@
     <region start="0x00200000" end="0x0020000F" type="io" name="read"/>
     <region start="0x0040000F" end="0x0040000F" type="io" name="lcdc_w"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+  </devices>
+
+  <!-- Sweet Land 4
+Namco 'M188 MAIN PCB'
+1656960100 (1656970100)
+Main components:
+1x H8/3007 5B4 HD6413007F20
+1x RTC 72423 A EPSON E220E
+1x Oki M9810B
+1x 14.7456 OSC near the H8
+1x HRD051R5 DC/DC converter
+2x MTB011 High Output Interface Driver ICs
+1x 4-dip bank
+11x connectors
+Sweet Land 4 video: https://www.youtube.com/watch?v=Zj8_RRGlCI4 -->
 </platform>

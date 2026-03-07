@@ -12,4 +12,21 @@
     <region start="0x0000E001" end="0x0000E001" type="unmapped" name="unmapped"/>
     <region start="0x0000E002" end="0x0000E004" type="io" name="trackfld_speech_r"/>
   </memory_map>
+
+  <!-- Track &amp; Field / Hyper Olympic
+Konami 1983
+PCB Layouts
+-----------
+Top board
+GX361 PWB(B)3000151A
+|----------------------------------------|
+|     Z80A                    3.579545MHz|
+|              14.31818MHz        VLM5030|
+|CN1                            SN76489AN|
+|                                        |
+|   361D13.2C                            |
+|                               361D15.9C|
+|                                        |
+|                                        |
+|           ... -->
 </platform>

@@ -11,4 +11,24 @@
     <region start="0x0000D038" end="0x0000D038" type="io" name="map0xd038_0xd038w"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- PANIC SHOT ROCKMAN - カプコン パニックショットロックマン
+MECHANICAL GAME (pinball / medal game hybrid)
+1992
+D-CPC-ROCKMAN-02
+===
+EPROMS
+D27C010A
+D27C512
+===
+PLD
+PALACE16V8H-25PC/4
+===
+OKI M6295
+YAMAHA YM2203C
+ZILOG Z80 CPU -->
 </platform>

@@ -10,4 +10,7 @@
     <region start="0x0000E000" end="0x0000F7FF" type="io" name="radio_cpu_state_r"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Mikrosha driver by Miodrag Milanovic
+05/06/2008 Preliminary driver. -->
 </platform>

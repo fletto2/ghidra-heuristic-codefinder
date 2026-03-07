@@ -8,4 +8,15 @@
     <region start="0x00009800" end="0x00009FFF" type="ram" name="scrollreg"/>
     <region start="0x0000A000" end="0x0000BFFF" type="io" name="control_a_w"/>
   </memory_map>
+
+  <!-- Naughty Boy driver by Sal and John Bugliarisi.
+This driver is based largely on MAME's Phoenix driver, since Naughty Boy runs
+on similar hardware as Phoenix. Phoenix driver provided by Brad Oliver.
+Thanks to Richard Davies for his Phoenix emulator source.
+Naughty Boy memory map
+0000-3fff 16Kb Program ROM
+4000-7fff 1Kb Work RAM (mirrored)
+8000-87ff 2Kb Video RAM Charset A (lower priority, mirrored)
+8800-8fff 2Kb Video RAM Charset b (higher priority, mirrored)
+9000-97ff 2Kb Video Control write-only... -->
 </platform>

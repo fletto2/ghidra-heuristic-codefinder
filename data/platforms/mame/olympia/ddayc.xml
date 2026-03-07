@@ -15,4 +15,25 @@
     <region start="0x00007800" end="0x00007800" type="io" name="countdown_timer_r"/>
     <region start="0x00007C00" end="0x00007C00" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="ay8912"/>
+  </devices>
+
+  <!-- D-Day
+driver by Zsolt Vasvari
+Convention: "sl" stands for "searchlight"
+Note: This game doesn't seem to support cocktail mode, which is not too
+surprising for a gun game.
+0000-3fff ROM
+5000-53ff Text layer videoram
+5400-57ff Foreground (vehicle) layer videoram
+5800-5bff Background videoram
+5c00-5fff Attributes RAM for vehicle layer
+A0-A4 seem to be ignored.
+D0 - X Flip
+D2 - Used by the software to separate area that the short shots
+cannot penetrate
+Others unknown, they don't seem to be used by t... -->
 </platform>

@@ -54,4 +54,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari G1 hardware
+driver by Aaron Giles
+Games supported:
+Hydra (1990)
+Pit Fighter (1990)
+Known bugs:
+none
+Memory map (TBA) -->
 </platform>

@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x000067FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- PINBALL
+Video Dens S.A., Madrid
+PinMAME used as reference. The Break '86 manual scan available on the net includes
+a mostly illegible schematic.
+Machines by this manufacturer: Ator, Break, Papillion.
+Ator runs on different hardware (peyper.cpp).
+Status:
+- Games are playable
+- You need to hold X when starting a game
+ToDo:
+- Papillion: ball number not showing
+- Status display is in different digits per game
+- Mechanical sounds -->
 </platform>

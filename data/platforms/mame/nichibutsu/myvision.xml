@@ -7,4 +7,24 @@
     <region start="0x0000E000" end="0x0000E000" type="io" name="vram_read"/>
     <region start="0x0000E002" end="0x0000E002" type="io" name="register_read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Nichibutsu My Vision
+driver by Wilbert Pol
+2013/12/01 Skeleton driver.
+2013/12/02 Working driver.
+Known issues:
+- The inputs sometimes feel a bit unresponsive. Was the real unit like
+that? Or is it just because we have incorrect clocks?
+TODO:
+- Review software list
+- Add clickable artwork
+- Verify sound chip model
+- Verify exact TMS9918 model
+- Verify clock crystal(s)
+- Verify size of vram -->
 </platform>

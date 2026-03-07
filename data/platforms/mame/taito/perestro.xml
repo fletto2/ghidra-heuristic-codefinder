@@ -6,4 +6,16 @@
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank1"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="spriteram"/>
   </memory_map>
+
+  <!-- Prebillian        (c) 1986 Taito
+Hot Smash         (c) 1987 Taito
+Super Qix         (c) 1987 Taito
+Perestroika Girls (c) 1994 Promat (hack of Super Qix)
+driver by Mirko Buffoni, Nicola Salmoria, Tomasz Slanina
+Super Qix is a later revision of the hardware, featuring a bitmap layer that
+is not present in the earlier games. It also has two 8910, while the earlier
+games have one 8910 + a sample player.
+Notes:
+- All versions of the hardware have four 64kx4 DRAMs near the video roms;
+the gfx hardware... -->
 </platform>

@@ -8,4 +8,27 @@
     <region start="0x00000200" end="0x000002FF" type="ram" name="nvram"/>
     <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- PINBALL
+Bally MPU AS-2518-17
+Games:
+Bally ****
+- Bow and Arrow (#1033)
+- Freedom (#1066)
+- Night Rider (#1074)
+- Black Jack (#1092)
+- Evel Knievel (#1094)
+- Mata Hari (#1104)
+- Eight Ball (#1118)
+- Bobby Orr Power Play (#1120)
+- Strikes and Spares (#1135)
+Other ****
+- 301/Bull's Eye
+- Stellar Airship
+- Super Zeus
+- Verspiel Dein Wasser Nicht!
+They have orange digital 6 digit displays, and a mechanical chime unit for sounds.
+ToDo:
+- Bow &amp; Arrow fails the PIA test and doesn't boot
+- Dips, Inpu... -->
 </platform>

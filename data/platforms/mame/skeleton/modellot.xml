@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x0000C3FF" type="ram" name="mainram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- General Processor Modello T
+2012-12-10 Skeleton driver.
+2013-09-27 Added keyboard and cursor.
+Made in Italy, a single board with numerous small daughter boards.
+The 3 units (keyboard, disk drives, main unit) had wooden cabinets.
+It had an inbuilt small green-screen CRT, like a Kaypro, and the RAM could
+be 16, 32, or 48k. The FDC is a FD1791.
+All the articles and doco (what there is of it) is all in Italian.
+Doco found...
+Port 77 out (cassette control):
+- d0 = recording signal #1
+- d1 = relay #1 ... -->
 </platform>

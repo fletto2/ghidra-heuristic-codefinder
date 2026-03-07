@@ -13,4 +13,13 @@
     <region start="0x0000C000" end="0x0000C000" type="io" name="program_latch_w"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="encoder_r"/>
   </memory_map>
+
+  <!-- The Moog Source is a CPU-controlled analog monosynth. It lacks knobs and
+sliders. Sound parameters are modified by pressing a button for a specific
+parameter and using the encoder wheel to modify it.
+The architecture of this synthesizer is typical of digitally-controlled analog
+synthesizers. The firmware is responsible for:
+Scanning and reacting to membrane button presses. This is a typical key
+matrix setup (see buttons_latch_w(), buttons_a_r(), buttons_b_r()).
+Detecting which key is pressed on ... -->
 </platform>

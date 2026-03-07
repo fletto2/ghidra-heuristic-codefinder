@@ -6,4 +6,32 @@
     <region start="0x00008000" end="0x00008000" type="io" name="rombank_w"/>
     <region start="0x0000A000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Qume QVT-70/QVT-82 terminal
+QVT-70:
+- Z80 (Z8040008VSC)
+- Z80 DART (Z0847006PSC)
+- QUME 303489-01 QFP144
+- DTC 801000-02 QFP100
+- ROM 128k + 64k
+- CXK5864CM-70LL (8k, next to ROMs)
+- W242575-70LL (32k) + 5x CXK5864CM-70LL (8k)
+- DS1231
+- Beeper + Battery
+- XTAL unreadable
+Features:
+- 65 hz with 16x16 characters
+- 78 hz with 16x13 characters
+- 64 background/foreground colors
+- 80/132 columns
+QVT-82:
+- Z80 (Z0840008PSC)
+- Z80 DART (Z0847006PSC)
+- QUME 303489-01 QFP144
+- ROM 64k * 2
+- RAM 8k UM6264... -->
 </platform>

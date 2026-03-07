@@ -10,4 +10,18 @@
     <region start="0x0000C800" end="0x0000C801" type="io" name="port"/>
     <region start="0x0000CA00" end="0x0000CA00" type="io" name="map0xca00_0xca00"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Diamond Derby - G4001 board (c) 1986 SNK / Electrocoin
+Notes:
+- Press Collect Button to "get the money";
+- dmndrbybl: hold together SERVICE1 + P1 1-2 to move on from input test
+TODO:
+- Fix colors (check bar test on the first Service Mode menu);
+- dmndrbybl: identify remaining inputs (game seems based over an original set we don't have yet);
+- Enters into Service Mode (?) if you let it go in attract mode after some time (cannot reproduce);
+- When booted up game disallows coin inputs (including se... -->
 </platform>

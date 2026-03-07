@@ -8,4 +8,19 @@
     <region start="0x10000400" end="0x10000407" type="io" name="control_r"/>
     <region start="0x14000000" end="0x143FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- ATV Track
+(c)2002 Gaelco
+ATV Track
+Gaelco 2002
+PCB Layout
+GAELCO
+REF. 020419
+|--------------------------------------------------------------|
+|                                                              |
+|   SW3                                               EPC1PC8  |
+|                                         K4S643232            |
+|    LC245A                                         7LB176    |-|
+|                        FLASH.IC14  FLASH.IC19     7LB176    | |
+|       |-----|                ... -->
 </platform>

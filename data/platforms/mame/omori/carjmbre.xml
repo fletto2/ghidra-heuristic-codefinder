@@ -12,4 +12,21 @@
     <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
     <region start="0x0000B800" end="0x0000B800" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Car Jamboree
+Omori Electric CAD (OEC) 1983
+TODO:
+- colors are probably wrong
+- sprite priorities? (eg. player car jumping on the ramp, 1 part disappears)
+- first 2 letters on titlescreen look misaligned with the tilemap
+- The spriteram holds 2 sprite lists (00-7f and 80-ff), they are identical.
+Is it an unused feature? Or a RAM access speed workaround?
+----------------------------------------------------------------------------
+PCB sketch:
+c14                c.d19
+c13                c.d18       ... -->
 </platform>

@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Pulsar Little Big Board (6000 series)
+2013-12-29 Skeleton driver.
+Chips: Z80A @4MHz, Z80DART, FD1797-02, 8255A-5, AY-5-8116, MSM5832.
+Crystals: 4 MHz, 5.0688 MHz, 32768.
+This is a complete CP/M single-board computer. You needed to supply your own
+power supply and serial terminal.
+The terminal must be set for 9600 baud, 7 bits, even parity, 1 stop bit.
+ToDo:
+- Fix floppy. It needs to WAIT the cpu whenever port 0xD3 is read, wait
+for either DRQ or INTRQ to assert, then release the cpu and then do ... -->
 </platform>

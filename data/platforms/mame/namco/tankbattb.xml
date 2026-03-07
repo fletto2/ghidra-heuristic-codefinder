@@ -8,4 +8,24 @@
     <region start="0x00000C18" end="0x00000C18" type="io" name="reset_w"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Tank Battalion memory map (verified)
+driver by Brad Oliver
+Memory Map:
+$0000-$03ff : Work RAM 0
+$0400-$07ff : Work RAM 1
+$0800-$0bff : VRAM
+$0c00-$0fff : I/O
+$2000-$3fff : ROM
+A 4-bit BCD value is created from the following four bits:
+Bit 0: A3
+Bit 1: A4
+Bit 2: Read
+Bit 3: !(A10 &amp; A11)
+For writes, the following upper ranges are decoded:
+xxxx 11xx xxx0 0xxx: OUT0
+xxxx 11xx xxx0 1xxx: OUT1
+xxxx 11xx xxx1 0xxx: INTACK
+xxxx 11xx xxx1 1xxx: Watchdog
+For reads, the following upper ranges are decod... -->
 </platform>

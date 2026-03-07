@@ -57,4 +57,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- CPS1 single board bootlegs
+sound hardware: PIC16c57, oki M6295 (no z80)
+Games known to use this h/w:
+Cadillacs and Dinosaurs         930201 ETC
+The Punisher                    930422 ETC
+Saturday Night Slam Masters     930713 ETC
+Warriors of Fate                921002 ETC
+(Note, these are all CPS1.5/Q sound games)
+Generally the sound quality is very poor compared to official Capcom hardware.
+Both music and sound effects are produced by just a single M6295.
+Background music consists of short pre-... -->
 </platform>

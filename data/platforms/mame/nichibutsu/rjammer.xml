@@ -7,4 +7,24 @@
     <region start="0x0000C000" end="0x0000C7FF" type="io" name="textram"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="share1"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Tube Panic
+(c)1984 Nichibutsu
+Driver by Jarek Burczynski.
+It wouldn't be possible without help from following people:
+Al Kossow helped with finding TTL chips' numbers and made PCB scans.
+Tim made some nice screenshots.
+Dox lent the Tube Panic PCB to me - I have drawn the schematics using the PCB,
+this allowed me to emulate the background-drawing circuit.
+----
+CPU
+84P0100B
+tp-b 6-&gt;1          19.968MHz
+tp-2 tp-1  2147 2147 2147 2147 2147 2147 2147 2147
++------ daughter board ------+
+tp-p 5-&gt;... -->
 </platform>

@@ -9,4 +9,24 @@
     <region start="0x0000A001" end="0x0000A002" type="unmapped" name="nop_write"/>
     <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Lovely Cards/Poker/Pontoon driver, updated by El Condor from work by Uki and
+Zsolt Vasvari respectively.
+Later cleaned up by Curt Coder and Scott Yellig.
+---
+Lovely Poker by Uki/El Condor
+Enter switch test mode by pressing the Deal key twice when the
+crosshatch pattern comes up.
+After you get into Check Mode (F2), press the Deal key to switch pages.
+Memory Mapped:
+0000-5fff   R   ROM
+6000-67ff   RW  Battery Backed RAM
+9000-93ff   RW  Video RAM
+9400-97ff   RW  Color RAM
+Bits 0-3 - color
+Bits 4-5 ... -->
 </platform>

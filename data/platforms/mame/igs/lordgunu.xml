@@ -48,4 +48,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- -= IGS Lord Of Gun =-
+driver by   Luca Elia (l.elia@tin.it)
+skeleton driver by   David Haywood
+code decrypted by   unknown
+CPU     :   68000 + Z80
+Custom  :   IGS005, IGS006, IGS007, IGS008
+Sound   :   M6295 + YM3812 or YMF278B
+NVRAM   :   93C46
+-------------------------------------------------------------------------------------------------
+Year + Game                PCB              FM Sound  Custom IGS Chips             Notes
+-------------------------------------------------------------------... -->
 </platform>

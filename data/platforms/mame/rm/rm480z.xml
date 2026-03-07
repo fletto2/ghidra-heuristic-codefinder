@@ -6,4 +6,20 @@
     <region start="0x00000000" end="0x0000F7FF" type="io" name="region_0"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <!-- Research Machines 480Z (aka "RML 480Z" or "Link 480Z")
+Microcomputer produced by Research Machines Limited, Oxford, UK
+1982-1985
+===
+From the Firmware Manual:
+List of known firmware revisions by sign-on message:
+RML 40-Character LINK 480Z V1.0
+RML 80-Character LINK 480Z V1.0
+RML 40-Character LINK 480Z V1.1 A
+RML 40-Character LINK 480Z V1.1 B
+RML 80-Character LINK 480Z V1.1 A
+RML 80-Character LINK 480Z V1.1 B
+RML 80-Character LINK 480Z V1.2 A
+RML 80-Character LINK 480Z V1.2 B
+RML 80-Character LIN... -->
 </platform>

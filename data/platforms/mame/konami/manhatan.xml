@@ -13,4 +13,31 @@
     <region start="0x00006000" end="0x00006000" type="io" name="speech_r"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Jailbreak - (c) 1986 Konami
+Ernesto Corvi
+ernesto@imagina.com
+Konami designated Jail Break with the label of GX507.  (There is also
+the label PWB 300394A silk screened onto the board.)
+Board Parts:
+Konami A082 @ 11a (Encrypted 6809 CPU)
+VLM5030 @ 6a
+Konami 005849 @ 8e
+18.432000MHz @ OSC
+3.579545MHz @ XTAL
+SN76489AN @ 6d
+6301 @ 6f and 7f (PROM's)
+6331 @ 1f and 2f (PROM's)
+Jail Break
+Konami 1986
+PCB Layout
+----------
+GX507
+PWB 300394A
+|----------------------------------------|
+| KONAMI-1   507P03.... -->
 </platform>

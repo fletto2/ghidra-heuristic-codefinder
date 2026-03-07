@@ -28,4 +28,21 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="8250"/>
+  </devices>
+
+  <!-- PowerVu D9234 STB (c) 1997 Scientific Atlanta
+20-mar-2010 skeleton driver
+References:
+- http://www.vetrun.net/forums/showthread.php?t=395
+- https://web.archive.org/web/20080203175218/http://www.growl.de/d9234/
+TODO:
+- everything, including PCB pictures and user manual;
+- Probably shared with other PowerVu DVB-S STB models;
+- Flash ROM is (2x? 4x?) AT29C256 according to an evasive pic;
+- $3f000 area should be bootstrap code, inits UART from there?
+Front Panel:
+- On/Standby | Signal/Menu on the le... -->
 </platform>

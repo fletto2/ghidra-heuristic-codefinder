@@ -8,4 +8,19 @@
     <region start="0x00008000" end="0x00008000" type="io" name="port"/>
     <region start="0x00009000" end="0x00009007" type="io" name="io_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Koi Koi Part 2
+---------------
+driver by
+Tomasz Slanina
+David Haywood
+TODO:
+- map missing inputs for koikoip2 (temp mapped to z-x-left shift)
+- koikoi needs different inputs implementation (possibly just needs its own input_tab[])
+- is there (still..) some kind of protection ? timers looks weird (2nd player timer is frozen) (this seems fixed now -AS)
+- colors (afaik color(?) prom outputs are connected to one of pals), Missing color prom apparently. Reference: https://www.youtube.com/watch?v=inc4... -->
 </platform>

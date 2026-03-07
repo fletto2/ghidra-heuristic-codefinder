@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00006FFF" type="rom" name="rom"/>
     <region start="0x00007000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Some Dynax games using the second version of their blitter
+driver by Luca Elia and Nicola Salmoria
+CPU:    Z80 or TLCS90
+Sound:  [AY] + [YM] + [YM] + [M5205] / M6295
+VDP:    HD46505SP (6845) (CRT controller)
+Custom: TC17G032AP-0246 (blitter)
+---------------------------------------------------------------------------------------------------------------------
+Year + Game                Main Board   Sub Board    CPU   Sound                      Clock Color Notes
+------------------------------------... -->
 </platform>

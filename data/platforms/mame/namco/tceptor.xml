@@ -12,4 +12,13 @@
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
     <region start="0x00008800" end="0x00008800" type="io" name="m6809_irq_enable_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Thunder Ceptor board
+(C) 1986 Namco
+Hardware analyzed by nono
+Driver by BUT -->
 </platform>

@@ -6,4 +6,11 @@
     <region start="0x00400000" end="0x004007FF" type="io" name="map"/>
     <region start="0x00600000" end="0x00607FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Yamaha MU-10 : 16-part, 32-note polyphonic/multitimbral General MIDI/GS/XG
+tone module
+Driver by R. Belmont and O. Galibert
+Essentially a screen-less MU50 (SWP00, identical wave rom) with a gate-array based
+hack to connect the wave rom space to the adc so that effects can be applied to
+the analog input.  Entirely controlled through midi. -->
 </platform>

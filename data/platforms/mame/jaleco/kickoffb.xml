@@ -10,4 +10,17 @@
     <region start="0x000A0001" end="0x000A0001" type="io" name="region_a0001"/>
     <region start="0x000E0000" end="0x000FFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- -= Jaleco Mega System 1 =-
+driver by   Luca Elia (l.elia@tin.it)
+To enter service mode in some games press service1+F3.
+Year + Game                       System    Protection
+---------------------------------------------------------------------
+88  Legend of Makai (World)         Z
+Makai Densetsu  (Japan)         Z
+---------------------------------------------------------------------
+88  P-47  (World)                   A
+P-47  (Japan)                   A
+P-47  (Japan, Export)           A
+Kick Of... -->
 </platform>

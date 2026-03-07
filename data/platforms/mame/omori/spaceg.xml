@@ -12,4 +12,16 @@
     <region start="0x00009805" end="0x00009806" type="io" name="port"/>
     <region start="0x0000A000" end="0x0000DFFF" type="ram" name="colorram"/>
   </memory_map>
+
+  <!-- Space Guerrilla PCB Layout
+--------------------------
+All PCBs slot into a metal frame. Each PCB is joined by the 14way/28way edge connectors
+on one side, and the 50 pin connectors via flat cables on the other side.
+14-way
+OEC-5            |----------------|
+|----------------|----------------|-----------------|
+|      1       2       3       4       5      6     |
+|A   74273   7417             555                   |
+|                                                   |
+|B   74273   7417     555... -->
 </platform>

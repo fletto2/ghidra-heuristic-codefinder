@@ -77,4 +77,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- -= Gals Panic II =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU     :   2 x 68000  +  MCU
+SOUND   :   2 x OKIM6295
+OTHER   :   EEPROM
+CUSTOM  :   ?
+To Do:
+- Simulation of the MCU: it sits between the 2 68000's and passes
+messages along. It is currently incomplete, thus no backgrounds
+and the game is unplayable
+- The layers are offset
+Gals Panic 2 (Korea)
+Kaneko 1993
+PCB Layout (for single large PCB version)
+----------
+Z04G2-004
+|--------------------------------------------------------------------|... -->
 </platform>

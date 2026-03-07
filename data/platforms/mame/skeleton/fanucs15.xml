@@ -45,4 +45,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Fanuc System 15
+2014-01-04 Skeleton driver.
+This is a circa-1990 CNC machine with a very custom GUI, made of a
+bunch of boards plugged into a passive backplane.
+Possible boards include:
+A16B-2200-0020/04B : Base 2 Board (contains 12 MHz 68020 "CNC CPU" and 1 or 2 MB of DRAM)
+A16B-2200-0090/07A : Digital Servo 4-Axis Controller Board (no ROMs on this board)
+A16B-2200-0121/06C : Base 0 Board (1 ROM location but position is empty. -0120 has 6081 001A)
+A16B-2200-0131/11B : Base 1 Board (15 ROMs on t... -->
 </platform>

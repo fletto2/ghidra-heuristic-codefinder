@@ -11,4 +11,28 @@
     <region start="0x0000B400" end="0x0000B407" type="io" name="d0"/>
     <region start="0x0000B800" end="0x0000B807" type="io" name="d0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- El Fin Del Tiempo.
+Niemer S.A., 1981.
+Driver by Elsemi &amp; Roberto Fresca.
+TODO:
+- missing starfield
+- missing background gradient?
+- look into moving to galaxian driver, or at least a derived class
+Specs:
+1x Zilog Z8400A PS (Z80A) CPU.
+1x Fairchild F6802P CPU.
+1x AMD 8255A PPI.
+2x GI AY-3-8910.
+8x 2114 SRAM.
+1x 2516 EPROM.
+17x 2532 EPROMs.
+1x TBP28L22N (256 x 8-bits) bipolar PROM.
+2x 6-DIP switches banks.
+1x Xtal @ 14.318 MHz. (used for 6802 CPU &amp; AY8910 sound devices).
+1x Xtal @ 18.4320 ... -->
 </platform>

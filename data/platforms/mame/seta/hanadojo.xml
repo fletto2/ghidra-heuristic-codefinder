@@ -7,4 +7,22 @@
     <region start="0x00008F00" end="0x00008FFF" type="io" name="region_8f00"/>
     <region start="0x00009000" end="0x000097FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- 花道場 (Hana Doujou) - Alba 1984
+AAJ-11 PCB
+Test Mode tests a "N-Board I/O"
+TODO:
+- Uses a form of NVRAM thrash protection, not completely understood:
+\- bp b6e sub-routine: loops with ld hl,$8f14 de,$0005 expecting all values to be 0x55 or 0xaa;
+\- writes a 0 to $8f28 the 3rd time around, expecting one of the IOX to prevent that;
+\- some code uploaded in RAM at $8c00, including an IOX data_w 0x60;
+\- wpset 0x8f00,0x100,r,PC!=0xb91
+\- program and I/O accesses to $b8xx / $bcxx areas;
+- Resets itself... -->
 </platform>

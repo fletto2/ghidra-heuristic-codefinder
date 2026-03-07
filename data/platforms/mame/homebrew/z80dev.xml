@@ -4,4 +4,16 @@
     <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
     <region start="0x00001000" end="0x000010FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Z80 dev board (unknown)
+http://retro.hansotten.nl/index.php?page=z80-dev-kit
+2010-04-23 Skeleton driver.
+Pasting:
+0-F : as is
+MEM --&gt; (inc) : ^
+MEM &lt;-- (dec) : V
+GO : X
+To set an address, paste R0&lt;address&gt;, so R01040 to select 1040
+Example paste: R01040^11^22^33^44^55^66^77^88^99^^R01040^
+Press the up-arrow key to confirm data has been entered. -->
 </platform>

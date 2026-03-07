@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Amust Compak - also known as Amust Executive 816.
+2014-03-21 Skeleton driver. [Robbbert]
+An unusual-looking CP/M computer. The screen is a tiny CRT not much bigger
+than a modern smartphone.
+Z-80A @ 4MHz; 64KB dynamic RAM (8x 4164); 2KB video ram (6116); 2x 13cm drives;
+80 track DD with data capacity of 790KB; in a lockable Samsonite briefcase.
+There are no manuals or schematics known to exist.
+The entire driver is guesswork.
+The board has LH0080 (Z80A), 2x 8251, 2x 8255, 8253, uPD765A and a HD46... -->
 </platform>

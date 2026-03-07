@@ -7,4 +7,19 @@
     <region start="0x00600000" end="0x00603FFF" type="ram" name="ram"/>
     <region start="0x00603C4C" end="0x00603C4F" type="io" name="status_r"/>
   </memory_map>
+
+  <!-- amuzy.cpp - Amuzy cartridge arcade/medal system
+Skeleton by R. Belmont
+H8/3007 CPU
+Yamaha YGV625 sprite processor and CRTC
+OKI M9810 sound
+Many series of games were done on this platform. As of now, games
+for the following series have been dumped:
+??? means cart code not verified
+means no versions dumped + cart code non verified
+"for girls series"
+GA4004-0 - Wan Wan Dash           - ワンワンダッシュ
+GB4004-0 - Docchi Fighter         - ドッチファイター
+GC4004-0 - Kingyo Carnival        - 金魚カーニバル
+GD4004-0 - Mogu ... -->
 </platform>

@@ -17,4 +17,20 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+  </devices>
+
+  <!-- Dyna D0404 PCB
+This PCB is newer hardware than the one is misc/cb2001.cpp, possibly the next one.
+It seems Dyna got rid of some legacy features like physical DIPs, color PROMs and AY sound.
+While the CPU is sanded off, ROM seems to contain valid ARM code.
+Currently unknown what produces the sound.
+The main components are:
+208-pin custom (sanded off). MCU/CPU?
+176-pin custom (sanded off). GFX?
+4x AMIC LP61 1024S-12 SRAM or equivalent (for CPU?)
+2x IDT71024 SRAM or equivalent (for GFX?)
+2x A625308... -->
 </platform>

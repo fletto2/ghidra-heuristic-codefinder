@@ -9,4 +9,14 @@
     <region start="0x0000E000" end="0x0000E003" type="unmapped" name="nop_read"/>
     <region start="0x0000F000" end="0x0000F001" type="io" name="master_port_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- La Cucaracha  (c) 1992 Taito
+Mechanical whack-a-mole with a dot-matrix LED screen.
+Available in English and Spanish (latter is undumped).
+Released in Japan as Gokidetor (ゴキデター) (undumped).
+Up to 6 machines can be linked in a "competition mode" (fastest wins). -->
 </platform>

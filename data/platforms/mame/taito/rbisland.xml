@@ -58,4 +58,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Rainbow Islands  (c) Taito 1987   + Jumping
+===============
+driver by Mike Coates
+c-chip enhanced by Robert Gallagher, with many thanks to Tormod Tjaberg for providing
+his PCB for dumping/collecting the c-chip data from Rainbow Islands Extra.
+Rainbow Islands &amp; Rainbow Islands Extra
+Taito, 1987
+PCB Layout
+----------
+MAIN PCB
+J1100128A
+K1100277A
+|----------------------------------------------------|
+| MB3735 Z80 B22-14.43    16MHz      DIP28    DIP28  |
+|       YM2151  5563                    ... -->
 </platform>

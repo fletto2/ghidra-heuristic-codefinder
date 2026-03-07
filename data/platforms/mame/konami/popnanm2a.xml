@@ -55,4 +55,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="8250"/>
+  </devices>
+
+  <!-- Konami FireBeat
+Driver by Ville Linde
+Hardware overview:
+GQ972 PWB(A2) 0000070609 Main board
+-----------------------------------
+25.175 MHz clock (near GCUs and VGA connectors)
+16.6666 MHz clock (near GCUs and VGA connectors)
+OSC 66.0000MHz
+IBM PowerPC 403GCX at 66MHz
+(2x) Konami 0000057714 (2D object processor)
+Yamaha YMZ280B (ADPCM sound chip)
+Epson RTC65271 RTC/NVRAM
+National Semiconductor PC16552DV (dual UART)
+GQ974 PWB(A2) 0000070140 Extend board
+-------------------------------------
+ADC080... -->
 </platform>

@@ -12,4 +12,24 @@
     <region start="0x00001000" end="0x00001000" type="io" name="sync2_r"/>
     <region start="0x00002800" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Atari Super Breakout hardware
+driver by Mike Balfour
+Games supported:
+Super Breakout
+Super Breakout (Canyon and Vertical Breakout, prototype)
+Super Breakout (Cocktail, prototype)
+Known issues:
+none at this time
+To do:
+Merge with Sprint 1
+Stephh's notes (based on the games M6502 code and some tests) :
+- Each time the game is reset, it is set to "Cavity".
+I can't remember if it's the correct behaviour or not,
+but the VBLANK interruption is not called in "demo mode".
+- You can only select the game ... -->
 </platform>

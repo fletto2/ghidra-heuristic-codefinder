@@ -8,4 +8,25 @@
     <region start="0x0000B800" end="0x0000B80F" type="io" name="map"/>
     <region start="0x0000BFFD" end="0x0000BFFF" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Acorn Atom:
+http://chrisacorns.computinghistory.org.uk/Computers/Atom.html
+http://chrisacorns.computinghistory.org.uk/Computers/Busicomputers_Prophet2.html
+http://chrisacorns.computinghistory.org.uk/Computers/Busicomputers_Prophet3.html
+Memory map.
+CPU: 6502
+0000-00ff Zero page
+0100-01ff Stack
+0200-1fff RAM (expansion)
+0a00-0a04 FDC 8271
+2000-21ff RAM (dos catalogue buffer)
+2200-27ff RAM (dos seq file buffer)
+2800-28ff RAM (float buffer)
+2900-7fff RAM (text RAM)
+8000-97ff VDG 6847
+9800-9fff RAM ... -->
 </platform>

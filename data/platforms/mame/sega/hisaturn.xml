@@ -36,4 +36,13 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <!-- Driver by David Haywood, Angelo Salese, Olivier Galibert &amp; Mariusz Wojcieszek
+SCSP driver provided by R. Belmont, based on ElSemi's SCSP sound chip emulator
+Many thanks to Guru, Fabien, Runik and Charles MacDonald for the help given.
+Sega Saturn
+(C) Sega 1994/1995/1996/1997
+The Sega Saturn is a 32-bit 5th-generation home video game console that was developed by Sega and released
+on November 22nd 1994 in Japan, May 11th 1995 in North America, and July 8th 1995 in Europe as the successor
+to th... -->
 </platform>

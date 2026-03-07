@@ -47,4 +47,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Skeleton driver for Telex 274 IBM 3274-compatible coaxial controllers.
+The three main boards have the following components identified by PCB silkscreening and/or serial
+numbers:
+COMM IIS
+U1      Am27128A(?)-2DC         ODD (203981-053)
+U2      Am27128A(?)-2DC         EVEN (203982-053)
+U3      NEC D4361C-70           ODD PARITY
+U9      HM62256LP-12            ODD
+U10     HM62256LP-12            EVEN
+U11     NEC D4361C-70           EVEN PARITY
+U13     unknown 64-pin SDIP     DMA
+U45     PAL20L8ANC... -->
 </platform>

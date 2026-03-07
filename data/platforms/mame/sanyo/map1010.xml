@@ -7,4 +7,24 @@
     <region start="0x00007800" end="0x0000785F" type="io" name="region_7800"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Sanyo PHC-25
+https://web.archive.org/web/20180107213100/http://www.geocities.jp/sanyo_phc_25/
+http://www.phc25.com/
+Z80 @ 4 MHz
+MC6847 video
+3x 8KB BIOS ROM
+1x 4KB chargen ROM
+16KB RAM
+6KB video RAM
+LOCK key (CAPSLOCK) selects upper-case/lower-case on international version
+(phc25), and selects hiragana/upper-case on Japanese version (phc25j).
+TODO: PHC-25
+- sound is strange, volume is often low to non-existent.
+- colours and graphics are different to those shown at
+http://www.phc25.com/collectio... -->
 </platform>

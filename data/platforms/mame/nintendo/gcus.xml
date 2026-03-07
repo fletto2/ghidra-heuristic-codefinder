@@ -6,4 +6,8 @@
     <region start="0x08000000" end="0x081FFFFF" type="ram" name="ram"/>
     <region start="0xFFF00000" end="0xFFFFFFFF" type="ram" name="boot"/>
   </memory_map>
+
+  <!-- Nintendo GameCube
+Skeleton driver, just to document the available firmware dumps
+for now. -->
 </platform>

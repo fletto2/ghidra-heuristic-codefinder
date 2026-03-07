@@ -7,4 +7,22 @@
     <region start="0x000C0000" end="0x000EFFFF" type="ram" name="vram"/>
     <region start="0x000F0000" end="0x000F3FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Mitsubishi MULTI-16 series
+MULTI-16 (1982, 1983 for S models)
+- 8088, 4 MHz
+- 8041 (MCU), 8253 (PIT), 8259A (PIC), MB8866 (FDC)
+- MP-1601 (128 KB RAM, 32 KB VRAM, monochrome, 1x 5.25")
+- MP-1602 (192 KB RAM, 32 KB VRAM, monochrome, 2x 5.25")
+- MP-1605 (256 KB RAM, 96 KB VRAM, 8 colors, 2x 5.25")
+- MP-1601S (8087, 128 KB RAM, 32 KB VRAM, monochrome, 1x 5.25")
+- MP-1602S (8087, 192 KB RAM, 32 KB VRAM, monochrome, 2x 5.25")
+- MP-1605S (8087, 256 KB RAM, 96 KB VRAM, 8 colors, 2x 5.25")
+- MP-1622 (80... -->
 </platform>

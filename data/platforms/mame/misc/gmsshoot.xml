@@ -19,4 +19,12 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for redemption games by GameMasters, Inc.
+Not much is known about this Atlanta-based company and its games, aside
+from a number of flyers. -->
 </platform>

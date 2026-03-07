@@ -8,4 +8,32 @@
     <region start="0x0000C000" end="0x0000C000" type="io" name="recall_r"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="store_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Visual Technology Visual 50/55
+VT52 compatible terminal
+Hardware:
+- D780C (Z80)
+- 2764 and 2732 EPROM
+- 2x TMM314APL-1 (1k RAM)
+- X2210D NOVRAM (64x4) (X2210 for REV A)
+- Intel P8253-5 PIT
+- D8255AC-5 PPI
+- 2x D8251AC USART
+- SCN2672A (SCN2672 N for REV A)
+- 2673
+- TMM2016P-2 (2k VRAM)
+- C68100 IC240-001R00 (character generator?)
+- 17.320 MHz XTAL
+TODO:
+- Screen attributes (reverse sometimes works)
+- Smooth scroll
+- Screen brightness control
+- Most PPI connections are unknown
+- AUX port
+Notes:
+-... -->
 </platform>

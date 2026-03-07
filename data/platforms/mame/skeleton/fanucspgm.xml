@@ -12,4 +12,20 @@
     <region start="0x000F8000" end="0x000F9FFF" type="io" name="shared_r"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Fanuc System P-Model G
+Fanuc 1983
+2014-03-22 Skeleton driver.
+This is a machine from 1983 in a single case
+with a lot of ports and a unique keyboard.
+Also known as Fanuc P-G System, this is a dedicated 8085+8086+8087-based computer
+system running software for CNC Programming.
+The system boots up from on-board EPROM and shows a big ASCII-art boot screen
+FANUC SYSTEM P and the ROM software version in the lower right corner.
+To initiate booting from the floppy drive hold down the LOAD key for 3-5 s... -->
 </platform>

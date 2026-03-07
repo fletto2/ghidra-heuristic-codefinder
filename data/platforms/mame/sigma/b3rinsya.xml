@@ -11,4 +11,21 @@
     <region start="0x00083013" end="0x00083013" type="io" name="d013_r"/>
     <region start="0x00083021" end="0x00083021" type="io" name="d021_r"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- -= Sigma B-98 Hardware / Sammy Medal Games =-
+driver by Luca Elia
+CPU     :   TAXAN KY-80 (Yamaha)
+Video   :   TAXAN KY-3211 or KY-10510
+Sound   :   YMZ280B or OKI M9811
+NVRAM   :   93C46 and/or battery backed RAM
+Graphics are made of sprites only.
+Each sprite is composed of X x Y tiles and can be zoomed / shrunk and rotated.
+Tiles can be 16x16x4 or 16x16x8.
+Some videos:
+https://www.youtube.com/channel/UCYFiPd3FukrmNJa3pfIKf-Q/search?query=sigma
+https://www.youtube.com/channel/UCYFiPd3FukrmNJa3p... -->
 </platform>

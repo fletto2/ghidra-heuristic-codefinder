@@ -46,4 +46,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Fairlight CMI Series
+driver by Phil Bennett
+Systems supported:
+CMI IIx
+To do:
+V12 system software reports that it can't load MIDI support and then hangs.
+Information from:
+CMI SYSTEM SERVICE MANUAL
+FAIRLIGHT INSTRUMENTS, FEBRUARY 1985
+Revision 2.1
+This document is available on archive.org at the following URL:
+https://archive.org/details/fairlight_CMI-IIx_SERVICE_MANUAL
+Summary:
+The Fairlight CMI system conists typically of:
+- One velocity-sensitive unweighted keyboard, with a numeric
+keypad and... -->
 </platform>

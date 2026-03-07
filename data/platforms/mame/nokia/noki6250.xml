@@ -10,4 +10,9 @@
     <region start="0x00200000" end="0x005FFFFF" type="io" name="read"/>
     <region start="0x00600000" end="0x00FFFFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <!-- Driver for Nokia phones based on Texas Instrument MAD2WD1 (ARM7TDMI + DSP)
+Driver based on documentations found here:
+http://nokix.sourceforge.net/help/blacksphere/sub_050main.htm
+http://tudor.rdslink.ro/MADos/ -->
 </platform>

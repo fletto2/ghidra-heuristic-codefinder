@@ -6,4 +6,24 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Philips VG-5000mu
+Driver by Sandro Ronco with help from Daniel Coulom
+05/2010 (Sandro Ronco)
+- EF9345 video controller
+- keyboard input ports
+05/2009 Skeleton driver.
+Known issues:
+- Support the K7 filetype for ease of usage, but as read only.
+Information ( see the very informative http://vg5k.free.fr/ ):
+- Variants: Radiola VG5000 and Schneider VG5000
+- CPU: Zilog Z80 running at 4MHz
+- ROM: 18KB (16 KB BASIC + 2 KB charset )
+- RAM: 24 KB
+- Video: SGS Thomson EF9345 processor
+- Text mode: 25 row... -->
 </platform>

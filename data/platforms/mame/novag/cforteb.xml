@@ -15,4 +15,15 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Novag Constellation Forte
+Hardware notes:
+- R65C02P4 @ 5MHz (10MHz XTAL)
+- 2*2KB RAM(NEC D449C-3), 2*32KB ROM(27C256)
+- HLCD0538P, 10-digit 7seg LCD display
+- TTL, 18 LEDs, 8*8 chessboard buttons
+- ports for optional printer and chess clock
+I/O is similar to supercon
+TODO:
+- add power-off NMI? does nothing, it will just go into an infinite loop -->
 </platform>

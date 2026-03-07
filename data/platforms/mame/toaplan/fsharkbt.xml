@@ -57,4 +57,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- ToaPlan game hardware from 1987
+-------------------------------
+Driver by: Quench
+Flying Shark details: Carl-Henrik Skarstedt  &amp;  Magnus Danielsson
+Flying Shark bootleg info: Ruben Panossian
+Both bootlegs, while sharing a lot of code with the original sets
+are probably based off undumped versions.
+Supported games:
+Toaplan Board Number:   TP-007
+Taito game number:      B02
+Flying Shark (World)
+Sky Shark (USA Romstar license)
+Hishou Zame (Flying Shark Japan license)
+Flying Shark bootleg (USA R... -->
 </platform>

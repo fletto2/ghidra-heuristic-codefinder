@@ -28,4 +28,20 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- 'RISC PC' hardware
+See See Find Out [Icarus 1999]
+Pang Pang Car [Icarus 1999]
+Tetris Fighters [Sego Entertainment 2001]
+driver by
+Tomasz Slanina
+TODO:
+- Correct IOMD type (CL-PS7500 -&gt; ARM7500FE?)
+- 24c01 eeprom (IOLINES)
+- timing
+- unknown reads/writes
+- improve sound hook up
+- ppcar: uses the VIDC internal DAC for SFX and the QS1000 for music.
+It's configured to use the undumped internal ROM.
+===================================================================================================... -->
 </platform>

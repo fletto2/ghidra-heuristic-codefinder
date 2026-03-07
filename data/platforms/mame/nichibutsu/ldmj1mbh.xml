@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="video" name="v9938"/>
+  </devices>
+
+  <!-- 'Nichibutsu LD' HW (c) 1990? Nichibutsu
+TODO:
+- ldquiz4: spins on "memory test error 13", implying a missing ROM dump
+(other GFXs will return further errors if missing, returning the label there).
+To bypass: bp 18d,1,{hl=34bf;g}
+or alternatively patch location $40 in ROM with a 0x00 (which looks a debug switch)
+- Unknown LaserDisc type;
+- Unknown irq vector for LaserDisc strobe, unless it's really supposed to execute code with trg0
+irq service (which spins for nothing in both games)
+- V9938 has ... -->
 </platform>

@@ -6,4 +6,18 @@
     <region start="0x00003000" end="0x0000377F" type="io" name="ram_r"/>
     <region start="0x00003780" end="0x000037FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Hazeltine 1500
+original machine (c) 1977 Hazeltine Corporation
+preliminary driver by Ryan Holtz
+TODO (roughly in order of importance):
+- Figure out the correct keyboard decoding.
+- Proper RS232 hookup.
+- Iron out proper horizontal and vertical start/end values.
+- Hook up /FGBIT, REV FLD FRAME, and REV VIDEO SELECT lines on video
+board.
+- Reimplement logic probe (since removed) as a netlist device so other
+devs can use it.
+- Implement /BRESET line in netlist to possibly smooth out some sync
+issue... -->
 </platform>

@@ -11,4 +11,18 @@
     <region start="0x0000CC00" end="0x0000CC01" type="io" name="cso3_r"/>
     <region start="0x0000E000" end="0x0000E003" type="io" name="e0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- mgavegas.cpp
+Coin pusher
+TODO:
+- better analog audio out/mixer
+- some output (mostly not used)
+- translate the driver's variables into intelligible English
+Ver. 1.33 has no speech and no change funcion implemented in software
+Ver. 2.1 and 2.3 have change function working and speech
+Ver. 2.2 should exist -->
 </platform>

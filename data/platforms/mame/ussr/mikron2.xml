@@ -9,4 +9,7 @@
     <region start="0x0000E000" end="0x0000FFFF" type="io" name="write"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Radio-86RK driver by Miodrag Milanovic
+15/03/2008 Preliminary driver. -->
 </platform>

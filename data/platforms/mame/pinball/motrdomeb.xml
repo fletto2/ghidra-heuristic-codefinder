@@ -7,4 +7,15 @@
     <region start="0x00001000" end="0x000017FF" type="ram" name="nvram"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- PINBALL
+Bally MPU A084-91786-AH06 (6803)
+First generation 6803 has 4x 7-digit displays, and a 6-digit display for the credits/balls (only
+4 digits are visible).
+Then, the 2nd generation replaced all that with 2x 14-letter alphanumeric displays lined up along
+the bottom of the backbox. They show scores, moving messages, and anything else that's needed.
+This also meant a more informative setup mode.
+Schematic has a number of mistakes.
+Setting Up:
+- The default settings don't work on most machines.... -->
 </platform>

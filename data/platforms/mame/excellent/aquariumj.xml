@@ -53,4 +53,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- AQUARIUM
+EXCELLENT SYSTEMS
+ES-9206
++------------------------------------------------+
+|                  6116      23C16000   23C16000*|
+|         YM2151   6116      23C16000*  23C16000*|
+|                    +-------+ +-------+         |
+|     1.056MHz M6295 |ES-9303| |ES 9207|         |
+|YM3012              |       | |       | AS7C256 |
+|                    +-------+ +-------+ AS7C256 |
+|J                                       AS7C256 |
+|A                    4         AS7C256  AS7C256 |
+|M    ... -->
 </platform>

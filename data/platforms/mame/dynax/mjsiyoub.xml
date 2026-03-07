@@ -7,4 +7,23 @@
     <region start="0x00007800" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="writeonly"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Royal Mahjong (c) 1981 Nichibutsu
+and many other Dyna/Dynax games running in similar bare-bones hardware
+driver by Zsolt Vasvari, Nicola Salmoria, Luca Elia
+CPU:    Z80 or TLCS-90
+Video:  Framebuffer
+Sound:  AY-3-8910 (or YM2149)
+OSC:    18.432MHz and 8MHz
+-----------------------------------------------------------------------------------------------------------------------
+Year + Game               Board(s)               CPU      Company            Notes
+----------------------------------------... -->
 </platform>

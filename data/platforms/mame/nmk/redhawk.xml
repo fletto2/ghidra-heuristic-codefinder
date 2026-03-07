@@ -53,4 +53,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Task Force Harrier         1989 UPL        68000 Z80           YM2203 2xOKIM6295  Low-Res
+Many Block                 1991 Bee-Oh     68000 Z80           YM2203 2xOKIM6295  Low-Res  (hack of "Slot Gal" by UPL)
+Mustang                    1990 UPL        68000 NMK004        YM2203 2xOKIM6295  Low-Res
+Bio-ship Paladin           1990 UPL        68000 NMK004        YM2203 2xOKIM6295  Low-Res
+Vandyke                    1990 UPL        68000 NMK004        YM2203 2xOKIM6295  Low-Res
+Black Heart          ... -->
 </platform>

@@ -6,4 +6,15 @@
     <region start="0x00004000" end="0x000041FF" type="io" name="palette"/>
     <region start="0x00080000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Shanghai
+driver by Nicola Salmoria
+TODO:
+- games are currently too fast (especially noticeable with kothello screen transitions), maybe unemulated HD63484 wait state penalties?
+- minor glitch with gfx copy on shanghai stage info panel (garbage on right);
+- irq ack, shanghai and shangha2 uses it, kothello auto acks, maybe latter really runs on NMI instead
+(vector 2 matches same pattern as shanghai games);
+- shanghai: IC37 returns bad in service mode;
+kothello
+Notes: If you use the key labeled as ... -->
 </platform>

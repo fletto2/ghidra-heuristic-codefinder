@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x0005FFFF" type="ram" name="ram"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- 2013-09-09 Skeleton of LFT computer system.
+These are the monitor programs for 80186-based "S100+" systems by L/F Technologies. Many
+of these boards were distributed under the IMS International name. Documentation available
+online is woefully inadequate.
+LFT1230 does extensive testing of devices at boot time. As they are mostly missing,
+it gets caught in a loop. There's unknown devices in the i/o 008x, 00Ax, 00Cx range.
+The devices at 008x and 00Cx would appear to be the same type.
+BUG:If the rt... -->
 </platform>

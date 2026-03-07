@@ -11,4 +11,17 @@
     <region start="0x0000C018" end="0x0000C019" type="io" name="port"/>
     <region start="0x0000C020" end="0x0000C026" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <!-- Ace by Allied Leisure
+Driver by Jarek Burczynski
+2002.09.19
+It actually has two 2-way joysticks per player, MAME combines them into one.
+The Bullet Range and Game Time settings are not DIP switches, PCBs were seen
+with thumbwheels (the PCB diagram below), or jumpers.
+TODO:
+- discrete sound is unemulated
+- What are the unknown inputs in IN2 for? Extra coin sensors? The cabinet does
+not have a start button.
+- Is the border correct? There's one photo online with gaps in the border. Does
+it mean pla... -->
 </platform>

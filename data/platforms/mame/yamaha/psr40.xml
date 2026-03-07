@@ -8,4 +8,10 @@
     <region start="0x0000A01E" end="0x0000A01F" type="unmapped" name="nop_read"/>
     <region start="0x0000C000" end="0x0000C003" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Skeleton driver for Yamaha PSR-40 PortaSound keyboard. -->
 </platform>

@@ -8,4 +8,16 @@
     <region start="0x000000E0" end="0x000000EB" type="io" name="map0xe0_0xebr_sb_e2d_live_register_reads"/>
     <region start="0x000000F0" end="0x000000FB" type="io" name="map0xf0_0xfbr_sb_ddd_live_register_reads"/>
   </memory_map>
+
+  <!-- Sega Dreamcast G2 System Bus I/F
+TODO:
+- Single-step instead of transfering in one go;
+- Abort DMA if suspend mode is triggered;
+- Time Out mechanism thru DS# &amp; TR# signals;
+- External pin enable in trigger select;
+- Create a pure abstract interface shared with PVR-DMA I/F
+(one channel, different max size, simpler tsel, no suspend,
+different security code &amp; area protection);
+- DMA starts should send DDT requests and being notified back to use this i/f implementation
+anyway. Exact purpose... -->
 </platform>

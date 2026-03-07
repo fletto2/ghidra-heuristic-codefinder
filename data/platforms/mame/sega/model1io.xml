@@ -6,4 +6,19 @@
     <region start="0x00008000" end="0x0000800F" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000C003" type="io" name="d0_r"/>
   </memory_map>
+
+  <!-- Sega Model 1 I/O Board
+I/O PCB
+-------
+837-8950-01 (C) SEGA 1992
+|-------------------------------------------|
+| CN6                           J3   J2     |
+|                                        CN5|
+|                      DSW3       LED1      |
+|                                           |
+| SW7    |---------|                        |
+|  32MHz |SEGA     |   DSW1                 |
+| SW6    |315-5338A|                        |
+|        |         |                        |
+| SW5    |---------| ... -->
 </platform>

@@ -56,4 +56,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- 3x3 Puzzle
+Ace Enterprise
+Driver by Mariusz Wojcieszek, David Haywood and Stephh
+Typical and simple Korean hardware.....
+68000 @ 10MHz
+OKI M6295 @ 1MHz (4/4)
+Lattice pLSI1032 for graphics generation
+6264 SRAM x 2
+6116 SRAM x 8
+62256 SRAM x2 (main program RAM)
+DIP SW 8-position X2 (SW1 SW2)
+OSC 27MHz, 22.1184MHz, 10MHz
+XTAL 4MHz
+Additional ROMs with 'a' in label are probably to convert
+the game back to normal version as current set on the PCB
+has adult graphics (sets provided are 'Normal' and 'En... -->
 </platform>

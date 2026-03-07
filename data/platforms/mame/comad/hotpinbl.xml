@@ -64,4 +64,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Hot Pinball
+Gals Pinball
+driver by Nicola Salmoria
+Notes:
+- to start a 2 or more players game, press the start button multiple times
+- the sprite graphics contain a "(c) Tecmo", and the sprite system is
+indeed similar to other Tecmo games like Ninja Gaiden.
+- Clearly based on Tecmo's Super Pinball Action (see tecmo/spbactn.cpp)
+- There seems to be a bug in Hot Pinball's Demo Sounds. If you start the
+game normally you get no demo sounds. However, if you select the "Slide
+Show" and run all the way... -->
 </platform>

@@ -7,4 +7,34 @@
     <region start="0x0000E000" end="0x0000E83F" type="ram" name="ram"/>
     <region start="0x0000EC00" end="0x0000ECFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Mr F Lea
+Pacific Novelty 1982
+4 way joystick and jump button
+I/O Board
+8910  D780C-1
+8910  8910
+SW2
+SW1              8259    8255
+6116  x  x  IO_C IO_A IO_D  x
+CPU Board
+8255  D780C-1                  x  x  6116 6116
+x  CPU_B5  x  CPU_B3  x  CPU_B1
+x  CPU_D5  x  CPU_D3  x  CPU_D1
+Video Board
+82S19 82S19 82S19
+82S19
+20MHz
+93425 6116 6116 93425
+clr ram (7489x2)
+clr ram (7489x2)
+clr ram (7489x2)
+93422 93422
+x  x  VD_J11 VD_J10  x  x  VD_J7 VD_J6     VD_K4 VD_K3 VD_K2 VD_K1
+x  x  VD-L11 VD_L10  x  x... -->
 </platform>

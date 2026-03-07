@@ -15,4 +15,21 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- Sansa Fuze */
+// info can be found at
+// http://www.rockbox.org/wiki/SansaFuze / http://www.rockbox.org/wiki/SansaAMSFirmware
+// http://forums.rockbox.org/index.php?topic=14064
+// http://daniel.haxx.se/sansa/ams.html
+#include "emu.h"
+#include "cpu/arm7/arm7.h"
+namespace {
+class sansa_fuze_state : public driver_device
+{
+public:
+sansa_fuze_state(const machine_config &amp;mconfig, device_type type, const char *tag)
+: driver_device(mconfig, type, tag)
+, m_maincpu(*this, "maincpu")
+{ }
+void sansa_fuz... -->
 </platform>

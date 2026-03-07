@@ -9,4 +9,20 @@
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="io" name="scrollx_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Mr Do!
+driver by Nicola Salmoria
+PCB Model: 8201
+Main Clock: XTAL = 8.2 MHz
+Video clock: XTAL = 19.6 MHz
+Horizontal video frequency: HSYNC = XTAL/4/312 = 15.7051282051 kHz
+Video frequency: VSYNC = HSYNC/262 = 59.94323742 Hz
+VBlank duration: 1/VSYNC * (70/262) = 4457 us
+The manual for this model clearly shows above values in 'Misc' parts listings.
+There's a chance that certain bootlegs might have the different 8/20 MHz XTALS.
+Sound chips have custom label "U8106". Or "8106" or unlabeled with the ... -->
 </platform>

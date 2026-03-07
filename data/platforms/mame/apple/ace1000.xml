@@ -11,4 +11,12 @@
     <region start="0x0000C070" end="0x0000C070" type="io" name="controller_strobe_r"/>
     <region start="0x0000C080" end="0x0000FFFF" type="io" name="c080_r"/>
   </memory_map>
+
+  <!-- apple2.cpp - Apple II/II Plus and clones
+Next generation driver written in September/October 2014 by R. Belmont.
+Thanks to the original Apple II series driver's authors: Mike Balfour, Nathan Woods, and R. Belmont
+Special thanks to the Apple II Documentation Project/Antoine Vignau and Peter Ferrie.
+II: original base model.  RAM sizes of 4, 8, 12, 16, 20, 24, 32, 36, and 48 KB possible.
+(Later motherboard revisions only support multiples of 16 KB.)
+8K of ROM at $E000-$FFFF, empty sockets for $D000... -->
 </platform>

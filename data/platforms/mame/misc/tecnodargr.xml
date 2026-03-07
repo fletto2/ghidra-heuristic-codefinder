@@ -11,4 +11,19 @@
     <region start="0x00008010" end="0x00008011" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="storage" name="eeprom"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Skeleton driver for Automatics Pasqual darts with CRT display.
+________________________________________________________________________________
+|    _______                              _______  ______                       |
+|    |__CN__|                             |__CN__| |__CN_|                  ___ |
+|   ___  ___                                                                |  ||
+|   |F|  |F|                   __________                              ___  |  ||
+|   |U|  |U|                ... -->
 </platform>

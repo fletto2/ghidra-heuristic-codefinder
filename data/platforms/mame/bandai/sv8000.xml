@@ -6,4 +6,24 @@
     <region start="0x00008000" end="0x000083FF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Bandai Super Vision 8000 (TV-Jack Micro Computer System) (aka TV Jack 8000)
+TV JACK スーパービジョン8000
+driver by Wilbert Pol, Robbbert, ranger_lennier, and Charles McDonald
+The Bandai Super Vision 8000 contains:
+- NEC D780C (Z80)
+- AY-3-8910
+- AMI S68047P (6847 variant)
+- NEC D8255C
+Looking at the code of the cartridges it seems there is:
+- 1KB of main system RAM
+- 3KB of video RAM
+TODO:
+- Check configuration of S68047P pins through 8910 port A against PCB
+- Verify clocks, verify exact model of soundc... -->
 </platform>

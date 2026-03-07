@@ -9,4 +9,21 @@
     <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Votrax Personal Speech System Driver
+By Jonathan Gevaryahu AKA Lord Nightmare
+with help from Kevin 'kevtris' Horton
+Special thanks to Professor Nicholas Gessler for loaning several PSS units
+The votrax PSS was sold from before the 35th week of 1982 until october, 1990
+Main xtal is 8MHz
+AY-3-8910 and i8253 clock is running at 2 MHz (xtal/4)
+Z80A is running at 4MHz (xtal/2)
+clock dividers also generate the system reset signals for the 8251 and and a periodic IRQ at 122Hz (xtal/65536)
+I8253:
+Timer0... -->
 </platform>

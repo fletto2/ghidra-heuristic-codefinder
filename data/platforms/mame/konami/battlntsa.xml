@@ -14,4 +14,10 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Konami Battlantis Hardware
+Supports:
+GX765 - Rack 'em Up/The Hustler (c) 1987 Konami
+GX777 - Battlantis (c) 1987 Konami
+Preliminary driver by: Manuel Abadia &lt;emumanu+mame@gmail.com&gt; -->
 </platform>

@@ -6,4 +6,20 @@
     <region start="0x00008000" end="0x0000BFFF" type="io" name="vram_r"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Multi 8 (c) 1983 Mitsubishi
+preliminary driver by Angelo Salese
+TODO:
+- dunno how to trigger the text color mode in BASIC, I just modify
+$f0b1 to 1 for now
+- bitmap B/W mode is untested
+- keyboard
+- check cassette with real software -->
 </platform>

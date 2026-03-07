@@ -6,4 +6,22 @@
     <region start="0x0000C000" end="0x0000E0FF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000F3FF" type="io" name="foreground_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Cop 01       (c) 1985 Nichibutsu
+Mighty Guy   (c) 1986 Nichibutsu
+driver by Carlos A. Lozano &lt;calb@gsyc.inf.uc3m.es&gt;
+TODO:
+- fix priority kludge
+- Inaccurate 1412M2 protection chip emulation in mightguy, used by the sound CPU.
+This is probably an extra CPU (program ROM is the ic2 one), presumably
+with data / address line scrambling.
+- cop01 AY8910 filters, see MT7949 (I locally tried blindly copy-pasting the one
+from magmax, but voice volume was too low)
+Mighty Guy board layout:
+----------... -->
 </platform>

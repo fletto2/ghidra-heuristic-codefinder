@@ -10,4 +10,21 @@
     <region start="0x00FF8050" end="0x00FF8069" type="io" name="font_converted_r"/>
     <region start="0x00FF8100" end="0x00FF81FF" type="io" name="map0xff8100_0xff817f__subcode_buffer_are"/>
   </memory_map>
+
+  <!-- Callback when the genesis enters interrupt code */
+IRQ_CALLBACK_MEMBER(sega_segacd_device::segacd_sub_int_callback)
+{
+if (irqline==2)
+{
+// clear this bit
+m_a12000_halt_reset_reg &amp;= ~0x0100;
+m_scdcpu-&gt;set_input_line(2, CLEAR_LINE);
+}
+return (0x60+irqline*4)/4; // vector address
+}
+TIMER_DEVICE_CALLBACK_MEMBER( sega_segacd_device::irq3_timer_callback )
+{
+if (m_lc89510_temp-&gt;get_segacd_irq_mask() &amp; 0x08)
+m_scdcpu-&gt;set_input_line(3, HOLD_LINE);
+m_irq3_timer-&gt;adjust(SEGACD_IRQ3_TIM... -->
 </platform>

@@ -7,4 +7,18 @@
     <region start="0x0000F000" end="0x0000F007" type="io" name="prot_latch_r"/>
     <region start="0x0000F800" end="0x0000F80F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+  </devices>
+
+  <!-- Dream 9 Final (c) 1992 Excellent Systems
+TODO:
+- What does the ES8712 control? There's definitely no ADPCM chip or sample ROM here;
+- lamps;
+- Start-up fading looks horrible, video timings? btanb?
+- Game looks IGS-esque, is there any correlation?
+============================================================================================
+PCB: ES-9112
+Main Chips: Z80, ES8712, 24Mhz OSC, RTC62421B 9262, YM2413, 4x8DSW -->
 </platform>

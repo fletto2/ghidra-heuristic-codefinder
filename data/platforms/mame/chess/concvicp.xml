@@ -15,4 +15,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Conchess, a series of modular chess computers by Consumenta Computer.
+Hardware design by Loproc GmbH (Germany, formerly EES), manufactured at Waltham
+Electronics (Ireland). The core people involved were Ulf Rathsman for the chess
+engine, and Johan Enroth. After Consumenta went under in 1982 before production
+started, and then Waltham in 1983, the Conchess brand was continued by Princhess
+AB and Systemhuset.
+TODO:
+- concglap/concglapa rom labels
+- dump/add concvicp library module (L/L16 don't wor... -->
 </platform>

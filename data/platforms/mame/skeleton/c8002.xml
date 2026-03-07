@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00001000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Onyx C8002
+2013-08-18 Skeleton Driver
+The C8002 is one of the earliest minicomputers to use Unix as an operating system.
+The system consists of a main CPU (Z8002), and a slave CPU for Mass Storage control (Z80)
+The Z80 board contains a 19.6608 and 16 MHz crystals; 2x Z80CTC; 3x Z80SIO/0; Z80DMA; 3x Z80PIO;
+2 eproms marked 459-3 and 460-3, plus 2 proms.
+The Z8002 board contains a 16 MHz crystal; 3x Z80CTC; 5x Z80SIO/0; 3x Z80PIO; 2 eproms marked
+466-E and 467E, plus the remaining 7 small proms.
+T... -->
 </platform>

@@ -10,4 +10,21 @@
     <region start="0x00FE0000" end="0x00FE0001" type="unmapped" name="unmapped"/>
     <region start="0x00FFFFF0" end="0x00FFFFFF" type="io" name="autovector_r"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- macprtb.cpp
+Mac Portable / PowerBook 100 emulation
+By R. Belmont
+These are electrically identical 68000 machines in very different form factors.
+The Mac Portable came in a large, heavy, "luggable" form factor and didn't enjoy
+much success.
+The PowerBook 100 was much smaller and lighter, the result of
+Apple partnering with Sony to redesign the Portable motherboard to fit into
+a much smaller case.  The PowerBook 100 pioneered the modern convention of
+having the pointing device nearest the user wit... -->
 </platform>

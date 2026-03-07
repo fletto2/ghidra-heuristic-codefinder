@@ -54,4 +54,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Shadow Force (c)1993 Technos
+Preliminary Driver by David Haywood
+Based on the Various Other Technos Games
+Stephh's notes :
+- As for some other M68000 Technos games (or games running on similar hardware
+such as 'mugsmash'), the Inputs and the Dip Switches are mangled, so you need
+a specific read handler so end-users can see them in a "standard" order.
+01-Sept-2008 - Pierpaolo Prazzoli
+- Added irqs ack
+- Implemented raster irq
+- Fixed coin2 and service input not working during the game
+- Added wat... -->
 </platform>

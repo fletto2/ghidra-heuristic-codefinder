@@ -52,4 +52,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Calcune (Japan, prototype)
+CPUs are HD68HC000CP8 and TMPZ84C00AU-6 QFP types. Other ICs include
+two Sega 315-5660-02 VDPs and a YMZ280B-F for sound.
+Oscillators: 53.693MHz (OSC1), 16.9444 (XL1), 14.318 (XL3).
+Printed on board: "VDP LICENSE FROM SEGA, MANUFACTURED BY ADO." -->
 </platform>

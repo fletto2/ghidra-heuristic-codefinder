@@ -11,4 +11,18 @@
     <region start="0x00007000" end="0x000073FF" type="io" name="port"/>
     <region start="0x00007800" end="0x00007BFF" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Phoenix hardware games
+driver by Richard Davies
+There are 2 Phoenix board families:
+2 PCBs with 2 50-pin connectors. The 'Main board' hosts the 8085 CPU,
+the MN6221 sound chip, 2 PROMs, the volume trimmer, 1 bank of 8 dip switches
+and 3 amplifiers (1x LM380 + 2x LM324), the 'ROMs board' hosts the ROMs,
+the RAM and the oscillator. This board type is used by the Amstar original
+and some of the clones, some of which introduce a small PCB for credits'
+management (with 1 bank of 4 dip switch), while ... -->
 </platform>

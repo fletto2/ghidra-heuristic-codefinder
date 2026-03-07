@@ -6,4 +6,20 @@
     <region start="0x00008000" end="0x0000EFFF" type="ram" name="banked"/>
     <region start="0x0000F000" end="0x0000F005" type="io" name="region_f000"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Angel Kids / Space Position hardware driver
+driver by David Haywood
+with some help from Steph (DSWs, Inputs, other
+bits here and there)
+2 Board System, Uses Boards X090-PC-A &amp; X090-PC-B
+Both games appear to be joint Sega / Nasco efforts
+(although all I see in Angel Kids is 'Exa Planning'
+but I think that has something to do with Nasco   )
+Space Position is encrypted, the main processor is
+D317-0005 (NEC Z80 Custom), see machine/segacrpt.cpp
+for details on this encryption scheme -->
 </platform>

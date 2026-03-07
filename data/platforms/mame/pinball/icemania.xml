@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x00003BFF" type="rom" name="rom"/>
     <region start="0x00003C00" end="0x00003CFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- PINBALL
+Jac Van Ham (Holland)
+Games:
+- Escape
+- Formula 1
+- Ice Mania
+- Movie Masters (IMDB says this is a Bally conversion by IDI)
+- Royal Flippers
+Status:
+- Skeletons
+ToDo:
+- Everything -->
 </platform>

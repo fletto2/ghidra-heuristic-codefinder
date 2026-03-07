@@ -54,4 +54,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Gals Panic       1990 Kaneko
+driver by Nicola Salmoria
+The version of Gals Panic in this driver is the one using the PANDORA chip
+for sprites, other boardsets use a different sprite chip, see expro02.cpp
+Notes about Gals Panic:
+-----------------------
+The current unprotected ROM set is strange because two ROMs overlap two others
+replacing the program.
+It's definitely a Kaneko boardset, but it could very well be they converted
+some other game to run Gals Panic, because there's some ROMs piggyback... -->
 </platform>

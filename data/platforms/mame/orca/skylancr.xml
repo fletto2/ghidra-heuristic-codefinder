@@ -10,4 +10,30 @@
     <region start="0x0000F000" end="0x0000F000" type="unmapped" name="nop_read"/>
     <region start="0x0000F800" end="0x0000F802" type="io" name="input_port_0_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Funky Bee/Sky Lancer memory map (preliminary)
+driver by Zsolt Vasvari
+MAIN CPU:
+0000-4fff ROM
+8000-87ff RAM
+a000-bfff video RAM (only 0x20 bytes of each 0x100 byte block are used)
+(also contains sprite RAM)
+c000-dfff color RAM (only 0x20 bytes of each 0x100 byte block are used)
+(also contains sprite RAM)
+read:
+f000      interrupt ACK
+f800      IN0/watchdog
+f801      IN1
+f802      IN2
+write:
+e000      row scroll
+e800      flip screen
+e802-e803 coin counter
+e804      ???
+e805      gfx bank select
+... -->
 </platform>

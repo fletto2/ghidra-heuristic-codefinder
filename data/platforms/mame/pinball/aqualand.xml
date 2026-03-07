@@ -9,4 +9,28 @@
     <region start="0x00007000" end="0x00007000" type="io" name="adpcm_reset_w"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="adpcm_bank"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- PINBALL
+Juegos Populares / Automáticos Montecarlo
+All manuals are in Spanish.
+Schematic has a number of errors and omissions, so referring to PinMAME.
+Games:
+- Petaco (newer hardware)
+- Faeton
+- Halley Comet
+- Aqualand
+- America 1492
+- Olympus
+- Lortium
+- Pimbal (Pinball 3000)
+- Petaco (older hardware) is in peyper.cpp
+Status:
+- All games are Playable
+- Pimbal is multiball, so press XY to end a ball.
+- petacon, petacona: There is no ball digit, it's a set of 5 lamps like EM machines.
+The ball di... -->
 </platform>

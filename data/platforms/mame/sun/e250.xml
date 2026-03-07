@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0xFFF00000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Skeleton driver for Sun Microsystems Enterprise 250 Server.
+Hardware info about Enterprise 250 Server:
+-Dual 250, 300 or 400 MHz UltraSPARC II with onboard e-cache.
+-1-MB external cache per processor with 250-MHz CPU or 2-MB per processor with 300 or 400 MHz CPU.
+-16 DIMM slots, four banks of four slots. 128 MB to 2 GB total memory capacity.
+-Four full-size slots compliant with PCI specification version 2.1:
+One slot operating at 33- or 66-MHz, 32- or 64-bit data bus width, 3.3 volt
+Three slots ... -->
 </platform>

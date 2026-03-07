@@ -7,4 +7,20 @@
     <region start="0x0000E000" end="0x0000E00F" type="io" name="read"/>
     <region start="0x0000E020" end="0x0000E021" type="io" name="master_port_w"/>
   </memory_map>
+
+  <!-- Taito Captain Zodiac, pirate-theme punching bag game with red dot matrix display
+Hardware summary (Japan ver.)
+Main PCB:
+- 2*Z80 TMPZ84C00AP-6, 12MHz XTAL
+- Z80 CTC TMPZ84C30AP-6
+- 27C512 EPROM, TMS27C010A EPROM, 2316000 Mask ROM
+- 3*5563-100 (8KB RAM)
+- YM2610B, 16MHz XTAL
+- TE7750, TC0140SYT
+- SED1351F LCD controller
+Display PCB:
+- Toshiba TD62C962LF
+- 4 16*16 LED matrix boards plugged in
+TODO:
+- everything -->
 </platform>

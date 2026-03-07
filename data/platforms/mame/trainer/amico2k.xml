@@ -13,4 +13,27 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- A.S.EL. Amico 2000
+07/2009 Skeleton driver.
+IC9 - Monitor PROM, handwritten from book listing by Davide
+IC10 - Recorder PROM, yet to be found
+IC6/IC7 - PROMs reconstructed by Luigi Serrantoni
+To Do:
+Basically everything, in particular implement PROM (described in details
+at the link below) and i8255
+http://www.computerhistory.it/index.php?option=com_content&amp;task=view&amp;id=85&amp;Itemid=117
+Pasting:
+0-F : as is
+^ (inc) : ^
+AD : -
+DA : =
+GO : X
+Test Paste:
+=11^22^33^44^55^66^77^88^99^-0000
+N... -->
 </platform>

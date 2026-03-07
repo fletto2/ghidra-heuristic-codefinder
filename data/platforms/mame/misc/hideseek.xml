@@ -22,4 +22,11 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <!-- Hide &amp; Seek
+the AG-2 AX51201 should be the follow-up to the AG-1 AX51101 in gunpey.cpp
+AS:
+Current ROM code barely contains some valid SH-2 opcodes but not enough for a HD64F7045F28. i.e. It doesn't contain VBR set-up, valid irq routines,
+a valid irq table and no internal SH-2 i/o set-up. sub-routine at 0xe0 also points to 0x4b0, which is full of illegal opcodes with current ROM.
+The HD64F7045F28 manual says that there's an on-chip ROM at 0-0x3ffff (page 168), meaning that this one definitel... -->
 </platform>

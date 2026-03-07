@@ -10,4 +10,11 @@
     <region start="0x00C40000" end="0x00C40007" type="io" name="read"/>
     <region start="0x00C90000" end="0x00C90003" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Convergent Miniframe
+Preliminary driver by R. Belmont based on unixpc.cpp by Dirk Best &amp; R. Belmont -->
 </platform>

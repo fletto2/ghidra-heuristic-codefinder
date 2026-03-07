@@ -13,4 +13,18 @@
     <region start="0x0000C800" end="0x0000C802" type="io" name="scroll_x_lsb_w"/>
     <region start="0x0000C803" end="0x0000C804" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Time Limit (c) 1983 Chuo
+Progress   (c) 1984 Chuo
+driver by Ernesto Corvi
+Notes:
+- sprite colors are wrong (missing colortable?)
+- driver should probably be merged with taito/roundup.cpp (and taito/suprridr.cpp)
+- unused color bank for tilemaps? (colors 0x10-0x1f &amp; 0x30-0x3f)
+- verify clocks, they're currently borrowed from thepit, maincpu clock
+used to be 5MHz in older MAME versions but that's doubtful -->
 </platform>

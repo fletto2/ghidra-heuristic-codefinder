@@ -14,4 +14,20 @@
     <region start="0x0000D000" end="0x0000D001" type="io" name="address_data_w"/>
     <region start="0x0000D800" end="0x0000D802" type="io" name="address_data_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Jaleco Exerion hardware
+Jaleco EX-8313 + EX-8315 PCBs
+Exerion is a unique driver in that it has idiosyncrasies that are straight
+out of Bizarro World. I submit for your approval:
+The mystery reads from $d802 - timer-based protection?
+The freakish graphics encoding scheme, which no other MAME-supported game uses
+The sprite-ram, and all the funky parameters that go along with it
+Main XTAL is 19.968 MHz (some PCBs also seen with 20 MHz)
+HSync: 15.44568kHz
+VSync: 61.27464Hz
+The protection chip is ma... -->
 </platform>

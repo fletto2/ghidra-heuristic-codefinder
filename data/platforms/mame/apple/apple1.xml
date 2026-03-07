@@ -13,4 +13,19 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- apple1.cpp - Apple I
+Next generation driver written in February 2016 by R. Belmont.
+Thanks to the original crew.
+Apple I has:
+6502 @ 1.023 MHz (~0.960 MHz with RAM refresh)
+4 or 8 KB RAM on-board
+256 byte Monitor ROM
+No IRQs, no sound, dumb terminal video
+6820 PIA for keyboard / terminal interface
+-------------------------------------------------------------------
+How to use cassettes:
+The system has no error checking or checksums, and the cassette
+has no header.
+Therefore, you must know the det... -->
 </platform>

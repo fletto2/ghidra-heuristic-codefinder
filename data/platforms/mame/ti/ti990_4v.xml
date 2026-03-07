@@ -7,4 +7,15 @@
     <region start="0x0000F800" end="0x0000FBFF" type="ram" name="ram"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- ti990/4 driver
+We emulate a basic ti990/4 board, with a FD800 disk controller and an 733
+ASR terminal.  A little floppy-based software for this computer is
+available thanks to efforts by Dave Pitts: mostly, Forth and TX990.
+Board setup options:
+8kb of DRAM (onboard option, with optional parity): base 0x0000 or 0x2000
+4 banks of 512 bytes of ROM or SRAM: base 0x0000, 0x0800, 0xF000 or 0xF800
+power-up vector: 0x0000 (level 0) or 0xFFFC (load)
+optional memerr interrupt (level 2)
+optional power fail... -->
 </platform>

@@ -6,4 +6,9 @@
     <region start="0x00200000" end="0x0021FFFF" type="ram" name="ram"/>
     <region start="0x00400000" end="0x00400007" type="io" name="read"/>
   </memory_map>
+
+  <!-- Yamaha MU-5 Tone Generator
+Preliminary driver by R. Belmont
+CPU: H8/3002 (HD6413002F10)
+Sound: YMW-258-F (aka "MultiPCM") -->
 </platform>

@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <!-- FP-200 (c) 1982 Casio
+TODO:
+- cassette i/f, glued together by discrete;
+- serial i/f;
+- FDC (requires test program that Service manual mentions);
+- ROM/RAM slot interface;
+- mini plotter printer (FP-1011PL)
+- graphic printer (FP-1012PR)
+Notes:
+- on start-up there's a "memory illegal" warning. Issue a "RESET" command to initialize it. -->
 </platform>

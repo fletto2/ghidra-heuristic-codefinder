@@ -57,4 +57,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Taito Air System
+----------------
+Top Landing             (c) 1988 Taito
+Air Inferno             (c) 1990 Taito
+(Thanks to Raine team for their preliminary drivers)
+Controls:
+P2 y analogue = throttle
+P1 analogue = pitch/yaw control
+Can someone with flight sim stick confirm this is sensible.
+I think we need OSD display for P1 l/r.
+System specs    (from TaitoH: incorrect!)
+------------
+CPU   : MC68000 (12 MHz) x 1, Z80 (4 MHz?, sound CPU) x 1
+Sound : YM2610, YM3016?
+OSC   : 20.000 MHz, 8.000 MHz, ... -->
 </platform>

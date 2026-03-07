@@ -10,4 +10,32 @@
     <region start="0x0000B000" end="0x0000B0FF" type="io" name="paletteram"/>
     <region start="0x0000C000" end="0x0000C000" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Vegas Roulette
+World Games 1989
+LE1000
+6116  PGM  Z80    8255
+8255  SW1
+GFX  6116                YM2149   SW3
+SW2
+2148
+2148
+2148
+N4
+24MHz
+---
+Driver by Curt Coder
+TODO:
+Find 'payout on' command to add simulator
+Tomasz Slanina 20050225
+- colors (4bpp tiles and 3bpp palette ? something is wrong then ....)
+- 8255x2
+- ball sprite (maybe it's something else in real machine , not sprite)
+(hardcoded tile number and palette for now .. maybe x/y must be swapped)
+are writes to 8000/c000 related to sprite ... -->
 </platform>

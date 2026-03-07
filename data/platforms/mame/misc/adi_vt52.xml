@@ -10,4 +10,33 @@
     <region start="0x00004000" end="0x00004001" type="io" name="read"/>
     <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- ADI VT52
+VT52 compatible terminal
+Hardware:
+- SY6502
+- R6532-11
+- HD46505
+- SYU6551A
+- MC6850P
+- MB8128-15 (2k RAM)
+- 16.5888 MHz XTAL
+- 2x10 position DIP switch
+TODO:
+- VRAM bit 7 is unknown
+- Unknown DIP switch settings
+- Replace HLE serial keyboard
+- 6850 ACIA clock rate and source
+- AUX port
+Notes:
+- Displays "ERROR 8" - this means "keyboard error". The keyboard needs to
+send 0xfe on startup
+- Everything here is a guess, only a PCB picture is available
+- PCB marked "A. D. I. 304-029-01" and ... -->
 </platform>

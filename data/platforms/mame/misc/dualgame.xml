@@ -76,4 +76,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Blitter based gambling games
+68000 CPU + 8bit MCUs (68HC7058/87C748), CRT controller, RAMDAC
+Preliminary driver by David Haywood, Angelo Salese, Tomasz Slanina, Luca Elia
+----------------------------------------------------------------------
+Year  Game                        Manufacturer
+----------------------------------------------------------------------
+1990  Mega Double Poker           Blitz Systems Inc.
+1990  Mega Double Poker Jackpot   Blitz Systems Inc.
+1992  Mega Double Strip           ... -->
 </platform>

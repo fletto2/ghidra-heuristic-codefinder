@@ -7,4 +7,23 @@
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="banked"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Real Mahjong Haihai                (c)1985 Alba
+Real Mahjong Haihai Jinji Idou Hen (c)1986 Alba
+Real Mahjong Haihai Seichouhen     (c)1986 Visco
+CPU:    Z80
+Sound:  AY-3-8910
+M5205
+NVRAM:  NEC D449C
+OSC:    20.000MHz
+driver by Nicola Salmoria
+TODO:
+- input handling is not well understood... it might well be handled by a
+protection device. I think it is, because rmhaijin and rmhaisei do additional
+checks which are obfuscated in a way that would make sense only for
+protection (in rmhaisei the fail... -->
 </platform>

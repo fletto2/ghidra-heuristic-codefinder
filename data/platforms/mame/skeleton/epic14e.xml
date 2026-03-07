@@ -16,4 +16,8 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Skeleton driver for Epic 14E video display terminal.
+This green-screen terminal emulates the TeleVideo 925. It was later
+acquired by ADDS and rereleased as the Viewpoint/925+. -->
 </platform>

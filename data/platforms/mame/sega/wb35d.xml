@@ -50,4 +50,34 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="ym2151"/>
+  </devices>
+
+  <!-- Sega pre-System 16 &amp; System 16A hardware
+Known bugs:
+some games are stuck after reset when i8751 is present
+DIP locations verified from manual for:
+aceattaca
+aliensyn
+aliensynj
+passsht16a
+quartet
+quart2
+shinobi
+tetris
+timescan
+wb3
+System16A Hardware Overview
+---------------------------
+The games on this system include... (there may be more??)
+Action Fighter (C) Sega 1985
+Alex Kidd      (C) Sega 1986
+Fantasy Zone   (C) Sega 1986
+SDI            (C) Sega 1987
+Shinobi        (C) Sega 1987
+Tetris... -->
 </platform>

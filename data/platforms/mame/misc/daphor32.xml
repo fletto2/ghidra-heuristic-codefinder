@@ -6,4 +6,15 @@
     <region start="0x00006000" end="0x00008FFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Daphor 32
+TODO:
+- everything, no schematics available
+- interrupts
+- fix the keyboard, using the ROM to lookup codes
+- somehow use EF9364 for cursor -->
 </platform>

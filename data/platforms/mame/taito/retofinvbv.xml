@@ -14,4 +14,24 @@
     <region start="0x0000D800" end="0x0000D800" type="io" name="write"/>
     <region start="0x0000F800" end="0x0000F800" type="io" name="cpu0_mf800_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Return of the Invaders
+driver by Jarek Parchanski, Andrea Mazzoleni
+UPL is said to have developed Return of the Invaders for Taito, but some digging
+in the ROMs reveals the following strings:
+Programed by NAKAKUMA AKIRA
+V 1.0 (85.3.15)
+NOBUO KODERA
+AKIRA NAKAKUMA
+HIKARU KASAHARA
+COMIX LTD. 1985.
+Notes:
+- The ROM names and locations are derived from PCB pictures.
+- The video hardware (especially the sprite system) is quite obviously derived
+from a Namco design.
+- Two bits of tilemap RAM might be ... -->
 </platform>

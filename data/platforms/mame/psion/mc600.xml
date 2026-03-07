@@ -7,4 +7,14 @@
     <region start="0x000C0000" end="0x000DFFFF" type="unmapped" name="unmapped"/>
     <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+  </devices>
+
+  <!-- Psion MC600 Series
+TODO:
+- dump HD6305V0 internal ROM.
+- On/Off key doesn't work, use PSETUP to disable Standby.
+- add CGA output. -->
 </platform>

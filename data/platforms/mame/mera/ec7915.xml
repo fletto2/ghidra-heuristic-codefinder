@@ -4,4 +4,10 @@
     <region start="0x00000000" end="0x000027FF" type="rom" name="rom"/>
     <region start="0x00004800" end="0x000067FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Skeleton driver for Mera-Elzab EC-7915/EC-7950 terminal. -->
 </platform>

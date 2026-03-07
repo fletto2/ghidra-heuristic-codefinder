@@ -53,4 +53,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Capcom System 1
+===============
+Driver provided by:
+Paul Leaman (paul@vortexcomputing.demon.co.uk)
+68000 for game, Z80, YM-2151 and OKIM6295 for sound.
+68000 clock speeds are unknown for all games (except where commented)
+todo: move the bootleg sets with modified hardware into their own
+drivers, like capcom/fcrash.cpp
+Notes
+-----
+- Most of the original PALs are protected. The images loaded in the ROM definitions are
+mostly logically equivalent replacements with a GAL16V8 target. The actual pld t... -->
 </platform>

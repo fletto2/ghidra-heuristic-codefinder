@@ -7,4 +7,18 @@
     <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
     <region start="0x00008000" end="0x0000800F" type="io" name="map"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Applied Concepts Great Game Machine (GGM), electronic board game computer,
+in cooperation with Chafitz, who marketed it as Modular Game System (MGS).
+After a legal dispute with Chafitz, all rights went to Applied Concepts.
+Hardware notes:
+- 6502A 2MHz, SYP6522 VIA
+- 2KB RAM (1*M58725P battery-backed, or 4*2114 / 2*2114 + 2*2114L of which
+only the first 1KB is battery-backed), no ROM on main PCB
+- 2*74164 shift register, 3*6118P VFD driver
+- 8-digit 14seg VFD panel (same one as in Speak &amp; Spe... -->
 </platform>

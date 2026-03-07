@@ -8,4 +8,20 @@
     <region start="0x00FFFC00" end="0x00FFFC3F" type="io" name="read"/>
     <region start="0x00FFFE00" end="0x00FFFE3F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Omnibyte MSBC-1 Multibus Single Board Computer
+PCB Layout
+----------
+REV B
+|-----------------------------------------------------------|
+|       CN1     CN2     CN3     CN4         SW1     CN5     |
+|                                                           |
+|           3.6864MHz   3.6864MHz   ROM1                    |
+|                                   ROM0                    |
+|       SIO         SIO     SW3 SW2                         |
+|                               PIT                  ... -->
 </platform>

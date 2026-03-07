@@ -7,4 +7,15 @@
     <region start="0x00001740" end="0x0000174F" type="io" name="io_map"/>
     <region start="0x00001780" end="0x00001FFF" type="io" name="ram_map"/>
   </memory_map>
+
+  <!-- MOS Technology KIM-1
+The cassette interface
+======================
+The KIM-1 stores data on cassette using 2 frequencies: ~3700Hz (high) and ~2400Hz
+(low). A high tone is output for 9 cycles and a low tone for 6 cycles. A logic bit
+is encoded using 3 sequences of high and low tones. It always starts with a high
+tone and ends with a low tone. The middle tone is high for a logic 0 and low for
+0 logic 1.
+These high and low tone signals are fed to a circuit containing a LM565 PLL and
+a 311 comparato... -->
 </platform>

@@ -5,4 +5,10 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00001000" end="0x000010FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Ramtek Star Cruiser Driver
+(no known issues)
+Frank Palazzolo
+palazzol@home.com
+Netlist Audio by Ryan Holtz -->
 </platform>

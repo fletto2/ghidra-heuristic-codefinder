@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Sega SG-1000
+PCB Layout
+----------
+171-5078 (C) SEGA 1983
+171-5046 REV. A (C) SEGA 1983
+|---------------------------|                              |----------------------------|
+|   SW1     CN2             |   |------|---------------|   |    SW2     CN4             |
+|                           |---|         CN3          |---|                            |
+|  CN1                                                                              CN5 |
+|                                                   ... -->
 </platform>

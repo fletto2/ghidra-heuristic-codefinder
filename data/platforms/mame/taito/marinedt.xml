@@ -6,4 +6,14 @@
     <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
     <region start="0x00004800" end="0x00004BFF" type="ram" name="vram"/>
   </memory_map>
+
+  <!-- Marine Date (c) 1981 Taito
+driver by Angelo Salese,
+original "wiped off due of not anymore licenseable" driver by insideoutboy.
+TODO:
+- discrete sound
+- imperfect colors: unused bit 2 of color prom, guessworked sea gradient, mg16 entirely unused.
+also unused colors 0x10-0x1f (might be a flashing bank)
+- collision detection isn't perfect, sometimes octopus gets stuck and dies even if moves are still available.
+HW collision detection isn't perfect even from the reference, presumably needs a trojan... -->
 </platform>

@@ -58,4 +58,24 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Thunder Zone / Desert Assault (c) 1991 Data East Corporation
+Thunder Zone       (World 2 or 4 players, 2 sets)
+Thunder Zone       (World 4 players only)
+Thunder Zone       (Japan 2 or 4 players)
+Desert Assault     (USA 4 players only)
+Desert Assault     (USA Selectable 2-4 players)
+Emulation by Bryan McPhail, mish@tendril.co.uk
+Thunder Zone / Desert Assault
+Data East 1991
+PCB Layout
+----------
+Main PCB:
+DE-0344-3
+|--------------------------------------------------------|
+|TA8205      YM3012   YM... -->
 </platform>

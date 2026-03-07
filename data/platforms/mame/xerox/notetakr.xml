@@ -9,4 +9,19 @@
     <region start="0x000FFFEA" end="0x000FFFEF" type="io" name="cpuCtl_w"/>
     <region start="0x000FFFF0" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Xerox NoteTaker, 1978
+Driver by Jonathan Gevaryahu
+Notetaker Team At Xerox PARC 1976-1981:
+Alan Kay - Team Lead
+Bruce Horn - BIOS code and NoteTaker Hardware/Electronics Design (Ethernet, others)
+Ted Kaehler - SmallTalk-76 code porting[2] and more ( http://tedkaehler.weather-dimensions.com/us/ted/index.html )
+Dan Ingalls - Later BitBlt engine and SmallTalk-76 kernel and more[3]
+Doug Fairbairn - NoteTaker Hardware/Electronics Design (EmulatorP, IOP, ADC, Alto Debug/Test Interface)
+( http://www.co... -->
 </platform>

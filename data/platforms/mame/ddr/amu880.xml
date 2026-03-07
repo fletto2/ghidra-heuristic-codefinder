@@ -6,4 +6,7 @@
     <region start="0x0000F000" end="0x0000FBFF" type="rom" name="rom"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Ausbaufaehiger Mikrocomputer mit dem U 880
+electronica Band 227/228 -->
 </platform>

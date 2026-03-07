@@ -11,4 +11,32 @@
     <region start="0x0000D000" end="0x0000DBFF" type="ram" name="fg_videoram"/>
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- 1942
+driver by Paul Leaman
+MAIN CPU:
+0000-bfff ROM (8000-bfff banked)
+cc00-cc7f Sprites
+d000-d3ff Video RAM
+d400-d7ff Color RAM
+d800-dbff Background RAM (groups of 32 bytes, 16 code, 16 color/attribute)
+e000-efff RAM
+read:
+c000      IN0
+c001      IN1
+c002      IN2
+c003      DSW0
+c004      DSW1
+write:
+c800      command for the audio CPU
+c802-c803 background scroll
+c804      bit 7: flip screen
+bit 4: cpu B reset
+bit 0: coin counter
+c805      background palette bank selector
+c806      bit 0-1 ROM b... -->
 </platform>

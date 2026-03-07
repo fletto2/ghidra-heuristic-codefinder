@@ -13,4 +13,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Microtan 65
+Thanks go to Geoff Macdonald &lt;mail@geoff.org.uk&gt;
+for his site http://www.geoff.org.uk/microtan/index.htm
+and to Fabrice Frances &lt;frances@ensica.fr&gt;
+for his site http://oric.free.fr/microtan.html
+Microtan65 memory map
+range     short     description
+0000-01ff SYSRAM    system ram
+0000-003f variables
+0040-00ff basic
+0100-01ff stack
+0200-03ff VIDEORAM  display
+0400-afff RAM       main memory
+bc00-bc01 AY8912-0  sound chip #0
+bc02-bc03 AY8912-1  sound chip #1
+bc04      SPACEI... -->
 </platform>

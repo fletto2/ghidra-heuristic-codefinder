@@ -6,4 +6,6 @@
     <region start="0x000F8000" end="0x000FBFFF" type="io" name="char_ram_r"/>
     <region start="0x000FC000" end="0x000FDFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Tandy 2000 -->
 </platform>

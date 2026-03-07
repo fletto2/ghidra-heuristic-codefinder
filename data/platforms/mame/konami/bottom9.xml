@@ -15,4 +15,11 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Bottom of the Ninth (c) 1989 Konami
+Similar to S.P.Y.
+driver by Nicola Salmoria
+2008-07
+Dip locations and factory settings verified with US manual.
+To be verified for Main Stadium -->
 </platform>

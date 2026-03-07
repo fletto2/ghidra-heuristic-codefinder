@@ -8,4 +8,12 @@
     <region start="0x000A0000" end="0x000A0003" type="io" name="unknown2_r"/>
     <region start="0x000E0000" end="0x000E0003" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <!-- IGS games based on M68000 + IGS023 for video.
+PGM-like but with different sound hardware.
+TODO:
+identify sound hardware
+identify where the M6502 core is contained
+complete inputs for xypmd
+add inputs for xypmda -->
 </platform>

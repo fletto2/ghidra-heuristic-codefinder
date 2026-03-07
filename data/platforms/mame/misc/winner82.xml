@@ -6,4 +6,19 @@
     <region start="0x00004000" end="0x00004FFF" type="ram" name="nvram"/>
     <region start="0x00008000" end="0x000080FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Winners Circle.
+1980-81-82, Corona Co, LTD.
+Driver written by Roberto Fresca.
+Blitter based on roul driver from Roberto Zandona' &amp; Angelo Salese.
+Games running in this hardware:
+Winners Circle (81, 28*28 PCB),           1981, Corona Co, LTD.
+Winners Circle (81, 18*22 PCB),           1981, Corona Co, LTD.
+Winners Circle (82),                      1982, Corona Co, LTD.
+Le Grandchamps,                           198?, Isermatic France S.A.
+Ruleta RE-800 (earlier),                  1991, Entreten... -->
 </platform>

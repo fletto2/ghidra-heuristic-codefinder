@@ -12,4 +12,15 @@
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="sound_share"/>
     <region start="0x0000FFFE" end="0x0000FFFF" type="io" name="soundcpu_irq_vector_hack_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- VT1682 - NOT compatible with NES, different video system, sound CPU (4x
+main CPU clock), optional internal ROM etc.  The design is somewhat
+based on the NES but the video / sound system is significantly
+changed
+Internal ROM can be mapped to Main CPU, or Sound CPU at 0x3000-0x3fff if used
+can also be configured as boot device -->
 </platform>

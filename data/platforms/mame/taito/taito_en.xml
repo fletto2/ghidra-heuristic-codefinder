@@ -11,4 +11,12 @@
     <region start="0x00C00000" end="0x00C7FFFF" type="ram" name="cpubank1"/>
     <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="osram"/>
   </memory_map>
+
+  <!-- Taito Ensoniq ES5505-based sound hardware
+TODO:
+ES5510 ESP emulation is not perfect
+ES5510 Input Clock and ES5505 Output channels are same in other PCBs?
+(Currently these are verified from Gun Buster schematics)
+Where does the MB8421 go? Taito F3 (and Super Chase) have 2 of them on
+the sound area, Taito JC has one. -->
 </platform>

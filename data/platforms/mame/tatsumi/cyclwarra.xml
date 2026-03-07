@@ -6,4 +6,17 @@
     <region start="0x0003E000" end="0x0003EFFF" type="ram" name="ram"/>
     <region start="0x00040000" end="0x0004FFFF" type="ram" name="slave_ram"/>
   </memory_map>
+
+  <!-- Cycle Warriors                                      ABA-011
+Big Fight                                           ABA-011
+TODO:
+- Combine Big Fight &amp; CycleWarriors video routines - currently each
+game uses different sized tilemaps - these are probably software
+controlled rather than hardwired, but I don't think either game
+changes the size at runtime.
+reference of bigfight : https://youtu.be/aUUoUCr6yhk
+Cycle Warriors Board Layout
+ABA-011
+6296             CW24A                   5864
+CW25A    ... -->
 </platform>

@@ -8,4 +8,12 @@
     <region start="0x00003800" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00005C00" end="0x00005C03" type="io" name="read"/>
   </memory_map>
+
+  <!-- KTM-3 (c) 1980 Synertek Systems Corp.
+This is a sort of single-board video display terminal. The second 6502,
+which uses part of the same program ROM as the first 6502 and runs on the
+inverse phases of its clock, appears to function as a crude CRTC,
+generating character addresses and sync signals with its address outputs.
+Only a few address lines are decoded at all. The resulting mirroring might
+not be accurately emulated yet. -->
 </platform>

@@ -11,4 +11,21 @@
     <region start="0x00800014" end="0x00800015" type="io" name="dest_w"/>
     <region start="0x00C00000" end="0x00C0001F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Last Fighting  (C)2000 Subsino
+driver by Luca Elia
+PCB Layout
+----------
+|------------------------------------------------------|
+|TDA1519A                                              |
+|     VOL                                              |
+|                HM86171                       ULN2003 |
+|   LM324                                              |
+|           S-1                                ULN2003 |
+|                                                      |
+|                           ... -->
 </platform>

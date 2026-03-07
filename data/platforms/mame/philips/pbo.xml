@@ -11,4 +11,15 @@
     <region start="0x00FA0100" end="0x00FA0101" type="io" name="fa0101_read"/>
     <region start="0x00FA8400" end="0x00FA840F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="disk" name="wd_fdc"/>
+    <device type="net" name="am7990"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Philips BO "Videosynthesizer Prototype" skeleton -->
 </platform>

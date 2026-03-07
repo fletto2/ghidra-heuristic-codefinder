@@ -17,4 +17,17 @@
     <region start="0x0000A808" end="0x0000A808" type="io" name="schick_prot_a808_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- a strange hack of Pengo, seems to be built on top of the 'Penta' bootleg
+it recycles encryption from there + adds an additional layer of encryption
+has 4bpp tiles instead of 2bpp, bombjack sound system
+and possibly extra protection (conditional jumps to areas where there is no ROM data)
+colours from undumped? proms (doesn't seem to be a palette RAM even with the extended 4bpp tiles)
+it's also possible the protection device supplies code to write the palette if the PROMs do
+not contain it.
+the ch... -->
 </platform>

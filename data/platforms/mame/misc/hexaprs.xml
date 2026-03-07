@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- This tries to document the available info, but even game titles should be taken with a grain of salt.
+YouTube video references:
+Hexa President: http://www.youtube.com/watch?v=5Ea5HxH2zwM&amp;t=8s
+Golden Hexa: http://www.youtube.com/watch?v=3u1ccTo3SGI -->
 </platform>

@@ -56,4 +56,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- This entire hardware series is generally called 'GX400'
+Bubble System           (various games) GX400 PWB(B) 200207F
+Twin Bee                (Game 412) PWB(B) 352473
+Gradius                 (Game 456) PWB(B) 352473
+Galactic Warriors       (Game 578) unknown board
+Konami GT               (Game 561) PWB(B) 352473
+RF2                     (Game 561) PWB(B) 352473
+Nemesis (Hacked?)       (Game 456) GX400 PWB(B) 201000A
+Nemesis (World?)        (Game 456) GX400 PWB(B) 201000A
+Salamander (Version D)  (G... -->
 </platform>

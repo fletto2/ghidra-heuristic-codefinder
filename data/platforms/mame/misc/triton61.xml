@@ -6,4 +6,10 @@
     <region start="0x00001400" end="0x00001FFF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Transam Triton
+TODO:
+- cassette interface
+- keyboard auto repeat (optional)
+- parallel printer on port 3, uses INT3 (optional) -->
 </platform>

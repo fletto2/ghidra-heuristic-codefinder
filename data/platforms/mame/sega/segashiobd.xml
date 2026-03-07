@@ -5,4 +5,12 @@
     <region start="0x04000000" end="0x0401FFFF" type="ram" name="ram"/>
     <region start="0x0C000000" end="0x0CFFFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- 837-14438 SH I/O BD
+|-------------------------------------------------------------------------------------|
+|         CN3                     CN6              CN2         CN1          CN11      |
+|                                                                                     |
+|                                     LED1-5                                          |
+|                                                                                     |
+|                DIPSW1              BT1... -->
 </platform>

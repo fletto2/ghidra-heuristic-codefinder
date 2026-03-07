@@ -7,4 +7,16 @@
     <region start="0x0000C000" end="0x0000CFFF" type="io" name="palette__vram__scrollram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Capcom Baseball
+Somewhat similar to the "Mitchell hardware", but different enough to
+deserve its own driver.
+TODO:
+- understand what bit 6 of input port 0x12 is
+- unknown bit 5 of bankswitch register -->
 </platform>

@@ -5,4 +5,21 @@
     <region start="0x00B00000" end="0x00B03FFF" type="ram" name="palette"/>
     <region start="0x00C00000" end="0x00C01FFF" type="io" name="vrom_koropens_r"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- konmedal68k.cpp: Konami 68000 based medal games
+Pittanko Zaurus (ピッタンコ　ザウルス)
+GS562
+(c) 1995 Konami
+Konami ICs:
+K058143 + K056832 = tilemaps
+K055555 = priority blender
+K056766 = color DAC
+K056879 = input/EEPROM interface
+800000 = control
+bit 3 = write 1 to enable or ack IRQ 3
+bit 4 = write 1 to enable or ack IRQ 4 -->
 </platform>

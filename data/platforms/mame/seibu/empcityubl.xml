@@ -6,4 +6,18 @@
     <region start="0x0000D000" end="0x0000D80F" type="ram" name="txram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- (by Mark McDougall)
+STREET FIGHT hardware ***  This has been adapted from the excellent
+Psychic 5 description (by Roberto Ventura)
+Notes:  Lower Board - CPU board        S-0086-002-B0  (both games)
+Top Board   - GFX board        S-0086-002A-A0 (Street Fight)
+Top Board   - GFX board        S-0087-807     (Cross Shooter)
+for the single PCB version of Air Raid / Cross Shooter on the S-0087-011A-0 PCB,
+see airraid.cpp
+---
+Street Fight (c) Seibu Kaihatsu (1986)
+0) GENERAL.
+The game has two Z80s.
+The ... -->
 </platform>

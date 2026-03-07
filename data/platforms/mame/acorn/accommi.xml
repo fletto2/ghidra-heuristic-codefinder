@@ -16,4 +16,23 @@
     <region start="0x00C00000" end="0x00F1FFFF" type="rom" name="rom"/>
     <region start="0x00F80000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Acorn Communicator
+Driver by R. Belmont
+Main CPU:
+65C816
+Other chips:
+6850 UART
+6522 VIA
+SAA5240 (Teletext)
+MC68B54 (Econet)
+AM7910  (Modem)
+PCD3312 (Tone Generator)
+PCF0335 (Pulse Dialler?)
+PCF8573 (RTC)
+SCN2641 (RS423) -->
 </platform>

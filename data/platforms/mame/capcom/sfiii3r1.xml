@@ -42,4 +42,25 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <devices>
+    <device type="scsi" name="wd33c93"/>
+  </devices>
+
+  <!-- CPS3 Driver (preliminary)
+Decryption by Andreas Naive
+Driver by David Haywood
+with help from Tomasz Slanina and ElSemi
+Sound emulation by Philip Bennett
+SCSI code by ElSemi
+Known Issues:
+Whole screen flip not emulated
+Miscellaneous TO-DOs:
+DMA ack IRQ10 generation:
+Character and Palette DMAs speed is unknown, needs to be measured.
+Alpha Blending Effects
+These are actually palette manipulation effects, not true blending.
+Verify them, current emulation might not be 100% accurate.
+Tilemap Linezoom
+... -->
 </platform>

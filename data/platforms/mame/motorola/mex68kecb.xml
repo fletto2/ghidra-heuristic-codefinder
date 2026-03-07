@@ -8,4 +8,18 @@
     <region start="0x00010000" end="0x00010043" type="io" name="read"/>
     <region start="0x00010040" end="0x00010043" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- mex68kecb.cpp - Motorola MEX68KECB
+Documentation:
+http://www.bitsavers.org/components/motorola/68000/MEX68KECB/MEX68KECB_D2_EduCompBd_Jul82.pdf
+The Motorola MC68000 Educational Computer Board is a single-board computer with
+a 4MHz 68000 CPU, 32KB RAM, 16KB ROM, host and terminal serial ports, a
+parallel interface/timer, a cassette interface, and a prototyping area with
+full access to the 68000 bus. The ROM contains TUTOR, a debug and bootstrap
+system that was the predecessor of MACSBUG.
+Specific... -->
 </platform>

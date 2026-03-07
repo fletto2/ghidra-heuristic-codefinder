@@ -14,4 +14,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Killer Comet hardware, by Centuri (formerly known as Allied Leisure)
+driver by Chris Moore
+Killer Comet memory map
+MAIN CPU:
+Address          Dir Data     Name      Description
+---------------- --- -------- --------- -----------------------
+00000-xxxxxxxxxx R/W xxxxxxxx RAM       can be either 256 bytes (2x2101) or 1kB (2x2114)
+00001-----------              n.c.
+00010-----------              n.c.
+00011-----------              n.c.
+00100-------xxxx R/W xxxxxxxx VIA 1     6522 for video interface
+... -->
 </platform>

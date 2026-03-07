@@ -18,4 +18,27 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- 2013-09-10 Skeleton driver for Televideo TV950
+2016-07-30 Preliminary not-so-skeleton driver
+TODO:
+- VIA T2 counter mode emulation
+- CRTC reset and drawing
+- Bidirectional communications mode
+Hardware:
+6502A CPU
+6545 CRTC
+6522A VIA, wired to count HSYNCs and to enable the 6502 to pull RESET on the CRTC
+3x 6551 ACIA  1 for the keyboard, 1 for the modem port, 1 for the printer port
+VIA hookup (see schematics):
+PA3 = beep?
+PA5 = inverse video
+PA6 = IRQ in
+PA7 = force blank
+PB6 = Hblank in
+PB7 = out... -->
 </platform>

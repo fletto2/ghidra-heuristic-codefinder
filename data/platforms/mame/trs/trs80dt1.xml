@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x000027FF" type="io" name="dma_r"/>
   </memory_map>
+
+  <!-- TRS-80 DT-1
+Tandy's Data Terminal.
+Skeleton driver commenced on 2017-10-25.
+Core bugs noted:
+- If region() used to locate the main rom in another region, validation
+complains that region ':maincpu' not found.
+- If region 'maincpu' changed to 0x1000 (same size as the rom), a fatal error
+of duplicate save state occurs at start.
+ToDo:
+- Serial printer + (P1.1, P1.2, P3.5)
+- Fix cpu bug with timer interrupt and then remove hack.
+- Check the existing serial comms and LPTR that polarities are correct.... -->
 </platform>

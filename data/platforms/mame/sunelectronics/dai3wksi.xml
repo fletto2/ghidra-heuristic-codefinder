@@ -11,4 +11,31 @@
     <region start="0x00003800" end="0x00003800" type="io" name="audio_3_w"/>
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- --------------------------
+Galaxy Force
+PCB: SIV-01-A
+Runaway
+PCB: SIV-01-B
+--------------------------
+Dai 3 Wakusei
+(c)1979 Sun Electronics
+PCB: SIV-01-B
+TVG_13.6     [8e8b40b1]
+TVG_14.7     [d48cbabe]
+TVG_15.8     [cf44bd60]
+TVG_16.9     [ae723f56]
+--------------------------
+Warp 1
+(c)1979 Sun Electronics
+PCB: SIV-01-C
+TVG_23.6     [c956b3a8]
+TVG_24.7     [6cca323d]
+TVG_25.8     [5aa6eb1e]
+TVG_26.9     [840c1a75]
+--------------------------
+Warp 1
+PCB: SIV-01-C, Taito logo
+Z80 @ 2.5MHz
+1KB SRAM... -->
 </platform>

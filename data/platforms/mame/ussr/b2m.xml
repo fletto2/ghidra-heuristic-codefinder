@@ -8,4 +8,19 @@
     <region start="0x0000001C" end="0x0000001F" type="io" name="read"/>
     <region start="0x0000001C" end="0x0000001C" type="io" name="fdc_status_hack_r"/>
   </memory_map>
+
+  <!-- Bashkiria-2M driver by Miodrag Milanovic
+2008-03-28 Preliminary driver.
+To get numbers, you have to hold down Shift.
+B2M:
+- Hit enter while the square block is showing - it will attempt to boot
+a disk.
+- Or, just wait and a menu appears with choices S,L,W,R,G. It's all in
+Russian, and choosing any of them produces an error. (Doesn't work
+currently?)
+B2MROM:
+- At start you are in an empty ramdisk called A:
+- You can use SAVE to create an empty file in the CP/M fashion, and you can
+TYPE it.
+- You ... -->
 </platform>

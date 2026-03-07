@@ -16,4 +16,26 @@
     <region start="0x000DFFC0" end="0x000DFFCF" type="io" name="grid_keyb_r"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- drivers/gridcomp.cpp
+Driver file for GRiD Compass series
+US patent 4,571,456 describes model 1101:
+- 15 MHz XTAL, produces
+- 5 MHz system clock for CPU, FPU, OSP
+- 7.5 MHz pixel clock
+- Intel 8086 - CPU
+- Intel 8087 - FPU
+- Intel 80130 - Operating System Processor, equivalent of:
+- 8259 PIC
+- 8254 PIT
+- Texas Instruments TMS9914 GPIB controller
+- Intel 7220 Bubble Memory Controller
+- 7110 Magnetic Bubble Memory modules and support chips
+- X2210D - EAROM for machine ID
+- MM58174AN - Real-Time Clo... -->
 </platform>

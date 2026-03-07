@@ -8,4 +8,18 @@
     <region start="0x0000C000" end="0x0000DFFF" type="io" name="region_c000"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- -= Yun Sung 8 Bit Games =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU    :  Z80B
+Sound CPU    :  Z80A
+Video Chips  :  ?
+Sound Chips  :  OKI M5205 + YM3812
+---------------------------------------------------------------------------
+Year + Game         Board#
+---------------------------------------------------------------------------
+95  Cannon Ball      YS-ROCK-970712 or 940712?
+95  Magix / Rock     YS-ROCK-940712
+94? Rock Tris        YS-ROCK-940712
+------------------------------------------... -->
 </platform>

@@ -15,4 +15,24 @@
     <region start="0x0000B006" end="0x0000B007" type="io" name="galaxold_flip_screen_y_w"/>
     <region start="0x0000B800" end="0x0000B800" type="io" name="reset_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Galaxian/Moon Cresta hardware
+NOTE:  Eventually to be merged into GALAXIAN.CPP
+Main clock: XTAL = 18.432 MHz
+Z80 Clock: XTAL/6 = 3.072 MHz
+Horizontal video frequency: HSYNC = XTAL/3/192/2 = 16 kHz
+Video frequency: VSYNC = HSYNC/132/2 = 60.606060 Hz
+VBlank duration: 1/VSYNC * (20/132) = 2500 us
+Notes:
+-----
+- The only code difference between 'galaxian' and 'galmidw' is that the
+'BONUS SHIP' text is printed on a different line.
+TODO:
+----
+- Problems with Galaxian based on the observation of a real... -->
 </platform>

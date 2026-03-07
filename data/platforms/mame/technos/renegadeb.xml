@@ -16,4 +16,19 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Renegade
+(c)1986 Taito
+Nekketsu Kouha Kunio Kun
+(c)1986 Technos Japan
+Nekketsu Kouha Kunio Kun (bootleg)
+Renegade (bootleg)
+driver by Phil Stroffolino, Carlos A. Lozano, Rob Rosenbrock
+to enter test mode, hold down P1+P2 and press reset
+NMI is used to refresh the sprites
+IRQ is used to poll the coin and service inputs
+coin counter outputs are connected directly to coin inputs (via 74LS04 inverter gates IC55, IC43)
+no coin lockout
+Known issues:
+- Unemulated partial update bg scrolling, which shou... -->
 </platform>

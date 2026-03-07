@@ -9,4 +9,16 @@
     <region start="0x0000FF80" end="0x0000FFFE" type="ram" name="ram"/>
     <region start="0x0000FFFF" end="0x0000FFFF" type="io" name="gb_ie_r"/>
   </memory_map>
+
+  <!-- gb.c
+Driver file to handle emulation of the Nintendo Game Boy.
+By:
+Hans de Goede               1998
+Anthony Kruize              2002
+Wilbert Pol                 2004 (Megaduck/Cougar Boy)
+TODO list:
+- Do correct LCD stat timing
+- Add Game Boy Light (Japan, 1997) - does it differ from gbpocket?
+- SGB should be moved to SNES driver
+- Emulate OAM corruption bug on 16bit inc/dec in $fe** region -->
 </platform>

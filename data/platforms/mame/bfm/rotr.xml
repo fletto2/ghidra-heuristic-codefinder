@@ -7,4 +7,19 @@
     <region start="0x01000000" end="0x01000007" type="io" name="port"/>
     <region start="0x01000004" end="0x01000013" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="mc146818"/>
+    <device type="serial" name="z80scc"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Bell-Fruit/ATD RasterSpeed hardware
+driver by Phil Bennett
+Games supported:
+Rise of the Robots (prototype)
+Football Crazy
+ROMs wanted:
+Zool (prototype)
+Wiggle -->
 </platform>

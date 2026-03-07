@@ -17,4 +17,22 @@
     <region start="0x00005800" end="0x00005800" type="unmapped" name="nop_write"/>
     <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Asteroids hardware
+Games supported:
+Asteroids
+Asteroids Deluxe
+Lunar Lander
+Known bugs:
+the ERROR message in Asteroids Deluxe self test is related to a pokey problem
+Information from a Tech Tip:
+Asteroids Modification:
+As a result of inquires regarding the achievement of extremely high scores on Asteroids,
+we have developed a modification that will accomplish the following:
+When the small flying saucer enters the screen, it fires immediately in the direction
+of the player. The missiles als... -->
 </platform>

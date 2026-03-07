@@ -11,4 +11,25 @@
     <region start="0x0000C00C" end="0x0000C00D" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E004" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Taito Capriccio Z80 crane hardware (let's call it 1st generation)
+These are presumed to be on similar hardware:
+- Capriccio         1991
+- New Capriccio     1992
+- Caprina           1993
+- New Capriccio 2   1993
+- Capriccio Spin    1994
+- Capriccio Spin 2  1996
+The next released game of this series is Capriccio Cyclone, see caprcyc.c
+More games were released after this.
+TODO:
+- get cspin2 working a bit:
+unknown reads and writes
+should have a rombank somewhere
+what causes the nmi?
+what kind of de... -->
 </platform>

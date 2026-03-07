@@ -52,4 +52,31 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="net" name="am7990"/>
+    <device type="serial" name="acia6850"/>
+    <device type="serial" name="mc68681"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Visual Technology X Display Station (XDS19P)
+Hardware:
+- MC68HC000P12F
+- 2x 27C010L-15 EPROM on cartridge (+ 4 empty sockets)
+- 32x KM44C256AP-8 / MCM514256AP80 / MT4C4256-8 (4M DRAM)
+- 4x HM53461P-10 (128k VRAM)
+- DS1225Y NVRAM
+- AM7990PC LANCE
+- MC68B45 CRTC
+- SCN68681C1N40
+- MC68B50P
+- 16.667 MHz XTAL, 100 MHz XTAL
+- XTAL X1 3.6864 MHz (assumed, unreadable), XTAL X2 (unreadable)
+- 4 position DIP switch
+- Buzzer
+TODO:
+- Verify and hook up irq mask
+- Source and timing of clock interrupt
+- What'... -->
 </platform>

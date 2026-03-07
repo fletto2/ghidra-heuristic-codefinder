@@ -93,4 +93,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Galaxian 3
+-- bootable driver --
+by Naibo Zhang, April 2009
+System Overview:
+This is a Scaleable, Multi-CPU and Multi-User System.
+The largest scale configuration known so far was capable of 28(!) players and 16 screens wraped around. (retaired in the early 2000's)
+System has one Master 68020 CPU Board for game play, and one or more Slave 68020 CPU Boards for graphics.
+The Master CPU communicates with (one or more)Slave CPUs via multi-port shared RAM, the "C-RAM board".
+Each C-RAM board is confi... -->
 </platform>

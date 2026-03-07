@@ -10,4 +10,17 @@
     <region start="0x0000C050" end="0x0000C05F" type="io" name="switches_r"/>
     <region start="0x0000C080" end="0x0000FFFF" type="io" name="c080_r"/>
   </memory_map>
+
+  <!-- tk2000.cpp - Microdigital TK2000
+Driver by R. Belmont
+This system is only vaguely Apple II compatible.
+The keyboard works entirely differently, which is a big deal.
+TODO: emulate expansion connector (not wholly Apple II compatible)
+TODO: emulate joystick port (wired to KBIN and KBOUT)
+TODO: emulate cassette MOTOR softswitch
+TODO: emulate dual RESET keys
+TODO: correct PAL colors
+$C05A - banks RAM from c100-ffff
+$C05B - banks ROM from c100-ffff
+Added Multitech MPF-II support ( another not so apple... -->
 </platform>

@@ -7,4 +7,21 @@
     <region start="0x00003800" end="0x00003BFF" type="io" name="keyboard_r"/>
     <region start="0x00003C00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- TRS80 memory map
+0000-2fff ROM                            R   D0-D7
+3000-37ff ROM on EACA models             R   D0-D7
+unused on Model I
+37de      UART status                    R/W D0-D7
+37df      UART data                      R/W D0-D7
+37e0      interrupt latch address
+37e1      select disk drive 0            W
+37e2      cassette drive latch address   W
+37e3      select disk drive 1            W
+37e4      select which cassette unit     W   D0-D1 (D0 selects unit 1, D1 selects unit 2)
+37e5    ... -->
 </platform>

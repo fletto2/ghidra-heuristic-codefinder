@@ -17,4 +17,17 @@
     <region start="0x0000F000" end="0x0000F004" type="io" name="bg_scrolly_w"/>
     <region start="0x0000F006" end="0x0000F007" type="io" name="bg_select_w"/>
   </memory_map>
+
+  <!-- Momoko 120% (c) 1986 Jaleco
+Driver by Uki
+02/Mar/2001 -
+Notes
+The real machine has some bugs(escalator bug, sprite garbage).
+They are not emulation bugs.
+Flipped screen looks wrong, but it is correct.
+Note that the game-breaking escalator bug only happens on an 8-way joystick,
+it's safe to assume that this game dedicated control panel was 4-way.
+Stephh's notes (based on the game Z80 code and some tests) :
+- Accoding to the "initialisation" routine (code at 0x2a23),
+the "Bonus Life" Dip Switches ... -->
 </platform>

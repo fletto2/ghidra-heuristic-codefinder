@@ -54,4 +54,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Operation Thunderbolt  (Taito)
+---------------------
+David Graves
+(this is based on the F2 driver by Bryan McPhail, Brad Oliver, Andrew Prime,
+Nicola Salmoria. Thanks to Richard Bush and the Raine team, whose open
+source was very helpful in many areas particularly the sprites.)
+Operation Thunderbolt
+Taito, 1988
+PCB Layout
+----------
+K1100381A
+J1100166A MAIN PCB
+|-----------------------------------------------------------------------|
+|  VOL   VOL          TC0310FAM  YM3016 B67-13.40 16MHz 24MHz ... -->
 </platform>

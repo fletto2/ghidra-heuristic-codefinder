@@ -7,4 +7,15 @@
     <region start="0x00800000" end="0x00800BFF" type="ram" name="nvram"/>
     <region start="0xFFFE0000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- IBM AT Compatibles
+Commodore PC 30-III and PC 40-III
+=================================
+Links: http://www.richardlagendijk.nl/cip/computer/item/pc30iii/en , ftp://ftp.zimmers.net/pub/cbm-pc/firmware/pc30/
+Info: The PC 30-III and PC 40-III share the same mainboard. On a PC 30-III the onboard Paradise VGA is not populated.
+Form factor: Desktop PC
+CPU: Siemens SAB 80286-12 (PC 30-III), Intel 80286-12 (PC 40-III)
+RAM: 1MB on board
+Chipset: Faraday FE3020, MOS 5720 1788 41, Faraday FE3000, FE3010B,
+Bu... -->
 </platform>

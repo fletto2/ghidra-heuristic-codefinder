@@ -12,4 +12,20 @@
     <region start="0x0000F180" end="0x0000F180" type="io" name="port"/>
     <region start="0x0000F200" end="0x0000F200" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- D-DAY   (c)Jaleco 1984
+TODO:
+- unused upper sprite color bank;
+- improve sound comms, sometimes BGM becomes silent, very hard to repro;
+- insert coin sound volume cuts;
+- emulate protection properly (with a m54824p_device)
+--------------------------------------------------------------------------------
+Is it 1984 or 1987 game ?
+There's text inside rom "1987.07    BY  ELS"
+Trivia: E.L.S. = the subcontractor that also developed Commando for Sega (the coin
+sound effect is the same as well if you ov... -->
 </platform>

@@ -9,4 +9,18 @@
     <region start="0x0000D000" end="0x0000D7FF" type="io" name="bg_w"/>
     <region start="0x0000E000" end="0x0000E000" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Universal 8203-A + 8203-B PCB set
+Space Raider
+Mrs. Dynamite
+Space Raider also uses the Starfield generator board from Zero Hour,
+Connected via flywires to these boards
+TODO:
+- decode cpu#2 writes to port 0x30 and 0x38 - resistors for sound
+- decode cpu#2 writes to port 0x28-0x2f - ???
+- unknown dips -->
 </platform>

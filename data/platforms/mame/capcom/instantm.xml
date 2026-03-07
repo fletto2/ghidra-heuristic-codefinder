@@ -13,4 +13,22 @@
     <region start="0x0000F400" end="0x0000F400" type="io" name="rfuncinstantm_state"/>
     <region start="0x0000FC00" end="0x0000FC00" type="io" name="rfuncinstantm_state"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- has a sticker marked
+Part # 04-0008
+Main PCB  w/ Dark-Slide
+Serial# : 0115
+2x Z80
+There were several different designs for this, it's possible they used
+different speech roms etc.
+ToDo:
+- work out how the cpus communicate (there's an interrupt handler in main cpu)
+- clear up the speech
+- inputs
+- mechanical matters (camera, printer, etc)
+At the moment it simply outputs all the speech strings, one after the other, then stops. -->
 </platform>

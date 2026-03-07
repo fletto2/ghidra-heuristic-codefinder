@@ -12,4 +12,20 @@
     <region start="0x00004000" end="0x00007FFF" type="io" name="extrom_r"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="rombank"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- SciSys/Saitek Stratos chesscomputer family (1987-1990)
+(SciSys renamed themselves to Saitek in 1987)
+- Stratos
+- Turbo King
+- Corona --&gt; corona.cpp
+IMPORTANT: The user is expected to press the STOP button to turn off the computer.
+When not using -autosave, press that button before exiting MAME, or NVRAM can get
+corrupt. If that happens, the chesscomputer will become unresponsive on next boot.
+To force a cold boot, hold the PLAY button and trigger a power on/reset (F3).
+TODO:
+- emulate LCD at ... -->
 </platform>

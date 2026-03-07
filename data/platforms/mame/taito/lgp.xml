@@ -14,4 +14,22 @@
     <region start="0x0000EFE0" end="0x0000EFE0" type="io" name="port"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Taito Laser Grand Prix laserdisc hardware
+Driver by Andrew Gardner with help from Daphne Source
+Notes:
+Engrish abounds.
+Todo:
+Sound.
+Figure out palette.
+Figure out when NMI fires &amp; hook it up.
+Convert to tilemaps - hook up control_ram properly.
+Plenty of missing writes.
+Figure out inputs:
+High score reset switch.
+Score display + time display + today's ranking (on LED panel).
+1 wheel + "pulse cam" (analog)
+1 accelerator pedal = pot (analog)
+1 break pedal = switch
+1 shifter (two settings - two... -->
 </platform>

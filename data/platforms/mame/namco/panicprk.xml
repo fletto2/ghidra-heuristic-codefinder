@@ -10,4 +10,19 @@
     <region start="0x00300020" end="0x00300021" type="io" name="sub_interrupt_main_w"/>
     <region start="0x00300030" end="0x00300031" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Namco System 22.5 and (Super) System 23 (Evolution 2)
+Preliminary driver by R. Belmont and Ryan Holtz, thanks to Phil Stroffolino &amp; Olivier Galibert
+Hardware: * R4650 (MIPS III with IDT special instructions) main CPU.
+133 MHz for Gorgon, 166 MHz for System 23 and Super System 23, and
+200 MHz for Super System 23 Evolution 2.
+H8/3002 MCU for sound/inputs
+Custom polygon hardware
+1 text tilemap
+All games use a JVS I/O board connected to the H8/3002's serial port #0 and requires an I/O board to
+g... -->
 </platform>

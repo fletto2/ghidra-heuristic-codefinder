@@ -7,4 +7,22 @@
     <region start="0x00004100" end="0x000043FF" type="io" name="memory_r"/>
     <region start="0x0000C100" end="0x0000C3FF" type="io" name="io_r"/>
   </memory_map>
+
+  <!-- Miss Americana
+© 1984 Sirmo
+"Bingo Pinball" style game.
+Hardware:
+- P8085A
+- 6.144 MHz XTAL
+- 3x P8155
+TODO:
+- The "Magic Lines" feature isn't emulated
+- There is no ball physics simulation
+- Sound isn't emulated at all (you can see triggers on the artwork)
+- The optional hardware random number generator isn't emulated (see DSW D)
+- Output counters
+- Verify/measure clocks
+- "Telephone" input/output (probably just a remote control?)
+Notes:
+- It will display the error "cccc" on cold boot. Just pus... -->
 </platform>

@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Telcon Industries/Modular Micros/Gemini Electronics Zorba
+http://www.zorba.z80.de
+2013-08-25 Skeleton
+2015-02-20 Boots from floppy, is now usable.
+This was one of the last CP/M-based systems, already out of date when it was released.
+Because it doesn't use the standard Z80 peripherals, it uses a homebrew interrupt controller to make use
+of the Z80's IM2.
+The keyboard is an intelligent serial device like the Kaypro's keyboard. They even have the same plug,
+and might be swappable. Need a schematic... -->
 </platform>

@@ -6,4 +6,19 @@
     <region start="0x00006000" end="0x000063FF" type="ram" name="ram"/>
     <region start="0x0000A000" end="0x0000FFFF" type="io" name="digit_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity Bridge Bidder (BB / 7004)
+It's related to the Bridge Challenger series, but has no card reader, nor does
+it play Bridge. It's more like a (cheat) tool for helping with bidding.
+The 101-64109 ROM is identical to the one in Advanced Bridge Challenger.
+Hardware notes:
+- PCB label: main PCB: 510-1012, display PCB: 510-1013
+- Zilog Z80-CPU-PS @ ~1MHz (R/C clock, no XTAL)
+- Zilog Z80 PIO (custom label)
+- 16KB ROM (2*NEC 2364C), 1KB RAM (2*TC5514P)
+- 3*Litronix DL1414, 4 more leds, piezo -->
 </platform>

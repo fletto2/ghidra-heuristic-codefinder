@@ -6,4 +6,21 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
     <region start="0x0000D000" end="0x0000D3FF" type="ram" name="fgram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for Sleic Dardomania darts machines
+This game has a monitor to select the game type.
+PCB is marked "SLEIC", "DIANA'94" and "13/94".
+Hardware overview:
+-Main CPU: Z0840006PSC
+-Sound: AY-3-8910
+-Other: MK48Z02B-20
+-OSCs: 18.432 MHz
+-Dips: 1 x 6 dips banks
+______________________________________________________SN74LS74N_________________________________
+|  ______            ___      ___   ___             ___   _V_   ___                           ___|
+| |Xtal |           |  |     |  | ... -->
 </platform>

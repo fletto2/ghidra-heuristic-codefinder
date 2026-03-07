@@ -20,4 +20,23 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Irem M-10 / M-11 / M-15 hardware
+(c) 12/2/1998 Lee Taylor
+Notes:
+- Colors are close to screen shots for IPM Invader. The other games have not
+been verified.
+- The bitmap strips in IPM Invader might be slightly misplaced
+TODO:
+- DIP switches
+- andromed M-29S starfield
+Head On
+-------
+Irem, 1979? / 1980?
+PCB Layout
+----------
+M-15L
+|---------------------------------------------------------------------------------|
+|                                                                                 |
+... -->
 </platform>

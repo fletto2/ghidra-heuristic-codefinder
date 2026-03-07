@@ -6,4 +6,20 @@
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="videoram"/>
     <region start="0x0000F7FF" end="0x0000F7FF" type="io" name="speaker_w"/>
   </memory_map>
+
+  <!-- Кроха (Krokha, "Tiny"), TV game by Контур (SKB Kontur).
+It was apparently only for SKB Kontur workers, not sold in stores.
+К580ВМ80А @ 2MHz, 2KB RAM. Screen is 48x32 monochrome text.
+Joystick, built-in 1-bit speaker.
+Only known cartridge has 5 built-in games:
+- Breakout
+- Tetris
+- Snake
+- Xonix
+- Air Defence
+https://zx-pk.ru/threads/26306-igrovaya-pristavka-quot-krokha-quot.html
+discussion
+http://www.nedopc.org/forum/viewtopic.php?f=90&amp;t=11458
+discussion + schematics
+http://alemorf.ru/comps/... -->
 </platform>

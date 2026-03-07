@@ -52,4 +52,26 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Banpresto M68K-based medal games with Seibu customs
+Confirmed games (but there are probably several more):
+Terebi Denwa Doraemon
+Terebi Denwa Super Mario World
+Terebi Denwa Thomas the Tank Engine and Friends
+Mario Undoukai
+The following is from Mario Undoukai PCB pics:
+BS9001-2 main PCB + BS9001-A ROM PCB
+Main components:
+- MC68000P10 main CPU
+- 16.000 MHz XTAL (near M68000)
+- 8-dip bank
+- SEI0160 Seibu custom
+- SEI0181 Seibu custom
+- SEI0200 Seibu custom
+- SEI0211 Seibu custom
+- SEI0220BP Seibu... -->
 </platform>

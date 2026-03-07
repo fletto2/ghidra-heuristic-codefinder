@@ -7,4 +7,20 @@
     <region start="0x0000E000" end="0x0000E00B" type="io" name="read"/>
     <region start="0x0000F000" end="0x0000F3FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- MZ80 driver by Miodrag Milanovic
+22/11/2008 Preliminary driver.
+MZ80K Monitor:
+LOAD - load a cassette
+MZ80A Monitor Commands:
+B - turn key beep on/off
+F - boot from Floppy (press enter at the question)
+J - jump (goto)
+L - load a cassette
+MZ80A ToDo:
+- System writes CF to D800-DFFF
+- System uses E200-E2FF (contents are read then discarded)
+- System uses E800
+- Disk uses ports D8-DC
+- Keyboard issues listed below -->
 </platform>

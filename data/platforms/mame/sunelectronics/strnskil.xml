@@ -8,4 +8,22 @@
     <region start="0x0000D808" end="0x0000D809" type="io" name="strnskil_master_output_w"/>
     <region start="0x0000D80A" end="0x0000D80B" type="ram" name="xscroll"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Sun Electronics Markham / Strength &amp; Skill hardware
+Driver by Uki
+TODO:
+- needs merging with ikki.cpp
+- look up schematics for all games
+- hook up actual SUN 8212 and figure out ROM mode communications
+Notes:
+Banbam has a Fujitsu MB8841 4-Bit MCU for protection labeled SUN 8212.
+Its internal ROM has been imaged, manually typed, and decoded as sun-8212.ic3.
+Pettan Pyuu is a clone of Banbam although with different levels / play fields.
+The MCU controls:
+- general protection startup
+- the time ... -->
 </platform>

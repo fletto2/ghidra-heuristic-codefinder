@@ -7,4 +7,13 @@
     <region start="0x0000EA00" end="0x0000EFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Slap Fight (Modular System)
+As with most of the 'Modular System' setups, the hardware is heavily modified from the original
+and consists of a multi-board stack in a cage, hence different driver.
+For this game the Modular System cage contains 6 main boards and 1 sub board.
+MOD. 3 - Z80 board (3 ROMs + RAM + 24MHz XTAL) + small sub board with Z0840006PSC + PROM + logic (decryption?).
+MOD 21/1 - 20 MHz XTAL + logic.
+MOD 1 - Sound board (Z08400BPS, 2 x YM2203C). 2 8-dips banks.
+MOD 51/1 - Sprite boa... -->
 </platform>

@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- AT&amp;T model 4425 text terminal with mosaic graphics character set
+Also known as Teletype model 56D.
+Skeleton driver.  This terminal is supported by netpbm -- pbmto4425(1)
+To do:
+- keyboard
+- everything else -->
 </platform>

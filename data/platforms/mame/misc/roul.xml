@@ -4,4 +4,27 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00008FFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Super Lucky Roulette?
+driver by Roberto Zandona'
+thanks to Angelo Salese for some precious advice
+TO DO:
+- check palette
+- check blitter command 0x00
+- screen orientation is wrong (should clearly be ROT90 or 270 with blitter mods)
+Has 36 pin Cherry master looking edge connector
+.u12 2764 stickered 1
+.u19 27256 stickered 2
+.u15 tibpal16l8-25 (checksum was 0)
+.u56 tibpal16l8-25 (checksum was 0)
+.u38 82s123
+.u53 82s123
+Z80 x2
+Altera Ep1810LC-45
+20.000 MHz crystal
+video 464p10 x4 (board silkscreened... -->
 </platform>

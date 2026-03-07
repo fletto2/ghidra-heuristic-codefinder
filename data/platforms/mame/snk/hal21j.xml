@@ -18,4 +18,26 @@
     <region start="0x0000D700" end="0x0000D700" type="io" name="bg_scrollx_w"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Credits (in alphabetical order)
+Marco Cassili
+Ernesto Corvi
+Tim Lindquist
+Carlos A. Lozano
+Bryan McPhail
+Jarek Parchanski
+Nicola Salmoria
+Tomasz Slanina
+Phil Stroffolino
+Acho A. Tang
+Victor Trucco
+SNK Triple Z80 Hardware Info by Guru
+Note: SNK initially made their games with a 22-way edge connector.
+When the change-over from custom edge to JAMMA was being done
+they re-released some of their popular games with newer JAMMA versions.
+Ikari Warriors is known to exist in 22-way and JAMMA versions but... -->
 </platform>

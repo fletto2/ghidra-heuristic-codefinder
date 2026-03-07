@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Intel SBC 80/30 Single Board Computer
+System Initialization (Reset):
+The USART clock is initially set at 9600 baud. Two "U" characters are used
+to check for baud rate. When the first "U" character is entered it is
+checked for 9600, 4800, 2400, and 1200 baud rate. If a match is found then
+that baud rate is set into the clock. If not, then a second "U" character
+must be entered. The second "U" character is checked for 600, 300, 150,
+and 110 baud. When the baud rate has been successfully determined... -->
 </platform>

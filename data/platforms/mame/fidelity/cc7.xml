@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00003000" end="0x000030FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity Chess Challenger 7 (BCC)
+---------------------------------
+It was Fidelity's most sold chess computer. The first version was released in
+1979, and a newer PCB revision was produced in 1980.
+Zilog Z80A, 3.579MHz from XTAL
+Z80 IRQ/NMI unused, no timer IC.
+This is a cost-reduced design from CC10, no special I/O chips.
+Known ROM labels (long production run, so there are several revisions):
+CN19064N BCC, CN19103N BCC-REVB, 101-32016, 101-1005C01
+Backgammon Challenger (BKC) is the same PCB, w... -->
 </platform>

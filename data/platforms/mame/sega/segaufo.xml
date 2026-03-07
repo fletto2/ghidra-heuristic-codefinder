@@ -4,4 +4,19 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Sega UFO Catcher, Z80 type hardware
+They are more or less playable within MAME's constraints. The UFO position is
+represented by coordinates, and the fact that the player can't win any physical
+prize takes away the fun. It does a long self-test at boot.
+The list underneath is not complete. A # before the name means it's not dumped yet.
+1st gen
+?
+- # UFO Catcher (1985)
+2nd gen:
+?
+- # UFO Catcher DX (1987)
+- # UFO Catcher DX II (1987)
+3rd gen - UFO brd
+Z80 (sticker obscures label), 16MHz XTAL, 2 S... -->
 </platform>

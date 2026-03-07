@@ -7,4 +7,20 @@
     <region start="0x0000A000" end="0x0000DFFF" type="io" name="amap8"/>
     <region start="0x0000F000" end="0x0000FFFF" type="io" name="amap8"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Triumph-Adler (or Royal) Alphatronic PC
+Driver by Barry Rodewald, Robbbert, R. Belmont and Carl
+Z80 + HD46505SP as a CRTC
+Other chips: 8251, 8257, 8259
+Crystals: 16MHz, 17.73447MHz
+Floppy format: 13cm, 2 sides, 40 tracks, 16 sectors, 256 bytes = 320kb.
+FDC (uPD765) is in a plug-in module, there is no ROM on the module.
+A configuration switch determines if the FDC is present.
+Has a socket for monochrome (to the standard amber monitor),
+and another for RGB. We emulate this with a configuration swi... -->
 </platform>

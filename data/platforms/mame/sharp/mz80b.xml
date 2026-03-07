@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="map0xc000_0xffffviewm_vram_view"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Sharp MZ-80B/MZ-2000/MZ-2200 B-series
+TODO:
+- Cassette loads aren't consistant, several SWs wants a slower clock.
+Original recording tapes looks very different compared to .mzt et al, may warrant a major
+normalization work;
+- Emulate MZ-1U01 expansion unit bus slot (common with other MZ machines);
+- add 80b compatibility support;
+- MZ-1R12 option wants a specific IPL ROM revision, with "(/: S-RAM or ROM)" option listed.
+cfr. https://www.youtube.com/watch?v=MBeyqqqOFiY startup.
+Notes:
+- Memory co... -->
 </platform>

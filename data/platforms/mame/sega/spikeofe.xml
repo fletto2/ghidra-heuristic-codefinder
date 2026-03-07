@@ -5,4 +5,23 @@
     <region start="0xF0180000" end="0xF019FFFF" type="ram" name="ram"/>
     <region start="0xF01A0000" end="0xF01A003F" type="io" name="iomap_64be"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Sega Model 3
+PowerPC 603e + tilemaps + Real3D 1000 + 68000 + 2x SCSP
+Preliminary driver by Andrew Gardner, R. Belmont and Ville Linde
+Hardware info from Team Supermodel: Bart Trzynadlowski, Ville Linde, and Stefano Teso
+Hardware revisions
+------------------
+Step 1.0: 66 MHz PPC
+Step 1.5: 100 MHz PPC, faster 3D engine
+Step 2.0: 166 MHz PPC, even faster 3D engine
+Step 2.1: 166 MHz PPC, same 3D engine as 2.0, differences unknown
+Game status:
+vf3/vf3a/vf3tb - crashes
+getbassur - works
+basssdx/getbas... -->
 </platform>

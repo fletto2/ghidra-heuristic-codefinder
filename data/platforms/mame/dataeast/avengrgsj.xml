@@ -32,4 +32,20 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Data East MLC Hardware:
+The MLC system is basically an 8" x 6" x 2" plastic box with a JAMMA connector on it.
+The PCB's are very compact and have almost entirely surface mounted components on both
+sides of both boards. One board contains the RAM, sound hardware and I/O, the other
+board contains the CPU and ROMs. All main boards are identical between the MLC games and
+can be changed just by plugging in another game and pressing test to reset the EEPROM
+defaults.
+PCB Layout
+----------
+Jamma Side:
+... -->
 </platform>

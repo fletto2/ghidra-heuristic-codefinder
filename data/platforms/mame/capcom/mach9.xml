@@ -5,4 +5,31 @@
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
     <region start="0x0000C806" end="0x0000C806" type="io" name="region_c806"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Vulgus memory map (preliminary)
+driver by Mirko Buffoni
+MAIN CPU
+0000-9fff ROM
+cc00-cc7f Sprites
+d000-d3ff Video RAM
+d400-d7ff Color RAM
+d800-dbff background video RAM
+dc00-dfff background color RAM
+e000-efff RAM
+read:
+c000      IN0
+c001      IN1
+c002      IN2
+c003      DSW1
+c004      DSW2
+write:
+c802      background y scroll low 8 bits
+c803      background x scroll low 8 bits
+c805      background palette bank selector
+c902      background y scroll high bit
+c903      background x scroll high bit... -->
 </platform>

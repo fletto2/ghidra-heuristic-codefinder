@@ -7,4 +7,18 @@
     <region start="0x00004800" end="0x000048FF" type="ram" name="nvram"/>
     <region start="0x0000C800" end="0x0000CFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Status Triv Two driver by David Haywood, Ryan Holtz, and Stephh*
+Super Triv II driver by Ryan Holtz                             *
+Triv Quiz driver by Ryan Holtz                                 *
+Triv Four driver by Pierpaolo Prazzoli                         *
+Super Triv III driver by Pierpaolo Prazzoli                    *
+Hangman driver by Pierpaolo Prazzoli                           *
+Status Black Jack driver by Angelo Salese &amp; Roberto Fresca     *
+All notes by David Haywood unless otherwi... -->
 </platform>

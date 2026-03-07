@@ -13,4 +13,23 @@
     <region start="0x0000F0F0" end="0x0000F0F0" type="io" name="meyc8080_dac_3_w"/>
     <region start="0x0000F0FF" end="0x0000F0FF" type="io" name="meyc8080_dac_4_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- MEYCO 8080 BASED GAMBLING HARDWARE
+Meyco Games, Inc. [Sunnyvale, CA, USA]
+Driver by
+Tomasz Slanina
+Pierpaolo Prazzoli
+Hap
+Roberto Fresca.
+There are two versions: Black &amp; White and Color.
+Wild Arrow was originally developed for the same 8080
+black &amp; white motherboard as the blackjack game. It
+was programmed in machine code by hand using an EPROM
+blaster. Later, color hardware was added to the mother-
+board and an Intel MDS system was used for assembly
+language programming. The third desig... -->
 </platform>

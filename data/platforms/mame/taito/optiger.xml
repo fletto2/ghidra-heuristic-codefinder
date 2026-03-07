@@ -9,4 +9,15 @@
     <region start="0xFE800000" end="0xFF7FFFFF" type="rom" name="rom"/>
     <region start="0xFFE00000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Taito Power-JC System
+Preliminary driver
+Hardware appears sufficiently different to JC system to warrant
+a separate driver.
+TODO:
+- Inconsistent frame rate compared to PCB recordings; game has a tendency to freeze frame hiccup
+- Analog inputs update at a slower rate (about every 8-10 frames instead of every frame); this issue
+is also present in taitotz.cpp
+- Hook up remaining sound / Zoom hardware - see /src/sony/taito_zm.cpp for reference
+PCB layout by Brian Troha, thanks to Luke Morse for phot... -->
 </platform>

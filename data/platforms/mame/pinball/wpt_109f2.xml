@@ -15,4 +15,14 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- PINBALL
+Stern SAM system.
+An evolution of the Whitestar system, it has now been superseded by SPIKE.
+Major components: AT91R40008, 2x XC95144XL, AT43USB380, PCM1755, OPA2353, serial interface, USB interface.
+Game                                   NUM  Start game                   End ball
+---------------------------------------------------------------------------------------------
+World Poker Tour                      5088
+Simpsons Kooky Carnival (Redemption)  5090
+Pirates of the Caribbean      ... -->
 </platform>

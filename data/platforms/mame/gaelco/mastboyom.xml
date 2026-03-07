@@ -13,4 +13,20 @@
     <region start="0x00007000" end="0x00007000" type="unmapped" name="nop_read"/>
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Master Boy, Modular System version (Z80, 1986).
+This is Gaelco's first game. Master Boy was originally developed for Modular System, so this was
+the very first Master Boy.
+The exact hardware setup is unknown. At least four Modular System PCBs for Master Boy:
+- MOD 1: Sound board (unknown exact configuration, probably Z80 + AY-8910).
+- MOD 3: CPU board (unknown exact configuration, probably Z80).
+- MOD 4: Tilemap board.
+- MOD ?: ROM board for questions.
+TODO:
+- improve colors
+- adjust visible are... -->
 </platform>

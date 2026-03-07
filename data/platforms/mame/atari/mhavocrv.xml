@@ -5,4 +5,24 @@
     <region start="0x00005800" end="0x00005800" type="io" name="speech_data_w"/>
     <region start="0x00005900" end="0x00005900" type="io" name="speech_strobe_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Major Havoc hardware
+driver by Mike Appolo
+Modified 10/08/2006 by Jess M. Askey to include support for Speech which was not used on production
+Major Havoc PCB's. However, the hardware if used is functional. Speech is used in Major Havoc Return
+to Vax.
+Games supported:
+Alpha One
+Major Havoc
+Major Havoc: Return to Vax (including speech) - This version is a hack that includes 3 new levels
+near the end of the game. Level 19 is incomplete.
+Known bugs:
+none at this time
+MAJOR HAVOC (Driver)
+Note... -->
 </platform>

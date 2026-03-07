@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Irisha driver by Miodrag Milanovic
+2008-03-27 Preliminary driver.
+Jump addresses:
+Option 1: 0800 (Monitor - the only choice that works)
+Option 2: 046E
+Option 3: 0423 (then jumps to 4000)
+Option 4: 0501
+Option 5: 042E
+TODO:
+- Fix options 2,3,4,5
+- Other emulator has yellow text on blue background
+- Need info on fdc (used in option 3) ports 20-2F,38
+- Currently no way to load or save software, and does any exist?
+- Other emulator has clones/variants with different menus -->
 </platform>

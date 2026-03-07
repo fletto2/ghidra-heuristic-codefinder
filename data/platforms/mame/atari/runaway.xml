@@ -6,4 +6,14 @@
     <region start="0x00001800" end="0x00001800" type="io" name="earom_control_w"/>
     <region start="0x00005000" end="0x00005000" type="io" name="earom_read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Runaway hardware
+Games supported:
+Qwak (prototype)
+Runaway (prototype)
+original Qwak driver written by Mike Balfour -->
 </platform>

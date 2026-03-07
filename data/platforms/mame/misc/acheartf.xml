@@ -27,4 +27,10 @@
     <region start="0xE0000014" end="0xE0000017" type="io" name="vrender3d_status_r"/>
     <region start="0xE0000300" end="0xE00003FF" type="io" name="map0xe0000300_0xe00003ff_gte_constant_ve"/>
   </memory_map>
+
+  <!-- NEXUS 3D Version 1.0 Board from Interpark
+Games on this platform:
+Arcana Heart FULL, Examu Inc, 2006
+MagicEyes VRENDER 3D Soc (200 MHz ARM920T CPU / GFX / Sound)
+Also Has 2x QDSP QS1000 for sound -->
 </platform>

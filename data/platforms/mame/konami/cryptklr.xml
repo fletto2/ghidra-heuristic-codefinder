@@ -19,4 +19,23 @@
     <region start="0x1F680000" end="0x1F68000F" type="io" name="region_1f680000"/>
     <region start="0x1F780000" end="0x1F780003" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="scsi" name="ncr53c90"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Konami GQ System - Arcade PSX Hardware
+======================================
+Driver by R. Belmont &amp; smf
+Crypt Killer
+Konami, 1995
+PCB Layout
+----------
+GQ420  PWB354905B
+|----------------------------------------------------------------|
+|CN14          420A01.2G          420A02.3M         CN6 CN7 CN8  |
+|           056602  6264    |------| 424800                      |
+|           LA4705  6264    |058141|                             |
+|                   68000   |------| 424800              ... -->
 </platform>

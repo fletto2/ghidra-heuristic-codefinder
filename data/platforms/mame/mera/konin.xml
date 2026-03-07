@@ -8,4 +8,16 @@
     <region start="0x0000FC80" end="0x0000FC87" type="io" name="read"/>
     <region start="0x0000FF00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Mera-Elzab Konin
+It's an industrial computer used in Poland
+No information has been found. All code is guesswork.
+2011-12-29 Skeleton driver.
+2016-07-15 Added terminal and uart.
+Press E to see some messages.
+Terminal settings: 8 data bits, 2 stop bits, no parity @ 9600 -->
 </platform>

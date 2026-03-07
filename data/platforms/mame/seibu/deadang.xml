@@ -14,4 +14,8 @@
     <region start="0x0000E100" end="0x0000FFFF" type="unmapped" name="nop_write"/>
     <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Pop'N Run                       (c) 1987 Seibu Kaihatsu &amp; Yukai Tsukai
+Dead Angle                      (c) 1988 Seibu Kaihatsu
+Gang Hunter                     (c) 1988 Seibu Kaihatsu -->
 </platform>

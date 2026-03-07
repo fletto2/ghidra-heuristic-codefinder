@@ -13,4 +13,22 @@
     <region start="0x0000FD0C" end="0x0000FD0C" type="io" name="master_irq_ack_w"/>
     <region start="0x0000FD0E" end="0x0000FD0E" type="io" name="write"/>
   </memory_map>
+
+  <!-- World Cup 90 bootleg driver
+---------------------------
+Ernesto Corvi
+(ernesto@imagina.com)
+CPU #1 : Handles background &amp; foreground tiles, controllers, dipswitches.
+CPU #2 : Handles sprites and palette
+CPU #3 : Audio
+Memory Layout:
+CPU #1
+0000-8000 ROM
+8000-9000 RAM
+a000-a800 Color Ram for background #1 tiles
+a800-b000 Video Ram for background #1 tiles
+c000-c800 Color Ram for background #2 tiles
+c800-c000 Video Ram for background #2 tiles
+e000-e800 Color Ram for foreground tiles
+e800-f000 V... -->
 </platform>

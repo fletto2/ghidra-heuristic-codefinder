@@ -16,4 +16,32 @@
     <region start="0x0000D000" end="0x0000D000" type="io" name="scc_enable_w"/>
     <region start="0x0000D800" end="0x0000FFFF" type="io" name="region_d800"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- konmedal.cpp: Konami Z80 based medal games
+Driver by R. Belmont, MetalliC
+Konami PWB 451847A boards
+Tsururin Kun (つるりんくん) (GR901)
+Main CPU:  Z80
+Sound: uPD7759C
+Konami Custom chips:
+K052109 (tilemaps)
+K051962 (tilemaps)
+K051649 (sound)
+Konami PWB 452093A boards
+Mario Roulette
+Shuriken Boy (しゅりけんボーイ)
+Fuusen Pentai (ふうせんペン太)
+Main CPU:  Z80
+Sound: uPD7759C
+Konami Custom chips:
+K052109 (tilemaps)
+K051962 (tilemaps)
+K051649 (sound)
+Konami PWB 452574A boards
+Dam Dam Boy (ダムダムボーイ)
+Buttobi Striker (ぶっとび... -->
 </platform>

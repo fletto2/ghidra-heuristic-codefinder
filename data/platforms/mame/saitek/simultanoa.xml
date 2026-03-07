@@ -11,4 +11,21 @@
     <region start="0x00006000" end="0x0000607F" type="io" name="read"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="region_8000"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Saitek Simultano, it is related to Saitek Stratos, see stratos.cpp
+But it's not similar enough to be a subdriver of it.
+Two versions are known: "B" from 1988/1989, and "C" from 1989.
+Hardware notes:
+- WDC W65C02P @ 5MHz
+- 64KB ROM (2*AMI 27256), socket for 32KB Endgame ROM (ver. 2)
+- 8KB RAM (SRM2264LC) battery-backed
+- "HELIOS" NEC gate array
+- Epson SED1502F, LCD screen
+- piezo, 16+3 leds, button sensors chessboard
+It also appeared in Tandy's Chess Champion 2150, still manufactured and
+program... -->
 </platform>

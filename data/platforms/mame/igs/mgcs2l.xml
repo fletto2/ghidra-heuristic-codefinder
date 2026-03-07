@@ -48,4 +48,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- IGS ARM7 (IGS027A) based mahjong / gambling platform(s) with link support
+Keeping them separate from igs_m027.cpp and igs017.cpp for now.
+Linking has been verified to work fine on real hardware for both games.
+The two dumped extension games are really similar to mgdh in igs017.cpp code-wise,
+you can get them to the wait link screen just by implementing the mgdh's IGS MUX
+stuff.
+Manguan Caishen 2, HOST PCB (IGS 1999)
+Cai Jin Shen Long, HOST PCB (IGS 1999)
+These boards are housed in a metal box.
+T... -->
 </platform>

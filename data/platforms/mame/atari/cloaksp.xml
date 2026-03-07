@@ -25,4 +25,26 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Cloak &amp; Dagger hardware
+Games supported:
+Cloak &amp; Dagger
+Master processor
+IRQ: 4 IRQ's per frame at even intervals, 4th IRQ is at start of VBLANK
+000-3FF    Working RAM
+400-7FF    Playfield RAM
+800-FFF    Communication RAM (shared with slave processor)
+1000-100F  Pokey 1
+1008 (R)   bit 7 = Start 2 players
+bit 6 = Start 1 player
+1800-180F  Pokey 2
+1808(R)    Dipswitches
+2000 (R):  Joysticks
+2200 (R):  Player 2 joysticks (for cocktail version)
+2400 (R)   bit 0: Vertical Blank
+bit 1: S... -->
 </platform>

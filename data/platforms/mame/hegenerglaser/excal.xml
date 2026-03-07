@@ -52,4 +52,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Mephisto Excalibur
+It's a very rare chess computer, the chess engine was programmed by the same guys
+that did Mephisto I/II/III and Mephisto III-S Glasgow.
+Hardware notes:
+Motherboard:
+- PCB label: FORCE COMPUTERS
+- HD68000-8 @ 8 MHz (16MHz XTAL)
+- 128KB DRAM (16*MB8264-20), half unused
+- 4 EPROM sockets are unpopulated
+- HD6840 PTM @ 800kHz, HD6821P PIA
+- MC14411P (set to 9600 baud), 1.8432MHz XTAL
+- 2*HD6850P ACIA looped back to itself, both unused
+Interface board:
+- PCB label: HGS 15 101 00 B... -->
 </platform>

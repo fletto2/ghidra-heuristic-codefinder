@@ -58,11 +58,23 @@ public class PlatformDescription {
 		}
 	}
 
+	/** Device entry from platform XML (type:name, e.g., "scsi:wd33c93"). */
+	public static class DeviceEntry {
+		public final String type;  // "scsi", "sound", "video", "serial", "net", etc.
+		public final String name;  // "wd33c93", "ym2612", etc.
+
+		public DeviceEntry(String type, String name) {
+			this.type = type;
+			this.name = name;
+		}
+	}
+
 	private String platformName;
 	private String cpuName;
 	private List<MemoryRegion> memoryMap = new ArrayList<>();
 	private List<VectorEntry> vectors = new ArrayList<>();
 	private List<HardwareRegister> hwRegisters = new ArrayList<>();
+	private List<DeviceEntry> devices = new ArrayList<>();
 	private long vectorBase = 0;
 	private String vectorFormat = "abs32_be"; // abs32_be, abs32_le, abs16_le, etc.
 	private int vectorEntrySize = 4;
@@ -71,9 +83,28 @@ public class PlatformDescription {
 	public List<MemoryRegion> getMemoryMap() { return memoryMap; }
 	public List<VectorEntry> getVectors() { return vectors; }
 	public List<HardwareRegister> getHwRegisters() { return hwRegisters; }
+	public List<DeviceEntry> getDevices() { return devices; }
 	public long getVectorBase() { return vectorBase; }
 	public String getVectorFormat() { return vectorFormat; }
 	public int getVectorEntrySize() { return vectorEntrySize; }
+
+	/** Check if a device of the given type exists. */
+	public boolean hasDeviceType(String type) {
+		for (DeviceEntry dev : devices) {
+			if (dev.type.equals(type)) return true;
+		}
+		return false;
+	}
+
+	/** Check if any device name contains the given keyword (case-insensitive). */
+	public boolean hasDeviceMatching(String keyword) {
+		String kw = keyword.toLowerCase();
+		for (DeviceEntry dev : devices) {
+			if (dev.name.toLowerCase().contains(kw) || dev.type.toLowerCase().contains(kw))
+				return true;
+		}
+		return false;
+	}
 
 	/**
 	 * H33: Check if an address falls in a valid memory region.
@@ -205,6 +236,12 @@ public class PlatformDescription {
 				String name = elem.getAttribute("name");
 				String access = elem.getAttribute("access");
 				desc.hwRegisters.add(new HardwareRegister(addr, width, name, access));
+			} else if ("device".equals(tag)) {
+				String type = elem.getAttribute("type");
+				String name = elem.getAttribute("name");
+				if (type == null) type = "";
+				if (name == null) name = "";
+				desc.devices.add(new DeviceEntry(type, name));
 			}
 		}
 		parser.dispose();

@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Jack House.
+Chain Leisure Co., Ltd (1994)
+Driver by Roberto Fresca &amp; Grull Osgo.
+This driver is based on an absolutely unknown hardware.
+Just developed the emulation reverse-engineering the game code and graphics ROMs.
+The game has an unknown video processor as blitter, that handles 28 registers,
+4 graphics modes, 2 layers (foreground and background), 6 video RAM segments
+(3 by layer, for tile offset, extended and attrib), and more complex things...
+Clocks and other stuff are educated guessi... -->
 </platform>

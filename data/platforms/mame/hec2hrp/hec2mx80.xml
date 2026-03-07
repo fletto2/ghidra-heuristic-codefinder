@@ -7,4 +7,19 @@
     <region start="0x00003800" end="0x00003807" type="io" name="keyboard_r"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="hector_videoram"/>
   </memory_map>
+
+  <!-- Hector 2HR+
+Victor
+Hector 2HR
+Hector HRX
+Hector MX40c
+Hector MX80c
+Hector 1
+Interact
+The first model (Interact)was made by Interact Electronics Inc of Ann Arbor,
+Michigan. However, just after launch, the company collapsed. The liquidator,
+Protecto, sold some and MicroVideo sold the rest. MicroVideo continued to
+develop but went under 2 years later. Meanwhile, the French company
+Lambda Systems sold a clone called the Victor Lambda. But, like the
+Americans, Lambda Systems also collapsed. Another F... -->
 </platform>

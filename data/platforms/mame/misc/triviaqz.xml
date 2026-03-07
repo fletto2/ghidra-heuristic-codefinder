@@ -15,4 +15,24 @@
     <region start="0x0000A000" end="0x0000A7FF" type="ram" name="nvram"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Trivia Quiz by Intermatic Manufacturing Ltd.
+1985
+main components:
+TMS9995NL
+TMS9129NL
+1 8-dips bank (another is not populated)
+2 x HM6116LP-3
+3 x ROMs (all sockets populated)
+Question daughter-cards contain just ROMs and some logic. They are plugged into the main board using a ZIF socket.
+4 question daughter-cards have been dumped, which contained different combinations of the following question sets (sic):
+Norway blanding 2
+Norway fotball 1
+Norway geografi 2
+Norway geografi 3
+Norway historie 1... -->
 </platform>

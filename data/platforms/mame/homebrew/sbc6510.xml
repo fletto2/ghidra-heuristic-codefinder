@@ -16,4 +16,30 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- SBC6510 from Josip Perusanec
+2009-12-18 Skeleton driver.
+2012-08-12 Working [Robbbert]
+CPU MOS 6510 (1MHz)
+ROM 4KB
+RAM 128KB
+CIA 6526 - for interrupt gen and scan of keyboard
+YM2149/AY-3-8910 - sound + HDD/CF IDE
+GAL16V8 - address decoder
+ATMEGA8 - gen. of PAL video signal (modified TellyMate)
+keyboard of C64 computer used
+Commands:
+A - (unknown)
+C - (unknown)
+E - (unknown)
+F - (unknown)
+G - (unknown)
+L - (unknown)
+R - (unknown)
+S - (unknown)
+Some commands expect a filename enclosed in double qu... -->
 </platform>

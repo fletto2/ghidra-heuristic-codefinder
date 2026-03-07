@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x000EFFFF" type="io" name="ext_read"/>
     <region start="0x000F0000" end="0x000F0FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- TODO:
+- 8088 board
+- CIA timers fail in burn-in test
+- cbm620hu charom banking? -->
 </platform>

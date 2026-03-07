@@ -14,4 +14,27 @@
     <region start="0x7F800000" end="0x7F9FFFFF" type="rom" name="rom"/>
     <region start="0x7FE00000" end="0x7FFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Konami GTI Club System
+Driver by Ville Linde
+Hardware overview:
+GN672 CPU board:
+----------------
+IBM PowerPC 403GA at 32MHz (main CPU)
+Motorola MC68EC000 at 16MHz (sound CPU)
+Konami K056800 (MIRAC), sound system interface
+Konami K056230 (LANC), LAN interface
+Ricoh RF5c400 sound chip
+GN678 GFX board:
+----------------
+Analog Devices ADSP-21062 SHARC DSP at 36MHz
+Konami K001604 (2D tilemaps + 2x ROZ)
+2x KS10071 (custom 3D pixel unit)
+2x KS10081 (custom 3D texel unit)
+Hardware configurations:
+Game ... -->
 </platform>

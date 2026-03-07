@@ -55,4 +55,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="rf5c68"/>
+  </devices>
+
+  <!-- Bingo Circus (c) 1989 Sega
+A Bingo machine with a terminal for each player, maximum 8 players can play together.
+preliminary driver by David Haywood &amp; Angelo Salese
+TODO:
+-a cabinet snap is here -&gt; http://www.system16.com/hardware.php?id=840&amp;page=1#2743,
+every player should have his own screen.
+-inconsistent (likely wrong) sound banking.
+============================================================================================
+BINGO CIRCUS (MAIN PCB)
+(c)SEGA
+CPU   : MAIN 68000 SOUND... -->
 </platform>

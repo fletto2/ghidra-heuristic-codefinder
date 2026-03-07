@@ -5,4 +5,14 @@
     <region start="0x00000000" end="0x0000BFFF" type="ram" name="bank1"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- MC 1000
+12/05/2009 Skeleton driver.
+http://ensjo.wikispaces.com/MC-1000+on+JEMU
+http://ensjo.blogspot.com/2006/11/color-artifacting-no-mc-1000.html -->
 </platform>

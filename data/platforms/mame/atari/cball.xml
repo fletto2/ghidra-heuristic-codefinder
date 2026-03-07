@@ -20,4 +20,9 @@
     <region start="0x00002800" end="0x00002800" type="io" name="port"/>
     <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Cannonball (prototype) driver
+TODO:
+- half of the graphics are missing due to undumped ROM
+- often hits illegal opcode 0x02, harmless leftover from devkit? -->
 </platform>

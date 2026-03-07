@@ -18,4 +18,26 @@
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x000067FF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Atari Centipede hardware
+Games supported:
+Centipede (5 sets)
+Warlords
+Millipede
+Maze Invaders (prototype)
+Bulls Eye Darts
+Millipede:
+136013-109.5p
+136013-110.5r
+The Two Bit Score "Dux" hack was circulated and common enough for inclusion
+Main clock: XTAL = 12.096 MHz
+6502 Clock: XTAL/8 = 1.512 MHz (0.756 when accessing playfield RAM)
+Horizontal video frequency: HSYNC = XTAL/256/3 = 15.75 kHz
+Video frequency: VSYNC = HSYNC/263 ?? = 59.88593 Hz (not sure, could be /262)
+VBlank duration: 1/VSYNC * (... -->
 </platform>

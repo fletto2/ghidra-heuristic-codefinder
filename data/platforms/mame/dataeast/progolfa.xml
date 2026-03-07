@@ -21,4 +21,23 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- 18 Holes Pro Golf (c) 1981 Data East
+driver by Angelo Salese and Roberto Zandona',
+based on early work by Pierpaolo Prazzoli and David Haywood
+TODO:
+- 6845 resolution/refresh rate calculation is incorrect (256x256),
+is it actually trying to fit 256 columns into 240?
+- Flip screen support;
+===================================================================================================
+18 Holes Pro Golf (PCB version)
+Data East 1981
+Hardware info by Guru
+Top Board (Sound/Inputs)
+----------------... -->
 </platform>

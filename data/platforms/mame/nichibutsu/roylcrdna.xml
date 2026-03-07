@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
     <region start="0x00007000" end="0x000077FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Jangou (c) 1983 Nichibutsu
+driver by David Haywood, Angelo Salese and Phil Bennett
+TODO:
+-unemulated screen flipping;
+-jngolady: RNG in this isn't working properly...looking at the code,when the mcu isn't on
+irq routine there's a poll to the [8] ram address,unsurprisingly it's the RNG seed.
+The problem is that when the rti opcode occurs the program flow doesn't return to feed the
+RNG but executes another irq,probably there are too many irq pollings and the mcu goes out
+of cycles...for now I'm kl... -->
 </platform>

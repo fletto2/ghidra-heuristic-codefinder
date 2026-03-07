@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="rombank"/>
   </memory_map>
+
+  <!-- VTech Laser PC4
+Driver by Sandro Ronco
+I found no documentations about this, if you have documentation or schematic
+please let me know.
+Notes:
+- the LCD controller seems similar to a HD44780, but with more ddram and
+uses the bit 0 and 2 of the "Function Set" (0x2?) that are unused in
+the specifications of the HD44780 datasheet.
+- INT and NMI interrupt lines cause "LOW BATTERY" signal
+- chargen are taken from other driver, a real dump is required
+More info:
+http://www.8bit-micro.com/laser.htm
+htt... -->
 </platform>

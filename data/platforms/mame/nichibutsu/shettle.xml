@@ -9,4 +9,16 @@
     <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
     <region start="0x0000A100" end="0x0000A107" type="io" name="ports_r"/>
   </memory_map>
+
+  <!-- Alone Shettle Crew
+1984
+Copyright New Digimatic but developed in Japan by Graphic Research (GRC).
+Distributed in Japan by Regal.
+2-PCB stack
+main PCB is marked: "PC-082A" on component side
+sub PCB is marked: "MADE IN JAPAN", "SCO-102B(C)1983 GRC" on component side
+main PCB is labelled: "NEW DIGIMATIC GARANZIA 6 MESI DATA OTTOBRE 1984" on component side
+Hardware has similarities with that of various Nichibutsu games of the same era.
+TODO:
+- what is the 24-pin chip marked Z4? Same is present on Cl... -->
 </platform>

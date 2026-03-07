@@ -6,4 +6,12 @@
     <region start="0x00000800" end="0x000037FF" type="ram" name="ram"/>
     <region start="0x00003800" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- TEC-1 driver, written by Robbbert in April, 2009.
+The TEC-1 was a single-board "computer" described in Talking Electronics
+magazine, issues number 10 and 11. Talking Electronics do not have dates on
+their issues, so the date is uncertain, although 1984 seems a reasonable
+guess. Talking Electronics operated from Cheltenham, a suburb of Melbourne.
+The hardware is quite simple, consisting of a Z80 cpu, 2x 8212 8-bit latch,
+74C923 keyboard scanner, 20 push-button keys, 6-digit LED display, a speaker... -->
 </platform>

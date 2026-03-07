@@ -15,4 +15,16 @@
     <region start="0x00E80000" end="0x00F7FFFF" type="unmapped" name="unmapped"/>
     <region start="0x00F80000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Cubo CD32 (additional hardware and games by CD Express, Milan, Italy)
+The CuboCD32 is a stock retail CD32 unit with additional hardware to adapt it
+for JAMMA use.
+TODO:
+- remove m_input_hack functions, needed to make inputs working;
+- extra RTC device mapped on i2c bus (shared with the Akiko one?);
+- later gambling games requires extra hopper devices;
+Known Games:
+Dumped | Title                | Rev.  | Year | Notes
+----------------------------------------------------
+YES  | Candy Puzzle        ... -->
 </platform>

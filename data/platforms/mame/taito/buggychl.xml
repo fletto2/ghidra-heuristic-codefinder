@@ -25,4 +25,21 @@
     <region start="0x0000DC04" end="0x0000DC04" type="unmapped" name="nop_write"/>
     <region start="0x0000DC06" end="0x0000DC06" type="io" name="bg_scrollx_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Buggy Challenge - (c) 1984 Taito Corporation
+driver by Ernesto Corvi and Nicola Salmoria
+TODO:
+- I'm almost sure that I'm not handling the zoom x ROM table correctly. Gives
+reasonable results, though. I'm confident that the zoom y table handling is
+correct.
+- Tilemap and sprite placement might not be accurate, there aren't many
+references.
+- Video driver is largely unoptimized
+- Support for the 7630's controlling the sound chip outputs (bass/treble,
+volume) is completely missing.
+- The sound Z80... -->
 </platform>

@@ -54,4 +54,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Badlands - Playmark Bootleg support
+TODO:
+- inputs looks weird, left/right change meaning as per what side the car is moving?
+- playfield color (changes bitplane on the fly?);
+- sprite-tilemap priority;
+- fix sound;
+- inputs (coins &amp; accelerators);
+- any way to disable sprites in service mode?
+========================================================================================
+Year: 1989
+Producer: Playmark
+cpu: 68000
+sound cpu:  Z80
+sound ics: YM2151 + 3012
+other ics: 28c16 2kx8 eeprom. ... -->
 </platform>

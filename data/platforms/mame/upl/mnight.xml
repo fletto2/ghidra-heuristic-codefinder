@@ -8,4 +8,15 @@
     <region start="0x0000FA00" end="0x0000FA03" type="io" name="write"/>
     <region start="0x0000FA08" end="0x0000FA0C" type="io" name="ninjakd2_bg_ctrl_w"/>
   </memory_map>
+
+  <!-- UPL "sprite framebuffer" hardware
+driver by Roberto Ventura, Leandro Dardini, Yochizo, Nicola Salmoria
+The peculiar feature of this hardware is the ability to disable clearing of the
+sprite framebuffer, therefore overdrawing new sprites on top of the ones drawn
+in the previous frames.
+When sprite overdrawing is enabled, not all sprites leave trails: only the ones
+using specific color codes. and the other ones clear the sprite framebuffer like
+an eraser. (See notes)
+Game              Board
+------... -->
 </platform>

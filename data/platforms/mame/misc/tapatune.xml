@@ -49,4 +49,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Tap a Tune
+driver by Mariusz Wojcieszek and Phil Bennett
+PCB Notes:
+Top board notable (video)
+- Hitachi HD68HC000-12 68000 CPU (24 MHz crystal)
+- Hitachi HD46505SP-2 CRTC
+- 2x Sony CXK581000P-10L RAM
+- 2x Mosel MS6264L-10PC RAM
+- 2x Mosel MS62256L-10PC RAM
+- rom0.u3 / rom1.u12 - 68000 program
+- rom2.u4 / rom3.u13 / rom4.u5 / rom5.u14 - graphics
+Bottom board notable (main / sound / io)
+- Zilog Z0840006PSC Z80 CPU (24 MHz crystal)
+- BSMT2000 custom audio IC
+- rom.u8 Z80 program
+- arom1.u16 BSMT200... -->
 </platform>

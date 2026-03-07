@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x000002FF" type="rom" name="rom"/>
     <region start="0x00000600" end="0x000009FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- BOB85 driver by Miodrag Milanovic
+2008-05-24 Preliminary driver.
+2009-05-12 Skeleton driver.
+2013-06-02 Working driver.
+2019-07-14 Fixed cassette load - it loads correctly then says EEEE
+Pasting:
+0-F : as is
+NEXT : ^
+SMEM : -
+GO : X
+Test Paste:
+-0600^11^22^33^44^55^66^77^88^99^--0600^
+Now press up-arrow to confirm the data has been entered. -->
 </platform>

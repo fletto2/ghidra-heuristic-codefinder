@@ -8,4 +8,24 @@
     <region start="0x0000D000" end="0x0000D7FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E007" type="io" name="blitter_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Sun Electronics Arabian hardware
+driver by Dan Boris
+Games supported:
+Arabian [2 sets]
+Known bugs:
+none at this time
+Memory map
+========================================================================
+CPU #1 (Arabian)
+========================================================================
+0000-7FFF   R     xxxxxxxx    Program ROM
+8000-BFFF   R/W   xxxxxxxx    Bitmap RAM
+C000        R     ----xxxx    Coin inputs
+C200        R     ----xxxx    Option switches
+D000-DFFF   R/W   xxxxxxxx    Custom m... -->
 </platform>

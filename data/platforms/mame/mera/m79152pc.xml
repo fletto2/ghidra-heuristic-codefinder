@@ -5,4 +5,19 @@
     <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x00009FFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Mera-Elzab 79152pc
+This system provides a half-featured emulation of the ADM-3A or similar
+terminals by TeleVideo and Wyse. The “half-featured” part is that some
+commands are not recognized at all and others are merely filtered out.
+The 8035 here serves as a soft CRTC, counting horizontal scans and
+outputting row addresses (dependent on scrolling) and vertical sync
+pulses. The present emulation produces incorrect video output at the
+vertical margins and is extremely prone to desyncing.
+“PC Shado... -->
 </platform>

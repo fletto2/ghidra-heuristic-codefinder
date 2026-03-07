@@ -8,4 +8,26 @@
     <region start="0x0000A000" end="0x0000A07F" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E3FF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Motorola Evaluation Kit 6800 D2
+MEK6800D2
+system driver
+Juergen Buchmueller, Jan 2000
+2013-06-16 Working driver [Robbbert]
+memory map
+range       short   description
+0000-00ff   RAM     256 bytes RAM
+0100-01ff   RAM     optional 256 bytes RAM
+6000-63ff   PROM    optional PROM
+or
+6000-67ff   ROM     optional ROM
+8004-8007   PIA     expansion port
+8008-8009   ACIA    cassette interface
+8020-8023   PIA     keyboard interface
+a000-a07f   RAM     128 bytes RAM (JBUG scratch)
+c000-c3ff   PROM    optio... -->
 </platform>

@@ -4,4 +4,22 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Memory maps */
+void idpart_video_device::mem_map(address_map &amp;map)
+{
+map.unmap_value_high();
+map(0x0000, 0x0fff).mirror(0x4000).rom().region("maincpu", 0);
+map(0x8000, 0x8bff).mirror(0x6000).ram();
+}
+void idpart_video_device::io_map(address_map &amp;map)
+{
+map.unmap_value_high();
+map.global_mask(0xff);
+map(0x00, 0x01).mirror(0x0e).rw(m_crtc, FUNC(i8275_device::read), FUNC(i8275_device::write));
+map(0x10, 0x13).mirror(0x0c).rw(m_mpsc, FUNC(i8274_device::cd_ba_r), FUNC(i8274_device::cd_ba_w));... -->
 </platform>

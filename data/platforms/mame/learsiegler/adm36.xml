@@ -6,4 +6,11 @@
     <region start="0x00006000" end="0x000067FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="vram0"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Skeleton driver for ADM 36 Video Display Terminal.
+The detachable keyboard has not been dumped. It is controlled serially through the PIO. -->
 </platform>

@@ -7,4 +7,27 @@
     <region start="0x0000D000" end="0x0000DFFF" type="io" name="egghunt_bgram_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Egg Hunt
+hardware seems close to mitchell.cpp
+--
+palette format is different
+has a sound cpu
+ports shuffled around a bit
+the following string is at the start of the roms
+INVI IMAGE COPYWRITE 1995 OCT SEOUL IN KOREA
+TEL 02-569-5830
+PROGRMED BY JANG-K.Y
+GRAPHIC DESIGN  KIM-Y.H &amp; LEE-H.M
+(and in the sound program)
+SOUND DIRECTOR  LEE-S.O
+the screen says VH-K October 1995, are VH-K another company involved?
+---------------------
+Egghunt by Invi Image
+PCB marked "Invi Image Co. 1995 IZ80B-1"
+The ... -->
 </platform>

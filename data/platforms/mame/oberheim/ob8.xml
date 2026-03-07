@@ -14,4 +14,14 @@
     <region start="0x00007E00" end="0x00007E80" type="io" name="todo_map0x7e00_0x7e7f___stat"/>
     <region start="0x00007F00" end="0x00007F7F" type="io" name="todo_map0x7f00_0x7f7f___misc2"/>
   </memory_map>
+
+  <!-- The OB-8 is an 8-voice digitally-controlled analog synthesizer.
+The firmware runs on a Z80.
+The driver is based on the OB8 srevice manual and schematics, and is intended
+as an educational tool.
+This driver is very much an early-stage skeleton.
+Board prefixes in component designations (e.g. PB:U54)
+PB - Processor Board.
+BB - Bend Board.
+TB - Pot Board. -->
 </platform>

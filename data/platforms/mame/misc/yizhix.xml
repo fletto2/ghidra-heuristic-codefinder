@@ -62,4 +62,26 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- 益智象棋 (Yìzhì Xiàngqí)
+TODO:
+- DIP-switches (needs sheet);
+- Lamps;
+- Convert video to use 6845 semantics;
+- is there a way to access key test? There are strings in program ROM and GFX in the gfx2 region.
+===================================================================================================
+The PCB is marked 'COPYRIGHT FOR WHT ELE CO,. VER 3.0'
+Main components are:
+M68HC000P10 CPU
+24.000 MHz XTAL (near CPU)
+2x MK48H64N-120 SRAM (near CPU)
+HM6116L-70 SRAM (near battery)
+P-80C32 audio C... -->
 </platform>

@@ -9,4 +9,16 @@
     <region start="0x0000C00E" end="0x0000C00E" type="io" name="port"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- UPL "orthogonal palette" hardware
+driver by Howie Cohen, Frank Palazzolo, Alex Pasadyn, David Haywood, Steph, Phil Stroffolino, Uki
+The peculiar feature of this hardware is the palette layout. 16 colors are
+arranged in a 16x16 matrix, with all columns containing a single color, except
+for column 1, which is a copy of row 1. Essentially, the 4bpp graphics are
+drawn using a fixed palette except for one color that changes.
+Nova 2001 and Penguin Kun Wars have palette PROMs and the effect applies to ... -->
 </platform>

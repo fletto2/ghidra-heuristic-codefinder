@@ -5,4 +5,14 @@
     <region start="0x00005800" end="0x00005800" type="io" name="data_w"/>
     <region start="0x00005900" end="0x00005900" type="io" name="address_w"/>
   </memory_map>
+
+  <!-- Galaxian-derived hardware
+Galaxian is the root hardware for many, many systems developed in the
+1980-1982 timeframe. The basic design, which originated with Namco(?),
+was replicated, tweaked, bootlegged, and used numerous times.
+The basic hardware design comprises three sections on a single PCB:
+a CPU section, a sound section, and a video section.
+The CPU section is based around a Z80 (though there are modified
+designs that changed this to an S2650). The base galaxian hardware
+is designed to all... -->
 </platform>

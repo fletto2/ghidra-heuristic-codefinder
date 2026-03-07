@@ -13,4 +13,21 @@
     <region start="0x00007000" end="0x00007000" type="io" name="star_reset_w"/>
     <region start="0x00007800" end="0x00007800" type="io" name="irqack_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Zero Hour / Red Clash
+runs on hardware similar to Lady Bug
+initial driver by inkling
+Notes:
+- In the Tehkan set (redclashta) the ship doesn't move during attract mode.
+Earlier version? Gameplay is different too.
+TODO:
+- redclash supports more background layer effects: white+mixed with other colors
+scrolling at the same speed as the stars, it's used in canyon parts and during the
+big ufo explosion
+- redclash canyon level, a gap sometimes appears on the right side, maybe BTANB
+- replace samples wi... -->
 </platform>

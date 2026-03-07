@@ -53,4 +53,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Seibu Cup Soccer bootlegs
+Splitted since it definitely doesn't use neither real COP nor CRTC
+TODO:
+- tilemap chip drawings might be merged between this and other
+Seibu implementations.
+OSC: 40MHz, 15MHz &amp; 8MHz
+Measured clocks:
+MC68000P12F - 14.99MHz
+Z0840006PSC -  3.996MHz
+OKI M6295 -  0.999MHz -->
 </platform>

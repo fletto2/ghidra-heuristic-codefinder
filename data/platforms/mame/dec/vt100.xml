@@ -7,4 +7,17 @@
     <region start="0x00003000" end="0x00003FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="8250"/>
+  </devices>
+
+  <!-- DEC VT100 driver by Miodrag Milanovic
+29/04/2009 Preliminary driver.
+TODO: some video attributes are not fully supported yet
+TODO: support for the on-AVO character set ROMs
+TODO: finish support for the on-CPU board alternate character set ROM
+TODO: STP (standard terminal port) bus for VT1XX-AC and VT125
+An enormous amount of useful info can be derived from the VT125 technical manual:
+http://www.bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-TM-003_VT100_Technical_Manual_Jul82.pdf starting on page... -->
 </platform>

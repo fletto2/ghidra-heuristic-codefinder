@@ -11,4 +11,25 @@
     <region start="0x00007E80" end="0x00007E87" type="io" name="dkong3_coin_counter_w"/>
     <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Nintendo Donkey Kong hardware
+TODO:
+- write a shootgal palette_init
+- Pestplce colors and origin
+- Shooting Gallery: Shootgal.txt mentions speech pcb,
+mikesarcade.com dk conversion - Clarify
+- 8ballact: read 1507 no mapped
+- implement 74LS259 (8bit addressable latches),
+74LS175 (QUAD D FlipFlop), 74LS373 (Octal transparent latch)
+Done:
+- dkong3 dma (Z80 dma)
+- dkongjr discrete interface
+- when i am retired: implement 8257 DMA controller
+- drakton - add dkongjr conversion
+- for documentation: hoo... -->
 </platform>

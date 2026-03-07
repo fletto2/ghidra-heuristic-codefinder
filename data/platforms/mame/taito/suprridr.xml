@@ -15,4 +15,24 @@
     <region start="0x0000C801" end="0x0000C802" type="io" name="fgdisable_w"/>
     <region start="0x0000C804" end="0x0000C804" type="io" name="bgscrolly_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Taito Super Rider driver
+driver by Aaron Giles
+Games supported:
+Super Rider
+Known issues:
+clocks on sound chips and CPU not verified yet, taken from thepit
+the board seems to contain a discrete sound portion
+Questions:
+there appears to be a second color bank for the tilemaps, where
+is it used, and how is it activated (if at all)?
+what are the writes to $08DB and $08E8 for?
+(guess: a discrete sound effect)
+driver should probably be merged with with roundup.cpp (and misc/timelimt.cpp)
+PCB Layout
+-... -->
 </platform>

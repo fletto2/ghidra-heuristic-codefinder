@@ -11,4 +11,17 @@
     <region start="0x00034000" end="0x00035FFF" type="io" name="ss9601_videoram_0_hi_r"/>
     <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Subsino (Newer) Tilemaps Hardware =-
+driver by   Luca Elia (l.elia@tin.it)
+Two 1024x512 tilemaps. 256 color tiles. Tiles are 8x8 or a multiple (dynamic tile size).
+There is RAM for 512 scroll values (line scroll). Video RAM is mirrored on multiple ranges.
+One peculiarity is that video RAM access is split into high and low byte. The former is mapped
+in program space, the latter in I/O space.
+-------------------------------------------------------------------------------------------------------... -->
 </platform>

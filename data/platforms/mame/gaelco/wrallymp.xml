@@ -17,4 +17,18 @@
     <region start="0x00600101" end="0x00600101" type="io" name="okim6295_bankswitch_w"/>
     <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- World Rally (Modular System).
+This is neither a clone nor a bootleg, but the original prototype for Gaelco World Rally, that
+was originally developed using the Modular System.
+This Modular System seems like a development unit, labeled PDS (Programmers Development System).
+For this game the Modular System cage contains 7 main boards and 1 small sub-board.
+MOD 5/1: (sprites) 8 x EPROM, 2 x GAL16V9
+MOD 51/1: 1 x PROM, 1 x PAL16R6, logic.
+MOD 7/3: 2 x CXK58256PM-10 RAM, 3 x GAL16V8, 2 x GAL20V8
+MOD ... -->
 </platform>

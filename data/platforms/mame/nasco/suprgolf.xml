@@ -9,4 +9,17 @@
     <region start="0x0000C000" end="0x0000F000" type="io" name="bg_vram_r"/>
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Super Crowns Golf (c) 1989 Nasco Japan
+driver by Tomasz Slanina &amp; Angelo Salese
+TODO:
+- framebuffer handling is exotic and definitely not right, it is unknown how the HW really
+arranges for RMW drawing, and how the pens really mix/if they are readable:
+\- Polygons won't fill properly without a ROM patch (which actually sets up BG bank &amp; 0x08,
+readback correction?). Note that wrong handling of the area will make the game to crash.
+\- Uneven vertical gaps with some object, namely the green... -->
 </platform>

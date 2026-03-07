@@ -8,4 +8,14 @@
     <region start="0xD0900140" end="0xD0900143" type="io" name="unk_d0900140_r"/>
     <region start="0xD0900150" end="0xD0900153" type="io" name="unk_d0900153_r"/>
   </memory_map>
+
+  <!-- unlike earlier SunPlus / GeneralPlus based SoCs this one is
+ARM based
+NAND types
+MX30LF1G08AA
+ID = C2F1
+Capacity = (2048+64) x 64 x 512
+Star Wars Blaster - MX30LF1G08AA
+TMNT Hero Portal  - MX30LF1G08AA
+DC Hero Portal    - MX30LF1G08AA -->
 </platform>

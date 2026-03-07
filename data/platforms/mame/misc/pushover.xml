@@ -13,4 +13,18 @@
     <region start="0x00003A00" end="0x00003A00" type="io" name="port"/>
     <region start="0x00003B00" end="0x00003B00" type="io" name="port"/>
   </memory_map>
+
+  <!-- Push-Over
+© 1981 Summit Coin
+Video Fruit Machine
+TODO:
+- Scrolling is wrong
+- Missing graphics at top and right (pound values)
+- Palette (currently handmade)
+- Sound (discrete?)
+- Better artwork
+Notes:
+- https://www.youtube.com/watch?v=2vtAwkP7JyM
+- https://www.youtube.com/watch?v=xx7b5Zd1Qvc
+- https://patents.google.com/patent/GB2106293A/en -->
 </platform>

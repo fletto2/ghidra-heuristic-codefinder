@@ -20,4 +20,19 @@
     <region start="0x00B00000" end="0x00B03FFF" type="io" name="word_r"/>
     <region start="0x00C00000" end="0x00C6003F" type="ram" name="spriteram"/>
   </memory_map>
+
+  <!-- -= Newer Seta Hardware =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU    :    TMP68301*
+or ColdFire + H8/3007 + PIC12C508 (for EVA2 &amp; EVA3 PCBs)
+Video  :    DX-101 or X1-020 (for P0-113A &amp; P0-121A PCBs, compatible?)
+DX-102 x3
+Sound  :    X1-010
+or OKI M9810 (for EVA2 &amp; EVA3 PCBs)
+OSC    :    50.00000MHz
+32.53047MHz
+The Toshiba TMP68301 is a 68HC000 + serial I/O, parallel I/O,
+3 timers, address decoder, wait generator, interrupt controller,
+all integrated in a single chip.
+-------------... -->
 </platform>

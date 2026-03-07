@@ -16,4 +16,22 @@
     <region start="0x0000A000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E800" end="0x0000EBFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Scramble hardware
+NOTE:  Eventually to be merged into GALAXIAN.CPP
+Interesting tidbit:
+There is a bug in Amidars and Triple Punch. Look at the loop at 0x2715.
+It expects DE to be saved during the call to 0x2726, but it can be destroyed,
+causing the loop to read all kinds of bogus memory locations.
+To Do:
+- Mariner has discrete sound circuits connected to the 8910's output ports
+Notes:
+- While Atlantis has a cabinet switch, it doesn't use the 2nd player controls
+in cocktail mode.
+- DIP locations ... -->
 </platform>

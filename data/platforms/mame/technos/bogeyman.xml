@@ -15,4 +15,18 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Bogey Manor               (c) 1985 Technos Japan
+This game runs on Data East designed hardware.
+It uses the following Data East customs:
+- HMC20
+- TC15G032AY
+- VSC30
+Emulation by Bryan McPhail, mish@tendril.co.uk and T.Nogi
+2008-07
+Dip Locations added based on crazykong BogeyManor.txt -->
 </platform>

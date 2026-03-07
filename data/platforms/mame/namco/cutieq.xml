@@ -8,4 +8,14 @@
     <region start="0x00004800" end="0x00004FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x00006037" type="io" name="warpwarp_sw_r"/>
   </memory_map>
+
+  <!-- Namco early 8080-based games
+All these games run on the same hardware design, with minor differences.
+Gee Bee was the very first videogame released by Namco, and runs on a b&amp;w board.
+The year after, the design was upgraded to add color and a second sound channel;
+however, the b&amp;w board was not abandoned, and more games were written for it with
+the only difference of a larger gfx ROM (losing the ability to choose full or half
+brightness for each character).
+Gee Bee memory map
+Navarone, Ka... -->
 </platform>

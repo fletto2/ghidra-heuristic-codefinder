@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x0000F7FF" type="ram" name="mainram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Plan-80
+2009-12-06 Skeleton driver.
+Summary of Monitor commands:
+D - dump memory
+F - fill memory
+G - go (execute program at address)
+I - in from a port and display
+M - move?
+O - out to a port
+S - edit memory
+ToDo:
+- fix autorepeat on the keyboard
+- Add missing devices
+- Picture of unit shows graphics, possibly a PCG -->
 </platform>

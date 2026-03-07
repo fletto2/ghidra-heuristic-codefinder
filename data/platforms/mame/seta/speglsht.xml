@@ -5,4 +5,23 @@
     <region start="0x0000E000" end="0x0000E87F" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Super Eagle Shot
+(c)1994 Seta (distributed by Visco)
+-----------------------------------
+driver by Tomasz Slanina
+GOLF
+E30-001A
+CPU           : Integrated Device IDT79R3051-25J 9407C (R3000A)
+Sound+Objects : ST-0016
+OSC           : 50.0000MHz (X1) 42.9545MHz (X3)
+ROMs:
+SX004-01.PR0 - R3051 Main programs (MX27C4000)
+SX004-02.PR1 |
+SX004-03.PR2 |
+SX004-04.PR3 /
+SX004-05.RD0 - Data and Graphics (D23C8000SCZ)
+SX004-06.RD1 /
+SX004-07.ZPR - ST-0016 Program and Data (16M mask, read as 27c160)
+GALs (not... -->
 </platform>

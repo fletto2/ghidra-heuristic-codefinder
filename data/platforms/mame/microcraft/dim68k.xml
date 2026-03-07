@@ -21,4 +21,23 @@
     <region start="0x00FFD800" end="0x00FFD801" type="io" name="dim68k_printer_strobe_w"/>
     <region start="0x00FFDC00" end="0x00FFDC01" type="io" name="dim68k_banksw_r"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Micro Craft Dimension 68000
+This computer had the facility for plug-in cards to emulate popular
+computers of the time such as the Apple II Plus, TRS80, Kaypro, etc.
+The floppy disk parameters could be set to be able to read the disks
+of the emulated systems, or you create any other format you wished.
+TODO:
+- Graphics display (including colour and video_control options)
+- RTC (is this a thing?  the manual indicates it just uses the DUART's timers to track time)
+- Centronics printer
+- Video-high
+-... -->
 </platform>

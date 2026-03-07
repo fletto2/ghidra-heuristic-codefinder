@@ -16,4 +16,16 @@
     <region start="0x0000F830" end="0x0000F830" type="io" name="control_w"/>
     <region start="0x0000F851" end="0x0000F851" type="io" name="vbl_r"/>
   </memory_map>
+
+  <!-- Pontoon (GS270) (c) 1993 Konami
+PWB353261A
+2 Z84C0008PEC
+1 053246A
+1 053247A
+1 054539
+1 053252
+3 8-dip banks
+3 XTALs (1 21.05300MHz and 2 18.43200MHz)
+TTL char readback:
+C000-D000 window, control bit 7 enables ROM readback, bit 5 selects which ROM, F450 banks -->
 </platform>

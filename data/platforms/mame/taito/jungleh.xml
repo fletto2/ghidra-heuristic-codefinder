@@ -22,4 +22,18 @@
     <region start="0x0000D700" end="0x0000DFFF" type="unmapped" name="unmapped"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Taito SJ system
+Memory map
+----------
+MAIN CPU:
+Address          Dir Data     Name       Description
+---------------- --- -------- ---------- -----------------------
+000xxxxxxxxxxxxx R   xxxxxxxx ROM5       program ROM
+001xxxxxxxxxxxxx R   xxxxxxxx ROM6       program ROM
+010xxxxxxxxxxxxx R   xxxxxxxx ROM7       program ROM
+011xxxxxxxxxxxxx R   xxxxxxxx ROM8/ROM9  program ROM (banked)
+10000xxxxxxxxxxx R/W xxxxxxxx SRAMRQ     work RAM
+10001----------0 R   xxxxxxxx 8800       68705 data read
+10001-... -->
 </platform>

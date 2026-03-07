@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x000017FF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- BEEHIVE Micro B Series
+2009-05-25 Skeleton driver [Robbbert]
+2011-04-25 Added partial keyboard.
+2011-06-26 Added modifier keys.
+This is a series of conventional computer terminals using a serial link.
+DM3270 is a clone of the IBM3276-2.
+The character gen rom is not dumped. Using the one from 'c10'
+for the moment.
+System beeps if ^G or ^Z pressed. Pressing ^Q is the same as Enter. -->
 </platform>

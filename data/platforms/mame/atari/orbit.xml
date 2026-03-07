@@ -17,4 +17,17 @@
     <region start="0x00003F00" end="0x00003F00" type="io" name="reset_w"/>
     <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Orbit Driver
+game 0 = beginner slow
+game 1 = beginner medium
+game 2 = beginner fast
+game 3 = intermediate slow
+game 4 = intermediate fast
+game 5 = expert fast shells only
+game 6 = expert slow
+game 7 = expert medium
+game 8 = expert fast
+game 9 = super expert
+Flip screen DIP doesn't work because it's not supported by the game. -->
 </platform>

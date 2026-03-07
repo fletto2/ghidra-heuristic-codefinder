@@ -53,4 +53,25 @@
     <region start="0x1FC00000" end="0x1FC3FFFF" type="rom" name="rom"/>
     <region start="0x40000000" end="0xFFFFFFFF" type="io" name="buserror_r"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="net" name="am7990"/>
+    <device type="rtc" name="dp8572"/>
+    <device type="rtc" name="dp8573"/>
+    <device type="scsi" name="wd33c93"/>
+    <device type="serial" name="mc68681"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Silicon Graphics Personal IRIS 4D/20 and 4D/25.
+Year  Model  Board  Type  CPU    Clock    I/D Cache    Code Name
+1988  4D/20  IP6    IP6   R2000  12.5MHz  16KiB/8KiB   Eclipse
+1989  4D/25  IP10   IP6   R3000  20MHz    64KiB/32KiB  Eclipse
+VIP10  VIP10  IP6   R3000  20MHz    64KiB/32KiB  VME Eclipse
+Sources:
+- VME-Eclipse CPU (VIP10) Specification, Silicon Graphics, Inc.
+- SGI IP-6 Schematic
+- http://www.futuretech.blinkenlights.nl/pitechrep.html
+- https://hardware.majix.org/computers/sgi.pi/inde... -->
 </platform>

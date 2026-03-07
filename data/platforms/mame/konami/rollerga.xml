@@ -17,4 +17,9 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Rollergames (GX999) (c) 1991 Konami
+driver by Nicola Salmoria
+2009-03:
+Added dsw locations and verified factory settings based on Guru's notes -->
 </platform>

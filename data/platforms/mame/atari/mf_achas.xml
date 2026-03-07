@@ -17,4 +17,12 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Exidy Max-A-Flex driver
+by Mariusz Wojcieszek
+Based on Atari 400/800 MAME Driver by Juergen Buchmueller -->
 </platform>

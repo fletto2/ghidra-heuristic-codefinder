@@ -6,4 +6,15 @@
     <region start="0x0000A000" end="0x0000A7FF" type="ram" name="nvram"/>
     <region start="0x0000E000" end="0x0000E7FF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Skeleton driver for VT220-compatible terminals by C. Itoh/CIE Terminals and similar terminals by ADDS.
+The CIT-220+ Video Terminal was introduced as a direct competitor to DEC's VT220. It copied the design of the VT220 closely
+enough to provoke a lawsuit, which led to its eventual withdrawal in favor of its successor, the CIT224.
+"COPYRIGHT MICROWEST 1984" can be found in the program ROMs of both the CIT-220+ and Viewpoint 122. The code is clearly similar,
+and the SCN2674 video timing parameters... -->
 </platform>

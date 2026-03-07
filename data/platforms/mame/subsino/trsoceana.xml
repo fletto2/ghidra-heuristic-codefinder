@@ -15,4 +15,25 @@
     <region start="0x0000F000" end="0x0000F7FF" type="io" name="reel_scrollattr_r"/>
     <region start="0x0000F800" end="0x0000FDFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Subsino's Gambling Games =-
+Driver by   Luca Elia (l.elia@tin.it)
+Additional work by   David Haywood, Angelo Salese and Roberto Fresca.
+CPU: Black epoxy box containing:
+1x CXK58257M (32768 x 8-Bit) High Speed CMOS SRAM.
+1x HD647180X0P6, HD643180X0P6 or HD641180X0P6 Z180-CPU.
+1x X-TAL (unknown frequency).
+1x Battery.
+GFX:    1 Tilemap (8x8 tiles, no scrolling)
+CUSTOM: 2 x SUBSINO SS9100, SUBSINO SS9101
+SOUND:  M6295, YM2413 or YM3812
+OTHER:  Battery
+To Do:
+- Remove ROM patches from smoto, stbs... -->
 </platform>

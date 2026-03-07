@@ -16,4 +16,13 @@
     <region start="0x00000800" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Haunted Castle
+Emulation by Bryan McPhail, mish@tendril.co.uk
+BTANB: some awkward priorities, eg:
+- stage indicator (bottom-left) hiding behind the grass on stage 1, and behind
+the water on stage 2
+- stage 3 painting with the bloody tear, the tear has higher priority than
+the player character
+- stage 3 boss, when he jumps down, he's behind the background candlelights -->
 </platform>

@@ -8,4 +8,10 @@
     <region start="0x00FF002E" end="0x00FF002F" type="unmapped" name="nop_read"/>
     <region start="0x00FF002F" end="0x00FF002F" type="io" name="usart_select_w"/>
   </memory_map>
+
+  <!-- Morrow Tricep
+12/05/2009 Skeleton driver.
+Several of the boards apparently used in this S-100 system were
+made by CompuPro/Viasyn, including the CPU 68K and Interfacer 3
+(2651 USART multiplexer). -->
 </platform>

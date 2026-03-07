@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Micro-Term 440
+VT240 compatible serial terminal
+Hardware for the terminal PCB:
+- Z8400APS Z80A CPU
+- 27256 EPROM "1965 M.P. R4.0 27256 U6"
+- 2764 EPROM "1965 M.P. R4.0 2764 U7"
+- D4364C-20L (work RAM?)
+- 2732 EPROM "1965 M.P. R4.0 2732 U9"
+- 2x NMC 9345N EEPROM
+- Z8430AB1 Z80ACTC
+- 2x Z8470AB1 Z80ADART
+- SCN2674B AVDC
+- 4x TMM2016BP-10 (VRAM?)
+- 1x M58725P
+- 2732 EPROM "MT425 CG REV 2.1"
+- 2716 EPROM "MT425 ATTR U25 REV1.1"
+- 4 MHz XTAL, 9.87768 MHz XTAL, 15.30072 MHz XTAL
+Hardware for the graph... -->
 </platform>

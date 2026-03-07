@@ -6,4 +6,20 @@
     <region start="0x00001000" end="0x00001000" type="io" name="main_comm_r"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Conic Computer Chess (model 07013), more commonly known as Conic "Korchnoi".
+The interface is similar to the previous model (07012), where the user needs
+to press Enter after their move.
+Hardware notes:
+- Synertek 6502A @ 2MHz
+- OKI MSM5840H-41RS @ 3.57MHz (2KB internal ROM)
+- 2*4KB ROM(AMI), 1KB RAM(2*2114)
+- beeper, 8*8+4 leds, magnets chessboard
+TODO:
+- It does not work, MSM5840 is unemulated, and the internal ROM is not dumped.
+MCU handles inputs, leds, sound, and it communicates with maincp... -->
 </platform>

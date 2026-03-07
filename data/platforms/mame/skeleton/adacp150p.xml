@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="bcp_ram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Preliminary driver for Adacom IBM 3287 ASCII printer adapters.
+Currently this does not much more than pass the extensive self-test.
+TODO: make this a bus device in the eventuality of synchronous
+communications and a 3270-compatible host both being emulated. -->
 </platform>

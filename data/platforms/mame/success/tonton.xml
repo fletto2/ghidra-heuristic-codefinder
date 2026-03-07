@@ -6,4 +6,19 @@
     <region start="0x0000E000" end="0x0000E3FF" type="ram" name="nvram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="v9938"/>
+  </devices>
+
+  <!-- Waku Waku Doubutsu Land TonTon (c) 1987 Success.
+HW based off MSX2
+Driver by Angelo Salese &amp; Roberto Fresca.
+WAKUWAKU DOUBUTSU LAND TONTON (ANIMAL VIDEO SLOT)
+(c)SUCCESS / CABINET :TAIYO JIDOKI (SUN AUTO MACHINE)
+CPU   : Z80
+SOUND : YM2149F
+XTAL  : 21477.27KHz
+TONTON.BIN  : MAIN ROM -->
 </platform>

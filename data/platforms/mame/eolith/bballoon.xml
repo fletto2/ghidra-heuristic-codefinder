@@ -8,4 +8,20 @@
     <region start="0x10300000" end="0x10300000" type="io" name="write"/>
     <region start="0x30000000" end="0x31FFFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Eolith Ghost Hardware driver
+1. CPU
+- 16/32bit RISC Microprocessor(ARM920T CPU core)
+- Separate 16KB Instruction and 16KB Data Cache
+- Operating Frequency : Up to 203MHz
+2. MEMORY
+- Main Memory : 32Mbytes(Maximum 128Mbytes) SDRAM
+- NAND FLASH : 16M,32M, 64M, 128M, 256Mbytes
+3. VIDEO
+- RGB (5:6:5) format
+- Supports 1,2,4 or 8 bpp(bit-per-pixel) palette color displays
+- Supports 16 bpp non-palette true-color displays
+- Supports multiple screen size
+Typical actual screen size : 320*240, 640*480
+Max... -->
 </platform>

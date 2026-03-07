@@ -8,4 +8,32 @@
     <region start="0x00006000" end="0x000060FF" type="io" name="read"/>
     <region start="0x0000B000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+  </devices>
+
+  <!-- Esprit Systems Executive 10/102
+VT102 compatible terminal
+Hardware:
+- Intel P8088
+- Intel D8284A
+- Intel P8259A-8
+- 2x 2764 EPROM, 1x 2732 EPROM
+- SY2128-2 (2k RAM)
+- X2212D NOVRAM
+- MC68B50P
+- SCN2681A
+- 14.469 MHz XTAL (near CPU), 3.6864 MHz XTAL (near 2681)
+- CRT 9007
+- 2x CRT 9006-135
+- CRT9021A
+- 2764 EPROM
+- 4x SY2128-2 (8k RAM)
+- 21.800 MHz XTAL (near 9007), 16.960 MHz XTAL (near 9007)
+- 9 position DIP switch
+TODO:
+- Improve rendering (132 columns, smooth scrolling, non-line attributes(?)... -->
 </platform>

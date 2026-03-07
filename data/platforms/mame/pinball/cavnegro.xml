@@ -8,4 +8,22 @@
     <region start="0x00001400" end="0x00001407" type="io" name="port"/>
     <region start="0x00001800" end="0x00001BFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Taito of Brasil
+Unable to locate any meaningful schematics.
+You need to have a ball in the outhole (hold down X) when starting a game.
+To activate setup mode, turn on both the Adjust and Service dipswitches. Service needs to
+be on to access any of the dipswitch functions.
+Status of each game:
+- shock, obaoba, obaoba1, obaobao, drakor, meteort, cosmic, vortexp, stest, rally,
+snake, voleybal, polar, ladylukt, vegast, titan, gork:
+Works, with various quality of sounds
+- sureshop:
+Playable, ... -->
 </platform>

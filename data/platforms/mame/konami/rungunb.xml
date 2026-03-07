@@ -58,4 +58,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Run and Gun / Slam Dunk
+(c) 1993 Konami
+Driver by R. Belmont.
+This hardware uses the 55673 sprite chip like PreGX and System GX, but in a 4 bit
+per pixel layout.  There is also an all-TTL front overlay tilemap and a rotating
+scaling background done with the PSAC2 ('936).
+Status: Front tilemap should be complete, sprites are mostly correct, controls
+should be fine.
+Known Issues:
+- CRTC and video registers needs syncronization with current video draw state,
+it's very noticeable if for example scro... -->
 </platform>

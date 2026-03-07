@@ -6,4 +6,22 @@
     <region start="0x00008000" end="0x0000D3FF" type="ram" name="banked"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Quiz Punch II (C)1989 Space Computer
+Driver by Luca Elia
+- It uses a COP MCU for protection, that supplies
+the address to jump to (same as mosaic.cpp) and handles the EEPROM
+PCB Layout
+----------
+|---------------------------------------------|
+|U1    U26        6116                   32MHz|
+|                             U120 U119       |
+|U2                                  U118 U117|
+|      U27        6116                        |
+|                                             |
+|               ... -->
 </platform>

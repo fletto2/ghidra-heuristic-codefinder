@@ -14,4 +14,19 @@
     <region start="0x00009C00" end="0x00009CFF" type="ram" name="nvram"/>
     <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Videa (predecessor to Sente) Gridlee hardware
+driver by Aaron Giles
+special thanks to Howard Delman, Roger Hector and Ed Rotberg for
+allowing distribution of the Gridlee ROMs
+Based on the Bally/Sente SAC system
+Games supported:
+Gridlee
+Known bugs:
+analog sound hardware is unemulated
+Memory map
+========================================================================
+CPU #1
+========================================================================
+0000-007F   R/W   xxxxxxxx    Sprite RAM (32 entries... -->
 </platform>

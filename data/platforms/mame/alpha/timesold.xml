@@ -59,4 +59,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- SNK/Alpha 68000 based games:
+(Game)                  (PCB Number)     (Manufacturer)
+Super Stingray          ? (Early)        Alpha 1986?
+Kyros                   ? (Early)        World Games Inc 1987
+Mahjong Block Jongbou   Alpha 68K-96 N   SNK 1987
+Paddle Mania            Alpha 68K-96 I   SNK 1988
+Time Soldiers (Ver 3)   Alpha 68K-96 II  SNK/Romstar 1987
+Time Soldiers (Ver 1)   Alpha 68K-96 II  SNK/Romstar 1987
+Battlefield (Ver 1)     Alpha 68K-96 II  SNK 1987
+Sky Soldiers            Alpha 68K-... -->
 </platform>

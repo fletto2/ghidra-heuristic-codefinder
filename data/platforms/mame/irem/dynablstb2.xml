@@ -8,4 +8,17 @@
     <region start="0x000D0000" end="0x000E03FF" type="ram" name="video_data"/>
     <region start="0x000FFFF0" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Irem M90/M97/M99 system games:
+Hasamu                                                  1991 M90-C-B
+Bomberman / Atomic Punk / Dynablaster                   1992 M90-C-B
+Bomberman World / New Atomic Punk / New Dyna Blaster    1992 M97-A-B
+Bomberman World / New Atomic Punk / New Dyna Blaster    1992 M99-A-A (m97 with pound 4 pound sound chip)
+Quiz F1 1-2 Finish                                      1992 M97-A-B
+Risky Challenge / Gussun Oyoyo                          1993 M97-A-B
+Match It II / Shise... -->
 </platform>

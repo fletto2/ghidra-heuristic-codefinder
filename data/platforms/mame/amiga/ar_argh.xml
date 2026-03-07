@@ -6,4 +6,29 @@
     <region start="0x009FF000" end="0x009FFFFF" type="ram" name="nvram"/>
     <region start="0x00F00000" end="0x00F7FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Arcadia System - (c) 1988 Arcadia Systems
+Driver by Ernesto Corvi and Mariusz Wojcieszek
+Games supported:
+SportTime Bowling
+Leader Board
+Ninja Mission
+Road Wars
+Sidewinder
+Space Ranger
+SportTime Table Hockey
+Spot
+Magic Johnson's Fast Break
+World Darts
+Xenon
+World Trophy Soccer
+Delta Command (N.Y Warriors)
+Blastaball
+Aaargh
+Pharaohs Match
+Other Arcadia games (not dumped):
+Pool
+Rockford
+Hardware description (from targets.mame.net):
+In the late 80s, Arcadia collaborated with Mastertronic to create ... -->
 </platform>

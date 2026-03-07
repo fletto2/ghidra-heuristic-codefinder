@@ -6,4 +6,18 @@
     <region start="0x00008000" end="0x00009FFF" type="io" name="bank_r"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Univac Terminals
+2009-05-25 Skeleton driver
+The terminals are models UTS10, UTS20, UTS30, UTS40, UTS50 and SVT1120.
+There were other terminals (Uniscope 100/200/300/400) and UTS60, but
+they had different hardware. Uniscope models are believed to use the i8080,
+and the UTS60 was a colour graphics terminal with a MC68000 and 2 floppy drives.
+The terminal has 2 screens selectable by the operator with the Fn + 1-2
+buttons. Thus the user can have two sessions open at once, to different
+mainframes or ... -->
 </platform>

@@ -17,4 +17,28 @@
     <region start="0x0000101A" end="0x0000101A" type="io" name="port"/>
     <region start="0x00001200" end="0x00001FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Cops'n Robbers hardware
+driver by Zsolt Vasvari
+Games supported:
+Cops'n Robbers
+Known issues:
+none at this time
+Cops'n Robbers memory map (preliminary)
+0000-00ff RAM
+0c00-0fff Video RAM
+1200-1fff ROM
+I/O Read:
+1000 Vertical Sync
+1002 Bit 0-6 Player 1 Gun Position
+Bit 7   Player 1 Gas Pedal
+1006 Same as above for Player 2
+100A Same as above for Player 3
+100E Same as above for Player 4
+1012 DIP Switches
+0-1 Coinage
+2-3 Time Limit
+4-7 Fire button for Player 1-4
+1016 Bit 6 - Start 1
+Bit 7 - Co... -->
 </platform>

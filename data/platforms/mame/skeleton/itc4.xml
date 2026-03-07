@@ -5,4 +5,14 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <!-- Skeleton driver for temperature controller by Oxford Instruments Ltd.
+PCB
+_______________________________________________________________
+|                                                              |
+|                           ___                 ___            |
+|             ___           |__|                |  |           |
+|            HP2200                 ________    |__|           |
+|                                   |_______|                  |
+|                    ___             ... -->
 </platform>

@@ -6,4 +6,20 @@
     <region start="0x0000A000" end="0x0000A7FF" type="ram" name="ram"/>
     <region start="0x0000FF00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- - NORAUT POKER SYSTEM -
+-------------------------
+Driver by Roberto Fresca, Angelo Salese &amp; Grull Osgo.
+Games running on this hardware:
+-- Z80 based --
+Noraut Poker,                                  1988,  Noraut Ltd.
+Noraut Deluxe Poker (console),                 198?,  Noraut Ltd.
+Noraut Deluxe Poker (bootleg),                 198?,  Unknown.
+Noraut Joker Poker (original),                 198?,  Noraut Ltd.
+Noraut Joker Poker (text hack),                198?,  bootleg.
+Noraut Joker Poker (... -->
 </platform>

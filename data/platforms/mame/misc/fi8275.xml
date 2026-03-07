@@ -6,4 +6,13 @@
     <region start="0x00000000" end="0x000027FF" type="rom" name="rom"/>
     <region start="0x00002800" end="0x000033FF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- schematics can be found at
+http://www.citylan.it/wiki/index.php/Fast_Invaders_%286845_version%29
+and
+http://www.citylan.it/wiki/index.php/Fast_Invaders_%288275_version%29 -->
 </platform>

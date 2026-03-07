@@ -53,4 +53,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- RW93085 (C) NTC CO.      on main PCB
+RW93085-SUB (c)NTC CO.LTD 1993 MADE IN JAPAN     on sub (ROM) PCB
+various NMK customs including NMK005 (GPIO controller) near dipswitches, difficult to read the rest from PCB pics
+developed by NTC on NMK hardware?
+video is probably just 2 tilemap layers
+maybe close to jalmah.cpp? -->
 </platform>

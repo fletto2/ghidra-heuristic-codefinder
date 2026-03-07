@@ -8,4 +8,16 @@
     <region start="0x00C00000" end="0x00C7FFFF" type="rom" name="rom"/>
     <region start="0x00D00000" end="0x00FFFFFF" type="io" name="unmapped_r"/>
   </memory_map>
+
+  <!-- Neo-Geo CD hardware
+Thanks to:
+Jan Klaassen (of the former FBA team) for much of the CDC / CDD code and system details.
+Mirko Buffoni for a commented disassembly of the NeoCD bios rom.
+Current status:
+- NeoCDZ runs, the original NeoCD does not
+- Might think the tray is open? (check)
+- Some unknown / unhandled CD commands, code is still a bit messy
+- CDDA continues to play during loading, should stop it
+- Games using Raster Effects are broken without a kludge
+- CPU gets overloaded with IRQs from ... -->
 </platform>

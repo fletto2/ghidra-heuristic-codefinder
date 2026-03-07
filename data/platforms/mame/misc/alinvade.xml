@@ -20,4 +20,13 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- tiny bartop b&amp;w Space Invaders type game with colour overlay
+Driver by David Haywood and Mariusz Wojcieszek
+TODO:
+- 16 bytes are protected in the c*** range. I'm guessing they used a PROM to protect a
+simple sub-routine because:
+It attempts to jsr from RAM to that area with a 0x10 byte offset (i.e. ROM copies a code snippet to RAM; when it executes
+it code executes jsr 0xc400 then self-modifies it to 0xc410, rinse and repeat ... up to 0xc7f0 and rolls back);
+After that the program has an amu... -->
 </platform>

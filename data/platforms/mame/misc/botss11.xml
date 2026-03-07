@@ -56,4 +56,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Microprose Games 3D hardware
+driver by Phil Bennett
+Games supported:
+F-15 Strike Eagle [3 sets]
+B.O.T.S.S.: Battle of the Solar System [2 sets]
+Tank Battle (prototype)
+Super Tank Attack (prototype)
+TODO:
+DS1215 Phantom time chip
+DS1267 Volume control
+Known issues:
+Games are running too smoothly!
+F-15 controls need tweaking
+botss will hit a divide-by-zero error if the throttle is
+not calibrated first in service mode. (clone is ok) -->
 </platform>

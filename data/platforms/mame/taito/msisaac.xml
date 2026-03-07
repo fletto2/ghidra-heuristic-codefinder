@@ -20,4 +20,16 @@
     <region start="0x0000FC00" end="0x0000FC00" type="io" name="flip_screen_w"/>
     <region start="0x0000FC03" end="0x0000FC04" type="io" name="coin_counter_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Metal Soldier Isaac II  (c) Taito 1985
+driver by Jarek Burczynski
+TODO:
+- complete MCU simulation, several gameplay elements not properly right;
+- sprites are probably banked differently (no way to be sure until MCU dump is available)
+- TA7630 emulation needs filter support (characteristics depend on the frequency)
+- TA7630 volume table is hand tuned to match the sample, but still slightly off. -->
 </platform>

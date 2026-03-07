@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Super Card - Fun World.
+Encrypted CPU (based on a Z80)
+plus 2x 8255 + YM3014 + YM3812 hardware.
+Close to Amatic 8000-1 hardware.
+Driver by Roberto Fresca.
+Games running on this hardware:
+Super Card (v417, encrypted),     Fun World, 1992.
+Fruit Star (T10S, encrypted),     Fun World, 1992.
+Fruit Star (v810, encrypted),     Fun World, 1992.
+Gamble Poker (v816, encrypted),   Fun World, 1990.
+Gamble Poker (v812, encrypted),   Fun World, 1990.
+Super Stars (v839, encrypted),    Fun World, 1996.
+Super S... -->
 </platform>

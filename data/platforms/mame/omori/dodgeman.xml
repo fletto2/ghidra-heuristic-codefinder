@@ -7,4 +7,21 @@
     <region start="0x0000A000" end="0x0000A3FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E03F" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Omori Battle Cross
+driver by David Haywood
+Stephh's notes :
+- I don't know exactly how to call the "Free Play" Dip Switch 8(
+Its effect is the following :
+you need to insert at least one credit and start a game
+when the game is over, you can start another games WITHOUT
+inserting another coin
+Note that the number of credits is decremented though.
+Credits are BCD coded on 3 bytes (0x000000-0x999999) at addresses
+0xa039 (LSB), 0xa03a and 0xa03b (MSB), but only the LSB is displayed.
+- Setting the fl... -->
 </platform>

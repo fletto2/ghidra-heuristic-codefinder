@@ -51,4 +51,30 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- MAYGAY MV1 hardware
+preliminary driver by Phil Bennett
+Games supported:
+Screen Play
+Other games on this hardware (incomplete dumps)
+Believe it or not?
+Caesar's Palace (reel to video)
+Crossword Quiz
+Give us a Clue
+Special Effects (reel to video)
+World Cup (reel to video)
+Main MV1 board:
+U1 ST 8901 TS68000CP12
+U2 ST M74HC04B1 99135R
+U3 ST 16S25HB1 9235 (think this is the gal chip)
+U4 ST M74HC138B1 99131R
+U5 P8948G MM74HC05N
+U6 ST M74HC74B1 99144R
+U7 ST M74HC08B1 99135R
+U8 ST NE556N 99135
+U9 ST M74... -->
 </platform>

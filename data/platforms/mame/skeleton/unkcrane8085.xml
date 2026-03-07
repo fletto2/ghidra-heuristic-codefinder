@@ -7,4 +7,14 @@
     <region start="0x00006000" end="0x00006000" type="io" name="map0x6000_0x6000r"/>
     <region start="0x00008000" end="0x000080FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- unknown crane game (supposedly)
+PCB is only marked DC-1 and there are no strings in ROM
+QC sticker on solder side printed 検査印 and stamped 3.5.15 (15 May 1991, assuming Heisei date)
+Components are:
+- D8085AC CPU
+- 6 MHz XTAL
+- M5L2764K ROM
+- M5L8155P SRAM
+- 2 banks of 8 switches -->
 </platform>

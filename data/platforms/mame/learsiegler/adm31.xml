@@ -14,4 +14,14 @@
     <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Skeleton driver for ADM-31 terminal.
+The ADM-31 and ADM-42 Data Display Terminals were Lear Siegler, Inc.'s
+first microprocessor-based video terminals, introduced in 1978 as the
+respective successors to their earlier ADM-1A and ADM-2 "smart"
+terminals. The original ADM-31 model was apparently rebranded in 1980
+as the ADM-31 Intermediate Terminal, and the ADM-32 was released a few
+months later.
+While the ADM-31 and ADM-32 only support 2 pages of display memory, the
+ADM-42 could be upgraded to 8. ... -->
 </platform>

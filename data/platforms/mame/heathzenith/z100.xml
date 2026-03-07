@@ -8,4 +8,18 @@
     <region start="0x000F4000" end="0x000FBFFF" type="io" name="map0xf40000xf7fff__mtret100_firmware_i_e"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Zenith Z-100
+The Z-100 was the assembled version of the Heath H-100, which came
+in kit form. There were two main versions of the computer, a low-profile,
+without a CRT monitor, and the "all-in-one", with a monochome CRT.
+Initially model numbers had standardized numbering with a two or three
+letter prefix, a 3 digit base, and a two digit suffix. The first letter
+of the prefix was either Z for Zenith (assembled) or H for Heath (kit).
+The second letter specified the disk drives: F for 48 tpi DS flo... -->
 </platform>

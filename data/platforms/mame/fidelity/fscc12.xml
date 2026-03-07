@@ -15,4 +15,20 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity Sensory 12 Chess Challenger (SC12, SE12, 6086)
+------------------------------------
+RE information from netlist by Berger
+8*(8+1) buttons, 8+8+2 red LEDs
+DIN 41524C printer port (600 baud, 7 data bits, 1 stop bit, no parity)
+36-pin edge connector
+CPU is a R65C02P4, running at 4MHz*
+Model SC12 is 3MHz, model SE12 3.57MHz, model 6086 4MHz.
+By default, the CPU frequency is lowered on A13/A14 access, with a factory-set jumper:
+/2 on model SC12(1.5MHz), /4 on model 6086(1MHz)
+NE556 dual-time... -->
 </platform>

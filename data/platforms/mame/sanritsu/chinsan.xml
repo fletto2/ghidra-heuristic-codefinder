@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000F7FF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Ganbare Chinsan Ooshoubu (がんばれ珍さん！大勝負)
+© 1987 Sanritsu
+Kiki-Ippatsu Mayumi-chan (危機一髪真由美ちゃん)
+© 1988 Victory L.L.C. (developed by Sanritsu)
+TODO:
+- Figure out the rest of the dip switches
+- Verify clock speeds
+- Raw screen params
+Notes:
+- ADPCM hook-up is virtually identical to the other Sanritsu games
+(Jantotsu, Appoooh, Dr. Micro etc.). -->
 </platform>

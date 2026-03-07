@@ -9,4 +9,28 @@
     <region start="0x000A0000" end="0x000A0001" type="unmapped" name="nop_write"/>
     <region start="0x000A0200" end="0x000A0201" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <!-- PINBALL
+Sleic Pinball
+The only known schematic is for Bike Race and has most crystal frequencies unmarked.
+Some ICs aren't identified. No schematic for the display. It can be seen from videos
+that a DMD is used.
+There's no standard inputs for coin, start etc.
+Games:
+- Pinball
+- Bike Race
+- Dona Elvira 2
+- Super Pang
+- Io Moon
+Principal components:
+80C188-10
+80C39-11
+27C64
+27C040
+27C010
+28C64A
+6376 (Voice Synthesiser by OKI)
+YM3812 (Sound Generator by Yamaha)
+YM3014 (DAC Sounds by Yamaha)
+X9103 N... -->
 </platform>

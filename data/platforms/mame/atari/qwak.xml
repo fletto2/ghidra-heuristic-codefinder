@@ -19,4 +19,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Runaway hardware
+Games supported:
+Qwak (prototype)
+Runaway (prototype)
+original Qwak driver written by Mike Balfour -->
 </platform>

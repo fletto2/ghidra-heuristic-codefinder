@@ -6,4 +6,16 @@
     <region start="0x0000FFFC" end="0x0000FFFF" type="io" name="sms_mapper_r"/>
     <region start="0x0000FFFE" end="0x0000FFFF" type="io" name="region_fffe"/>
   </memory_map>
+
+  <!-- ----------------------------------
+for Sono Corp Japan
+----------------------------------
+these are SMS multi-game bootlegs with 32 games.
+Some of these sets are actually hacked versions
+cfr. ALex Kidd with autofire or Solomon's Key title (that actually hasn't been released outside Japan)
+TODO:
+smssgame
+- 05 Super Mario: crashes, seemingly expects $8000-$bfff to be a copy of $0000-$3fff,
+extra MCU control? btanb?
+- 29 Goonies: either boots (with bad title screen GFXs) or outright crashes again b... -->
 </platform>

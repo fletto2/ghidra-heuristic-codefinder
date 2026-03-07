@@ -6,4 +6,32 @@
     <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="bank_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="v9938"/>
+  </devices>
+
+  <!-- The Boat
+1987(c) Hit Gun Co, LTD.
+Gambling/Amusement game
+Selectable through DIP switches.
+Driver by AJR.
+Additional work by Roberto Fresca.
+Hardware specs...
+Seems based on MSX2.
+PCB is marked "TVG01"
+CPU:
+1x Sharp LH0080A (Z80-A).       (IC26)
+I/O:
+2x NEC D8255AC-2 PPI.           (IC23, IC27)
+Sound:
+1x GI AY-3-8910A.               (IC18)
+1x Fujitsu MB3712 (audio amp)   (IC2)
+Video:
+1x Yamaha V9938 VDP (scratched) (IC13)
+RAM:
+4x Fujitsu MB81464-15 (256 Kbit DRAM) (VRAM)  (IC6, IC7, IC9, IC10)
+1... -->
 </platform>

@@ -7,4 +7,23 @@
     <region start="0x00009800" end="0x00009FFF" type="unmapped" name="unmapped"/>
     <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Canon X-07
+Driver by Sandro Ronco based on X-07 emu by J.Brigaud
+TODO:
+- move T6834 in a device
+- better emulation of the i/o ports
+- external video (need X-720 dump)
+- serial port
+Memory Map
+0x0000 - 0x1fff   Internal RAM
+0x2000 - 0x3fff   External RAM Card
+0x4000 - 0x5fff   Extension ROM/RAM
+0x6000 - 0x7fff   ROM Card
+0x8000 - 0x97ff   Video RAM
+0x9800 - 0x9fff   ?
+0xa000 - 0xafff   TV ROM (no dump)
+0xb000 - 0xffff   ROM
+CPU was actually a NSC800 (Z80 compatible)
+More info: http://www.silicium... -->
 </platform>

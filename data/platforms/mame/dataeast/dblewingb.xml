@@ -55,4 +55,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Double Wings
+Mitchell 1993
+This game runs on Data East hardware.
+PCB Layout
+----------
+S-NK-3220
+DEC-22VO
+|---------------------------------------------|
+|MB3730 C3403    32.22MHz           MBE-01.16A|
+|  Y3014B  KP_03-.16H       77                |
+|           M6295                   MBE-00.14A|
+|  YM2151                            |------| |
+|          Z80      CXK5864          |      | |
+| VOL                       VG-02.11B|  52  | |
+|        LH5168     CXK5864          |      | |
+|         ... -->
 </platform>

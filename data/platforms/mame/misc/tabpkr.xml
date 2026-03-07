@@ -54,4 +54,27 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Wild Poker
+TAB Austria.
+Preliminary driver by Roberto Fresca.
+Games running in this hardware:
+Wild Poker (ver. D 1.01),         199?, TAB Austria.
+The HD63484 ACRTC support is incomplete,
+due to the preliminary emulation state.
+Hardware Notes:
+---------------
+CPU:
+- 1x MC68000P12        ; 68000 CPU @ 12 MHz, from Motorola.
+- 1x D8751H            ; 8751 MCU (3.6864 MHz?)
+Sound device:
+- 1x AY8930            ; Sound IC, from Microchip Technology.
+Video:
+- 1x HD63484CP8 @ 8MHz ; Advanced CRT Contro... -->
 </platform>

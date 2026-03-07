@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x0000EFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- IQ Block   (c) 1992 IGS
+Driver by Nicola Salmoria and Ernesto Corvi
+TODO:
+- Who generates IRQ and NMI? How many should there be per frame?
+- Coin 2 doesn't work? DIP switch setting?
+- Protection:
+I can see it reading things like the R register here and there, so it might
+be cycle-dependant or something.
+'Crash 1' checks I was able to see:
+PC = $52FA
+PC = $507F
+'Crash 2' checks I was able to see:
+PC = $54E6
+Stephh's notes :
+- Coin 2 as well as buttons 2 to 4 for each player are only read in "test... -->
 </platform>

@@ -12,4 +12,18 @@
     <region start="0x0000F800" end="0x0000F801" type="io" name="address_data_w"/>
     <region start="0x0000F801" end="0x0000F801" type="io" name="data_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Cherry Chance / チェリーチャンス (c) 1987 Taito Corporation
+A cherry-type game that uses the tnzs video chip.
+TODO:
+- Undumped color proms -&gt; ugly colors;
+- Complete I/O, requires manual for DIPs and (likely non-)JAMMA pinout;
+- Verify clock dividers for Z80 and YM2149;
+============================================================================================================================
+Cherry Chance Readme
+This one should be a simple project, it uses a Z80 and a Seta graphics chipset and a YM2... -->
 </platform>

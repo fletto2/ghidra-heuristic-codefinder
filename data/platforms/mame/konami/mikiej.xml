@@ -12,4 +12,24 @@
     <region start="0x00002800" end="0x00003FFF" type="ram" name="ram"/>
     <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Mikie memory map (preliminary)
+GX469
+driver by Allard van der Bas
+MAIN BOARD:
+2800-288f Sprite RAM (288f, not 287f - quite unusual)
+3800-3bff Color RAM
+3c00-3fff Video RAM
+4000-5fff ROM (?)
+5ff0      Watchdog (?)
+6000-ffff ROM
+Stephh's notes (based on the games M6809 code and some tests) :
+- To enter service mode, keep START1 and START2 pressed on reset.
+Then press START1 to cycle through the different tests.
+- According to code at 0x618f, you can start a game with 255 lives
+if you set DSW1 and ... -->
 </platform>

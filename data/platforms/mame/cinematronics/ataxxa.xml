@@ -6,4 +6,31 @@
     <region start="0x00002000" end="0x0000F7FF" type="ram" name="banked"/>
     <region start="0x0000F800" end="0x0000FFFF" type="io" name="palette"/>
   </memory_map>
+
+  <!-- Cinematronics / Leland Cinemat System driver
+driver by Aaron Giles and Paul Leaman
+Games supported:
+Cerberus
+Mayhem 2002
+Power Play
+World Series: The Season
+Alley Master
+Up Your Alley
+Danger Zone
+Baseball The Season II
+Super Baseball Double Play Home Run Derby
+Strike Zone Baseball
+Redline Racer
+Quarterback
+Viper
+John Elway's Team Quarterback
+All American Football
+Ironman Stewart's Super Off-Road
+Pigout
+Leland Ataxx-era
+Games supported:
+Ataxx
+World Soccer Finals
+Danny Sullivan's Indy Heat
+Brute F... -->
 </platform>

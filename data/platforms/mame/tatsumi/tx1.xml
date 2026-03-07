@@ -14,4 +14,25 @@
     <region start="0x00020000" end="0x0002FFFF" type="rom" name="rom"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Tatsumi TX-1/Buggy Boy hardware
+driver by Phil Bennett
+Games supported:
+TX-1 (1983) [3 sets]
+Buggy Boy (1985) [2 sets]
+Buggy Boy Junior (1986)
+ROMs wanted:
+TX-1 V8 (1984)
+Notes:
+TX-1 tire screech noises are not implemented yet.
+Buggy Boy Error Codes          TX-1 Error Codes
+=====================          ================
+1  Main CPU RAM                1  Main microprocessor RAM
+2  Video (character) RAM       2  Video RAM
+3  Road/common RAM             3  Common RAM
+4  Sound RAM                 ... -->
 </platform>

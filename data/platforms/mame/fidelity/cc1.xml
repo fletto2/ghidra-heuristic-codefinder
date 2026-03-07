@@ -6,4 +6,18 @@
     <region start="0x00001000" end="0x000011FF" type="ram" name="ram"/>
     <region start="0x00002000" end="0x00002FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Fidelity's 1st generation chess computers:
+- Chess Challenger
+- Chess Challenger (upgraded version) - more commonly known as CC3
+- Chess Challenger (model UCC10) - more commonly known as CC10 ver. C
+The first generation of chesscomputers didn't have an electronic chessboard.
+Some of them required a separate chessboard, others had a small chessboard
+attached to it (the latter applies to Fidelity).
+For those familiar with MAME's sensorboard interface and really want to use it
+for the old keypad-in... -->
 </platform>

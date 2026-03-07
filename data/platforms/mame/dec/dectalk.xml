@@ -47,4 +47,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- DECtalk DTC-01 Driver
+Copyright (C) 2009-2013 Jonathan Gevaryahu AKA Lord Nightmare
+with major help (dumping, tech questions answered, etc)
+from Kevin 'kevtris' Horton, without whom this driver would
+have been impossible.
+Special thanks to Al Kossow for archiving the DTC-01 schematic at bitsavers,
+http://bitsavers.org/pdf/dec/dectalk/MP-01820_DTC01_EngrDrws_Nov83.pdf
+which has been invaluable for work on this driver.
+Special thanks to leeeeee for helping figure out what the led selftest codes ac... -->
 </platform>

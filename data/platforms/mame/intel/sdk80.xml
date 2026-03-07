@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00001000" end="0x000013FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Intel SDK-80
+The 8080 System Design Kit (SDK-80) is a complete microcomputer system in
+kit form, and provides a excellent prototype vehicle for evaluation of the
+8080 microcomputer system (MCS-80).
+An extensive system monitor is included in a pre-programmed ROM for general
+software utilities and system diagnostics.
+Download the User Manual to get the operating procedures.
+Monitor Commands:
+D&lt;low address&gt;,&lt;high address&gt;                Display memory contents
+G&lt;entry point&gt;      ... -->
 </platform>

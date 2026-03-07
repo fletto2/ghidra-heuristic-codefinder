@@ -11,4 +11,10 @@
     <region start="0x0000B000" end="0x0000B000" type="io" name="keyboard_r"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="dataram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- Skeleton driver for Qume QVT-201 &amp; QVT-202 display terminals. -->
 </platform>

@@ -9,4 +9,19 @@
     <region start="0xD000003C" end="0xD000003F" type="io" name="d000003c_unk_r"/>
     <region start="0xF8000000" end="0xF80003FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- this is some kind of debug serial output, it currently outputs (if copy_lowest_block is set to false) the following sequence
+adc_init
+DAC Task Create[0]
+DAC BG Task Create[0]
+Audio Task Create[4]
+Audio BG Task Create[6]
+FileServ Task Create[8]
+Image Task Create[10]
+audio_init()
+watch-dog enable
+power on
+with copy_lowest_block as true you get
+GP DV BootLoader v2.2 Entry @ 0 MHz
+GPDV  chip detect -->
 </platform>

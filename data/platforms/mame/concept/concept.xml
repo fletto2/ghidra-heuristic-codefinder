@@ -48,4 +48,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Corvus Concept driver
+Relatively simple 68k-based system
+256 or 512 kbytes of DRAM
+4kbytes of SRAM
+8kbyte boot ROM
+optional MacsBugs ROM
+two serial ports, keyboard, bitmapped display, simple sound, omninet
+LAN port (seems more or less similar to AppleTalk)
+4 expansion ports enable to add expansion cards, namely floppy disk
+and hard disk controllers (the expansion ports are partially compatible
+with Apple 2 expansion ports; DMA is not supported)
+Video: monochrome bitmapped display, 720*560 visibl... -->
 </platform>

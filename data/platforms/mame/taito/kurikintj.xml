@@ -5,4 +5,30 @@
     <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
     <region start="0x0000A000" end="0x0000A801" type="io" name="right_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ym2203"/>
+  </devices>
+
+  <!-- Taito L-System
+Monoprocessor games (1 main TC0090LVC (z80 core), no sound z80)
+- Plotting
+- Puzznic
+- Palamedes
+- Cachat / Tube-It
+- American Horseshoes
+- Play Girls
+- Play Girls 2
+- LA Girl
+- Cuby Bop
+Dual processor games (1 main TC0090LVC (z80 core), 1 sound z80)
+- Kuri Kinton
+- Evil Stone
+Triple processor games (1 main TC0090LVC (z80 core), 1 slave z80, 1 sound z80)
+- Fighting hawk
+- Raimais
+- Champion Wrestler
+Notes:
+- the system uses RAM based characters, which aren't really supported by th... -->
 </platform>

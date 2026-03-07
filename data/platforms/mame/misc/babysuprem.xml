@@ -9,4 +9,24 @@
     <region start="0x00008000" end="0x00008FFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000CFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Baby Suprem (c) 198? Andra / Vifico
+Slot machine.
+Main components:
+1 x Z80
+2 x AY-3-8910
+1 x 5517 RAM
+1 x 2.4576MHz Osc
+1 x 8-dip + 1 x 4 dip banks
+There's a complete manual with schematics at https://www.recreativas.org/manuales
+Note there are a number of errors in the manual/schematic.
+There is a basic layout file which makes the game playable.
+TODO: Requires a proper layout file with artwork.
+Add watchdog and determine timeout.
+There are a six lamps whose use needs identifying.
+Identify what'... -->
 </platform>

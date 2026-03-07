@@ -7,4 +7,16 @@
     <region start="0x00090008" end="0x0009000F" type="io" name="hirq_r"/>
     <region start="0x00090018" end="0x00090027" type="io" name="dr1_r"/>
   </memory_map>
+
+  <!-- sega/saturn_cd_hle.cpp - Sega Saturn and ST-V CD-ROM handling
+Another tilt at the windmill in 2011 by R. Belmont.
+Status: All known discs at least load their executable, and many load
+some data files successfully, but there are other problems.
+Information sources:
+- Tyranid's document
+- A commented disassembly I made of the Saturn BIOS's CD code
+- Yabuse's cs2.c
+- The ISO/IEC "Yellow Book" CD-ROM standard, 1995 version
+Address is mostly in terms of FAD (Frame ADdress).
+FAD is absolute number of ... -->
 </platform>

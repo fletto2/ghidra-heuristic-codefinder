@@ -7,4 +7,27 @@
     <region start="0x00009800" end="0x00009FFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Othello (version 3.0) - Success 1984
+-------------------------------------
+driver by Tomasz Slanina
+CPU Board:
+D780C          - main CPU (Z80)
+HD46505SP      - CRTC
+D780-C         - Sound CPU (Z80)
+AY-3-8910 x2   - Sound
+D7751C         - ADPCM "Speech processor"
+D8243          - I/O Expander for D7751C (8048 based)
+Video Board:
+almost empty - 3/4 soldering pins not populated
+Todo:
+- correct colors (based on the color DAC (24 resistors) on pcb
+- cocktail mode
+- map a bunch of unknown read/writes ... -->
 </platform>

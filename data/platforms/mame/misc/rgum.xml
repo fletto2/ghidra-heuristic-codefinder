@@ -19,4 +19,26 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Royal Gum
+Main components
+- Big Black Box in the middle of the PCB. Contains the main CPU (some kind of M6502) and maybe the 6845 (not seen anywhere on PCB)
+- 24.000000 Mhz osc
+- 2 x M82C55A
+- AY38910A/P
+- NEC UPD7759
+- MK48Z08B-10
+- 1 8-dip bank
+- 1 4-dip bank
+TODO:
+- stuck at the play screen with 'attendere' (wait) message after coining up;
+- Pressing "pin's switch" causes a "Micro Palline Err" (micro balls error),
+is this some kind of pachinko-like machine?
+- some devices aren't mapped and ot... -->
 </platform>

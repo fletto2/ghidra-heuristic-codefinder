@@ -44,4 +44,32 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Sega Mega Drive/Genesis-based bootlegs
+Games supported (with PIC protection):
+Aladdin
+Bare Knuckle II
+Bare Knuckle III
+Jurassic Park
+Sonic The Hedgehog 2
+Sonic The Hedgehog 3
+Twinkle Tale
+Games supported (with Actel scrambling/protection)
+Bare Knuckle
+Bare Knuckle II
+Bare Knuckle III
+Mortal Kombat 3
+Sunset Riders
+Super Street Fighter II
+Sunset Riders / Bare Knuckle III (2 in 1)
+Sunset Riders / Super Street Fighter II (2 in 1)
+PIC Style PCB info
+================
+CPU
+Main CPU 68000P10
+Work RAM 64k... -->
 </platform>

@@ -13,4 +13,16 @@
     <region start="0x0000E000" end="0x0000E002" type="io" name="out_0_w"/>
     <region start="0x0000E004" end="0x0000E004" type="io" name="out_2_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- TODO:
+- colour decoding might not be perfect
+- Background color should be green, but current handling might be wrong.
+- some unknown sprite attributes
+- don't know what to do when the jackpot is displayed (missing controls ?)
+- according to the board pic, there should be one more 4-switches dip
+switch bank, and probably some NVRAM because there's a battery. -->
 </platform>

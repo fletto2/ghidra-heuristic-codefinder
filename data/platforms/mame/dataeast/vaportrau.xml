@@ -57,4 +57,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Vapor Trail (World version)  (c) 1989 Data East Corporation
+Vapor Trail (USA version)    (c) 1989 Data East USA
+Kuhga (Japanese version)     (c) 1989 Data East Corporation
+Notes:
+-----
+- If you activate the service mode dip switch during the gameplay, it acts
+like invincibility either for player 1 and player 2. It works for all sets.
+Emulation by Bryan McPhail, mish@tendril.co.uk
+added pal &amp; prom-maps - Highwayman. -->
 </platform>

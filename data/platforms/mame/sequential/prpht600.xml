@@ -9,4 +9,25 @@
     <region start="0x00006000" end="0x00006001" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E001" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- prophet600.cpp - Sequential Circuits Prophet-600, designed by Dave Smith
+This was the first commercial synthesizer with built-in MIDI.
+Skeleton driver by R. Belmont
+Hardware:
+CPU: Z80 CPU + 8253 PIT + 6850 UART
+Memory map:
+0x0000-0x1fff: ROM
+0x2000-0x27ff: RAM 1
+0x3000-0x37ff: RAM 2
+0x4000-0x4001: DAC for CV/gate drive
+0x6000-0x6001: 6850 writes
+0xe000-0xe001: 6850 reads
+I/O map:
+00-07:  8253 PIT
+08: set row to scan for keyboard/panel input and LED / lamp output
+09: read: analog comparitor, some... -->
 </platform>

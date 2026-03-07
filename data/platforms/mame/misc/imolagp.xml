@@ -15,4 +15,23 @@
     <region start="0x00005800" end="0x00005800" type="io" name="port"/>
     <region start="0x00006000" end="0x00006000" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- IMOLA GP by RB Bologna (Alberici?)
+TODO:
+- document remaining dips
+- need better mappings for shifter, currently 3 buttons
+- cpu/audio clocks, the XTAL on pcb is unlabeled
+- correct video timing, see sprites disappear partially
+- vreg[0xf] autosteering, the car should probably only auto-steer when
+it gets on the grass(road edges) at high speed. How does the hardware
+know the sprite position then?
+- verify colors
+========================================
+www.andys-arcade.com
+Dumped by Andy Welburn... -->
 </platform>

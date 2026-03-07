@@ -10,4 +10,25 @@
     <region start="0x0000E000" end="0x0000E000" type="io" name="unknown_w"/>
     <region start="0x0000E004" end="0x0000E004" type="io" name="lamps_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Trivia Madness
+© 1985 Thunderhead Inc. / M. Kramer Manufacturing Co., Inc.
+TODO:
+- Verify palette
+- Remove IRQ hack
+- Writes to 0xe000 (watchdog?)
+Notes:
+- Copyright notice inside the ROM: "(C) COPYRIGHT 1985 DESIGN LABS, INC."
+- Hold the service mode key and reset to wipe NVRAM
+PC-1031-D    (CPU Board)
++---------------------------------------------+
+|H6845P       CNA                   10MHz     |
+|      BAT          CNB                       C
+|       9                                     N
+C  ... -->
 </platform>

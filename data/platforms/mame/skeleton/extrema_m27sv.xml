@@ -5,4 +5,22 @@
     <region start="0x00008000" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000FE00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Video slots by Extrema running on the Extrema M27-SV PCB
+The main components (at least for M27-SV rev.1.0) are:
+Z84C0010PEC Z80 CPU
+DALLAS DS5000T
+scratched off rectangular 100-pin chip
+scratched off square 200-pin chip, Extrema Ukraine 2006
+36 MHz XTAL
+2x 11.0592S MHz XTAL
+Winbond WF19054
+ADV7120 RAMDAC
+2x CY7C199 RAM (1 near Z80, 1 near GFX ROMs)
+TODO: everything. -->
 </platform>

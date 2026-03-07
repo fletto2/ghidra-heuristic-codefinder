@@ -7,4 +7,21 @@
     <region start="0x00000748" end="0x00000749" type="io" name="zerotm2k_eeprom_w"/>
     <region start="0x0000074C" end="0x0000074D" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Raiden 2 / DX V33 Version
+Raiden 2 / DX checks if there's the string "RAIDEN" at start-up inside the eeprom, otherwise it dies.
+Then it puts settings at 0x9e08 and 0x9e0a (bp 91acb)
+the 333 ROM is a 0x10000 byte table (bytes values?)
+followed by a 0x400 bytes (word values)?
+the remaining space is 0xff
+Notes:
+Zero Team 2000
+- EEPROM contains high scores, but they don't get restored? (original bug?)
+New Zero Team
+- 2 Player only. Service mode only shows 2 Players, and the code confirms that the op... -->
 </platform>

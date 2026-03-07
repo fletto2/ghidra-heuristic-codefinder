@@ -6,4 +6,16 @@
     <region start="0x00006000" end="0x00006001" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E001" type="io" name="read"/>
   </memory_map>
+
+  <!-- Bally/Sente 6VB audio board emulation
+This serial audio board appears to be based on the Sequential Circuits
+Six-Trak synthesizer.
+The later revision of this board replaces the 8253-5 PIT and much
+associated logic with a ST1001 custom gate array.
+Memory map
+========================================================================
+Z80 CPU
+========================================================================
+0000-1FFF   R     xxxxxxxx    Program ROM
+2000-3FFF   R/W   xxxxxxxx    Option RAM/ROM (... -->
 </platform>

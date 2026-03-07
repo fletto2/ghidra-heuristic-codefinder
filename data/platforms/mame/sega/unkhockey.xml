@@ -46,4 +46,27 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Sega 834-12846 PCB (stickered 970729 0259 II)
+The main components are:
+MC68EC000FN16 CPU
+32.000 MHz XTAL
+Sega 315_5296 custom (I/O)
+Battery
+2x LH52B256N SRAM 32k x 8
+2x Lattice pLSI 2032 High Density Programmable Logic
+Lattice pLSI 1016 High Density Programmable Logic
+NEC D71054GB programmable timer / counter
+NEC D71055GB parallel interface unit
+2x MB3771 power supply monitor
+SLA7026M unipolar stepper motor
+YM3438
+NEC D7759GC
+2x 8-dip banks
+3-dip bank
+Currently unknown which game this is. The M6... -->
 </platform>

@@ -9,4 +9,18 @@
     <region start="0x0000E00F" end="0x0000E00F" type="unmapped" name="nop_write"/>
     <region start="0x0000F001" end="0x0000F001" type="io" name="port"/>
   </memory_map>
+
+  <!-- -= Sky Fox / Exerizer =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU  :  Z80A x 2
+Sound:  YM2203C x 2
+Other:  2 HM6116LP-3 (one on each board)
+1 KM6264L-15 (on bottom board)
+TODO:
+- The background rendering is entirely guesswork;
+- DMA trigger happens at vpos 24 with legacy video parameters,
+needs H/VSync PCB calculations, also notice that 62.65 Hz comes from the
+bootleg and may be different for original;
+2008-07
+Verified Dip locations and recommended settings with manual -->
 </platform>

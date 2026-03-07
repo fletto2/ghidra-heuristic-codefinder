@@ -7,4 +7,16 @@
     <region start="0x0001E001" end="0x0001E001" type="io" name="latch_1e001_r"/>
     <region start="0x0001F001" end="0x0001F001" type="io" name="latch_1f001_r"/>
   </memory_map>
+
+  <!-- Millennium Systems 9520 and 9540 Software Development systems.
+2013-08-30 Skeleton driver
+The only roms known to be dumped are the main roms of the 9540, and the disk
+controller roms of the 9520.
+There's no known documents for the 9540, so everything in here is a guess.
+The 9520 is Z80-based, but is currently not emulated.
+The 9540 is 68000-based.
+Chips:
+- Main board: MC68000L8, 2x SCN2661C, uPD8253C. Crystals: 5.0688, 16MHz
+ROMS: 0950-0131-01, 0950-0132-01, 0954-0133-01, 0954-0134-01,
+0954-0135... -->
 </platform>

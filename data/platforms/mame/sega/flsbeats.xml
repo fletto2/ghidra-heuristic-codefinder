@@ -9,4 +9,19 @@
     <region start="0x00800000" end="0x0080001F" type="io" name="read"/>
     <region start="0x00A00000" end="0x00A10FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- drivers/flashbeats.cpp
+Sega "Flash Beats" game
+Hardware:
+- H8/3007 CPU
+- 68000 + SCSP for sound effects
+- DSB2 MPEG board with another 68000
+- Two Sega I/O chips: 315-5338A and 315-5296
+- Pinball-style dot matrix VFD display
+- 5 display tubes containing an unknown number of RGB LEDs behind
+a diffuser -->
 </platform>

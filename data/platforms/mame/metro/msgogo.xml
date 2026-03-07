@@ -12,4 +12,18 @@
     <region start="0x00400001" end="0x00400001" type="io" name="read"/>
     <region start="0x00F00000" end="0x00F0FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- -= Metro Games =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU    :  MC68000 Or H8/3007
+Video Chips  :  Imagetek I4100 052  Or
+Imagetek I4220 071  Or
+Imagetek I4300 095
+Sound CPU    :  NEC78C10 [Optional]
+Sound Chips  :  OKIM6295 + YM2413  or
+YMF278B + YRW801-M
+Other        :  Memory Blitter
+------------------------------------------------------------------------------------------------
+Year + Game                       PCB           Video  Sub CPU  Sound         Issues / Notes
+--------------... -->
 </platform>

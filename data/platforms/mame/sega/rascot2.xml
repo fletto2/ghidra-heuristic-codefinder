@@ -13,4 +13,21 @@
     <region start="0x11000000" end="0x113FFFFF" type="ram" name="textureram0"/>
     <region start="0x11400000" end="0x1140FFFF" type="io" name="lumaram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Sega Model 2: i960KB + (5x TGP) or (2x SHARC) or (2x TGPx4)
+System 24 tilemaps
+Custom Sega/Lockheed-Martin rasterization hardware
+(68000 + YM3438 + 2x MultiPCM) or (68000 + SCSP)
+Hardware and protection reverse-engineering and general assistance by ElSemi.
+MAME driver by R. Belmont, Olivier Galibert, ElSemi, Angelo Salese and Matthew Daniels.
+TODO:
+- outputs and artwork (for gearbox indicators);
+- clean-ups;
+TODO (per-game issues)
+- doa, doaa: corrupted sound, eventually becomes silent;
+- lastbr... -->
 </platform>

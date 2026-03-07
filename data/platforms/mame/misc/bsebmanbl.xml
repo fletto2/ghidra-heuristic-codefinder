@@ -7,4 +7,23 @@
     <region start="0x0000E800" end="0x0000E801" type="io" name="address_w"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Carrera / Bomberman
+by BS Electronics.
+Video slots stealth games with selectable bomberman or fruits themes.
+The front game is normally a "memory" pairs game, where the objetive
+is to clear the screen.
+You can change the tileset, the game title (Carrera/Bomberman), and
+switch the type of game (amusement/gambling).
+Some sets don't allow the title change.
+PCB Layout
+----------
+|----------------------------------------------|
+|            22.1184MHz  Z80                   |
+|                       ... -->
 </platform>

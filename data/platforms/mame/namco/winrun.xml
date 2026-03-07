@@ -58,4 +58,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Namco System 21
+| Winning Run(1)|Driver's Eyes(2) | Cyber Sled, Star Blade etc.(3)
+--------------------------+---------------+-----------------+--------------------------
+GPU+bitmap layer          | yes           | no              | no
+Namco System NB1 Sprites  | no            | yes             | yes
+Number of DSPs            | 1x TMS320C25  | 1x TMS320C25    | 1x Master C67 (TMS320C25)
+|               |                 | 4x Slave C67
+(1) namcos21.cpp (this driver)
+(2) namcos21_de.cpp
+(3) namcos... -->
 </platform>

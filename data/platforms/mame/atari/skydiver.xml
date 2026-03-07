@@ -12,4 +12,20 @@
     <region start="0x00002800" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00007800" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Sky Diver hardware
+driver by Mike Balfour
+Games supported:
+Sky Diver
+Known issues:
+There is a problem with coin input not starting when in demo mode.
+The NMI interrupt needs to be more accurate, to do 32V, adjusted
+to VBLANK.  This also affects sound.
+The current value of 5 interrupts per frame, works pretty good,
+but is not 100% accurate timing wise.
+Memory Map:
+0000-00FF    R/W    PAGE ZERO RAM
+0010         R/W    H POS PLANE 1
+0011         R/W    H POS PLANE 2
+0012         R/W    H POS ... -->
 </platform>

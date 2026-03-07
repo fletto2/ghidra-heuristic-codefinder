@@ -54,4 +54,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ym3812"/>
+  </devices>
+
+  <!-- Xor World (Modular System).
+This is neither a clone nor a bootleg, but the original Xor World, that was originally developed
+using the Modular System.
+For this game the Modular System cage contains 6 boards.
+MOD 5/1: (sprites) 4 x EPROM, 2 x GAL16V9
+MOD 51/1: 1 x PROM, 1 x PAL16R6, logic.
+MOD 7/4: 2 x MS62256L-10PC RAM, 3 x GAL16V8, 2 x GAL20V8
+MOD 8/2: (gfx) 12 x EPROM.
+MOD 6/1: (CPU) MC68000P10, 20 MHz xtal, 2 x EPROM, 1 x GAL16V8, 1 x PAL16V8.
+SYSTEM 2: (sound) 1 x EPROM, Z8400BB1, 28 MHz xta... -->
 </platform>

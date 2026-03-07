@@ -6,4 +6,25 @@
     <region start="0x00060000" end="0x0007FFFF" type="io" name="dma_r"/>
     <region start="0x00080000" end="0x000BFFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+  </devices>
+
+  <!-- Casio WK-1600/1800 series keyboards
+Models on this hardware:
+- CTK-711EX (1998)
+61 keys, 5MB wave ROM
+- CTK-811EX (1998), CTK-731 (1999)
+61 keys, 5MB wave ROM, floppy drive
+- WK-1600, WK-1630 (2000)
+73 keys, 8MB wave ROM
+- WK-1800 (2000)
+73 keys, 8MB wave ROM, floppy drive
+- AP-60R (1999), AP-65R (2001)
+88 keys, 8MB wave ROM, floppy drive
+TODO:
+- fix floppy controller hookup for wk1800. current issues:
+- pressing the Disk button with the drive empty starts the drive motor,
+then the firmware wait... -->
 </platform>

@@ -7,4 +7,19 @@
     <region start="0x00007000" end="0x00007FFF" type="io" name="videoram_w"/>
     <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- IDSA 4 En Raya.
+Driver by Tomasz Slanina.
+Additional work by Roberto Fresca.
+Supported games:
+4 En Raya (set 1),                              1990, IDSA.
+4 En Raya (set 2),                              1990, IDSA.
+unknown bowling themed 'gum' poker machine      1992?,Paradise Automatique / TourVision
+unknown 'Pac-Man' gambling game,                1990, Unknown.
+unknown 'Space Invaders' gambling game (set 1), 1990, Unknown (made in France).
+unknown 'Space Invaders' gambling game (set 2), 199?, U... -->
 </platform>

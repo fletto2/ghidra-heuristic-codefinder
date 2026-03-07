@@ -53,4 +53,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Shuuz hardware
+driver by Aaron Giles
+Games supported:
+Shuuz (1990) [2 sets]
+Known bugs:
+none at this time
+Memory map (TBA) -->
 </platform>

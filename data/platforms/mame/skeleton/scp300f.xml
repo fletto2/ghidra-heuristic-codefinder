@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x000FF7FF" type="ram" name="ram"/>
     <region start="0x000FF800" end="0x000FFFFF" type="io" name="region_ff800"/>
   </memory_map>
+
+  <!-- Seattle Computer SCP-300F S100 card. It has sockets on the card for
+one serial and 2 parallel connections.
+2013-08-14 Skeleton driver.
+When started you must press Enter twice before anything happens.
+All commands must be in UPPER case.
+Known Commands:
+B : Boot from disk?
+D : Dump memory
+E : Edit memory
+F : Find
+G : Go?
+I : Input port
+M : Move
+O : Output port
+R : Display / Modify Registers
+S : Search
+T : Trace
+Chips on the board: 8259 x2; AM9513; 8251; 2716 ROM (MON-86 V1.5TDD)
+There is a 4MHz cr... -->
 </platform>

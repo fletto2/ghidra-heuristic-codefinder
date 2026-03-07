@@ -57,4 +57,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- -= Kaneko 16 Bit Games =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU    :  68000  +  MCU [Optional]
+SOUND  :  OKI-M6295 x (1 | 2) + YM2149 x (0 | 2)
+OR  :  Z80  +  YM2151
+OTHER  :  93C46 EEPROM [Optional]
+CUSTOM :  VU-001 046A                  (48pin PQFP)
+VU-002 052 151021            (160pin PQFP)    &lt;- Sprites
+VU-003 048 XJ009 (x3)        (40pin)          &lt;- High Colour Background
+VIEW2-CHIP 23160-509 9047EAI (144pin PQFP)    &lt;- Tilemaps
+MUX2-CHIP                    (64pin PQFP)
+HELP1-... -->
 </platform>

@@ -57,4 +57,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Target Hits (c) 1994 Gaelco (Designed &amp; Developed by Zigurat. Produced by Gaelco)
+Driver by Manuel Abadia &lt;emumanu+mame@gmail.com&gt;
+NOTES: Merge with wrally.cpp???  Address map nearly identical &amp; PCB
+is reworked to add connections for light guns and different RAM
+is the visible area correct? if it's larger than the startup
+screen then scene 5 of desert chariots doesn't cover the entire
+screen either.
+the instructions say to reload the gun after each shot, but
+there is no reload butt... -->
 </platform>

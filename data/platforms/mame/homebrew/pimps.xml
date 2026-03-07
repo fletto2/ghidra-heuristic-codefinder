@@ -4,4 +4,18 @@
     <region start="0x00000000" end="0x0000EFFF" type="ram" name="mainram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- P.I.M.P.S. (Personal Interactive MicroProcessor System)
+2009-12-06 Skeleton driver.
+No schematics or hardware info available.
+http://www.classiccmp.org/dunfield/pimps/index.htm
+Commands:
+A xxxx xxxx   - Assemble (from editor file): origin destination
+D xxxx,xxxx   - Dump memory to host port
+E             - Enter editor
+A            - Append at end of file
+C            - Clear memory file (reqires ESCAPE to confirm)
+D xx         - Delete line number xx
+I xx         - Insert at line xx
+L xx xx    ... -->
 </platform>

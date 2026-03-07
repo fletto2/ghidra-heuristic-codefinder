@@ -51,4 +51,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Karnov (USA version)                   (c) 1987 Data East USA
+Karnov (Japanese version)              (c) 1987 Data East Corporation
+Wonder Planet (Japanese version)       (c) 1987 Data East Corporation
+Chelnov (World version)                (c) 1987 Data East Corporation
+Chelnov (USA version)                  (c) 1988 Data East USA
+Chelnov (Japanese version)             (c) 1987 Data East Corporation
+Main board:  DE-0248-1 (all games)
+Video board: DE-0249-0 (all games)
+Emulation by Bryan McPhail... -->
 </platform>

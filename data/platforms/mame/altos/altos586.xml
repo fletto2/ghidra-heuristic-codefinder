@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x000FFFFF" type="io" name="cpu_mem_r"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Altos 586 computer emulation
+Work in progress. The current goal is to iron our the overall flaws
+caused by my inexperience with C++ and MAME. The ultimate goal is to
+make this complete enough for XENIX to run. I guess at that point
+it would imply CP/M and OASIS working too.
+At this point I've not tried to boot anything but the diags floppy,
+and it's unlikely to work.
+The tests on the diags floppy work well, including serial, clock,
+memory management, hard disk &amp; floppy diags and maintenance.... -->
 </platform>

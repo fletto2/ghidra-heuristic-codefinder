@@ -8,4 +8,20 @@
     <region start="0x0000E800" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000FFEC" end="0x0000FFEF" type="io" name="address_data_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- PINBALL
+NSM (Lowen) : Hot Fire Birds
+Schematic and PinMAME used as references
+Everything in this machine is controlled by a serial bus based on the
+processor's CRU pins (serial i/o).
+To program the machine, you need to plug in a numeric keypad, engage test
+mode, make the adjustments, and remove the keypad. For full scale setting up,
+it seems you need a pilot's licence, and to be able to understand German.
+Setting up the machine (the simple way):
+- Turn Diag6 dip on, choose Reset
+- You get the te... -->
 </platform>

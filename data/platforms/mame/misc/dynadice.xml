@@ -5,4 +5,29 @@
     <region start="0x00002000" end="0x000023FF" type="ram" name="videoram"/>
     <region start="0x00004000" end="0x000040FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Dynamic Dice (??)
+Driver by
+Tomasz Slanina
+Pierpaolo Prazzoli
+--
+Old, rusty, not working pcb :
+Main PCB :
+m5l8080ap (8080)
+dy_1.bin (1H)
+dy_2.bin (1L)
+dy_3.bin (1P)
+dip 6x  (all off)
+xtal 18.432 mhz
+--
+Sub PCB  DYNA-529-81ST :
+AY-3-8910
+Z80
+dy_4.bin
+dy_5.bin
+dy_6.bin (near Z80) -->
 </platform>

@@ -24,4 +24,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Fire Fox hardware
+driver by smf, Aaron Giles, Chris Hardy &amp; Scott Waye
+TODO:
+- add option to centre joystick to enter test menu
+it uses a quad pokey package 137323-1221-406???
+the laser disc is a philips lvp 22vp931
+(but maybe this works too... Special Drive: Laser Disc Player - Philips VP-832A)
+AV# 60626
+Atari "Firefox" V
+Laser Disc - 30 minutes - Color - 1983
+An interactive CAV laserdisc designed for use in the Atari video arcade game machine.
+Contains over 100 visual and sound segme... -->
 </platform>

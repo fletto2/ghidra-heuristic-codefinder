@@ -5,4 +5,8 @@
     <region start="0x00002000" end="0x000021FF" type="ram" name="ram"/>
     <region start="0x00007F00" end="0x00007F17" type="io" name="score_w"/>
   </memory_map>
+
+  <!-- Taito / Midway Super Speed Race driver
+TODO:
+- add Japan version(s), it has different graphics -->
 </platform>

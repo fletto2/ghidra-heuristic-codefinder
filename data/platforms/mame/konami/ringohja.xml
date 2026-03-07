@@ -14,4 +14,15 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- The Main Event, (c) 1988 Konami (GX799)
+Devastators, (c) 1988 Konami (GX890)
+Emulation by Bryan McPhail, mish@tendril.co.uk
+TODO:
+- Schematics show a palette/work RAM bank selector, but this doesn't seem
+to be used?
+Both games run on Konami's PWB351024A PCB
+The Main Event uses a uPD7759 + 640KHz resonator plus sample ROM, for
+Devastators this area is unpopulated Devastators uses a YM2151 + YM3012
+and the 051733, for The Main Event these chips are unpopulated -->
 </platform>

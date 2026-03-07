@@ -8,4 +8,17 @@
     <region start="0x50000000" end="0x500003FF" type="io" name="xor_table_w"/>
     <region start="0x58000000" end="0x58000003" type="io" name="response_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- IGS ARM7 (IGS027A) based Mahjong / Gambling platform(s) with XA sub-CPU
+Triple Fever (V105US) (tripfevb) hangs after paying out tickets, with the MCU
+apparently attempting serial communication with something.
+TODO:
+Krazy Keno touch pad is unemulated.
+Does Crazy Bugs (V103JP) actually support a hopper?  It shows in the input
+test, but both the Payout and Ticket buttons seem to use the ticket dispenser. -->
 </platform>

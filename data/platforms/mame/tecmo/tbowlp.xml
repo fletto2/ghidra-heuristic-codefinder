@@ -15,4 +15,12 @@
     <region start="0x0000FC0D" end="0x0000FC0D" type="io" name="write"/>
     <region start="0x0000FC10" end="0x0000FC17" type="io" name="region_fc10"/>
   </memory_map>
+
+  <!-- Tecmo Bowl (c)1987 Tecmo
+driver by David Haywood
+wip 20/01/2002
+Tecmo Bowl was a popular 4 player American Football game with two screens and
+attractive graphics
+--- Current Issues
+Might be some priority glitches -->
 </platform>

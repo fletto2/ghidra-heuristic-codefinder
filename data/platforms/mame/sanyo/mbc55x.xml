@@ -6,4 +6,9 @@
     <region start="0x000F8000" end="0x000FBFFF" type="unmapped" name="unmapped"/>
     <region start="0x000FC000" end="0x000FDFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- drivers/mbc55x.cpp
+Machine driver for the Sanyo MBC-550 and MBC-555.
+Phill Harvey-Smith
+2011-01-29. -->
 </platform>

@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00007BFF" type="rom" name="rom"/>
     <region start="0x00007C00" end="0x00007FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Mr. Game (Zaccaria) 1B11188/0
+These games have a M68000 and 3x Z80, and a M114 Sound IC.
+They have a video screen upon which the scores and other info is displayed.
+How to set up the machine (motor show, dakar, wcup90):
+- These machines need to be loaded with default settings before they can accept coins
+- Press NUM-0 key
+- Press again until you see test 25 (Motor Show) or test 23 (Dakar)
+- In the dipswitch menu turn off the Ram Protect switch
+- Press Left shift and Right shift together ... -->
 </platform>

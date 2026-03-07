@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
     <region start="0x00000800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- CM-1800
+(note name is in cyrilic letters)
+more info at http://ru.wikipedia.org/wiki/%D0%A1%D0%9C_%D0%AD%D0%92%D0%9C
+and http://www.computer-museum.ru/histussr/sm1800.htm
+2011-04-26 Skeleton driver.
+Commands to be in uppercase:
+C Compare
+D Dump
+F Fill
+G
+I
+L
+M Move
+S Edit
+T
+X Registers
+For most commands, enter all 4 digits of each hex address, the system will
+add the appropriate spacing as you type. No need to press Enter.
+The L command looks like it might be for loading a file, for example
+L ABC ... -->
 </platform>

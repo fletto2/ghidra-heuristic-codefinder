@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x0000EFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- M102-C-A 05C04585A1
+Games known to run on this PCB (may be only one):
+Hill Climber
+Electromechanical medal game
+https://www.youtube.com/watch?v=vb7NiRsT_x4
+Main components:
+D70008AC-6 CPU
+27C010A-15 ROM (for program)
+2 M27C4001-12F1 ROMs (for sound data)
+PAL16L8
+CXK58257ASP-10L SRAM
+Nanao GA20 sound chip
+3.579545 MHz XTAL
+2 8-DIP banks
+9 connectors -->
 </platform>

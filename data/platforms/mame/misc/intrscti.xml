@@ -6,4 +6,9 @@
     <region start="0x00007000" end="0x000077FF" type="ram" name="vram"/>
     <region start="0x00008000" end="0x00008FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Intersecti
+No names on the pcb and the only ascii text is in the sound rom "Intersecti". Has a daughterboard with "Serai-Padova-1" on it
+Having disassembled the 1911 code roms, I'd guess that there is a rom in the epoxy block.
+I've not had a chance to wire up the board yet, but it might be possible to write a trojan to display the rom(s) at $8000 -->
 </platform>

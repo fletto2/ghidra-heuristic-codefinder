@@ -12,4 +12,20 @@
     <region start="0x00006C60" end="0x00006C7F" type="io" name="disp_w"/>
     <region start="0x00006CE0" end="0x00006CE0" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- PINBALL
+Inder S.A. of Spain
+All manuals are in Spanish (including the 'English' ones).
+The schematics for Brave Team, Canasta are too blurry to read.
+Each game has different hardware. Note with switches: "Veleta" is normally closed.
+Order of dips on "new cpu" games: 3,2,1,0,4,5,6,7 (so SL1(1) uses bit 3 of input definition).
+Setting up:
+- First time run, the displays will all show zero. Hit F3. The game will now be working.
+- If you want to change the "Handicap" (High Score) setting, you may hav... -->
 </platform>

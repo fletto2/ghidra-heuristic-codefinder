@@ -6,4 +6,20 @@
     <region start="0x0000D800" end="0x0000E7FF" type="ram" name="bank5"/>
     <region start="0x0000FC00" end="0x0000FCFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- MMD-2 driver by Miodrag Milanovic
+2009-05-12 Initial version
+2011-01-12 MMD2 working [Robbbert]
+http://www.cs.unc.edu/~yakowenk/classiccmp/mmd2/
+Memory map:
+4K RAM addresses $0000..$0FFF
+ROM addresses $D800..$E7FF
+256 bytes of RAM, ($FC00..$FCFF?)
+DIP switches:
+WE 0 - Write enable for addresses $0000..$03FF
+WE 1 - Write enable for addresses $0400..$07FF
+WE 2 - Write enable for addresses $0800..$0BFF
+WE 3 - Write enable for addresses $0C00..$0FFF
+SPARE - ???
+HEX OCT - choose display and entry to ... -->
 </platform>

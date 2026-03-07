@@ -19,4 +19,19 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Burger Time
+driver by Zsolt Vasvari
+hardware description:
+Actually Lock'n'Chase is (C)1981 while Burger Time is (C)1982, so it might
+be more accurate to say 'Lock'n'Chase hardware'.
+The bootleg called Cook Race runs on hardware similar but different. The fact
+that it addresses the program ROMs in the range 0500-3fff instead of the usual
+c000-ffff makes me suspect that it is a bootleg of the *tape system* version.
+Little is known about that system, but it is quite likely that it would have
+RAM in... -->
 </platform>

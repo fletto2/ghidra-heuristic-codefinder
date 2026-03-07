@@ -11,4 +11,12 @@
     <region start="0x00000D00" end="0x00000EFF" type="ram" name="playfield_ram"/>
     <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Flyball Driver
+Etched in copper on top of board:
+FLYBALL
+ATARI (c)1976
+A005629
+MADE IN USA
+PAT NO 3793483 -->
 </platform>

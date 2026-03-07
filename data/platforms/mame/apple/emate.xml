@@ -18,4 +18,17 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- Apple Newton devices skeleton driver
+CPUs:
+Newton MessagePad:        ARM 610 (20MHz)
+ExpertPad PI-7000: ARM 610 (20MHz)
+Newton MessagePad 100:    ARM 610 (20MHz)
+Newton MessagePad 110:    ARM 610 (20MHz)
+Newton MessagePad 120:    ARM 610 (20MHz)
+Marco:             ARM 610 (20MHz)
+Newton MessagePad 130:    ARM 610 (20MHz)
+eMate 300:         ARM 710a (25MHz)
+Newton MessagePad 2000:   StrongARM SA-110 (162MHz)
+Newton MessagePad 2100:   StrongARM SA-110 (162MHz) -->
 </platform>

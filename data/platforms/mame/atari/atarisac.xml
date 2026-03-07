@@ -20,4 +20,7 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- atarisac.cpp
+Functions to emulate the Atari "SAC" audio board -->
 </platform>

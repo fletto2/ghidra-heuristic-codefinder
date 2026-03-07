@@ -15,4 +15,10 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- FriendlyARM Mini2440 -->
 </platform>

@@ -54,4 +54,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- GI Classic / GI Classic EX
+(c) 1995, 1998 Konami
+Preliminary driver by R. Belmont
+GI Classic EX Main PCB:
+Main CPU: 68000
+Video: 056832 + 058143 (GX tilemaps)
+Video: 055673(x2) + 053246 (GX sprites)
+Video: 055555 (Mixer)
+053252 (x2) (CRTC?)
+GI Classic EX Satellite PCB:
+Main CPU: 68000-12
+Video: 056832 / 058143 (GX tilemaps)
+Video: 000907 LCD Controller
+WANTED: main PCB and any other PCBs for GI Classic EX, plus any and all
+PCBs for other games also believed to be on this h/w:
+- GI-Classic (1995)... -->
 </platform>

@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- PINBALL
+Sir Lancelot (Peyper, 1994)
+- Main CPU is a Z80 (shown as 8400)
+- Audio CPU is a TMP91P640F-10. Other audio chips are MSM6295QFP44, YMF262, YAC512, LM1036N.
+- A video shows 60x 7-segment display digits, plus 5 round LEDs.
+- According to the manual, the sound roms are 27C020 (size 0x40000), but the dumps we have are all
+half that size (0x20000). Are they bad?
+- Crystals: 10MHz (for Z80), 9'830'400 (for TMP91P640F-10), 14'318'180 (for YMF262), 1'656'000 (for MSM6295).
+Status:
+- Skeleton
+To... -->
 </platform>

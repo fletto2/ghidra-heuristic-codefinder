@@ -9,4 +9,21 @@
     <region start="0x0000A000" end="0x0000AFFF" type="io" name="palette"/>
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="writeonly"/>
   </memory_map>
+
+  <!-- Toaplan game hardware from 1987
+--------------------------------
+Driver by: Quench
+Supported games:
+Toaplan Board Number:   TP-009
+Taito Game Number:      B25
+Wardner         (World)
+Pyros           (USA)
+Wardner no Mori (Japan)
+Notes:
+Basically the same video and machine hardware as Flying Shark,
+except for the Main CPU which is a Z80 here.
+See toaplan/twincobr*.cpp machine and video drivers to complete the
+hardware setup.
+To enter the "test mode", press START1 when the grid is displayed.
+Press... -->
 </platform>

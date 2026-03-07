@@ -19,4 +19,32 @@
     <region start="0x00FA0000" end="0x00FBFFFF" type="ram" name="ram"/>
     <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="serial" name="mc68681"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- vlc.cpp
+Multi-games from VLC Nevada 1995
+CGA monitor 15Khz 60hz
+// CPU    CLOCK use Crystal 16.000MHZ
+// VIDEO  CLOCK use Crystal 33.000MHZ
+- 1x MC68000  (CPU)  8mhz
+- 1x MC68B45P (CRTC)
+- 1x AY3-8912 (sound)
+- 1x M4262B oki (RTC CLOCK)
+- 3x MC68681  (2 x UART)
+- 4x 27C512
+- 2x 62256 NVRAM  + batt  (connect in 16bits)
+- 2x 6264  BACKUP + batt  (connect in  8bits)
+- 1x MODEM XE1214 from XECOM (300/1200 Baud)
+on MAME 0.145u4
+Yves
+Todo :
+Video Section
+Security PAL U35 decoding
+In/Out interface Boar... -->
 </platform>

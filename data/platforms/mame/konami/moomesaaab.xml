@@ -61,4 +61,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Wild West C.O.W.boys of Moo Mesa
+Bucky O'Hare
+(c) 1992 Konami
+Driver by R. Belmont and Acho A. Tang based on xexex.cpp by Olivier Galibert.
+Moo Mesa protection information thanks to ElSemi and OG.
+These are the final Xexex hardware games before the pre-GX/Mystic Warriors
+hardware took over.
+Wild West C.O.W. Boys Of Moo Mesa
+Konami 1992
+PCB Layout
+----------
+GX151 PWB353126
+|--------------------------------------------------------|
+|LA4705                             151A11.A8  151A11.A10|
+|     ... -->
 </platform>

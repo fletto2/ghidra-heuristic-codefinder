@@ -8,4 +8,20 @@
     <region start="0x0000D000" end="0x0000DFFF" type="io" name="banked_port_0"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Funny Bubble ...
+It's a Puzzloop (Lup Lup Puzzle) rip-off .. but with two Z80 CPUs
+The program ROMs say omega 1997
+Omega made Super Lup Lup Puzzle/Lup Lup Puzzle/Puzzle Bang Bang - see misc/vamphalf.cpp
+These games copy the game play of Puzzloop but add adult picture backgrounds.
+The gfx ROMs say 1999
+Title screen has no date
+( a z80 as the main CPU in 1999 ??! )
+In Chang Electronic Co did the "original" version of Funny Bubble?
+Comad either hacked or licensed it.  As "In Chang Electronic" are
+s... -->
 </platform>

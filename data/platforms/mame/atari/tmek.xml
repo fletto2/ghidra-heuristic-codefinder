@@ -53,4 +53,26 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari GT hardware
+driver by Aaron Giles
+Games supported:
+T-Mek (1994) [5 sets]
+Primal Rage (1994) [3 sets]
+Known bugs:
+Protection not fully understood
+T-Mek's serial communications hardware is missing. The twin and single cabs seemingly use different link hardware but both link the same.
+Memory map (TBA)
+Primal Rage ROMs (A051512-)   -
+location  label
+------------------------
+25L       136102-1041B 2DFC
+27L       136102-1042B 83FD
+28L       136102-1043B 61FE
+29L       136102-1044B 67FF
+25N      ... -->
 </platform>

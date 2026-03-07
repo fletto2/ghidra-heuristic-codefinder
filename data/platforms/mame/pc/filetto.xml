@@ -5,4 +5,17 @@
     <region start="0x000C0000" end="0x000CFFFF" type="io" name="amap8"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Filetto (c) 1990 Novarmatic
+TODO:
+- Add a proper FDC device;
+- UM5100 sample clock;
+- buzzer sound;
+===================================================================================================
+The PCB is a un-modified IBM-PC with a CGA adapter &amp; a prototyping card that controls the
+interface between the pc and the Jamma connectors.Additionally there's also a UM5100 sound
+chip for the sound.
+PCB Part Number: S/N 90289764 NOVARXT
+PCB Contents:
+1x UMC 8923S-UM5100 voice processor (upper ... -->
 </platform>

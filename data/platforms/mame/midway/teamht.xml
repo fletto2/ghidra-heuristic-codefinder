@@ -5,4 +5,30 @@
     <region start="0x00009000" end="0x00009007" type="io" name="teamht_multiplex_select_w"/>
     <region start="0x00009404" end="0x00009404" type="io" name="teamht_extra_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Bally/Sente SAC-1 system
+driver by Aaron Giles
+Games supported:
+Chicken Shift (11/23/84)
+Gimme A Break (7/7/85)
+Goalie Ghost
+Grudge Match (v00.90, Italy, location test?)
+Grudge Match (v00.80, prototype)
+Hat Trick  (11/12/84)
+Mini Golf (set 1)
+Mini Golf (11/25/85)
+Mini Golf (10/8/85)
+Name That Tune (3/31/86)
+Name That Tune (3/23/86)
+Night Stocker (10/6/86)
+Night Stocker (8/27/86)
+Off the Wall (10/16/84)
+Rescue Raider (5/11/87) (non-cartridge)
+Rescue Raider (stand-alone)
+Sente Diagnostic Cartridge... -->
 </platform>

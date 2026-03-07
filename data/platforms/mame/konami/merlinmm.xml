@@ -16,4 +16,19 @@
     <region start="0x0000A400" end="0x0000A400" type="io" name="write"/>
     <region start="0x0000A600" end="0x0000A600" type="io" name="reset_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Ping Pong (c) 1985 Konami
+PCB: GX555 - PWB 200222A
+Z80 (surface scratched), 18432.00kHz XTAL
+2 small PWB 400322 daughterboards (2*LS194, 1*LS157)
+Several Konami customs, but surface scratched like the Z80: 28-pin DIP @ 5D,
+28-pin DIP @ 13H, 40-pin DIP @ 12A
+TODO:
+- correct video timing, probably 60.6Hz?
+- verify CPU/sound freq for the Zilec games, there's a PCB photo of merlinmm
+with a 14MHz XTAL, but it's on Coinmaster hardware (Z80, 3 PIAs, AY8912) -->
 </platform>

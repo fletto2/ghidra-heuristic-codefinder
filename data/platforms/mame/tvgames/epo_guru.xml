@@ -29,4 +29,11 @@
     <region start="0x00007FF0" end="0x00007FF6" type="io" name="barrel_r"/>
     <region start="0x00007FF9" end="0x00007FFF" type="io" name="vector_enable_w"/>
   </memory_map>
+
+  <!-- Preliminary driver for XaviX TV PNP console and childs (Let's! Play TV Classic)
+CPU is an M6502 derivative with added opcodes for far-call handling
+Notes from http://www.videogameconsolelibrary.com/pg00-xavix.htm#page=reviews (thanks Guru!)
+(** this isn't entirely accurate, XaviX Tennis appears to be Super Xavix, see other notes in driver)
+XaviXPORT arrived on the scene with 3 game titles (XaviX Tennis, XaviX Bowling and XaviX Baseball) using their
+original XaviX Multiprocessor.  This proprietar... -->
 </platform>

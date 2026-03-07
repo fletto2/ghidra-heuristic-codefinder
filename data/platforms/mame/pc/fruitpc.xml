@@ -9,4 +9,16 @@
     <region start="0x02000000" end="0x28FFFFFF" type="unmapped" name="unmapped"/>
     <region start="0xFFFE0000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- "Fruit Land" (c) ????
+hack of an open source game by MesSoft with coin handling added
+preliminary driver by R. Belmont and Carl
+TODO:
+- Can't find CF card, throws "No boot device available", culprit may be lack of
+PCI shadow RAM handling (which causes BIOS to boot in legacy mode);
+- Handle STPCD0166BTC3 SoC properly, including PCI devices connected and SVGA
+mods (wrongly draws only top screen with 640x200 with at486 -isa1 svga_s3);
+Hardware:
+- ST STPCD0166BTC3 486/66 + PC + VGA all on one chip
+-... -->
 </platform>

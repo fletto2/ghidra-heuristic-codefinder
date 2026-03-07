@@ -6,4 +6,27 @@
     <region start="0x00006000" end="0x0000A7FF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="colorram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- AVT - ADVANCED VIDEO TECHNOLOGY
+CPU Boards 1000-1 &amp; 1001-1
+Driver by Roberto Fresca.
+TODO:
+- needs CTC and daisy chain to make progresses
+Games running on this hardware:
+Symbols (ver 1.4),  1985,  AVT.
+Symbols (ver 2.5),  1985,  AVT.
+Arrow Bingo,        1985,  AVT.
+NFL (ver 109),      1989,  AVT.
+Special thanks to Dave Ormiston for his invaluable collaboration,
+providing dumps and other technical stuff.
+Hardware Notes:
+---------------
+CPU: 1x Z80
+PIO: 2x Mostek MK3881 (U22 &amp; U23)
+CTC: 1x... -->
 </platform>

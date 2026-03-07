@@ -12,4 +12,20 @@
     <region start="0x000FC000" end="0x000FFFFF" type="ram" name="ram"/>
     <region start="0x00FFC000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Siemens Simatic PG-675 and PG-685
+driver skeleton by rfka01
+more skeleton by R. Belmont
+The Simatic PG-685 is a programming device for Siemens' S5 line of industrial
+controllers. They ran PCP/M-86 and MS-DOS specially adapted for the architecture.
+http://oldcomputer.info/portables/pg685/index.htm
+The portable case contains a monochrome monitor (with a socket provided to
+drive an external monitor), a 5,25" floppy drive with 720KB capacity (DS,80
+tracks, 9 sectors p.t., 512 Byters p.s.) and a MFM ... -->
 </platform>

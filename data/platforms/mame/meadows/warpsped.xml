@@ -4,4 +4,16 @@
     <region start="0x00000000" end="0x00000DFF" type="rom" name="rom"/>
     <region start="0x00001800" end="0x00001CFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <!-- Meadows Warp Speed
+Driver by Mariusz Wojcieszek
+Notes:
+- Circles drawing does not follow the hardware. Roms which come in pairs four times
+on the board are used by circle generators. These roms are thought to contain cosine tables,
+16 bits wide, with g17 being the MSB and g18 being the LSB
+- Circles colors are probably not correct
+- Starfield is wrong. It is done with tilemap fixed in rom, but rom mapping is not correct.
+Starfield scrolling is missing too
+- What are unknown roms used for?
+Hardwa... -->
 </platform>

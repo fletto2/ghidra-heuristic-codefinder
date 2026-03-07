@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
     <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
   </memory_map>
+
+  <!-- see: pentevo.cpp
+Features (TS-Configuration):
+- Resolutions: 360x288, 320x240, 320x200, 256x192
+- Hardware scrolled graphic planes
+- 256 and 16 indexed colors per pixel
+- Programmable color RAM with RGB555 color space and 256 cells
+- Text mode with loadable font and hardware vertical scroll
+- Up to 256 graphic screens
+- Up to 85 sprites per line
+- Sprites sized from 8x8 to 64x64 pixels
+- Up to 3 sprite planes
+- Up to 2 tile planes with 8x8 pixels tiles
+- Up to 16 palettes for sprites per line
+- ... -->
 </platform>

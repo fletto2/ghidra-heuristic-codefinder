@@ -15,4 +15,10 @@
     <region start="0x00005000" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="bank0_r"/>
   </memory_map>
+
+  <!-- SH6578 NES clone hardware
+enhanced NES, different to VT / OneBus systems
+"UMC 1997.2 A35551S" on CPU die (maxx6in1)
+video rendering is changed significantly compared to NES so not using NES PPU device
+has 256x256 pixel pages, attributes are stored next to tile numbers (not in their own table after them) etc. -->
 </platform>

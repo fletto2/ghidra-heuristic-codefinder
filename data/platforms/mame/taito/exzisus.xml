@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Exzisus
+-------------------------------------
+driver by Yochizo
+This driver is heavily dependent on the Raine source.
+Very thanks to Richard Bush and the Raine team.
+Supported games :
+==================
+Exzisus (2 sets)    (C) 1987 Taito
+System specs :
+===============
+CPU       : Z80 x 4
+Sound     : YM2151
+Chips     : TC0010VCU x 2 + PC060HA
+There are two types of Exzisus PCB:
+The first (K1100256A) has separate RGB outputs for the background and sprites.
+Exactly how they are combined to form the... -->
 </platform>

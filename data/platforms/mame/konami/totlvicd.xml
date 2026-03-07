@@ -11,4 +11,27 @@
     <region start="0x3F000000" end="0x3FFFFFFF" type="io" name="cs0_swap_r"/>
     <region start="0xFFF00000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Konami M2 hardware
+driver by Phil Bennett
+TODO:
+Fix Heat of Eleven '98 soft-lock when selecting Japan as a team
+Fix incorrect speed in Tobe! Polystars
+Fix texture compression
+Sort out CD images
+Fix PowerPC 602 Protection Only mode handling.
+DONE
+Fix Polystars blending
+Fix missing music in Polystars
+Fix music playing too early
+Fix missing music and sound in Hell Night/Evil Night
+Fix incorrect speed in Heat of 11 and Total Vice (partially)
+// Polystars/Total Vice
+if (pc == 0x40035958)
+gpr[11] = 1;... -->
 </platform>

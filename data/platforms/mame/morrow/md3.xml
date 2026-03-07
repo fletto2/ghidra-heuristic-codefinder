@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00000000" end="0x00000FFF" type="io" name="region_0"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+  </devices>
+
+  <!-- Morrow Designs Micro Decision
+2009-12-10 Skeleton driver.
+Although it looks like an ordinary CP/M computer, the monitor and keyboard are actually a
+dumb terminal plugged into the base unit. Therefore the roms and details of the terminal are
+needed.
+Board design changes depending on bios version of base unit:
+In earliest design, F7 sets up VFO and F8 selects motor on, while fdc does drive select.
+Later version gets rid of these, and F7 now does motor on and drive select; also addition of
+i8253 ti... -->
 </platform>

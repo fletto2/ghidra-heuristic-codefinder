@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x000FBFFF" type="ram" name="ram"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Fujitsu Micro 7 (FM-7)
+12/05/2009 Skeleton driver.
+Computers in this series:
+| Release |    Main CPU    |  Sub CPU  |              RAM              |
+=====================================================================================
+FM-8         | 1981-05 | M68A09 @ 1MHz  |  M6809    |    64K (main) + 48K (VRAM)    |
+FM-7         | 1982-11 | M68B09 @ 2MHz  |  M68B09   |    64K (main) + 48K (VRAM)    |
+FM-NEW7      | 1984-05 | M68B09 @ 2MHz  |  M68B09   |    64K (main) + 48K (VRAM)    |
+FM-77 ... -->
 </platform>

@@ -8,4 +8,20 @@
     <region start="0x0000C000" end="0x0000C1FF" type="io" name="keypad_r"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- ET-3400
+2009-05-12 Skeleton driver.
+2016-04-29 Added Accessory.
+ETA-3400 Memory I/O Accessory
+- Provides Tiny Basic, a Terminal, a Serial Interface, a Cassette
+interface, and 1k to 4k of expansion RAM. All parts are working.
+- The roms are U105 (Monitor), U106 (Tiny Basic), both type NMOS2316E,
+and U108 (address decoder PROM).
+- Navigating:
+LED to Monitor: D1400
+Monitor to Basic: G 1C00
+Monitor to LED: G FC00
+Basic to Monitor: BYE
+- All commands in Basic and Monitor are UPPERCASE only.
+- Termina... -->
 </platform>

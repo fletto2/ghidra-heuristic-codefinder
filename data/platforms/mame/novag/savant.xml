@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000D0FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Novag Savant, chess computer with touchscreen. It was followed by Savant II and
+Savant Royale on the same hardware, the program is the same and they just added
+a bigger opening book. The chess engine is MyChess by David Kittinger.
+Like the 1984 version Chess Robot Adversary, Savant Royale was marketed as 7.5MHz,
+but it's not known how they sped it up,
+Hardware overview:
+- Zilog Z80B @ 6MHz
+- 24KB ROM(3*TMM2364) + sockets for expansion (populated in Savant II)
+- 4KB RAM(8*MM2114N-2L), 256x4 batte... -->
 </platform>

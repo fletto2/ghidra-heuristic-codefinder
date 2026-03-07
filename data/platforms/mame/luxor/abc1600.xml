@@ -7,4 +7,28 @@
     <region start="0x000FFFFB" end="0x000FFFFB" type="io" name="region_ffffb"/>
     <region start="0x000FFFFF" end="0x000FFFFF" type="io" name="region_fffff"/>
   </memory_map>
+
+  <!-- Luxor ABC 1600
+How to create HDD image:
+------------------------
+./chdman createhd -chs 615,4,17 -ss 512 -o necd5126a.chd
+./chdman createhd -chs 1024,8,17 -ss 512 -o micr1325a.chd
+How to format HDD:
+------------------
+mf(2,0)
+mf(2,0)
+sas/format/format
+sa(40,0)
+y
+5
+micr1325a
+How to install OS:
+------------------
+mf(2,0)
+mf(2,0)
+abcenix
+loadsys1
+&lt;enter&gt;
+&lt;enter&gt;
+ABCenix &lt;= D-NIX &lt;= AT&amp;T Unix System V -->
 </platform>

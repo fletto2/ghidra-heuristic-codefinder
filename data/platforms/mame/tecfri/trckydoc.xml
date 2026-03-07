@@ -14,4 +14,28 @@
     <region start="0x0000F830" end="0x0000F830" type="io" name="scroll_bg_w"/>
     <region start="0x0000F838" end="0x0000F83F" type="io" name="d0"/>
   </memory_map>
+
+  <!-- Sauro
+-----
+driver by Zsolt Vasvari
+Main CPU
+--------
+Memory mapped:
+0000-dfff   ROM
+e000-e7ff   RAM, battery backed
+e800-ebff   Sprite RAM
+f000-f3ff   Background Video RAM
+f400-f7ff   Background Color RAM
+f800-fbff   Foreground Video RAM
+fc00-ffff   Foreground Color RAM
+Ports:
+00      R   DSW #1
+20      R   DSW #2
+40      R   Input Ports Player 1
+60      R   Input Ports Player 2
+80       W  Sound Command
+c0       W  Flip Screen
+c1       W  ???
+c2-c4    W  ???
+c6-c7    W  ??? (Loads the sound la... -->
 </platform>

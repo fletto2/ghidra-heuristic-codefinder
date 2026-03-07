@@ -14,4 +14,24 @@
     <region start="0x00060030" end="0x00060033" type="io" name="status_r"/>
     <region start="0x00060038" end="0x00060039" type="io" name="vblank_ack"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- AT&amp;T Blit -- monochrome, raster graphics (800x1024), serial terminal.
+https://code.9front.org/hg/plan9front/file/f4fa0b9d0397/sys/src/games/blit/mmap
+memory map
+https://pbs.twimg.com/media/C_uxVGgUwAAImk6.jpg:orig
+board photo
+Onboard hardware (common to all revisions) is
+- 24K ROM
+- 256K RAM (includes frame buffer)
+- 2 serial ports, each driven by 6850 ACIA
+To do:
+- keyboard
+- mouse
+- make 'mux' window system work -- "68ld: load protocol failed"
+- sound?
+- what do dip switches do? -->
 </platform>

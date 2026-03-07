@@ -5,4 +5,28 @@
     <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x000067FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- PINBALL
+Peyper/Sonic
+Machines:
+Odin (Peyper)
+Odin Deluxe (Sonic)
+Solar Wars (Sonic)
+Gammatron (Sonic)
+Pole Position (Sonic)
+Star Wars (Sonic)
+Wolf Man (Peyper)
+Nemesis (Peyper)
+Odisea Paris-Dakar (Peyper)
+Hang-On (Sonic)
+Ator (Video Dens)
+Petaco (Juegos Populares)(Game #1101)
+Sir Lancelot (Peyper) has its own driver.
+Status:
+- odin, odin_dlx, solarwap, poleposn, wolfman, nemesisp, odisea, sonstwar, sonstwr2, hangonp: Playable.
+- When the machine is started, wait several seconds for the startup t... -->
 </platform>

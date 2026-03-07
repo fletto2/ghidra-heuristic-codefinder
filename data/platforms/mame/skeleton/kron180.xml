@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- KRON K-180 VGA terminal server
+27/10/2015
+I bought this hardware on Ebay to have something with a Z80 CPU to play with.
+The hardware is a serial terminal controller with VGA output and a PC keyboard
+and was manufactured mid 90s by a company from Vinnitsa, Ukraine called KRON.
+There is a character generator with support for both western and cyrilic characters.
+The PCB is also filled with chips with cyrrilic characters on but thanks to this
+page I managed to translate most of them into western TTL... -->
 </platform>

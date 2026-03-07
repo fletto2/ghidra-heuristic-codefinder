@@ -9,4 +9,17 @@
     <region start="0x0000C000" end="0x0000F200" type="ram" name="workram"/>
     <region start="0x0000F800" end="0x0000FA00" type="ram" name="bgvram"/>
   </memory_map>
+
+  <!-- Flower (c) 1986 Clarue (licensed to Komax/Sega)
+driver by Angelo Salese,
+original "wiped off due of not anymore licensable" driver by insideoutboy.
+TODO:
+- CPU speed is probably wrong. The pacing is fine at 3.072MHz, but then
+the game locks up sometimes. Or is the cause elsewhere?
+- priority might be wrong in some places (title screen stars around the
+galaxy, planet ship 3rd boss, 2nd boss);
+- sound chips (similar to Namco custom chips?)
+Video reference:
+https://youtu.be/ycbJMG09UZ0
+https://yout... -->
 </platform>

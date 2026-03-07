@@ -21,4 +21,12 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- Acorn RiscPC line of computers
+TODO:
+- IOMD currently hardwired with ARM7500FE flavour for all machines, needs information about
+which uses what;
+- PS/2 keyboard doesn't work properly;
+- Fix pendingUnd fatalerror from ARM7 core;
+- Fix pendingAbtD fatalerror for RiscOS 4.xx; -->
 </platform>

@@ -12,4 +12,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity CSC(and derived) hardware
+- Champion Sensory Chess Challenger
+- Elite Champion Challenger
+- Super 9 Sensory Chess Challenger
+- Reversi Sensory Challenger
+TODO:
+- do ca1_w/cb1_w better, it's annoying since it's going through sensorboard_device
+(it works fine though, since PIA interrupts are not connected)
+- hook up csce I/O properly, it doesn't have PIAs
+- verify super9cc maskrom dump
+================================================================================
+Champion Sensory Chess ... -->
 </platform>

@@ -55,4 +55,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Skimaxx
+driver by Phil Bennett and Luca Elia
+Top Board:
+68EC030-40
+(MSM6295 + Crystal) * 4
+Bottom Board:
+68EC030-40
+TMS34010-50
+Video hardware:
+- Blitter that supports rotation and zoom (background and sprites)
+- TMS34010 (text, score)
+Notes:
+- It looks like a bistream for a Xilinx FPGA is stored in ROM.
+The sub CPU bit-bangs 30864 bits worth of data to 0x40000003 twice.
+- There seems to be a bug in the game code drawing routines, causing objects to have some pixels
+chopped off. This is most not... -->
 </platform>

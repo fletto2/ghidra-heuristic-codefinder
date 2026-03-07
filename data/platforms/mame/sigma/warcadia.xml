@@ -11,4 +11,23 @@
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="videoram4"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- New York! New York! hardware
+Games Supported:
+New York! New York! (2 sets)
+Waga Seishun no Arcadia
+Known issues/to-do's:
+What does port A on IC37 AY8910 do?  It looks like a DAC, but
+this is not supported by the writes to the port.  All the
+writes are 0x9X, usually 0x9b or 0x9d.  Note that this is
+incorrectly referred to as port B on the schematics, but the
+pin #'s confirm it is, in fact port A.
+What is the main CPU clock?  11.2Mhz / 16 goes through
+a MC4044 and a MC4024 analog chips before goin... -->
 </platform>

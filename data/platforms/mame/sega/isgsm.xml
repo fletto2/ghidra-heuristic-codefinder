@@ -14,4 +14,10 @@
     <region start="0x00FE0006" end="0x00FE000B" type="io" name="sound_w16"/>
     <region start="0x00FFC000" end="0x00FFFFFF" type="ram" name="workram"/>
   </memory_map>
+
+  <!-- ISG 'Selection Master' Type 2006 hardware
+This is a 'multi-game' cart system (only the operator can select the game, via a dipswitch exposed from the cartridge)
+The system is designed to look like a PGM system (the ISG logo and fonts are ripped straight from original IGS material,
+and the external casing of the unit is near identical)  The system does NOT however run PGM games, the cartridges won't
+fit, and the hardware is basically a bootleg of Sega System 16 instead of PGM!  So far only 2 cart... -->
 </platform>

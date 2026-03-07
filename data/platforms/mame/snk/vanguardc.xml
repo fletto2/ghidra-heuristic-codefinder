@@ -10,4 +10,27 @@
     <region start="0x00003400" end="0x00003400" type="io" name="speech_w"/>
     <region start="0x00004000" end="0x0000FFFF" type="io" name="highmem_r"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Sasuke vs. Commander
+SNK
+driver by ?
+Games supported:
+Sasuke vs. Commander
+Satan of Saturn          [2 sets]
+Zarzon (clone of 'satansat')
+Vanguard                 [3 sets]
+Fantasy                  [3 sets]       G-202
+Pioneer Balloon                         G-204
+Nibbler                  [4 sets]       G-208
+DIP locations verified from manual for:
+Zarzon    (Satan of Saturn uses the same code, so I guess locations are the same)
+Vanguard
+Nibbler
+Vanguard memory map (preliminary)
+0000-03ff RAM
+040... -->
 </platform>

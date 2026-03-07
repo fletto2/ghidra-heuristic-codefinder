@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- SSE SoftBox
+http://mikenaberezny.com/hardware/pet-cbm/sse-softbox-z80-computer/
+Standalone vs. PET/CBM Peripheral Mode
+--------------------------------------
+The SoftBox can be used as a standalone computer with an RS-232 terminal,
+or as a PET/CBM peripheral.  This is an emulation of the standalone mode.
+For the peripheral mode, see: src/devices/bus/ieee488/softbox.c.
+Using the Corvus hard disk
+--------------------------
+The SoftBox distribution disk (softbox-distrib.d80) is configured for
+a CBM... -->
 </platform>

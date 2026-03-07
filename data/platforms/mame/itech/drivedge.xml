@@ -27,4 +27,22 @@
     <region start="0x00380000" end="0x00380003" type="unmapped" name="nop_write"/>
     <region start="0x00600000" end="0x00607FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Incredible Technologies/Strata system
+(32-bit blitter variant)
+Driver by Aaron Giles
+Golden Tee variants &amp; World Class Bowling Deluxe additions by Brian A. Troha
+Games supported:
+Time Killers (7 sets)
+Bloodstorm (5 sets)
+Hard Yardage (3 sets)
+Pairs (4 sets)
+Pairs Redemption (Child's version of pairs)
+Driver's Edge (1 set)
+World Class Bowling (14 sets)
+Street Fighter: The Movie (5 sets)
+Shuffleshot (5 sets)
+Golden Tee 3D Golf (12 sets)
+Golden Tee Golf '97 (7 sets)
+Golden Tee Golf '98 (7 sets)... -->
 </platform>

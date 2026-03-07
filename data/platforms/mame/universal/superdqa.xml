@@ -6,4 +6,17 @@
     <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
     <region start="0x00005C00" end="0x00005FFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Universal System 1
+Games Supported:
+- Universal Super Don Quix-ote
+ROM Revisions
+-------------
+Laserdisc Players Used
+----------------------
+Pioneer LD-V1000 -->
 </platform>

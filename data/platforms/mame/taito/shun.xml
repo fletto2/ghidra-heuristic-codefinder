@@ -15,4 +15,18 @@
     <region start="0x00B00000" end="0x00B1087F" type="ram" name="vidram"/>
     <region start="0x00B20000" end="0x00B2001F" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Poker Spirit (c) 1992 Taito
+TODO:
+- accesses unmapped range $e80 in TMP68303F for a sprite DMA $300ff2 -&gt; $b10000
+- Palette, $a04000 looks the most likely candidate except it spawns 4-bits per gun in dword?
+- Opto coin chutes are non-canonical, need to press H then L in quick succession
+(game will presumably draw a coin error if this isn't done right, needs Reset SW to fix)
+- EEPROM
+- shun: uses more GFX chipset features (i.e. scrolling); needs correct inputs; needs soft reset after
+boot to d... -->
 </platform>

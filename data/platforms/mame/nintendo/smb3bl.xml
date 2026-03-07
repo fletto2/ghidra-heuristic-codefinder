@@ -10,4 +10,27 @@
     <region start="0x00008000" end="0x0000800F" type="io" name="reg_w"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <!-- Bootleg PCB with 2 sub PCBs.
+Main PCB components:
+1x Z80 (timer CPU?)
+1x ROM
+1x RP2A03E (NTSC NES main CPU)
+1x RP2C02E-0 (NES PPU)
+3x GM76C28-10 RAMs
+1x 8-dip bank
+various TTL
+ROM PCB components:
+6x ROMs
+1x UM6264 RAM
+1x PAL
+various TTL
+NTSC PCB components:
+1x NEC uPC1352C chrominance and luminance processor for NTSC color TV
+1x 3'579'545 XTAL
+The Z80 ROM is really strange:
+1st half is 0xff filled;
+2nd half contains 8x 0x800 programs
+6 of them are identical
+2 others (0x4000 - 0x47ff and 0x6000 -... -->
 </platform>

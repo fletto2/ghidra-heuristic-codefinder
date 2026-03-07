@@ -15,4 +15,13 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Atari Video Pinball driver
+by Sebastien Monassa (smonassa@mail.dotcom.fr) / overhaul by SJ
+Known issues:
+videopin
+- plunger doesn't work in test mode - bug in the game code?
+solarwar
+- coins not working (free play is default for now)
+- needs correct layout file -->
 </platform>

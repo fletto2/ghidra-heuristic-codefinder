@@ -12,4 +12,23 @@
     <region start="0x00006000" end="0x000067FF" type="ram" name="cpua_cpub"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Pandora's Palace(GX328) (c) 1984 Konami/Interlogic
+Driver by Manuel Abadia &lt;emumanu+mame@gmail.com&gt;
+Notes:
+- Press 1P and 2P together to enter test mode.
+TODO:
+- CPU B continuously reads from 1e00. It seems to be important, could be a
+scanline counter or something like that.
+2009-03:
+Added dsw locations and verified factory setting based on Guru's notes
+(DSW3 not mentioned)
+Boards:
+- CPU/Video board labeled PWB(A)2000109B
+- Sound board labeled PWB(B)3000154A -->
 </platform>

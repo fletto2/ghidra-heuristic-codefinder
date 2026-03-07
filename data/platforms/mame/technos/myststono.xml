@@ -18,4 +18,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Technos Mysterious Stones hardware
+driver by Nicola Salmoria
+Notes:
+The subtitle of the two sets is slightly different:
+"Dr. John's Adventure" vs. "Dr. Kick in Adventure".
+The Dr John's is a bug fix. See the routine at 4376/4384 for example.
+The old set thrashes the Y register, the new one saves in on
+the stack. The newer set also resets the audio chips more often. -->
 </platform>

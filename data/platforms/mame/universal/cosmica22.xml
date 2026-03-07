@@ -8,4 +8,19 @@
     <region start="0x00007000" end="0x0000700D" type="io" name="cosmica_sound_output_w"/>
     <region start="0x0000700F" end="0x0000700F" type="io" name="flip_screen_w"/>
   </memory_map>
+
+  <!-- Universal board numbers (found on the schematics / pics)
+Cosmic Alien    - 7910
+No Man's Land   - 8003
+Magical Spot    - 8013
+Magical Spot II - 8013
+Devil Zone      - 8022
+TODO:
+- double check irq sources via schematics
+2008-08
+Dip locations verified with manuals for all the games.
+Note on Coinage DSW (devzone and magspot only):
+According to manuals, coinage settings (see "DSW" port) should be set by
+a physical DSW B but only read when SWA:3,4 are both set to OFF. Currently,
+In magspot, SWA:3 af... -->
 </platform>

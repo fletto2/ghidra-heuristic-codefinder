@@ -16,4 +16,20 @@
     <region start="0x0D80000C" end="0x0D80000F" type="io" name="audio_r"/>
     <region start="0x0D800014" end="0x0D800015" type="io" name="data_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Sony PocketStation
+PocketStation games were downloaded from PS1 games into flash RAM after
+the unit had been inserted in the memory card slot, and so this should
+be emulated alongside the PS1.  However, as many flash dumps exist, it
+is possible to emulate the PocketStation in the meantime.
+CPU: ARM7T (32 bit RISC Processor)
+Memory: 2Kbytes of SRAM, 128Kbytes of FlashROM
+Graphics: 32x32 monochrome LCD
+Sound: 1 12-bit PCM channel
+Input: 5 input buttons, 1 reset button
+Infrared communication: Bi-di... -->
 </platform>

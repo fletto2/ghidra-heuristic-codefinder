@@ -5,4 +5,19 @@
     <region start="0x00008000" end="0x0000C7FF" type="ram" name="videoram"/>
     <region start="0x0000C800" end="0x0000C8FF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- VTA-2000 Terminal
+Made at Ukrainian SSR, Vinnitsa Terminal Plant
+(info from https://prog.world/dataart-has-opened-the-website-of-the-it-museum/ )
+Board images : http://fotki.yandex.ru/users/lodedome/album/93699?p=0
+BDP-15 board only
+2010-11-29 Skeleton driver.
+Better known on the net as BTA2000-15m.
+It is a green-screen terminal, using RS232, and supposedly VT100 compatible.
+The top line is a status line.
+Note: port 0 bit 4 is NOT a speaker bit. See code at 027B. -->
 </platform>

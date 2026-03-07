@@ -6,4 +6,13 @@
     <region start="0x000F0400" end="0x000F0FFF" type="ram" name="p_vram"/>
     <region start="0x000FF800" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Axel AX-20
+27/12/2011 Skeleton driver.
+Hardware description:
+- CPU: I8088
+- FDC: I8272
+- PIT: I8253
+- PIC: I8259
+Also marketed under the Matra brand as MAX-20 ("M" for Matra ?) -->
 </platform>

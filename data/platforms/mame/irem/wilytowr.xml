@@ -10,4 +10,21 @@
     <region start="0x0000F802" end="0x0000F803" type="io" name="port"/>
     <region start="0x0000F806" end="0x0000F806" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Irem M63 hardware
+Wily Tower              (c) 1984 Irem
+Fighting Basketball     (c) 1984 Paradise Co. Ltd.
+driver by Nicola Salmoria
+PCB Layout (based on Atomic Boy PCB)
+------------------------------------
+Both boards has etched NANAO logo.
+They (Eizo Nanao Corporation) own Irem Software Engineering.
+M63-A-A (TOP)
+1         2       3       4       5       6       7
+|---------------------------------------------------------------|
+|              DSW8    74373                                    |... -->
 </platform>

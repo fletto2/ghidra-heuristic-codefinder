@@ -48,4 +48,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Konami NWK-TR System
+Driver by Ville Linde
+Hardware overview:
+GN676 CPU Board:
+----------------
+IBM PowerPC 403GA at 32MHz (main CPU)
+Motorola MC68EC000 at 16MHz (sound CPU)
+Konami K056800 (MIRAC), sound system interface
+Ricoh RF5c400 sound chip
+National Semiconductor ADC12138
+GN676 GFX Board:
+----------------
+Analog Devices ADSP-21062 SHARC DSP at 36MHz
+Konami K001604 (2D tilemaps + 2x ROZ)
+Konami 0000033906 (PCI bridge)
+3DFX 500-0003-03 (Voodoo) FBI with 2MB RAM
+2x 3DFX 500-0004-02 (Voodoo) TM... -->
 </platform>

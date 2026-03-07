@@ -13,4 +13,17 @@
     <region start="0x0000F900" end="0x0000F903" type="ram" name="scrollram2"/>
     <region start="0x000A0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ym2203"/>
+  </devices>
+
+  <!-- Raiden (Modular System)
+As with most of the 'Modular System' setups, the hardware is heavily modified from the original
+and consists of a multi-board stack in a cage, hence different driver.
+For this game the Modular System cage contains 8 main boards and 1 sub board.
+8086/1 red board - 2 V30s, M68000 socket for connecting to board 6/1 + 6 ROMs + RAMs.
+MOD-6/1 - RAMs, 20 MHz XTAL and  M68000 socket used for connecting to board 8086/1.
+MOD 21/1 - 24 MHz XTAL.
+MOD 1/5 - Sound board (Z80, 2xYM2203C... -->
 </platform>

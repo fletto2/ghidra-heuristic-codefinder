@@ -5,4 +5,16 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- mupid/Infonova C2A2
+Grundig PTC-100
+- Z80
+- 128 + 8 KB RAM
+- Z80 SIO/0
+- 8035
+- M58990P-1 ADC -->
 </platform>

@@ -10,4 +10,25 @@
     <region start="0x0000D800" end="0x0000D800" type="io" name="port"/>
     <region start="0x0000DC00" end="0x0000DC00" type="io" name="port"/>
   </memory_map>
+
+  <!-- "Sega Shooting Zone" aka "Sega Sharp Shooter"
+This is an SMS with a timer system, official Sega product.
+---------------------------------
+Shooting Zone by SEGA 1987
+834-6294
+CPU(s) : D780C (x2)
+Xtal : 10.7380 Mhz
+RAMS(s) : D4168C (x3)
+: MB8464-12L
+Eprom : Epr10894A.20
+PAL : 315-5287
+Customs IC's :  315-5216 (x2)
+315-5124
+GAMES for this system :
+Black Belt (mpr10150.ic1)
+Shooting Gallery
+Gangster Town
+Marksman Shooting / Trap Shooting / Safari Hunt (315-5028.ic1 + Mpr10157.ic2)
+Fantasy Zone
+----... -->
 </platform>

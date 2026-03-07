@@ -4,4 +4,22 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- AMERICAN MUSIC POKER V1.4
+1987 AMUSCO.
+Driver by Roberto Fresca.
+Hardware Notes:
+1x Empty 40 pin socket (U57)    Suspected 8085/8086/8088 Processor (due to the D8259AC presence).
+1x NEC D8259AC          Programmable Interrupt Controller (PIC).
+1x AMD D8284A           Clock Generator and Driver for 8086/8088 Processors.
+1x M5L8253P-5           Programmable general-purpose timer device.
+1x MOS 6845 (U27)       CRT Controller.
+2x P8255                Programmable Peripheral Interface (I/O).
+2x SRM2... -->
 </platform>

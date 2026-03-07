@@ -7,4 +7,18 @@
     <region start="0x0000D800" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="io" name="mem_r"/>
   </memory_map>
+
+  <!-- DG680
+2013-01-14 Driver created
+All input must be in uppercase.
+DG680 (ETI-680), using the DGOS-Z80 operating system.
+This is a S100 card.
+In some ways, this system is the ancestor of the original Microbee.
+No schematic available, most of this is guesswork.
+Port 0 is the input from an ascii keyboard.
+Port 2 is the cassette interface.
+Port 8 controls some kind of memory protection scheme.
+The code indicates that B is the page to protect, and
+A is the code (0x08 = inhibit; 0x0B = unprotect;
+0x0C =... -->
 </platform>

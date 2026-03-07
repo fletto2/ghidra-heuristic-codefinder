@@ -7,4 +7,19 @@
     <region start="0x000A0000" end="0x000BFFFF" type="io" name="mem_r"/>
     <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Multi Game - EGD, 1997
+Poker - Roulette - Black Jack - Bingo
+Game base is Bingo. Casino 10 (poker), Roulette, and Black Jack,
+could be enabled/disabled through DIP switches.
+80186xl20   Xtal 40MHz
+At89c52 (not dumped) with external 32K ram?? Xtal 11.0592MHz
+Cirrus Logic CL-GD5428-80QC-A video chip with 416c256 ram near it Xtal 14.381818 MHz
+U9-U10 program rom common to both pcb
+u11-u12 Program rom/GFX
+U13-U14 256Kramx8 (32Kbyte x16)
+U23 Nec D71055C
+U28 Nec D71055C
+U22 Nec D71055C
+U42 Nec D71051C... -->
 </platform>

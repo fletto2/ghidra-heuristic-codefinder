@@ -17,4 +17,26 @@
     <region start="0x0000E098" end="0x0000E098" type="io" name="port"/>
     <region start="0x0000E0A0" end="0x0000E0A0" type="io" name="laserdisc_r"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Cinematronics Dragon's Lair system
+Games supported:
+Dragon's Lair
+Dragon's Lair (European version)
+Space Ace
+Space Ace (European version)
+TODO:
+- No viable solution for reading configuration DIPs at init time,
+so only LD-V1000 versions are supported at this time.
+There are two revisions of the Cinematronics board used in the
+U.S. Rev A
+ROM Revisions
+-------------
+Revision A, B, and C EPROMs use the Pioneer PR-7820 only.
+Revision D EPROMs used the Pioneer LD-V1000 only.
+Revisions E, F, and F2 EPR... -->
 </platform>

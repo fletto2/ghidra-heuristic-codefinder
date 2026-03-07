@@ -60,4 +60,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- tmmjprd.cpp
+- split from rabbit.cpp (it uses the same GFX chip, but is otherwise a different PCB, and until the methods
+of configuring the graphic chip are understood it's easier to work on them here)
+- in 16x16 tile mode, the offset into tileram doesn't necessarily align to 16x16 tiles! This makes using the
+tilemap system excessively difficult, as it expects predecoded tiles which simply isn't possible here.
+This is used for the girls in the intro at least, they specify 16x16 tiles on non 16x16... -->
 </platform>

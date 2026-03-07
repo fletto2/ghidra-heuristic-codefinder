@@ -52,4 +52,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Rabbit Punch / Rabio Lepus
+driver by Aaron Giles
+Memory map
+========================================================================
+MAIN CPU
+========================================================================
+000000-03FFFF   R     xxxxxxxx xxxxxxxx   Program ROM
+040000-04FFFF   R/W   xxxxxxxx xxxxxxxx   Bitmap RAM (512x256 pixels)
+R/W   xxxx---- --------      (leftmost pixel)
+R/W   ----xxxx --------      (2nd pixel)
+R/W   -------- xxxx----      (3rd pixel)
+R/W   -------- ----xxxx      (rig... -->
 </platform>

@@ -23,4 +23,28 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Cloud 9 (prototype) hardware
+driver by Mike Balfour
+Games supported:
+Cloud 9
+Firebeast
+Known issues:
+none at this time
+Horizontal sync chain:
+Appears to be the same as Crystal Castles. See ccastles.cpp for
+details.
+Pixel clock = 5MHz
+HBLANK ends at H = 0
+HBLANK begins at H = 256
+HSYNC begins at H = 260 (? unconfirmed)
+HSYNC ends at H = 288 (? unconfirmed)
+HTOTAL = 320
+Vertical sync chain:
+Appears to be similar to Crystal Castles. The PROM at 10E seems
+to have a similar layout to the SYNC P... -->
 </platform>

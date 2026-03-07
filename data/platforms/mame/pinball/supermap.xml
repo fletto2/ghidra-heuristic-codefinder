@@ -16,4 +16,19 @@
     <region start="0x00002000" end="0x00002003" type="io" name="port"/>
     <region start="0x00002800" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Atari Generation/System 2 and 3
+System 2 : Manuals and PinMAME used as references (couldn't find full schematics).
+System 3 : PinMAME used as reference (couldn't find anything else).
+The only difference seems to be an extra bank of inputs (or something) at 2008-200B.
+Status:
+- All are playable.
+ToDo:
+- noise generator sounds like a loud barrrr instead of noise, fortunately it isn't used.
+- roadrunr: test button not working, sets off an alarm instead. Slam Tilt? -->
 </platform>

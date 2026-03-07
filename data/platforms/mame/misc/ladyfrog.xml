@@ -18,4 +18,24 @@
     <region start="0x0000DF03" end="0x0000DF03" type="io" name="ladyfrog_gfxctrl_w"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Lady Frog (c) 1990 Mondial Games
+(there's  "(c) Alfa Tecnology" in the ROM)
+Touche Me - Unknown Manfacturer (likely the same as Lady Frog)
+driver by Tomasz Slanina
+'N.Y. Captor' (TAITO) hardware , without sub cpu.
+TODO:
+- merge with flstory.cpp
+Sound rom is 'borrowed' from NYC.
+1.115 = a80_16.i26 + a80_17.i25
+PCB Layout
+|-------------------------------------------------|
+|18MHz                          1       M5232     |
+|                                          LM3900 |
+|                     ... -->
 </platform>

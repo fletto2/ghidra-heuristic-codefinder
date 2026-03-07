@@ -8,4 +8,24 @@
     <region start="0x00005000" end="0x000057FF" type="io" name="dip_switch_r"/>
     <region start="0x00005800" end="0x00005FFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Enigma 2 (C) Zilec Electronics / Game Plan
+driver by Pierpaolo Prazzoli and Tomasz Slanina
+enigma2 (1981)
+2xZ80 + AY8910
+Original dedicated board
+enigma2a (1984?)
+Conversion applied to a Taito Space Invaders Part II board set with 1984 copyright. hack / Bootleg ?
+enigma2b (1981)
+Conversion like enigma2a, but boots with 1981 copyright and Phantoms II title
+TODO:
+- enigma2b - bad sound ROM?
+Enigma II, Game Plan, 1981
+PCB hardware notes by Guru
+GAME PLAN (C) 1981
+|----------------------------------... -->
 </platform>

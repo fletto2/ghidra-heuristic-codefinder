@@ -6,4 +6,29 @@
     <region start="0x0000B000" end="0x0000CFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- NSM TMS9995 BASED HARDWARE
+--------------------------
+Driver by Roberto Fresca.
+Games running on this hardware:
+NSM Poker,  198?, NSM.
+Hardware Notes:
+---------------
+CPU:    1x TMS9995.
+Sound:  1x AY8912.
+ROMs:   5x Eproms.
+RAMs:   5x 2116 (2kx8) SRAM.
+one 1400bit(?!) "write rom".
+Clock: 1x 22.1184 MHz. Xtal.
+No bprom, no gals, no pals....
+Game Notes ***
+DRIVER UPDATES:
+[2010-10-07]
+- Initial release.
+- Added technical notes.
+TODO: -->
 </platform>

@@ -6,4 +6,13 @@
     <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Cromemco C-10 Personal Computer
+2010-08-30 Skeleton driver
+Photos show: Intersil 74954-1, Mostek MK3880N-4 (Z80A), CROMEMCO 011-0082-01, CROMEMCO 011-0095,
+Intel P8275-2, AM92128BPC (16K ROM), NEC D8257C-5, CROMEMCO 011-0083, WDC FD1793B-02,
+2x 8251. Crystals: 8MHz, 13.028MHz
+Driver currently gets to a loop where it waits for an interrupt.
+The interrupt routine presumably writes to FE69 which the loop is
+constantly looking at. -->
 </platform>

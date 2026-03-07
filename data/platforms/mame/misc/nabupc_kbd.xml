@@ -8,4 +8,14 @@
     <region start="0x0000D000" end="0x0000D000" type="io" name="data_r"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- NABU PC Keyboard Interface
+Matrix
+|       | Col 0 | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 | Col 6 | Col 7 |
+|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+| Row 0 |  N/A  |  ESC  | Right |   P   |   W   |   R   |   I   |   ]   |
+| Row 1 |   U   |   Q   | Left  |   [   |   E   |   T   |   O   |  DEL  |
+| Row 2 |   8   |   2   | Up    |   =   |   4   |   6   |   0   |  TV   |
+| Row 3 |   7   |   1   | Yes   |   -   |   3   |   5   |   9   | PAUSE |
+| Row 4 |   G   |  TAB... -->
 </platform>

@@ -8,4 +8,23 @@
     <region start="0x00006000" end="0x00006000" type="io" name="catch_coin_counter_w"/>
     <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Avalanche hardware
+driver by Mike Balfour
+Games supported:
+Avalanche
+Catch (prototype)
+TODO:
+Catch discrete sound
+Memory Map:
+0000-1FFF               RAM
+2000-2FFF       R       INPUTS
+3000-3FFF       W       WATCHDOG
+4000-4FFF       W       OUTPUTS
+5000-5FFF       W       NOISE SOUND LEVEL (not in Catch)
+6000-7FFF       R       PROGRAM ROM
+8000-DFFF               UNUSED
+E000-FFFF               PROGRAM ROM (remapped)
+If you have any questions about how this driver works, don't hesitate to
+... -->
 </platform>

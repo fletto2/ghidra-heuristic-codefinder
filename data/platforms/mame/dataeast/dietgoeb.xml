@@ -51,4 +51,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Diet Go Go
+Driver by Bryan McPhail and David Haywood.
+Hold both START buttons on bootup to display version notice.
+Diet Go Go (Japan)   DATA EAST
+DE-0370-2
+NAME    LOCATION   TYPE
+-----------------------
+JW-02    14M       27C512
+JW-01-2  5H        27C2001
+JW-00-2  4H         "
+PAL16L8B 7H
+PAL16L8B 6H
+PAL16R6A 11H
+European versions were seen with either the MAY-01 and MAY-02,
+or MAY-04 and MAY-05 sprite ROMs. The latter is more common on newer versions,
+these contain data for alternative title s... -->
 </platform>

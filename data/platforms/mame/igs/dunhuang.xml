@@ -5,4 +5,26 @@
     <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Mahjong Dunhuang (C)1995 Spirit
+driver by Luca Elia
+PCB Layout
+----------
+|---------------------------------------|
+|uPD1242H  VOL     UM3567  AR17961  ROM6|
+|          3.579545MHz                  |
+|                  DSW1(8)          ROM5|
+|   VOL            DSW2(8)              |
+|                  DSW3(8)          ROM4|
+|                  DSW4(8)              |
+|                  DSW5(8)          ROM3|
+|1   WF19054                            |
+|8                                  ROM2|
+|W    ... -->
 </platform>

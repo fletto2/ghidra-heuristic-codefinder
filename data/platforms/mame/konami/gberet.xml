@@ -14,4 +14,28 @@
     <region start="0x0000F800" end="0x0000F800" type="io" name="irq_ack_r"/>
     <region start="0x0000F900" end="0x0000F901" type="io" name="scroll_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Green Beret
+Konami
+driver by Nicola Salmoria
+correct ROM naming information by Belgium Dump Team (17/06/2003)
+Games supported:
+Green Beret (GX577)
+Rush'n Attack (US) (GX577)
+Green Beret (bootleg)
+Mr. Goemon (Japan) (GX621)
+gberetb is a bootleg hacked to run on different hardware.
+TODO
+- Correct PROMs decoding for the bootleg
+Green Beret / Rush'n Attack (Konami, 1985)
+Hardware info by Guru
+GX577
+PWB200225A
+|-----------------------------------------------------|
+|                                62... -->
 </platform>

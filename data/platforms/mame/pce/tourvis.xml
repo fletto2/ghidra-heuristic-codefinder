@@ -11,4 +11,16 @@
     <region start="0x0000E000" end="0x0000E1FF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000F000" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <!-- TourVisión
+Driver by Mariusz Wojcieszek and Stephh
+Bootleg PC-Engine based arcade board from the Spanish company TourVisión.
+Two known hardware revisions, one with a sub-board with the PC-Engine chipset
+and the other as an integrated PCB.
+Todo: complete jamma interface emulation.
+By now, ten known BIOS versions.
+U4-52 (dumped from a board with-subboard PCB).
+U4-55 (dumped from an integrated PCB).
+U4-60 (dumped from a board with-subboard PCB).
+Known games list can be found in hash/pce_tourvision.... -->
 </platform>

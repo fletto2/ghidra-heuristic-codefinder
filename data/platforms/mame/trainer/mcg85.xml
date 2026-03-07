@@ -6,4 +6,7 @@
     <region start="0x00001000" end="0x00001FFF" type="ram" name="ram"/>
     <region start="0x00002000" end="0x000020FF" type="io" name="memory_r"/>
   </memory_map>
+
+  <!-- Atlantis Computers MCG-85
+After RESET press SPACE on terminal for Expeditor to detect baud rate (50-19.2K). -->
 </platform>

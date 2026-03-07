@@ -9,4 +9,30 @@
     <region start="0x0000E000" end="0x0000E000" type="io" name="reset_r"/>
     <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Vastar memory map (preliminary)
+driver by Allard van der Bas
+CPU #1:
+0000-7fff ROM
+8000-83ff bg #1 attribute RAM
+8800-8bff bg #1 video RAM
+8c00-8fff bg #1 color RAM
+9000-93ff bg #2 attribute RAM
+9800-9bff bg #2 video RAM
+9c00-9fff bg #2 color RAM
+a000-a3ff used only during startup - it's NOT a part of the RAM test
+c400-c7ff fg color RAM
+c800-cbff fg attribute RAM
+cc00-cfff fg video RAM
+f000-f7ff RAM (f000-f0ff is shared with CPU #2)
+read:
+e000      ???
+write:
+c410-c41f sprites
+c430-c43f sprites
+... -->
 </platform>

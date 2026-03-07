@@ -13,4 +13,23 @@
     <region start="0x0000E700" end="0x0000EFFF" type="ram" name="bank4"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Pyldin-601
+2009-05-12 Skeleton driver.
+2012-04-22 Added sound, fixed keyboard, marked as working [Robbbert]
+ToDo?
+- PYL601 - command 'MODE80' does nothing
+- PYL601a - most software looks odd (unplayable) because of the
+different design of the screen.
+- PYL601A - command 'MODE40' doesn't go to 40-columns, instead
+there is a space between each letter.
+The BASIC
+- to get back to dos, enter SYSTEM
+- It has its own internal monitor: MON to enter, Q to exit.
+':maincpu' (F013): unmapped program memory ... -->
 </platform>

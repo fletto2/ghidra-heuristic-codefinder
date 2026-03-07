@@ -55,4 +55,26 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Touch Master Games =-
+driver by Luca Elia (l.elia@tin.it) and Mariusz Wojcieszek
+CPU:    68000
+Video:  Blitter with two layers and double buffering (Xilinx FPGA)
+Sound:  OKI M6295
+Input:  Microtouch touch screen
+Other:  Dallas NVRAM + optional RTC
+To Do:
+- Coin optics
+- Correct sound banking
+- Proper protection emulation in tm4k and later games
+To be dumped and added:
+Touch Master 6000 &lt;-- There doesn't seem to be a "6000" version
+Touch Master 7000 *
+Touch Master 8000 *
+There are alternate... -->
 </platform>

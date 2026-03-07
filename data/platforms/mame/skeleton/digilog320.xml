@@ -7,4 +7,45 @@
     <region start="0x00090000" end="0x00091FFF" type="ram" name="nvram"/>
     <region start="0x000A0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+    <device type="serial" name="z80scc"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Digilog 320
+Protocol analyzer
+Hardware:
+PCB 24-0710-02B:
+- Speaker
+- XTAL 1.344 MHz
+- R80186-10
+- XTAL 20 MHz
+- DS1241
+- HM62256LP-15 x4
+- AT27C512R x6
+PCB 24-0706-02C:
+- MB8877A
+- FDC9229BT
+- XTAL 16 MHz
+- P8251A
+- XTAL 3.6864 MHz
+- SCN2681AC1N40
+- HD46505SP-2
+- HM6264ALP-12 x2
+- AM27128DC "24-1140-00 A"
+- XTAL 5.659200 MHz
+- PAL labeled "20-1110-1 A"
+PCB 24-0709-02D:
+- XTAL 16 MHz
+- Z0840008PSC Z80 CPU
+- HM62256LP-12
+- Z8530H-8PC x2
+- AT27C256 "24-0196-01 C"
+- AM9519A-1PC
+- XTAL 2.688 MHz
+- XT... -->
 </platform>

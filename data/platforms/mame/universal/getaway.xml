@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
     <region start="0x00003800" end="0x00003FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Universal Get A Way
+Top-down arcade racing game inspired from Taito (Super) Speed Race.
+Hardware notes:
+- PCB label: UNIVERSAL 7812
+- TMS9900 @ 3MHz
+- 24KB ROM (6*TMM333P)
+- 2KB SRAM(4*TMS4045), 24KB DRAM(48*TMS4030)
+- discrete sound
+Japanese-language flyers show an upright cabinet with a start button, steering
+wheel and a control lever marked LOW at the upper end of the range and HIGH at
+the lower end. It appears to be spring-returned to the LOW position. The cabinet
+appears to have the positio... -->
 </platform>

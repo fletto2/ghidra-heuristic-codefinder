@@ -15,4 +15,29 @@
     <region start="0x000040DB" end="0x000040DC" type="io" name="gunsaux_r"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Lethal Enforcers
+(c) 1992 Konami
+Driver by R. Belmont and Nicola Salmoria.
+This hardware is exceptionally weird - they have a bunch of chips intended
+for use with a 68000 hooked up to an 8-bit CPU.  So everything is bankswitched
+like crazy.
+LETHAL ENFORCERS
+KONAMI 1993
+84256         053245A
+191A03.A4     6116     191A04.A8 191A05.A10
+054539             053244A   053244A
+Z80B  191A02.F4
+6116
+191A06.C9
+7C185
+7C185
+007644            5116
+054000            4464
+4464              4464
+191E01.U4      ... -->
 </platform>

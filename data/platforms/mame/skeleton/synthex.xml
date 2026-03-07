@@ -23,4 +23,10 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Skeleton driver for Elka Synthex synthesizer. -->
 </platform>

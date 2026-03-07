@@ -7,4 +7,16 @@
     <region start="0x00009000" end="0x000097FF" type="ram" name="nvram"/>
     <region start="0x0000A000" end="0x0000A3FF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Wink    -   (c) 1985 Midcoin
+TODO:
+- better interrupts?
+- finish sound
+- fix protection properly
+- better handling of nvram? it loses the default values
+- I need a better comparison screenshot to be sure about the colors. -->
 </platform>

@@ -61,4 +61,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Mystic Warrior (c) 1993 Konami
+Metamorphic Force (c) 1993 Konami
+Violent Storm (c) 1993 Konami
+Martial Champion (c) 1993 Konami
+Gaiapolis (c) 1993 Konami
+Ultimate Battler Dadandarn!! (c) 1993 Konami
+Driver by R. Belmont, Phil Stroffolino, Acho A. Tang, and Nicola Salmoria.
+Assists from Olivier Galibert, Brian Troha, The Guru, and Yasuhiro Ogawa.
+These games are the "pre-GX" boards, combining features of the previous
+line of hardware begun with Xexex and those of the future 32-bit System
+GX (nota... -->
 </platform>

@@ -7,4 +7,20 @@
     <region start="0x00006000" end="0x00006FFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Skeleton driver for Memorex 2178
+Chips: Z80A, N8X305N, 2x B8452A, 4x D4016C-3, 2x HD468A50P, HD46505SP-1
+Crystal: 18.8696MHz
+There is a large piezo-beeper.
+TODO:
+- Connect up the beeper
+- Unknown memory i/o C000, 4000
+- Need schematic / tech manual
+- Doesn't seem to be any dips, looks like all settings and modes are controlled by keystrokes.
+- 8X305 is a 16-bit bipolar processor which appears to use four external PROMs (undumped). It
+would communicate with the Z80 via a common 8-bit I/O bus. No ... -->
 </platform>

@@ -58,4 +58,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- -= Astro Corp. CGA Hardware =-
+(known as "Permus")
+driver by   Luca Elia (l.elia@tin.it)
+decryption by   Olivier Galibert
+CPU:    68000
+GFX:    ASTRO V0x (seen with x = 1,2,5,6 or 7)
+SOUND:  OKI M6295 (AD-65)
+OTHER:  EEPROM, Battery
+512 sprites, each made of N x M tiles. Tiles are 16x16x8 (16x32x8 in Stone Age)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Year + Game  ... -->
 </platform>

@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Not much is known about this Hungarian Z80-based machine, not even the name
+of the manufacturer. It comes with 64K of RAM, and 2x 5.25 floppy drives.
+Video is a CGA card.
+Notes found at vcfed:
+1988, hungarian unknown, junior80
+2x 5.25 FDD DSDD 80T, 64K ram, CGA graphics card, Serial card with 2 ports
+which is in addition to those ports on the main board.
+So this are the main chips on the logic board:
+Address / Chip
+00H-03H I8255
+00H - input port for keyboard scan codes
+01H - input port for syste... -->
 </platform>

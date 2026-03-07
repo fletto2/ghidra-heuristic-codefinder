@@ -5,4 +5,23 @@
     <region start="0x0000F000" end="0x0000FBFF" type="rom" name="rom"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Nutting Icebox
+2018-08-19 Skeleton driver. It's all guesswork.
+It's a case with many slots for daughter boards, and 2 floppy drives. It's an "in-circuit emulator"
+for Bally / Astrocade development.
+The unit has 5 daughter boards: 3 boards were photographed and are: a cpu board (Z80 and XTAL),
+a RS232 board (2x 8251, 8 dipswitches connected to a BR1941L, 4.9152 XTAL),
+and a board covered with TTL.
+Commands:
+- At the main % prompt:
+-- A = Arcade
+-- C = Commercial
+-- D = Debug
+-- ^C = boot CP/M
+-- ... -->
 </platform>

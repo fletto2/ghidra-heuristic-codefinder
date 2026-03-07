@@ -7,4 +7,17 @@
     <region start="0x0041C000" end="0x0041C003" type="io" name="cdrom_status_flag_r"/>
     <region start="0x00C00000" end="0x00C3FFFF" type="io" name="sh2_cdrom_cs0_r"/>
   </memory_map>
+
+  <!-- CDXA PCB
+--------
+SYSTEM12 CDXA PCB 8661962101 (8661972101)
+|---------------------------------------------------|
+|                               J8     J9           |
+|           6734               4556   3121          |
+|                                                   |
+|    J2                                    MB87078  |
+|    |-|        IS61C256                            |
+|    | |        IS61C256                   LC78836M |
+|    | |                                            |
+|    | |... -->
 </platform>

@@ -11,4 +11,16 @@
     <region start="0x0000B000" end="0x0000B7FF" type="ram" name="ram"/>
     <region start="0x0000B800" end="0x0000B800" type="io" name="reset_w"/>
   </memory_map>
+
+  <!-- Wiping (C) 1982 Nichibutsu
+driver by Allard van der Bas (allard@mindless.com)
+1 x Z80 CPU main game, 1 x Z80 with ???? sound hardware.
+Given the similarities with clshroad.cpp this was probably developed by
+Masao Suzuki, who later left Nichibutsu to form Woodplace Inc.
+----------------------------------------------------------------------------
+Main processor:
+0xA800 - 0xA807 : 64 bits of input and dipswitches.
+dip: 0.7 1.7 2.7
+0   0   0    coin 1: 1 coin 0 credit.
+1   1   1    coin 1: 1 coin 7 ... -->
 </platform>

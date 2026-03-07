@@ -8,4 +8,32 @@
     <region start="0x00003000" end="0x000033FF" type="ram" name="ram"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Jupiter Ace memory map
+CPU: Z80
+0000-1fff ROM
+2000-23ff Mirror of 2400-27FF
+2400-27ff RAM (1K RAM used for screen and edit/cassette buffer)
+2800-2bff Mirror of 2C00-2FFF
+2c00-2fff RAM (1K RAM for char set, write only)
+3000-3bff Mirror of 3C00-3FFF
+3c00-3fff RAM (1K RAM standard)
+4000-7fff RAM (16K Expansion)
+8000-ffff RAM (48K Expansion)
+Interrupts:
+IRQ:
+50Hz vertical sync
+Ports:
+Out 0xfe:
+Tape and buzzer
+In 0xfe:
+Keyboard input, tape, and buzzer
+https://www.jupiter-ace.co.uk/
+TODO:
+- Ace Colour... -->
 </platform>

@@ -57,4 +57,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Video Hardware for Video System Games.
+Quiz &amp; Variety Sukusuku Inufuku (Japan)
+(c)1998 Video System Co.,Ltd.
+3 On 3 Dunk Madness (US, prototype?)
+(c)1996 Video System Co.,Ltd.
+Driver by Takahiro Nogi 2003/08/09 -
+based on other Video System drivers
+Known games not dumped ran on this hardware:
+- 3 on 3 Hyper Slams '96 (Korea) https://youtu.be/3gGB4kYYgi0 -->
 </platform>

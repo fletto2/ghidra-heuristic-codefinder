@@ -6,4 +6,20 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Kyuukoukabakugekitai - Dive Bomber Squad
+(C) Konami 1989
+PCB Layout
+----------
+GX840 PWB35165
+|--------------------------------------------------------------------------|
+|                                                                          |
+|  U15                               Z80B                  Z80B     DSW1   |
+|                                                                   DSW2   |
+|                  HM6116AP-15                                      DSW3   |
+|  U16               ... -->
 </platform>

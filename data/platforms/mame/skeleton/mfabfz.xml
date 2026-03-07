@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Mikrocomputer fuer Ausbildung
+Berufsfoerdungszentrum Essen
+Information found on Wikipedia:
+- System is a backbone upon which all functions are available on plug-in cards
+- 32k RAM, 32k ROM
+- Serial is via CPU SID/SOD pins, but can be replaced by 8251 on RS232 card
+- Protocol is COM1, 4800, 8N1
+- Timer card uses 8253
+- PIO card uses 8255 and has a printer interface
+- Cassette interface uses RS232 card
+- Optional floppy (both sizes); and a EPROM burner
+- OS: MAT85
+Manuals have no schematics and no... -->
 </platform>

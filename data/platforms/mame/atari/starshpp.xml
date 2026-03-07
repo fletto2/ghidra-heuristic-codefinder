@@ -26,4 +26,16 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Atari Starship 1 driver
+"starshp1" -&gt; regular version, bonus time for 3500 points
+"starshpp" -&gt; possible prototype, bonus time for 2700 points
+The schematics don't seem to make a lot of sense when it
+comes to the video timing chain::
+there are clear typos -- what is H132???
+there are two HBLANK/HSYNC periods as the horizontal
+chain is drawn, which would give an alternating long
+line followed by a much shorter one.  This cannot be right
+the carry-out/load circuit on LS161@J8 is superfluous
+... -->
 </platform>

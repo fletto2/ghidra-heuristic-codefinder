@@ -16,4 +16,20 @@
     <region start="0x00009000" end="0x000097FF" type="ram" name="ram"/>
     <region start="0x00009000" end="0x0000903F" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Espial hardware games
+2 XTALS (12.0MHz and 18.432MHz), both CPUs are 3.0MHz and the AY is 1.5MHz.
+18.432MHz XTAL is probably for the pixel clock.
+Espial: The Orca logo is displayed, but looks to be "blacked out" via the
+color PROMs by having 0x1c &amp; 0x1d set to black.
+TODO:
+- merge with orca/zodiack.cpp
+- where do the sound NMIs come from exactly?
+Stephh's notes (based on the games Z80 code and some tests) :
+1) 'espial*'
+- The games read both players controls for player 2 when "Cabinet" is se... -->
 </platform>

@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for MAC S.A. and CICPlay pinballs. ROM definitions taken from PinMAME.
+There's a number of undumped PAL-type devices, so had to guess a few things.
+Unknown chips: SIVP47, MAC P01, MAC D01, MAC A01 (=MAC A.A4, MAC A.A5).
+Schematic has errors and omissions (no input or output matrix, no wiring between boards).
+Although the coin slots are not working, you can add credits by changing 0xC011 in the memory view.
+Status:
+- Some games are playable
+-- macgalxy (Outhole is Z and X)
+-- macj... -->
 </platform>

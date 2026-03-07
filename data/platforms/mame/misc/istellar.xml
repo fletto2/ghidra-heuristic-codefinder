@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
     <region start="0x0000A000" end="0x0000B1FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Funai / Gakken Inter Stellar Laser Fantasy laserdisc hardware
+Driver by Andrew Gardner with help from Daphne Source
+Notes:
+Holding down the TEST switch while hitting reset will bring up the Self Test.
+Hit TEST switch again for color and monitor calibration.
+This is somewhat strange hardware : More z80's than necessary
+3 bpp sprites
+6-pin dip switches with odd handling
+inverted DIP logic?
+CPU2 maps RAM over where its ROM lives
+To skip LD boot: bp 4458,1,{pc=0x447a;g}
+Then fill $a074 with 1 to go ... -->
 </platform>

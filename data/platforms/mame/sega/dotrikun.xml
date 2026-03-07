@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="vram"/>
   </memory_map>
+
+  <!-- Dottori Kun (Head On's mini game)
+(c)1990 SEGA
+Driver by Takahiro Nogi 1999/12/15 -
+CPU   : Z-80 (4MHz)
+SOUND : (none)
+14479.MPR  ; PRG (FIRST VER)
+14479A.MPR ; PRG (NEW VER)
+This game is only for the test of cabinet
+BackRaster = WHITE on the FIRST version.
+BackRaster = BLACK on the NEW version.
+On the NEW version, push COIN-SW as TEST MODE.
+0000-3FFF:ROM 8000-85FF:VRAM(128x96) 8600-87FF:WORK-RAM
+TODO:
+- improve video timing more (see http://www.chrismcovell.com/dottorikun.html) -->
 </platform>

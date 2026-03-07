@@ -6,4 +6,7 @@
     <region start="0x00800000" end="0x00801FFF" type="rom" name="rom"/>
     <region start="0x00FFFE00" end="0x00FFFE00" type="io" name="control_w"/>
   </memory_map>
+
+  <!-- Skeleton driver for Alpha Micro AM-1000 system.
+This system was sold in various configurations beginning in 1982. -->
 </platform>

@@ -8,4 +8,20 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
     <region start="0x0000C800" end="0x0000CFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Space Firebird hardware
+Memory Map figured out by Chris Hardy, Paul Johnson and Andy Clark
+MAME driver by Chris Hardy
+Schematics scanned and provided by James Twine
+Thanks to Gary Walton for lending me his REAL Space Firebird
+There is an undumped bootleg of this named 'Fire Condor', see
+http://solarfox.triluminary.net/arc_spacefirebird.php for info
+Known issues/to-do's:
+Bullet colors are incorrect.  The schematics cannot be right, so
+I am using pure red for now
+"MAME has the bullets and missiles... -->
 </platform>

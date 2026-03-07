@@ -9,4 +9,23 @@
     <region start="0x00800000" end="0x009FFFFF" type="io" name="flash1_w"/>
     <region start="0x00FF0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- SNK NeoGeo Pocket driver
+After setting the initial console settings power cycle the unit at least once,
+otherwise the settings will not be saved properly.
+The NeoGeo Pocket (Color) contains one big chip which contains the following
+components:
+- Toshiba TLCS-900/H cpu core with 64KB ROM
+- Z80 cpu core
+- K1GE (mono)/K2GE (color) graphics chip + lcd controller
+- SN76489A compatible sound chip
+- DAC for additional sound
+- RTC
+- RAM
+The following TLCS-900/H input sources are known:
+- INT0 - Alarm/RT... -->
 </platform>

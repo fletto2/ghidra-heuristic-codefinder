@@ -17,4 +17,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Poke Champ */
+This is a Korean hack of Data East's Pocket Gal
+It uses RAM for Palette instead of PROMs
+Samples are played by OKIM6295
+Different Banking
+More Tiles, 8bpp
+Sprites 4bpp instead of 2bpp
+Many code changes -->
 </platform>

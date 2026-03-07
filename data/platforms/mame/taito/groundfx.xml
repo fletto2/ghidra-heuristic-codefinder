@@ -57,4 +57,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Ground Effects / Super Ground FX                    (c) 1993 Taito
+Driver by Bryan McPhail &amp; David Graves.
+Board Info:
+K1100744A
+J1100316A
+Sticker - K11J0744A
+------------------------------------------------------------------------------------------------
+| 2018  2088        43256      43256   MC68EC020RP25   DIP-SW (8) COM20020  SLIDE-SW  LAN-IN   |           Connector G
+| 2018  2088        D51-21     D51-22              D51-14                                      |           -----------
+| ... -->
 </platform>

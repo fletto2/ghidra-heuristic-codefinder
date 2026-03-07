@@ -15,4 +15,20 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Mephisto Super Mondial
+Mephisto Super Mondial II
+Mephisto Mega IV
+Hardware notes:
+- G65SC02P-4 @ 4MHz
+- 8KB RAM(battery-backed), 32KB ROM
+- expansion slot at underside (only used for smondial2)
+- 2*PCF2112, 2 7seg LCD screens
+- 8*8 chessboard buttons, 24 tri-color leds, piezo
+Undocumented buttons:
+- smondialb: holding CL+INFO on boot runs diagnostics -->
 </platform>

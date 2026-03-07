@@ -11,4 +11,18 @@
     <region start="0x00001800" end="0x00001CFF" type="ram" name="videoram"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Basketball hardware
+driver by Mike Balfour
+Games supported:
+Basketball
+Known issues:
+Arcade screen hblank (left/right) border is grey, MAME screen emulation
+is limited to active display area.
+Note:  The original hardware uses the Player 1 and Player 2 Start buttons
+as the Jump/Shoot buttons.
+If you have any questions about how this driver works, don't hesitate to
+ask.  - Mike Balfour (mab22@po.cwru.edu)
+2008-07
+Dip locations verified with manual -->
 </platform>

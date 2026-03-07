@@ -13,4 +13,14 @@
     <region start="0x00000060" end="0x000001FF" type="ram" name="ram"/>
     <region start="0x00000200" end="0x00001FFF" type="io" name="fixed_r"/>
   </memory_map>
+
+  <!-- Sega Sawatte / S-Pico
+a sound-only Pico type system (one of the boards even says S-PICO)
+CPU is unknown (MCU with internal ROM?) cartridge dumps contain 6502 code
+and have been tested as working using a flash cart.
+images supplied by Team Europe
+http://mamedev.emulab.it/haze/reference/sawatte/cartridge_pcb_front.jpg
+http://mamedev.emulab.it/haze/reference/sawatte/cartridge_pcb_back.jpg
+http://mamedev.emulab.it/haze/reference/sawatte/PCB_Front.jpg
+http://mamedev.emulab.it/haze/reference/sawatte/P... -->
 </platform>

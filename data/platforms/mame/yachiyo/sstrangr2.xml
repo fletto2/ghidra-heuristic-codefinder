@@ -6,4 +6,16 @@
     <region start="0x00002000" end="0x00003FFF" type="ram" name="ram"/>
     <region start="0x00006000" end="0x000063FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- */
+Yachiyo "Space Stranger/Space Stranger 2"           */
+The cocktail version is also known as               */
+"Super Space Stranger" but it is the same game      */
+*/
+
+
+Space Stranger hardware info by Guru
+This is a black/white Space Invaders clone made by Yachiyo Electric Co. Ltd. using colored cellophane
+to make it look colored. The gameplay is mostly the same as any other Space Invaders game except the mother
+ship changes direction randomly and if the player hits the shields 50 points are... -->
 </platform>

@@ -8,4 +8,23 @@
     <region start="0x0000E010" end="0x0000E02F" type="rom" name="rom"/>
     <region start="0x0000E080" end="0x0000E0C0" type="io" name="context_ram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Shark Attack
+(C) 1980 PACIFIC NOVELTY MFG. INC.
+Thief
+(C) 1981 PACIFIC NOVELTY MFG. INC.
+NATO Defense
+(C) 1982 PACIFIC NOVELTY MFG. INC.
+Credits:
+Shark Driver by Victor Trucco and Mike Balfour
+Driver for Thief and NATO Defense by Phil Stroffolino
+- minor blitting glitches in playfield of Thief (XOR vs copy?)
+- Nato Defense gfx ROMs may be hooked up wrong;
+see screenshots from flyers
+- Coprocessor needs identification and actual emulation -->
 </platform>

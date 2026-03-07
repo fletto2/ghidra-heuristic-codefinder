@@ -6,4 +6,15 @@
     <region start="0x0000F000" end="0x0000F002" type="io" name="read"/>
     <region start="0x0000FF00" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- MITS Altair 680b
+2009-12-03 Skeleton driver.
+2011-06-08 Connected to a terminal
+Monitor Commands:
+J
+L switch to terminal mode
+M
+N modify memory in a limited way
+P this does a rti and causes a momentary crash. Weird.
+ToDo: -->
 </platform>

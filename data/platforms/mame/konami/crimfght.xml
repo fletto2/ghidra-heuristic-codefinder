@@ -10,4 +10,10 @@
     <region start="0x00006000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Crime Fighters (Konami GX821) (c) 1989 Konami
+Preliminary driver by:
+Manuel Abadia &lt;emumanu+mame@gmail.com&gt;
+2008-08
+Dip locations verified with manual (US) -->
 </platform>

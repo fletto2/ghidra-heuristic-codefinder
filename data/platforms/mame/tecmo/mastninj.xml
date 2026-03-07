@@ -56,4 +56,29 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Ninja Gaiden memory map (preliminary)
+000000-03ffff ROM
+060000-063fff RAM
+070000-070fff Video RAM (text layer)
+072000-075fff VRAM (backgrounds)
+076000-077fff Sprite RAM
+078000-079fff Palette RAM
+memory mapped ports:
+read:
+07a001    IN0
+07a002    IN2
+07a003    IN1
+07a004    DWSB
+07a005    DSWA
+see the input_ports definition below for details on the input bits
+write:
+07a002-07a003 sprite layer Y offset
+07a100-07a101 text   layer X scroll offset
+07a104-07a105 text   layer Y scroll
+07a108-07a109 tex... -->
 </platform>

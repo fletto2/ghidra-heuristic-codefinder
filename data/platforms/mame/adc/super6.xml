@@ -7,4 +7,14 @@
     <region start="0x00000040" end="0x00000040" type="io" name="map0x40_0x40"/>
     <region start="0x000000E0" end="0x000000E7" type="io" name="map0xe0_0xe7_hdc"/>
   </memory_map>
+
+  <!-- TODO:
+- peripheral interfaces
+- Fix floppy. It needs to WAIT the cpu whenever port 0x14 is read, wait
+for either DRQ or INTRQ to assert, then release the cpu and then do the
+actual port read. But it doesn't work properly at the moment. It gets stuck
+if you load up the cpm disk (from software list). The other disks are useless.
+The schematic isn't clear, but it seems the 2 halves of U16 (as shown) have
+a common element, so that activity on one side can affect what happens on
+the other side. -->
 </platform>

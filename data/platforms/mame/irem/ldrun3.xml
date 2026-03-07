@@ -9,4 +9,15 @@
     <region start="0x0000CFFF" end="0x0000CFFF" type="io" name="ldrun3_prot_7_r"/>
     <region start="0x0000D000" end="0x0000EFFF" type="ram" name="m62_tileram"/>
   </memory_map>
+
+  <!-- Irem "M62" system
+Notes:
+- I believe that both kungfum bootlegs are derived from an Irem original which we
+don't have (prototype/early revision?). They say "kanfu master" instead of
+"kung-fu master" on the introduction screen, the only original doing that is
+spartanx but the ROMs don't match after the copyright notice.
+Battle Bird (c) 1985 - Not Dumped
+This game is on IREM's M64 platform which is a two tiered boardset.
+Battle Bird is believed to have a limited release.
+Two pictures of the PCB se... -->
 </platform>

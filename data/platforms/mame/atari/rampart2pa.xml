@@ -57,4 +57,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="sound" name="ym2413"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Rampart hardware
+driver by Aaron Giles
+Games supported:
+Rampart (1990) [4 sets]
+Known bugs:
+none at this time
+Note:
+P3 buttons 1 and 2 are mapped twice. THIS IS NOT A BUG!
+bp 548,a0==6c0007 &amp;&amp; (d0&amp;ffff)!=0,{print d0&amp;ffff; g} &lt;- what's this for?
+Memory map (TBA) -->
 </platform>

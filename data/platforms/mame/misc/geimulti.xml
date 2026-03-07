@@ -14,4 +14,21 @@
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="bitmap_w"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Greyhound Electronics Inc. hardware
+driver by Nicola Salmoria
+driver by Pierpaolo Prazzoli and graphic fixes by Tomasz Slanina
+additional work by Mariusz Wojcieszek
+ROM board has a part # UVM10B  1984
+Main board has a part # UV-1B Rev 5 1982-83-84
+Processor: Z80
+Support Chips:(2) 8255s
+RAM: 6117on ROM board and (24) MCM4517s on main board
+When games are first run a RAM error will occur because the NVRAM needs initializing.
+When ERROR appears, press F2, then F3 to reset, then F2 again and the gam... -->
 </platform>

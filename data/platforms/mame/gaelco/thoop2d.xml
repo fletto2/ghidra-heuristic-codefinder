@@ -53,4 +53,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Thunder Hoop II: Strikes Back (c) 1994 Gaelco
+Driver by Manuel Abadia &lt;emumanu+mame@gmail.com&gt;
+updated by Peter Ferrie &lt;peter.ferrie@gmail.com&gt;
+REF.940411
++-------------------------------------------------+
+|       C1                                  6116  |
+|  VOL  C2*                                 6116  |
+|          30MHz                            6116  |
+|    M6295                    +----------+  6116  |
+|     1MHz                    |TMS       |        |
+|       6116         ... -->
 </platform>

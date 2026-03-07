@@ -8,4 +8,15 @@
     <region start="0x0000F000" end="0x0000F000" type="io" name="scroll_w"/>
     <region start="0x0000F800" end="0x0000F807" type="io" name="d0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Hole Land
+driver by Mathis Rosenhauer
+Notes:
+- In stop mode press p1 start to freeze the screen, p2 start to resume
+TODO:
+- crzrally: emulate steering wheel -->
 </platform>

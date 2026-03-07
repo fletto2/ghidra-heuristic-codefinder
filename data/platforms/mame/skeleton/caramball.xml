@@ -9,4 +9,19 @@
     <region start="0x0000D000" end="0x0000D000" type="io" name="address_w"/>
     <region start="0x0000F000" end="0x0000F000" type="io" name="f000_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for electromechanical air hockey hardware from the Spanish company Inconel SL
+____________________________________________
+| ______________                            |
+|| ::::::::::: |                            |
+| ______________         ________           |
+|| ::::::::::: |        |SN7406N|         |:|
+| ________  ________                      |:|
+|SN74HC245 |SN7407N|     ________         |:|
+| __________________    |ULN2803A         |:|
+|| NEC D8155HC     |                   ... -->
 </platform>

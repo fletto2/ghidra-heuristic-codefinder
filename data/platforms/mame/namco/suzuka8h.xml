@@ -14,4 +14,17 @@
     <region start="0x0000D001" end="0x0000D001" type="unmapped" name="nop_write"/>
     <region start="0x0000E000" end="0x0000E000" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <!-- Namco System II driver by K.Wilkins  (Jun1998, Oct1999)
+Email: mame@esplexo.co.uk
+How to calibrate the guns:
+- hold 9, press f2
+- shoot at the targets it shows using the crosshair
+- after you've shot the target press 9 again to move onto the next one
+- once you get back to the start again press f2 to exit.
+How to calibrate the steering in Dirt Fox and Final Lap 2/3:
+- hold 9, press f2
+- verify that controls are set to zero then press f2 to exit.
+Final Lap Notes:
+1..4 cabinets may be wired togeth... -->
 </platform>

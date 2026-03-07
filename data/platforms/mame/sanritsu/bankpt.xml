@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Bank Panic / Combat Hawk hardware
+Sega &amp; Sanritsu
+1984 - 1987
+driver by Nicola Salmoria
+PCB Layout (Combat Hawk)
+-----------------------
+C2-00170-A BANK PANIC (screened on PCB)
+834-6381 COMBAT HAWK (sticker)
+SANRITSU VIDEO GAME - screened on PCB
+|------------------------------------------------------------------------|
+|                             PR-10902             PR-10900              |
+|        PAL (315-5073)                                                  |
+|                        ... -->
 </platform>

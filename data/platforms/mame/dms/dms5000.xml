@@ -6,4 +6,11 @@
     <region start="0x00040000" end="0x0004FFFF" type="ram" name="ram"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Digital Microsystems DMS-5000
+2010-01-11 Skeleton driver. -->
 </platform>

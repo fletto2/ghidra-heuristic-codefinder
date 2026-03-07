@@ -8,4 +8,6 @@
     <region start="0x00000040" end="0x00000BFF" type="ram" name="scratchpad"/>
     <region start="0x00009000" end="0x00009FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Preliminary driver for Teleray 10 series terminal. -->
 </platform>

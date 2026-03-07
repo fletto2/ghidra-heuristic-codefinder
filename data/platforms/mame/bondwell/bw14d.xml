@@ -5,4 +5,28 @@
     <region start="0x00000000" end="0x00007FFF" type="io" name="region_0"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="serial" name="z80sio"/>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Bondwell 12/14
+- Z80A CPU 4MHz
+- 64KB RAM (BW 12), 128KB RAM (BW 14)
+- 4KB ROM System
+- UPD765A Floppy controller
+- 2 x 5.25" Floppy drives 48 tpi SSDD (BW 12), DSDD (BW 14)
+- MC6845 Video controller
+- 2KB RAM Video buffer
+- 4KB ROM Character set
+- Z80SIO Serial interface
+- MC6821 Parallel interface
+- I8253 Counter-timer
+- MC1408 8-bit DAC sound
+- KB3600 PRO (AY-5-3600 PRO) Keyboard controller
+http://www.eld.leidenuniv.nl/~moene/Home/sitemap/
+http://www.baltissen.org/newhtm/schemas.htm -->
 </platform>

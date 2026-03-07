@@ -22,4 +22,13 @@
     <region start="0x0000DC00" end="0x0000DC01" type="io" name="fdc_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="scsi" name="ncr5380"/>
+  </devices>
+
+  <!-- Skeleton driver for Korg DSS-1 synthesizer. -->
 </platform>

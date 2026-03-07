@@ -6,4 +6,27 @@
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="nvram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="v9938"/>
+  </devices>
+
+  <!-- BIG 10
+Success, 1985.
+Driver by Angelo Salese, Roberto Fresca &amp; Tomasz Slanina.
+Dumper Notes:
+Z80A
+XTAL is 21.?727
+YM2149
+8-position DSW x1
+RAM 6264 x1
+RAM 41464 x4
+unknown SDIP64 chip with welded heatsink! Might be a video chip or MCU?
+Dev Notes...
+- Guessed and hooked the Yamaha VDP (SDIP64 IC). Same VDP used on MSX systems.
+- Added v9938 stuff, interrupts, video start, machine reset, input ports,
+DIP switch, ym2149 interface, pre-defined main Xtal and derivatives for
+z80 and ym2149.
+- Add... -->
 </platform>

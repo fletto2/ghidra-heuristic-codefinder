@@ -6,4 +6,22 @@
     <region start="0x0000A000" end="0x0000B7FF" type="ram" name="nvram0"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- VS Mahjong Triangle (c) 1986 Dyna
+Unmarked board with everything doubled up, to provide a versus experience with a single board
+2 players can play separately or one against the other
+CPU:    2x Z80
+RAM:    6x M5M5117P
+Sound:  2x AY-3-8910
+I/O:    2x 8255, 4x 8-dip banks, 1x single dip switch (at position 11m)
+OSC:    20MHz
+Notes:
+- Loosely based off seta/rmhaihai.cpp.
+Changes needed for merging both implementations seems too non-trivial to warrant a
+driver merge, basically just the video HW, the... -->
 </platform>

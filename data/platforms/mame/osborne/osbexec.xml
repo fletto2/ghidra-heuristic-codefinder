@@ -6,4 +6,11 @@
     <region start="0x0000C000" end="0x0000DFFF" type="io" name="osbexec_c000_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="e000"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Osborne Executive driver file -->
 </platform>

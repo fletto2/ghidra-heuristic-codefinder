@@ -54,4 +54,16 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- DRIVER INFO **************************************************************
+Grand Striker, V Goal Soccer, World Cup '94
+driver by Farfetch'd and David Haywood
+Grand Striker (c)1993  Human
+V Goal Soccer (c)1994  Tecmo
+Tecmo World Cup '94 (c) 1994 Tecmo
+Hardware notes
+Both games seem to be similar hardware, V Goal Soccer doesn't work.
+the hardware is also quite similar to several other Video System games.
+In particular, the sound hardware is identical to aerofgt (including the
+memory mapping of the... -->
 </platform>

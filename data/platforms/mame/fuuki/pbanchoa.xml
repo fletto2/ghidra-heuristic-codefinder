@@ -52,4 +52,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Fuuki 16 Bit Games =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU   :   M68000
+Sound Chips :   YM2203  +  YM3812  +  M6295
+Video Chips :   FI-002K (208pin PQFP, GA2)
+FI-003K (208pin PQFP, GA3)
+Other       :   Mitsubishi M60067-0901FP 452100 (208pin PQFP, GA1)
+---------------------------------------------------------------------------
+Year + Game
+---------------------------------------------------------------------------
+95  Susume! Mile Smile / Go Go! Mile Smile
+96  Gyakuten!! Puzzle Banc... -->
 </platform>

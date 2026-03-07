@@ -59,4 +59,13 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Cyber Tank HW (c) 1987/1988 Coreland Technology
+driver by Angelo Salese &amp; David Haywood
+Maybe it has some correlation with WEC Le Mans HW? (supposedly that was originally done by Coreland too)
+TODO:
+- improve sprite zooming
+Currently many sprites have an ugly 'bad' line at the top, the chances of this being caused by
+bad roms is very low because a single 8 pixel block of a sprite covers 4 roms, and it's only
+ever the top lines.  Do they have some special meaning, or does the zoom algorithm m... -->
 </platform>

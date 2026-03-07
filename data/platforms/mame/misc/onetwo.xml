@@ -8,4 +8,24 @@
     <region start="0x0000C900" end="0x0000C97F" type="ram" name="palette_ext"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- One + Two
+(c) Barko 1997
+Driver by David Haywood and Pierpaolo Prazzoli
+PCB has D.G.R.M. silkscreened on it.  Dated 1997.4.11
++----------------------------------+
+|  YM3014 YM3812  Z80   24MHz      |
+|   M6295 sample  sound_prog       |
+|                 6116       3_grfx|
+|J       6116                      |
+|A COR_B 6116                4_grfx|
+|M COR_G                           |
+|M COR_R       A1020B              |
+|A                           5_grfx|
+|DSW   62256         6264          |
+|   ... -->
 </platform>

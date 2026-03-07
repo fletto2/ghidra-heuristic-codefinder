@@ -60,4 +60,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Super Shanghai Dragon's Eye             (c) 1992 Hot-B
+PCB is manufactured by either Hot-B or Taito, but uses Data East custom
+chips.
+Emulation by Bryan McPhail, mish@tendril.co.uk
++ Charles MacDonald, David Haywood
+----
+Stephh's notes (based on the games M68000 code and some tests) :
+0) all games
+- There is no confirmation yet that the "Demo Sounds" Dip Switch does
+something as I don't see where bit 0 of 0xfec04a is tested 8(
+- The First "Unused" Dip Switch is probably used in other (older ?) v... -->
 </platform>

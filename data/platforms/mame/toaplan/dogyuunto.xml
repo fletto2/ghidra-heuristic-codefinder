@@ -10,4 +10,17 @@
     <region start="0x0021C02C" end="0x0021C02D" type="io" name="port"/>
     <region start="0x0021C030" end="0x0021C031" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Name        Board No      Maker         Game name
+----------------------------------------------------------------------------
+dogyuun     TP-022        Toaplan       Dogyuun
+dogyuuna    TP-022        Toaplan       Dogyuun (older)
+dogyuunt    TP-022        Toaplan       Dogyuun (location test)
+dogyuun  - In the location test version, if you are hit while you have a bomb, the bomb explodes
+automatically and saves you from dying. In the final released version, the bomb explodes
+but you die anyway.... -->
 </platform>

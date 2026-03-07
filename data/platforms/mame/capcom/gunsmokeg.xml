@@ -13,4 +13,23 @@
     <region start="0x0000D806" end="0x0000D806" type="io" name="layer_w"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Gun.Smoke
+Capcom
+85113-A-1 main PCB + 85113-B-3 video PCB
+driver by Paul Leaman
+Games supported:
+Gun.Smoke (World)
+Gun.Smoke (bootleg)
+Gun.Smoke (Japan)
+Gun.Smoke (US set 1)
+Gun.Smoke (US set 2)
+GUNSMOKE
+========
+Driver provided by Paul Leaman
+Stephh's notes (based on the games Z80 code and some tests) :
+0) all games
+- There is some code that allows you to select your starting level
+(at 0x08dc in 'gunsmoka' and at 0x08d2 in the other sets).
+To do so, once the game has booted (after the "notice" ... -->
 </platform>

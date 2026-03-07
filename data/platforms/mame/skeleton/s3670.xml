@@ -50,4 +50,10 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Symbolics 36x0 (really in this case, 3670; the original 3600 is considerably rarer, 3670 is backwards compatible for the most part)
+TODO: add credits, backstory, history, etc here
+Layout of all the Lisp machine models symbolics made, roughly in chronological order:
+LM-2 - basically a CADR (i.e. a clone of the MIT CADR machine. this needs more research, as there may be differences.)
+3600 - precursor to the L-machine, 98% of the actual L machines- an extended and polished CADR. uses the pre-PE con... -->
 </platform>

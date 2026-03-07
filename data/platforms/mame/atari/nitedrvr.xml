@@ -18,4 +18,22 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Atari Night Driver hardware
+driver by Mike Balfour
+Games supported:
+Night Driver
+Known issues:
+The road boxes in service mode are flipped horizontally and there
+is an extraneous box according to the service manual.
+Memory Map:
+0000-01FF   R/W     SCRAM (Scratchpad RAM)
+0200-03FF    W      PFW (Playfield Write)
+0400-05FF    W      HVC (Horiz/Vert/Char for Roadway)
+0600-07FF    R      IN0
+0800-09FF    R      IN1
+0A00-0BFF    W      OUT0
+0C00-0DFF    W      OUT1
+0E00-0FFF    -      OUT2 (Not used)
+... -->
 </platform>

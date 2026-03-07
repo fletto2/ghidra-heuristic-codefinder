@@ -50,4 +50,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Driver for Atari polygon racer games
+This collection of games uses many CPUs and many boards in many
+different combinations. There are 3 different main boards:
+- the "driver" board (A045988) is the original Hard Drivin' PCB
+- Hard Drivin'
+- Race Drivin' Upgrade
+- the "multisync" board (A046901)
+- STUN Runner
+- Steel Talons
+- Hard Drivin' Compact
+- Race Drivin' Compact
+- Street Drivin'
+- the "multisync II" board (A049852)
+- Hard Drivin's Airborne
+To first order, all of the above boards had the sa... -->
 </platform>

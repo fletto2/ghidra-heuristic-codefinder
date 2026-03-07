@@ -59,4 +59,24 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- F-1 Grand Prix       (c) 1991 Video System Co.
+driver by Nicola Salmoria
+Notes:
+- The ROZ layer generator is a Konami 053936.
+- f1gp2's hardware is very similar to Lethal Crash Race, main difference
+being an extra 68000.
+f1gp:
+- gfxctrl register not understood - handling of fg/sprite priority to fix
+"continue" screen is just a kludge.
+f1gpb:
+- supposedly supports only steering wheel, but the emulation doesn't seem
+to work.
+f1gp2:
+- sprite lag noticeable in the animation at the end of a race (the... -->
 </platform>

@@ -16,4 +16,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Entertainment Enterprises Vampire
+TODO:
+- correct interrupt handling (main and sound cpu)
+- communication between main and audio cpu
+- PIT outputs
+- correct clocks
+- color decode
+- fix gfx glitches - extra pixels (column?) on edges (only when gfx is flipped)
+Hardware notes:
+MAIN CPU:
+- 6809P, 8 MHz xtal
+- NMI - main interrupt vector, currectly there's a hack (int vectors) to use standard irq/firq vectors
+Currently NMI writes error messages to the terminal(?) output ($814, $815)
+VIDEO:
+- custom b... -->
 </platform>

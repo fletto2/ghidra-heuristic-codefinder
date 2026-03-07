@@ -13,4 +13,35 @@
     <region start="0x00001000" end="0x00001FFF" type="io" name="tms34061_r"/>
     <region start="0x00002000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Incredible Technologies/Strata system
+(8-bit blitter variant)
+driver by Aaron Giles
+Games supported:
+Arlington Horse Racing
+Dyno Bop
+Golden Par Golf
+Golden Tee Golf
+Golden Tee Golf II
+Grudge Match
+Hot Shots Tennis
+Neck-N-Neck
+Ninja Clowns
+Peggle
+Poker Dice
+Rim Rockin' Basketball
+Slick Shot
+Strata Bowling
+Super Strike Bowling
+Wheel of Fortune
+Known issues:
+None
+Memory map
+========================================================================
+CPU #1 (6809 games)
+=================================... -->
 </platform>

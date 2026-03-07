@@ -15,4 +15,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Novag Constellation Expert (model 853)
+The u3 ROM contains the following message (it's David Kittinger's company):
+Copyright (c) 1985, Intelligent Heuristic Programming, Inc
+Hardware notes:
+- PCB label: 100045
+- R65C02P4 @ 5MHz (10MHz XTAL)
+- 2*2KB RAM(NEC D449C-3), 2*32KB ROM
+- 64+8 leds, magnet sensors chessboard
+- ports for optional printer and chess clock
+I/O is again similar to supercon
+The 1st version had a R65C02P3 @ 4MHz (8MHz XTAL). IRQ and beeper via the XTAL
+instead of 555 timer, but ... -->
 </platform>

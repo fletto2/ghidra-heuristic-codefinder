@@ -8,4 +8,27 @@
     <region start="0x00001EFE" end="0x00001EFF" type="io" name="port"/>
     <region start="0x00002000" end="0x00003FFF" type="io" name="videoram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Super Tank
+(c) 1981 Video Games GmbH
+Reverse-engineering and MAME driver by Norbert Kehrer (December 2003).
+Hardware:
+---------
+CPU     TMS9980 (Texas Instruments)
+Sound chip  AY-3-8910
+Memory map:
+-----------
+&gt;0000 - &gt;07ff   Fixed ROM
+&gt;0800 - &gt;17ff   Bank-switched ROM
+&gt;1800 - &gt;1bff   RAM
+&gt;1efc       Input port 1
+&gt;1efd       Input port 2
+&gt;1efe       Read:  DIP switch port 1
+Write: Control port of AY-3-8910 sound chip
+&gt;1eff       Read: DIP switch port 2
+Write: Data p... -->
 </platform>

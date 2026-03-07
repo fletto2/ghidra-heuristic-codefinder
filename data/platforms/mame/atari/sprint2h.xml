@@ -13,4 +13,15 @@
     <region start="0x00001800" end="0x00001800" type="unmapped" name="nop_read"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Sprint 2 hardware
+driver by Mike Balfour
+Games supported:
+Sprint 1
+Sprint 2
+Dominos
+All three games run on the same PCB but with minor modifications (some
+chips removed, some wire-wrap connections added).
+If you have any questions about how this driver works, don't hesitate to
+ask.  - Mike Balfour (mab22@po.cwru.edu) -->
 </platform>

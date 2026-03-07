@@ -66,4 +66,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- -= 68020 + Imagetek I5000 Games =-
+driver by   David Haywood
+partly based on metro.cpp driver by Luca Elia
+Main  CPU    :  MC68020
+Video Chips   : Imagetek I5000 |
+Sound Chips   : Imagetek I5000 |\- both sound and gfx
+Other Features: Memory Blitter (part of Imagetek I5000)
+---------------------------------------------------------------------------
+Year + Game                     PCB         Video Chip  Issues / Notes
+---------------------------------------------------------------------------
+97 ... -->
 </platform>

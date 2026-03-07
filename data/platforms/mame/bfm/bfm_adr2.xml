@@ -11,4 +11,18 @@
     <region start="0x0000C200" end="0x0000C201" type="io" name="uart_ctrl_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Bellfruit Adder2 video board driver, (under heavy construction !!!)
+30-12-2006: State save support added (J. Wallace)
+16-08-2005: Decoupled from AGEMAME by El Condor
+19-08-2005: Re-Animator
+CPU memorymap:
+hex     |r/w| D D D D D D D D |
+location  |   | 7 6 5 4 3 2 1 0 | function
+-----------+---+-----------------+-----------------------------------------
+0000       | W | ? ? ? ? ? ? D D | Screen Page latch
+bit0 --&gt; 0 = display screen0
+1 = display screen1
+bit1 --&gt; 0 = CPU can access screen0
+... -->
 </platform>

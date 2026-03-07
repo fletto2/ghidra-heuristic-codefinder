@@ -12,4 +12,33 @@
     <region start="0x00009070" end="0x00009070" type="io" name="reset_w"/>
     <region start="0x00009080" end="0x000090FF" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Sega Pengo
+driver by Nicola Salmoria
+Games supported:
+Pengo
+Jr Pac-Man (bootleg)
+Known issues:
+none
+Pengo memory map (preliminary)
+driver by Nicola Salmoria
+0000-7fff ROM
+8000-83ff Video RAM
+8400-87ff Color RAM
+8800-8fff RAM
+memory mapped ports:
+read:
+9000      DSW1
+9040      DSW0
+9080      IN1
+90c0      IN0
+write:
+8ff2-8ffd 6 pairs of two bytes:
+the first byte contains the sprite image number (bits 2-7), Y flip (bit 0),
+X flip (bit 1); the second byte the color
+9005      sound voice 1 waveform ... -->
 </platform>

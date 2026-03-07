@@ -14,4 +14,22 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- SciSys President Chess (model 231)
+(not to be confused with Saitek Kasparov President)
+The ROMs are inside a module, at the top-right. No known upgrades were released.
+Apparently the chessboard was not that reliable. The manual even says to flip the
+computer and shake it when one of the sensors is malfunctioning.
+Hardware notes:
+- 6502A @ 2MHz
+- 16KB ROM(2*HN482764G), 2KB RAM(HM6116P-4)
+- buzzer, 64+12 leds, magnet sensors chessboard
+TODO:
+- verify CPU speed / XTAL
+- measure interrupt frequency
+... -->
 </platform>

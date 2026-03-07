@@ -12,4 +12,8 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Thaler CT-65 / MPS-65
+TODO:
+- CT-65 cassette interface (add-on board for MPS-65) -->
 </platform>

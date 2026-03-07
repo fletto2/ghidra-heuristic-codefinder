@@ -6,4 +6,15 @@
     <region start="0x0000D000" end="0x0000D7FF" type="rom" name="rom"/>
     <region start="0x0000EA00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Poly-Play
+(c) 1985 by VEB Polytechnik Karl-Marx-Stadt
+driver by Martin Buchholz (buchholz@mail.uni-greifswald.de)
+Very special thanks to the following people, each one of them spent
+some of their spare time to make this driver working:
+- Juergen Oppermann and Volker Hann for electronical assistance,
+repair work and ROM dumping.
+- Jan-Ole Christian from the Videogamemuseum in Berlin, which houses
+one of the last existing Poly-Play arcade automatons. He also
+provided me with schematics and service... -->
 </platform>

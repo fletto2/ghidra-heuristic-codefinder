@@ -18,4 +18,17 @@
     <region start="0x00F80000" end="0x00F80FFF" type="io" name="rf5c68_mem_r"/>
     <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Fujitsu FM-Towns
+driver by Barry Rodewald
+Japanese computer system released in 1989.
+CPU:  various AMD x86 CPUs, originally 80386DX (80387 available as an add-on).
+later models use 80386SX, 80486 and Pentium CPUs
+Sound:  Yamaha YM3438 (some later models are use YMF276; Low voltage variation of YM3438, needs External DAC)
+Ricoh RF5c68
+CD-DA
+Video:  Custom
+16 or 256 colours from a 24-bit palette, or 15-bit high-colour
+1024 sprites (16x16), rendered direct to VRAM
+16 colour text mode, rendered dire... -->
 </platform>

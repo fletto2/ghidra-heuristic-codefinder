@@ -5,4 +5,10 @@
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- RDI Video Sytems' Thayer's Quest
+TODO:
+- No viable solution for reading configuration DIPs at init time,
+so the driver is hard-coded to LD-V1000 mode.
+- conflict between keyboard and service mode default key (F2) -->
 </platform>

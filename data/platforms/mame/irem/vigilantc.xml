@@ -7,4 +7,17 @@
     <region start="0x0000C020" end="0x0000C0DF" type="ram" name="ram"/>
     <region start="0x0000C800" end="0x0000EFFF" type="ram" name="paletteram"/>
   </memory_map>
+
+  <!-- Vigilante
+If you have any questions about how this driver works, don't hesitate to
+ask.  - Mike Balfour (mab22@po.cwru.edu)
+- Video timings were measured using a logic analyzer by atrac17 on an original PCB.
+The results were reviewed by Jose Tejada (jotego)
+TS 2004.12.26.:
+- Buccaneers - different sound hw (YM2203x2)
+(to enter test mode press any button during memory test)
+Buccaneers has a 5.6888 Mhz and a 18.432 Mhz OSC
+system11 2015.05.08:
+Irem board numbers for Vigilante sets:
+Top board - M75... -->
 </platform>

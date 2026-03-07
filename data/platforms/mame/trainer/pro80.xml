@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x000003FF" type="rom" name="rom"/>
     <region start="0x00001000" end="0x000017FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Protec Pro-80
+2009-12-09 Skeleton driver.
+TODO:
+- Cassette load (last byte is bad)
+- Use messram for optional ram
+- Fix Step command (doesn't work due to missing interrupt emulation)
+The cassette uses 2 bits for input, plus a D flipflop and a 74LS221 oneshot, with the pulse width set
+by 0.02uf and 24k (= 336 usec). The pulse is started by a H-&gt;L transistion of the input. At the end
+of the pulse, the current input is passed through the flipflop.
+Cassette start address is always 1000. The end a... -->
 </platform>

@@ -7,4 +7,19 @@
     <region start="0x00002800" end="0x0000DFFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Galaksija driver by Krzysztof Strzecha and Miodrag Milanovic
+22/05/2008 Tape support added (Miodrag Milanovic)
+21/05/2008 Galaksija plus initial support (Miodrag Milanovic)
+20/05/2008 Added real video implementation (Miodrag Milanovic)
+18/04/2005 Possibilty to disable ROM 2. 2k, 22k, 38k and 54k memory
+configurations added.
+13/03/2005 Memory mapping improved. Palette corrected. Supprort for newer
+version of snapshots added. Lot of cleanups. Keyboard mapping
+corrected.
+19/09/2002 malloc() replace... -->
 </platform>

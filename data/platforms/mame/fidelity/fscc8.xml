@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00005000" end="0x000050FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity Sensory Chess Challenger "8" (SCC)
+It is the first chesscomputer with sensors under the chessboard.
+The box names it Sensory Chess Challenger, Sensory Chess Challenger "8" title
+is on the 1st page of the manual. Like other Fidelity chesscomputers from
+around this time, the number indicates maximum difficulty level.
+It was also rereleased in 1983 as "Poppy", marketed for children, the housing
+was in bright red color.
+Hardware notes:
+- PCB label: 510-1011 REV.2
+- Z80A CPU @ 3.9MHz
+- 4KB R... -->
 </platform>

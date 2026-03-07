@@ -9,4 +9,8 @@
     <region start="0x00006000" end="0x000067FF" type="io" name="la120_NVR_r"/>
     <region start="0x00007000" end="0x00007003" type="io" name="la120_DC305_r"/>
   </memory_map>
+
+  <!-- decwritr.c
+Digital Equipment Corporation
+DECwriter III (LA120) Teletype/Teleprinter, 1978 -->
 </platform>

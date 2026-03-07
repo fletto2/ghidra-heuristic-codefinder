@@ -6,4 +6,24 @@
     <region start="0x00000000" end="0x000007FF" type="io" name="region_0"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- IQ-151
+12/05/2009 Skeleton driver.
+07/June/2011 Added screen &amp; keyboard (by looking at the Z80 code)
+This computer depends on RAM just happening to be certain values at powerup.
+If the conditions are not met, it may crash.
+Monitor Commands:
+C Call (address)
+D Dump memory, any key to dump more, Return to finish
+F Fill memory (start, end, withwhat)
+G Goto (address)
+L Cassette load
+M Move (source start, source end, destination)
+R Run
+S Edit memory
+W Cassette save (start, end, goto (0 for null))... -->
 </platform>

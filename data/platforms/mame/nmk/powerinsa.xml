@@ -5,4 +5,15 @@
     <region start="0x00100031" end="0x00100031" type="io" name="powerinsa_okibank_w"/>
     <region start="0x0010003F" end="0x0010003F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Task Force Harrier         1989 UPL        68000 Z80           YM2203 2xOKIM6295  Low-Res
+Many Block                 1991 Bee-Oh     68000 Z80           YM2203 2xOKIM6295  Low-Res  (hack of "Slot Gal" by UPL)
+Mustang                    1990 UPL        68000 NMK004        YM2203 2xOKIM6295  Low-Res
+Bio-ship Paladin           1990 UPL        68000 NMK004        YM2203 2xOKIM6295  Low-Res
+Vandyke                    1990 UPL        68000 NMK004        YM2203 2xOKIM6295  Low-Res
+Black Heart          ... -->
 </platform>

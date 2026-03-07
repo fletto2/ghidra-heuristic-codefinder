@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x00007BFF" type="rom" name="rom"/>
     <region start="0x00007C00" end="0x000087FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- The Visual 500 and 550 are the graphical members of the third series of display terminals released by Visual Technology.
+While they appear to use the same character generators as the text-mode-only Visual 300 and 330 and have similar detachable
+keyboards, they uniquely feature high-definition green-screen (P39 phosphor) monitors and support Tektronix 4010/4014-
+compatible graphics at a resolution of 768 x 555 pixels.
+The VT100-compatible Visual 550 was released first, and conforms to the ANSI X3... -->
 </platform>

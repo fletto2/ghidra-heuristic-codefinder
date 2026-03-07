@@ -6,4 +6,18 @@
     <region start="0x0000C000" end="0x0000C0FF" type="io" name="memory_r"/>
     <region start="0x0000E000" end="0x0000E0FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <!-- PINBALL
+Midway A084-91313-G627
+A080-91313-G627
+A082-91320-C000
+This is a cocktail pinball game, for up to 4 players. The board is round.
+When it is another player's turn, the playboard will turn around to face
+him. And so, the system has a motor and an infrared shaft-locating system.
+If this system does not return the expected data, the machine will refuse
+to start.
+Schematic and PinMAME used as references
+System made working in Sept 2012 [Robbbert]
+Machine Operation:
+1. Press .(period key) (thi... -->
 </platform>

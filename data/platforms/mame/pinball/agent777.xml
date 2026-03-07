@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00008C00" end="0x00008DFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- PINBALL
+Game Plan MPU-2
+When first turned on, you need to press num-0 to enter the setup program, then keep
+pressing num-0 until 06 shows in the credits display. Press the credit button to set
+the first high score at which a free credit is awarded. Then press num-0 to set the
+2nd high score, then num-0 to set the 3rd high score. Keep pressing num-0 until you exit
+back to normal operation. If this setup is not done, each player will get 3 free
+games at the start of ball 1.
+All the Z80 "maincpu" c... -->
 </platform>

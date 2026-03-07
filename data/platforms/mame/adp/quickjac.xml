@@ -49,4 +49,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="serial" name="mc68681"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- adp Gauselmann (Merkur) games from '90 running on similar hardware.
+(68k + HD63484 + YM2149)
+Skeleton driver by TS
+TODO:
+- protection in Fashion Gambler (NVRam based?) Update 2023: outdated note?
+- fstation: Suntris crashes when started it up, culprit is HD63484 paint command
+trying to write (to ROM) with negative XY values;
+Supported games :
+- Quick Jack      ("COPYRIGHT BY ADP LUEBBECKE GERMANY 1993")
+- Skat TV           ("COPYRIGHT BY ADP LUEBBECKE GERMANY 1994")
+- Skat TV v. TS3  ("COPYRIGHT... -->
 </platform>

@@ -6,4 +6,22 @@
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000F005" type="io" name="fromance_portselect_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Game Driver for Video System Mahjong series.
+Idol-Mahjong Final Romance (アイドル麻雀ファイナルロマンス)
+(c)1991 Video System Co.,Ltd.
+Nekketsu Mahjong Sengen! AFTER 5 (熱血麻雀宣言! AFTER 5)
+(c)1991 Video System Co.,Ltd.
+Mahjong Daiyogen (麻雀大予言)
+(c)1990 Video System Co.,Ltd.
+Mahjong Fun Club - Idol Saizensen (麻雀ファンクラブ アイドル最前線)
+(c)1989 Video System Co.,Ltd.
+Mahjong Natsu Monogatari (Mahjong Summer Story) (麻雀夏物語)
+(c)1989 Video System Co.,Ltd.
+Natsuiro Mahjong (Mahjong Summer Color) (夏色麻雀)
+(c)1989 Video System Co.,Ltd... -->
 </platform>

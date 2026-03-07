@@ -14,4 +14,17 @@
     <region start="0x00000800" end="0x0003FFFF" type="ram" name="ram"/>
     <region start="0x00040000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Seibu Protected 1993-94 era hardware, V30 based (sequel to the SYS68C hardware)
+TODO:
+zeroteam - sort-DMA doesn't seem to work too well, sprite-sprite priorities are broken as per now
+xsedae - it does an "8-liner"-style scroll during attract, doesn't work too well.
+sprite chip is the same as seibu/seibuspi.cpp and seibu/feversoc.cpp, needs device-ification and merging.
+sprite chip also uses first entry for "something" that isn't sprite, some of them looks clipping
+regions (150 - ff in zeroteam, ... -->
 </platform>

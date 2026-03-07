@@ -12,4 +12,8 @@
     <region start="0x00006000" end="0x00006000" type="io" name="scanline_r"/>
     <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Destroyer Driver
+TODO:
+- missing language roms means DIP switches related to these do not function -->
 </platform>

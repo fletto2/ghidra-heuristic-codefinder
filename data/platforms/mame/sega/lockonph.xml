@@ -51,4 +51,38 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Sega System 16B hardware
+Known bugs:
+none at this time
+DIP locations verified from manual for:
+aceattac
+aliensyn
+altbeast
+atomicp
+aurail
+bayroute
+cotton
+ddux
+eswat
+fpoint
+goldnaxe
+mvp
+passsht
+shinobi
+sonicbom
+tetris
+timescan
+toryumon
+wb3
+wrestwar
+Altered Beast    171-5521
+country    68000     Z80     sound       gfx
+------- ----------- ----- ----------- -----------
+altbeaj1: Japan   11669-11670 11671 11672-11673 11674-11684 (FD1094 317-0065)
+altbeas2: english 11704-11705 11685 11672-11673 11674-... -->
 </platform>

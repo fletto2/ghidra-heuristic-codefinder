@@ -8,4 +8,7 @@
     <region start="0x007F00C0" end="0x007F00C0" type="io" name="fdc_status_r"/>
     <region start="0x00800000" end="0x00801FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Dual Systems 68000
+09/12/2009 Skeleton driver. -->
 </platform>

@@ -8,4 +8,10 @@
     <region start="0x0000A000" end="0x0000A03F" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Skeleton driver for Qume QVT-103 video display terminal. -->
 </platform>

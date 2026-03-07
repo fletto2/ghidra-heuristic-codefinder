@@ -13,4 +13,35 @@
     <region start="0x0000E000" end="0x0000E000" type="io" name="reset_r"/>
     <region start="0x0000F000" end="0x0000F3FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Blue Print memory map (preliminary)
+driver by Nicola Salmoria
+CPU #1
+0000-4fff ROM
+8000-87ff RAM
+9000-93ff Video RAM
+b000-b0ff Sprite RAM
+f000-f3ff Color RAM
+read:
+c000      IN0
+c001      IN1
+c003      read dip switches from the second CPU
+e000      Watchdog reset
+write:
+c000      bit 0,1 = coin counters
+d000      command for the second CPU
+e000      bit 1 = flip screen
+CPU #2
+0000-0fff ROM
+2000-2fff ROM
+4000-43ff RAM
+read:
+6002      8910 #0 read
+8002      8910 #1 read
+write:
+6000      8910 #0 c... -->
 </platform>

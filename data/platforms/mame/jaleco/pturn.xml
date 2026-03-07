@@ -16,4 +16,27 @@
     <region start="0x0000F806" end="0x0000F806" type="unmapped" name="nop_read"/>
     <region start="0x0000FC00" end="0x0000FC07" type="io" name="d0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Parallel Turn
+(c) Jaleco, 1984
+driver by Tomasz Slanina and Tatsuyuki Satoh
+Custom Jaleco chip is some kind of state machine
+used for calculate jump offsets.
+Top PCB
+-------
+PCB No. PT-8418
+CPU:  Z80A
+SND:  AY-3-8010 x 2, Z80A
+DIPS: 8 position x 2
+RAM:  2114 x 2, MSM2128 x 1 (equivalent to 6116)
+Other: Reset Switch near edge connector
+Custom JALECO chip (24 pin DIP) near RAM MSM2128, verified to be NOT 2128 ram.
+Pinouts are :
+Pin 1 hooked to pin 3 of ROM 7
+Pin 2 hooked to pin 4 of ROM 7
+Pin 3 ho... -->
 </platform>

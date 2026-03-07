@@ -6,4 +6,25 @@
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="nvram"/>
     <region start="0x00010000" end="0x0001FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="okim6295"/>
+    <device type="sound" name="ym2413"/>
+  </devices>
+
+  <!-- Super Poker (IGS)
+Driver by Mirko Buffoni
+Additional work by Roberto Fresca.
+NOTES:
+- Very similar to IGS009 driver, but without the reels stuff.
+Maybe both drivers can be merged at some point.
+- The Super Poker US/UA sets seem to be something in-between hardware
+emulated in igs/igspoker.cpp and the one in this driver. They lack of
+PPI 8255 devices, sporting instead an IGS026A custom (verified via decap
+as ULA for inputs/addressing).
+TODO:
+- Understand how to reset NVRAM
+- Verify / complete DSW ... -->
 </platform>

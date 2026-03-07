@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
     <region start="0x00000800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Digital Microsystems ZSBC-3
+11/01/2010 Skeleton driver.
+28/11/2010 Connected to a terminal
+11/01/2011 Converted to Modern.
+Monitor commands: [] indicates optional
+Bx = Boot from device x (0 to 7)
+Dx [y] = Dump memory (hex and ascii) in range x [to y]
+Fx y z = Fill memory x to y with z
+Gx = Execute program at address x
+Ix = Display IN of port x
+Ox y = Output y to port x
+Sx = Enter memory editing mode, press enter for next address
+Mx y = unknown (affects memory)
+Tx = unknown (does strange things)
+... -->
 </platform>

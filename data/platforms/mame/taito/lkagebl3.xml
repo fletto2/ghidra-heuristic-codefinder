@@ -5,4 +5,21 @@
     <region start="0x0000F062" end="0x0000F062" type="io" name="fake_mcu_r"/>
     <region start="0x0000F087" end="0x0000F087" type="io" name="fake_status_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Legend of Kage
+(C)1985 Taito
+CPU: Z80 (x2), MC68705
+Sound: YM2203 (x2)
+Phil Stroffolino
+ptroffo@yahoo.com
+Stephh's notes (based on the games Z80 code and some tests) :
+1) 'lkage'
+- There is an ingame bug about the way difficulty is handled : if you look at code
+at 0xa05a, you'll notice that DSW3 bit 3 is tested as well as DSW3 bit 4.
+But DSW3 bit 4 also determines if coinage info shall be displayed (code at 0x1295) !
+In fact, DSW3 bit 4 is tested only when DSW3 bit 3 is ON ("Normal" difficulty),... -->
 </platform>

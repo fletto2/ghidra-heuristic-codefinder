@@ -25,4 +25,27 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Black Widow hardware
+Games supported:
+Space Duel
+Black Widow
+Gravitar
+Black Widow memory map (preliminary)
+0000-04ff RAM
+0800      COIN_IN
+0a00      IN1
+0c00      IN2
+2000-27ff Vector generator RAM
+5000-7fff ROM
+BLACK WIDOW SWITCH SETTINGS (Atari, 1983)
+-----------------------------------------
+-------------------------------------------------------------------------------
+Settings of 8-Toggle Switch on Black Widow CPU PCB (at D4)
+8   7   6   5   4   3   2   1   Option
+--------------------... -->
 </platform>

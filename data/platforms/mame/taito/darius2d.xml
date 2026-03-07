@@ -56,4 +56,16 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Taito Dual Screen Games
+=======================
+Sagaia / Darius 2 (c) 1989 Taito
+Warrior Blade     (c) 1991 Taito
+David Graves
+(this is based on the F2 driver by Bryan McPhail, Brad Oliver, Andrew Prime,
+Nicola Salmoria. Thanks to Richard Bush and the Raine team, whose open
+source was very helpful in many areas particularly the sprites.)
+The dual screen games operate on hardware with various similarities to
+the Taito F2 system, as they share some custom ICs e.g. the TC0100SCN.
+For each screen th... -->
 </platform>

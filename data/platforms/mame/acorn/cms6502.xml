@@ -15,4 +15,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- CMS 6502 Development System
+This is an industrial 6502 system in a rack chassis consisting of a
+back-plane and plug-in cards, with two 3.5" floppy disk drives, a
+"SIMON" System Monitor, DFS, and an extended version of BBC BASIC
+called MULTI-BASIC. It has an IBM-XT style keyboard.
+The "Eurocard" standard format cards are as follows:
+- 6502 2nd Processor For The BBC Micro (CMS0026 6502)
+- 40/80 Terminal Card (also handles the keyboard) (CMS 0010-3)
+- High Performance Colour Graphics Card (CMS Vide... -->
 </platform>

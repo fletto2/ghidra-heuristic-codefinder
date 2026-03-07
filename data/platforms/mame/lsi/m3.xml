@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- LSI M-THREE
+Models:
+- M-THREE/100 (SA400, 5.25" single sided)
+- M-THREE/110 (SA410, 5.25" single sided)
+- M-THREE/150 (SA450, 5.25" double sided)
+- M-THREE/160 (SA460, 5.25" double sided)
+- M-THREE/200 (SA800, 8" single sided)
+- M-THREE/250 (SA850, 8" double sided) [emulated by default]
+- M-THREE/320 (SA800, 8" single sided, Winchester 5 MB)
+- M-THREE/325 (SA850, 8" double sided, Winchester 5 MB)
+- M-THREE/340 (SA800, 8" single sided, Winchester 10 MB)
+- M-THREE/345 (SA850, 8" double sided, Winc... -->
 </platform>

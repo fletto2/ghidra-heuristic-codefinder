@@ -53,4 +53,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- DRIVER INFORMATION &amp; NOTES ***********************************************
+Super Slams - Driver by David Haywood
+Sound Information from R. Belmont
+DSWs corrected by Stephh
+TODO :
+sprite offset control?
+priorities (see hi-score table during attract mode)
+unknown reads / writes (also KONAMI chip ..?)
+WORKING NOTES :
+68k interrupts
+lev 1 : 0x64 : 0000 0406 - vblank?
+lev 2 : 0x68 : 0000 06ae - x
+lev 3 : 0x6c : 0000 06b4 - x
+lev 4 : 0x70 : 0000 06ba - x
+lev 5 : 0x74 : 0000 06c0 - x
+lev 6 : 0x78 :... -->
 </platform>

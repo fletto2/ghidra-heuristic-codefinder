@@ -51,4 +51,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Taito B System
+driver by Jarek Burczynski, with help from:
+Nicola Salmoria, Brian A. Troha, stephh, Gerardo Oporto Jorrin, David Graves
+heavily based on Taito F2 System driver by Brad Oliver, Andrew Prime
+The board uses TC0220IOC, TC0260DAR, TC0180VCU, and TC0140SYT.
+Sonic Blast Man uses TC0510NIO instead of TC0220IOC.
+The palette resolution is 12 bits in some games and 15 bits in others.
+TODO:
+- hitice: ice trails are incorrect.
+- hitice: the pixel bitmap is not cleared on startup nor during at... -->
 </platform>

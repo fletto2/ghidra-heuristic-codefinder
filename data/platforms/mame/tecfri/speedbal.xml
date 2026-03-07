@@ -5,4 +5,17 @@
     <region start="0x0000DC00" end="0x0000E1FF" type="ram" name="share1"/>
     <region start="0x0000E800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Speed Ball / Music Ball
+this was available in a number of cabinet types including 'Super Pin-Ball'
+which mimicked a Pinball table in design, complete with 7-seg scoreboard.
+driver by Joseba Epalza
+- 4MHz XTAL, 20MHz XTAL
+- Z80 main CPU (4MHz)
+- Z80 sound CPU (4MHz)
+- YM3812
+Video frequency is ~56.4Hz
+Interrupt frequency on audio CPU is not a periodical signal, but there are a lot of pulses of 1 MHz
+======================================================================
+Colors : 2 bits for foregro... -->
 </platform>

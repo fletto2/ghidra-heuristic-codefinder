@@ -11,4 +11,19 @@
     <region start="0x00008002" end="0x00008003" type="io" name="outport2_w"/>
     <region start="0x00008003" end="0x00008007" type="io" name="outport3_w"/>
   </memory_map>
+
+  <!-- Match Games.
+CRT 100 + CRT 810 boards system.
+Merit Industries, 1981.
+Driver by Angelo Salese, David Haywood &amp; Roberto Fresca.
+Maybe the first Merit videopoker.
+The system has 4 different themed skill games, selectable through DIP switches:
+"The Frog Pond"
+"Pharaohs"
+"Wild Bulls"
+"The White Knight"
+From the Flyer...
+FOR AMUSEMENT ONLY.
+The ingenious Match Games offers something for everyone. Four captivating themes
+with brilliant graphics, challenging play action, an enticing bonus feature a... -->
 </platform>

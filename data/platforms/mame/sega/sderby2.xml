@@ -6,4 +6,27 @@
     <region start="0x00008000" end="0x0000CFFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Sega Super Derby II hardware
+preliminary driver by Phil Bennett
+Games supported:
+Super Derby II
+TODO: Add PCB layouts
+PCBs:
+834-5526? - Main PCB? (Has yet to be found)
+834-5527  - Tilemaps and video output?
+834-5528  - Sprites?
+834-5529  - Satellite PCB (see sg1000a.cpp)
+Customs:
+315-5011
+315-5012
+315-5025
+315-5050
+The video CPUs are waiting for commands from another source.
+It is assumed that there is at least one other PCB (834-5526?) which
+drives the video PCBs and perhaps generates sound. -->
 </platform>

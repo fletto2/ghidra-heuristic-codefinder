@@ -51,4 +51,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- XOR WORLD (c) 1990 Gaelco
+Driver by Manuel Abadia &lt;emumanu+mame@gmail.com&gt;
+Memory Map:
+-----------
+0x000000-0x01ffff   ROM
+0x200000-0x200001   Input #1
+0x400000-0x400001   Input #2
+0x600000-0x600001   DIPSW #1 + EEPROM read
+0x800000-0x800001   Philips SAA1099P write register
+0x800002-0x800003   Philips SAA1099P control register
+0xa00008-0xa0000d   EEPROM write/ctrl
+0xffc000-0xffc7ff   Screen      (8x8 tiles  32x32       (256x256))
+0xffc800-0xffc87f   Sprite RAM
+0xffc800-0xffc801   INT 2 AC... -->
 </platform>

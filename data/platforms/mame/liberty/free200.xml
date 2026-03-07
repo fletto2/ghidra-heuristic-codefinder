@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000AFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Liberty Electronics Freedom 200 Video Display Terminal
+Serial terminal
+Liberty Electronics Freedom 220 Video Display Terminal
+VT220 compatible serial terminal
+Hardware:
+- Z8400A Z80A
+- 4 MHz XTAL (next to CPU)
+- 3x 2764 (next to CPU)
+- 6x TMM2016AP-10 or D446C-2 (2k)
+- SCN2674B C4N40
+- SCB2675B C5N40
+- 2x 2732A (next to CRT controller)
+- 2x S68B10P (128 byte SRAM)
+- M5L8253P-5
+- 3x D8251AC
+- 18.432 MHz XTAL
+External:
+- DB25 connector "Main Port"
+- DB25 connector "Auxialiary Port"
+- Keyboard conn... -->
 </platform>

@@ -7,4 +7,19 @@
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00004000" end="0x0000BFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Itautec I7000
+driver by Felipe C. da S. Sanches &lt;juca@members.fsf.org&gt;
+with tech info provided by Alexandre Souza (a.k.a. Tabajara).
+The portuguese Wikipedia article available at
+http://pt.wikipedia.org/wiki/Itautec_I-7000
+also provides a technical overview of this machine:
+The I-7000 was the first computer manufactured by Itautec
+(http://www.itautec.com.br/pt-br/produtos). It was originally an 8 bit CP/M
+computer that became an IBM PC-XT clone in later hardware revisions which
+took the "I... -->
 </platform>

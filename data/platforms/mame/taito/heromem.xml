@@ -13,4 +13,21 @@
     <region start="0x0000F400" end="0x0000F403" type="io" name="read"/>
     <region start="0x0000F500" end="0x0000F50F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Heroine's Memory (c) 1997 Taito
+Coin pusher with dual screens
+Video: https://www.youtube.com/watch?v=TVSH54wozQ4
+A (possibly) one-off PCB design with the following main components:
+3 x Z80 (2 x Z0840004PSC, 1 x Z84C0008PEC, all marked Z80A on PCB)
+2 x TC0091LVC (marked as TC0090LVC on PCB)
+2 x Taito B17Z2016B (marked as YM2610B on PCB)
+2 x Taito PC060HA - near the TC0091LVCs
+2 x Taito customs with unreadable print (marked as TC0140SYT on PCB) - near the audio Z80s
+1 x MB89255B
+1 x TE7751
+1 x MAC... -->
 </platform>

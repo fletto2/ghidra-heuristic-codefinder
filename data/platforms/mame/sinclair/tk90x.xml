@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x00003FFF" type="io" name="spectrum_rom_r"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="video_ram"/>
   </memory_map>
+
+  <!-- NOTE: ****** Specbusy: press N, R, or E to boot *************
+Spectrum/Inves/TK90X etc. memory map:
+CPU:
+0000-3fff ROM
+4000-ffff RAM
+Spectrum 128/+2/+2a/+3 memory map:
+CPU:
+0000-3fff Banked ROM/RAM (banked rom only on 128/+2)
+4000-7fff Banked RAM
+8000-bfff Banked RAM
+c000-ffff Banked RAM
+TS2068 memory map: (Can't have both EXROM and DOCK active)
+The 8K EXROM can be loaded into multiple pages.
+CPU:
+0000-1fff     ROM / EXROM / DOCK (Cartridge)
+2000-3fff     ROM / EXROM / DOCK
+4000-5fff \
+6000-7fff... -->
 </platform>

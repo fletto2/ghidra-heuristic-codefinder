@@ -7,4 +7,30 @@
     <region start="0x000E0000" end="0x000E0FFF" type="ram" name="vram"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="acia6850"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- CompuData Tulip System I
+Hardware:
+- I8086 CPU
+- I8087 FPU (optional)
+- I8089 I/O Processor (optional)
+- 8 kb ROM, 4 + 8 kb graphics ROM
+- 128 to 896 kb RAM
+- 2x TC5517AP VRAM
+- HD46505SP-2 CRT (+ 7220?)
+- MC68B50P ACIA (for the keyboard?)
+- 8256A-P MUART
+- WD2793PL-02 FDC
+TODO:
+- MUART emulation which handles interrupts, timers, serial and
+parallel interfaces.
+Notes:
+- If you hit the keyboard a few times it tries to load the OS first
+from floppy and then from the hard drive. -->
 </platform>

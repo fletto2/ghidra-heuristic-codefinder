@@ -7,4 +7,24 @@
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="region_c000"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Quiz Olympic (c)1985 Seoul Coin Corp.
+driver by Tomasz Slanina
+ROMs contains strings:
+QUIZ OLYMPIC Ver 1.0
+PROGRAMMED BY  K.ISHIDA
+AT 1984.10.26
+TAITO CORP.
+KUMAGAYA-TSC
+--
+Z80 @ 4.0MHz [8/2]
+AY-3-8910 @ 1.3423MHz [21.47727/16]
+1x 2016 RAM
+4x 4416 RAM
+Xtals 8MHz, 21.47727MHz
+1x 82S123 PROM -->
 </platform>

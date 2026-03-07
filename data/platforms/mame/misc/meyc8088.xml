@@ -14,4 +14,21 @@
     <region start="0x000B5000" end="0x000B5000" type="io" name="video5_flip_r"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Meyco 8088 based hardware
+i8088 CPU @ 5MHz (15MHz XTAL + i8284A clock generator),
+3 x 8KB EPROM (max 4), 3 x 8KB RAM (max 4), 2KB battery RAM,
+2 x i8155, optional i8251A + RS232 for factory debug
+To initialize battery RAM, go into Meter Read mode (F1 -&gt; 9),
+and then press the Meter Read + Reset buttons (9 + 0).
+If a game is not turned off properly, eg. exiting MAME
+in mid-game, it may run faulty on the next boot.
+Enable the Night Switch to prevent this.
+TODO:
+- coincounters/hopper
+- correct C... -->
 </platform>

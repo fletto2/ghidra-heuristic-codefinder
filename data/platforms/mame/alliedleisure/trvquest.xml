@@ -11,4 +11,28 @@
     <region start="0x0000A000" end="0x0000A000" type="unmapped" name="nop_read"/>
     <region start="0x0000B000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Trivia Quest
+Sunn/Techstar 1984
+driver by Pierpaolo Prazzoli
+This is a subdriver of killcom.cpp, the hardware is similar to it,
+video blitter hardware is identical.
+TODO:
+- button response is too rapid? PORT_IMPULSE on coin is also a bad sign
+PCB notes:
+CPU: 6809
+Three SY6522 - for flashing lighted buttons?
+Sound: Two AY-3-8910
+Forty eight! MK4027 4K Rams
+Six 6116 Rams with battery backup
+Two Crystals:
+11.6688 Mhz
+6 Mhz
+Two 8 position DIPS
+rom3 through rom7 - Main pcb PRG.
+roma through romi - Su... -->
 </platform>

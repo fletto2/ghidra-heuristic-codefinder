@@ -58,4 +58,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Food Fight hardware
+driver by Aaron Giles
+Games supported:
+Food Fight
+Known bugs:
+none at this time
+Memory map
+========================================================================
+MAIN CPU
+========================================================================
+000000-00FFFF   R     xxxxxxxx xxxxxxxx   Program ROM
+014000-01BFFF   R/W   xxxxxxxx xxxxxxxx   Program RAM
+01C000-01CFFF   R/W   xxxxxxxx xxxxxxxx   Motion object RAM (1024 entries x 2 words)
+R/W   x------- --------      (0: Ho... -->
 </platform>

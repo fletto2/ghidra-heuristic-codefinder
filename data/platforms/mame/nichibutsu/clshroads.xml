@@ -10,4 +10,18 @@
     <region start="0x0000B002" end="0x0000B003" type="io" name="color_bank_w"/>
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- -= Clash Road =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU   :   Z80A (LH0080A)
+Video Chips :   ?
+Sound CPU   :   Z80A (LH0080A)
+Sound Chips :   Custom (Nichibutsu?)
+XTAL        :   18.432 MHz
+TODO:
+- clshroad: erratic gameplay/sound speed.
+Being pretty logical that CPUs runs at master clock / 6 then we also need to
+halve the vblank irq rate so that opponents won't pop up in the middle of the
+screen. Main CPU would also overrun the sound CPU way too much otherwise.
+We also need to hand tun... -->
 </platform>

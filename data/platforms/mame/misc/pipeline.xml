@@ -9,4 +9,19 @@
     <region start="0x0000B830" end="0x0000B830" type="unmapped" name="unmapped"/>
     <region start="0x0000B840" end="0x0000B840" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- PCB Layout
+----------
+|----------------------------------------------------------|
+|Z8430   ROM2.U84                          ROM3.U32        |
+|                                                          |
+|                                          ROM4.U31        |
+|YM2203  Z80                                               |
+|                                          ROM5.U30        |
+|        6116                                              |
+|                                          6116    ... -->
 </platform>

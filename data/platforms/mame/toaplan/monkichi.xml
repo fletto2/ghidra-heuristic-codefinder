@@ -6,4 +6,18 @@
     <region start="0x00700010" end="0x00700011" type="io" name="port"/>
     <region start="0x00700035" end="0x00700035" type="io" name="coin_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Name        Board No      Maker         Game name
+----------------------------------------------------------------------------
+pwrkick     SW931201-1    Sunwise       Power Kick
+burgkids    SW931201-1    Sunwise       Burger Kids
+pyutakun    SW931201-1    Sunwise       Pyuuta-kun
+othldrby    S951060-VGP   Sunwise       Othello Derby
+monkichi    S951060-VGP   Sunwise       Monkichicchi no Fuwafuwa Puzzle  (has a subboard instead of mask ROMs)
+The medal games run in a cabinet named "JOYM" (ジョイム).
+... -->
 </platform>

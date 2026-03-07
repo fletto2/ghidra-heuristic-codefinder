@@ -13,4 +13,14 @@
     <region start="0x0000EB35" end="0x0000EB35" type="io" name="region_eb35"/>
     <region start="0x0000EB40" end="0x0000EB40" type="io" name="region_eb40"/>
   </memory_map>
+
+  <!-- NorthStar Horizon
+2009-12-07 Skeleton driver.
+http://www.hartetechnologies.com/manuals/Northstar/
+The tiny bios (only about 200 bytes) initialises nothing, but only loads the
+initial sector from the disk and transfers control to it. All the used memory
+locations in the EA00-EB40 range are listed in the memory map. It does not
+use the IO map, and has no text.
+The 2MHz downgrade is suggested in the manual for the CPU board (ZPB-A). It
+involves replacing the XTAL and reconnecting one jumper. -->
 </platform>

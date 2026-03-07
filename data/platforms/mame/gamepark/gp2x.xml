@@ -22,4 +22,18 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- gp2x.c - Game Park Holdings GP2X
+Skeleton by R. Belmont
+CPU: MagicEyes MP2520F SoC
+MP2520F consists of:
+ARM920T CPU core + MMU
+ARM940T slave CPU w/o MMU
+LCD controller
+DMA controller
+Interrupt controller
+NAND flash interface
+MMC/SD Card interface
+USB controller
+and more. -->
 </platform>

@@ -5,4 +5,16 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- VeriFone Tranz 330
+All information gleaned from:
+http://www.bigmessowires.com/2011/05/10/mapping-the-tranz-330/
+Currently sits in a loop doing very little, based on the disassembly
+it presumably needs some kind of interrupt in order to kick it into
+running.
+Interrupt Vectors are located at 0200-02FF.
+Display ram at 9000-90FF says GRAMING ERR 0 (part of PROGRAMING ERR message)
+TODO:
+- get working, driver needs a Z80 peripheral expert to look at it.
+- hook up magstripe reader -->
 </platform>

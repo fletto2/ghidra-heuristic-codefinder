@@ -14,4 +14,26 @@
     <region start="0x0000C000" end="0x0000C000" type="io" name="reset_w"/>
     <region start="0x0000D000" end="0x0000D000" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Mini Guay (c) 1986 Cirsa
+Slot machine.
+Main components:
+1 x 8085
+1 x AY-3-8910
+1 x 8256A (MUART, unemulated)
+2 x 8155
+2 x 8-dip banks (between AY and MUART)
+1 x 6.144MHz Osc
+battery backed RAM
+________________________________________________
+|C |  ________   ________                       |
+|O |  ULN2064B  |_7417N_|                       |
+|N |  ___________________           TDA2002     |
+|N | | 8155P            |  ________             |
+|__| |__________________| |74HC04P|             |
+|     __... -->
 </platform>

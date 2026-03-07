@@ -8,4 +8,23 @@
     <region start="0x0000C000" end="0x0000C003" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="acka_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Super Locomotive
+driver by Zsolt Vasvari
+TODO:
+- Bit 5 in control_w is pulsed when loco turns "super". This is supposed
+to make red parts of sprites blink to purple, it's not clear how this is
+implemented in hardware, there's a hack to support it.
+Sega PCB 834-5137
+Sega 315-5015 (Sega custom encrypted Z80)
+Sega 315-5011
+Sega 315-5012
+Z80
+M5L8255AP
+8 switch Dipswitch x 2 -->
 </platform>

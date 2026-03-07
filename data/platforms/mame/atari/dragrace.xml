@@ -11,4 +11,6 @@
     <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Drag Race Driver -->
 </platform>

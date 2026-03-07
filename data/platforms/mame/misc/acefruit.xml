@@ -10,4 +10,9 @@
     <region start="0x0000C000" end="0x0000C000" type="io" name="reset_w"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Ace Video Fruit Machine hardware
+(c)1981-1982 ACE Leisure
+Driver by SMF &amp; Guddler 04/02/2007
+Inputs and Dip Switches by Stephh -->
 </platform>

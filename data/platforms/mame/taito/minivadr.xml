@@ -6,4 +6,24 @@
     <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
     <region start="0x0000E008" end="0x0000E008" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <!-- Mini Vaders (Space Invaders's mini game)
+(c) 1990 Taito Corporation
+Driver by Takahiro Nogi 1999/12/19 -
+This is a test board sold together with cabinets (as required by law in
+Japan).  It has no sound.
+PCB Layout
+----------
+K11X0622A
+MINI VADERS
+|-------------------------|
+|MB3771 24MHz             |
+|LS32   74F74             |
+|LS139                    |
+|D26_01.IC7 LS244        J|
+|Z80        LS244        A|
+|LS86  LS08 LS373        M|
+|LS157 LS157 LS161 LS161 M|
+|LS157 LS157 LS161 LS161 A|
+|... -->
 </platform>

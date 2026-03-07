@@ -10,4 +10,29 @@
     <region start="0x00C00000" end="0x00CFFFFF" type="rom" name="rom"/>
     <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+  </devices>
+
+  <!-- esqkt.cpp - Ensoniq KT-76, KT-88, and E-Prime
+Ensoniq TS-10 and TS-12
+Driver by R. Belmont
+Hardware:
+CPU: 68EC020-16 CPU
+Serial/timers: SCN2681
+Sound: 2xES5506
+Effects: ES5510
+Memory map:
+0x000000-0x07FFFF   OS ROM (additional RAM on TS)
+0x200000-0x20003F   Master ES5506
+0x240000-0x24003F   Slave ES5506
+0x280000-0x2801FF   ES5510
+0x300000-0x30000F   68681 DUART
+0x400000-0xAFFFFF   User sample RAM (TS only)
+0xFF0000-0xFFFFFF   OS RAM
+Ensoniq KT-76
+Ensoniq 1994
+This is a wavetable-based synth keyb... -->
 </platform>

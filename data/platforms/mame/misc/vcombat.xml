@@ -6,4 +6,23 @@
     <region start="0x00580000" end="0x00580003" type="io" name="m0_p1_c2_r"/>
     <region start="0x005C0000" end="0x005C0003" type="io" name="wiggle_i860p1_pins_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Virtual Combat hardware games.
+Driver by Jason Eckhardt, Andrew Gardner and Phil Bennett.
+----
+There are two known games on this hardware.  Both are developed by
+Kyle Hodgetts.
+Virtual Combat (c) VR8 Inc. 1993
+http://arcade.sonzogni.com/VRCombat/
+Shadow Fighters (German) (c) Dutech 1993
+----
+There are two boards to this hardware.  The upper, which contains the
+graphics ROMs and the i860, and the lower which contains the main
+and sound CPUs.  Virtual Combat sports two upper boards which
+output a ... -->
 </platform>

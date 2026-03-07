@@ -7,4 +7,18 @@
     <region start="0x0000F000" end="0x0000F7FF" type="ram" name="videoram"/>
     <region start="0x0000F800" end="0x0000F8FF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Vector Graphic, Inc Vector 3 and Vector MZ. Vector Graphic was a Californian
+company that made a few popular computers until they were crushed flat by the
+IBM PC.
+2009-12-08 Skeleton driver for "Vector 4".
+2022-12-03 Renamed driver to "Vector 3"
+This driver was based on the Vector 4 User Guide but accidentally with the
+Vector 3 or other ROMs, because of confusing naming. To get the ROMs to work
+required Vector 3 behavior.
+The Vector 3 and Vector MZ had similar internal hardware. Both are based o... -->
 </platform>

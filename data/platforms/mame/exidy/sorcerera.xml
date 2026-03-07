@@ -5,4 +5,25 @@
     <region start="0x0000BC00" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000BE00" end="0x0000BE03" type="io" name="read"/>
   </memory_map>
+
+  <!-- Exidy Sorcerer system driver
+The UART controls rs232 and cassette i/o. The chip is a AY-3-1014A or AY-3-1015.
+port fc:
+========
+input/output:
+uart data
+port fd:
+========
+input: uart status
+bit 4: parity error (RPE)
+bit 3: framing error (RFE)
+bit 2: over-run (RDP)
+bit 1: data available (RDA)
+bit 0: transmit buffer empty (TPMT)
+output:
+bit 4: no parity (NPB)
+bit 3: parity type (POE)
+bit 2: number of stop bits (NSB)
+bit 1: number of bits per char bit 2 (NDB2)
+bit 0: number of bits per char bit 1 (N... -->
 </platform>

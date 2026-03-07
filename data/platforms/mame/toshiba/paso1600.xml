@@ -8,4 +8,13 @@
     <region start="0x000E0000" end="0x000EFFFF" type="rom" name="rom"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Toshiba Pasopia 1600
+TODO:
+- charset ROM is WRONG! (needs a 8x16 or even a 16x16 one)
+- identify fdc type (needs a working floppy image) -->
 </platform>

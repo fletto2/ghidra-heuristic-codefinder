@@ -4,4 +4,14 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Midway's 18 Wheeler, game number 653
+TODO:
+- needs extensive interactive artwork
+- discrete sound
+To diagnose game, turn on service mode and:
+- test RAM/ROM, leds, lamps:    reset with shifter in neutral
+- test sound and misc input:    turn on DSW 7 and reset with shifter in neutral
+- test accelerator:             reset with shifter in 1st gear
+- test steering wheel:          reset with shifter in 2nd gear -->
 </platform>

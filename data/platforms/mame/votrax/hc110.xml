@@ -11,4 +11,6 @@
     <region start="0x00006800" end="0x00006800" type="io" name="latchb_rst_r"/>
     <region start="0x00007A00" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Votrax/Phonic Mirror HandiVoice models HC-110 and HC-120 -->
 </platform>

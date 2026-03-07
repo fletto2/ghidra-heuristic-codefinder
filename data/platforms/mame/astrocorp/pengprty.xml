@@ -46,4 +46,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Astro Corp. 'Hummer' (VGA)
+Main components:
+Astro V102PX-0XX CPU (004 for Jack's Venture, 013 for Penguin Party)
+DigiArt AM001 ADPCM &amp; MP3 sound chip
+22.579 MHz XTAL
+Actel Igloo AGLP125-CSG289
+Astro ROHS (GFX?)
+4x LY61L25616ML-20 SRAM
+2x LY621024SL-70LL SRAM
+4-DIP bank
++*** ASTRO PASSWORDS ***
+pengprty : Funny Penguins / Penguin Party
+→ Taken from manual, Version: USA-20111216
++------------+---------+------------+---------+------------+---------+
+| Password # | Code    | Password # | Code   ... -->
 </platform>

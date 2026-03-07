@@ -6,4 +6,23 @@
     <region start="0x00004000" end="0x000040FF" type="ram" name="ram"/>
     <region start="0x00004080" end="0x0000409F" type="io" name="io_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Rowamet : Heavy Metal
+PinMAME used as reference (couldn't find a manual)
+Seems to be almost the same as Taito. Some code copied from taito.cpp
+Known games from this company: Solar Ride, Vulcan IV, Sherokee, Jet Surf, Diana,
+Heavy Metal, Conan. Most of them are TTL (no CPU).
+Status:
+- Working but many sounds are missing.
+- When starting a game, hold down X and press 1.
+ToDO:
+- Outputs
+- Bad sound rom
+- In PinMAME, the display cycles between various attract modes. This doesn't happen
+in MA... -->
 </platform>

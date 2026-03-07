@@ -15,4 +15,7 @@
     <region start="0x08000200" end="0x080003FF" type="io" name="cs0_r"/>
     <region start="0x1FC00000" end="0x1FDFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Turret Tower by Dell Electronics
+driver by Phil Bennett -->
 </platform>

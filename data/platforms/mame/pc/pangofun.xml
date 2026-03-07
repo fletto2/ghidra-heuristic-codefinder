@@ -11,4 +11,16 @@
     <region start="0x02000000" end="0xFFFEFFFF" type="unmapped" name="unmapped"/>
     <region start="0xFFFE0000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Pango Fun
+MS-DOS 5.0 based
+TODO:
+- Needs um8498f chipset improvements;
+- Move stuff to ISA bus (4 ISA16 + 1 ISA8 + 1 ISA16);
+- Hookup GD5401 "AVGA1" properly;
+- Understand what's the use of the goofy rig between AVGA1 DCLK and EVIDEO pins to feature
+connector of the romdisk card, just a bypass to avoid showing text mode GFXs?
+Also note an extra VGA connector on romdisk card.
+- Hookup jadarom romdisk, understand why it "cannot load program";
+=======================================================... -->
 </platform>

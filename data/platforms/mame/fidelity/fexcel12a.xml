@@ -13,4 +13,23 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity Excellence series hardware
+(for Excel 68000, see eag68k.cpp)
+TODO:
+- verify if Designer 2100 CPU is 5MHz or 6MHz
+- granits chessboard buttons seem too sensitive (detects input on falling edge if
+held too long), probably BTANB?
+================================================================================
+The Excellence (model EP12)
+---------------------------
+Hardware notes:
+- PCB label: 510-1099A01
+- GTE G65SC102P-3 @ 3MHz (12MHz XTAL)
+- 16KB ROM, 2KB RAM
+- piezo, 16 LEDs, 8*8 chessb... -->
 </platform>

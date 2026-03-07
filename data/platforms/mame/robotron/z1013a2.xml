@@ -5,4 +5,28 @@
     <region start="0x00000000" end="0x0000EFFF" type="ram" name="mainram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Z1013 driver by Miodrag Milanovic
+22/04/2009 Preliminary driver.
+The 8x4 keyboard contains letters A-W, enter, cursor right/left, space, and
+4 shift keys.
+S1 - X-Z, numbers
+S2 - a-w
+S3 - x-z, punctuation
+S4 - control keys
+Control Keys:
+G - Graphics
+A - Alpha
+T - clear screen
+U - enter
+P - cursor left
+Q - cursor right
+Monitor commands (debug)
+R - registers
+B - breakpoint
+E - execute
+G - resume after breakpoint
+N - single-step
+Monitor commands (general)
+H - switch to hex keyboard (H to Q become 0 ... -->
 </platform>

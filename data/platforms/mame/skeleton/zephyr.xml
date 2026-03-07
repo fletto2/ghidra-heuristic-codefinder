@@ -5,4 +5,11 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00001000" end="0x00001FFF" type="ram" name="mainram"/>
   </memory_map>
+
+  <!-- Skeleton driver for Zentec's 8085-based Zephyr/ZMS-series terminals.
+This represents the second generation of display terminals by Zentec Corporation. The
+first, which included the ZMS-50, ZMS-70 &amp; ZMS-90, had an 8080 CPU and different video
+timings.
+U.S. Patent No. 4,203,107 looks like the best available description of the Zephyr video
+hardware, since no schematics or manuals have been found. -->
 </platform>

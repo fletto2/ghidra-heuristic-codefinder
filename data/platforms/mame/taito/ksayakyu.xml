@@ -11,4 +11,27 @@
     <region start="0x0000A804" end="0x0000A808" type="io" name="videoctrl_w"/>
     <region start="0x0000B000" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Kusayakyuu (Sandlot Baseball)
+(c)1985 Taito
+driver by Tomasz Slanina
+TODO:
+- sprite glitches (sometimes) .. missing vertical flip flag? &lt;- (*)
+- sound CPU int freq (timer ? $a010 writes ?)
+(*) this was caused by flip Y being hooked up as bit 6 in text videoram attribute. -AS
+M6100097A
+---------------
+CPU/Sound board
+---------------
+AGC-1 ECB-405010 ASY-410011
+CPU  : Zilog Z8400APS(Z80A)
+Sound: Zilog Z8400APS(Z80A) AY-3-8910(x2) DAC
+OSC  : 18.432MHz
+ROMs:
+1.3A [6607976d] - Main program (27128)... -->
 </platform>

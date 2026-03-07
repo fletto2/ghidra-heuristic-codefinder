@@ -29,4 +29,10 @@
     <region start="0xF0000000" end="0xF03FFFFF" type="io" name="flash_r"/>
     <region start="0xF4000000" end="0xF43FFFFF" type="io" name="dummy_flash_r"/>
   </memory_map>
+
+  <!-- HUMAX HDCI-2000 ( Conexant CX2417x )
+http://www.humaxdigital.com/global/products/product_stb_satellite_hdci2000.asp
+Running on Nucleus PLUS - ARM7TDMI ADS v. 1.14
+some Conexant/Nucleus goodies may be found at http://code.google.com/p/cherices/
+runs up to frame 280 or so... -->
 </platform>

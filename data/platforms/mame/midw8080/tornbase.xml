@@ -6,4 +6,33 @@
     <region start="0x00002000" end="0x00003FFF" type="ram" name="main_ram"/>
     <region start="0x00004000" end="0x00005FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Midway 8080-based black and white hardware
+driver by Michael Strutts, Nicola Salmoria, Tormod Tjaberg, Mirko Buffoni,
+Lee Taylor, Valerio Verrando, Marco Cassili, Zsolt Vasvari and others
+Games supported:
+Sea Wolf
+Gun Fight
+Tornado Baseball
+(Datsun) 280-ZZZAP
+Amazing Maze
+Boot Hill
+Checkmate
+Desert Gun
+Road Runner
+Double Play
+Laguna Racer
+Guided Missile
+M-4
+Clowns
+Space Walk
+Extra Inning
+Shuffleboard
+Dog Patch
+Space Encounters
+Phantom II
+Bowling Alley
+Space Invaders
+Blue Shark
+Space Invaders II ... -->
 </platform>

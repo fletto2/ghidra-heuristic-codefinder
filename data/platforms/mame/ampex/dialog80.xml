@@ -13,4 +13,13 @@
     <region start="0x00008000" end="0x000097FF" type="io" name="page_r"/>
     <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- 2017-11-05 Skeleton
+Ampex Dialogue 80 terminal
+Chips: CRT-5037, COM8017, SMC (COM)5016-5, MK3880N (Z80), SN74LS424N (TIM8224)
+Crystals: 4.9152, 23.814
+Other: Beeper, 5x 10sw-dips.
+The program code seems to have been designed with a 8080 CPU in mind, using no
+Z80-specific opcodes. This impression is reinforced by the IC types present on
+the PCB, which go so far as to include the standard 8224 clock generator. -->
 </platform>

@@ -9,4 +9,20 @@
     <region start="0x0000F800" end="0x0000F8FF" type="ram" name="ram"/>
     <region start="0x0000FB00" end="0x0000FF0F" type="io" name="amd9511_r"/>
   </memory_map>
+
+  <!-- DAI driver by Krzysztof Strzecha and Nathan Woods
+What's new:
+-----------
+21.05.2004  TMS5501 fixes. Debug code cleanups.
+06.03.2004  Stack overflow interrupt added.
+05.09.2003  Random number generator added. Few video hardware bugs fixed.
+Fixed few I8080 instructions, making much more BASIC games playable.
+Notes on emulation status and to do list:
+-----------------------------------------
+1. A lot to do. Too much to list.
+DAI technical information
+==========================
+CPU:
+----
+I8080 2MHz... -->
 </platform>

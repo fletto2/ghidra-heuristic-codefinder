@@ -17,4 +17,35 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Nintendo VS UniSystem and DualSystem - (c) 1984 Nintendo of America
+Portions of this code are heavily based on
+Brad Oliver's MESS implementation of the NES.
+RC2C03B/RP2C03B:
+- Duck Hunt
+- Mahjong
+- Pinball (Japan)
+- Star Luster *
+- Stroke &amp; Match Golf (Japan)
+- Tennis
+RP2C04-0001:
+- Atari R.B.I. Baseball *
+- Baseball
+- Battle City *
+- Freedom Force
+- Gradius
+- Hogan's Alley
+- Mach Rider (Japan, Fighting Course)
+- Pinball
+- Platoon
+- Super Skykid *
+- Super Xevious *
+- Tetris *
+RP2C04-0002:
+- ... -->
 </platform>

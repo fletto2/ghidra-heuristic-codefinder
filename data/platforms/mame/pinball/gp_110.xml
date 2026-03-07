@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00008C00" end="0x00008CFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- PINBALL
+Game Plan MPU-1
+These are "cocktail" cabinets, although there is only one seating position.
+When first turned on, you need to press num-0 to enter the setup program, then keep
+pressing num-0 until 05 shows in the balls display. Press the credit button to set
+the first high score at which a free credit is awarded. Then press num-0 to set the
+2nd high score, then num-0 to set the 3rd high score. Keep pressing num-0 until you exit
+back to normal operation. If this setup is not done, each pl... -->
 </platform>

@@ -9,4 +9,21 @@
     <region start="0x0000C000" end="0x0000C001" type="io" name="c000_r"/>
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- 'Swinging Singles' US distribution by Ent. Ent. Ltd
+Original Japan release is 'Utamaro' by 'Yachiyo' (undumped!)
+driver by Tomasz Slanina
+Crap XXX game.
+Three ROMs contain text "BY YACHIYO"
+Upper half of 7.bin = upper half of 8.bin = intentional or bad dump ?
+TODO:
+- atamanot: needs a trojan, in order to understand how the protection really works.
+- colors (missing PROM(s) ?)
+- samples (at least two of unused ROMs contains samples (unkn. format, ADPCM ?)
+- dips (one is tested in game (difficulty... -->
 </platform>

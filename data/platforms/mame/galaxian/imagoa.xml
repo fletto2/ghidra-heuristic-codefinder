@@ -17,4 +17,13 @@
     <region start="0x0000F401" end="0x0000F401" type="io" name="imago_sprites_bank_w"/>
     <region start="0x0000F800" end="0x0000F800" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Fast Freddie/Jump Coaster hardware
+driver by Zsolt Vasvari
+TODO:
+- remove protection hack (protection may be done by the 'H2' chip on the pcb) -->
 </platform>

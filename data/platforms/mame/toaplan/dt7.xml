@@ -51,4 +51,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- This is derived from toaplan2.cpp, but there are enough hardware
+differences to keep it separate
+TODO:
+- verify audio CPU opcodes (see toaplan_v25_tables.h)
+- correctly hook up interrupts (especially V25)
+- correctly hook up inputs (there's a steering wheel test? is the game switchable)
+- serial comms (needs support in V25 core?) for linked units
+- verify frequencies on chips
+- verify alt titles, some regions have 'Car Fighting' as a subtitle, region comes from EEPROM?
+- verify text layer palett... -->
 </platform>

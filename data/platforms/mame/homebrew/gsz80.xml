@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- basic machine hardware */
+// Configure member Z80 (via m_maincpu)
+Z80(config, m_maincpu, XTAL(7'372'800));
+m_maincpu-&gt;set_addrmap(AS_PROGRAM, &amp;gsz80_state::gsz80_mem);
+m_maincpu-&gt;set_addrmap(AS_IO, &amp;gsz80_state::gsz80_io);
+// Configure UART (via m_acia)
+ACIA6850(config, m_acia, 0);
+m_acia-&gt;txd_handler().set("rs232", FUNC(rs232_port_device::write_txd));
+m_acia-&gt;rts_handler().set("rs232", FUNC(rs232_port_device::write_rts));
+m_acia-&gt;irq_handler().set_inputline("maincpu", INP... -->
 </platform>

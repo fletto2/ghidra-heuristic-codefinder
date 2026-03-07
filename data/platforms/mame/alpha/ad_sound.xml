@@ -8,4 +8,19 @@
     <region start="0x0000C104" end="0x0000C104" type="unmapped" name="nop_write"/>
     <region start="0x0000C106" end="0x0000C10E" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Functions to emulate the Alpha Denshi "59MC07" audio board
+|----------------------|
+| Fully boxed = socket |
+|----------------------|
+| separation = solder
+-----------------------------------------------------------------------|
+|ALPHA DENSHI CO, LTD. SOUND BOARD NO.59MC07                           |
+|                                                                      |
+|          |--------------------|                                      |
+|   P | \/ |    JAPAN 84250C    | SN74LS232J | SN74L... -->
 </platform>

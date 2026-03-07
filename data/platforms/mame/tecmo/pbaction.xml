@@ -10,4 +10,32 @@
     <region start="0x0000E606" end="0x0000E606" type="unmapped" name="nop_read"/>
     <region start="0x0000E800" end="0x0000E800" type="io" name="sh_command_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Pinball Action memory map (preliminary)
+driver by Nicola Salmoria
+0000-9fff ROM
+d000-d3ff Video RAM
+d400-d7ff Color RAM
+d800-dbff Background Video RAM
+dc00-dfff Background Color RAM
+e000-e07f Sprites
+e400-e5ff Palette RAM
+read:
+e600      IN0
+e601      IN1
+e602      IN2
+e604      DSW1
+e605      DSW2
+e606      watchdog reset????
+write:
+e600      interrupt enable
+e604      flip screen
+e606      bg scroll? not sure
+e800      command for the sound CPU
+Notes:
+- pbactiont (Tecfri) has a ROM on a small ... -->
 </platform>

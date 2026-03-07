@@ -59,4 +59,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Taito JC System
+Driver by Ville Linde, based on the preliminary driver by David Haywood
+Taito custom chips on this hardware:
+- TC0640FIO      : I/O
+- TC0770CMU      : Math co-processor?
+- TC0780FPA x 2  : Polygon/Texture renderer?
+- TC0840GLU      : 2D graphics?
+- TC0870HVP      : Vertex processor?
+TODO:
+- Games are running at wrong speed(unthrottled?) compared to pcb recordings, easily noticeable on sidebs/sidebs2,
+for example the selection screens are too fast, and the driving is almost twice ... -->
 </platform>

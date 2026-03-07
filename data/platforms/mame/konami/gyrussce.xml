@@ -13,4 +13,31 @@
     <region start="0x0000C100" end="0x0000C100" type="io" name="write"/>
     <region start="0x0000C180" end="0x0000C187" type="io" name="d0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Gyruss memory map (preliminary)
+Main processor memory map.
+0000-5fff ROM (6000-7fff diagnostics)
+8000-83ff Color RAM
+8400-87ff Video RAM
+9000-a7ff RAM
+a000-a17f \ sprites
+a200-a27f /
+memory mapped ports:
+read:
+c080      IN0  (system inputs)
+c0a0      IN1
+c0c0      IN2
+c0e0      DSW1
+c000      DSW2
+c100      DSW3
+write:
+a000-a1ff  Odd frame spriteram
+a200-a3ff  Even frame spriteram
+a700       Frame odd or even?
+a701       Semaphore system:  tells 6809 to draw queued sprites
+a702       Semaphore s... -->
 </platform>

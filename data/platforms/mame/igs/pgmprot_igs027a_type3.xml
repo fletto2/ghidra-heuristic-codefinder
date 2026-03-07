@@ -20,4 +20,16 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- PGM IGS027A ARM protection emulation
+These all use the 55857G type chips
+these are emulation of the 'dmnfrnt' type ARM device
+used by
+Demon Front (dmnfrnt) *1
+The Gladiator (theglad) *2
+Spectral vs. Generation (svg) *2
+Happy 6-in-1 (happy6) *4
+The Killing Blade Plus (killbldp) *3
+1 - We bypass the internal ROM entirely! Game doesn't jump back
+2 - Partial dump of internal ROM is used (currently only dumped from a Japan PCB, patched for other types) The missing code from the EO area is replaced wi... -->
 </platform>

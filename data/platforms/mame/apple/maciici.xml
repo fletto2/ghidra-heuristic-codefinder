@@ -9,4 +9,19 @@
     <region start="0x50024000" end="0x50027FFF" type="io" name="map"/>
     <region start="0x50040000" end="0x50041FFF" type="io" name="via_r"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- maciici.cpp
+Mac IIci ("Cobra II, Aurora, Aurora25/16, Pacific, Atlantic")
+Mac IIsi ("Erickson, Rafiki, Hobie Cat")
+By R. Belmont
+These are the RBV/MDU (RAM Based Video/Memory Decode Unit) near-twins.
+IIci cost-reduced the IIcx and added on-board video.
+IIsi cost-reduced the IIci with a slower CPU and Egret ADB instead of
+the PIC ADB modem and Apple RTC/PRAM chip. -->
 </platform>

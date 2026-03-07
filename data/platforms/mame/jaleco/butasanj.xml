@@ -15,4 +15,22 @@
     <region start="0x0000D000" end="0x0000DFFF" type="io" name="pagedram_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Argus (Early NMK driver 1986-1987)
+-------------------------------------
+driver by Yochizo
+Special thanks to :
+=====================
+- Gerardo Oporto Jorrin for dipswitch informations.
+- Suzuki2go for screenshots of Argus and Valtric.
+- Jarek Parchanski for Psychic5 driver.
+Supported games :
+==================
+Argus      (C) 1986 NMK / Jaleco
+Valtric    (C) 1986 NMK / Jaleco
+Butasan    (C) 1987 NMK / Jaleco
+System specs :
+===============
+Argus
+----------------------------------------------------... -->
 </platform>

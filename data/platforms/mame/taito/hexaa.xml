@@ -11,4 +11,19 @@
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="videoram"/>
     <region start="0x0000F000" end="0x0000F000" type="io" name="hexaa_f000_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Arkanoid driver
+- MCU hookup needs sorting out properly.  The hookups for the different types
+is not identical.
+Japanese version support cocktail mode (DSW #7), the others don't.
+Here are the versions we have:
+arkanoid    The earlier revisions. They each differ in the country byte. These
+arkanoiduo    versions work fine both the bootleg A75-06.IC16 MCU rom and the
+arkanoidjb    genuine decapped Taito A75__06.IC16 MC68705 MCU.
+arkanoidu   USA version. MCU code properly dumped.
+arkanoidj   Japanes... -->
 </platform>

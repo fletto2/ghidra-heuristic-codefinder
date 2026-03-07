@@ -9,4 +9,20 @@
     <region start="0x0000FF00" end="0x0000FF01" type="io" name="vram_bank_r"/>
     <region start="0x0000FF04" end="0x0000FF04" type="io" name="irq_source_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Double Crown (c) 1997 Cadence Technology / Dyna
+TODO:
+- Is the background pen really black?
+- Pinpoint optional hopper line_r hookup, via dip4:8.
+- Lots of unmapped I/Os (game doesn't make much use of the HW);
+- video / irq timings;
+Notes:
+- at POST the SW tries to write to the palette RAM in a banking fashion. HW left-over?
+- there are various $0030-$0033 ROM checks across the SW, changing these values to non-zero
+effectively changes game functionality (cfr. matrix mode at POST), ROM overlay or... -->
 </platform>

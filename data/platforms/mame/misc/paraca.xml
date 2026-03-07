@@ -11,4 +11,13 @@
     <region start="0x00006000" end="0x000060FF" type="io" name="memory_r"/>
     <region start="0x00007001" end="0x00007001" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <!-- Paracaidista
+Video Game / Electrogame, 1979.
+Driver by Roberto Fresca &amp; Grull Osgo.
+Paracaidista was a Spanish arcade game designed in 1979 that never saw an official release.
+This prototype was lost to time until its creator, Javier Valero, recovered the original
+EPROM contents by reconstructing the assembly code he had written decades earlier.
+Now, the game has been preserved on original hardware and also available in MAME.
+One of the most fascinating aspects of Paracaidista is its extensi... -->
 </platform>

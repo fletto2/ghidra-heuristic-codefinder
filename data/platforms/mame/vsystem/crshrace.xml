@@ -56,4 +56,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Crash Race       (c) 1993 Video System Co.
+VSEC-24 PCB
+driver by Nicola Salmoria
+Notes:
+- Keep player1 button 1 &amp; 2 pressed while entering service mode to get an
+extended menu
+Stephh's notes (based on the games M68000 code and some tests) :
+0) all games
+- There seems to be preliminary support for 3 simultaneous players, but the
+game resets before the race starts if the 3 players don't play against each
+other! I can't tell however if it's an ingame or an emulation bug.
+To test this, change CR... -->
 </platform>

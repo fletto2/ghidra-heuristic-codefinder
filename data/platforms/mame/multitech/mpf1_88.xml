@@ -5,4 +5,8 @@
     <region start="0x000F4000" end="0x000FBFFF" type="io" name="rom"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Multitech Micro-Professor I/88
+TODO:
+- IFM-I/88 interrupts, need documentation/schematic. -->
 </platform>

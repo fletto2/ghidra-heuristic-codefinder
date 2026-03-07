@@ -6,4 +6,9 @@
     <region start="0x00008000" end="0x000083FF" type="ram" name="videoram"/>
     <region start="0x00009000" end="0x000090FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Blockade/CoMotion/Blasto/Hustle/Minesweeper
+TODO:
+- Noise generator
+- Timing for the coin input is a guess -->
 </platform>

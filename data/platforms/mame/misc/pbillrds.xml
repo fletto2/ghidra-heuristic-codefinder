@@ -13,4 +13,21 @@
     <region start="0x0000F803" end="0x0000F803" type="io" name="spinner_r"/>
     <region start="0x0000FC00" end="0x0000FC03" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Free Kick  - (c) 1987 Sega / Nihon System (made by Nihon, licensed to Sega)
+Driver by Tomasz Slanina
+based on initial work made by David Haywood
+Z80 @ 3MHz (12.000/4)
+IRQ frequency 120Hz, low for 4.02us, high for 8.1879ms
+4*SN76489AN @ 3MHz (12.000/4)
+12MHz (mclk), 6MHz pixel clock (12.000/2)
+263 scanlines per frame - 224 visible + 39 blanking+sync;
+16 lines bottom border, 7 lines vsync, 16 lines top border
+768 mclks scanline - 512 mclks visible, 256 mclks blanking+sync;
+96 mclks left border, 96... -->
 </platform>

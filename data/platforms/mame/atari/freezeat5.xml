@@ -6,4 +6,24 @@
     <region start="0x04D001F0" end="0x04D001F7" type="io" name="cs0_w"/>
     <region start="0x04D003F0" end="0x04D003F7" type="io" name="cs1_w"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Jaguar (Home) &amp; Atari CoJag (Arcade) hardware
+The CoJag arcade system is based on the Jaguar system, but with an upgraded
+main CPU (68020 or MIPS instead of the plain 68000 found in the Jaguar)
+driver by Aaron Giles
+console support originally by Nathan Woods
+CoJag Games supported:
+Area 51 (4 Sets)
+Maximum Force (3 Sets)
+Area 51/Maximum Force Duo (2 Sets)
+Vicious Circle
+Fishin' Frenzy
+Freeze
+To do:
+Untangle CoJag from Jagaur console, split drivers;
+(CoJag) map out unused RAM per-game vi... -->
 </platform>

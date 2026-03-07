@@ -8,4 +8,16 @@
     <region start="0x00000200" end="0x000002FF" type="ram" name="nvram"/>
     <region start="0x00001000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- PINBALL
+Bally MPU AS-2518-35
+There are many sound boards used, however there are only a few major types.
+AS-2888 has discrete circuitry.
+AS-3022 has a 6802/6808/6810 + PIA + AY-3-8910 + 1x4kROM.
+A084-91495-A371 same as above
+AS-3107 (Squawk &amp; Talk) has a 6802/6808/6810 + 2xPIA + AY-3-8912 + AD558 + TMS5200 + TMS6100 + 4x1kROM.
+Cheap Squeak has 6803 + ZN429 + 2x2kROM
+Xenon (#1196) has a sound board (similar to AS-3022) and a vocalizer board, with 32k of roms.
+List of games:
+Game              ... -->
 </platform>

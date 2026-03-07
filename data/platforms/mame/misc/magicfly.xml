@@ -15,4 +15,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- MAGIC FLY
+---------
+Driver by Roberto Fresca.
+Games running on this hardware:
+Magic Fly (P&amp;A Games),          198?
+7 e Mezzo (Unknown),            198?
+Bonne Chance! (French/English), 198?
+NOTE ****
+This hardware was clearly designed for poker games.
+You can find a complete hardware &amp; software analysis here:
+http://www.robertofresca.com
+Special Thanks to...
+- EMMA Italian Dumping Team for providing the board.
+- Rob Ragon for the exhaustive hardware testing.
+- Iris Falbala, that kindly of... -->
 </platform>

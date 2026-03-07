@@ -7,4 +7,20 @@
     <region start="0x0000E000" end="0x0000E00F" type="io" name="map0xe000_0xe00f"/>
     <region start="0x0000F000" end="0x0000F001" type="io" name="master_port_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Victory Shoot (c) 1995 Taito
+MAIN PCB-B (stickered K11J0817A VICTORY SHOOT)
+Main components:
+2 x Z80A
+1 x PC060HA CIU
+1 x YM2203
+2 x OKIM6295
+2 x TC5563 CMOS static RAM
+2 x M66500 programmable buffered I/O expander
+1 x 8 MHz XTAL
+2 x 8-dip banks -->
 </platform>

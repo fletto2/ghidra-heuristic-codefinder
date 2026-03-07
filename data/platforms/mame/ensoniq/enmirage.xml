@@ -10,4 +10,28 @@
     <region start="0x0000EC00" end="0x0000ECEF" type="io" name="read"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- drivers/enmirage.c
+Ensoniq Mirage Sampler
+Preliminary driver by R. Belmont
+Fleshed out by tim lindner
+Models:
+DSK-8: Pratt-Reed keyboard (early 1984)
+DSK-8: Fatar keyboard (late 1984)
+DMS-8: Rack mount (1985)
+DSK-1: Unweighted keyboard, stereo output (1986)
+M6809 Map for Mirage:
+0000-7fff: 32k window on 128k of sample RAM
+8000-bfff: main RAM
+c000-dfff: optional expansion RAM
+e100-e101: 6850 UART (for MIDI)
+e200-e2ff: 6522 VIA
+e400-e407: write to both filters
+e408-e40f: filter cut-off frequency
+e... -->
 </platform>

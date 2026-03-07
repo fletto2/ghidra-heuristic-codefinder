@@ -6,4 +6,22 @@
     <region start="0x00000000" end="0x0000FFFF" type="io" name="bank1_w"/>
     <region start="0x00002000" end="0x0000FFFF" type="ram" name="bankr1"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Camputers Lynx
+2009-05 Skeleton driver.
+2015-10-23 Working
+The Lynx was an 8-bit British home computer that was first released
+in early 1983 as a 48 kB model.
+The designer of the Lynx was John Shireff and several models were
+available with 48 kB, 96 kB (from Sep 1983) or 128 kB RAM (from Dec
+1983). It was possible reach 192 kB with RAM expansions on-board.
+The machine was based around a Z80A CPU clocked at 4 MHz, and featured
+a Motorola 6845 as video controller. It was possible to run CP/M with
+... -->
 </platform>

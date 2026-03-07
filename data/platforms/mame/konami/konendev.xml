@@ -7,4 +7,25 @@
     <region start="0x00A40000" end="0x00A40001" type="unmapped" name="nop_write"/>
     <region start="0x00FEE010" end="0x00FEE011" type="io" name="ifu_unk_r"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Konami Endeavour hardware (gambling games)
+Hardware:
+1. Backplane PCB (GGAT2 PWB(A1) 10000094517)
+- VGA connector
+- RJ45 connector
+2. MCU2 PCB (GGAT2 PWB(B2) 0000093536)
+- U3, U18, U30, U97: Micron MT48LC4M16A2 SDRAM (other boards may have Hynix HY57V641620)
+- U6: Sound amplifier with heatsink
+- U12: Yamaha YMZ280B-F
+- U21, U22: NEC uPD000AGW-70LL SRAM (some boards may have Hynix SRAM)
+- U26: Texas Instruments LS245
+- U34: Epson RTC62423
+- U66, U75: EPROM sockets
+- U67: IBM PowerPC 403GCX
+- U92,... -->
 </platform>

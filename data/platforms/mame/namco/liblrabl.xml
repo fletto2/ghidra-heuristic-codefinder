@@ -6,4 +6,20 @@
     <region start="0x00006800" end="0x0000682F" type="io" name="read"/>
     <region start="0x00007000" end="0x00007FFF" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <!-- "Universal System 16" Hardware (c) 1983/1986 Namco
+driver by Angelo Salese,
+original "wiped off due of not anymore licenseable" driver by Edgardo E. Contini Salvan.
+TODO:
+- PAL is presumably inverted with address bit 11 (0x800) for 0x6000-0x7fff area
+between Libble Rabble and Toy Pop.
+- Proper sprite DMA.
+- Flip Screen;
+- Remaining outputs;
+Notes:
+------
+- Libble Rabble Easter egg:
+- enter service mode
+- turn off the service mode switch, and turn it on again quickly to remain
+on the monitor test... -->
 </platform>

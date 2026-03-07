@@ -5,4 +5,14 @@
     <region start="0x0000C014" end="0x0000C014" type="io" name="region_c014"/>
     <region start="0x0000C020" end="0x0000C023" type="io" name="region_c020"/>
   </memory_map>
+
+  <!-- Gun Dealer memory map
+driver by Nicola Salmoria
+The custom graphics chips at locations labeled GA 1, GA 2 and GA 3 (x2) are
+surface-scratched on common blue boards. However, a Tecmo-licensed green
+PCB reveals them to be none other than NMK-901, NMK-902 and NMK-903.
+Yam! Yam!? runs on similar hardware but has a protection device which can
+access RAM at e000. Program writes to e000 and expects a value back
+at e001, then jumps to subroutines at e010 and e020. Also, the
+player and coin inputs appear... -->
 </platform>

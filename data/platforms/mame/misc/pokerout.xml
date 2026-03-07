@@ -4,4 +4,26 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Potten's Poker stealth with Breakout front game.
+Running in a PCB silkscreened "5981-A".
+Unknown manufacturer &amp; year.
+Driver by Roberto Fresca &amp; Grull Osgo.
+Specs...
+1x Z80A.
+1x Z80ACTC.
+1x AY-3-8910.
+1x TI TMS9129NL (Video Display Processor).
+1x Altera EP310-DC (EPLD).
+1x TBA820 (2 Watt Audio Amplifier).
+2x 27128 EPROMS.
+1x HM6116 2Kx8 SRAM.
+2x TMS4416-15 16Kx4 DRAM (for VDP).
+1x 8 DIP switches bank (Connected to AY8910 portA).
+1x 10 DIP switches bank (8 of them connected to EP310 EPLD)... -->
 </platform>

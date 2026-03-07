@@ -54,4 +54,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- CPS1 single board bootlegs (thought to be produced by "Playmark")
+sound hardware: Z80, YM2151, 2x oki MSM5205 (instead of oki M6295)
+Games known to use this h/w:
+Captain Commando                       911014 ETC
+Knights of the Round                   911127 ETC
+Street Fighter II: The World Warrior   910204 ETC
+Street Fighter II': Champion Edition   920313 ETC    * this might be hacked WW (uses WW portraits on character select screen)
+Street Fighter II': Magic Delta Turbo  920313 ETC
+The King of ... -->
 </platform>

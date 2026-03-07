@@ -14,4 +14,15 @@
     <region start="0x0000C000" end="0x0000CFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Seletron / Olympia Long Beach
+Olympia probably took care of distribution, PCB and game by Seletron
+Hardware notes:
+- 16MHz XTAL, MC6800P @ 500kHz
+- 2x 5101 sram 256x4bit (256 byte) battery backed
+- 4x 4045 sram 1kx4 (2K byte)
+6800 hits many illegal opcodes (0x02), though it's harmless. Maybe they meant
+to inserts nops (0x01) to remove debug stuff or to make room for future additions?
+Speed Race is on the same hardware, no mention of Olympia, but it is listed
+online on Olympia game lists. It is a... -->
 </platform>

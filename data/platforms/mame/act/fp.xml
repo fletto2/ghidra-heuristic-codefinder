@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x000F7FFF" type="io" name="mem_r"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- ACT Apricot FP
+11/09/2011 - modernised. The portable doesn't seem to have
+scroll registers, and it sets the palette to black. -->
 </platform>

@@ -16,4 +16,15 @@
     <region start="0x13000000" end="0x13FFFFFF" type="io" name="ta_texture_directpath1_w"/>
     <region start="0x14000000" end="0x1FFFFFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <!-- NAOMI (c) 1998 Sega
+NAOMI2 (c) 2000 Sega
+Notes:
+- The later revision games (released after GD-ROM had been discontinued) require the 'h'
+revision bios, which checks the SH-4 ID register.
+- List of boot error codes can be seen at https://wiki.arcadeotaku.com/w/Sega_NAOMI_Error_Codes
+- NAOMI2 is backwards compatible with regular NAOMI.
+QA Notes (Update January 2022):
+- Roadmap: https://github.com/mamedev/mame/projects/2
+- Testing functional notes: https://github.com/angelosa/mame_qa/blob/main/mame... -->
 </platform>

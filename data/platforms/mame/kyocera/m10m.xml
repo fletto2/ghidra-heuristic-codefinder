@@ -6,4 +6,18 @@
     <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
     <region start="0x0000A000" end="0x0000FFFF" type="ram" name="bank2"/>
   </memory_map>
+
+  <!-- Kyocera Kyotronics 85 (and similar laptop computers)
+2009/04 Very Preliminary Driver (video emulation courtesy of very old code by
+Hamish Coleman)
+Comments about bit usage from Tech References and Virtual T source.
+Supported systems:
+- Kyosei Kyotronic 85
+- Olivetti M10 (slightly diff hw, BIOS is shifted by 2 words)
+- NEC PC-8201A (slightly diff hw)
+- TRS-80 Model 100
+- Tandy Model 102 (slightly diff hw)
+- Tandy Model 200 (diff video &amp; rtc)
+To Do:
+- Find dumps of systems which could easily b... -->
 </platform>

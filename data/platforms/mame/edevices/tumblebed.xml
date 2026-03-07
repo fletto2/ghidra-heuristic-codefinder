@@ -54,4 +54,30 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Diver Boy
+(c)1992 Device Electronics
+----
+Here's the info about this dump:
+Name:            DiverBoy
+Manufacturer:    Unknown
+Year:            Unknown
+Date Dumped:     17-07-2002 (DD-MM-YYYY)
+CPU:             68000, Z80
+SOUND:           OKIM6295
+GFX:             Unknown
+About the game:
+The worst game I have :) Enjoy it so much as me :D
+----
+Stephh's notes :
+- COIN3 gives ("Coinage" * 2) coins/credits :
+COIN1/2    COIN3
+4C_1C     2C_1C
+3C_1C    special   (see below)
+2C_1C     1C_1C
+1C_1C     1C_2... -->
 </platform>

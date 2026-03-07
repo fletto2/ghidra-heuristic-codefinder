@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x00003FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- The Oberheim DMX is a digital drum machine.
+The firmware, running on a Z80, implements the drum machine functionality (e.g.
+sequencer), controls the UI (scans for button presses, drives the display),
+triggers voices, and controls voice variations. All hardware functionality is
+mapped to I/O ports. Only ROM and RAM are mapped to memory.
+There are 8 voice cards, each of which can produce 3 variations, for a total of
+24 sounds. The 8 voice cards can play back simultaneously, but only 1 variation
+pe... -->
 </platform>

@@ -52,4 +52,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ym2203"/>
+  </devices>
+
+  <!-- Toki (Modular System)
+as with most of the 'Modular System' setups, the hardware is heavily modified from the original
+and consists of a multi-board stack in a cage, hence different driver.
+Update: it doesn't seem all that different than tokib, the differences are:
+paletteram;
+video registers;
+sprite chip interface (basically shifting all the ports, why even?);
+switching from YM3812 to a double YM2203 setup;
+TODO:
+- Subclass with tokib_state in toki.cpp driver;
+- Sound needs improvements:
+meaning... -->
 </platform>

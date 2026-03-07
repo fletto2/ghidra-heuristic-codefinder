@@ -7,4 +7,13 @@
     <region start="0x0000C050" end="0x0000C05F" type="io" name="switches_r"/>
     <region start="0x0000FFFC" end="0x0000FFFF" type="io" name="reset_r"/>
   </memory_map>
+
+  <!-- Nippel Super Games ][
+An arcade board designed to run modified games from Apple ][.
+Most of Apple hardware is missing, keyboard port is reused for joysticks.
+Only one game is known (a Mario Bros. hack/translation patch).
+Info: http://agatcomp.ru/Pravetz/Hard/SuperGames.shtml
+To do:
+- verify palette, pixel and cpu clocks
+- proper bootstrap (is there another ROM?) -->
 </platform>

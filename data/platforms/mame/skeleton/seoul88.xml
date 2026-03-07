@@ -9,4 +9,15 @@
     <region start="0x0000D600" end="0x0000D63F" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Skeleton driver for "Seoul 88 Fever", a Korean video slot from Mecca.
+____________________________________________________________________________________________________
+| ____      ____________________    ____________   _________   ________   _________  _________       |
+||BATT|    | ZILOG Z0840006PSC  |  | ROM U02    | |PAL22V10_| |74LS245N| |__DIPSx8_||__DIPSx8_|      |
+||____|    |____________________|  |____________|                                                    |
+|                   ... -->
 </platform>

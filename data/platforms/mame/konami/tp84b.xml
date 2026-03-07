@@ -16,4 +16,27 @@
     <region start="0x00001F80" end="0x00001F80" type="ram" name="writeonly"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Time Pilot 84  (c) 1984 Konami
+---- Master 6809 ------
+Write
+2000-27ff MAFR Watch dog ?
+2800      COL0 a register that index the colors Proms
+3000      reset IRQ
+3001      OUT2  Coin Counter 2
+3002      OUT1  Coin Counter 1
+3003      MUT
+3004      HREV  Flip Screen X
+3005      VREV  Flip Screen Y
+3006      -
+3007      GMED
+3800      SON   Sound on
+3A00      SDA   Sound data
+3C00      SHF0 SHF1 J2 J3 J4 J5 J6 J7  background Y position
+3E00      L0 - L7                      background X position
+R... -->
 </platform>

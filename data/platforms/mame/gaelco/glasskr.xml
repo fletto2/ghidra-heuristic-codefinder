@@ -53,4 +53,13 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Glass (c) 1993 Gaelco (Developed by OMK. Produced by Gaelco)
+Driver by Manuel Abadia &lt;emumanu+mame@gmail.com&gt;
+Todo:
+- video priorities are incorrect, like most earlier Gaelco titles in MAME -->
 </platform>

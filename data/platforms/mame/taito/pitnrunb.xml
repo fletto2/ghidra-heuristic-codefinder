@@ -8,4 +8,28 @@
     <region start="0x0000D800" end="0x0000D800" type="io" name="mcu_status_r"/>
     <region start="0x0000F000" end="0x0000F000" type="io" name="reset_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Pit &amp; Run - Taito 1984
+driver by Tomasz Slanina and  Pierpaolo Prazzoli
+hardware is very similar to roundup.cpp, suprridr.cpp, misc/timelimt.cpp
+TODO:
+- analog sound
+writes to $a8xx triggering analog sound :
+$a800 - drivers are getting into the cars
+$a801 - collisions
+$a802 - same as above
+$a803 - slide on water
+$a804 - accelerate
+$a807 - analog sound reset
+-----------------------------------------------------
+$8101 B - course
+$8102 B - trial
+$8492 B - fuel
+$84f6 B - lap
+$84c1 W - time
+-----... -->
 </platform>

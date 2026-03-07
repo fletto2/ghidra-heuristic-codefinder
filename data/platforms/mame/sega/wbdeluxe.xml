@@ -6,4 +6,15 @@
     <region start="0x00008000" end="0x0000DFFF" type="ram" name="bank1"/>
     <region start="0x0000E000" end="0x0000FFFF" type="io" name="videoram_r"/>
   </memory_map>
+
+  <!-- Sega System 1 / System 2
+driver by Jarek Parchanski, Nicola Salmoria, Mirko Buffoni
+Up'n Down, Mister Viking, Flicky, SWAT, Water Match and Bull Fight are known
+to run on IDENTICAL hardware (they were sold by Bally-Midway as ROM swaps).
+TODO:
+- fully understand nobb ports involved in the protection
+Main  Snd   Gfx1  Gfx2            Max     Min
+Game        ROMs  ROMs  ROMs  ROMs  Pal? Intf EPR#    EPR#
+----------- ----- ----- ----- ----- ---- ---- ----    ----
+starjack    6x8k  1x8k  6x8k  2x16k ... -->
 </platform>

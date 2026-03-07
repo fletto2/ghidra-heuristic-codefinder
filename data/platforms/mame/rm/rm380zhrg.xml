@@ -9,4 +9,18 @@
     <region start="0x0000FB00" end="0x0000FBFF" type="io" name="port_read"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="hiram"/>
   </memory_map>
+
+  <!-- Research Machines 380Z (aka "RML 380Z" or "RM 380Z")
+Microcomputer produced by Research Machines Limited, Oxford, UK
+1978-1985
+MESS driver by Wilbert Pol and friol (dantonag (at) gmail.com)
+Driver started on 22/12/2011
+Stefano Bodrato, 09/12/2016 - skeleton for cassette support
+True tape samples are needed to continue !
+Robin Sergeant, 2024 - h/w scrolling, HRG, sound, 8" disk support
+and various bug fixes.
+===
+From the Firmware Manual:
+List of known firmware revisions by sign-on message:
+RM380Z... -->
 </platform>

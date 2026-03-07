@@ -12,4 +12,19 @@
     <region start="0x50024000" end="0x50027FFF" type="io" name="buserror_r"/>
     <region start="0x50040000" end="0x50041FFF" type="io" name="via_r"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- maciifx.cpp
+Mac IIfx
+By R. Belmont
+This was the fastest 68030 Mac, with a 40 MHz clock speed and 2 65C02
+coprocessors plus DMA capability.  MacOS used almost none of the extra
+hardware so the machine never reached its full potential.  However, its
+DMA and I/O coprocessors were reused in the LaserWriter IIf/IIg and
+Quadra 900/950. -->
 </platform>

@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00009FFF" type="ram" name="rombank"/>
     <region start="0x0000C000" end="0x0000C001" type="io" name="status_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Preliminary driver for Yeno Primus Expert mit Stimme.
+This learning computer is likely a German-localized version of some
+VTech product (possibly code-named "Mouse Toy" if the program ROM can
+be trusted), though the keyboard layout suggests that a French version
+might also have been contemplated.
+It includes a mouse port (not yet emulated) and a cartridge slot (no
+carts have been dumped, though at least one titled "SprachenExperte"
+was released; pinout may be identical to Yeno's PC-Logomax 2). -->
 </platform>

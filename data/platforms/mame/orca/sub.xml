@@ -13,4 +13,21 @@
     <region start="0x0000F040" end="0x0000F040" type="io" name="port"/>
     <region start="0x0000F060" end="0x0000F060" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Submarine (c) 1985 Sigma
+driver by David Haywood &amp; Angelo Salese
+TODO:
+- finish dip-switches;
+- a bunch of unemulated writes at 0xe***
+- sound gets screwy if you coin it up with demo sounds on and during demo play (sound
+overlaps);
+======================================================================================
+2 PCBs
+PCB1 - Bottom? (video?) board
+|------------------------------------------------------------------- --|
+|           B                                                      ... -->
 </platform>

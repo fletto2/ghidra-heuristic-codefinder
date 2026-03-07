@@ -60,4 +60,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Jungle (c) 2001 Yonshi
+Fruit Genie (c) 2003 Global
+TODO:
+Jungle:
+- with a clean NVRAM MAME needs to be soft reset after init or the game
+will trip a '1111 exception' (caused by invalid opcode executed at
+0x102, incomplete decryption most likely);
+- Likewise anything in the 0x100-0x1f7 range doesn't seem valid at all;
+- game sometimes expects 1+ coins even if player has available points
+(and freezing with "COIN" text blinking), very unlikely to be intended
+behaviour?
+- system setting screen shows... -->
 </platform>

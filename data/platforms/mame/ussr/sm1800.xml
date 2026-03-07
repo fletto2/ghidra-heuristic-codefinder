@@ -5,4 +5,17 @@
     <region start="0x00000FB0" end="0x00000FFF" type="io" name="dack_w"/>
     <region start="0x00001000" end="0x000017FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- SM1800 (original name is CM1800 in cyrilic letters)
+10/12/2010 Skeleton driver.
+On board hardware :
+KR580VM80A central processing unit (i8080)
+KR580VG75  programmable CRT video display controller (i8275)
+KR580VV55  programmable parallel interface (i8255)
+KR580IK51  programmable serial interface/communication controller (i8251)
+KR580VV79  programmable peripheral device, keyboard and display controller (i8279) -->
 </platform>

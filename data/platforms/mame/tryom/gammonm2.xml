@@ -9,4 +9,15 @@
     <region start="0x0000E000" end="0x0000E7FF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Tryom Gammon Master series, backgammon computer
+Gammon Master (published by Cardinal) (not dumped yet)
+Gammonmaster II (standard model and Doubler model)
+According to the manual, the two GM II have the same housing. GM II has labels
+intended for The Doubler, but they don't apply to this model.
+Hardware notes:
+- PCB label: AN0178 REV I, JRH
+- Motorola MC6800P @ ~0.85MHz (no XTAL, main clock and NMI are from a 74124)
+- 512 bytes RAM (4*NEC D2111AL-4), 4KB+2KB ROM
+- DL-4507 4-digit 7seg panel + oth... -->
 </platform>

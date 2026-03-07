@@ -14,4 +14,24 @@
     <region start="0x000006DC" end="0x000006DD" type="io" name="data_r"/>
     <region start="0x00A00000" end="0x013FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Seibu SPI Hardware
+Seibu SYS386I
+Seibu SYS386F
+Driver by Ville Linde
+Games on this hardware:
+Raiden Fighters
+Raiden Fighters 2
+Raiden Fighters Jet
+Senkyu / Battle Balls
+E-Jan High School
+Viper Phase 1
+Hardware:
+Intel 386 DX 25MHz
+Z80 8MHz (sound)
+YMF271F Sound chip
+Seibu Custom GFX chip
+The SPI mainboard is region locked. You can only play cartridges that are
+from the same region, otherwise the updater will give a checksum error.
+The region code is the 1st byte of flashrom u1053. If it is erased... -->
 </platform>

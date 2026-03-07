@@ -11,4 +11,9 @@
     <region start="0x00005F8C" end="0x00005F8C" type="io" name="write"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Aliens (c) 1990 Konami Co. Ltd
+GX875 PCB
+Preliminary driver by:
+Manuel Abadia &lt;emumanu+mame@gmail.com&gt; -->
 </platform>

@@ -5,4 +5,7 @@
     <region start="0x00000080" end="0x00000083" type="io" name="read"/>
     <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- bally.cpp
+Functions to emulate the various Bally pinball sound boards. -->
 </platform>

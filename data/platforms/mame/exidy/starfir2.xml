@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="scratch_r"/>
   </memory_map>
+
+  <!-- Star Fire/Fire One system
+driver by Daniel Boris, Olivier Galibert, Aaron Giles
+netlist audio by Ryan Holtz
+Memory map
+========================================================================
+MAIN CPU
+========================================================================
+0000-7FFF   R     xxxxxxxx   Program ROM
+8000-9FFF   R/W   xxxxxxxx   Scratch RAM, actually mapped into low VRAM
+9000          W   xxxxxxxx   VRAM write control register
+W   xxx-----      (VRAM shift amount 1)
+W   ---x----    ... -->
 </platform>

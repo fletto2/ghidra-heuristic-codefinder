@@ -9,4 +9,7 @@
     <region start="0x00000800" end="0x00000BFF" type="rom" name="rom"/>
     <region start="0x00000C00" end="0x00000C00" type="io" name="read"/>
   </memory_map>
+
+  <!-- Morrow MPZ80 "Decision"
+Skeleton driver -->
 </platform>

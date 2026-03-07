@@ -9,4 +9,27 @@
     <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="io" name="intvkb_iocart_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Mattel Intellivision + Keyboard Component Drivers
+Frank Palazzolo
+Kyle Davis
+TBD:
+Add tape support (intvkbd)
+Add runtime tape loading
+Fix memory system workaround
+(memory handler stuff in CP1610, debugger, and shared mem)
+STIC
+reenable dirty support
+Cleanup
+Separate stic &amp; video better, get rid of *2 for kbd comp
+Add better runtime cart loading
+Switch to tilemap system
+Note from kevtris about IntelliVoice Hookup:
+&lt;kevtris&gt; the intv uses a special chip
+&lt;kevtris&gt; called the SPB640
+... -->
 </platform>

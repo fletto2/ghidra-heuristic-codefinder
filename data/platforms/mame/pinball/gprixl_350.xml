@@ -14,4 +14,20 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- PINBALL
+Sega/Stern Whitestar
+Several PAL devices are not dumped.
+Here are the key codes to enable play:
+- "End ball" code, if it says BALL SAVED you need to play a while longer.
+- May have to hold the key or hit it a few times
+Game                                   NUM    Start game                 End ball
+---------------------------------------------------------------------------------------------
+Sega ****
+Viper Night Drivin'                   5035    Hold FG, hit 1             DEFG
+Mini-Vipe... -->
 </platform>

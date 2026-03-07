@@ -5,4 +5,27 @@
     <region start="0x0000F016" end="0x0000F016" type="io" name="coin_r"/>
     <region start="0x0000F800" end="0x0000F8FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Fire Trap memory map
+driver by Nicola Salmoria
+Z80:
+0000-7fff ROM
+8000-bfff Banked ROM (4 banks)
+c000-cfff RAM
+d000-d7ff bg #1 video/color RAM (alternating pages 0x100 long)
+d000-dfff bg #2 video/color RAM (alternating pages 0x100 long)
+e000-e3ff fg video RAM
+e400-e7ff fg color RAM
+e800-e97f sprites RAM
+memory mapped ports:
+read:
+f010      IN0
+f011      IN1
+f012      IN2
+f013      DSW0
+f014      DSW1
+f015      from pin 10 of 8751 controller
+f016      from port #1 of 8751 controller
+write:
+f000  ... -->
 </platform>

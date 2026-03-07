@@ -6,4 +6,12 @@
     <region start="0x0000D100" end="0x0000D103" type="io" name="read"/>
     <region start="0x0000D800" end="0x0000DFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Imsai MPU-B. One of the earliest single-board computers on a S100 card.
+2013-09-11 Skeleton driver.
+Chips used: i8085, i8251, i8253, 3622 fusable prom. XTAL 6MHz
+Press any key to start the monitor program.
+ToDo:
+- Banking
+- Dipswitches -->
 </platform>

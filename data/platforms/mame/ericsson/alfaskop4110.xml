@@ -7,4 +7,20 @@
     <region start="0x0000F7C4" end="0x0000F7C7" type="io" name="region_f7c4"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Alfaskop 41 series
+This driver is a part of a revivel project for Alfaskop 41 series where
+no known working system exists today because of its distributed nature.
+All parts network boots over SS3 (SDLC) from a Floppy Disk unit and nothing
+works unless there is a floppy in that unit. These floppies are rare and
+many parts have been discarded because they are useless stand alone.
+The goal is to emulate missing parts so a full system can be demonstrated again.
+Links and credits
+-----------------
+Pr... -->
 </platform>

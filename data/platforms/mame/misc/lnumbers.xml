@@ -52,4 +52,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Banpresto M68K-based medal games with Banpresto customs
+BPSC68000 PCB (rev B)
+Main components:
+- MC68EC000FN12 main CPU
+- 2x LH52258AD-25 SRAM
+- 24.000 MHz XTAL
+- BPSPC 87F 9529 HAD3 Banpresto custom chip (208-pin, has the Banpresto logo)
+- MFC68K 88F 9443 ABF3 Banpresto custom chip (100-pin, no Banpresto logo)
+- SPMUX 89F 9531 ADG3 Banpresto custom chip (128-pin, no Banpresto logo)
+- 2x HM514270CJ7 DRAM (between BPSPC and SPMUX customs)
+- Sanyo LC89080Q high-speed current-output D/A converter
+-... -->
 </platform>

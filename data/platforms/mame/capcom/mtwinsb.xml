@@ -51,4 +51,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Final Crash &amp; other CPS1 bootlegs */
+
+A note regarding other bootlegs:
+In order to keep the cps source in some sort of order, the idea is to group similar bootleg hardware into separate
+derived classes and source files.
+Rom swaps, hacks etc.  (on original Capcom hardware)  -&gt;  cps1.cpp
+Sound: Z80, 2x YM2203, 2x m5205 ("Final Crash" h/w)   -&gt;  fcrash.cpp
+Sound: Z80, 1x YM2151, 2x m5205                       -&gt;  cps1bl_5205.cpp
+Sound: PIC, 1x M6295            *1                    -&g... -->
 </platform>

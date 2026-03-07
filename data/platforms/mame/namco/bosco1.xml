@@ -16,4 +16,16 @@
     <region start="0x00009840" end="0x00009840" type="io" name="bosco_starclr_w"/>
     <region start="0x00009870" end="0x00009877" type="io" name="d0"/>
   </memory_map>
+
+  <!-- Bosconian  (c) 1981 Namco
+Galaga     (c) 1981 Namco
+Xevious    (c) 1982 Namco
+Dig Dug    (c) 1982 Namco
+driver by Nicola Salmoria
+based on previous work by Martin Scragg, Mirko Buffoni, Aaron Giles
+All these games are based on the same 3xZ80, shared memory, CPU design.
+Bosconian and Galaga use the same CPU board, with minor differences
+(Galaga has one missing RAM and no 50XX custom)
+Xevious is physically different, but logically identical.
+Dig Dug is the only one a bit different, because it read... -->
 </platform>

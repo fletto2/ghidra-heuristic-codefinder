@@ -5,4 +5,22 @@
     <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
     <region start="0x00007000" end="0x00007FFF" type="ram" name="vram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- SNK Micon-Kit series
+Games on this hardware:
+- Micon-Kit
+- Micon-Kit Part II (aka Yamato)
+- Space Micon Kit
+The cocktail cabinets were called Table Micon, and the upright version of the
+first game was apparently called Micon-Block.
+Micon-Kit was SNK's first arcade game, it's a simple Breakout clone. The sequel
+adds moving obstacles. The 3rd game in the series, Space Micon Kit, adds a 2nd
+row of bricks.
+Hardware notes:
+Micon-Kit (1/2):
+- 2 PCBs: one with CPU and video hardware, one with RAM, ROM,... -->
 </platform>

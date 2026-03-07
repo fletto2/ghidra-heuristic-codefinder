@@ -10,4 +10,13 @@
     <region start="0x0000C000" end="0x0000CFFF" type="ram" name="charram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="io" name="amap8"/>
   </memory_map>
+
+  <!-- SM 7238 (aka T3300) color/mono text terminal, compatible with DEC VT 240.
+Graphics options add Tek 401x and DEC ReGIS support
+Technical manual and schematics: http://doc.pdp-11.org.ru/Terminals/CM7238/
+To do:
+- graphics options
+- colors
+- document hardware and ROM variants, verify if pixel stretching is done
+- verify blink frequency -->
 </platform>

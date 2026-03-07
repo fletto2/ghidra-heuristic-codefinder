@@ -61,4 +61,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- ToaPlan game hardware from 1988-1991
+------------------------------------
+MAME Driver by: Darren Olafson
+Technical info: Carl-Henrik Skarstedt  &amp;  Magnus Danielsson
+Driver updates: Quench
+Video updates : SUZ
+Supported games:
+ROM set     Toaplan
+name        board No        Game name
+--------------------------------------------------
+rallybik    TP-O12      Rally Bike/Dash Yarou
+truxton     TP-O13B     Truxton/Tatsujin
+hellfire    B90         HellFire (2 Player version) Uses Taito rom ID numbe... -->
 </platform>

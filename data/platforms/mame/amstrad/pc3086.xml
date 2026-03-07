@@ -5,4 +5,24 @@
     <region start="0x000C0000" end="0x000C9FFF" type="rom" name="rom"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="mc146818"/>
+  </devices>
+
+  <!-- drivers/amstr_pc.cpp
+Driver file for Amstrad PC1512 and related machines.
+PC-XT memory map
+00000-9FFFF   RAM
+A0000-AFFFF   NOP       or videoram EGA/VGA
+B0000-B7FFF   videoram  MDA, page #0
+B8000-BFFFF   videoram  CGA and/or MDA page #1, T1T mapped RAM
+C0000-C7FFF   NOP       or ROM EGA/VGA
+C8000-C9FFF   ROM       XT HDC #1
+CA000-CBFFF   ROM       XT HDC #2
+D0000-EFFFF   NOP       or 'adapter RAM'
+F0000-FDFFF   NOP       or ROM Basic + other Extensions
+FE000-FFFFF   ROM
+Amstrad PC1640
+==========... -->
 </platform>

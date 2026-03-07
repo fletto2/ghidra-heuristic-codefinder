@@ -12,4 +12,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- unknown vending machine (?) by Amusement Inc.
+Main (?) PCB
+on front: AMUSEMENT INC. LOGIC PCB ASSY 58-0003-002 ORG-11 MADE IN TAIWAN R.O.C.
+on back: AMUSEMENT INC ORG-11 LOGIC PCB P/N57-0003-002
+Main components:
+UM6502
+UM6116-2
+AY-3-8910A
+VP1000 (UM5100 compatible)
+bank of 4 switches
+no XTAL spotted
+Plug in PCB
+on front: AMUSEMENT INC. ORG-11 PROM-ASSY P/N58-0004-001 MADE IN TAIWAN R.O.C.
+on back: AMUSEMENT INC ORG-11 PROM PCB P/N57-0004-001
+just 2 ROMs (one for CPU/AY and one for VP1000)
+A thir... -->
 </platform>

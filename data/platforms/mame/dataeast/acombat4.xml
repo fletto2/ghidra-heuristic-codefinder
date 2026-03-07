@@ -20,4 +20,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Astro Fighter hardware
+driver by Lee Taylor 28/11/1997
+Games supported:
+Astro Fighter (3 sets)
+Astro Battle (2 sets)
+Astro Fire
+Astro Combat (2 sets)
+Super Star Battle
+Space Fighter Mark II (2 sets)
+Saturn: Space Fighter 3D
+Tomahawk 777 late version with changed game play
+Tomahawk 777 early version
+Notes:
+Astro Battle added by HIGHWAYMAN with help from Reip.
+2 sets, 1 may be a bad set, or they may simply be different - don't know yet.
+protection involves the EPROM datalines being routed through ... -->
 </platform>

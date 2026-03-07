@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Fortune Wheel, Sega 1984?
+This game came on (at least) 3 PCBs:
+1)
+IC BOARD M4J MAIN, one '837-6553' sticker, one '837-6899 FORTUNE WHEEL' sticker
+NEC D780C-1 main CPU
+SEGA 315-5124 custom
+SEGA 315-5297 custom
+27C512 ROM
+3x NEC D4168C-15-SG RAM (1 near the CPU, 2 near the 315-5124)
+10.7386 MHz XTAL
+2)
+one '837-6900 FORTUNE WHEEL' sticker, one '880324 0508 H' sticker
+NEC D780C-1 audio CPU
+2x YM2413
+D4364CX RAM
+4.000 MHz XTAL
+27512 ROM
+3)
+MADE IN JAPAN @SEGA 1984, one '837-6898 FORTUNE WHEEL' stick... -->
 </platform>

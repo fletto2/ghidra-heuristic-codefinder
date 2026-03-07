@@ -11,4 +11,21 @@
     <region start="0x0000F000" end="0x0000F000" type="io" name="region_f000"/>
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Sega Z80-3D system
+driver by Alex Pasadyn, Howie Cohen, Frank Palazzolo, Ernesto Corvi,
+and Aaron Giles
+Games supported:
+- Turbo
+- Subroc 3D
+- Buck Rogers: Planet of Zoom
+BTANB:
+- subroc3d 'seafoam' appears as black spots on top of some sprites
+TURBO
+Memory Map:  ( * not complete * )
+Address Range:  R/W:     Function:
+--------------------------------------------------------------------------
+0000 - 5fff     R        Program ROM
+a000 - a0ff     W        Sprite RAM
+a800 - a803     W        Lamps /... -->
 </platform>

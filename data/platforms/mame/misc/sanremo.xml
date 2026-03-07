@@ -5,4 +5,24 @@
     <region start="0x00008000" end="0x000087FF" type="ram" name="videoram"/>
     <region start="0x0000D000" end="0x0000D7FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Number One.
+San Remo Games.
+8bit amusement/gambling hardware.
+Driver by Roberto Fresca.
+Hardware notes ***
+- CPU:  1x TMPZ84C00AP-6       [IC7]
+- CRTC: 1x MC68B45P            [IC14]
+- SND:  1x WF19054 (AY-3-8910) [IC32]
+- CLK:  1x crystal @ 18.000 MHz.
+- ROM:  1x NM27C256            [IC26]
+4x 27C512              [IC27, IC28, IC29, IC30]
+- RAM:  1x UMC UM6116-3L        (2K x 8 SRAM) (battery backed) [IC15]
+2x GoldStar GN76C28K-10 (2K x 8 SRAM)                  [IC20, IC21]
+- PLDs: 4x unknown PALC... -->
 </platform>

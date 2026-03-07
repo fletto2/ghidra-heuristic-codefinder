@@ -6,4 +6,17 @@
     <region start="0x00007800" end="0x0000780F" type="io" name="digit_w"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Midcoin 24 CD Coin-operated Jukebox
+CPUs
+QTY     Type            clock   position        function
+1x      D780C-1                 ic1             8-bit Microprocessor - main
+1x      MAB8441T-T042           ic10            8-bit Single Chip Microcontroller - main (internal ROM not dumped)
+3x      P8255A-5                ic11,ic25,ic31  Programmable Peripheral Interface
+1x      MM5450N                 ic29            LED Display Driver - main
+2x      LM358                   ic64,ic65       Dual Op... -->
 </platform>

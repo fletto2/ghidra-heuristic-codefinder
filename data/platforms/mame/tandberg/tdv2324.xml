@@ -7,4 +7,16 @@
     <region start="0x00005000" end="0x000053FF" type="ram" name="ram"/>
     <region start="0x00006000" end="0x00007FFF" type="ram" name="video_ram"/>
   </memory_map>
+
+  <!-- Tandberg TDV2324
+Skeleton driver
+By Curt Coder with some work by Lord Nightmare
+Status:
+Main cpu is currently hacked to read i/o port 0xE6 as 0x10;
+it then seems to copy code to a ram area then jumps there
+(there may be some sort of overlay/banking mess going on to allow full 64kb of ram)
+The cpu gets stuck reading i/o port 0x30 in a loop.
+- interrupts and sio lines are not hooked up
+Sub cpu does a bunch of unknown i/o accesses and also tries to
+sequentially read chunk of address space which it ... -->
 </platform>

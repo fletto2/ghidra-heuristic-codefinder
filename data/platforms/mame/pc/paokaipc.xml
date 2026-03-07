@@ -8,4 +8,13 @@
     <region start="0x02000000" end="0x28FFFFFF" type="unmapped" name="unmapped"/>
     <region start="0xFFFC0000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Go Go Strike (c) 2007? Paokai
+Originally in fruitpc.cpp, split because definitely doesn't belong
+Some kind of x86 pc-like hardware, exact CPU type etc. unknown hardware is by Paokai,
+motherboard has logos, large chip with logo too, http://www.paokai.com.tw/
+CF card has a Linux partition, partially bootable with shutms11 driver.
+- starts with a "LILO boot", loads a proprietary driver TWDrv.o (?) then eventually
+crashes not finding sound modules;
+- Shows being a "gcc 3.2.2 (Red Hat Linux 3.2.2-5)"... -->
 </platform>

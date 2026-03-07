@@ -6,4 +6,16 @@
     <region start="0x0000F400" end="0x0000F7FF" type="ram" name="ram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- UT88 driver by Miodrag Milanovic
+2008-03-09 Keyboard fixed, sound added.
+2008-03-06 Preliminary driver.
+UT88MINI
+Need instructions...
+When started you enter a one-key command, followed by whatever parameters
+are needed.
+Pressing 1 will allow entry of bytes into RAM.
+Command 3 does a test of the display, however the rest are a mystery.
+Paste facility was tested but doesn't work, because keyboard response is
+too slow. -->
 </platform>

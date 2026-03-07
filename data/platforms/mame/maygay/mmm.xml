@@ -4,4 +4,12 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x000040FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Early Maygay HW
+I believe this is 'Triple M' or 'MMM' hardware
+Z80 based Fruit Machine -->
 </platform>

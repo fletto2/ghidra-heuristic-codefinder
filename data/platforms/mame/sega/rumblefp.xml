@@ -5,4 +5,18 @@
     <region start="0x01000000" end="0x0100011F" type="io" name="allnet_hack_r"/>
     <region start="0x01001800" end="0x01001803" type="io" name="map0x01001800_0x01001803lr32name__u32__r"/>
   </memory_map>
+
+  <!-- Atomiswave (c) 2003 Sammy
+===================================================================================================
+Guru's Readme
+-------------
+Sammy Atomiswave (codename SYSTEM X) system overview
+(high likely) developed by SI Electroncs Ltd, former Sammy subsidiary
+released April 2003
+The Atomiswave System is basically just a Sega Dreamcast using ROM carts.
+PCB Layout
+----------
+Sammy AM3AGA-04 Main PCB 2002 (top side)
+1111-00006701 (bottom side)
+|-------------------------------------... -->
 </platform>

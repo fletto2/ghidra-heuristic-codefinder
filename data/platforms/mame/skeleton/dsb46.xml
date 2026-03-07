@@ -4,4 +4,24 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00000000" end="0x000007FF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- 2013-07-31 Skeleton Driver [Curt Coder]
+2013-07-31 Connected to terminal [Robbbert]
+2016-07-11 After 10 seconds the monitor program will start [Robbbert]
+Commands: (no spaces allowed)
+B - Boot the disk
+D - Dump memory to screen
+F - Fill Memory
+G - Go To
+H - Help
+P - Alter port values
+S - Alter memory
+The photos show 3 boards:
+- A "SASI Interface" board (all 74-series TTL)
+- CPU board (64k dynamic RAM, Z80A CPU, 2x Z80CTC, 2x Z80SIO/0, MB8877A, Z80DMA, 4x MC1488,
+4x MC1489, XTALS 1.8432MHz and 24... -->
 </platform>

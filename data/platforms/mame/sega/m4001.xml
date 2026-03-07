@@ -11,4 +11,18 @@
     <region start="0x0000C000" end="0x0000C04F" type="unmapped" name="nop_write"/>
     <region start="0x0000E000" end="0x0000E00F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="sound" name="rf5c68"/>
+  </devices>
+
+  <!-- Sega electromechanical fruit machines (834-6912 PCB)
+Z80 x2
+RF5C68 - sound
+RTC62421A
+16 MHz XTAL
+8-dip bank
+TODO:
+decryption needs to be verified (may be good), then everything else -->
 </platform>

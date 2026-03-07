@@ -7,4 +7,18 @@
     <region start="0x0000C000" end="0x0000CFFF" type="rom" name="rom"/>
     <region start="0x0000F800" end="0x0000FBFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <!-- Berzerk hardware
+Driver by Zsolt Vasvari
+Original sound driver by Alex Judd
+New sound driver by Aaron Giles, R. Belmont and Lord Nightmare
+Some known differences between Berzerk RC28 and RC31 sets:
+RC28 uses only 3 different colors for robots based on player score:
+Score  Robot Color   Lasers
+0     Gold          0
+300     Red           1
+1500+    Dark Blue     2
+Evil Otto shows up based on a formula of 5(-1 for each new room) plus
+the number of spawned robots times 40 frames
+RC31 is a rebalanced... -->
 </platform>

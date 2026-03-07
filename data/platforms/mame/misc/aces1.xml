@@ -10,4 +10,27 @@
     <region start="0x0000C000" end="0x0000C000" type="io" name="aces1_unk_r"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="aces1_nmi_counter_reset_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Ace System One Hardware
+Fruit Machines
+skeleton driver!
+sets placed here on
+total rom size 0x8000
+ram at 0x8000-0x87ff
+lots of reads from 0xe000 at the start
+JPM style Reel MCU? Certainly reel data seems to be muxed together in a weird way
+Hardware overview
+- Z80 (Z8400AB1)
+- 8 MHz XTAL
+- 3 x TMP8255
+- 2 x 8 dip-switches banks
+- 2 timed interrupts (IRQ and NMI) (can be reset)
+- AY8910 for sound
+- TC5517CPL-20
+- some of the roms appear to have been merged to larger files, or there are two version... -->
 </platform>

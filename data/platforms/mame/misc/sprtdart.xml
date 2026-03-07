@@ -6,4 +6,27 @@
     <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Cuatro en Linea.
+System I.
+1991, Compumatic
+Driver by David Haywood &amp; Roberto Fresca.
+1x Z84C00HB6 CPU @ 8 MHz for program.
+1x Z84C00AB6 CPU @ 4 MHz for sound.
+1x AY-3-8910 A
+1x UMC UM487F (HCGA Controller)
+2x NEC D41464C (64K x 4-bit Dynamic NMOS RAM) for VRAM.
+1x UMC UM6264A (8K x 8-bit CMOS SRAM).
+2x 27512 EPROMS.
+1x X24C16P Serial EEPROM.
+1x GAL16V8AS
+1x ES2 CM3080 (unknown DIP-18 IC)
+1x ES2 9046 (unknown PLCC-84 IC)
+1x 8952 CM 32 (unknown DIP-40 IC)
+1x 16.0000 MHz crystal. ; Divided by ... -->
 </platform>

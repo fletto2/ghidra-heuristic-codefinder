@@ -6,4 +6,19 @@
     <region start="0x000D0000" end="0x000D7FFF" type="ram" name="vram"/>
     <region start="0x000E8000" end="0x000EFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Regnecentralen RC759 Piccoline
+TODO:
+- Needs better I82730 emulation
+- Floppy I/O errors
+- Many more things
+Notes:
+- Press SPACE during self-test for an extended menu -->
 </platform>

@@ -19,4 +19,16 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="rombank"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- PINBALL
+Williams WPC with DCS sound
+If it says FACTORY SETTINGS, press F3, and wait for the game attract mode to commence.
+To increase the volume, press NUM+.
+Here are the key codes to enable play:
+Game                                    NUM  Start game       End ball
+--------------------------------------------------------------------------------------------------
+Bally (Midway) ****
+Judge Dredd                           20020  1 or T           (untested) should be INP81-87
+Williams ****
+Indian... -->
 </platform>

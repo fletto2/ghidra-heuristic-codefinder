@@ -6,4 +6,20 @@
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="sc0_vram"/>
     <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Sengoku Mahjong (c) 1991 Sigma
+driver by Angelo Salese &amp; Pierpaolo Prazzoli
+Uses the same Seibu custom chips of the D-Con HW.
+TODO:
+- Find what the remaining video C.R.T. registers do;
+- Fix sprites bugs at a start of a play;
+- Check NVRAM boundaries;
+- How does the "SW Service Mode" (press F2 during gameplay) really work (inputs etc)? Nothing mapped works with it...
+Notes:
+- Some strings written in the sound ROM:
+"SENGOKU-MAHJONG Z80 PROGRAM ROM VERSION 1.00 WRITTEN BY K.SAEKI" at location ... -->
 </platform>

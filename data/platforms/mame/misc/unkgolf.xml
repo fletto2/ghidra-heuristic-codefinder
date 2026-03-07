@@ -4,4 +4,21 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- HSG-001A PCB
+This is probably a golf game (or part of it), given the ROM labels.
+Main components:
+Sharp LH0080A Z80A-CPU-D
+Sharp LH0082A Z80A-CTC-D
+HM6264ALP-15 RAM
+4x TMP82C55AP-2 (with 2 more empty spaces)
+OKI M6376
+20 Mhz XTAL
+4.096 Mhz XTAL
+8-DIP bank
+1 push button -->
 </platform>

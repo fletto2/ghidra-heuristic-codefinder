@@ -7,4 +7,21 @@
     <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
     <region start="0x0000D400" end="0x0000D7FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Novag Chess Robot Adversary, chess computer with robotic arm. The chess engine
+is MyChess by David Kittinger, just like the one in Novag Savant.
+Hardware notes:
+- PCB label: GOODNIGHT DESIGN, PACIFIC MICROELECTRONICS GROUP, 743-279A/280A/281A
+- Zilog Z8400B PS, 6 MHz XTAL
+- 40KB ROM (4*2764 or equivalent, 4*MSM2716AS) + 1 socket for expansion
+- 5KB RAM (8*TMM314APL-1, 2*TC5514AP-8 battery-backed)
+- SN76489AN sound
+- robot arm with 4 DC motors
+- 12+12 leds, 8*8 magnet sensors, printer port
+See pa... -->
 </platform>

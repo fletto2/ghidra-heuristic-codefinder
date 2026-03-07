@@ -10,4 +10,15 @@
     <region start="0x00300000" end="0x003BFFFF" type="rom" name="rom"/>
     <region start="0x00F00000" end="0x00FBFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Sente Super System
+Preliminary driver by Mariusz Wojcieszek
+Notes:
+It's possible that the Moonquake set is actually a hardware diagnostic program
+rather than the game itself. The origin of the set and the state of the PCB
+from which it was dumped are unknown.
+There are no references to Moonquake within the entire ROM data.
+No code paths lead out of the test mode.
+The non-test-mode data starts at 0xf03c3e. Curiously, there are no FF values
+within the data and large sections are repeated (see 0xf2... -->
 </platform>

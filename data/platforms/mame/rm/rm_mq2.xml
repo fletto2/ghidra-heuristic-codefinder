@@ -4,4 +4,12 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Research Machines MQ2 dual floppy drive
+An RS232 serial communication protocol is used for communcation between the MQ2 and 480Z.
+Initial requests are sent to the drive at 9600 baud, and the drive's response to this upgrades
+the connection to 125000 baud.  The RTS output line is used by the 480Z to reset the baud rate
+back to 9600 baud prior to issuing a new request.  When this line is high an NMI is generated
+to achieve this.
+On first boot the 480Z requests disk handling code which is downloade... -->
 </platform>

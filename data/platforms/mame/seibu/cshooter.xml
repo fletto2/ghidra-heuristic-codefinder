@@ -18,4 +18,15 @@
     <region start="0x0000DE00" end="0x0000DE0F" type="io" name="main_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Air Raid (aka Cross Shooter) (c) 1987 Seibu
+this driver is for the single board version on the S-0087-011A-0 PCB
+for the version using a S-0086-002-B0 base PCB and separate video board see stfight.cpp
+Video system is very similar to darkmist.cpp
+Custom Modules note:
+The Air Raid / Cross Shooter PCB contains 3 custom modules.
+These modules have not been dumped.
+2 of these are responsible for background layer generation.
+the 3rd is responsible for sprites.
+Both the tile gfx data, and tilemap layou... -->
 </platform>

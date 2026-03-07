@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
     <region start="0x000F8000" end="0x000FFFFF" type="io" name="data_r"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80scc"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- From 1999? (documentation is dated August 99)
+Atronic was an Austrian/German slot machine manufacturer. It later
+merged with Spielo.
+Atronic CashLine platform (~199x-2004?) - z80-based
+Atronic CashLine platform is used in multiple cabinet form-factors:
+Regular/Upright (?)
+WBC - Wide Body Cabinet
+AST - Atronic Slant Top
+Titan (?)
+CashLine hardware description:
+Backplane has room for 4 boards:
+1. Master board [Z80]
+2. Graphic Board [TMS34020]
+3. Sound Board (optional?) [YMZ280B?]
+4. Communications... -->
 </platform>

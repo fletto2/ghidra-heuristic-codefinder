@@ -11,4 +11,19 @@
     <region start="0x00005000" end="0x00005000" type="io" name="read"/>
     <region start="0x0000E000" end="0x0000EFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Halley's Comet, 1986 Taito
+Halley's Comet was created by Fukio Mitsuji (MTJ),
+who also created Bubble Bobble, Rainbow Islands, Syvalion, etc.
+Issues:
+- Status reads from blitter RAM aren't well understood.
+They probably includes both completion and collision flags.
+- The blitter is missing many features, in particular certain sprites aren't
+erased properly.
+- It isn't known how many independent planes of graphics the blitter manages.
+The starfield, for example, probably involves at least two add... -->
 </platform>

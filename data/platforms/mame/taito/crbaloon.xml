@@ -8,4 +8,9 @@
     <region start="0x00005000" end="0x000053FF" type="ram" name="colorram"/>
     <region start="0x00005800" end="0x00007FFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <!-- Taito Crazy Balloon hardware
+To-Do:
+Faithfully implement the custom chips
+Coin counter and lock-out -->
 </platform>

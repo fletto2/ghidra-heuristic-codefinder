@@ -8,4 +8,19 @@
     <region start="0x0019003E" end="0x0019003F" type="io" name="region_19003e"/>
     <region start="0x0019C020" end="0x0019C021" type="io" name="in0_word_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- One Shot One Kill &amp; Maddonna
+Driver by David Haywood and Paul Priest
+Dip Switches and Inputs by stephh
+Hardware identified by Tuning manual as "VISYS-Board(R) (Video-System-Board)"
+Notes :
+- The YM3812 is used only for timing. All sound is played with ADPCM samples.
+- It doesn't seem possible to make 2 consecutive shots at the same place !
+In-game bug or is there something missing in the emulation ?
+several gun games are like this, changed the driver so it doesn't try
+- Gun X range is 0x0000... -->
 </platform>

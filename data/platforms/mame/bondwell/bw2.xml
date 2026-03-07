@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x00007FFF" type="io" name="region_0"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- drivers/bw2.c
+Bondwell BW 2
+- Z80L CPU 4MHz
+- 64KB RAM, expandable to 224KB RAM.
+- 4KB System ROM
+- MSM6255 LCD controller, 640x200 pixels
+- 16KB Video RAM
+- TMS2797 FDC controller
+- 8251 USART serial interface
+- 8253 PIT timer
+- 8255 PPI
+http://www.thebattles.net/bondwell/ -->
 </platform>

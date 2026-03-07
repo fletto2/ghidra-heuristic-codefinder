@@ -6,4 +6,21 @@
     <region start="0x00006000" end="0x00006000" type="io" name="eeprom_r"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="bank_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- 8080bw.cpp
+Michael Strutts, Nicola Salmoria, Tormod Tjaberg, Mirko Buffoni
+Lee Taylor, Valerio Verrando, Marco Cassili, Zsolt Vasvari, and others
+Much information about Space Invaders PCBs and other Taito and Midway
+sets and hardware contributed by Andrew Welburn
+Notes:
+-----
+- Midway Deluxe Space Invaders still displays 'Space Invaders Part II',
+because of the terms of the licensing agreement.
+- DIP settings/locations verified from manual for:
+sitv, sicv, invadpt2, lrescue, invasion, invrvnge
+-... -->
 </platform>

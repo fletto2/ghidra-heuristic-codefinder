@@ -24,4 +24,20 @@
     <region start="0x0000C000" end="0x0000CFFF" type="unmapped" name="unmapped"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Sega "Space Tactics" Driver
+Frank Palazzolo (palazzol@home.com)
+Master processor - Intel 8080A
+Memory Map:
+0000-2fff ROM                       R
+4000-47ff RAM                       R/W
+5000-5fff switches/status           R
+6000-6fff dips sw                   R
+6000-600f Coin rjct/palette select  W
+6010-601f sound triggers            W
+6020-602f lamp latch                W
+6030-603f speed latch               W
+6040-605f shot related              W
+6060-606f score display             W
+60a0-60e0 s... -->
 </platform>

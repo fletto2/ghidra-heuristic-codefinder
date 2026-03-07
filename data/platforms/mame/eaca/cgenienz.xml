@@ -10,4 +10,17 @@
     <region start="0x0000F800" end="0x0000F8FF" type="io" name="keyboard_r"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- EACA Colour Genie EG2000
+TODO:
+- System is too fast, there should be one wait cycle every five cycles?
+- Adjust visible area so that the borders aren't that large (needs
+MC6845 changes)
+- Verify BASIC and character set versions -->
 </platform>

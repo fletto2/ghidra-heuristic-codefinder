@@ -14,4 +14,19 @@
     <region start="0x000EC000" end="0x000EC000" type="io" name="dmaon_w"/>
     <region start="0x000FFFF0" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- IREM M72 board
+driver by Nicola Salmoria
+protection information by Nao
+board differences
+M72 - 3 board stack, 2 known variants
+M72-B-D (bottom) / M72-A-C (middle) / M72-ROM-C (top)
+This is the original hardware used by R-type
+Z80 program uploaded to RAM rather than having a ROM
+each of the 2 tile layers uses its own set of ROMs.
+Flip bits are with the tile num, so 0x3fff max tiles
+per layer
+M72-B-D (bottom) / M72-A-C (middle) / M72-C-A (top)
+This is used by all other M72 games, adds support
+for ... -->
 </platform>

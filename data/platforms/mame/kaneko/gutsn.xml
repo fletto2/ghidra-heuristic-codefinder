@@ -37,4 +37,24 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+  </devices>
+
+  <!-- Super Kaneko Nova System
+Original Driver by Sylvain Glaize
+taken to pieces and attempted reconstruction by David Haywood
+Mainboard + Cart combo
+Regions are not cross compatible and have their own BIOS
+Regions by color coded cart:
+White      = Japan
+Light Blue = Europe
+Dark Blue  = USA
+Green      = Asia
+Red        = Korean
+Credits (in no particular order):
+Olivier Galibert for all the assistance and information he's provided
+R. Belmont for working on the SH2 timers so sound worked
+Nicola Salmoria... -->
 </platform>

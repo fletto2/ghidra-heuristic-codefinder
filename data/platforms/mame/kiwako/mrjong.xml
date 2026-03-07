@@ -7,4 +7,27 @@
     <region start="0x0000A000" end="0x0000A7FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Mr. Jong
+(c)1983 Kiwako
+Crazy Blocks
+(c)1983 Kiwako/ECI
+Driver by Takahiro Nogi 2000/03/20 -
+Block Buster
+(c)1983 Kiwako/ECI
+Developed by Sanritsu and licensed to Kiwako and ECI.
+PCB Layout
+----------
+C2-00154C
+|-----------------------------------------|
+|                    93422                |
+|                    93422                |
+|          4H  5H           PROM7J        |
+|                           PAL    DSW1(8)|
+|              PROM5G                     |
+|                        ... -->
 </platform>

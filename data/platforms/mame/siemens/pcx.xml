@@ -6,4 +6,12 @@
     <region start="0x00000000" end="0x0007FFFF" type="io" name="mem_r"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="rtc" name="mc146818"/>
+  </devices>
+
+  <!-- Siemens PC-D
+For PC-X HDD should have 306,4,9 chs at 1024Bps or 18 at 512Bps -->
 </platform>

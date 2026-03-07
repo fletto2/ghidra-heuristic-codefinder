@@ -15,4 +15,23 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Galeb driver by Miodrag Milanovic
+2008-02-22 Preliminary driver.
+2008-02-23 Sound support added.
+2008-03-01 Updated to work with latest SVN code
+Driver is based on work of Josip Perusanec.
+Galeb (seagull) based on the OSI UK101. Due to its expense it is quite rare.
+It was succeeded by the Orao (eagle).
+All commands in Monitor and in Basic must be in UPPERCASE. So, the very first
+thing to do is to press ^A to enter caps mode.
+Commands:
+A nnnn           Mini-assembler
+B
+C aaaabbbb       show check... -->
 </platform>

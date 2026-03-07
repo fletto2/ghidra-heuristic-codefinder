@@ -10,4 +10,15 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- "Combat School" (also known as "Boot Camp") - (Konami GX611)
+TODO:
+- understand how the trackball really works for clone sets.
+- it seems that to get correct target colors in firing range III we have to
+use the WRONG lookup table (the one for tiles instead of the one for
+sprites).
+- in combatscb, wrong sprite/char priority (see cpu head at beginning of arm
+wrestling, and heads in intermission after firing range III)
+- improve sound hook up in bootleg.
+- YM2203 pitch is wrong. Fixing it screws up... -->
 </platform>

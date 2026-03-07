@@ -59,4 +59,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- This driver contains several Konami 68000 based games. For the most part they
+run on incompatible boards, but since 90% of the work is done by the custom
+ICs emulated in konami/k0*.cpp, we can just as well keep them all
+together.
+driver by Nicola Salmoria
+Notes:
+- Golfing Greats has a peculiar way to know where the ball is laying: the
+hardware latches the color of roz pixel at the center (more or less) of the
+screen, and uses that to determine if it's water, fairway etc.
+- glfgreatj uses a speci... -->
 </platform>

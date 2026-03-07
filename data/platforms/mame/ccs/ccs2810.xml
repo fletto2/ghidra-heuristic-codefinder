@@ -5,4 +5,26 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
     <region start="0x00000000" end="0x000007FF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="8250"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- CCS Model 2810
+2009-12-11 Skeleton driver.
+2011-06-02 Connected to a terminal
+Chips: INS8250N-B, Z80A, uPD2716D, 82S129. Crystals: 16 MHz, 1.8432MHz
+SYSTEM OPERATION:
+Press Enter up to three times to start the system.
+Supported baud rates include 50, 75, 110, 134.5, 150, 200, 300, 600, 1200,
+1800, 2000, 2400, 3600, 7200, 9600, 14400, 38400, 57600 and 115200.
+All commands are in uppercase.
+A    Assign logical device
+Dn,n Dump memory
+E    Punch End-of-File to paper tape
+F    Fill
+G    Go
+H    Hex ... -->
 </platform>

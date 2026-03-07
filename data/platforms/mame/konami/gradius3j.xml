@@ -55,4 +55,12 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Gradius 3 (GX945) (c) 1989 Konami
+driver by Nicola Salmoria
+This board uses the well known 052109 051962 custom gfx chips, however unlike
+all other games they fetch gfx data from RAM. The gfx ROMs are memory mapped
+on cpu B and the needed parts are copied to RAM at run time.
+There's also something wrong in the way tile banks are implemented in
+konami/k052109.cpp. They don't seem to be used by this game. -->
 </platform>

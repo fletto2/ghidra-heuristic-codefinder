@@ -7,4 +7,15 @@
     <region start="0x0000A000" end="0x0000DFFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E3FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- SWTPC 6800 Computer System
+http://www.swtpc.com/mholley/swtpc_6800.htm
+MIKBUG is made for a PIA (parallel) interface.
+SWTBUG is made for a ACIA (serial) interface at the same address.
+MIKBUG will actually read the bits as they arrive and assemble a byte.
+Its delay loops are based on an underclocked XTAL.
+Note: All commands must be in uppercase. See the SWTBUG manual.
+ToDo:
+- Emulate MP-A2 revision of CPU board, with four 2716 ROM sockets
+and allowance for extra RAM boards at A000-BFFF and C000-D... -->
 </platform>

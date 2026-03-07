@@ -19,4 +19,12 @@
     <region start="0xF0000004" end="0xF000000B" type="io" name="port"/>
     <region start="0xF0000010" end="0xF0000013" type="io" name="port"/>
   </memory_map>
+
+  <!-- Hegener + Glaser Mephisto chesscomputers with plugin modules
+3rd generation (2nd gen is Glasgow/Amsterdam, 1st gen is MM series)
+After Roma, H+G started naming the different versions 16 Bit/32 Bit instead of 68000/68020.
+With Genius and the TM versions, they still applied "68030".
+The London program (1994 competition) is not a dedicated module, but an EPROM upgrade
+released by Richard Lang for Almeria, Lyon, Portorose and Vancouver modules, and also
+available as upgrades for Berlin/Berlin Pro an... -->
 </platform>

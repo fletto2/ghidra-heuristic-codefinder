@@ -5,4 +5,31 @@
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="gfxbank"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="rf5c68"/>
+  </devices>
+
+  <!-- Bingo Circus Terminal
+© 1989 Sega
+Hardware:
+- 2x Z0840008PSC
+- 32 MHz XTAL
+- MB8464A-15LL-SK (next to EPR-12646)
+- 2x ASSP 5C68A
+- 4x HM65256BLSP (next to 5C68A)
+- 315-5338
+- D71051C
+- D71054C
+- MB8464A-15LL-SK (near 5C68A and 315-5330)
+- 315-5330
+- HM62256BLSP-10 (next to 315-5330)
+- 315-5246
+- 2x DIPSW8
+PCB 837-7151
+TODO:
+- Serial connection to host system
+- Artwork, lamps and LED digits
+Notes:
+- No schematics, everything is guessed -->
 </platform>

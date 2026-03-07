@@ -18,4 +18,11 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- nds.cpp
+Preliminary driver for first-generation Nintendo DS.
+Tech info: http://problemkaputt.de/gbatek.htm
+Notes:
+Timers and DMAs 0-3 are ARM9's, 4-7 are ARM7's.
+Interrupt registers [0] is ARM9, [1] is ARM7. -->
 </platform>

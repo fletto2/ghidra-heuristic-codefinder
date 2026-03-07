@@ -54,4 +54,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Super Duck (c) 1992 Comad
+hardware appears to be roughly based off Bionic Commando, close to the
+Tiger Road / F1-Dream based Pushman / Bouncing Balls.
+PCB Clocks as measured:
+Crystal 1: 8mhz
+Crystal 2: 24mhz
+All clock timing comes from crystal 1
+68k - 8mhz
+Z80 - 2mhz
+OKI M6295 - 1mhz
+There are known flyers that show an alternate title of HELL OUT
+The title Hell Out fits the story line better and is likely the original title
+of the game with Super Duck being a title change for a specific country ... -->
 </platform>

@@ -9,4 +9,14 @@
     <region start="0x00007000" end="0x00007000" type="io" name="reset_r"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="theend_ppi8255_r"/>
   </memory_map>
+
+  <!-- Galaxian-derived hardware
+Galaxian is the root hardware for many, many systems developed in the
+1980-1982 timeframe. The basic design, which originated with Namco(?),
+was replicated, tweaked, bootlegged, and used numerous times.
+The basic hardware design comprises three sections on a single PCB:
+a CPU section, a sound section, and a video section.
+The CPU section is based around a Z80 (though there are modified
+designs that changed this to an S2650). The base galaxian hardware
+is designed to all... -->
 </platform>

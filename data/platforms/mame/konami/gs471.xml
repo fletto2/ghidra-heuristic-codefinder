@@ -51,4 +51,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- konmedal020.cpp: Konami 68EC020/VGA based medal games
+Mighty Joker?
+GS471
+(c) 1997 Konami
+Major ICs:
+MC68EC020-25 CPU
+YMZ280B sound
+16552 serial UART
+Oak OTI64111 "Spitfire" Super VGA video
+K056879 input/EEPROM interface -->
 </platform>

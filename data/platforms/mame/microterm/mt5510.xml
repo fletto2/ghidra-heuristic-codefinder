@@ -5,4 +5,11 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="rombank"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Skeleton driver for Microterm Model 5510 terminal. -->
 </platform>

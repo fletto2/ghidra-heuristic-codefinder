@@ -5,4 +5,11 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Skeleton driver for Mera-Elzab VDM 79321/79322 terminals. -->
 </platform>

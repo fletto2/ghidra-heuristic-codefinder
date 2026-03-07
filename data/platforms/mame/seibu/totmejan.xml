@@ -7,4 +7,22 @@
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="sprite_ram"/>
     <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Seibu Mahjong games (distributed by Tecmo)
+CPU: V30 D70116C-10
+Sound: Z80 YM3812 M6295
+OSC: 12.000MHz 16.000MHz 7.15909MHz
+TODO:
+Clean up inputs (some missing dips)
+Some sprite flickers on attract mode
+totmejan: Are the "dots" behind the girls in attract mode correct?
+Tottemo E Jong PCB Layout
+|---------------------------------------------------------------|
+|LA4460  YM3812  M6295  E-JAN.U0911 6116        Z80A 7.15909MHz |
+|                                                               |
+|      ... -->
 </platform>

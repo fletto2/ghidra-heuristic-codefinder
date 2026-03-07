@@ -16,4 +16,18 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Lasso and similar hardware
+driver by Phil Stroffolino, Nicola Salmoria, Luca Elia
+--------------------------------------------------------------------------------
+Year + Game                 By              CPUs        Sound Chips    Misc Info
+--------------------------------------------------------------------------------
+82  Lasso                   SNK             3 x 6502    2 x SN76489
+83  Chameleon               Jaleco          2 x 6502    2 x SN76489
+84  Wai Wai Jockey Gate-In! Jaleco/Casi... -->
 </platform>

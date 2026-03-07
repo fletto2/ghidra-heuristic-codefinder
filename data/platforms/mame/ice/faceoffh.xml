@@ -15,4 +15,18 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Electro-mechanical bubble hockey games:
+- Chexx (1983 version) by ICE
+http://www.pinrepair.com/arcade/chexx.htm
+- Face-Off, an illegal? copy of Chexx
+http://valker.us/gameroom/SegaFaceOff.htm
+https://casetext.com/case/innovative-concepts-in-ent-v-entertainment-enter
+(Some sources indicate these may have been copied from a earlier Sega game called Face-Off)
+Olimpic Hockey, Spanish clone from Inor (probably unlicensed), runs on an almost
+exact clone of the 1st generation ICE Chexx hardware (https:... -->
 </platform>

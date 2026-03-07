@@ -18,4 +18,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Pocket Gal                      (c) 1987 Data East Corporation
+Pocket Gal (Bootleg)            (c) 1989 Yada East Corporation(!!!)
+Super Pool III                  (c) 1989 Data East Corporation
+Pocket Gal 2                    (c) 1989 Data East Corporation
+Super Pool III (I-Vics Inc)     (c) 1990 Data East Corporation
+Pocket Gal (Bootleg) is often called 'Sexy Billiards'
+Emulation by Bryan McPhail, mish@tendril.co.uk
+TODO: determine how to best deal with pcktgalba peculiarities without
+duplicati... -->
 </platform>

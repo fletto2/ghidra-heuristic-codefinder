@@ -12,4 +12,35 @@
     <region start="0x0000F800" end="0x0000F800" type="io" name="subcpu_reset_r"/>
     <region start="0x0000FC00" end="0x0000FC00" type="io" name="watchdog_clear_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Popper
+© 1983 Omori Electric Co. (OEC)
+PCB connector pinout
+GND   1   2  GND
+GND   3   4  GND
+5V   5   6  5V
+5V   7   8  5V
+Speaker   9  10  Speaker
+12V  11  12  12V
+1-P Push  13  14  1-P Right
+2-P Push  15  16  2-P Right
+1-P Start  17  18  1-P Left
+2-P Start  19  20  2-P Left
+Coin A  21  22  1-P Down
+Coin B  23  24  2-P Down
+Service  25  26  1-P Up
+27  28  2-P Up
+29  30
+31  32
+Synic  33  34  Red
+Green  35  36  Blue
+5V  37  38  5V
+5V  39  40  5V
+GND  41  42  GND
+TODO:
+- According to the schemati... -->
 </platform>

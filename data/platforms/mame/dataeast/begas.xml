@@ -16,4 +16,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Bega's Battle (c) 1983 Data East Corporation
+preliminary driver by Angelo Salese
+TODO:
+- laserdisc hook-up and 6850 comms;
+- "SOUND TEST READ ERROR";
+- video color offsets are a mystery, where it gets calculated from?
+- Bega's Battle VBLANK hack;
+- CPU clocks;
+- dip-switches;
+- clean-ups;
+There are three hardware versions of Cobra Command (LD):
+Data East single PCB, Pioneer LD-V1000
+Data East 3-boardset, same hardware as Bega's Battle &amp; Road Blaster, Sony
+LDP-1000
+MACH3 conversion kit (ROMs,... -->
 </platform>

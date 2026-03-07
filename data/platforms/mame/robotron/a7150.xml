@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x000F7FFF" type="ram" name="ram"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Robotron A7150
+2009-10-04 Skeleton driver.
+http://www.robotrontechnik.de/index.htm?/html/computer/a7150.htm
+http://www.tiffe.de/Robotron/MMS16/
+- Confidence test is documented in A7150_Rechner...pdf, pp. 112-119
+- Internal test of KGS -- in KGS-K7070.pdf, pp. 19-23
+After about a minute, the self-test will appear.
+To do:
+- native keyboard -- K7637 and/or K7672
+- interrupts
+- ABS K7071 (text-only video)
+- ABG K7075 (CGA compatible video)
+- KES K5170 media controller (derived from iSBC 215A but not... -->
 </platform>

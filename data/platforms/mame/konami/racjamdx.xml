@@ -11,4 +11,23 @@
     <region start="0xFFF80000" end="0xFFFBFFFF" type="io" name="main_comram_r"/>
     <region start="0xFFFF0000" end="0xFFFF0007" type="io" name="main_fifo_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Konami Cobra System
+Driver by Ville Linde
+Games on this hardware
+----------------------
+Game                                     ID        Year    Notes
+-----------------------------------------------------------------------
+Fighting Bujutsu / Fighting Wu-Shu     | GN645   | 1997  |
+Racing Jam DX                          | GY676   | 1997  | GY676-PWB(F) LAN board
+Hardware overview:
+COBRA/603 GN645-PWB(A)   CPU Board
+----------------------------------
+IBM PowerPC 603EV
+Motorola XPC105ARX66CD
+COBR... -->
 </platform>

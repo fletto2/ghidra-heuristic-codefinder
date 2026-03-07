@@ -55,4 +55,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Ultraman (c) 1991  Banpresto / Bandai
+PWB250167A
+Driver by Manuel Abadia &lt;emumanu+mame@gmail.com&gt;
+2009-03:
+Added dsw locations and verified factory setting based on Guru's notes -->
 </platform>

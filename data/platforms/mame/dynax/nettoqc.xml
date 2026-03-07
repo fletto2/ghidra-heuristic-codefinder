@@ -25,4 +25,20 @@
     <region start="0x00300241" end="0x00300241" type="io" name="read"/>
     <region start="0x00FF0000" end="0x00FFFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Some Dynax/Nakanihon games using the third version of their blitter
+Driver by Nicola Salmoria, Luca Elia
+Hardware:
+CPU: Z80 (or derived SoC) or 68000
+Sound: (AY-3-8910) + YM2413 + MSM6295
+Other: Real Time Clock (Oki MSM6242B or 72421B)
+-----------------------------------------------------------------------------------------------------------------------------------
+Year + Game                         Board                  CPU    Sound                Custom                                Other
+-... -->
 </platform>

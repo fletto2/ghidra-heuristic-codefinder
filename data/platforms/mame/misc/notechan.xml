@@ -4,4 +4,29 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- NOTE CHANCE
+Banpresto, 1995
+Driver by Roberto Fresca.
+System type:       Screenless prize machine.
+Manufacturer:      BANDAI NAMCO Entertainment (Banpresto Label).
+Release:           1995.
+Number of players: 1 (single player).
+Reference video: https://www.youtube.com/watch?v=TSIWO75udL8
+Hardware Notes...
+Board etched PT-877.
+CPU:
+1x TOSHIBA TMPZ84C00AP-6 (Z80).
+Sound Device:
+1x OKI6295 or similar...
+ROM:
+1x 27C040 (SND ROM).
+1x 27C256 (PRG ROM).
+RAM:
+1x BR6265A-10LL (8K x 8 CMOS SRAM).
+Backup Sy... -->
 </platform>

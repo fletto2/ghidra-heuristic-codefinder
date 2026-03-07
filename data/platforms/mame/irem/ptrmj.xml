@@ -6,4 +6,17 @@
     <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="video_ram"/>
   </memory_map>
+
+  <!-- M14 Hardware (c) 1979 Irem
+アイレム『PTリーチ麻雀』
+TODO:
+- Actual discrete sound emulation;
+- Colors might be not 100% accurate (needs video references);
+- Complete dipswitches;
+- Complete outputs;
+- To start a game needs holding start for a bit too long compared to standard (verify);
+Notes:
+- Unlike most Arcade games, if you call a ron but you don't have a legit hand you'll automatically
+lose the match. This is commonly named chombo in rii'chi mahjong rules;
+- After getting a completed hand, press start ... -->
 </platform>

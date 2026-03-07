@@ -7,4 +7,21 @@
     <region start="0x0000C000" end="0x0000CFFF" type="io" name="bgvideoram_r"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Black Tiger
+Driver provided by Paul Leaman
+Thanks to Ishmair for providing information about the screen
+layout on level 3.
+Notes:
+- sprites/tile priority is a guess. I didn't find a PROM that would simply
+translate to the scheme I implemented.
+Black Tiger / Black Dragon (Capcom, 1987)
+Hardware info by Guru
+Note boards connect solder side to solder side and parts face outwards
+on both boards.
+Top Board
+---------
+CAPCOM
+87118-A-X1
+|------------------------------------------------------------------... -->
 </platform>

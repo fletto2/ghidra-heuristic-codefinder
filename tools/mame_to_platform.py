@@ -321,6 +321,72 @@ def parse_file(filepath):
 
     machines = []
 
+    # Extract header comment (machine/hardware description)
+    header_comment = ''
+    in_comment = False
+    for line in lines[:100]:  # Only check first 100 lines
+        stripped = line.strip()
+        if stripped.startswith('/*'):
+            in_comment = True
+            header_comment += stripped.lstrip('/*').strip() + '\n'
+        elif in_comment:
+            if stripped.endswith('*/'):
+                header_comment += stripped.rstrip('*/').strip() + '\n'
+                break
+            else:
+                # Skip lines that are just ' *'
+                text = stripped.lstrip('* ').rstrip()
+                if text:
+                    header_comment += text + '\n'
+    header_comment = header_comment.strip()
+
+    # Extract device list from #include and required_device declarations
+    devices = set()
+    # Well-known MAME device includes -> device type
+    DEVICE_INCLUDES = {
+        'wd33c9': 'scsi:wd33c93', 'ncr5380': 'scsi:ncr5380', 'am53cf96': 'scsi:am53cf96',
+        'ncr53c9': 'scsi:ncr53c90', 'aic6250': 'scsi:aic6250',
+        'ym2151': 'sound:ym2151', 'ym2203': 'sound:ym2203', 'ym2413': 'sound:ym2413',
+        'ym2608': 'sound:ym2608', 'ym2610': 'sound:ym2610', 'ym2612': 'sound:ym2612',
+        'ym3526': 'sound:ym3526', 'ym3812': 'sound:ym3812',
+        'sn76496': 'sound:sn76496', 'sn76489': 'sound:sn76489',
+        'ay8910': 'sound:ay8910', 'ay8912': 'sound:ay8912',
+        'pokey': 'sound:pokey', 'sid6581': 'sound:sid6581',
+        'rf5c68': 'sound:rf5c68', 'rf5c164': 'sound:rf5c164',
+        'okim6295': 'sound:okim6295', 'dac': 'sound:dac',
+        'tms9918': 'video:tms9918', 'tms9928': 'video:tms9928', 'tms9929': 'video:tms9929',
+        'v9938': 'video:v9938', 'v9958': 'video:v9958',
+        'mc6845': 'video:mc6845', 'hd6845': 'video:hd6845',
+        'dp8573': 'rtc:dp8573', 'dp8572': 'rtc:dp8572',
+        'mc146818': 'rtc:mc146818', 'msm6242': 'rtc:msm6242',
+        'z80scc': 'serial:z80scc', 'z80sio': 'serial:z80sio',
+        'mc68681': 'serial:mc68681', 'scn2681': 'serial:scn2681',
+        'ns16550': 'serial:ns16550', '8250': 'serial:8250',
+        'acia6850': 'serial:acia6850', 'mc6850': 'serial:mc6850',
+        'seeq8003': 'net:seeq8003', 'am7990': 'net:am7990', 'dp8390': 'net:dp8390',
+        'i8255': 'io:i8255', 'i8254': 'timer:i8254', 'i8253': 'timer:i8253',
+        'i8259': 'irq:i8259', 'i8237': 'dma:i8237',
+        'wd_fdc': 'disk:wd_fdc', 'upd765': 'disk:upd765',
+        'eeprom': 'storage:eeprom', 'nscsi': 'bus:nscsi',
+    }
+    for line in lines:
+        # Match #include "machine/device.h" or "sound/device.h" etc.
+        inc_m = re.search(r'#include\s+"(?:machine|sound|video|bus)/(\w+)\.h"', line)
+        if inc_m:
+            inc_name = inc_m.group(1).lower()
+            for key, dev_type in DEVICE_INCLUDES.items():
+                if key in inc_name:
+                    devices.add(dev_type)
+                    break
+        # Match required_device<device_type> declarations
+        rd_m = re.search(r'required_device<(\w+)>', line)
+        if rd_m:
+            dev_name = rd_m.group(1).lower()
+            for key, dev_type in DEVICE_INCLUDES.items():
+                if key in dev_name:
+                    devices.add(dev_type)
+                    break
+
     # Find all memory map functions
     map_functions = {}  # func_name -> [(start, end, type, name), ...]
     for i, line in enumerate(lines):
@@ -490,6 +556,8 @@ def parse_file(filepath):
             'manufacturer': manufacturer,
             'source_file': os.path.basename(filepath),
             'secondary_cpus': {},
+            'devices': sorted(devices),
+            'header_comment': header_comment,
         })
 
     return machines
@@ -597,6 +665,30 @@ def generate_xml(machine):
             irq_attr = ' irq="true"' if is_irq else ''
             lines.append(f'    <entry index="{idx}" name="{vname}"{irq_attr}/>')
         lines.append('  </vectors>')
+
+    # Devices
+    if machine.get('devices'):
+        lines.append('')
+        lines.append('  <devices>')
+        for dev in machine['devices']:
+            # Format: "category:name" → <device type="category" name="name"/>
+            if ':' in dev:
+                cat, dname = dev.split(':', 1)
+                lines.append(f'    <device type="{cat}" name="{dname}"/>')
+            else:
+                lines.append(f'    <device name="{dev}"/>')
+        lines.append('  </devices>')
+
+    # Header comment (hardware description)
+    if machine.get('header_comment'):
+        lines.append('')
+        comment = machine['header_comment']
+        # Escape XML special chars
+        comment = comment.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        # Truncate to first 500 chars to keep XML manageable
+        if len(comment) > 500:
+            comment = comment[:500] + '...'
+        lines.append(f'  <!-- {comment} -->')
 
     lines.append('</platform>')
     return '\n'.join(lines) + '\n'

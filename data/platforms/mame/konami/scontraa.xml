@@ -5,4 +5,16 @@
     <region start="0x0000B000" end="0x0000B00D" type="io" name="read"/>
     <region start="0x0000F000" end="0x0000F000" type="io" name="k007232_bankswitch_w"/>
   </memory_map>
+
+  <!-- Super Contra  (GX775) (c) 1988 Konami
+Thunder Cross (GX873) (c) 1988 Konami
+Gang Busters  (GX878) (c) 1988 Konami
+driver by Bryan McPhail, Manuel Abadia
+K052591 emulation by Eddie Edwards
+These three games run on very similar boards, to the extent that
+Thunder Cross and Gang Busters share the same schematics with
+callouts ("USED ONLY GX873" or "USED ONLY GX878") to indicate the
+per-game differences.
+Super Contra uses an external latch for program ROM banking
+instead of the builtin banking of the... -->
 </platform>

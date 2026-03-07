@@ -5,4 +5,32 @@
     <region start="0x00000000" end="0x0000DFFF" type="ram" name="rambank"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="rtc" name="mc146818"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- QX-10
+Preliminary driver by Mariusz Wojcieszek
+Status:
+Driver boots and load CP/M from floppy image. Needs upd7220 for gfx
+Done:
+- preliminary memory map
+- sound
+- floppy (upd765)
+- DMA
+- Interrupts (pic8295)
+banking:
+0x1c = 0 0x20 = 0
+- 0x0000-0xdfff: ROM (8KB mirrored to 56KB)
+- 0xe000-0xffff: Resident RAM
+0x1c = 0 0x20 = 1
+- 0x0000-0x7fff: ROM (8KB mirrored to 32KB)
+- 0x8000-0xdfff: CMOS (2KB mirrored to 24KB)
+- 0xe000-0xffff: Resident RAM
+0x1c = 1 0x20 = 0
+- 0x0000-0xdfff: Bankable RAM (curr... -->
 </platform>

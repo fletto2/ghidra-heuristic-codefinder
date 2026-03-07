@@ -5,4 +5,12 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Himeshikibu (C) 1989 Hi-Soft
+Android (C) 1987? Nasco
+Driver by Uki -->
 </platform>

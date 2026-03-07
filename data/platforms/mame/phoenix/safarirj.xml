@@ -11,4 +11,31 @@
     <region start="0x00003800" end="0x00003800" type="unmapped" name="nop_write"/>
     <region start="0x00003C00" end="0x00003C00" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <!-- Safari Rally hardware
+driver by Zsolt Vasvari
+Games Supported:
+Safari Rally (Japan Ver.)
+(c)1979 Shin Nihon Kikaku
+Known issues/to-do's:
+SN76477 discrete sound
+Notes:
+This hardware is a precursor to Phoenix
+Export license to Taito in 1980
+----------------------------------
+CPU board
+76477        18MHz
+8080
+----------------------------------
+Video board
+RL07  2114
+2114
+2114
+2114
+2114           RL01 RL02
+2114           RL03 RL04
+2114           RL05 RL06
+RL08  2114
+11MHz
+---------------------------... -->
 </platform>

@@ -5,4 +5,14 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x00005FFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- The Visual 100 was the first of the second series of display terminals released by Visual Technology. (The Visual 200 and
+Visual 210 made up the first series.) It was followed by the Visual 110 (which emulated the Data General Dasher series rather
+than the DEC VT-100) and the "top of the line" Visual 400.
+The second 8251 and 8116T seem to have been typically unpopulated. However, the program does include routines to drive these
+components, which probably would be installed to provide the optiona... -->
 </platform>

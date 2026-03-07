@@ -11,4 +11,23 @@
     <region start="0x00003800" end="0x00003BFF" type="io" name="keyboard_r"/>
     <region start="0x00003C00" end="0x00003FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- A business-only clone of the TRS-80 Model III.
+All controllers are built-in. Disk drives are required. It can
+boot from any size floppy or from a hard disk. All the drives are
+in external enclosures. External connections are:
+- 5.25 floppy connector (up to 4 drives)
+- 8 floppy connector (up to 4 drives)
+- HD connector (1 only, gives total of 9 drives)
+- Serial A
+- Serial B
+- Expansion I/O
+All configuration comes from the floppy image. This includes setting up
+the CRTC, the character generator, t... -->
 </platform>

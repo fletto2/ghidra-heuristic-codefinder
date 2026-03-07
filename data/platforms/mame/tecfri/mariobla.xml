@@ -9,4 +9,31 @@
     <region start="0x0000C800" end="0x0000C800" type="io" name="port"/>
     <region start="0x0000CC00" end="0x0000CC07" type="io" name="output_latches_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Ambush
+© 1983 Tecfri
+PCB connector pinout
++5V   1  A  GND
++5V   2  B  GND
++12V Coin Counter   3  C  +12V Coin Counter
+1P Button 1   4  D  1P Up
+1P Button 2   5  E  1P Down
+2P Button 1   6  F  1P Left
+2P Button 2   7  G  1P Right
+2P Start   8  H  2P Up
+1P Start   9  I  2P Down
+Coin 2  10  J  2P Left
+Coin 1  11  K  2P Right
+Blue  12  L  Counter
+Red  13  M  Counter
+Green  14  N  Counter
+Sync  15  O  Speaker Right
++12V  16  P  Speaker Left
+Speaker-  17  Q  +5V
+Video GND  18  R  +5V
+The bootlegs are ... -->
 </platform>

@@ -194,6 +194,104 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			}
 		}
 
+		// ARM exception vector table: 8 entries at 0x00-0x1C.
+		// Each is typically B <handler>, LDR PC,[PC,#off], or NOP (MOV Rn,Rn).
+		// Read each 32-bit word; if it's a B instruction (0xEAxxxxxx) or
+		// LDR PC (0xE59FFxxx), compute target and add as entry point.
+		// Also add address 0x0 itself (reset vector).
+		if (procName.contains("ARM") || procName.contains("arm")) {
+			boolean bigEndian = memory.isBigEndian();
+			long romBase = memory.getBlocks()[0].getStart().getOffset();
+			int armVectorSeeds = 0;
+			for (int vi = 0; vi < 8; vi++) {
+				long vecAddr = romBase + vi * 4L;
+				try {
+					Address va = defaultSpace.getAddress(vecAddr);
+					if (!memory.contains(va)) continue;
+					byte[] buf = new byte[4];
+					memory.getBytes(va, buf);
+					long word;
+					if (bigEndian) {
+						word = ((buf[0] & 0xFFL) << 24) | ((buf[1] & 0xFFL) << 16) |
+							   ((buf[2] & 0xFFL) << 8) | (buf[3] & 0xFFL);
+					} else {
+						word = (buf[0] & 0xFFL) | ((buf[1] & 0xFFL) << 8) |
+							   ((buf[2] & 0xFFL) << 16) | ((buf[3] & 0xFFL) << 24);
+					}
+
+					// Check for ARM B instruction: cond 1010 xxxx (0xEAxxxxxx or 0x_Axxxxxx)
+					int cond = (int) ((word >> 28) & 0xF);
+					int opField = (int) ((word >> 24) & 0xF);
+					if (opField == 0xA && cond <= 0xE) {
+						// B instruction — compute target: PC + 8 + (signed_imm24 << 2)
+						int imm24 = (int) (word & 0x00FFFFFFL);
+						if ((imm24 & 0x800000) != 0) imm24 |= 0xFF000000; // sign extend
+						long target = vecAddr + 8 + ((long) imm24 << 2);
+						if (target >= 0 && memory.contains(defaultSpace.getAddress(target))) {
+							vectorAddrs.add(target);
+							armVectorSeeds++;
+						}
+					}
+					// Check for LDR PC,[PC,#offset]: 0xE59FF000 + offset
+					else if ((word & 0xFFFFF000L) == 0xE59FF000L) {
+						int offset = (int) (word & 0xFFF);
+						// LDR PC,[PC,#off] reads from PC+8+off
+						long ptrAddr = vecAddr + 8 + offset;
+						try {
+							Address pa = defaultSpace.getAddress(ptrAddr);
+							if (memory.contains(pa)) {
+								byte[] pbuf = new byte[4];
+								memory.getBytes(pa, pbuf);
+								long target;
+								if (bigEndian) {
+									target = ((pbuf[0] & 0xFFL) << 24) | ((pbuf[1] & 0xFFL) << 16) |
+											 ((pbuf[2] & 0xFFL) << 8) | (pbuf[3] & 0xFFL);
+								} else {
+									target = (pbuf[0] & 0xFFL) | ((pbuf[1] & 0xFFL) << 8) |
+											 ((pbuf[2] & 0xFFL) << 16) | ((pbuf[3] & 0xFFL) << 24);
+								}
+								if (target >= 0 && memory.contains(defaultSpace.getAddress(target))) {
+									vectorAddrs.add(target);
+									armVectorSeeds++;
+								}
+							}
+						} catch (Exception e) { /* skip */ }
+					}
+				} catch (Exception e) { /* skip */ }
+			}
+			// Always add reset vector (address 0 or romBase) as entry point
+			if (memory.contains(defaultSpace.getAddress(romBase))) {
+				vectorAddrs.add(romBase);
+				armVectorSeeds++;
+			}
+			if (armVectorSeeds > 0) {
+				Msg.info(this, "ARM exception vectors: " + armVectorSeeds +
+					" entry points added from vector table at 0x" + Long.toHexString(romBase));
+			}
+		}
+
+		// MIPS reset vector: CPU boots at 0xBFC00000 (kseg1) = physical 0x1FC00000.
+		// Add the ROM base as entry point — the first instruction is the reset handler.
+		// Also add standard exception handler offsets if they fall within ROM.
+		if (procName.contains("MIPS")) {
+			long romBase = memory.getBlocks()[0].getStart().getOffset();
+			if (memory.contains(defaultSpace.getAddress(romBase))) {
+				vectorAddrs.add(romBase);
+				Msg.info(this, "MIPS reset vector at 0x" + Long.toHexString(romBase) +
+					" added as entry point");
+			}
+			// MIPS exception vectors relative to ROM base (R3000/R4000 BEV=1 mode):
+			// 0x000 = reset, 0x200 = TLB refill, 0x280 = XTLB refill (R4000),
+			// 0x300 = cache error, 0x380 = general exception
+			long[] mipsExcOffsets = { 0x200, 0x280, 0x300, 0x380 };
+			for (long off : mipsExcOffsets) {
+				long excAddr = romBase + off;
+				if (memory.contains(defaultSpace.getAddress(excAddr))) {
+					vectorAddrs.add(excAddr);
+				}
+			}
+		}
+
 		int vectorSeeds = 0;
 		for (Long addr : vectorAddrs) {
 			monitor.checkCancelled();
@@ -994,6 +1092,37 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				String warning = "WARNING: " + endianness.description;
 				Msg.warn(this, warning);
 				log.appendMsg("Heuristic Code Finder: " + warning);
+
+				// Actually byte-swap the ROM data in memory
+				try {
+					ghidra.program.model.mem.MemoryBlock block = program.getMemory().getBlocks()[0];
+					byte[] data = new byte[(int) block.getSize()];
+					program.getMemory().getBytes(block.getStart(), data);
+
+					if (endianness.status.equals("swapped16in32") || endianness.status.equals("swapped16")) {
+						// Swap bytes within each 16-bit word
+						for (int si = 0; si < data.length - 1; si += 2) {
+							byte tmp = data[si];
+							data[si] = data[si + 1];
+							data[si + 1] = tmp;
+						}
+					} else if (endianness.status.equals("swapped32")) {
+						// Full 32-bit byte reversal
+						for (int si = 0; si < data.length - 3; si += 4) {
+							byte t0 = data[si], t1 = data[si + 1];
+							data[si] = data[si + 3];
+							data[si + 1] = data[si + 2];
+							data[si + 2] = t1;
+							data[si + 3] = t0;
+						}
+					}
+
+					program.getMemory().setBytes(block.getStart(), data);
+					Msg.info(this, String.format("Byte-swapped ROM (%s, %d bytes)",
+						endianness.status, data.length));
+				} catch (Exception e) {
+					Msg.warn(this, "Failed to byte-swap ROM: " + e.getMessage());
+				}
 			} else {
 				Msg.info(this, "Endianness check: " + endianness.description);
 			}

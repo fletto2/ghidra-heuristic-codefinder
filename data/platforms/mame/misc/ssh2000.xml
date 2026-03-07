@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x0000CFFF" type="rom" name="rom"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Super Shanghai 2000.
+Super Shanghai 2000 - Wrestle Fiesta.
+Super Shanghai 2001.
+3-reel 5-liner with an extra reel, plus a front game to hide the slots game.
+Rare stealth video slots machine platform based on a Z80 CPU and a AY-3-8910 for sound.
+5 DIP switches banks.
+Driver by Roberto Fresca &amp; Grull Osgo.
+Notes:
+This platform hosts various slot games featuring different themes,
+including classic fruit symbols (7s, bells, plums, oranges, grapes, etc.),
+Easter-themed graphics (eggs, rabbits), a... -->
 </platform>

@@ -8,4 +8,20 @@
     <region start="0x00008471" end="0x00008471" type="io" name="region_8471"/>
     <region start="0x00008630" end="0x00008630" type="io" name="region_8630"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Dai-Fugo (c) 1983 Sega / Seta
+Speed Attack! (c) 1984 Seta Kikaku Corp.
+driver by Pierpaolo Prazzoli &amp; Angelo Salese, based on early work by David Haywood
+TODO:
+- speedatk: Jack and King cards shouldn't have cyan border according to ref pics;
+- daifugo: Improve IOX device (many hardwired reads);
+- It's possible that there is only one coin chute and not two, needs a real board to know
+more about it.
+- hanaren2, harashi, unkalba: Everything. They seem to run on similar hardware, similar
+address... -->
 </platform>

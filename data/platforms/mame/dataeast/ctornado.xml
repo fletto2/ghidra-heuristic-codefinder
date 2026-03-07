@@ -20,4 +20,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- The DECO cassette system consists of three PCBs in a card cage:
+Early boardset: (1980-1983) (proms unknown for this boardset, no schematics for this boardset) ****
+One DE-0069C-0 RMS-3 pcb with a 6502 processor, D8041C MCU (DECO Cassette control),
+two ay-3-8910s, and one 2708 eprom holding the audio bios. (audio, needs external
+amp and volume control)
+One DE-0068B-0 DSP-3 pcb with a 'DECO CPU-3' custom, two 2716 eproms. (main processor
+and bios, graphics, dipswitches?)
+One DE-0070C-0 BIO-3 pcb w... -->
 </platform>

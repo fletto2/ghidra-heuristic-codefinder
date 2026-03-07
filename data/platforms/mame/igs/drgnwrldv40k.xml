@@ -7,4 +7,21 @@
     <region start="0x00902000" end="0x00902FFF" type="io" name="igs012_prot_reset_w"/>
     <region start="0x00902000" end="0x00902005" type="io" name="igs012_prot_fake_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= IGS011 (Blitter) Based Hardware =-
+driver by   Luca Elia (l.elia@tin.it)
+code decrypted by   Olivier Galibert
+CPU     :   68000
+Sound   :   M6295 + Optional FM or ICS2115
+Custom  :   IGS011 (blitter, protection)
+IGS012 (protection, optional)
+IGS003 (8255, protection)
+NVRAM   :   Battery for main RAM
+---------------------------------------------------------------------------
+Year + Game                   PCB        Sound         Chips
+-----------------------------------------------------------... -->
 </platform>

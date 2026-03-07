@@ -6,4 +6,18 @@
     <region start="0x00008000" end="0x00008000" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Super Star (Recreativos Franco)
+Skeleton driver for 8085-based pinball hardware.
+TODO:
+- Display circuits: i8259, 74164, 74159 and other bits.
+- Default layout
+- Outputs (solenoids, lamps)
+- Inputs (switches)
+- NVRAM (5517 ram is battery-backed)
+- Manual is missing a couple of pages. -->
 </platform>

@@ -9,4 +9,18 @@
     <region start="0x0000A000" end="0x0000A003" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000C000" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Namco Sweet Land crane machine hardware
+SWEET LAND (1986) dumped (ROM labeled "SW 1")
+NEW SWEET LAND (1990) not yet dumped
+Sweet Land II (1994) not yet dumped (ROM labeled "SW 1B")
+SWEET LAND III (1998) not yet dumped (ROM labeled "SWS 1 MPR 0", and at least
+this version has a sub pcb with a ROM labeled "SWS 1 SPR 0")
+SWEET LAND 4 (1999) no technical information found but sounds different FM sound
+and PCM voice. the music is partially from NEW SWEET FACTORY (1994).
+Sweet Land 4 Sakura Version/Br... -->
 </platform>

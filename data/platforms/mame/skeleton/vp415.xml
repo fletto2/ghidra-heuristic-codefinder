@@ -5,4 +5,38 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x0000A000" end="0x0000FEFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Skeleton driver for Philips VP415 LV ROM Player
+List of Modules:
+A - Audio Processor
+B - RGB
+C - Video Processor
+D - Ref Source
+E - Slide Drive
+F - Motor+Sequence
+G - Gen Lock
+H - ETBC B
+I - ETBC C
+J - Focus
+K - HF Processor
+L - Video Dropout Correction
+M - Radial
+N - Display Keyboard
+P - Front Loader
+Q - RC5 Mirror
+R - Drive Processor
+S - Control
+T - Supply
+U - Analog I/O
+V - Module Carrier
+W - CPU Datagrabber
+X - LV ROM
+Y - Vid Mix
+Z - Deck Electronics
+TODO:
+- Driver currently fails the initia... -->
 </platform>

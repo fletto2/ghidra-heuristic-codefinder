@@ -55,4 +55,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Mechanized Attack       A8002   (c) 1989 SNK Corporation
+Compared to Beast Busters (A9003), Mechanized Attack (A8002) is an
+earlier design, it only has one sprite chip, no eeprom, and only 2
+machine guns, but the tilemaps are twice the size.
+----------------------------------------------------------------------------------------
+Stephh's notes (based on the games M68000 code and some tests) :
+2) 'mechatt'
+- Country/version is stored at 0x06a000.w and the possible values are :
+Value   Country
+0x0... -->
 </platform>

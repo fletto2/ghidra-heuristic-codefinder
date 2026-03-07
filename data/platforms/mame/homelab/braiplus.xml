@@ -7,4 +7,17 @@
     <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Skeleton driver for BraiLab Plus talking computer.
+(from a document translated from Hungarian)
+In addition to the Z80 microprocessor on the two-sided printed circuit board,
+there are 256 Kbytes of dynamic RAM, 16 Kbytes of EPROM, 2 Z80PIOs, 4 Kbytes
+of static RAM, a character generator EPROM, a WD2793 floppy disk controller,
+a I8251 PUSART and a MEA-8000 speech synthesizer.
+180 Kbytes of 256 Kbytes of RAM is handled as a fixed RAM disk under the
+CP/M operating system. Memory management supports ... -->
 </platform>

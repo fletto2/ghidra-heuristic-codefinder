@@ -18,4 +18,19 @@
     <region start="0x0000FCB0" end="0x0000FCB0" type="io" name="prot_fcb0_w"/>
     <region start="0x0000FD99" end="0x0000FD99" type="io" name="prot_fd99_w"/>
   </memory_map>
+
+  <!-- GOINDOL
+Driver provided by Jarek Parchanski (jpdev@friko6.onet.pl)
+Notes:
+- byte at 7f87 controls region:
+0 = Japan
+1 = USA
+2 = World
+Regardless of the setting of this byte, the startup notice in Korean is
+always displayed.
+After the title screen, depending on the byte you get "for use only in Japan",
+"for use only in USA", or the Korean notice again! So 2 might actually mean
+Korea instead of World... but that version surely got to Europe since Gerald
+has three boards with this ROM.
+- near the m... -->
 </platform>

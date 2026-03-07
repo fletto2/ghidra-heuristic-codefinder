@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00E1FFFF" type="io" name="region_0"/>
     <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- apple2gs.cpp - Apple IIgs
+Next generation driver written June 2018 by R. Belmont.
+Thanks to the original Apple IIgs driver's authors: Nathan Woods and R. Belmont
+Thanks also to the Apple II Documentation Project/Antoine Vignau, Peter Ferrie, and Olivier Galibert.
+Unique hardware configurations:
+- ROM 00/01: original motherboard, 256K of RAM (banks 00/01/E0/E1 only), FPI chip manages fast/slow side
+- ROM 03: revised motherboard, 1M of RAM (banks 00/01/-&gt;0F/E0/E1), CYA chip replaces FPI
+- Expan... -->
 </platform>

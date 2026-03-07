@@ -17,4 +17,20 @@
     <region start="0x0000FE27" end="0x0000FE29" type="ram" name="ram"/>
     <region start="0x0000FE2D" end="0x0000FE2D" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Senjyo / Star Force / Baluba-louk
+driver by Mirko Buffoni
+TODO:
+- wrong background colors in baluba, intermissions after round 13 (btanb or
+fixed at some point)
+- Star Force: the Larios is supposed to blink at the third loop of the BGM.
+Right now it does at second and half, presumably due of the unknown PCB clocks.
+- remove memory pointers for video attribute RAM area (r/w handlers instead?),
+then the workaround at the end of starforb_map isn't needed, and m_scrollhack
+can probably be removed to... -->
 </platform>

@@ -15,4 +15,31 @@
     <region start="0x000050C0" end="0x000050C0" type="io" name="reset_w"/>
     <region start="0x00008000" end="0x0000DFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Bally/Midway Jr. Pac-Man
+Games supported:
+Jr. Pac-Man
+Known issues:
+none
+Jr. Pac Man memory map (preliminary)
+0000-3fff ROM
+4000-47ff Video RAM (also color RAM)
+4800-4fff RAM
+8000-dfff ROM
+memory mapped ports:
+read:
+5000      P1
+5040      P2
+5080      DSW
+IN0 (all bits are inverted)
+bit 7 : CREDIT
+bit 6 : COIN 2
+bit 5 : COIN 1
+bit 4 : RACK TEST
+bit 3 : DOWN player 1
+bit 2 : RIGHT player 1
+bit 1 : LEFT player 1
+bit 0 : UP player 1
+IN1 (all bits are inverted)
+bit 7 : TABLE or UPRIGHT cabinet selec... -->
 </platform>

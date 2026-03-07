@@ -6,4 +6,20 @@
     <region start="0x04000000" end="0x047FFFFF" type="rom" name="rom"/>
     <region start="0x0A000004" end="0x0A000007" type="io" name="a000004_r"/>
   </memory_map>
+
+  <!-- IVL Technologies Karaoke systems
+KaraokeTV Star (c) IVL Technologies
+licensed out as
+KaraokeStation (Japan) (c) Bandai
+Easy Karaoke Groove Station (UK) (c) Easy Karaoke
+KaraokeMicro Star (France) (c) Lexibook
+-------------------------------------
+Easy Karaoke uses
+Clarity 4.3 ARM
+SVI1186
+NV0165  0317
+Sound Vision Inc.
+an overview for 4.1 and 4.2 can be found at
+http://web.archive.org/web/20031212120255fw_/http://www.soundvisioninc.com/OEMProducts/C4datasheet072401.pdf
+Amusingly this datasheet ad... -->
 </platform>

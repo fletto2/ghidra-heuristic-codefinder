@@ -53,4 +53,12 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Name        Board No      Maker         Game name
+----------------------------------------------------------------------------
+grindstm    TP-027        Toaplan       Grind Stormer (1992)
+grindstma   TP-027        Toaplan       Grind Stormer (1992) (older)
+vfive       TP-027        Toaplan       V-V (V-Five)  (1993 - Japan only)
+grindstm - Code at 20A26 in vfive forces region to Japan. All sets have some NOPs at reset vector,
+and the NEC V25 CPU test that the other games do is skipped. Furthermo... -->
 </platform>

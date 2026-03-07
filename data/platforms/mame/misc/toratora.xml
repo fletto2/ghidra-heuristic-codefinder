@@ -11,4 +11,19 @@
     <region start="0x0000F0AC" end="0x0000F7FF" type="unmapped" name="unmapped"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Tora Tora (c) 1980 Game Plan
+driver by Nicola Salmoria, qwijibo
+deviations from schematics verified on set 2 pcb:
+main pcb:
+- U33.3 connected to /IRQ line via inverter U67.9,
+providing timer IRQ for input polling.
+- U43 removed from timer circuit, U52.9 wired directly to
+U32.5, increasing timer frequency to 250 Hz.
+audio pcb:
+- U6.10 wired to U14.21, cut from R14/16
+- R16 wired to R1 in series, R1 cut from GND
+- R14 wired to GND instead of U6.10
+- U5.10 wired to U15.21, cut from R13/15
+- R15 wir... -->
 </platform>

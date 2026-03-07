@@ -55,4 +55,27 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Quantum hardware
+driver by Paul Forgey, with some help from Aaron Giles
+Games supported:
+Quantum
+Known bugs:
+none at this time
+NOTE: The Atari 136002-125 PROM in the sets below wasn't dumped from an actual
+Quantum PCB. It is assumed all Atari 136002-125 PROMs are the same data.
+Memory map
+QUANTUM MEMORY MAP (per schem):
+000000-003FFF   ROM0
+004000-004FFF   ROM1
+008000-00BFFF   ROM2
+00C000-00FFFF   ROM3
+010000-013FFF   ROM4
+018000-01BFFF   RAM0
+01C000-01CFFF   RAM1
+940000          TRACKBALL... -->
 </platform>

@@ -54,4 +54,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="scsi" name="ncr53c90"/>
+  </devices>
+
+  <!-- Twinkle System
+driver by smf and R. Belmont
+TODO:
+dvd check for bmiidx, bmiidxa, bmiidxc &amp; bmiidxca
+- 1st style (all variants, including club kit) connected over the mini-din8 (CN7) and dvd check requires RTS-&gt;CTS
+- substream and above switched to standard serial connection (CN5)
+The first 128k of RF5C400 bank 0 is uploaded by the 68000, the rest is unused. It may be using 16J &amp; 18J
+emulate dvd player and video mixing
+16seg led font
+The SPU has an IRQ2 handler that doesn't do anything... -->
 </platform>

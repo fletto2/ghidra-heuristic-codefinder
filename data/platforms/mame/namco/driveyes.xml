@@ -52,4 +52,12 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- see http://www.tvspels-nostalgi.com/driverseye.htm for details about setup
+2008/06/11, by Naibo(translated to English by Mameplus team):
+Driver's Eyes works,
+-the communication work between CPU and 3D DSP should be limited to the master M68000,
+if the address mapping is done in the shared memory, master CPU would be disturbed by the slave one.
+-The left, center and right screens have separate programs and boards, each would work independently.
+About projection angles of left and right screen, th... -->
 </platform>

@@ -7,4 +7,27 @@
     <region start="0x000E0000" end="0x000E0FFF" type="ram" name="vram"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- IBM 5550
+http://ibm5550.na.coocan.jp/architec-e.html
+TODO:
+- No available documentation
+\- it's barely known that it uses a specific "JDA" video adapter, and that it uses a specific
+incompatible bus slot;
+POST codes (to port $a1):
+- 0xe2: ROM check
+[- 0xfc:] goes high if first $a1 check = 1 at PC=0xfc0d8
+- 0xfa: PIC check #1
+- 0xf6: undefined boundary check at $4c000-$ec000
+- 0xe4: RAM check
+- 0xe8: PIC check #2
+- 0xf0: PIT check
+- 0xf8: $3d0-$3d1 check (JDA adapter?)
+- 0xf2: VRAM check -->
 </platform>

@@ -45,4 +45,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Mephisto III-S Glasgow chess computer
+Dirk V.
+sp_rinter@gmx.de
+Mephisto Glasgow is the last chess engine written by Thomas Nitsche &amp; Elmar Henne.
+Amsterdam/Dallas/Roma are by Richard Lang.
+Hardware notes:
+- R68000C10 or MC68000P12 @ 12MHz, IRQ from 50Hz Seiko SG-10 chip "50H", to IPL0+2
+- 64KB ROM (4*27128), 16KB RAM (2*6264)
+- LCD module same as MMx series, piezo
+Other TTL:
+3*74LS138 Decoder/Multiplexer
+1*74LS74  Dual positive edge triggered D Flip Flop
+1*74LS139 1of4 Demultiplexer
+1*74LS05... -->
 </platform>

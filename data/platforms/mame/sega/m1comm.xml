@@ -5,4 +5,14 @@
     <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="share_r"/>
   </memory_map>
+
+  <!-- Comm PCB
+--------
+MODEL-1 COMMUNICATION BD 837-8842 171-6293B (C) SEGA 1992
+|--------------------------------------------------------------------------------|
+|                                                                                |
+|    MB89237A            MB89374                                                 |
+|       JP4                                                                 LED1 |
+|    15112.17            Z80                                                     |
+|    JP2 ... -->
 </platform>

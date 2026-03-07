@@ -6,4 +6,25 @@
     <region start="0x0000C000" end="0x0000E7FF" type="ram" name="videoram"/>
     <region start="0x0000F000" end="0x0000F002" type="io" name="index_w"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Poker Genius (misspelled "Genuis" on title screen) by Chain Leisure
+The following string is copied from the main CPU ROM into NVRAM:
+"CLPOK GAME designed by FULL-LIFE  at 02-01-1994"
+PCB is marked Chain Leisure CL-001
+- 1x Z0840004PSC Z80 CPU
+- 1x 12.000 XTAL (second XTAL location is unpopulated)
+- 1x AY38910A/P sound chip
+- 2x M5L8255AP-5
+- 1x HM86171 RAMDAC
+- 1x GM76C88L-15 SRAM (8,192 x 8 Bit)
+- 1x HY6116ALP-12 CMOS SRAM (2,048 x 8 Bit)
+- 1x MACH110-20JC CMOS
+- 2x ATV2500H PLDs
+- 1x PLSI1024-... -->
 </platform>

@@ -6,4 +6,20 @@
     <region start="0x00008000" end="0x0000CFFF" type="ram" name="ram"/>
     <region start="0x0000D000" end="0x0000FFFF" type="io" name="fromance_videoram_r"/>
   </memory_map>
+
+  <!-- Pipe Dream
+driver by Bryan McPhail &amp; Aaron Giles
+Pipe Dreams
+PCB# OP-11A-05
+OSC:
+12.000MHz   (next to Z80B Main CPU)
+14.31818MHz (next to Z80B Sub CPU)
+8.000MHz   (near YM2610 audio chip)
+Hatris coinage:
+MAME uses the values listed in Test Mode.
+This does NOT match what's listed in Hatris Manual:
+DIPSW-1 (from Hatris manual)
+------------------------------------------------------------------
+DipSwitch Title   | Function | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+---------------------------------------... -->
 </platform>

@@ -4,4 +4,25 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Gambling hardware based on "Specialist MX" computer
+(c) 199? Dinaris
+Main components:
+Z80 CPU,
+27256 ROM,
+2x KR580VV55(i8255 PPI),
+KR580VI53(i8253 PIT),
+8x KR565RU5(4164) DRAM,
+3x KR573RU10(HM6516) SRAM
+How to enter statistics mode:
+- press Test button, "CODE" text will appear
+- repeat 4x times
+- press Test button (code_digit - 1) times
+- press and hold Test button until "INPUT" text appears
+- release Test button
+Currently we use 0000 hardware code, in such case game will accept any code sequenc... -->
 </platform>

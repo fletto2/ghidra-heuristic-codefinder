@@ -8,4 +8,9 @@
     <region start="0x00001C00" end="0x00001FFF" type="ram" name="ram"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- "Attack UFO" (c) 1980 Ryoto Electric Co.
+TODO:
+- Verify I/O chip
+- Is game speed ok? A bit slow sometimes -->
 </platform>

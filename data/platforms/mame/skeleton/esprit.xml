@@ -16,4 +16,13 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- 2017-11-02 Skeleton
+Hazeltine Esprit terminals.
+Espirit: R6502P, R6531, HD46505RP, MC6850P, 16.5888
+Espirit3: 2x R6551AP, HD46850P (6850), R6502BP, R6545-1AP, R6522AP, RO-3-9333B, 1.8432, 17.9712 -->
 </platform>

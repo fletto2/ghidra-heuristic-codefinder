@@ -6,4 +6,18 @@
     <region start="0x000E7000" end="0x000E7FFF" type="ram" name="pcg"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Casio FP-6000
+TODO:
+- Fix cassette (SAVE is at 300 baud Kansas City format, loadable
+on the super80, but LOAD throws RW error).
+- Floppy/HDD
+- Printer
+- gvram color pen is a rather crude guess (the layer is monochrome on
+BASIC?);
+- everything else -->
 </platform>

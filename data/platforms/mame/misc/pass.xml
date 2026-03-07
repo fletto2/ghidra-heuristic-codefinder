@@ -50,4 +50,29 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Pass (c)1992, Oksan
+Driver by David Haywood
+Inputs by Stephh
+Is that a Korean flag I see?  Are Oksan maybe a Korean Developer?
+Information from ReadMe
+-----------------------
+Pass, Oksan, 1992
+CPU : MC68000P10
+Sound : YM2203C
+Other main chips : Goldstar Z8400B PS, 4 * Hyundai HY6264ALP-10
+Also : PAL20L8ACNS
+The rest all TTl chips
+8 dipswitches (1 bank)
+speed : 14.31818MHz
+Rest see pic
+(included was scans of the board)
+----------------------
+Working Notes:
+68k interrupts
+lev 1 : 0x64 : 0000 0500 ... -->
 </platform>

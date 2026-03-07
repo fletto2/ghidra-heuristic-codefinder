@@ -28,4 +28,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Tempest hardware
+Games supported:
+Tempest [5 sets]
+Tempest Tubes
+Known bugs:
+none at this time
+TEMPEST
+-------
+HEX        R/W   D7 D6 D5 D4 D3 D2 D2 D0  function
+0000-07FF  R/W   D  D  D  D  D  D  D  D   program ram (2K)
+0800-080F   W                D  D  D  D   Colour ram
+0C00        R                         D   Right coin sw
+0C00        R                      D      Center coin sw
+0C00        R                   D         Left coin sw
+0C00        R                D            Slam sw
+0C... -->
 </platform>

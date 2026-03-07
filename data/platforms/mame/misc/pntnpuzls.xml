@@ -6,4 +6,24 @@
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
     <region start="0x00FF0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="8250"/>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Paint 'N Puzzle Super (or Super Paint 'N Puzzle)
+References:
+- https://youtu.be/P7xeh2sG-VM
+TODO:
+- complete I/O (ticket, pinpoint card dispenser);
+- NVRAM;
+- Is "RGB O/P" connector just for touchscreen control?
+- POST should beep and output BRG strips (bottom-to-top, columns in native monitor orientation);
+Notes:
+- To clear "CALL HELP" errors: hold coin 1 and soft reset.
+===================================================================================================
+VIDEO PUZZLE V1.0 PCB
+(C)... -->
 </platform>

@@ -17,4 +17,24 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Coco Loco
+Petaco S.A. (Spain)
+Driver by Roberto Fresca &amp; Angelo Salese.
+Hardware Notes:
+--------------
+Single Board.
+Etched in copper: "112-020"
+- CPU:        1x R6502AP.
+- Sound:      1x AY-3-8910.
+- RAM:        11x 4116 (16K x 1) Dynamic RAM. Changed to equivalent MM5290N-3.
+- ROMs:       6X 2716.
+- PROMs:      1X 74S471 bipolar PROM (256 x 8) at location 10C, filled with 0xff.
+Colors look fine and without this device there is no picture at all.
+- Crystal:    1x 20 MHz.
+- 2x 8 DIP switches... -->
 </platform>

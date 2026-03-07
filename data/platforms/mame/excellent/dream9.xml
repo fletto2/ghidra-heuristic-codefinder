@@ -20,4 +20,29 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Excellent System's ES-8906B PCB
+Main components:
+R6502AP CPU
+6116ALSP-12 RAM (near CPU)
+20.0000 MHz XTAL (near CPU)
+HD46505SP CRTC
+Excellent ES-8712 custom
+2x SN76489A (probably, chips are partially covered in the pic) with a 104K yellow capacitor each
+unmarked 22 (?) pin chip with a 104K yellow capacitor
+4x 6116ALSP-12 RAM (near ES-8712)
+4x bank of 8 DIP switches (SW2-5)
+reset button (SW1)
+NE555P (near SW1)
+TODO:
+colors
+complete inputs
+outputs
+use CRTC device for drawing routines
+is sound compl... -->
 </platform>

@@ -6,4 +6,23 @@
     <region start="0x00000000" end="0x00000FFF" type="ram" name="bank1"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="bank2"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- MYCOMZ-80A (c) 1981 Japan Electronics College
+preliminary driver by Angelo Salese
+additions by Robbbert
+THE KEYBOARD
+- Uses a 4MO1003A custom mcu.
+- Every combination is documented in the manual, including the unused ones.
+- All commands must be in uppercase - lowercase will produce errors.
+- There are 5 special keys which do crude editing functions. These are in
+the range 0x61 to 0x75. Kana characters occupy the range 0xa0 to 0xff.
+Graphics characters are found in 0x00 to 0x1f, and 0x80 to 0x9f... -->
 </platform>

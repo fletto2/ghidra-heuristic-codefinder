@@ -56,4 +56,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- goldenregion.cpp: Konami 68000 based slots/pachislots
+Skeleton by R. Belmont
+Golden Region (GS761)
+CPU: 68000-16
+Sound: YMZ280B
+Konami ICs:
+K058143 + K056832 = tilemaps
+K053246 + K055673(x2) = sprites
+K055555 = priority blender
+K056766 = color DAC
+K053252(x2) = timing/interrupt controller
+IRQs 4 &amp; 5 are valid, the rest are not
+TODO
+How is the sprite ROM readback banked?  Passing the POST would be
+important to figuring out more of what's going on with this.
+This uses a high-res mode similar t... -->
 </platform>

@@ -5,4 +5,14 @@
     <region start="0x00007000" end="0x000077FF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="rombank"/>
   </memory_map>
+
+  <!-- ZSU Sound Control Unit (Proyectado 21/4/86 J. Gamell)
+ZSU1 Sound Control Unit (Proyectado 12/6/86 J. Gamell)
+Cedar Magnet Sound Board
+The ZSU board is a component of the Z-Pinball hardware developed by
+E.F.O. (Electrónica Funcional Operativa) S.A. of Barcelona, Spain. Its
+sound generators are 2 AY-3-8910As and 1 OKI MSM5205, and 2 MF10s and
+1 HC4066 are used to mix their outputs. The timing circuits are rather
+intricate, using Z80-CTCs, HC74s and HC393s and various other gates to
+drive both the ... -->
 </platform>

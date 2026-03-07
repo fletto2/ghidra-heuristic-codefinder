@@ -53,4 +53,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Terra Cresta (preliminary)
+Nichibutsu 1985
+68000 + Z80
+driver by Carlos A. Lozano (calb@gsyc.inf.uc3m.es)
+TODO:
+- I'm playing samples with a DAC, but they could be ADPCM
+- find correct high-scores table for 'amazon' (update: uses same protection data as amatelas hence same data)
+Stephh's notes (based on the games M68000 code and some tests) :
+1) 'terracr*'
+- Each high-score name is made up of 10 chars.
+2) 'amazon'
+- Each high-score name is made up of 3 chars followed by 7 0x00.
+3) 'amatelas'
+- E... -->
 </platform>

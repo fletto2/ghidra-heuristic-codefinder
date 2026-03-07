@@ -17,4 +17,23 @@
     <region start="0x00008100" end="0x00009FFF" type="ram" name="ram"/>
     <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Juno First :  memory map same as tutankham with some address changes
+Chris Hardy (chrish@kcbbs.gen.nz)
+Thanks to Rob Jarret for the original Tutankham memory map on which both the
+Juno First emu and the MAME driver is based on.
+Juno First memory map by Chris Hardy
+Read/Write memory
+$0000-$7FFF = Screen RAM (only written to)
+$8000-$800f = Palette RAM. BBGGGRRR (D7-&gt;D0)
+$8100-$8FFF = Work RAM
+Write memory
+$8030   - interrupt control register D0 = interrupts on or off
+$8031   - unknown
+$8032   -... -->
 </platform>

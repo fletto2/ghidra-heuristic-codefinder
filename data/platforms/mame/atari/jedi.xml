@@ -29,4 +29,24 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Return of the Jedi hardware
+driver by Dan Boris
+Games supported:
+Return of the Jedi
+Notes:
+The schematics show the smoothing PROMs as being twice as large,
+but the current sizes are confirmed via a PCB.  The PROMs
+are 82S137 devices.
+Memory map
+========================================================================
+CPU #1
+========================================================================
+0000-07FF   R/W   xxxxxxxx    Z-page Working RAM
+0800-08FF   R/W   xxxxxxxx    NVRAM
+0C00       ... -->
 </platform>

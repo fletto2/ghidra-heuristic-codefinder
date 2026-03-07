@@ -56,4 +56,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- World Rally (c) 1993 Gaelco (Designed &amp; Developed by Zigurat. Produced by Gaelco)
+Driver by Manuel Abadia, Mike Coates, Nicola Salmoria and Miguel Angel Horna
+Thanks to GAELCO SA for the DS5002FP code and information about the encryption
+REF.930217  (also REF.930705)
++-------------------------------------------------+
+|       C1                                  6116  |
+|  VOL  C2                                  6116  |
+|          30MHz                            6116  |
+|    M6295          ... -->
 </platform>

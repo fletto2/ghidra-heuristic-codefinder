@@ -15,4 +15,20 @@
     <region start="0xF9000000" end="0xF91FFFFF" type="io" name="vram_r"/>
     <region start="0xF9800000" end="0xF98003FF" type="io" name="map"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr53c90"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- drivers/macquadra700.cpp
+Mac Quadra 700 ("Spike"), 900 ("Eclipse"), and 950 ("Zydeco") emulation
+Emulation by R. Belmont
+These machines were sort of a "workstation class Mac II", with fast
+built-in video, built-in Ethernet, and enhanced NuBus '90 slots that
+were backwards compatible but also had some new tricks.
+The Quadra 900 replaced the real-time clock with a compatible variant
+of Egret, and offloaded ADB, serial, LocalTalk, and floppy processing
+to the same pair of 65C02-based IOPs (I/O Proc... -->
 </platform>

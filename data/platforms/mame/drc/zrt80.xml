@@ -6,4 +6,17 @@
     <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="8250"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- DEC ZRT-80
+12/05/2009 Skeleton driver.
+16/02/2011 Working.
+The beeper is external, frequency not known. I've made a reasonable
+assumption of frequency and lengths.
+Make sure 'mode' dipswitch is set to 'local' so you can see your
+typing. -->
 </platform>

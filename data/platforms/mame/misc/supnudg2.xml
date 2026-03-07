@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- ==================================================================================
+Coinmaster trivia and poker games.
+Preliminary driver by Pierpaolo Prazzoli
+Additional work by Roberto Fresca.
+TODO:
+- is there extra colour info in attr3 for suprnudge 2 and pokeroul?
+- is there colour intensity control?
+- finish inputs
+- finish question roms reading
+- hook up all the PIAs
+====================================================================================
+Technical notes....
+There are at least 2... -->
 </platform>

@@ -6,4 +6,20 @@
     <region start="0x000E0000" end="0x000EFFFF" type="ram" name="banked"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Tandy 1000
+==========
+Tandy 1000 machines are similar to the IBM 5160s with CGA graphics. Tandy
+added some additional graphic capabilities similar, but not equal, to
+those added for the IBM PC Jr.
+The Tandy 1000's features include a pair of 6-pin mini-DIN connectors for
+analog joysticks. They are compatible with CoCo joysticks but not standard
+PC joysticks, though the software interface is identical. This difference
+is not accurately reflected in the current slot device configuration.
+Tandy 1000... -->
 </platform>

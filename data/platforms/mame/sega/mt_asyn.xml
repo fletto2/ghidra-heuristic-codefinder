@@ -12,4 +12,12 @@
     <region start="0x00007800" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x00009FFF" type="io" name="68k_banked_data"/>
   </memory_map>
+
+  <!-- Sega Mega-Tech
+About Mega-Tech:
+Megatech games are identical to their Genesis/SMS equivalents, however the Megatech cartridges contain
+a BIOS ROM with the game instructions.  The last part number of the BIOS ROM is the cart/game ID code.
+The instruction ROM appears to map at 0x300000 in the cart space.
+In Megatech games your coins buy you time to play the game, how you perform in the game does not
+matter, you can die and start a new game providing you still have time, likewise you can be playing... -->
 </platform>

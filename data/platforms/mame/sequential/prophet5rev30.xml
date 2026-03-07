@@ -7,4 +7,21 @@
     <region start="0x00001800" end="0x00001803" type="io" name="read"/>
     <region start="0x00008C00" end="0x00008FFF" type="io" name="region_8c00"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- The Prophet 5 (aka Model 1000) is a digitally-controlled, 5-voice analog
+synthesizer.
+The firwmare, running on a Z80, is responsible for:
+Scanning the keyboard and buttons.
+Scanning the value of potentiometers.
+Driving LEDs and digit displays.
+Reacting to inputs (footswitch, external CV and gate) and driving outputs
+(CV, gate).
+Cassette I/O.
+Voice control: setting control voltages (CVs) for voice parameters, asserting
+voice gates, and routing signals via CMOS switches.
+The rest of the descriptio... -->
 </platform>

@@ -15,4 +15,12 @@
     <region start="0x0000FF2C" end="0x0000FF2F" type="unmapped" name="nop_write"/>
     <region start="0x0000FF30" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- nbmj8891 - Nichibutsu Mahjong games for years 1988-1991
+Driver by Takahiro Nogi 1999/11/05 - -->
 </platform>

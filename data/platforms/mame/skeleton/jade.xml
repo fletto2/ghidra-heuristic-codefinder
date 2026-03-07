@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
     <region start="0x00000800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Single board Z80 computer on a S100 card (not the JGZ80).
+The Jade SPIO board adds four CTCs, two SIOs and one PIO.
+2013-09-12 Skeleton driver.
+No info found as yet.
+Type HE to get a list of commands.
+If you hit a key as soon as it is started, the system will present a
+prompt and work. Otherwise it runs into the weeds because the rom banking
+isn't yet emulated. -->
 </platform>

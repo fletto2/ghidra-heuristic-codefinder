@@ -14,4 +14,20 @@
     <region start="0x0000F800" end="0x0000F805" type="io" name="port"/>
     <region start="0x0000FC00" end="0x0000FC07" type="io" name="d0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Samurai, Nunchackun, Yuke Yuke Yamaguchi-kun (c) Taito 1985
+TODO:
+- colors for this HW are a complete mystery and probably needs HW tests.
+- vsgongf sets 0 as player color in work RAM 0xc502 and it's never ever
+set up properly. Assume protection related issue.
+driver by Phil Stroffolino
+Mission 660 extensions by Paul Swan (swan@easynet.co.uk)
+--------------------------------------------------------
+The game appears to use the same video board as Samurai et al. There is a
+character column scroll ... -->
 </platform>

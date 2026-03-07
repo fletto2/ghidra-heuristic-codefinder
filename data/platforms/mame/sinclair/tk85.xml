@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- ZX-80/ZX-81 and derivatives
+Original driver by:
+Juergen Buchmueller, Dec 1999
+Fixes and additions by Krzysztof Strzecha:
+07.06.2004 Tape loading added. Some cleanups of debug code.
+Fixed stupid bug in timings (vblank duration).
+GAME_NOT_WORKING flag removed.
+29.05.2004 CPU clock, number of scanlines, vblank duration corrected.
+Some cleanups. Two non-working TESTDRIVERS added.
+14.05.2004 Finally fixed and readded.
+Changes done by Robbbert in Jan 2009:
+- Added the NTSC/PAL diode to all systems exc... -->
 </platform>

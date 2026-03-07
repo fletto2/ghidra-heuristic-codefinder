@@ -6,4 +6,17 @@
     <region start="0x00044208" end="0x0004420D" type="io" name="monkelf_scroll1_w"/>
     <region start="0x000E0002" end="0x000E000B" type="io" name="port"/>
   </memory_map>
+
+  <!-- -= Jaleco Mega System 1 =-
+driver by   Luca Elia (l.elia@tin.it)
+To enter service mode in some games press service1+F3.
+Year + Game                       System    Protection
+---------------------------------------------------------------------
+88  Legend of Makai (World)         Z
+Makai Densetsu  (Japan)         Z
+---------------------------------------------------------------------
+88  P-47  (World)                   A
+P-47  (Japan)                   A
+P-47  (Japan, Export)           A
+Kick Of... -->
 </platform>

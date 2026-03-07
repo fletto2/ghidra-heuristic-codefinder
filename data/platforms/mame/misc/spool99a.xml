@@ -10,4 +10,21 @@
     <region start="0x0000B000" end="0x0000B3FF" type="ram" name="palette"/>
     <region start="0x0000B800" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Super Pool 99 (c) 1998 Electronic Projects
+driver by David Haywood and Angelo Salese
+A rip-off of other famous gambling games (Namely C.M.C. and Funworld games)
+TODO:
+- spool99: throws "INPUT BAD" at startup;
+- visible area needs confirming for both games;
+- how HW writes to $0-$ff, is this missing a memory_view overlay?
+Notes:
+- At start-up a Test Hardware with RAM NG msg pops up.Do a soft reset and keep pressed start
+and service 1 buttons until the RAM init msg appears.
+- There's a "(c) 1993 H... -->
 </platform>

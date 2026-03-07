@@ -6,4 +6,29 @@
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
     <region start="0x000FED03" end="0x000FED03" type="io" name="m1_ack_w"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Digital Microsystems DMS-86
+2010-01-11 Skeleton driver.
+Monitor commands:
+A Display incoming terminal data in hex
+B boot to HiNet
+C copy memory
+D dump memory to screen
+F fill memory
+G go (eg G address [breakpoint])
+I in port
+M memory test
+O out port (e.g. O 84 77)
+P set segment
+S write a byte to memory
+T type ascii string into the address set by D or S
+X display registers
+? help
+: load intel hex format file
+Note that bit 3 of port 82 is tested at boot. If low, the computer bypasses
+the monitor a... -->
 </platform>

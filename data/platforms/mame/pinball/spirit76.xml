@@ -7,4 +7,14 @@
     <region start="0x00000400" end="0x00000400" type="io" name="sw_r"/>
     <region start="0x00000600" end="0x00000FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Skeleton driver for Mirco's Spirit of 76, one of the first if not the first commercial solid-state pinball game.
+Hardware listing and ROM definitions from PinMAME.
+No schematic of the CPU or sound boards has been located, so this is largely guesswork.
+Hardware:
+CPU:   1 x M6800
+IO:    1x PIA 6821
+SOUND: Knocker, 3 Chimes (10, 100, 1000) 10 has highest tone.
+LED DISPLAYS: 2x 6-digit displays (player scores), 2x 2-digit displays (in Credits area - Credits and Match).
+OTHER INDICATORS:  5 red leds ... -->
 </platform>

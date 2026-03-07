@@ -17,4 +17,19 @@
     <region start="0x00007F80" end="0x00007F80" type="io" name="map0x7f80_0x7f80_writes_0x01_unknown_usa"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- S.P.Y. (c) 1989 Konami
+Similar to Bottom of the Ninth
+driver by Nicola Salmoria
+TODO:
+- sprites should be lagging by 1 frame (eg. on the platforming levels,
+bg scroll and sprite movement should not be in sync)
+Revisions:
+31-01-2024 Furrtek
+- updated PMCU collision check code to match what the original program does
+05-10-2002 Acho A. Tang
+- simulated PMCU protection(guess only)
+- changed priority scheme to fix graphics in 3D levels
+- fixed crashes caused by bank switching
+- disabled logging and d... -->
 </platform>

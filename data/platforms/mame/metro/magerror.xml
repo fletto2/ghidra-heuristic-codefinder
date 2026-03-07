@@ -50,4 +50,33 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Hyper Duel
+(c)1993 Technosoft
+TEC442-A(Japan)
+TMP68000N-10 x2
+YM2151,YM3012
+OKI M6295
+OSC:  4.0000MHz, 20.0000MHz, 26.6660MHz
+Imagetek Inc 14220 071
+Magical Error wo Sagase
+(c)1994 Technosoft / Jaleco
+TEC5000(Japan)
+TMP68000N-10 x2
+YM2413
+OKI M6295
+OSC:  3.579545MHz, 4.0000MHz, 20.0000MHz, 26.6660MHz
+Imagetek Inc 14220 071
+--
+Written by Hau
+03/29/2009
+based on driver from drivers/metro.cpp by Luca Elia
+spthx to kikur,Cha,teioh,kokkyu,teruchu,aya,sgo
+---
+Magical Error
+different sized sound / shar... -->
 </platform>

@@ -57,4 +57,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Fit of Fighting / The History of Martial Arts / 'BB' */
+NIX or Novatecnia (both spanish) may have produced these
+its probably NIX due to some similarities with Pirates
+Supported Games                  Rip-off of
+Fit of Fighting                  Art of Fighting (neogeo.cpp)
+The History of Martial Arts      Fighter's History (deco32.cpp)
+'BB' Untitled Prototype          -none, original-
+'BB' Prototype isn't a game as such, 'BB' was the label on
+the prototype board, which appears to have been used ... -->
 </platform>

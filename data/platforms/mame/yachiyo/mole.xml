@@ -17,4 +17,25 @@
     <region start="0x00008D80" end="0x00008D80" type="io" name="port"/>
     <region start="0x00008DC0" end="0x00008DC0" type="io" name="flipscreen_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- MOLE ATTACK by Yachiyo Electronics Co.,LTD. 1982
+Known Clones:
+"Holey Moley", from tai (Thomas Automatics, Inc.)
+Known Issues:
+- some dips not mapped
+- protection isn't fully understood, but game seems to be ok.
+- cpu speed unverified (ay frequency matches pcb video)
+Buttons are laid out as follows:
+7   8   9
+4   5   6
+1   2   3
+Working RAM notes:
+0x2e0                    number of credits
+0x2F1                    coin up trigger
+0x2F2                    round counter
+0x2F3                    fl... -->
 </platform>

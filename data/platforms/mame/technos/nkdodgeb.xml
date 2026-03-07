@@ -18,4 +18,15 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Super Dodge Ball / Nekketsu Koukou Dodgeball Bu
+driver by Paul Hampson and Nicola Salmoria
+TODO:
+- sprite lag (the real game has quite a bit of lag too)
+Notes:
+- there's a 63701 on the board, used for protection. It is checked
+on startup and then just used to read the input ports. It doesn't return
+the ports verbatim, it adds further processing, setting flags when the
+player double-taps in one direction to run.(updated to edge-triggering)
+- video timing is probably similar to Double Dragon and o... -->
 </platform>

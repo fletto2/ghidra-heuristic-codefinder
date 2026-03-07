@@ -10,4 +10,34 @@
     <region start="0x0000C000" end="0x0000C000" type="io" name="adpcm_status_r"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="subcpu_nmi_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Mr. Do's Castle memory map (preliminary)
+FIRST CPU:
+0000-7fff ROM
+8000-97ff RAM
+9800-99ff Sprites
+b000-b3ff Video RAM
+b400-b7ff Color RAM
+read:
+a000-a008 data from second CPU
+write:
+a000-a008 data for second CPU
+a800      Watchdog reset?
+e000      Trigger NMI on second CPU
+SECOND CPU:
+0000-3fff ROM
+8000-87ff RAM
+read:
+a000-a008 data from first CPU
+all the following ports can be read both from c00x and from c08x. I don't know
+what's the difference.
+c001      DSWB
+c081      coins per play
+c002    ... -->
 </platform>

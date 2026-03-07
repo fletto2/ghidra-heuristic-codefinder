@@ -9,4 +9,17 @@
     <region start="0x0000FD00" end="0x0000FD00" type="io" name="write"/>
     <region start="0x0000FE00" end="0x0000FFFF" type="ram" name="spriteram2"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Spy Hunter(Tecfri bootleg)
+single PCB with 2x Z80
+significant changes compared to original HW
+Very different hardware, probably bootleg despite the license text printed on the PCB, similar to '1942p' and 'spartanxtec.cpp'
+PCB made by Tecfri for Recreativos Franco S.A. in Spain, has Bally Midway logo, and licensing text on the PCB.
+Board is dated '85' so seems to be a low-cost rebuild? it is unclear if it made it to market.
+non-interlaced
+sound system appears to be the same as 'spartanxtec.cpp' -->
 </platform>

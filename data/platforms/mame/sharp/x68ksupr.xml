@@ -14,4 +14,17 @@
     <region start="0x00F00000" end="0x00FBFFFF" type="rom" name="rom"/>
     <region start="0x00FE0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Basic memory map
+0x000000 - 0xbfffff     RAM (Max 12MB), vector table from ROM at 0xff0000 maps to 0x000000 at reset only
+0xc00000 - 0xdfffff     Graphic VRAM
+0xe00000 - 0xe1ffff     Text VRAM Plane 1
+0xe20000 - 0xe3ffff     Text VRAM Plane 2
+0xe40000 - 0xe5ffff     Text VRAM Plane 3
+0xe60000 - 0xe7ffff     Text VRAM Plane 4
+0xe80000                CRTC
+0xe82000                Video Controller
+0xe84000                DMA Controller
+0xe86000                Supervisor Area set
+0xe88000            ... -->
 </platform>

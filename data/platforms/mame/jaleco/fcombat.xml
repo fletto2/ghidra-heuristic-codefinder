@@ -19,4 +19,23 @@
     <region start="0x0000EE00" end="0x0000EE00" type="io" name="ee00_w"/>
     <region start="0x0000EF00" end="0x0000EF00" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Field Combat (c)1985 Jaleco
+Hardware has similarities with Exerion
+TS 2004.10.22.
+- fixed sprite issues
+- added backgrounds and terrain info (external ROMs)
+(press buttons 1+2 at the same time, to release 'army' ;)
+PCB Notes:
+From a working board.
+Label: FC8524
+CPU: Z80 (running at 3.332 MHz measured at pin 6)
+Sound: Z80 (running at 3.332 MHz measured at pin 6), YM2149 (x3)
+Other: Unmarked 24 pin near ROMs 2 &amp; 3 (maybe same protection chip as dday?)
+RAM: 6116 (x3)
+X-TAL: 20 MHz (also seen wi... -->
 </platform>

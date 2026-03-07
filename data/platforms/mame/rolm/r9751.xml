@@ -10,4 +10,28 @@
     <region start="0xFFF80000" end="0xFFF8FFFF" type="io" name="r9751_mmio_fff8_r"/>
     <region start="0xFFFFFF00" end="0xFFFFFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="wd33c93"/>
+  </devices>
+
+  <!-- Rolm CBX 9751 Driver
+This driver attempts to emulate the following models:
+Model 10
+Model 20
+Model 40
+Model 50
+Model 70
+The following software releases are known:
+9004
+9005
+The basis of this driver was influenced by the zexall.c driver by
+Jonathan Gevaryahu.
+Special Thanks to:
+Stephen Stair (sgstair)   - for help with reverse engineering,
+programming, and emulation
+Felipe Sanches (FSanches) - for help with MESS and emulation
+Michael Zapf (mizapf)     - for building the HDC9234/HDC9224
+driver tha... -->
 </platform>

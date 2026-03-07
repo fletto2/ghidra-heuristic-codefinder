@@ -53,4 +53,26 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Gunbuster (c) 1992 Taito
+Driver by Bryan McPhail &amp; David Graves.
+Board Info:
+CPU   : 68EC020 68000
+SOUND : Ensoniq ES5505 + ES5510
+OSC.  : 40.000MHz 16.000MHz 30.47618MHz
+This board (K11J0717A) uses following chips:
+- TC0470LIN
+- TC0480SCP
+- TC0570SPC
+- TC0260DAR
+- TC0510NIO
+Gunbuster uses a slightly enhanced sprite system from the one
+in Taito Z games.
+The key feature remains the use of a sprite map ROM which allows
+the sprite hardware to create many large zoomed sprites on screen
+while min... -->
 </platform>

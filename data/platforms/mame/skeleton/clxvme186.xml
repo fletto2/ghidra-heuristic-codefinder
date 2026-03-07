@@ -6,4 +6,10 @@
     <region start="0x00040000" end="0x000CFFFF" type="unmapped" name="unmapped"/>
     <region start="0x000F0000" end="0x000F7FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Skeleton driver for 80186-based VMEbus controller by Colex, Inc. -->
 </platform>

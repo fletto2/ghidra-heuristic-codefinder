@@ -56,4 +56,24 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Excellent System's ES-9209B Hardware
+Games supported:
+Grand Cross Pinball
+Power Flipper Pinball Shooting
+Made from Raine source
+Code
+----
+Inputs get tested at $4aca2 on
+TODO
+----
+- Screen flipping support
+- Figure out which customs use D80010-D80077 and merge implementation with Aquarium
+- Is SW3 actually used?
+- Power Flipper reference video: https://www.youtube.com/watch?v=zBGjncVsSf4 (seems to have been recorded with 'flipscreen' dipswitch on, because it causes a jumping glitch before the ras... -->
 </platform>

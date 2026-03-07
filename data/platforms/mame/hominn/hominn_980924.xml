@@ -52,4 +52,29 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Hom Inn 980924-1 PCB
+JC-10011A
+- MC68000P10
+- square 100-pin chip with almost unreadable marking (only 17-2414-01 and 97/09)
+- square 84-pin chip with no markings
+- 16.000 MHz XTAL
+- 12.000 MHz XTAL
+- 4x HM6116P-3
+- 2x LP6264D-70LL
+- M5M82C255
+- OKIM6295 or clone (markings unreadable, but ROM content reveals it)
+- bank of 8 switches (with 2 unpopulated spaces for more banks)
+TODO:
+- remove PPI1 port B hack;
+- correct IRQs (related to the above?);
+- correct palette;
+- Oki banking;
+- switches;
+- l... -->
 </platform>

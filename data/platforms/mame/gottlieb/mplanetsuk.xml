@@ -13,4 +13,31 @@
     <region start="0x00007003" end="0x00007004" type="io" name="port"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Gottlieb hardware
+dedicated to Warren Davis, Jeff Lee, Tim Skelly &amp; David Thiel
+driver by Fabrice Frances &amp; Nicola Salmoria
+Games supported:
+Reactor
+Q*Bert [6 sets]
+Insector (prototype)
+Tylz (prototype)
+Argus (prototype)
+Mad Planets
+Krull
+Knightmare (prototype)
+Faster, Harder, More Challenging Q*bert (prototype)
+Q*Bert's Qubes
+M.A.C.H. 3
+Screw Loose (prototype)
+Cobra Command
+Curve Ball
+Us vs. Them
+The Three Stooges in Brides Is Brides
+Video Vince and the Game Factory (prototype)
+Wiz Warz... -->
 </platform>

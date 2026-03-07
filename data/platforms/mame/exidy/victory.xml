@@ -7,4 +7,16 @@
     <region start="0x0000C400" end="0x0000F7FF" type="ram" name="videoram"/>
     <region start="0x0000F800" end="0x0000F801" type="io" name="response_r"/>
   </memory_map>
+
+  <!-- Victory system
+driver by Aaron Giles
+Memory map
+========================================================================
+CPU #1
+========================================================================
+0000-BFFF   R     xxxxxxxx   Program ROM
+C000        R     xxxxxxxx   Foreground collision X position
+C001        R     xxxxxxxx   Foreground collision Y position/IRQ clear
+C002        R     xxxxxx--   Background collision X position
+C003        R     xxxxxxxx   Background collision Y position/IRQ ... -->
 </platform>

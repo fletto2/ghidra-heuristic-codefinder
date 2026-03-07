@@ -6,4 +6,28 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="nvram"/>
     <region start="0x0000E000" end="0x0000E003" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Jeutel (France) System 84
+Games:
+- Apocalypse Now
+- Evolution
+- Excalibur (not the Gottlieb or Vifico game)
+- Le King
+- Olympic Games
+- Papillon (not the Video Dens game)
+- Valkyrie (also shown as Walkyrie in the manual)
+Status:
+- All machines are playable.
+- Multiball key code is XZ - need to jiggle these keys at start of game.
+ToDo:
+- Speech not working because the TMS5110 INT pin is not emulated
+- Le King: Bad sound rom
+- Match doesn't display or work -->
 </platform>

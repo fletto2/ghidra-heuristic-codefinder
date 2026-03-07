@@ -10,4 +10,20 @@
     <region start="0x0000900D" end="0x0000900E" type="unmapped" name="unmapped"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Destiny (c) 1983 Data East Corporation
+driver by Angelo Salese
+A fortune-teller machine with 20 green 5x7 LED dot matrix display and a printer.
+M6809 CPU, 2KB RAM
+It is not Y2K compliant.
+Rough cpanel sketch:
+[LED-array display]         1  2  3  M
+4  5  6  F
+7  8  9  0
+CLEAR ENTER
+To control system buttons (SYSTEM, lower nibble), hold one down and then
+push the main service button F2.
+TODO:
+- Identify display controller and dump the character ROM,
+then emulate the graphics with genuine artwork d... -->
 </platform>

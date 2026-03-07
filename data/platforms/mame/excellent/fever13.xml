@@ -5,4 +5,20 @@
     <region start="0x0000A808" end="0x0000A808" type="io" name="port"/>
     <region start="0x0000A80C" end="0x0000A80C" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Last Bank (c) 1994 Excellent System
+Uses a TC0091LVC, a variant of the one used on Taito L HW
+Undumped games on similar hardware (ES-9402 or ES-9410):
+Angel Fever
+Miracle Seven
+Royal Choice Poker
+TODO:
+- lastbank: sprites should be clip masked during gameplay (verify);
+- fever13: OKI sound volume overdrives a lot;
+- goldstrk, lpierrot, wcircus: sound flags / latches are somewhat different, need correct implementation;
+- hookup hopper device; -->
 </platform>

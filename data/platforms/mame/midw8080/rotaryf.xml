@@ -6,4 +6,17 @@
     <region start="0x00007000" end="0x000073FF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000A1FF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Rotary Fighter, 01/1979, Kasco (Kansai Seiki Seisakusho Co.)
+board KIV-101 CPU: xtal(??mhz), i8085A, 40 pin IC(i8255?), 6*ROM, 1*RAM, DIP(8 switches), ..
+board KIV-101 CRT: 2*RAM, lots of 74xx TTL
+driver by Barry Rodewald
+based on Initial work by David Haywood
+todo:
+sound
+verify game speed if possible (related to # of interrupts) -->
 </platform>

@@ -6,4 +6,24 @@
     <region start="0x00004000" end="0x0000BFFF" type="io" name="rom"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- bbcbc.c
+BBC Bridge Companion
+Inputs hooked up - 2009-03-14 - Robbbert
+Clock Freq added - 2009-05-18 - incog
+From the Operations Manual, Page 1:
+The BBC BRIDGE COMPANION and its associated family of
+Cartridges are distributed in the U.K. by:
+CONTEMPORARY CHESS COMPUTERS
+2/3 Noble Corner
+Great West Road
+HOUNSLOW
+Middlesex
+TW5 0PA
+(C) 1985 Unicard Ltd.
+The title BBC Bridge is under licence from BBC Enterprises Ltd. -->
 </platform>

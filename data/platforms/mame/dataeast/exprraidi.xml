@@ -18,4 +18,28 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Express Raider - (c) 1986 Data East Corporation / Data East USA
+Ernesto Corvi
+ernesto@imagina.com
+Memory Map:
+Main CPU: ( DECO CPU-16 )
+0000-05ff RAM
+0600-07ff Sprites
+0800-0bff Videoram
+0c00-0fff Colorram
+1800-1800 DSW 0
+1801-1801 Controls
+1802-1802 Coins
+1803-1803 DSW 1
+2100-2100 Sound latch write
+2800-2801 Protection
+3800-3800 VBlank ( bootleg 2 only )
+4000-ffff ROM
+ffc0-ffc0 VBlank ( bootleg 3 only )
+Sound CPU: ( 6809 )
+0000-1fff RAM
+2000-2001 YM2203
+4000-4001 YM3526
+6000-6000 Sound latch re... -->
 </platform>

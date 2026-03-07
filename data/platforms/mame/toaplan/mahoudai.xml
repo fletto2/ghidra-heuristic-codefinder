@@ -5,4 +5,16 @@
     <region start="0x0021C01D" end="0x0021C01D" type="io" name="coin_w"/>
     <region start="0x00401000" end="0x004017FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- ToaPlan      game hardware from 1991 - 1994
+Raizing/8ing game hardware from 1993 onwards
+-------------------------------------------------
+Driver by: Quench and Yochizo
+Original othldrby.c by Nicola Salmoria
+Raizing games and Truxton 2 are heavily dependent on the Raine source -
+many thanks to Richard Bush and the Raine team. [Yochizo]
+Supported games:
+Name        Board No      Maker         Game name
+----------------------------------------------------------------------------
+sstriker    RA-MA7... -->
 </platform>

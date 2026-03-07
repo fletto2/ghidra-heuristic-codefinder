@@ -8,4 +8,8 @@
     <region start="0x00004000" end="0x000043FF" type="ram" name="videoram"/>
     <region start="0x00006000" end="0x00006000" type="io" name="system_r"/>
   </memory_map>
+
+  <!-- Sanyo PHC-20
+TODO:
+- screen attribute bit 7 is unknown, does this machine support semi-graphics? -->
 </platform>

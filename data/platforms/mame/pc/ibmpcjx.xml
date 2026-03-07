@@ -8,4 +8,22 @@
     <region start="0x000D0000" end="0x000DFFFF" type="io" name="rom"/>
     <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="8250"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- TODO:
+POST gives "ERROR H" with 64K RAM (you can press Enter to get past
+it).
+Cartridge BASIC always rejects "SCREEN 4" (320*200 4BPP) and
+"SCREEN 5" (640*200 2BPP).  These are graphics modes that require at
+least 128K RAM.  However, it does accept "WIDTH 80" when 128K or more
+RAM is present, so it isn't just failing to detect the RAM size
+altogether.
+IBM JX (5510) is a completely different machine and should be moved
+out of this driver and emulated properly. -->
 </platform>

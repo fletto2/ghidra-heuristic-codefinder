@@ -21,4 +21,14 @@
     <region start="0x0000E000" end="0x0000E000" type="io" name="reset_w"/>
     <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Taito America's Change Lanes
+The video hardware is an evolution of Midway Space Encounters. This game
+was designed by the same person (Dave Needle), it's not a Taito Japan game.
+TODO:
+- filtering on ay2 -->
 </platform>

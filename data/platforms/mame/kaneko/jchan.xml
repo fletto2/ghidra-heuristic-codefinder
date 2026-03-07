@@ -56,4 +56,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Jackie Chan The Kung-Fu Master
+Jackie Chan in Fists of Fire
+(c) Kaneko 1995
+Driver by David Haywood
+based on work by Sebastien Volpe
+started: May 12 2004
+Checks done by main code:
+- as part of EEPROM data
+jchan  : "95/05/24 Jackie ChanVer 1.20"  (both sets report the same info)
+jchan2 : "95/11/28 Jackie ChanVer 2.31"
+- as (one of) MCU protection cmd
+jchan  : "1995/05/24 The kung-Fu Master Jackie Chan   "
+jchan2 : "1995/10/24 Fists Of Fire"
+main2sub communication is done within $400000-$403fff (m... -->
 </platform>

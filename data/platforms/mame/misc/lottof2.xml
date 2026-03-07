@@ -52,4 +52,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- HAR MadMax hardware
+Games supported:
+Double Cheese
+Lotto Fun 2
+Fred Flintstones' Memory Match
+ChuckECheese's Match Game
+Known bugs:
+Test/tilt buttons seem to be swapped compared to test mode
+Don't know what the opto switches do
+[dcheese]
+you can not spin the wheel by using the inc/dec buttons unless you
+switch back and forth between them.  The game seems to check for a
+constant turn rate and constant acceleration/deceleration, then not
+allow the wheel to start spinning.  This is most likely to s... -->
 </platform>

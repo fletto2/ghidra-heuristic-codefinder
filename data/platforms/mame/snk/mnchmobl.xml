@@ -14,4 +14,23 @@
     <region start="0x0000BF00" end="0x0000BF03" type="io" name="nmi_ack_w"/>
     <region start="0x0000BF04" end="0x0000BF07" type="ram" name="writeonly"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Munch Mobile
+(C) 1983 SNK
+2 Z80s
+2 AY-8910s
+15 MHz crystal
+Known Issues:
+- it's unclear if mirroring the videoram chunks is correct behavior
+- several unmapped registers
+Stephh's notes (based on the game Z80 code and some tests) :
+- The "Continue after Game Over" Dip Switch (DSW1:1) allows the player
+to continue from where he lost his last life when he starts a new game.
+IMO, this is a debug feature (as often with SNK games) as there is
+NO continue routine nor text for it in the ROMs.
+See code a... -->
 </platform>

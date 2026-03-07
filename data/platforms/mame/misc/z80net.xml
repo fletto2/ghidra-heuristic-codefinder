@@ -6,4 +6,24 @@
     <region start="0x0000EC00" end="0x0000EDFF" type="ram" name="videoram"/>
     <region start="0x0000F000" end="0x0000F3FF" type="ram" name="bank4"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Nuova Elettronica Z80NE system driver
+Preliminary driver
+Roberto Lavarone, 2009-01-05
+Thanks go to:
+Roberto Bazzano: http://www.z80ne.com/
+Z80NE memory map
+LX.382 CPU board
+range     short     description
+0000-03FF RAM
+8000-83FF EPROM     firmware
+LX.383 HEX keyboard and display controller for LX.384 hex keyboard and display
+range     short     description
+F0-F7     I/O       7-segment LED dual-port RAM write
+F0        I/O       keyboard read
+F8        I/O       enable single step for next instr... -->
 </platform>

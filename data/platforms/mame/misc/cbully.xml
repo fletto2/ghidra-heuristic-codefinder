@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- M89 hardware for kiddie rides from Falgas.
+Base Falgas M89 PCB:
+_|_|_|_|___|_|_|_|___|_|_|_|_|_|_|____
+|          _______   _______ _______  |
+| _______  TIC206M   TIC206M TIC206M  |
+|                                     |
+|                   __________________|
+|                  | AY8910A         ||
+|                  |_________________||
+|                                     |
+| 7805CV            :::::::::         |
+|                   __________________|
+|                  | 82C55           ... -->
 </platform>

@@ -20,4 +20,25 @@
     <region start="0x00D00013" end="0x00D00013" type="io" name="pic_data_r"/>
     <region start="0x00D00015" end="0x00D00015" type="io" name="pic_status_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- -= Galaxy Games =-
+driver by Luca Elia (l.elia@tin.it)
+CPU:    68000
+Video:  Blitter with two layers and double buffering (Xilinx FPGA)
+Sound:  OKI M6295
+Input:  Trackballs and buttons
+Other:  EEPROM
+Carts:  EEPROM + Flash + PIC
+To Do:
+- Coin optics
+Notes:
+- 4 known game carts where produced, these are:
+Star Pak 1: Seek the Peaks, 21 Thunder, Solar Solitaire, Prism Poker, Pharaoh's Tomb, Magic Black Jack,
+Twenty One Thunder Plus, Power Pairs, Prism Poker Plus &amp; Have A Cow
+Star Pak 2: Pac-Man... -->
 </platform>

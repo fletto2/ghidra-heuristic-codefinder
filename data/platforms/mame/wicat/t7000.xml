@@ -6,4 +6,12 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00004000" end="0x0000803F" type="io" name="region_4000"/>
   </memory_map>
+
+  <!-- Preliminary driver for Wicat T7000 terminal.
+This fairly typical ASCII video display terminal was sold for use with
+the Wicat System 100. It shows a basic 80x25 monochrome text display
+with an optional status line, and supports the VT52 and ANSI command
+sets. Keytronic Model L2207 is the specified keyboard. Settings can be
+saved to nonvolatile memory by typing "PERM" (all caps) in Set-Up mode.
+Currently the optional touch panel is not supported. -->
 </platform>

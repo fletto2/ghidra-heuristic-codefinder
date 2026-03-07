@@ -5,4 +5,19 @@
     <region start="0x00001000" end="0x00001FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x000083FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Unknown Color Poker Game
+------------------------------
+8080A CPU
+Four 2716 eproms
+Six 2102 Rams
+Two 2112 Rams
+Two 5101 Rams (Low Power Versions, one connected to Battery)
+Four position DIP Switch - DIP 1 changes on screen text from
+normal to highlighted as seen in pics. Other DIPs unknown.
+Sound?
+Date of manufacture unknown. Latest date codes on logic chips is 1980.
+Chaneman 3/20/2019
+TODO: stuck if it isn't immediately coined up at boot.
+Game can be tested by keeping COIN1 (5 by default) press... -->
 </platform>

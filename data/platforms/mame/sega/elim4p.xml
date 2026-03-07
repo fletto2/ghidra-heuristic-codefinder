@@ -6,4 +6,20 @@
     <region start="0x0000C800" end="0x0000CFFF" type="ram" name="mainram"/>
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="vectorram"/>
   </memory_map>
+
+  <!-- Sega vector hardware
+Games supported:
+Space Fury
+Zektor
+Tac/Scan
+Eliminator
+Star Trek
+Known bugs:
+games run too fast
+4/25/99 - Tac-Scan sound call for coins now works. (Jim Hernandez)
+2/5/98 - Added input ports support for Tac Scan. Bonus Ships now work.
+Zektor now uses it's own input port section. (Jim Hernandez)
+Sega Vector memory map (preliminary)
+Most of the info here comes from the wiretap archive at:
+http://www.mikesarcade.com/cgi-bin/spies.cgi?action=url&amp;type=info&amp;page=segaxyfaq1.... -->
 </platform>

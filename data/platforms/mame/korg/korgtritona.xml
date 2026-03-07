@@ -24,4 +24,15 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <!-- Korg TRITON skeleton driver
+CPU: SH2 SH7043 / SH7045
+FLASH: 2 * MX29F1610
+LCD controller: M66271FP
+Floppy disk controller: HD63266
+Serial Interface: uPD71051
+SCSI controller: MB86604L
+Sound: 2 * "TGL96" MB87F1710-PFV-S (proprietary)
+This driver runs the embedded firmware with skeleton devices
+until the boot splash screen is shown. -->
 </platform>

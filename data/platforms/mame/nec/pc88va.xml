@@ -6,4 +6,15 @@
     <region start="0x000A0000" end="0x000DFFFF" type="io" name="amap16"/>
     <region start="0x000E0000" end="0x000FFFFF" type="ram" name="rom00_bank"/>
   </memory_map>
+
+  <!-- PC-88VA (c) 1987 NEC
+Here be dragons, a mostly compatible PC-8801 with extra V3 Mode for superset.
+TODO:
+- pc88va (stock version) has two bogus opcodes.
+One is at 0xf0b15 (0x0f 0xfe), another at 0xf0b31 (br 1000h:0c003h).
+Latter will make the program flow to jump to lalaland.
+This also happens if you load a regular V1/V2 game assuming you have FDC PIO properly
+hooked up, is the first opcode actually a Z80 mode switch?
+- pc88va is also known to have a slightly different banking scheme and
+regular... -->
 </platform>

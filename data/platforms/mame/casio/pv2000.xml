@@ -7,4 +7,22 @@
     <region start="0x00007000" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="map0x8000_0xbfff_ext_ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- CASIO PV-2000
+(preliminary work by anondumper)
+Thanks for the loaner (Ianoid)
+NOTE:
+The PCB has printed names of components, not ICXY, etc
+but: "hn613128pc64.bin"
+SEE
+http://hou4gong1.mo-blog.jp/.shared/image.html?/photos/uncategorized/pv_2000_k1.jpg
+http://hou4gong1.mo-blog.jp/.shared/image.html?/photos/uncategorized/pv_2000_14.jpg
+http://hou4gong1.mo-blog.jp/.shared/image.html?/photos/uncategorized/pv_2000_15.jpg
+Keyboard inputs are partially supported. Keys missing from the input ports:
+- GAM... -->
 </platform>

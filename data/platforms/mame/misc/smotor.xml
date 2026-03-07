@@ -4,4 +4,20 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ym2413"/>
+  </devices>
+
+  <!-- Super Motor (prototype)
+19??, Duintronic.
+Driver by Roberto Fresca and Mirko Buffoni.
+Seems to be a prototype, since there are some issues.
+You can choose motorcycle &lt;-&gt; car game through a DIP switch.
+Also there are four difficult modes:
+- Easy: You only have slow trucks in the game, and gas cans on
+the road that extend 10 seconds the game time.
+- Normal: You have trucks and cars on the street. Also gas cans.
+- Medium: You have trucks and cars on the street, but no gas cans.
+Trucks and car... -->
 </platform>

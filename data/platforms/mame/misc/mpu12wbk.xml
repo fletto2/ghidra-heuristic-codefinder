@@ -12,4 +12,20 @@
     <region start="0x00001800" end="0x00003FFF" type="ram" name="nvram2"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- WEBAK MPU-12 PLATFORM
+---------------------
+Driver by Roberto Fresca.
+Games running on this hardware:
+Fruit Star Bonus (Ver 8.2.00ITL),                     199?, Webak Elektronik.
+Fruit Star Bonus (Ver 8.27PVIE),                      199?, Webak Elektronik.
+Fruit Star Bonus (Ver 8.20PIR),                       1997, Webak Elektronik.
+Fruit Star Bonus (Ver 8.36UNG-1100),                  1996, Webak Elektronik.
+Fruit Star Bonus (Ver 8.30UNG-200),                   1996, Webak Elektronik.
+Fruit St... -->
 </platform>

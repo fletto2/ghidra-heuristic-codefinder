@@ -55,4 +55,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Arcade Classics hardware (prototypes)
+driver by Aaron Giles
+Games supported:
+Arcade Classics (1992)
+Sparkz (1992)
+Known bugs:
+none at this time
+Memory map
+========================================================================
+MAIN CPU
+========================================================================
+000000-0FFFFF   R     xxxxxxxx xxxxxxxx   Program ROM
+200000-21FFFF   R/W   xxxxxxxx xxxxxxxx   Playfield RAM (512x256 pixels)
+R/W   xxxxxxxx --------      (Left pixel)
+R/W   -------- ... -->
 </platform>

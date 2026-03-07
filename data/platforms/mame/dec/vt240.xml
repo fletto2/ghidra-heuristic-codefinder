@@ -5,4 +5,11 @@
     <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+  </devices>
+
+  <!-- DEC VT240 -->
 </platform>

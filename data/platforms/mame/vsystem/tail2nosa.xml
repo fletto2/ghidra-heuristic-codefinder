@@ -54,4 +54,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Tail to Nose / Super Formula - (c) 1989 Video System Co.
+Driver by Nicola Salmoria
+keep pressed F1 during POST to see ROM/RAM/GFX tests.
+The "Country" DIP switch is intended to select the game's title.
+However, the program code in all but one of the known sets forces it to
+one value or the other whenever it reads it outside of service mode. -->
 </platform>

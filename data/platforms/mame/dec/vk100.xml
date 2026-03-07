@@ -6,4 +6,20 @@
     <region start="0x00007000" end="0x0000700F" type="io" name="vk100_keyboard_column_r"/>
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- DEC VK100 'GIGI'
+12/05/2009 Skeleton driver.
+28/07/2009 added Guru-readme(TM)
+08/01/2012 Fleshed out driver.
+Todo:
+fix vector generator hardware enough to pass the startup self test
+the tests are described on page 6-5 thru 6-8 of the tech reference
+hook up the bresenham DU/DVM/ERR stuff, currently only simple directional vectors work
+hook up the vector and sync proms to the sync counter
+figure out how the erase prom actually works at a hardware level
+redump the vector prom, the first two bytes l... -->
 </platform>

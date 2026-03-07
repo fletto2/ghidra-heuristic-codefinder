@@ -5,4 +5,19 @@
     <region start="0x0000C000" end="0x0000C00F" type="io" name="read"/>
     <region start="0x0000E800" end="0x0000EFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- JPM MPS1/2 Hardware
+TMS9995 CPU
++
+4x 8255 - General I/O
+TMS9902A - CPU -&gt; Reel MCU communication
+TMS9902A - Printer / Black Box comms
+TMS7041 - Reel MCU (4kb Internal ROM, Not Dumped)
+SN76489 - Sound -->
 </platform>

@@ -16,4 +16,19 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="sn76489"/>
+  </devices>
+
+  <!-- BBC Model A,B
+ANA01 - Model A
+ANA02 - Model A with Econet interface
+ANB01 - Model B
+ANB02 - Model B with Econet interface
+ANB03 - Model B with Disc interface
+ANB04 - Model B with Disc and Econet interfaces
+GNB14 - Model B with Disc, Econet &amp; Speech (German export)
+UNB09 - Model B with Disc, Econet &amp; Speech (US export)
+Model B with Disc (Norway dealer import) -->
 </platform>

@@ -5,4 +5,15 @@
     <region start="0x00004000" end="0x00004001" type="io" name="master_4000_r"/>
     <region start="0x00004014" end="0x0000401F" type="io" name="master_4014_w"/>
   </memory_map>
+
+  <!-- Megadrive / Genesis 32X emulation */
+
+Fix 32X support (not used by any arcade systems?)
+- this seems to require far greater sync and timing accuracy on rom / ram access than MAME can provide
+- split NTSC / PAL drivers
+- 36greatju: missing backup ram, has issues with golfer select due of that
+- bcracers: write to undefined PWM register?
+- fifa96 / nbajamte: dies on the gameplay, waiting for a comm change that never occurs;
+- marsch1: doesn't boot, Master / Slave communicates through SCI
+- tempo: ... -->
 </platform>

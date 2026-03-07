@@ -6,4 +6,14 @@
     <region start="0x000E0000" end="0x000E001F" type="io" name="paletteram"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- ACT Apricot F1 series
+TODO:
+- Need software dumps to go further;
+- Convert workram pointer to ram_device (needs documented range of available configs); -->
 </platform>

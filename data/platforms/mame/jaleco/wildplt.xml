@@ -62,4 +62,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Jaleco Driving Games =-
+driver by   Luca Elia (l.elia@tin.it)
+- Note: press F2 to enter service mode -
+---------------------------------------------------------------------------
+Year + Game     Hardware:   Main    Sub#1   Sub#2   Sound   Sound Chips
+---------------------------------------------------------------------------
+[89 Big Run]                68000   68000   68000   68000   YM2151 2xM6295
+BOARD #1    BR8950c
+BOARD #2    8951
+BOARD #3    8952A
+BOARD #4    8953
+[90 Cisco Heat]        ... -->
 </platform>

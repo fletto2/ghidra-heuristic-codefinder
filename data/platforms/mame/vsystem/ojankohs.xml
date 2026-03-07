@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x000077FF" type="rom" name="rom"/>
     <region start="0x00007800" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Video System Mahjong hardware
+Ojanko High School (お雀子ハイスクール)
+© 1988 V-System Co.
+Ojanko Yakata (勝ち抜き麻雀戦 お雀子館)
+© 1986 V-System Co.
+Ojanko Yakata 2bankan (勝ち抜き麻雀戦 お雀子館2番館)
+© 1987 V-System Co.
+Chinese Casino (チャイニーズカジノ)
+© 1987 V-System Co.
+Ojanko Club (お雀子クラブ)
+© 1986 V-System Co.
+TODO:
+- Figure out the rest of the dip switches
+- XTAL values/clocks
+- Raw screen params -->
 </platform>

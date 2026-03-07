@@ -12,4 +12,23 @@
     <region start="0x0000D000" end="0x0000D3FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="storage" name="eeprom"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- ZG board (c) 1991 Alba
+Notes:
+-The name of this hardware is "Alba ZG board",a newer revision of the
+"Alba ZC board" used by Hanaroku (seta/albazc.cpp driver). Test mode says clearly that this is
+from 1991.
+TODO:
+-Player-2 inputs are unemulated;
+-"Custom RAM" emulation: might be a (weak) protection device or related to the "Back-up RAM NG"
+msg that pops up at every start-up.
+-Video emulation requires a major conversion to the HD46505SP C.R.T. chip (MC6845 clone),
+there's an heavy x offsetting wit... -->
 </platform>

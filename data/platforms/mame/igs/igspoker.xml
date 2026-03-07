@@ -4,4 +4,26 @@
     <region start="0x00000000" end="0x0000EFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Champion Poker by IGS   (documented by Mirko Buffoni)
+---
+Memory Layout (refers to CSK227IT.  Others may have different addresses)
+ROM:        0000-efff
+RAM:        f000-ffff
+---
+I/O Ports
+Palette:    2000-27ff   (low byte)
+2800-2fff   (high byte)
+VideoRAM:   7000-77ff
+ColorRAM:   7800-7fff
+DSW1-5:     4000-4004   (see input ports section below)
+InputPorts: 50a0        (unused in this game)
+5081-5082   (Coins and Keyboard)
+5091        (Keyboard)
+Expansion:  8000-ffff   (R)     Used to read from ... -->
 </platform>

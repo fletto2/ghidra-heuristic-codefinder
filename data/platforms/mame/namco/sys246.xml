@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x01FFFFFF" type="ram" name="ram"/>
     <region start="0x1FC00000" end="0x1FDFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- namcops2.cpp
+Namco System 246 / System 256 games (Sony PS2 based)
+PS2 baseboard includes:
+R5900 "Emotion Engine" - MIPS III with 128-bit integer regs &amp; SIMD
+R3000 IOP - Stock R3000 with cache, not like the PSXCPU
+VU0 - can operate either as in-line R5900 coprocessor or run independently
+VU1 - runs independently only, has special DMA path to GS
+GS - Graphics Synthesizer.  Nothing fancy, draws flat, Gouraud, and/or
+textured tris with no, bilinear, or trilinear filtering very quickly.
+SPU2 - So... -->
 </platform>

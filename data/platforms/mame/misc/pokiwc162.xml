@@ -15,4 +15,16 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- .-----------------------------------------.
+|                                         |
+|         CAL OMEGA / CEI / UCMC          |
+|    SYSTEMS 903 / 904 / 905 / 906-III    |
+|                                         |
+|  Driver by Roberto Fresca &amp; Grull Osgo  |
+|                                         |
+'-----------------------------------------'
+--- Technical Notes ---
+Name:    System 903, System 904, System 905 &amp; System 906-III.
+Company: Cal Omega / Casino Electronics Inc. (CEI) / U... -->
 </platform>

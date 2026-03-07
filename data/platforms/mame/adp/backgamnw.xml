@@ -49,4 +49,24 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- MANN, OH-MANN
+199? - MERKUR
+Preliminary driver by Roberto Fresca.
+German board game similar to Ludo, derived from the Indian game Parchisi.
+Coin-operated machine for 1-4 players. No screen, just artwork and lamps.
+The machine was designed for pubs, etc...
+Field: 93 cm.
+High:  105 cm.
+1x keylock.
+Accept DM and Euro.
+It's all a challenge. Even once emulated, the game will need a lot of
+artwork and lamps work...
+Currently sits in a loop between 0x100000 and 0x600006 addresses r/w,
+the snippet is th... -->
 </platform>

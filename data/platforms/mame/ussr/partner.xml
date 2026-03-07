@@ -8,4 +8,11 @@
     <region start="0x0000DE00" end="0x0000DEFF" type="io" name="win_memory_page_w"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="bank12"/>
   </memory_map>
+
+  <!-- Partner driver by Miodrag Milanovic
+2008-06-09 Preliminary driver.
+Works well with cassette. Need to find out how to access the built-in
+rom programs. Also need to find out how to access floppy disks, including
+those in the softlist.
+Cursor is one position too far to the right. -->
 </platform>

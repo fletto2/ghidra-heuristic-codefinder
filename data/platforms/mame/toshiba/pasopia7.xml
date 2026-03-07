@@ -6,4 +6,24 @@
     <region start="0x00008000" end="0x0000BFFF" type="io" name="vram_r"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Toshiba Pasopia 7 (c) 1983 Toshiba
+Preliminary driver by Angelo Salese.
+2019-10-14 added cassette &amp; beeper [Robbbert]
+Machine unusable due to issues with sound.
+Cassette works.
+Beeper is only used for the keyclick, and it works.
+TODO:
+- floppy support (but floppy images are unobtainable at current time).
+- SOUND command uses the SN76489 chip, however no sound is produced, and the next SOUND command
+freezes the machine.
+- LCD version has gfx bugs, it must use a different ROM charset for insta... -->
 </platform>

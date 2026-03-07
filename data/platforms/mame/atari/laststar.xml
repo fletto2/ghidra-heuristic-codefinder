@@ -12,4 +12,13 @@
     <region start="0x00A00400" end="0x00BFFFFF" type="ram" name="screen_ram"/>
     <region start="0x00FF8000" end="0x00FF8FFF" type="io" name="gpu_r"/>
   </memory_map>
+
+  <!-- Atari System IV hardware
+preliminary driver by Phil Bennett
+Games supported:
+The Last Starfighter (prototype)
+Air Race (prototype)
+To do:
+Finish video implementation
+Find missing HUD/text data for both games -->
 </platform>

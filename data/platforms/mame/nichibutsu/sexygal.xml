@@ -5,4 +5,18 @@
     <region start="0x00008000" end="0x0000807F" type="io" name="sexygal_soundram_r"/>
     <region start="0x0000A000" end="0x0000A000" type="io" name="sexygal_audioff_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Night Gal (c) 1984 Nichibutsu
+a.k.a. same Jangou blitter but with NCS CPU for displaying graphics as protection.
+TODO:
+- Fix Sweet Gal/Sexy Gal/Sexy Gal Tropical layer clearances (more protection?);
+- Sexy Gal uses an additional NCS for a sample player, understand how to make it play anything (tries to read port $00 but it's always zero);
+- Sweet Gal hangs after winning a round;
+- Other games in the driver also have sample ROMs, it is unknown how they are supposed to playback tho;
+- Understand w... -->
 </platform>

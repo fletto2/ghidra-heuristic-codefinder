@@ -4,4 +4,14 @@
     <region start="0x00000000" end="0x00003FFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Burroughs EF315-I220 bank teller terminal
+These 8-bit terminals were used by banks before they were displaced
+by cheap PCs.  There's an external customer PIN pad with its own
+ROMs, and a keyboard for the teller.  Unfortunately the teller
+keyboard was missing from the unit that was dumped.  These terminals
+contain a hardware DES chip which was a controlled item due to trade
+restrictions on encryption technology.
+The main system consists of three large boards in a stack: D8302
+(I/O board), A8301 (... -->
 </platform>

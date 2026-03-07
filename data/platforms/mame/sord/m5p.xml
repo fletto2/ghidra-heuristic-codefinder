@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x0000FFFF" type="io" name="region_0"/>
     <region start="0x00000000" end="0x00007FFF" type="io" name="region_0"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Sord m.5
+http://www.retropc.net/mm/m5/
+http://www.museo8bits.es/wiki/index.php/Sord_M5 not working
+http://k5.web.klfree.net/content/view/10/11/ not working
+http://k5.web.klfree.net/images/stories/sord/m5heap.htm  not working
+http://k5.klfree.net/index.php?option=com_content&amp;task=view&amp;id=5&amp;Itemid=3
+http://k5.klfree.net/index.php?option=com_content&amp;task=view&amp;id=10&amp;Itemid=11
+http://k5.klfree.net/index.php?option=com_content&amp;task=view&amp;id=14&amp;Itemid=3
+http://www.dla... -->
 </platform>

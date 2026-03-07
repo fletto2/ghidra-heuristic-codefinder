@@ -6,4 +6,19 @@
     <region start="0x00000E00" end="0x00000EFF" type="io" name="io"/>
     <region start="0x0000F800" end="0x0000F9FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Acorn System 1 (Microcomputer Kit)
+http://speleotrove.com/acorn/
+-   (modify) Memory display and modification    l   (load) Reads a block of bytes from tape
+X   (go) Run program starting at an address     r   (return) Resume after a breakpoint
+p   (point) Inserts or removes breakpoint       (up) Increment displayed address
+s   (store) Writes a block of bytes to tape     (down) Decrement displayed address
+Pasting:
+0-F : as is
+(inc) : ^
+(dec) : V
+M (memory) : -
+G (Go) : X
+Test Paste:
+-0100^11^22^3... -->
 </platform>

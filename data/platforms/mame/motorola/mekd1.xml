@@ -8,4 +8,19 @@
     <region start="0x0000A000" end="0x0000A07F" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E1FF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Motorola Evaluation Kit 6800 D1 - MEK6800D1
+The monitor is supplied in the MCM6830L7 ROM and named MIKBUG rev 9. MIKBUG is
+a 512 byte monitor. The MIKBUG commands are:
+M aaaa - memory examine and change at address 'aaaa'.
+&lt;space&gt;hh - modify content with hex value 'hh' and increase address. If the
+memory can not be changed then it prints '?' and exits the
+memory examine.
+&lt;space&gt; and any other key exits the memory examine. The documentation
+suggests using a carriage return.
+Any other k... -->
 </platform>

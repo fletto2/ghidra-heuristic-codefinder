@@ -11,4 +11,15 @@
     <region start="0x000000B0" end="0x000000BB" type="io" name="abus_set_r"/>
     <region start="0x000000C4" end="0x000000CB" type="io" name="sdram_r"/>
   </memory_map>
+
+  <!-- Sega System Control Unit (c) 1995 Sega
+TODO:
+- make a screen_device subclass, add pixel timers &amp; irq callbacks to it;
+- A-Bus external interrupts;
+- Pad signal (lightgun I presume);
+- Improve DMA, use DRQ model and timers, make them subdevices?
+(old DMA TODO)
+- Remove CD transfer DMA hack (tied with CD block bug(s)?)
+- Add timings(but how fast are each DMA?).
+- Add level priority &amp; DMA status register. -->
 </platform>

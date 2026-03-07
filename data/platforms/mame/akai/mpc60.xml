@@ -6,4 +6,20 @@
     <region start="0x000BF000" end="0x000BFFFF" type="io" name="nvram_r"/>
     <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- mpc60.cpp - Akai / Roger Linn MPC3000 music workstation
+Driver by R. Belmont and AJR
+Hardware:
+CPU: 80186 at 10 MHz
+Floppy: uPD72065
+LCD: LC7981
+UARTs: MB89371 (x2)
+Panel controller CPU: NEC uPD78C11 @ 12 MHz
+(internal ROM is not dumped but the panel works fine without it)
+Sound DSP: L4003 -->
 </platform>

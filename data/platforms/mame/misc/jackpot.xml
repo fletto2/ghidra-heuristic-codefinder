@@ -11,4 +11,24 @@
     <region start="0x0000F000" end="0x0000F5FF" type="ram" name="ram"/>
     <region start="0x0000F600" end="0x0000F7FF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="8250"/>
+    <device type="sound" name="ay8910"/>
+    <device type="storage" name="eeprom"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Jackpot by Electronic Projects
+TODO:
+- Missing master unit comms (for game override?)
+cfr. loads of unused GFXs, irq and NMI in work RAM space
+- Glitches in attract, service and D-Up screens (requires an NMI mask?)
+- Palette, RAMDAC?
+- Sound;
+- Complete I/O, identify chip type(s);
+- EEPROM defaults (needs to be initialized in service mode for proper operation);
+Notes:
+The title is wrongly spelt as 'Jeckpot' in the main CPU ROM
+=====================================================================... -->
 </platform>

@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
     <region start="0x00000000" end="0x00000FFF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Datamax 8000
+2016-07-24 Skeleton driver
+This computer was designed and made by Datamax Pty Ltd, in Manly, Sydney, Australia.
+It could have up to 4x 8 inch floppy drives, in the IBM format.
+There were a bunch of optional extras such as 256kB RAM, numeric coprocessor, RTC, etc.
+ToDo:
+- Parallel port
+- Centronics port
+- AUX serial port
+- FDC/FDD/HD setup - no schematics available of this section, so guessing...
+What there is of the schematic shows no sign of a daisy chain or associated interrupts. -->
 </platform>

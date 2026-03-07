@@ -8,4 +8,24 @@
     <region start="0x00800000" end="0x00800007" type="io" name="host_r"/>
     <region start="0x00C00000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- JPM IMPACT (aka System 6)
+and
+JPM IMPACT with Video hardware
+driver by Phil Bennett
+Games supported:
+Coronation Street Quiz Game
+Cluedo (3 sets)
+Hangman
+Scrabble
+Trivial Pursuit
+ROMS wanted:
+Snakes and Ladders
+Mechanical games note:
+Anything writing to 4800a0 within the first few instructions is guessed
+to be an IMPACT game, some things could be misplaced, some could be
+missing video roms, many are missing sound roms (or they're in the wrong
+sets)
+Memory map (preliminary)
+=======================... -->
 </platform>

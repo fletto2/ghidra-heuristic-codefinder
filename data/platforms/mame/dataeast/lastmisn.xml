@@ -17,4 +17,13 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Various Data East 8 bit games:
+Last Mission (rev 6)        (c) 1986 Data East USA (2*6809 + I8751)
+Last Mission (rev 5)        (c) 1986 Data East USA (2*6809 + I8751)
+Last Mission (Japan)        (c) 1986 Data East Corporation (2*6809 + I8751)
+Shackled                    (c) 1986 Data East USA (2*6809 + I8751)
+Breywood                    (c) 1986 Data East Corporation (2*6809 + I8751)
+Gondomania                  (c) 1987 Data East USA (6809 + I8751)
+Makyou Senshi               (c) 1987 Data East ... -->
 </platform>

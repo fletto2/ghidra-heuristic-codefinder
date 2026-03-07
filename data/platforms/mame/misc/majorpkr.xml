@@ -5,4 +5,26 @@
     <region start="0x0000E000" end="0x0000F7FF" type="ram" name="banked"/>
     <region start="0x0000F800" end="0x0000FFFF" type="io" name="region_f800"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Major Poker / Major Joker
+1994 PAL System.
+Driver by Roberto Fresca.
+Special thanks to Tomasz Slanina &amp; Rob Ragon for their invaluable help.
+Hardware Notes:
+--------------
+1x Z80 @ 6 MHz. (main CPU)
+1x OKI M6295 @ 1.5 MHz. (4 channel mixing ADPCM voice synthesis). Pin7 high.
+1x Hitachi HD6845 (CRT Controller) @ 750 kHz.
+Hs 15625 Hz.
+Vs 52.786 Hz.
+1x Logic box (like CPU boxes) with 5 PLDs, maybe for protection.
+2x MB8464 (Video?)8Kx8
+1x MB8416 (NVRAM) 2Kx8
+1x MB8464 (?) 8Kx8
+2x 27C040 (Roms 1... -->
 </platform>

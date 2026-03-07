@@ -57,4 +57,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Name        Board No      Maker         Game name
+----------------------------------------------------------------------------
+fixeight    TP-026        Toaplan       FixEight
+fixeightbl  bootleg       Toaplan       FixEight
+fixeight - The same program is used for all regions, and the region can be changed just by swapping
+EEPROMs. However, the V25 code also recognizes a secret input that rewrites the EEPROM to
+use any one of the 14 recognized regional licenses, using the state of the player 1 a... -->
 </platform>

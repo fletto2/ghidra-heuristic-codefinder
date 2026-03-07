@@ -7,4 +7,20 @@
     <region start="0x00007F00" end="0x00007FFF" type="unmapped" name="unmapped"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Burroughs TD 831 terminal
+Hardware:
+- M6800
+- RAM: 4k + 4k (expansion)
+- ROM: 8x2k (space for a total of 32 ROMs)
+- EAROM 1400
+- 5x 6821 PIA
+- 3x 6850 ACIA
+- 1843.2 KHz XTAL
+- 80x25 characters display (maximum)
+- 5x7 or 7x9 pixels character size (depending on character generator)
+TODO:
+- Everything
+Notes:
+- Quickly jumps into an invalid location -->
 </platform>

@@ -22,4 +22,24 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="okim6295"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Good Luck II
+四色7 (Sì Sè 7)
+Yung Yu / CYE, 1992.
+Driver by Roberto Fresca.
+Hardware based on Golden Poker / Cal Omega, but with a lot of improvements.
+PCB silkscreened: "YUNGYU" "920210". There are two variants. Good Luck II
+has 1x UM3567 (clone of Yamaha YM2413) for sound, in the Si Se 7 board, they
+replaced the YM2413 toward a OKI6295 for sound samples support.
+Hardware notes ***
+CPU:  1x 6502 (U8). Empty socket.
+CRTC: 1x HD6845SP (U13)
+RAM:  2x 6116. 2K*8 SRAM. (U6, U17). Empty sockets.
+ROMs: ... -->
 </platform>

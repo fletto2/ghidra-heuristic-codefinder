@@ -14,4 +14,20 @@
     <region start="0x0000D817" end="0x0000D817" type="unmapped" name="nop_read"/>
     <region start="0x0000E800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Knuckle Joe - (c) 1985 Seibu Kaihatsu (Taito license)
+driver by Ernesto Corvi
+This board seems to be an Irem design.
+The sound hardware is a modified version of the 6803-based one used by the
+classic Irem games. There's only one AY 3-8910 chip and no MSM5205. There
+are also two SN76489 controlled directly by main(!) CPU, and used only for
+in-game music.
+The video hardware is pretty much like Irem games too. The only strange thing
+is that the screen is flipped vertically.
+The Z80 is a Z80A, not Z... -->
 </platform>

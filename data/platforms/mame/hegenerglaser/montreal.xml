@@ -51,4 +51,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Mephisto Roma II
+It's a cost-reduced version of Roma 68000, not really a 'sequel'.
+Hardware notes:
+- MC68HC000FN10 @ 9.83MHz
+- 64KB ROM (2*27C256), 16KB RAM (2*HY6264LP-10), piezo
+- compatible with magnets chessboard or Mephisto Mobil, and 7seg LCD module
+Mephisto Montreal 68000 from 1993 is on similar hardware, but it is a standalone
+chess computer (Roma II is a module). The chess engine is still the old 1987 Roma.
+TODO:
+- verify montreal XTAL (currently guessed from beeper pitch on video)
+- ve... -->
 </platform>

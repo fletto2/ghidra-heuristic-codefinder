@@ -7,4 +7,18 @@
     <region start="0x0000B000" end="0x0000B7FF" type="ram" name="ram"/>
     <region start="0x0000E800" end="0x0000E8FF" type="io" name="memory_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Microtek International Inc. MICE (Micro-In-Circuit Emulator)
+2013-08-27 Skeleton driver.
+This is a CPU emulator for development work.
+Each emulated CPU has its own plugin "personality" card, containing the CPU
+itself, an XTAL clock and enough latches, buffers and gates to allow total
+control to be exercised over its bus activity.
+In the original MICE system, the MCP-85 main control card could be reused
+with different CPU cards after replacing the EPROMs. The more spaciously
+designed MICE-II elim... -->
 </platform>

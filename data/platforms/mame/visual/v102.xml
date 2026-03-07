@@ -7,4 +7,12 @@
     <region start="0x0000A000" end="0x0000AFFF" type="ram" name="ram"/>
     <region start="0x0000B800" end="0x0000B9FF" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Skeleton driver for Visual 102 display terminal. -->
 </platform>

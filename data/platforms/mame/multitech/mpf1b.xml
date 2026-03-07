@@ -6,4 +6,19 @@
     <region start="0x00001800" end="0x00001FFF" type="ram" name="ram"/>
     <region start="0x00002000" end="0x00002FFF" type="io" name="rom_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- \
+Multitech Micro Professor 1                    *
+CPU: Z80 @ 1.79 MHz                        *
+ROM: 4-kilobyte ROM monitor                *
+RAM: 4 kilobytes                           *
+Input: Hex keypad                            *
+Storage: Cassette tape                         *
+Video: 6x 7-segment LED display              *
+Sound: Speaker                               *
+\ -->
 </platform>

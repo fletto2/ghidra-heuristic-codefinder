@@ -11,4 +11,23 @@
     <region start="0x00FE0000" end="0x00FFFFFF" type="rom" name="rom"/>
     <region start="0x00FFFFF0" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- BPM Microsystems (formerly BP Microsystems, before 20060828)
+universal device programmers
+Models supported in this driver so far: BP-1148/BP-1200
+1000-series (non-ganged, manual feed) models:
+EP-series:
+EP-1 - 28 pin, eproms only? has adapter for 32 pin?
+EP-1132 - 32 pin, eproms only?
+EP-1140 - 40 pin, eproms only?
+PLD-series:
+PLD-1100 - ndip plds/pals only?
+PLD-1128 - ndip plds/pals only?
+286 based w/512k ram, fixed: (1992ish)
+BP-1148 - fixed 512k ram, uses a special 'low cost' BP-1148 socket
+i... -->
 </platform>

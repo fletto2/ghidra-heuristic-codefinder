@@ -5,4 +5,12 @@
     <region start="0x0000C090" end="0x0000C097" type="io" name="laserprn_w"/>
     <region start="0x0000C1C1" end="0x0000C1C1" type="io" name="laserprn_busy_r"/>
   </memory_map>
+
+  <!-- apple2e.cpp - Apple IIe/IIc/IIc Plus and clones
+Next generation driver written in September/October 2014 by R. Belmont.
+Thanks to the original Apple II series driver's authors: Mike Balfour, Nathan Woods, and R. Belmont.
+Special thanks to the Apple II Documentation Project/Antoine Vignau and Peter Ferrie.
+IIe: base of this driver.  64K RAM, slot 0 language card emulation without the double-read requirement,
+lowercase, Open and Solid Apple buttons on joy buttons 0 and 1,
+auxiliary slot, built-in ... -->
 </platform>

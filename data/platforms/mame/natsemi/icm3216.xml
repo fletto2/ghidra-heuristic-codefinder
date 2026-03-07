@@ -9,4 +9,24 @@
     <region start="0x0000C013" end="0x0000C013" type="io" name="map0xc013_0xc013lw8namethisu8_data__loge"/>
     <region start="0x0000C020" end="0x0000C02F" type="io" name="map"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- National Semiconductor ICM-3216 Integrated Computer Module
+Sources:
+- ICM-3216 Integrated Computer Module, January 1986, National Semiconductor (DS6786S-10M16)
+- ICM-3216 CPU Board Specification, revision PB, 10/17/85, National Semiconductor Corporation (426610289-000)
+TODO:
+- configurable ram size (1M, 2M, 4M, 8M)
+- iop and scsi
+- cpu timing
+- minibus
+WIP:
+- passes memory/parity diagnostics
+- boots to monitor (press Ctrl+C after beep)
+- enter $ to show version/memory information
+- other command... -->
 </platform>

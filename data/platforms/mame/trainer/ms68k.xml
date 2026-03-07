@@ -8,4 +8,20 @@
     <region start="0x00D00000" end="0x00EFFFFF" type="io" name="read"/>
     <region start="0x00F00000" end="0x00F1FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="disk" name="wd_fdc"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- ms68k.cpp - Marion Systems MS68K
+Documentation:
+http://bitsavers.org/pdf/marionSystems/Marion_Systems_MS68K_Single_Board_Computer_Users_Manual.pdf
+The Marion Systems MS68K was a single-board MC68000 system designed by Tom
+Oberheim in 1985 with two serial ports, a parallel port, WD1772 floppy,
+optional SCSI, and up to 512KB of RAM and ROM each onboard, plus an
+expansion connector providing full access to the 68000 bus. It was used in
+a number of university-level computer systems classes, and a va... -->
 </platform>

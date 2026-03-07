@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00003FFF" type="io" name="region_0"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Memory map
+0000-37ff ROM                 R   D0-D7
+37de      UART status         R/W D0-D7
+37df      UART data           R/W D0-D7
+37e0      for the realtime clock
+37e1      select disk drive 0         W
+37e2      cassette drive latch address    W
+37e3      select disk drive 1         W
+37e4      select which cassette unit      W   D0-D1 (D0 selects unit 1, D1 selects unit 2)
+37e5      select disk drive 2         W
+37e7      select disk drive 3         W
+37e0-37e3 floppy motor            W   D0-... -->
 </platform>

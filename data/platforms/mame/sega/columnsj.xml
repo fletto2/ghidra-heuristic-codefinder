@@ -51,4 +51,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Sega System C (System 14)/C2 Driver
+driver by David Haywood and Aaron Giles
+---------------------------------------
+Sega's C2 was used between 1989 and 1994, the hardware being very similar to that
+used by the Sega MegaDrive/Genesis Home Console Sega produced around the same time.
+The Columns and Bloxeed (USA) manual call this system 'System 14' instead of system C/C2.
+todo: fill in protection chip data
+Year  Game                       Developer         Protection Chip  Board  Number
+====  =====... -->
 </platform>

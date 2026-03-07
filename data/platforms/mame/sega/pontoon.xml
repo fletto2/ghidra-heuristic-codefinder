@@ -9,4 +9,26 @@
     <region start="0x00400000" end="0x00400FFF" type="ram" name="textram"/>
     <region start="0x00500000" end="0x00503FFF" type="ram" name="workram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="rf5c68"/>
+  </devices>
+
+  <!-- Sega System 18 hardware
+Known bugs:
+lghost sprites seem to be slightly out of sync
+lghost gun offset correction is not perfect yet - we should be able
+to get an exact conversion from the disasm
+vdp gfx on 2nd attract level of lghost are corrupt at top of stairs
+after attract mode loops
+pauses in lghost where all sprites vanish
+some minor gfx bugs in moonwalker (see mametesters)
+MC68000 + Z80
+2xYM3438 + Custom PCM
+Alien Storm
+Bloxeed
+Clutch Hitter
+D.D. Crew
+Laser Ghost
+Michael Jackson's Moonwalke... -->
 </platform>

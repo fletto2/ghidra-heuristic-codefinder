@@ -19,4 +19,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Pro Soccer                      (c) 1983 Data East Corporation
+Pro Sport                       (c) 1983 Data East Corporation
+Boomer Rang'R / Genesis         (c) 1983 Data East Corporation
+Kamikaze Cabbie / Yellow Cab    (c) 1984 Data East Corporation
+Liberation                      (c) 1984 Data East Corporation
+Liberation was available on two pcbs - a dedicated twin pcb set and
+a version on the Genesis/Yellow Cab pcb that had an extra cpu pcb attached
+for the different protection.  The program... -->
 </platform>

@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000EFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- 2013-12-01 Driver for Cromemco MCB-216 SCC (Single Card Computer),
+and also the earlier CB-308.
+Memory allocation
+- 0000 to 0FFF - standard roms
+- 1000 to 1FFF - optional roms or ram (expect roms)
+- 2000 to 23FF - standard ram
+- 2400 to FFFF - optional whatever the user wants (expect ram)
+All commands to be in uppercase.
+MCB-216:
+Press Enter twice. You will see the Basic OK prompt. To get into the
+monitor, use the QUIT command, and to return use the B command.
+The mcb216 can use an optional flop... -->
 </platform>

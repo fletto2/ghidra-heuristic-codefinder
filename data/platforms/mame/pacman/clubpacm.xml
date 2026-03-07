@@ -16,4 +16,39 @@
     <region start="0x000050C0" end="0x000050C0" type="io" name="reset_w"/>
     <region start="0x00008000" end="0x0000BFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Namco PuckMan
+driver by Nicola Salmoria and many others
+Games supported:
+Puck Man
+Pac-Man Plus
+Ms. Pac-Man
+Crush Roller
+Ponpoko
+Eyes
+Mr. TNT
+Gorkans
+Lizard Wizard
+The Glob
+Dream Shopper
+Van Van Car
+Ali Baba and 40 Thieves
+Jump Shot
+Shoot the Bull
+Big Bucks
+Driving Force
+Eight Ball Action
+Porky
+MTV Rock-N-Roll Trivia (Part 2)
+Woodpecker
+Pacman Club / Club Lambada
+Eeekk!
+TODO:
+mspactwin shows a green "0" in the corner on the PCB at tilescreen, but "18" on MAME.
+mspactwin_map supposed ROM 0x2000 mi... -->
 </platform>

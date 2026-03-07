@@ -6,4 +6,19 @@
     <region start="0x0000A000" end="0x0000BFFF" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- basic machine hardware */
+MC6809(config, m_maincpu, XTAL(7'372'800));
+m_maincpu-&gt;set_addrmap(AS_PROGRAM, &amp;gs6809_state::gs6809_mem);
+// Configure UART (via m_acia)
+ACIA6850(config, m_acia, 0);
+m_acia-&gt;txd_handler().set("rs232", FUNC(rs232_port_device::write_txd));
+// should this be reverse polarity?
+m_acia-&gt;irq_handler().set("rs232", FUNC(rs232_port_device::write_rts));
+clock_device &amp;acia_clock(CLOCK(config, "acia_clock", 7'372'800/4)); // E Clock from M6809
+acia_clock.signal_ha... -->
 </platform>

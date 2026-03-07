@@ -58,4 +58,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Underfire                           (c) 1993 Taito
+Chase Bombers                       (c) 1994 Taito
+Driver by Bryan McPhail &amp; David Graves.
+Board Info (Underfire):
+TC0470LIN : object line buffer?
+TC0480SCP : known tilemap chip
+TC0510NIO : known input chip
+TC0570SPC : must be the object chip (next to spritemap and OBJ roms)
+TC0590PIV : object related???
+TC0620SCC : tilemap chip (6bpp version of TC0100SCN)
+TC0650FDA : palette ? (Slapshot and F3 games also have one)
+M43E0278A
+K1100744A Main B... -->
 </platform>

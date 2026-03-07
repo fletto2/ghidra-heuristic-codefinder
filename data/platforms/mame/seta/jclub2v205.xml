@@ -60,4 +60,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Seta's Jockey Club II (ジョッキークラブ II)
+Various hardware revisions, all use a MC68EC020FG16 CPU.
+---------------------------------------------------------------------------------------------
+Year + Game                      PCB                   Video       Sound      Other
+---------------------------------------------------------------------------------------------
+1994 Jockey Club II (older hw)   E06-00409/E06-00407*  ST-0020     ST-0016    ST-0013 ST-0017
+1996 Jockey Club II (newer hw)   E79-001 ... -->
 </platform>

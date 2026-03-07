@@ -8,4 +8,11 @@
     <region start="0x00000700" end="0x000007FF" type="ram" name="ram"/>
     <region start="0x00000800" end="0x00000BFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- History of Didact and Esselte Studium
+--------------------------------------
+Didact Laromedelsproduktion was started in Linkoping in Sweden by Anders Andersson, Arne Kullbjer and
+Lars Bjorklund. They constructed a series of microcomputers for educational purposes such as "Mikrodator 6802",
+Esselte 100 and the Candela computer for the swedish schools to educate the students in assembly programming
+and BASIC for electro mechanical applications such as stepper motors, simple process control, button... -->
 </platform>

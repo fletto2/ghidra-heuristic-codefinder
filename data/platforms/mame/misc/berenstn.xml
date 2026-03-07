@@ -11,4 +11,19 @@
     <region start="0x00002000" end="0x00002FFF" type="ram" name="ram"/>
     <region start="0x00004000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Enter-Tech Tugboat (Moppet Video series, on improved El Grande hardware)
+Moppet Video games were meant for young children. They made the games very simple.
+6502 hooked up + preliminary video by Ryan Holtz
+TODO:
+- check how the score is displayed. I'm quite sure that score_w is supposed to
+access videoram scanning it by columns (like btime_mirrorvideoram_w), but
+the current implementation is a big kludge.
+- colors might not be entirely accurate
+Suspect berenstn is using the wrong color PROM.
+- co... -->
 </platform>

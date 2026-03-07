@@ -6,4 +6,21 @@
     <region start="0x0010804D" end="0x0010804D" type="io" name="todo_verify_once_oki_rom_1_is_redumped"/>
     <region start="0x0010804F" end="0x0010804F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- X-Men
+driver by Nicola Salmoria
+notes:
+The way the double screen works in xmen6p is not fully understood.
+One of the screens probably has a buffer to delay it by 1 frame. If you
+hardcode buffering to the right screen, the intro is synced correctly,
+but in-game is not. Buffer the left screen and then in-game is correct,
+but the intro is not.
+The board only has one of each gfx chip, the only additional chip not found
+on the 2/4p board is 053253. This chip is also on Run n Gun which is
+likewise a 2... -->
 </platform>

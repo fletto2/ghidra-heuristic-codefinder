@@ -60,4 +60,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Operation Wolf  (c) Taito 1987
+==============
+David Graves, Jarek Burczynski
+C-Chip emulation by Bryan McPhail
+Sources:    MAME Rastan driver
+MAME Taito F2 driver
+Raine source - many thanks to Richard Bush
+and the Raine Team.
+Main CPU: MC68000 uses irq 5.
+Sound   : Z80 &amp; YM2151 &amp; MSM5205
+Operation Wolf uses similar hardware to Rainbow Islands and Rastan.
+The screen layout and registers and sprites appear to be identical.
+Taito TC0030CMD chip labeled B20-18 (at least for the US boards)
+Ta... -->
 </platform>

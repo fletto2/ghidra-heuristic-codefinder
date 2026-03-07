@@ -15,4 +15,8 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- gba.cpp
+Driver file to handle emulation of the Nintendo Game Boy Advance.
+By R. Belmont &amp; Ryan Holtz -->
 </platform>

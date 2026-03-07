@@ -5,4 +5,12 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00000000" end="0x00002000" type="io" name="region_0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- NABU PC
+https://nabu.ca/ -->
 </platform>

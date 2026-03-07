@@ -59,4 +59,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- -= Unico Games =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU         :   M68000 or M68EC020
+Sound Chips :   OKI M6295 (AD-65) + YM3812 (K-666) or YM2151
+Video Chips :   3 x Actel A1020B (Square 84 Pin Socketed) [Or A40MX04-F]
+MACH211 (Square 44 Pin Socketed) [Or MACH210-15JC]
+---------------------------------------------------------------------------
+Year + Game         PCB             Notes
+---------------------------------------------------------------------------
+97  Burglar X       ?
+98  Zero... -->
 </platform>

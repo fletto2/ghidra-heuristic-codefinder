@@ -62,4 +62,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Tetris Plus 2 =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU    :  TMP68HC000P-12
+Video Chips  :  SS91022-03 9428XX001
+GS91022-04 9721PD008
+SS91022-05 9347EX002
+GS91022-05 048 9726HX002
+Sound Chips  :  Yamaha YMZ280B-F
+Other        :  XILINX XC5210 PQ240C X68710M AKJ9544
+XC7336 PC44ACK9633 A63458A
+NVRAM
+To Do:
+-   There is a 3rd unimplemented layer capable of rotation (not used by
+the game, can be tested in service mode).
+-   Priority RAM is not taken into account.
+-   The video system on... -->
 </platform>

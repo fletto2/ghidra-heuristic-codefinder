@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x00009FFF" type="ram" name="rombank"/>
   </memory_map>
+
+  <!-- Laser Compumate2
+17/04/2011 Initial driver by Robbbert, using info supplied by
+DMEnduro. He owns one of these machines.
+21/04/2011 Hooked up the lcd controller and added keyboard
+input. [Sandro Ronco]
+22/04/2011 Small adjustments resulting from team investigations.
+Chips: Z80 CPU, 8K of RAM, 32K ROM, 'VTCL', '8826KX',
+RP5C15 RTC.
+Display: 2 lines of 20 characters LCD.
+There are no devices for file saving or loading, is more of
+a PDA format with all programs (address book, etc) in the ROM.
+Sound:... -->
 </platform>

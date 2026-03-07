@@ -17,4 +17,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="rtc" name="mc146818"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- EC-65 (also known as Octopus)
+2009-07-16 Initial driver.
+No sound. Storage is floppy disk. No software has been found.
+Modules are constructed on separate eurocards and plug into a common backplane.
+EC65 -  Disk controller module uses 6821 and 6850. Needs to be emulated.
+When done, .b to boot disk
+EC65K - To be developed from scratch. Similar design to EC65, but 6522
+replaced with 6821. Contains extra RTC. Particulars of video and
+universal FDC not known.
+- Extra 256KB card
+- Extra Z80 card with... -->
 </platform>

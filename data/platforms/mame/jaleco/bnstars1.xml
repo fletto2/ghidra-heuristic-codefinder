@@ -30,4 +30,23 @@
     <region start="0xFEE00000" end="0xFEE1FFFF" type="ram" name="ram"/>
     <region start="0xFFE00000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Vs. Janshi Brandnew Stars
+(c)1997 Jaleco
+Single board version with Dual Screen output
+(MS32 version also exists)
+for the time being most of this driver is copied
+from ms32.cpp, with some adjustments for dual screen.
+Main PCB
+--------
+PCB ID  : MB-93141 EB91022-20081
+CPU     : NEC D70632GD-20 (V70)
+OSC     : 48.000MHz, 40.000MHz
+RAM     : Cypress CY7C199-25 (x20)
+OKI M511664-80 (x8)
+DIPs    : 8 position (x3)
+OTHER   : Some PALs
+Custom chips:
+JALECO SS91022-01 (208 PIN PQFP)
+JALECO SS91022-02 (100... -->
 </platform>

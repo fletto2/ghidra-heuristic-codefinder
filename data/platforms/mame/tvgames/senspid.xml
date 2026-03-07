@@ -12,4 +12,17 @@
     <region start="0x00007870" end="0x000078FF" type="io" name="unkregs_r"/>
     <region start="0x00008000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- The lexitvsprt contains "W55V9x" strings, which appear to identify the tech used here as the following
+Nuvoton product
+http://e-tech.com.hk/pd_nuvo_at_game.html
+---
+Track &amp; Field Challenge TV Game
+https://www.youtube.com/watch?v=wjn1lLylqog
+Uses epoxy blobs for CPU etc.
+These have been identified as Winbond 2005 BA5962 (large glob) + Winbond 200506 BA5934 (smaller glob)
+seems to be G65816 derived with custom vectors?
+PCB               Game
+TV0001 R1.1       My First DDR
+TV0002 R1.0       Tra... -->
 </platform>

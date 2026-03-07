@@ -11,4 +11,40 @@
     <region start="0x0000C030" end="0x0000C033" type="io" name="congo_sprite_custom_w"/>
     <region start="0x0000C038" end="0x0000C03F" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Sega Zaxxon hardware
+Games supported:
+Zaxxon
+Super Zaxxon
+Future Spy
+Razmatazz
+Ixion
+Congo Bongo
+DIP locations verified from manual for:
+Zaxxon
+Congo Bongo
+Known bugs:
+discrete sound emulation
+Zaxxon memory map (preliminary)
+0000-1fff ROM 3
+2000-3fff ROM 2
+4000-4fff ROM 1
+6000-67ff RAM 1
+6800-6fff RAM 2
+8000-83ff Video RAM
+a000-a0ff sprites
+read:
+c000      IN0
+c001      IN1
+c002      DSW0
+c003      DSW1
+c100      IN2
+see the input_ports definition below for details on the input bits
+write:
+c000 ... -->
 </platform>

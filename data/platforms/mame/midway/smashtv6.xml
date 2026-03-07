@@ -6,4 +6,23 @@
     <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
     <region start="0x00009000" end="0x0000A7FF" type="io" name="yawdim_oki_bank_w"/>
   </memory_map>
+
+  <!-- Williams/Midway Y/Z-unit system
+driver by Alex Pasadyn, Zsolt Vasvari, Kurt Mahan, Ernesto Corvi,
+and Aaron Giles
+Games supported (prototype and release versions):
+Narc
+Trog
+Strike Force
+Smash TV
+High Impact Football
+Super High Impact
+Terminator 2
+Mortal Kombat (Y-unit versions)
+Total Carnage
+Known bugs:
+when the Porsche spins in Narc, the wheels are missing for
+a single frame (may be an original bug)
+Terminator 2 freezes while playing the movies after destroying
+skynet. Currently we have a hack... -->
 </platform>

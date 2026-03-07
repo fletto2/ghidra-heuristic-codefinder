@@ -5,4 +5,21 @@
     <region start="0x0000A800" end="0x0000A800" type="io" name="sample_rate_w"/>
     <region start="0x0000B000" end="0x0000B000" type="io" name="sample_volume_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Nichibutsu Crazy Climber
+Crazy Kong is very similar to Crazy Climber, there is an additional ROM at
+5000-5fff and RAM is at 6000-6bff. Dip switches and input connections are
+different as well.
+Swimmer is similar but also different (e.g. it has two CPUs and two 8910,
+graphics are 3bpp instead of 2)
+TODO:
+- add tms5110 support to bagmanf
+- toprollr Coin_B 2C_1C doesn't work right, is it a BTANB?
+BTANB:
+- yamato shot and missile sound effects block the bg music
+-------------------------------------... -->
 </platform>

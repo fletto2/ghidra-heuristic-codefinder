@@ -4,4 +4,23 @@
     <region start="0x00000000" end="0x0000C7FF" type="rom" name="rom"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="storage" name="eeprom"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Forte Card
+1994, Fortex Ltd.
+Driver by Angelo Salese.
+Additional work by Roberto Fresca.
+Supported sets:
+Forte Card (Ver 110, Spanish),  1994, Fortex Ltd.
+Forte Card (Ver 103, English),  1994, Fortex Ltd.
+Special thanks to Grull Osgo for his exhaustive reverse engineering that allowed to recreate
+the original default serial EEPROM contents for the english set, critical to get it working.
+Special thanks to Rob Ragon for dump the spanish set, and all the tests on the real hardware.
+---------------... -->
 </platform>

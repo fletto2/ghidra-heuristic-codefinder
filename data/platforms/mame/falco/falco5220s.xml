@@ -6,4 +6,22 @@
     <region start="0x00008000" end="0x0000DFFF" type="ram" name="rombank"/>
     <region start="0x0000E000" end="0x0000FFFF" type="io" name="amap8"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Falco 500 series terminals
+Third generation of Falco terminals, after the TS and FAME series. Many
+functions are now handled by a custom ASIC that was updated a few times
+between models.
+List of models (incomplete):
+- 1986: 500, 542, 5220, 5500
+- 1987: 500e, 5220e, 5000, 5600
+- 1988: 5600s, 5220s, 580, 5330
+This drivers contains dumps for the 500e, 5220e and 5220s models. The
+5220e is emulated to an advanced stage and usable, the others are
+skeletons for now.
+Additional notes:
+- The keyboard int... -->
 </platform>

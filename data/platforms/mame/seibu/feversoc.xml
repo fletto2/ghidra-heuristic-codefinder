@@ -25,4 +25,20 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Fever Soccer (c) 2004 Seibu Kaihatsu
+A down-grade of the Seibu SPI Hardware with SH-2 as main cpu.
+driver by Angelo Salese &amp; Nicola Salmoria
+The input routines are very convoluted in comparison to previous Seibu games,
+looping over a complex control structure. Could these be derived from the
+"Touch Panel System" DVD mahjong games Seibu released under the CATS label?
+TODO:
+- Layout including lamps
+- Hopper only works in "COIN HOPPER" mode
+- Do button 5 or remaining DIPs actually do anything o... -->
 </platform>

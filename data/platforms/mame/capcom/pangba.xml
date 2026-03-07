@@ -10,4 +10,19 @@
     <region start="0x0000F000" end="0x0000F4FF" type="ram" name="ram"/>
     <region start="0x0000F800" end="0x0000F800" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- "Mitchell hardware". Actually used mostly by Capcom.
+All games run on the same hardware except mgakuen, which runs on an
+earlier version, without RAM banking, not encrypted (standard Z80)
+and without EEPROM.
+Notes:
+- Super Pang has a protection which involves copying code stored in the
+EEPROM to RAM and execute it from there. The first time the game is run,
+you have to keep the player 1 start button pressed until the title screen
+appears. This forces the game to initialize the EEPROM, otherwise ... -->
 </platform>

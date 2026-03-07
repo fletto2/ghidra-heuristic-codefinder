@@ -50,4 +50,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Round Up 5                                          ATC-011
+TODO:
+- Finish road layer.
+Tunnel sections are borderline unplayable, plus slopes are ugly to watch.
+- Always boots with a coin inserted
+$5152 is the coin counter, gets an explicit 1 at boot.
+There are other two buffers read from 68k before that, written to $5156 and $515a
+If these are 0xffff by then game boots normally ... -->
 </platform>

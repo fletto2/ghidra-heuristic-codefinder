@@ -6,4 +6,19 @@
     <region start="0x00004000" end="0x000040FF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Toshiba T5182 die map, by Jonathan Gevaryahu AKA Lord Nightmare,
+with assistance from Kevin Horton.
+T5182 supplied by Tomasz 'Dox' Slanina which came from a Dark Mist PCB bought by Guru
+Die Diagram:
+|------------------------|
+\ ROM  RAM  Z80    A     |
+/ B    C    D   E  F  G  |
+|------------------------|
+The ROM is a 23128 wired as a 2364 by tying a13 to /ce
+The RAM is a 2016
+The Z80 is an NMOS Z80
+Subdie A is a 7408 quad AND gate
+Subdie B is a 74245 bidirectional bus transciever
+Subdie C is a ... -->
 </platform>

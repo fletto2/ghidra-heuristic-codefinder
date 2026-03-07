@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x00004FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- LC-80 by VEB Mikroelektronik "Karl Marx" Erfurt
+When first started, the screen is blank. Wait about 8 seconds for it to
+introduce itself, then you may use it or paste to it. The decimal points
+indicate which side of the display you will be updating.
+Pasting:
+0-F : as is
++,- : as is
+ADR : ,
+DAT : .
+EX : X
+Test Paste:
+,2000.11+22+33+44+55+66+77+88+99+,2000
+Now press + to confirm the data has been entered.
+Hardware notes (2-ROM version from schematics):
+- UD880D CPU (Z80 clone) @ D201, ~900kHz no X... -->
 </platform>

@@ -5,4 +5,10 @@
     <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
 </platform>

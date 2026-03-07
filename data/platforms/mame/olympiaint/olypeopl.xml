@@ -7,4 +7,17 @@
     <region start="0x000E4000" end="0x000E5FFF" type="io" name="charram_w"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- The keyboard has a sticker that proclaims it was made by Fujitsu Limited.
+[ASC] [ESC] [F1 ] [F2 ] [F3 ] [F4 ] [F5 ] [F6 ] [F7 ] [F8 ] [F9 ] [F10] [F11] [F11] [PRN]
+[mu°] [1 !] [2 "] [3 §] [4 $] [5 %] [6 &amp;] [7 /] [8 (] [9 )] [0 =] [ß ?] [´ `] [BKS] [ C ]   [ 7 ] [ 8 ] [ 9 ] [&lt;- ] [ -&gt;]
+[ TAB ]  [ Q ] [ W ] [ E ] [ R ] [ T ] [ Z ] [ U ] [ I ] [ O ] [ P ] [ Ü ] [+ *]  [ DEL ]   [ 4 ] [ 5 ] [ 5 ] [ - ] [HOM]
+[SHIFTLOCK] [ A ] [ S ] [ D ] [ F ] [ G ] [ H ] [ J ] [ K ] [ L ] [ Ö ] [ Ä ] [# '... -->
 </platform>

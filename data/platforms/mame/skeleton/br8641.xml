@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Brandt 8641
+Currency Counter
+2012-12-24 Skeleton driver. [Micko]
+2015-09-27 Added devices &amp; inputs based entirely on guesswork [Robbbert]
+There seems to be 15 buttons (according to images, I just have board)
+also there are 8 dips currently set at 00011100 (1 is on)
+Looks like a LCD display? I think ports 8 &amp; 9 write to it. Also looks
+like the display should say 8641 when machine is turned on.
+ToDo:
+- Need manuals, schematics, etc.
+- Artwork
+- Everything -->
 </platform>

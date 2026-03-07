@@ -10,4 +10,24 @@
     <region start="0x00001000" end="0x00001FFF" type="io" name="switches_r"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Canyon Bomber hardware
+driver by Mike Balfour
+Games supported:
+Canyon Bomber
+Known issues:
+none at this time
+Memory Map:
+0000-01FF       WRAM
+0400-04FF       W A0=0:MOTOR1, A0=1:MOTOR2
+0500-05FF       W A0=0:EXPLODE, A0=1:TIMER RESET
+0600-067F       W A0=0:WHISTLE1, A0=1:WHISTLE2
+0680-06FF       W A0=0:LED1, A0=1:LED2
+0700-077F       W A0=0:ATTRACT1, A0=1:ATTRACT2
+0800-0FFF       DISPLAY / RAM
+1000-17FF       SWITCHES
+1800-1FFF       OPTIONS
+2000-27FF       ROM1
+2800-2FFF       ROM2
+3000-3... -->
 </platform>

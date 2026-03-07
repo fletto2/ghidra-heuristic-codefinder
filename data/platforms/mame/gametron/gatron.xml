@@ -7,4 +7,26 @@
     <region start="0x0000A000" end="0x0000A000" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="output_port_0_w"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- GAME-A-TRON gambling hardware.
+Driver by Roberto Fresca.
+Games running on this hardware:
+Four In One Poker,  1983, Game-A-Tron.
+Pull Tabs,          1983, Game-A-Tron.
+Bingo,              1983, Game-A-Tron.
+Hardware Notes:
+---------------
+PCB1: PULL TABS.
+Board silkscreend: "GAME-A-TRON CORP. (c)1983 PAT.PENDING"
+"9003"
+ROMS: - U31 - 2732 (PT-1R-V)
+- U32 - 2732 (PT-2G-V)
+- U33 - 2732 (PT-3B-V)
+- U00 - 2764 (PULL-TABS-1-90)
+Most chips, except for the EPROMS, are covered with a hard black plastic c... -->
 </platform>

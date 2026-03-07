@@ -12,4 +12,21 @@
     <region start="0x00009400" end="0x00009400" type="io" name="rng_r"/>
     <region start="0x00009800" end="0x00009801" type="io" name="data_address_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Super Draw Poker (c) Stern Electronics 1983
+Driver by Pierpaolo Prazzoli.
+Additional work by Angelo Salese &amp; Roberto Fresca.
+Notes:
+- According to some original screenshots floating around the net, this game
+uses a weird coloring scheme for the char text that dynamically changes
+the color of an entire column. For now I can only guess about how it
+truly works.
+- An original snap of these can be seen at:
+http://mamedev.emulab.it/kale/fast/files/A00000211628-007.jpg
+Updates:
+- Reworked inputs t... -->
 </platform>

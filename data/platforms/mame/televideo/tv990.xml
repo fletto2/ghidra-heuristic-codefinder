@@ -50,4 +50,25 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="8250"/>
+  </devices>
+
+  <!-- TeleVideo 990/995 terminal
+Driver by Carl and R. Belmont
+Thanks to Al Kossow.
+H/W:
+68000-P16 CPU (clock unknown, above 10 MHz it outruns the AT keyboard controller)
+16C452 dual 16450 (PC/AT standard) UART + PC-compatible Centronics (integrated into
+ASIC on 995)
+AMI MEGA-KBD-H-Q PS/2 keyboard interface on 990, PS/2 8042 on 995
+Televideo ASIC marked "134446-00 TVI1111-0 427"
+3x AS7C256 (32K x 8 SRAM)
+IRQs:
+2 = PS/2 keyboard
+3 = Centronics
+4 = UART 1
+5 = UART 0
+6 = VBL (9003b is status, write 3 to ... -->
 </platform>

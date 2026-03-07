@@ -53,4 +53,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- MAGIC'S 10
+----------
+Driver by Pierpaolo Prazzoli.
+Additional work by Roberto Fresca.
+Supported games:
+lex 425   boot      test     MC68000     MCU     NVRAM or  PCB
+Game                           year  manufacturer          19951006  sequence  at boot  size+place  H8/330  battery   marking
+Music Sort (ver. 2.02)         1995  ABM Games             pre lex   direct    yes       ?          no      NVRAM     ?
+Magic's 10 (ver. 16.15)        1995  A.W.P. Games          post lex  direct    yes     ... -->
 </platform>

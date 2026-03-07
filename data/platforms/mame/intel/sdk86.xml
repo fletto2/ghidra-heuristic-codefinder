@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00000FFF" type="ram" name="ram"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Intel MCS-86 System Design Kit (SDK-86)
+This is an evaluation kit for the 8086 cpu.
+There is no speaker or storage facility in the standard kit.
+Download the User Manual to get the operating procedures.
+The user manual is available from: http://www.bitsavers.org/pdf/intel/8086/9800698A_SDK-86_Users_Man_Apr79.pdf
+2009-05-12 Skeleton driver by Micko
+2009-11-29 Some fleshing out by Lord Nightmare
+2011-06-22 Working [Robbbert]
+Paste Test:
+N0100^11^22^33^44^55^66^77^88^99^X0100^
+Press UP to verify th... -->
 </platform>

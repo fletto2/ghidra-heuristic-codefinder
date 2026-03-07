@@ -9,4 +9,18 @@
     <region start="0x00009500" end="0x000095FF" type="ram" name="ram"/>
     <region start="0x0000A000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- The 4490 CNC Mill Control unit
+History of Terco
+------------------
+Terco, founded 1963, is a privately held company in Sweden that develops and distribute equipment for
+technical vocational educations worldwide. In the mid 80s they had a number of state of the art
+products for educations on CNC machines, both mill and lathe, all based on Motorola 8-bit CPU:s.
+Known products
+--------------
+T4426 - CNC Programming Station, a ruggedized Tandy Color Computer + monitor in a metal case (see coco12.cpp... -->
 </platform>

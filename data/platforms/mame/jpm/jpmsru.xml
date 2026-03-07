@@ -5,4 +5,21 @@
     <region start="0x00001400" end="0x000014FF" type="ram" name="nvram"/>
     <region start="0x00001800" end="0x00001FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- JPM Stepper Reel Unit
+JPM's first CPU-based fruit machine platform, from late 1978/1979.
+Notably the first system to use stepper reels instead of EM reels.
+Uses a 1.5MHz TMS9980A CPU together with some TTL for I/O providing
+56 outputs (16 used by reels) &amp; 24 inputs (8 used by optos),
+a ROM card holding game ROMs, and a selection of expansion boards.
+Sound is output by a simple 6-tone NE556-based circuit.
+TODO:
+- Layouts
+Expansion boards:
+Bus Extension
+Optional board with 128 nibbles NVRAM an... -->
 </platform>

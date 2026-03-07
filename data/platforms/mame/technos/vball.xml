@@ -15,4 +15,20 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Championship VBall
+Driver by Paul "TBBle" Hampson
+03/28/03 - Additions by Steve Ellenoff
+---------------------------------------
+-Corrected background tiles (tiles are really 512x512 not 256x256 as previously setup)
+-Converted rendering to tilemap system
+-Implemented Scroll Y registers
+-Implemented X Line Scrolling (only seems to be used for displaying Hawaii and Airfield Map Screen)
+-Adjusted visible screen size to match more closely the real game
+-Added support for cocktail mode/flip screen
+-C... -->
 </platform>

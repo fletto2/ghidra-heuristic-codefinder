@@ -13,4 +13,19 @@
     <region start="0x0000007D" end="0x0000007D" type="io" name="iosel_w"/>
     <region start="0x0000007F" end="0x0000007F" type="io" name="exle_w"/>
   </memory_map>
+
+  <!-- Sega Saturn SMPC - System Manager and Peripheral Control MCU simulation
+The SMPC is actually a 4-bit Hitachi HD404920FS MCU, labeled with a Sega custom
+315-5744 (that needs decapping)
+TODO:
+- timings;
+- fix intback issue with inputs (according to the docs, it should fall in between
+VBLANK-IN and OUT, for obvious reasons);
+- clean-ups;
+- RTC subdevice (unknown type, handled here for convenience);
+- Does ST-V even has a battery backed NVRAM?
+Notes:
+SMPC NVRAM contents:
+[0] unknown (always 0)
+[1] u... -->
 </platform>

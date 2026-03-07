@@ -7,4 +7,23 @@
     <region start="0x000D0000" end="0x000EFFFF" type="ram" name="vram"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Matsushita Mybrain 3000 / Panasonic JB-3000 / Ericsson Step/One
+preliminary driver by Angelo Salese
+Slotified and corrected by Joakim Larsson Edstrom based on
+Step/One service manuals: http://nivelleringslikaren.eu/stepone/
+TODO:
+- Fix proper cursor support
+- Fix Hi-Res 640x400 mode when MC6845 supports interlaced mode
+- Expansion Unit with 6 more ISA8 slots
+- Proper waitstate support when 8088 CPU core admits it and remove the workaround in machine_start
+PC INCOMPATIBILITIES:
+- COM card lives a... -->
 </platform>

@@ -29,4 +29,17 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <!-- ----------------------------------------------------------------
+Psikyo PS4 SH-2 Based Systems
+driver by David Haywood (+ Paul Priest)
+------------------------------------------------------------------
+This driver is for the dual-screen PS4 boards using an SH-2 processor
+Board PS4 (Custom Chip PS6807)
+------------------------------
+Taisen Hot Gimmick (c)1997
+Taisen Hot Gimmick Kairakuten (c)1998
+Taisen Hot Gimmick 3 Digital Surfing (c)1999
+Taisen Hot Gimmick 4 Ever (c)2000
+Taisen Hot Gimmick Int... -->
 </platform>

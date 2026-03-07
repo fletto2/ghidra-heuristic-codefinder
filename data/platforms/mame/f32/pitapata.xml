@@ -5,4 +5,21 @@
     <region start="0x00100002" end="0x00100009" type="io" name="fg_scrollx_w"/>
     <region start="0x00300000" end="0x0030FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- F2 System
+"bootleg tumble pop" hardware (like dataeast/tumbleb.cpp)
+Driver by Pierpaolo Prazzoli with some bits by David Haywood
+Cross Pang        (c)1998 F2 System
+Heuk Sun Baek Sa  (c)1997 Oksan / F2 System
+Bestri            (c)1998 F2 System
+No Copyright Notice is displayed for Cross Pang however http://www.f2.co.kr
+at one time did list it as being by F2 System, Released April 1998
+Video seems to be the same as the tumblepop bootleg based hardware
+in dataeast/tumbleb.cpp
+Cross Pang:
+Audio Tes... -->
 </platform>

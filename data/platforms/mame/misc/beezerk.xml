@@ -10,4 +10,20 @@
     <region start="0x00B30001" end="0x00B30001" type="io" name="region_b30001"/>
     <region start="0x00F00000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- Multi-games (?) from VLC / VLT
+PCB description is for 'vlcunk', 'beezerk' is said to run on same / very similar hw.
+The hardware appears to be an evolution of the one in vlc.cpp.
+Main PCB marked 'Enhanced Video Main Logic  VLC, Inc.  Made in U.S.A.'
+and '778-102-001 A/W Rev. D  ©1995,98 Powerhouse Technologies, Inc.'
+Main components:
+1x MC68EC000FN20 main CPU with a 40.000M XTAL nearby
+4x Main CPU ROM sockets (all 4 populated)
+1x TMS34010FNL-50 video CPU with a 50.000M XTAL nearby
+4x Video CPU R... -->
 </platform>

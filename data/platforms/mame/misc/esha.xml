@@ -6,4 +6,14 @@
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="nvram"/>
     <region start="0x0000F000" end="0x0000F7FF" type="ram" name="tile_ram"/>
   </memory_map>
+
+  <!-- Funai / Gakken Esh's Aurunmilla laserdisc hardware
+Driver by Andrew Gardner with help from Daphne Source
+Notes:
+(dumper's note) Esh's Aurunmilla can be played in an Interstellar cabinet by swapping the
+main pcb and the laserdisc. Sound &amp; video pcbs are the same. Control panel is different however.
+Esh's Aurunmilla can be a 2 player game, while Interstellar is a 1 player only game.
+Hold down TEST while resetting the machine - pops up test mode where...
+The DIPs are software-controlled.
+Two jo... -->
 </platform>

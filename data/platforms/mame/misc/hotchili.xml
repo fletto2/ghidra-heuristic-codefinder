@@ -13,4 +13,18 @@
     <region start="0x0000F700" end="0x0000F700" type="unmapped" name="unmapped"/>
     <region start="0x0000F800" end="0x0000F801" type="io" name="data_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- HOT CHILLI
+1995, Pacific Gaming Pty Ltd.
+Driver by Roberto Fresca &amp; Grull Osgo.
+One of the most beautiful designs for 8bit slots machines. Very rare.
+The reverse-engineering was made seeing a few PCB pictures, and following the code.
+After all these exhaustive analysis we finally got the inputs working, but they are
+temporized and transformed in some way through dedicated hardware, so maybe they are
+not totally accurate.
+The game has dual coin sensor (upper/lower) to allow hook a modern coin... -->
 </platform>

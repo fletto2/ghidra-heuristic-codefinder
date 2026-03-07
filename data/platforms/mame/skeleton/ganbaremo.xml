@@ -4,4 +4,18 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for:
+"Ganbare Momotarou Oni Taiji" (がんばれ ももたろう おにたいじ). Electromechanical arcade by Shoken.
+https://www.youtube.com/watch?v=jxri_Wmoyfs
+DISPLAY PCB
+______________________________________________________________________________________________
+|__               __________________    _________________    _____________    _____________   |
+||:|             |·················|   |················|   |············|   |············|   |
+||:|  ___________   ___________   ___________   __... -->
 </platform>

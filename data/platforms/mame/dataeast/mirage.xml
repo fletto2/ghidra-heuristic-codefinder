@@ -57,4 +57,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Mirage Youjuu Mahjongden (c) 1994 Mitchell
+Similar to simpl156.cpp with shifted stuff around.
+TODO:
+- some unknown writes (irq acks / sprite DMA start presumably);
+Notes:
+- To enter into full Test Mode you need to keep pressed the Mahjong A key at start-up.
+===============================================================================================
+Mirage Youjuu Mahjongden
+(c)1994 Mitchell
+MT4001-2
+DEC-22V0
+all custom chips are surface scratched, but I believe they are DECO156 and mates.
+Soun... -->
 </platform>

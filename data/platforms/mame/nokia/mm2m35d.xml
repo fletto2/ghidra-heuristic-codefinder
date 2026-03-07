@@ -8,4 +8,16 @@
     <region start="0x000F0000" end="0x000F01FF" type="io" name="read"/>
     <region start="0x000F0200" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Models:
+M13A: Floppy drive 5.25", 320 KB + memory 128 KB
+M13B: Floppy drive 5.25", 320 KB + memory 256 KB
+M13C: Floppy drive 5.25", 320 KB + memory 512 KB
+M13D: Floppy drive 5.25", 320 KB + memory 768 KB
+M14A: 2 floppy drives 5.25", 320 KB + memory 128 KB
+M14B: 2 floppy drives 5.25", 320 KB + memory 256 KB
+M14C: 2 floppy drives 5.25", 320 KB + memory 512 KB
+M14D: 2 floppy drives 5.25", 320 KB + memory 768 KB
+M15A: Floppy drive 5.25", 640 KB + memory 128 KB
+M15B: Floppy drive 5.25", 640 KB + memo... -->
 </platform>

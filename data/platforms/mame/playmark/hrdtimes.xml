@@ -54,4 +54,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Big Twin
+World Beach Volley
+Excelsior
+Hard Times
+Hot Mind
+Lucky Boom
+driver by Nicola Salmoria and Pierpaolo Prazzoli
+The games run on different, but similar, hardware. The sprite system is the
+same (almost - the tile size is different).
+Even if some games are from the same year, World Beach Volley is much more
+advanced - more colourful, and stores setting in an EEPROM.
+An interesting thing about this hardware is that the same gfx ROMs are used
+to generate both 8x8 and 16x16 tiles for different ... -->
 </platform>

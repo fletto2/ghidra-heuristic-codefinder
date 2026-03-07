@@ -7,4 +7,17 @@
     <region start="0x00006000" end="0x0000600F" type="io" name="map"/>
     <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- SciSys / Novag Chess Champion: Super System III (aka MK III)
+It was distributed by both SciSys and Novag. Which company was responsible for
+which part of the production chain is unknown. The copyright was assigned to SciSys
+(no mention of Novag in the ROM, it has "COPYRIGHT SCISYS LTD 1979").
+This is their 1st original product. MK II was licensed from Peter Jennings, and
+MK I was, to put it bluntly, a bootleg. The chess engine is by Mike Johnson, with
+support from David Levy, Philidor Software.
+... -->
 </platform>

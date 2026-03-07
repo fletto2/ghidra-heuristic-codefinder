@@ -8,4 +8,19 @@
     <region start="0x0000F800" end="0x0000FBFF" type="io" name="z1_r"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Laser Base / Future Flash driver
+============================================
+TODO:
+- Video: weird palette changes, Laserbase colors, gfx rendering in general needs verification
+- Sound: sound related i/o writes ( out_w handler )
+- Interrupts - NMI/Int timing is wrong, it's based on measures of broken PCB
+TS 20.01.2017
+There's incomplete schematics available. It's missing a couple of important elements (analog sound, interrupts).
+PCB contains big analog sound section, currently only partially em... -->
 </platform>

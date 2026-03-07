@@ -18,4 +18,11 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- Skeleton driver for Mitsubishi Trium phone.
+The SoC on the Trium Eclipse PCB has Philips and ARM logos, and is labeled:
+VP40577A
+Y03552.Y1
+KS0150 A
+VP40577A -->
 </platform>

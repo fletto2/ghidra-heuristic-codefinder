@@ -44,4 +44,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Trio de Bingo (GS470)
+(c) Konami
+CPU   : 68000
+Sound : 054539
+Main board (with sound)
+470A02      ; 27C4001
+470A03      ;  |
+470A04      ;  /
+470G01      ; 27C4096 main prg
+Unfortunately there are no PCB pics or more detailed hardware info available.
+Should be the main board for a multi board set, where the satellite boards handle the video part.
+A full cabinet pic is available on Gaming History. -->
 </platform>

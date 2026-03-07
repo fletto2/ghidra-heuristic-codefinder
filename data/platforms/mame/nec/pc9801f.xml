@@ -11,4 +11,15 @@
     <region start="0xFFEE8000" end="0xFFEFFFFF" type="io" name="amap16"/>
     <region start="0xFFFE8000" end="0xFFFFFFFF" type="io" name="amap16"/>
   </memory_map>
+
+  <!-- PC-9801 (c) 1981 NEC
+References:
+- https://www.pc-9800.net/index.htm
+- https://www.webtech.co.jp/company/doc/undocumented_mem/index.html
+- https://web.archive.org/web/20190331142002/http://www.geocities.jp/retro_zzz/machines/nec/9801/mdl98cpu.html
+TODO:
+- C-Bus SCSI support, remove IDE ROM loads where doesn't belong by default;
+\- load actual IDE BIOSes from IPL romsets where applicable (pc9801bx onward, all pc9821)
+- Port over pc88va SASI version in common C-Bus option;
+- Remove kludge for POR ... -->
 </platform>

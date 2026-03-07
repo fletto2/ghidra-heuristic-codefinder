@@ -58,4 +58,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Video Technology Genius computers:
+PreComputer Unlimited (USA and Canada)
+VTech Genius PC (France)
+VTech Genius IQ 512 (Germany)
+The French packaging mentions distributions in Switzerland, the Netherlands,
+and UK as well. Looking for more information and ROM dumps.
+System driver:
+Adrien Destugues &lt;pulkomandy@gmail.com&gt;, May 2012
+- First attempt
+Memory map:
+00000000 System ROM (2MB)
+00200000 RAM (256K)
+00400000 Flash memory (128K)
+00600000 Some memory mapped hardware
+00a00000 Cartridge port... -->
 </platform>

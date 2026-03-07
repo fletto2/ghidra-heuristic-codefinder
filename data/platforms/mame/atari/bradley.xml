@@ -6,4 +6,29 @@
     <region start="0x00001808" end="0x0000180A" type="io" name="port"/>
     <region start="0x00001848" end="0x00001850" type="io" name="analog_select_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Battlezone hardware
+Games supported:
+Battlezone
+Bradley Trainer
+Red Baron
+Desert Wars (Spanish bootleg of Battle Zone)
+Known bugs:
+None at this time on the Atari sets (Desert Wars isn't working)
+Battlezone memory map (preliminary)
+0000-03ff RAM
+0800      IN0
+0a00      IN1
+0c00      IN2
+1200      Vector generator start (write)
+1400      Watchdog Clear
+1600      Vector generator reset (write)
+1800      Mathbox Status register
+1810      Mathbox value (lo-byte)
+1818      Mathbox value (hi-byte... -->
 </platform>

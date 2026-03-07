@@ -23,4 +23,17 @@
     <region start="0x00C00000" end="0x00C0001F" type="io" name="if16_map"/>
     <region start="0x00E00000" end="0x00E0FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Sega Teradrive
+IBM PS/2 Model 30 (PS/55 5510Z) + Japanese Sega Mega Drive (TMSS MD1 VA3 or VA4)
+References (Teradrive specifics):
+- https://www.retrodev.com/blastem/trac/wiki/TeradriveHardwareNotes
+- https://plutiedev.com/mirror/teradrive-hardware-info
+- https://github.com/RetroSwimAU/TeradriveCode
+- https://www.youtube.com/watch?v=yjg3gmTo4WA
+- https://www.asahi-net.or.jp/~ds6k-mtng/tera.htm
+References (generic MD):
+- https://plutiedev.com/cartridge-slot
+- https://plutiedev.com/vdp-registers
+- ... -->
 </platform>

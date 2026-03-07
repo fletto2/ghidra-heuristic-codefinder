@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x00003BFF" type="rom" name="rom"/>
     <region start="0x00003C00" end="0x00003FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Intel SBC 80/10 and SBC 80/10A Single Board Computers
+The difference between the SBC 80/10 and SBC 80/10A is in the type and
+quantity of memory available on each board.
+There is no speaker or storage facility in the standard kit.
+Download the User Manual to get the operating procedures.
+Monitor Commands:
+D  Display memory command
+G  Program execute command
+I  Insert instructions into memory
+M  Move memory command
+R  Read hexadecimal file
+S  Substitute memory command
+W  Write hexadecimal file
+X  ... -->
 </platform>

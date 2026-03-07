@@ -4,4 +4,7 @@
     <region start="0x00000000" end="0x000017FF" type="rom" name="rom"/>
     <region start="0x00009000" end="0x00009FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Hazel Grove Fruit Machine HW
+unknown platform! z80 based.. -->
 </platform>

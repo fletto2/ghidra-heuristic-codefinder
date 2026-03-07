@@ -5,4 +5,16 @@
     <region start="0x00000000" end="0x0000FFFF" type="io" name="ram_r"/>
     <region start="0x0000FC00" end="0x0000FEFF" type="io" name="io_r"/>
   </memory_map>
+
+  <!-- Hardware Overview
+-----------------
+The Acorn Electron is a budget version of the BBC Micro home computer
+Basic specs are:
+6502 CPU @ 2MHz or 1MHz
+32k RAM and 32k ROM
+Text modes: 20x32, 40x25, 40x32, 80x25, 80x32
+Graphics modes: 160x256 (4 or 16 colours), 320x256 (2 or 4 colours), 640x256 (2 colours), 320x200 (2 colors), 640x200 (2 colors)
+Colours: 8 colours (either solid or flashing)
+Sound: 1 channel, 7 octaves; built-in speaker
+Internal ports for cassette storage, RGB/CVBS monitors and TV outp... -->
 </platform>

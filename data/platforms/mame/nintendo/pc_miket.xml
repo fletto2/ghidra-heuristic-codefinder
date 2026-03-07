@@ -5,4 +5,26 @@
     <region start="0x00006000" end="0x00007FFF" type="ram" name="nvram"/>
     <region start="0x00008000" end="0x0000FFFF" type="io" name="eboard_rom_switch_w"/>
   </memory_map>
+
+  <!-- PlayChoice-10 - (c) 1986 Nintendo of America
+Written by Ernesto Corvi.
+Portions of this code are heavily based on
+Brad Oliver's MESS implementation of the NES.
+Thanks to people that contributed to this driver, namely:
+- Brad Oliver.
+- Aaron Giles.
+BIOS:
+Memory Map
+----------
+0000 - 3fff = Program ROM (8T)
+8000 - 87ff = RAM (8V)
+8800 - 8fff = RAM (8W)
+9000 - 97ff = SRAM (8R - Videoram)
+Cxxx = /INST ROM SEL
+Exxx = /IDSEL
+Input Ports -----------
+Read:
+- Port 0
+bit0 = CHSelect(?)
+bit1 = Enter button... -->
 </platform>

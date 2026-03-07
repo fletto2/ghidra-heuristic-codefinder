@@ -24,4 +24,18 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Act Fancer (Japan)              FD (c) 1989 Data East Corporation
+Act Fancer (World)              FE (c) 1989 Data East Corporation
+Trio The Punch (World)          FG (c) 1989 Data East Corporation
+Trio The Punch (Japan)          FF (c) 1989 Data East Corporation
+Emulation by Bryan McPhail, mish@tendril.co.uk
+Update of the 03/04/2005
+Added Trio The Punch (World), this set will be the new parent.
+Fixed filenames in both Trio The Punch sets to match correct labels on the PCB.
+Update by Roberto Gan... -->
 </platform>

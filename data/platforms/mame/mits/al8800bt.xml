@@ -6,4 +6,17 @@
     <region start="0x0000FD00" end="0x0000FDFF" type="rom" name="rom"/>
     <region start="0x0000FF00" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- MITS Altair 8800b Turnkey
+2009-12-04 Initial driver by Miodrag Milanovic
+Supposedly introduced October 1977.
+Commands:
+All commands must be in uppercase. Address and data is
+specified in Octal format (not hex).
+Press space to input your command line (not return).
+D - Memory Dump
+J - Jump to address
+M - Modify memory
+Reference:
+http://www.computercloset.org/MITSAltair8800bt.htm -->
 </platform>

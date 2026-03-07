@@ -21,4 +21,22 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="okim6295"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- FIVE CLOWN HARDWARE
+IGS - International Games System.
+Driver by Roberto Fresca &amp; Grull Osgo.
+Games running on this hardware:
+Five Clown (English, set 1), 1993, IGS.
+Five Clown (English, set 2), 1993, IGS.
+Five Clown (Spanish, hack),  1993, IGS.
+This hardware seems to be based on Bonanza's Golden Poker, but on steroids...
+Double CPU, FM sounds, samples system, different encryption schemes and other
+complex things mark the difference.
+Special Thanks to Iris Falbala that kindly offered herself ... -->
 </platform>

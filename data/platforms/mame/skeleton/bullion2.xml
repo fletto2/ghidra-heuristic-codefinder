@@ -8,4 +8,23 @@
     <region start="0x00004900" end="0x00004907" type="io" name="map0x4900_0x4907w__latch_for_lamps_and_r"/>
     <region start="0x00004B00" end="0x00004B00" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Skeleton driver for Inder "Bullion 2" slot machine.
+The hardware for Bullion 3 (undumped) is almost the same, the main difference is that Bullion 2 has three reels,
+and Bullion 3 has four.
+Reels sequence for Bullion 2:
++--------+--------+--------+
+|  BAR   |  BELL  | GRAPE  | &lt;- Default after reset
++--------+--------+--------+
+| MELON  | CHERRY |  PLUM  |
++--------+--------+--------+
+| GRAPE  | CHERRY | MELON  |
++--------+--------+--------+
+|  BELL  | BANANA | LEMON  |
++--------+--------+----... -->
 </platform>

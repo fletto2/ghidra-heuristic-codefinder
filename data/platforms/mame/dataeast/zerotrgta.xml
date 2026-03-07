@@ -12,4 +12,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Counter Steer                   (c) 1985 Data East Corporation
+Zero Target                     (c) 1985 Data East Corporation
+Gekitsui Oh                     (c) 1985 Data East Corporation
+Emulation by Bryan McPhail, mish@tendril.co.uk
+Improvements by Pierpaolo Prazzoli, David Haywood, Angelo Salese
+todo:
+both games
+- correct ROZ rotation (single register that controls both);
+- flip screen support;
+- according to a side-by-side test, sound should be "darker" by some octaves,
+likely that a sound ... -->
 </platform>

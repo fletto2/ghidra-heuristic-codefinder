@@ -12,4 +12,16 @@
     <region start="0x00005000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- PINBALL
+Stern MP-200 MPU
+(almost identical to Bally MPU-35)
+Status:
+- All games are playable, but see the key code list below.
+- All games have missing or wrong sound
+- cue uses first player display for all players, one at a time (this is by design)
+- flight2k, gamatron: take a while to finish booting if balls are missing
+- st_sam: This is a test unit. Internal tests are working.
+- gamatron is actually a Bally conversion - it won't physically fit into a Stern machine.
+- drgnfist, cue, nineball, ... -->
 </platform>

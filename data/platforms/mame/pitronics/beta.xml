@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x000000FF" type="io" name="ram_map"/>
     <region start="0x00008000" end="0x000087FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Beta Computer
+http://retro.hansotten.nl/index.php?page=beta-computer
+When first started, press G to begin.
+Pasting:
+0-F : as is
+M (inc) : ^
+AD : -
+DA : =
+GO : X
+Test Paste:
+X-0011=11^22^33^44^55^66^77^88^99^-0011
+Now press M to confirm the data has been entered. -->
 </platform>

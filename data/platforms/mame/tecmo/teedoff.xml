@@ -14,4 +14,22 @@
     <region start="0x0000F860" end="0x0000F860" type="io" name="reset_r"/>
     <region start="0x0000F870" end="0x0000F870" type="io" name="flipscreen_y_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Tehkan World Cup - (c) Tehkan 1985
+Ernesto Corvi
+ernesto@imagina.com
+Roberto Juan Fresca
+robbiex@rocketmail.com
+TODO:
+- dip switches and input ports for Gridiron and Tee'd Off
+- Check MEMORY_* definitions (too many M?A_NOP areas)
+- Check sound in all games (too many messages like this in the .log file :
+'Warning: sound latch 2 written before being read')
+- Figure out the controls in 'tehkanwc' (they are told to be better in MAME 0.34)
+- Figure out the controls in 'teedoff'
+- Confirm "Difficulty"... -->
 </platform>

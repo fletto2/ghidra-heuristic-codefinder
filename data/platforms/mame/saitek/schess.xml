@@ -16,4 +16,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- SciSys Sensor Chess (model 221)
+(not to be confused with Saitek Kasparov Sensor Chess)
+Two versions were released. The 1st version is fake-wood brown plastic, and 2nd
+version is grey plastic. The brown version only has 256 bytes RAM. The grey version
+has 1KB but does not use the extra available RAM. The ROM(software) is assumed to
+be the same for each version.
+Buttons are unresponsive, this also applies to the chessboard buttons. The program
+is not interrupt-driven and only checks the buttons ar... -->
 </platform>

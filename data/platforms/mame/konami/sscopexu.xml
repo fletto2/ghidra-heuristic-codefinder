@@ -27,4 +27,24 @@
     <region start="0xFFEA8000" end="0xFFEA8007" type="unmapped" name="nop_write"/>
     <region start="0xFFF00000" end="0xFFF3FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="8250"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Konami Viper System
+Driver by Ville Linde
+Software notes (as per Police 911)
+-- VL - 01.06.2011
+IRQs:
+IRQ0: ???               (Task 4)
+IRQ1: unused
+IRQ2: ???               Possibly UART? Accesses registers at 0xffe00008...f
+IRQ3: Sound             (Task 5)
+IRQ4: Voodoo3           Currently only for User Interrupt Command, maybe a more extensive handler gets installed later?
+I2C:  ???               (no task switch) U13 (ADC838) test fails if I2C doesn't work
+DMA0: unused
+DMA1: unused
+IIVPR3: unus... -->
 </platform>

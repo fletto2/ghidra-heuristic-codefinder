@@ -49,4 +49,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Atari Bad Lands hardware
+driver by Aaron Giles
+Games supported:
+Bad Lands (1989)
+Known bugs:
+none at this time
+Memory map
+========================================================================
+MAIN CPU
+========================================================================
+000000-03FFFF   R     xxxxxxxx xxxxxxxx   Program ROM
+FC0000          R     -------x --------   Sound command buffer full
+FC0000            W   -------- --------   Sound CPU reset
+FD0000-FD1FFF   R/W   -------- xxxxxxxx   E... -->
 </platform>

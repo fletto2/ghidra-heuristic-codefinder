@@ -12,4 +12,19 @@
     <region start="0x0000D040" end="0x0000D08F" type="io" name="read"/>
     <region start="0x000A0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Seibu Raiden hardware
+Raiden                          (c) 1990 Seibu Kaihatsu
+To access test mode, reset with both start buttons held.
+There are 3 configuration bytes at 0xffffb, 0xffffd and 0xfffff.
+The byte at 0xffffb (0x1fffd in program ROM 4) controls the appearance of
+the "Winners Don't Use Drugs" screen:
+0x00  = Normal
+0x01  = "Winners Don't Use Drugs" screen appears on boot and between attract loops
+0x02  = Unknown, identical to 0x00? (seen in raident and raidenk)
+The byte at 0xffffd (0x1... -->
 </platform>

@@ -18,4 +18,22 @@
     <region start="0x0000FCD0" end="0x0000FCD0" type="io" name="reset_w"/>
     <region start="0x0000FCE0" end="0x0000FCE0" type="io" name="bankswitch_w"/>
   </memory_map>
+
+  <!-- World Cup 90 ( Tecmo ) driver
+Tecmo 6303A + 6303B PCBs
+-----------------------------
+Ernesto Corvi
+(ernesto@imagina.com)
+TODO:
+- Dip switches mapping is not complete. ( Anyone has the manual handy? )
+- Hook up trackball controls in twcup90t.
+CPU #1 : Handles background &amp; foreground tiles, controllers, dipswitches.
+CPU #2 : Handles sprites and palette
+CPU #3 : Audio.
+Memory Layout:
+CPU #1
+0000-8000 ROM
+8000-9000 RAM
+a000-a800 Color Ram for background #1 tiles
+a800-b000 Video Ram for backgroun... -->
 </platform>

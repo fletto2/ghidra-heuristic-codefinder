@@ -9,4 +9,18 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Chanbara
+Data East, 1985
+Driver by Tomasz Slanina &amp; David Haywood
+Inputs and Dip Switches by stephh
+PCB Layout
+----------
+DE-0207-0
+|-----------------------------------------------------------|
+|             CP12.17H                     CP00-2.17C       |
+|                          2016                       6809  |
+|             CP13.15H                     CP01.15C         |
+|                          2016                             |
+|1  RCDM-I4   CP14.13H                     CP02.14C   ... -->
 </platform>

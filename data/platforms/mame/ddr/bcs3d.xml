@@ -9,4 +9,16 @@
     <region start="0x00003C00" end="0x00007FFF" type="ram" name="videoram"/>
     <region start="0x0000F000" end="0x0000F3FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- BCS 3
+2009-05-12 Skeleton driver.
+2015-09-25 Improvements
+http://hc-ddr.hucki.net/wiki/doku.php/homecomputer:bcs3
+East German home built computer. No sound facilities.
+All documents are in German.
+Main CPU is a U880 (Z80 equivalent). Other ICs also have unusual names.
+The CTC sends an interrupt every so often. This uses a lookup table to
+jump to an address in the range 38xx-39xx. This seems to work much the
+same as reading video memory in the ZX80. This, I think, is to stop snow
+appearing on the... -->
 </platform>

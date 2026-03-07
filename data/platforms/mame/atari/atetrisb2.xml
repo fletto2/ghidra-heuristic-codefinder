@@ -24,4 +24,29 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+    <device type="sound" name="sn76496"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Tetris hardware
+driver by Zsolt Vasvari
+Games supported:
+Tetris
+Though of course none of the bootlegs have the actual SLAPSTIC, at
+least some appear to have simulated it using TTL and PLDs.
+Tetris (Atari, 1988)
+Hardware info by Guru
+PCB Layout
+----------
+TETRIS A044809
+ATARI GAMES (C) 1988 MADE IN USA
+|---------------------------------|
+| VID                             |
+|                                 |
+|                     LED         |
+|   P  P    65728                 |
+|J  O  O   ... -->
 </platform>

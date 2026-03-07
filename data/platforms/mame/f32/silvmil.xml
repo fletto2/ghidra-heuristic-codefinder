@@ -52,4 +52,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Silver Millennium
+yet another Data East / Tumble Pop derived hardware
+this one seems similar to (but not identical to)
+the f32/crospang.cpp hardware from F2 system
+also very close to gotcha.cpp, which was also a Para
+board.
+TODO:
+- refresh rate
+- verify dipswitches - difficulty &amp; unknown dips
+- like gotcha, what is the audiocpu NMI for?
+OSC on Silver Millennium are 12MHz, 14.31818MHz &amp; 4.096MHz
+The above has been verified on two boards.
+OSC on World Puzzlove are 12MHz, 14.31818MHz &amp; ... -->
 </platform>

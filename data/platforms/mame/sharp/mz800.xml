@@ -5,4 +5,28 @@
     <region start="0x00000000" end="0x0000DFFF" type="ram" name="bankr0"/>
     <region start="0x0000E000" end="0x0000FFFF" type="io" name="amap8"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Sharp MZ700
+Reference: https://original.sharpmz.org/
+MZ700 memory map
+0000-0FFF   1Z-013A ROM or RAM
+1000-CFFF   RAM
+D000-D7FF   videoram or RAM
+D800-DFFF   colorram or RAM
+E000-FFFF   memory mapped IO or RAM
+xxx0    PPI8255 port A (output)
+bit 7   556RST (reset NE556)
+bit 6-4 unused
+bit 3-0 keyboard row demux (LS145)
+xxx1    PPI8255 port B (input)
+bit 7-0 keyboard matrix code
+xxx2    PPI8255 port C (input/output)
+bit 7 R -VBLANK input
+bit 6 R 556OUT (1.5Hz)
+bit 5 R RDATA from cassette
+bit 4 R M... -->
 </platform>

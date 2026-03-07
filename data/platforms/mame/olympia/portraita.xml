@@ -13,4 +13,25 @@
     <region start="0x0000A800" end="0x0000A83F" type="ram" name="nvram"/>
     <region start="0x0000FFFF" end="0x0000FFFF" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <!-- Portraits
+(c) 1983 Olympia
+Preliminary Driver by Steve Ellenoff &amp; Peo
+Changes:
+Pierpaolo Prazzoli, xx-07-2004
+- fixed scrolling
+- fixed screen resolution
+- added NVRAM
+- added fake photo when you get the best score
+- fixed service switches and coins
+- added missing roms and the 2nd set
+SW = service switch
+SW1 - SW2
+ON   OFF -&gt; grid test
+ON    ON -&gt; camera test
+TODO:
+- desperately needs a PCB analysis, particularly for color PROM formation;
+- add sound;
+- fix colors;
+- several unknown s... -->
 </platform>

@@ -6,4 +6,21 @@
     <region start="0x00000000" end="0x00007FFF" type="ram" name="bank2"/>
     <region start="0x0000A000" end="0x0000DFFF" type="ram" name="bank3"/>
   </memory_map>
+
+  <!-- Vector06c driver by Miodrag Milanovic
+10/07/2008 Preliminary driver.
+boot from ROM cart:
+hold F2 then system reset (press F11), then press F12
+boot from FDD:
+press F12 after initial boot was load (indicated in screen lower part)
+hold Ctrl ("YC" key) during MicroDOS start to format RAM disk (required by some games)
+48k MicroDos one-letter commands:
+B   crash?
+D   dir
+E   erase
+K   ?
+O   some kind of status display
+U   user
+TODO:
+- correct CPU speed / latency emulation, each machine cycle takes he... -->
 </platform>

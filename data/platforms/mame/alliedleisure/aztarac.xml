@@ -8,4 +8,16 @@
     <region start="0x00008C00" end="0x00008C07" type="io" name="data_r"/>
     <region start="0x00009000" end="0x00009000" type="io" name="snd_status_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Centuri Aztarac hardware
+driver by Mathis Rosenhauer
+Thanks to David Fish for additional hardware information.
+Games supported:
+Aztarac
+Known bugs:
+none at this time -->
 </platform>

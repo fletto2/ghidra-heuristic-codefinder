@@ -7,4 +7,17 @@
     <region start="0x0C006800" end="0x0C0068FF" type="io" name="gc_exi_r"/>
     <region start="0xFFF00000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Triforce Skeleton
+-- split from Naomi.c
+Triforce uses:
+- a stock Gamecube motherboard with custom BIOS
+- a 'media board' which acts as a CD/DVD emulator
+- the Naomi 'DIMM' board, which connects to the GD-ROM drive
+Sega Triforce Hardware Overview
+Sega/Namco/Nintendo 2002-2006
+-----------------------------
+This is a GameCube-based system containing several PCBs mounted inside a metal box.
+There are two versions. One is for GDROM-based games and the other is customised for
+use with Namco ROM carts.... -->
 </platform>

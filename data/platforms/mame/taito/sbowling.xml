@@ -8,4 +8,29 @@
     <region start="0x0000F801" end="0x0000F801" type="io" name="data_r"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Strike Bowling  (c)1982 Taito
+driver by Jarek Burczynski
+Tomasz Slanina
+Todo:
+- analog sound
+- colors
+- horizontal sprite positioning when screen is flipped
+Runs on 3 board (color) hardware, similar to Space Invaders,
+but enhanced slightly (more ram, updated sound hardware etc.)
+Top Board
+---------
+PCB No: KBO70001  KBN00001
+DIPSW : 8 position x2
+SOUND : AY-3-8910
+Volume POTs x4 (Master volume + 3 for separate sound levels)
+Middle Board
+------------
+PCB No: KBO70002  KBN00002
+CPU   : 8080
+XTAL  ... -->
 </platform>

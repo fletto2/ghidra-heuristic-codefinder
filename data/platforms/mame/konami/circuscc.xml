@@ -14,4 +14,23 @@
     <region start="0x00002000" end="0x00003FFF" type="ram" name="ram"/>
     <region start="0x00006000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Circus Charlie   GX380 (c) 1984 Konami
+Upper board PWB (B)3000148  - OSC 14.31818MHz
+Lower board PWB (A)3000161  - OSC 18432.00KHz
+Based on drivers from Juno First emulator by Chris Hardy (chrish@kcbbs.gen.nz)
+To enter service mode, keep 1&amp;2 pressed on reset
+'circusc3' ingame bug :
+-----------------------
+"Test mode" displays 2, 3, 4 and 7 lives instead of 3, 4, 5 and 7
+due to code at 0xcb38 :
+CB38: 9E 18 00         LDA   $1800
+CB3B: CB               COMA
+CB3C: AC 03            ANDA  #$03
+CB... -->
 </platform>

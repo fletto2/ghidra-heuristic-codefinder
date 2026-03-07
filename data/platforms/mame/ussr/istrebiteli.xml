@@ -4,4 +4,21 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Istrebiteli driver by MetalliC
+TODO:
+hardware-like noise sound generation
+accurate sprite collision
+how to play:
+insert one or more coins, each coin gives 2 minutes of play time, then press 1 or 2 player game start
+hit enemy 15 or more times to get bonus game
+test mode:
+insert 12 or more coins then press 2 player start
+notes:
+dumped PCB is early game version, has several bugs, possible test/prototype.
+later version was seen in St.Petersburg arcade museum, CPU board has single 8Kx8 ROM. -->
 </platform>

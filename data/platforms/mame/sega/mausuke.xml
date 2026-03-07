@@ -32,4 +32,14 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <!-- stv.cpp
+TODO:
+- vfremix: https://mametesters.org/view.php?id=4445
+- colmns97: https://mametesters.org/view.php?id=4187 extremely illegal SCU DMA transfers targeting
+SCSP area, saturn:columns port has no problem with those.
+- smleague / finlarch: it randomly hangs / crashes, it works if you use a ridiculous
+set_maximum_quantum() number, might need strict SH-2 synching or it's actually a m68k comms issue.
+- danchih / danchiq: currently hangs randomly (regression).
+- stress: accesses the Sound Memo... -->
 </platform>

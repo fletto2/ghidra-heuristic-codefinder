@@ -51,4 +51,27 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Go 2000 - Korean Card game
+Newer PCB, very sparse with newer surface mounted CPUs
+MC68EC000FU10
+Z84C0006FEC
+TM29F550ZX
+OSC: 32.000MHz
+2 8-way Dipswitch banks
+Ram:
+2 UM61256FK-15 (near 3 &amp; 4 (68k program roms))
+3 Windbond W24257AK-15 (near TM29F550ZX)
+2 UM61256AK-15 (near Z80)
+P1, P2 &amp; P3 4-pin connectors (unknown purpose)
+2008-08:
+Added Dips and Dip locations based on Service Mode.
+TODO:
+- Merge this driver with SunA16 driver.
+Notes:
+- Maybe SA stands for SunA? The z80 memory map matches... -->
 </platform>

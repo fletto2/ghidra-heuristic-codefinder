@@ -6,4 +6,14 @@
     <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
     <region start="0xFFFC0000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Skeleton driver for "PlayCenter" PC-based touch games
+All PlayCenter machines:
+The machines were sold with three different hardware configurations (internally named "Epox",
+"K6" and "Celeron"), each one with its own "official" recovery images (usually Norton Ghost).
+"Epox" version:
+-EPoX EP-MVP4F motherboard (Socket 7 with VIA Apollo MVP4 AGP, built-in Trident AGP,
+VT82C686A, built-in SoundBlaster Pro with AC'97 codec support).
+-128MB RAM PC133, AMD K6-2 processor (K6-2/500(100*5)).
+-PCI Etherne... -->
 </platform>

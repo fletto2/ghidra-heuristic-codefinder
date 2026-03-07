@@ -59,4 +59,33 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- JPM Give us a Break hardware
+preliminary driver by Phil Bennett
+Games supported:
+Give us a Break [8 sets]
+Criss Cross (Sweden) [non-working - need disk image]
+Ten Up [2 sets]
+Treasure Trail [non-working - need disk image]
+Looking for:
+Numbers Game
+Pac Quiz
+Suit Pursuit
+Known issues:
+Coin data has to go through the datalogger to be counted
+Verify WD FDC type
+Hook up ACIA properly, clocks etc.
+Hook up watchdog NMI
+Verify clocks
+Use real video timings
+Create layouts
+Notes:
+Toggle both 'Back door' a... -->
 </platform>

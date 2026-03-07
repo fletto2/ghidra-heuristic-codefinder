@@ -17,4 +17,17 @@
     <region start="0x0000E800" end="0x0000F7FF" type="ram" name="raattr"/>
     <region start="0x0000F800" end="0x0000FBFF" type="io" name="palette_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Slot Carnival, (1985, Wing Co,Ltd)
+Driver by David Haywood &amp; Roberto Fresca.
+Notes:
+- Very similar to merit.c
+- We're using the MC6845 drawing code from merit.cpp, but it will need
+modifications to support the reels and proper colors. -->
 </platform>

@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="bank1"/>
   </memory_map>
+
+  <!-- Cycle Maabou (c) 1984 Taito Corporation / Seta
+Sky Destroyer (c) 1985 Taito Corporation
+appears to be in the exact middle between the gsword / josvolly HW and the ppking / gladiator HW
+driver by Angelo Salese
+TODO:
+- separate driver into 2 classes;
+- reduce tagmap lookups;
+- low-level emulation of inputs/soundlatch (controlled by several i8741, like Gladiator / Ougon no Shiro);
+- color prom resistor network is guessed, cyclemb yellows are more reddish on pcb video and photos;
+BTANB verified on p... -->
 </platform>

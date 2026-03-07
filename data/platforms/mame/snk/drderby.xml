@@ -7,4 +7,17 @@
     <region start="0x00006000" end="0x00007FFF" type="ram" name="vram"/>
     <region start="0x00008000" end="0x000087FF" type="io" name="colorram_r"/>
   </memory_map>
+
+  <!-- SNK Derby Derby
+from a broken PCB, labeled EFI TG-007
+M5L8085AP CPU + M5L8155P (for I/O and sound)
+14KB ROM (7*Fujitsu MB8516 EPROM)
+8KB RAM mainly for bitmap video, and 512x4 RAM for color map
+SNK Bye Bye Game is probably on the same hardware.
+TODO:
+- improve I/O:
+more buttons/sensors?
+output_w bits
+6-pos dipswitch on the pcb, only 4 are known at the moment
+- confirm sound pitch -->
 </platform>

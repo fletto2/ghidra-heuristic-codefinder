@@ -7,4 +7,32 @@
     <region start="0x000C0000" end="0x000DFFFF" type="unmapped" name="unmapped"/>
     <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="8250"/>
+  </devices>
+
+  <!-- Elektronika MK-98 palmtop prototype
+80C86 clone CPU @ ??? MHz
+ASIC 1
+8250 UART
+8254 timer
+8259 PIC (always runs in x86 mode)
+ASIC 2
+memory controller?
+ASIC 3
+video controller?
+128KB of RAM
+128KB of ROM
+self-tests
+monitor
+serial transfer
+memo pad
+spreadsheet
+LCD, 240x128 pixels (40x16 chars in text mode), two shades of gray (?)
+2 slots for battery-backed SRAM carts (10KB known to exist, max size 64KB).
+Carts are also compatible with MK-90 and MK-92 palmtops.
+To do:
+- native keyboard
+- carts -->
 </platform>

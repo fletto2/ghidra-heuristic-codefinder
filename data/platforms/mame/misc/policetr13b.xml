@@ -18,4 +18,17 @@
     <region start="0x00E00000" end="0x00E00003" type="unmapped" name="nop_write"/>
     <region start="0x1FC00000" end="0x1FCFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- P&amp;P Marketing Police Trainer hardware
+driver by Aaron Giles
+Games supported:
+Police Trainer
+Sharpshooter
+Known bugs:
+Flip screen not supported
+Note:   For Police Trainer v1.3B sets that run on the same Rev 0.5B PCB as Sharpshooter: If you
+boot the game while holding the test button down until you get to the factory test screen,
+all program roms fail the checksum.  This result has been verified on original hardware.
+See below for specific information on each set.
+Note:   Police Trainer v1.0 (... -->
 </platform>

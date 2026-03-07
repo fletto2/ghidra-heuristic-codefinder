@@ -11,4 +11,21 @@
     <region start="0x0000D001" end="0x0000D004" type="io" name="port"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Irem M57 hardware (Tropical Angel)
+driver by Phil Stroffolino
+Locations based on m58.cpp driver
+BTANB:
+- the sea has a purple tint, the flyer photos are blue/cyan, but those
+don't match multiple PCB references
+TODO:
+- accurate palette resnet verified with PCB, take away any doubt exactly
+how much purple the sea looks
+- flipscreen/cocktail mode is glitchy
+IREM M57 board stack with a M52-SOUND-E sound PCB.
+M57-A-A:
+TA-A-xx ROMs and PROMs
+NEC D780C (Z80) CPU
+NANAO KNA6032601 custom chip
+NANAO KNA60... -->
 </platform>

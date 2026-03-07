@@ -12,4 +12,20 @@
     <region start="0x0000A080" end="0x0000A080" type="io" name="port"/>
     <region start="0x0000A0C0" end="0x0000A0C0" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Talbot                     - (c) 1982 Alpha Denshi Co.
+Champion Base Ball         - (c) 1983 Alpha Denshi Co.
+Champion Base Ball Part-2  - (c) 1983 Alpha Denshi Co.
+Exciting Soccer            - (c) 1983 Alpha Denshi Co.
+Exciting Soccer II         - (c) 1984 Alpha Denshi Co.
+Note: the Champion Baseball II unofficial schematics show a 8302 instead of
+the 8201, however the MCU is used like a plain 8201, 830x extra instructions
+are not used.
+champbbj and champbb2 has Alpha8201 mcu for protection.
+ch... -->
 </platform>

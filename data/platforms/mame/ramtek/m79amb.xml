@@ -10,4 +10,18 @@
     <region start="0x0000C000" end="0x0000C07F" type="ram" name="ram"/>
     <region start="0x0000C200" end="0x0000C27F" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Ramtek M79 Ambush
+The following chart explains the settings of the eight switches on
+the DIP switch.  A plus(+) in the column means the toggle switch is
+up on the plus side of the DIP switch.
+SWITCHES
+|  12  |  345  |  678  |
+------------------------------------------------|
+Length of Game (seconds) |      |       |       |
+60     |  00  |       |       |
+90     |  0+  |       |       |
+90     |  +0  |       |       |
+120     |  ++  |       |       |
+-------------------------+------+-------+----... -->
 </platform>

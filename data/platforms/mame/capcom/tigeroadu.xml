@@ -54,4 +54,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Tiger Road     (C) 1987 Capcom (licensed to Romstar)
+F1 Dream       (C) 1988 Capcom
+cloned hardware:
+Pushman        (C) 1990 Comad
+Bouncing Balls (c) 1991 Comad
+Please contact Phil Stroffolino (phil@maya.com) if there are any questions
+regarding this driver.
+TODO:
+- F1 Dream throws an address error if player wins all the races (i.e. when the
+game is supposed to give an ending):
+010C68: 102E 001C      move.b  ($1c,A6), D0       ; reads 0xf from work RAM (misaligned)
+010C6C: 207B 000E      movea.l... -->
 </platform>

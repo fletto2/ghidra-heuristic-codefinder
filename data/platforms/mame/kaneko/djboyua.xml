@@ -7,4 +7,23 @@
     <region start="0x0000B000" end="0x0000BFFF" type="io" name="spriteram_r"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- DJ Boy (c)1989 Kaneko
+Hardware has many similarities to Air Buster.
+Self Test has two parts:
+1) color test : press button#3 to advance past color pattern
+2) i/o and sound test: use buttons 1,2,3 to select and play sound/music
+- CPU0 manages sprites, which are also used to display text
+irq (0x10) - timing/watchdog
+irq (0x30) - processes sprites
+nmi: wakes up this CPU
+- CPU1 manages the protection device, palette, and tilemap(s)
+nmi: resets this CPU
+irq: game update
+- CPU2 manages sound chips
+irq:... -->
 </platform>

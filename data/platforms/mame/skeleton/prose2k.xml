@@ -10,4 +10,18 @@
     <region start="0x00003602" end="0x00003602" type="io" name="status_r"/>
     <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Telesensory Systems Inc./Speech Plus
+1500 and 2000 series
+Prose 2020
+The Prose 2000 card is an IEEE 796 Multibus card, with additional connectors to facilitate power and serial input other than via multibus.
+There are two hardware versions of the card:
+- The 1981 Telesensory Systems Inc copyrighted version
+(lacks U82, has some rework on the power input to add a bypass capacitor and an extra power line to the 8086)
+- The 1986 Speech Plus copyrighted version
+(adds U82 as an extra buffer for status... -->
 </platform>

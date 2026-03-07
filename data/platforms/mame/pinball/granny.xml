@@ -7,4 +7,21 @@
     <region start="0x00002801" end="0x00002801" type="unmapped" name="nop_read"/>
     <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- PINBALL
+Bally MPU AS-2518-133
+A blend of arcade video game and pinball. It has the shape of
+an upright arcade game. The vertical part contains the video
+screen, while the flat part is a small pinball machine. The
+ball is injected from between the flippers; there's no shooter.
+There's flipper buttons on the sides, and a joystick on the
+control panel.
+Granny has an additional "Power" button, it's a gun to shoot
+the alligators, if you have collected ammo. You need money to
+pass the toll gates.
+List... -->
 </platform>

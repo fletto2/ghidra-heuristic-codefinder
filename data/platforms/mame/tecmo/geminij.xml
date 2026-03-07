@@ -15,4 +15,19 @@
     <region start="0x0000F80B" end="0x0000F80B" type="io" name="reset_w"/>
     <region start="0x0000F80F" end="0x0000F80F" type="io" name="port"/>
   </memory_map>
+
+  <!-- tecmo.cpp
+driver by Nicola Salmoria
+TODO:
+- raster effect in Gemini Wing THE END ending, needs a side-by-side test with
+a real board and maybe waitstate penalties;
+BTANB:
+- missing drums in backfirtb, there isn't any ADPCM ROM on the bootleg
+- silkworm bgm drum samples are cut off abruptly, it does this deliberately
+Silkworm memory map (preliminary)
+0000-bfff ROM
+c000-c1ff Background video RAM #2
+c200-c3ff Background color RAM #2
+c400-c5ff Background video RAM #1
+c600-c7ff Background color RAM #... -->
 </platform>

@@ -9,4 +9,26 @@
     <region start="0x00400000" end="0x00400FFF" type="ram" name="textram"/>
     <region start="0x00500000" end="0x00507FFF" type="ram" name="workram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Sega Out Run hardware
+Known bugs:
+LED connected to stop lights no longer working
+To do for each game:
+verify analog input min/max
+verify protection
+BTANB:
+there are plenty, but the most notorious one is that outrun's opr-10188
+is bad with a stuck d5. This was fixed by M2/Sega for the 3DS version,
+and also included in the newer 'enhanced edition'
+--
+Guru's Outrun &amp; Super Hang On Board Notes:
+Outrun &amp; Super Hang On
+Sega, 1986, 1987
+PCB Layouts
+-----------
+CPU Board: The CPU board used on O... -->
 </platform>

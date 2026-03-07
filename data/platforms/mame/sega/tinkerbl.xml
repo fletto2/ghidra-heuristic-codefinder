@@ -56,4 +56,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Sega System M1 medal games board (834-7795 standalone, 837-7571 networked)
+68000 - main CPU
+Z80 - sound CPU
+YM3438 - sound generator
+315-5242 - color encoder
+315-5292 - System 24/Model 1/Model 2 tilemaps
+315-5294 - priority?
+315-5296 - I/O (x2)
+315-5388A - priority?
+20 MHz and 32 MHz oscillators are present near the 68k, Z80, and YM3438.
+A 4.9152 MHz oscillator is near the video chips.
+To get past the boot error on Tinker Bell, F1 is mapped to the cabinet reset switch.
+TODO:
+- Hopper
+- tinkerbl,... -->
 </platform>

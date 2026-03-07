@@ -5,4 +5,18 @@
     <region start="0x00200000" end="0x003FFFFF" type="ram" name="banked"/>
     <region start="0x00300000" end="0x00300003" type="io" name="rombank_w"/>
   </memory_map>
+
+  <!-- This driver describes Namco's System22 and System Super22* hardware.
+: Namco calls it that, more commonly known as "Super System 22"
+driver provided with thanks to:
+- hap
+- pstroffo@yahoo.com (Phil Stroffolino)
+- R. Belmont
+- trackmaster@gmx.net (Bjorn Sunder)
+- team vivanonno
+TODO:
+- finish slave DSP emulation
+- emulate System22 I/O board C74 instead of HLE (inputs, outputs, volume control - HLE only handles the inputs)
+- C139 for linked cabinets, as well as in RR fullscale
+- confirm DSP and MC... -->
 </platform>

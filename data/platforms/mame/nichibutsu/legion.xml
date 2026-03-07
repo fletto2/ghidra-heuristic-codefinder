@@ -5,4 +5,27 @@
     <region start="0x00068000" end="0x00069FFF" type="io" name="text_videoram_r"/>
     <region start="0x0007C000" end="0x0007C001" type="io" name="terraf_io_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Legion
+(c)1986 Nichibutsu
+Terra Force
+(c)1987 Nichibutsu
+Kozure Ookami
+(c)1987 Nichibutsu
+Crazy Climber 2
+(c)1988 Nichibutsu
+Armed F (アームドF, not "Formation Armed F")
+(c)1988 Nichibutsu
+Sky Robo / Tatakae! Big Fighter
+(c)1989 Nichibutsu
+Based on the notes below I suspect several of the supported sets are
+actually bootlegs.
+68000 + Z80
+TODO:
+- identify and decap the NB1414M4 chip, it could be either a MCU or a fancy blitter chip;
+- Fix Armed F and Tatakae Big Fighter text tilemap usage, they both ... -->
 </platform>

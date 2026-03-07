@@ -7,4 +7,20 @@
     <region start="0x00004400" end="0x00005FFF" type="io" name="vram_r"/>
     <region start="0x00006000" end="0x000060FF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Space Cyclone
+3 board stack? - the PCB pictures make it very difficult to figure much out
+seems a bit like 8080bw hardware but with extra sprites and a Z80 cpu?
+maybe an evolution of Polaris etc.?
+there's an MB14241 near the Sprite ROM
+1x 8DSW, 1x 4DSW
+there are 11 HM4716AP RAM chips near the main CPU (1 is unmarked, could be different?)
+HM4716AP is 16384 * 1-bit (2048 [0x800] bytes)
+1bpp of video needs 0x3800 bytes
+1bpp video would need 4 of these (with 0x400 bytes leftover)
+2bpp video would ne... -->
 </platform>

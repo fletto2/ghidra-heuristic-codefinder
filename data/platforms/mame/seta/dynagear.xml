@@ -7,4 +7,20 @@
     <region start="0x00400000" end="0x0047FFFF" type="ram" name="ram"/>
     <region start="0x00900000" end="0x00900007" type="io" name="latch16_r"/>
   </memory_map>
+
+  <!-- -= Seta, Sammy, Visco (SSV) System =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU          :      NEC V60
+Sound Chip   :      Ensoniq ES5506 (OTTOR2)
+Custom Chips :      ST-0004     (Video DAC)
+ST-0005     (Parallel I/O)
+ST-0006     (Video controller)
+ST-0007     (System controller)
+Others       :      Battery + MB3790 + LH5168D-10L (NVRAM)
+DX-102              (I/O)
+M62X42B             (RTC)
+ST010
+TA8210              (Audio AMP)
+uPD71051/7001C      (UART)
+------------------------------------------... -->
 </platform>

@@ -8,4 +8,23 @@
     <region start="0x00C00000" end="0x00C1FFFF" type="rom" name="rom"/>
     <region start="0x00D00000" end="0x00FFFFFF" type="io" name="unmapped_r"/>
   </memory_map>
+
+  <!-- Neo-Geo hardware
+Credits:
+This driver was made possible by the research done by
+Charles MacDonald.  For a detailed description of the Neo-Geo
+hardware, please visit his page at:
+http://cgfm2.emuviews.com/txt/mvstech.txt
+Presented to you by the Shin Emu Keikaku team.
+The following people have all spent probably far
+too much time on this:
+AVDB
+Bryan McPhail
+Fuzz
+Ernesto Corvi
+Andrew Prime
+Zsolt Vasvari
+Known driver issues/to-do's:
+============================
+Fatal Fury 3 crashes during the ending... -->
 </platform>

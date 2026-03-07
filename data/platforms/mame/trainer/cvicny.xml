@@ -6,4 +6,16 @@
     <region start="0x00000800" end="0x00000BFF" type="ram" name="ram"/>
     <region start="0x00001000" end="0x000027FF" type="io" name="key_r"/>
   </memory_map>
+
+  <!-- CVICNY8080 - Practice-z80 - a homebrew from Czechoslavakia.
+More data at :
+https://web.archive.org/web/20190202185251/http://www.nostalcomp.cz/cvicny8080.php
+2011-10-21 New working driver. [Robbbert]
+Keys:
+0-9,A-F : hexadecimal numbers
+ADR : enter an address to work with. After the 4 digits are entered,
+the data at that address shows, and you can modify the data.
++ (inc) : Enter the data into memory, and increment the address by 1.
+GO : execute the program located at the current address.
+Pasting... -->
 </platform>

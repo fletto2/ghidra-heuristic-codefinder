@@ -61,4 +61,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- POW - Prisoners Of War (US version 1)    A7008   SNK 1988
+POW - Prisoners Of War (Japan)           A7008   SNK 1988
+SAR - Search And Rescue (World)          A8007   SNK 1989
+SAR - Search And Rescue (US)             A8007   SNK 1989
+SAR - Search And Rescue (Japan)          A8007   SNK 1989
+Street Smart (US version 1)              A8007   SNK 1989
+Street Smart (US version 2)              A7008   SNK 1989
+Street Smart (World version 1)           A8007   SNK 1989
+Street Smart (Japan version 1)      ... -->
 </platform>

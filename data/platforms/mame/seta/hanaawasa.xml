@@ -8,4 +8,33 @@
     <region start="0x00008000" end="0x00008BFF" type="ram" name="ram"/>
     <region start="0x0000B000" end="0x0000B000" type="io" name="irq_ack_w"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Hana Awase driver by Zsolt Vasvari
+edge connector
+----------------------------
+GND   |A| 1|    GND
+GND   |B| 1|  1P "3"
++5V   |C| 3|    +5V
+NC    |D| 4|    NC
++12V   |E| 5|   +12V
+SPEAKER(+)|F| 6|SPEAKER(-)
+SYNC   |H| 7|    NC
+B    |J| 8|SERVICE SW
+G    |K| 9|  COIN SW
+R    |L|10|    NC
+NC    |M|11| 1P,2P "10"
+2P "11" |N|12| 1P,2P "9"
+2P "4"  |P|13| 1P,2P "8"
+NC    |R|14| 1P,2P "7"
+1P "4"  |S|15| 1P,2P "5"
+1P "11" |T|16| 1P,2P "6"
+NC    |U|17|    NC
+1P "1"  |V|18|  1P "2"
+TODO:
+- hanaawasa reads... -->
 </platform>

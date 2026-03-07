@@ -14,4 +14,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Atari 4X4
+Unlike all the other Atari pinballs, this one seems to use a 6502.
+There's no manuals or full schematics.
+The game has 8 captive balls in 2 banks of 4, and they can be released by hitting a
+target (one per ball). Therefore, most of the time you're playing multiball.
+Status:
+- Skeleton
+ToDo:
+- Everything
+- The audio prom is the same one used in Atari System 2, so the sound card should be the
+same. -->
 </platform>

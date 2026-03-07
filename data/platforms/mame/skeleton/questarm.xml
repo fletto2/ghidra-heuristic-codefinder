@@ -7,4 +7,15 @@
     <region start="0x0000FFF6" end="0x0000FFF7" type="unmapped" name="nop_write"/>
     <region start="0x0000FFF8" end="0x0000FFFF" type="io" name="video_r"/>
   </memory_map>
+
+  <!-- Bull (Originally R2E) Micral 80-22G
+2015-10-01 Skeleton [Robbbert]
+http://www.ti99.com/exelvision/website/index.php?page=r2e-micral-8022-g
+This expensive, futuristic-looking design featured a motherboard and slots,
+much like an ancient PC. The known chip complement is:
+Z80A, 4MHz; 64KB RAM, 2KB BIOS ROM, 256x4 prom (7611);
+CRT8002, TMS9937 (=CRT5037), 4KB video RAM, 256x4 prom (7611);
+2x 5.25 inch floppy drives, one ST506 5MB hard drive;
+CDP6402 UART. Sound is a beeper.
+The keyboard has a uPD780... -->
 </platform>

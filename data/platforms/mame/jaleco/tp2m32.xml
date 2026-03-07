@@ -15,4 +15,12 @@
     <region start="0xFDE00000" end="0xFDE1FFFF" type="ram" name="ram"/>
     <region start="0xFE202000" end="0xFE2FFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Jaleco MegaSystem 32 (Preliminary Driver)
+- hardware tests are needed to establish how the mixing really works (and interrupt source etc.)
+Used by Jaleco in the Mid-90's this system, based on the V70 processor consisted
+of a two board set up, the first a standard mainboard and the second a 'cartridge'
+The actual Mega System 32 PCB mobo only outputs mono sound.  There is a connector on
+the PCB for a second speaker but it is still only in mono (no stereo effects in the music).
+-- Hardware Informat... -->
 </platform>

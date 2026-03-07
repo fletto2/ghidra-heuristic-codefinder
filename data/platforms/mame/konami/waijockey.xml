@@ -8,4 +8,23 @@
     <region start="0x0000DE80" end="0x0000DE80" type="io" name="region_de80"/>
     <region start="0x0000DEC0" end="0x0000DEC0" type="io" name="region_dec0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- quickpick5.cpp: Konami "Quick Pick 5" medal game
+Quick Pick 5 (クイックピックファイブ) (c) 1991 Konami
+Wai Wai Jockey (ワイワイジョッキー) (c) 1993 Konami
+Driver by R. Belmont
+PWB(A)352878A (Quick Pick 5)
+PWB353330 (Wai Wai Jockey)
+Rundown of PCB:
+Main CPU: Z84C0008PEC
+Konami Custom chips:
+051649 (SCC1 sound)
+053252 (timing/interrupt controller)
+053244 (sprites)
+053245 (sprites) -->
 </platform>

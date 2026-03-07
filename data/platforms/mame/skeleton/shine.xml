@@ -15,4 +15,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Shine/1
+TODO: everything to be verified.
+The system rom has an inbuilt monitor program - unknown how to access it.
+The floppy disk is accessed via an "expansion" socket on the back. Inbuilt commands
+such as DIR [1|2], RENAME, ERASE, PROT, XFER look interesting. The DIR command does
+multiple reads of 0x9E00.
+There's a DIN socket for cassette. Commands BAUD, SAVE, LOAD appear to be the ones
+but the syntax has yet to be worked out. BAUD [0-9] is allowed but what is it doing? -->
 </platform>

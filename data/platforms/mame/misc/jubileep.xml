@@ -6,4 +6,26 @@
     <region start="0x00003000" end="0x00003BFF" type="ram" name="videoworkram"/>
     <region start="0x00003E00" end="0x00003E03" type="io" name="status_r"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Jubilee Double-Up Poker
+-----------------------
+Driver by Roberto Fresca.
+Games running on this hardware:
+Double-Up Poker (Jubilee),  1985,  Jubilee.
+You can find more about this game and the emulation evolution at
+http://www.robertofresca.com/
+Hardware Notes:
+---------------
+PCB etched:
+HERBER LTD
+Jubilee Sales Pty Ltd.
+BD No V63-261 ISS1.
+1x TMS9980 CPU.
+1x MC6845P CRTC.
+1x TC5517AP-2 (2048 words x 8 bits Asynchronous CMOS Static RAM), tied to a battery.
+1x 2114       (1024 words x 4 bits RAM)... -->
 </platform>

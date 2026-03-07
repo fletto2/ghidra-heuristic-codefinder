@@ -18,4 +18,13 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Syusse Oozumou
+(c) 1984 Technos Japan (Licensed by Data East)
+Driver by Takahiro Nogi 1999/10/04 -->
 </platform>

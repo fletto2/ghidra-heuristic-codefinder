@@ -4,4 +4,14 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Stuart's Breadboard Project. TMS9995 evaluation kit TMAM6095.
+2013-06-02 Skeleton driver.
+http://www.stuartconner.me.uk/tms9995_eval_module/tms9995_eval_module.htm
+It uses TMS9902 UART for comms, but our implementation of that chip is
+not ready for rs232.h as yet.
+Press any key to get it started. All input to be in uppercase. Instructions
+for Hello World are on the EVMBUG page:
+http://www.stuartconner.me.uk/tibug_evmbug/tibug_evmbug.htm#evmbug_example
+Pay close attention to "On lines where no la... -->
 </platform>

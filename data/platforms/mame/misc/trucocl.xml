@@ -10,4 +10,24 @@
     <region start="0x000050C0" end="0x000050C0" type="io" name="reset_w"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Truco Clemente (c) 1991 Miky SRL
+driver by Ernesto Corvi
+Notes:
+- Sloppy coin insertion, needs to stay high for 60 Hz wtf?
+- Audio is almost there.
+- I think this runs on a heavily modified PacMan type of board.
+----------------------------------
+Additional Notes (Roberto Fresca):
+----------------------------------
+Mainboard: Pacman bootleg jamma board.
+Daughterboard: Custom made, plugged in the 2 roms and Z80 mainboard sockets.
+- 01 x Z80
+- 03 x 27c010
+- 02 x am27s19
+- 03 x GAL 16v8b      (All ... -->
 </platform>

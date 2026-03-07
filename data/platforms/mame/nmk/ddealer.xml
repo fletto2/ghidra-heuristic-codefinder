@@ -53,4 +53,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Double Dealer (c)NMK 1991
+driver by Angelo Salese &amp; David Haywood, based on early work by Tomasz Slanina
+Appears to be a down-grade of the nmk16 HW
+TODO:
+- Understand better the video emulation and convert it to tilemaps;
+==========================================================================================================
+pcb marked GD91071
+68000P10
+YM2203C
+91071-3 (Mask ROM)
+NMK-110 8131
+NMK 901
+NMK 902
+NMK 903 x2
+82S135N ("5")
+82S129N ("6")
+xtals 16.000 MHz and 6.000 MHz
+DSW x2 -->
 </platform>

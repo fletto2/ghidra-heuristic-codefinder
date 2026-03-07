@@ -8,4 +8,13 @@
     <region start="0x00001400" end="0x000019FF" type="io" name="hitme_port_0_r"/>
     <region start="0x00001D00" end="0x00001FFF" type="io" name="output_port_0_w"/>
   </memory_map>
+
+  <!-- Hit Me driver by the EMUL8, led by Dan Boris */
+
+Hit Me  (c) Ramtek  1976
+---------------------------------------
+Memory map
+0000-07ff r    Rom
+0c00-0eff w    Video Ram
+1000-13ff r/w  Scratch Ram -->
 </platform>

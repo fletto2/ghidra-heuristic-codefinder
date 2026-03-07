@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x000003FF" type="rom" name="rom"/>
     <region start="0x00000400" end="0x000023FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- ZAP - Z80 Applications Processor
+driver by: Felipe Correa da Silva Sanches &lt;juca@members.fsf.org&gt;
+Based on the technical descriptions and
+assembly listings of the book:
+"Build Your Own Z80 Microcomputer"
+by Steve Ciarcia (1981)
+published by BYTE/McGRAW-HILL
+Basic usage instructions:
+SHIFT + 0: view and edit memory values (Enter to escape)
+SHIFT + 1: view and edit register values
+SHIFT + 2: execution mode
+For more info, please check chapter 6 "Monitor software" in the book
+and/or the assemb... -->
 </platform>

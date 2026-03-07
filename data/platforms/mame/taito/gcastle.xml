@@ -7,4 +7,15 @@
     <region start="0x0000CC00" end="0x0000CFFF" type="io" name="gladiatr_video_registers_w"/>
     <region start="0x0000D000" end="0x0000F7FF" type="ram" name="palette"/>
   </memory_map>
+
+  <!-- Ping Pong King  (c) Taito 1985
+Gladiator       (c) Taito 1986 - developed by Allumer
+Credits:
+- Victor Trucco: original emulation and MAME driver
+- Steve Ellenoff: YM2203 Sound, ADPCM Sound, dip switch fixes, high score save,
+input port patches, panning fix, sprite banking,
+Golden Castle Rom Set Support
+- Phil Stroffolino: palette, sprites, misc video driver fixes
+- Tatsuyuki Satoh: YM2203 sound improvements, NEC 8741 simulation, ADPCM with MC6809
+- Tomasz Slanina:  preliminary Ping Pong King dr... -->
 </platform>

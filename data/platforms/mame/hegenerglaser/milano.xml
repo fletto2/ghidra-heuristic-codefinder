@@ -17,4 +17,12 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Mephisto Milano
+Hardware notes:
+- RP65C02G or W65C02P-8 @ 4.91MHz
+- 8KB RAM(battery-backed), 64KB ROM
+- HD44100H, HD44780, 2*16 chars LCD screen
+- 8*8 chessboard buttons, 16 leds, piezo
+Nigel Short is basically a Milano 2.00 -->
 </platform>

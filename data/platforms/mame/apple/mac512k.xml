@@ -11,4 +11,23 @@
     <region start="0x00E80000" end="0x00EFFFFF" type="io" name="vpa_sync"/>
     <region start="0x00FFFFF0" end="0x00FFFFFF" type="io" name="mac_autovector_r"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- drivers/mac128.cpp
+Original-style Macintosh emulation
+These are all 68000 machines in the original Mac form factor with the
+original Mac audio and video.
+Unitron Mac 512: Brazilian Mac 512K(E?) clone.
+Unitron 1024: Brazilian Mac Plus clone.
+Driver by R. Belmont and O. Galibert, with thanks to the original Mac
+driver authors Nathan Woods and Raphael Nabet.
+Thanks also to SCSI guru Patrick Mackinlay and keyboard/mouse wrangler
+Vas Crabb.
+Mac 128K/512K: the original machines with 128K or 512K of RA... -->
 </platform>

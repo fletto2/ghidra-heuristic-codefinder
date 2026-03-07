@@ -14,4 +14,20 @@
     <region start="0x0000EE00" end="0x0000EE00" type="io" name="port"/>
     <region start="0x0000F000" end="0x0000FFFF" type="io" name="tutor_highmem_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Experimental Tomy Tutor driver
+This computer is known as Tomy Tutor in US, and as Grandstand Tutor in UK.
+It was initially released in Japan in 1982 or 1983 under the name of Pyuuta
+(Pi-yu-u-ta, with a Kanji for the "ta").  The Japanese versions are
+different from the English-language versions, as they have different ROMs
+with Japanese messages and support for the katakana syllabus.  There are at
+least 4 versions:
+original Pyuuta (1982 or 1983) with title screens in Japanese but no
+Basic
+Pyuuta ... -->
 </platform>

@@ -62,4 +62,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- -= Seta Hardware =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU    :    68000 + 65C02
+Custom :    X1-001A, X1-002A (SDIP64)   Sprites
+X1-001
+X1-002
+X1-003 or X1-007 (SDIP42)   Video blanking (feeds RGB DACs)
+X1-004           (SDIP52)   Inputs
+X1-005 or X1-009 (DIP48)    NVRAM/simple protection
+X1-006           (SDIP64)   Palette
+X1-010           (QFP80)    Sound: 8 Bit PCM
+X1-011           (QFP80)    Graphics mixing
+X1-012           (QFP100)   Tilemaps
+X1-014                      Sprites?
+--------... -->
 </platform>

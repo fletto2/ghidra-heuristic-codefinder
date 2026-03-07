@@ -53,4 +53,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="ay8912"/>
+  </devices>
+
+  <!-- BBN BitGraph -- monochrome, raster graphics (768x1024), serial terminal.
+Apparently had at least four hardware revisions, A-D, but which ROM
+revisions support which hardware is unclear.  A Versabus slot, and
+various hardware and software options are mentioned in the docs.  Best
+guesses follow.
+Onboard hardware (common to all revisions) is
+- 32K ROM
+- 128K RAM (includes frame buffer)
+- 3 serial ports, each driven by 6850 ACIA
+- unknown baud rate generator (possibly COM8016)
+- sync serial port, dr... -->
 </platform>

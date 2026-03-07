@@ -5,4 +5,21 @@
     <region start="0x00110000" end="0x00110FFF" type="ram" name="ram"/>
     <region start="0x00120000" end="0x00124FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Ganbare Ginkun  (Japan)  (c)1995 TECMO
+Final StarForce (US)     (c)1992 TECMO
+Riot            (Japan)  (c)1992 NMK
+--
+driver by Hau, Nicola Salmoria
+special thanks to Nekomata, NTD &amp; code-name'Siberia'
+TODO:
+- measure video timing, especially vblank+interrupt length:
+fstarfrc relies on the interrupt being held for a while,
+otherwise the titlescreen background goes wrong.
+If I had to guess: 24/4(6MHz) pixel clock, 384 hclocks, 264 scanlines
+riot does not like multiple interrupts per frame and... -->
 </platform>

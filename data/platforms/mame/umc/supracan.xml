@@ -13,4 +13,18 @@
     <region start="0x00F80000" end="0x00FBFFFF" type="io" name="region_f80000"/>
     <region start="0x00FC0000" end="0x00FCFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Super A'Can (c) 1995 Funtech
+References:
+- https://gist.github.com/evadot/66cfdb8891544b41b4c9
+- https://upload.wikimedia.org/wikipedia/commons/a/a6/Super-ACan-motherboard-flat.jpg
+- https://github.com/angelosa/hw_docs/blob/main/funtech_superacan/pergame.md
+===================================================================================================
+INFO:
+The system unit contains a reset button.
+Controllers:
+- 4 directional buttons
+- A, B, X, Y, buttons
+- Start, select buttons
+- L, R shoul... -->
 </platform>

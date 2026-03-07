@@ -52,4 +52,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Tomcat prototype hardware
+Driver by Mariusz Wojcieszek
+Notes:
+- game has no sound, while sound hardware was developed, sound program was
+not prepared
+TODO:
+- add proper timing of interrupts and framerate (currently commented out,
+as they cause test mode to hang)
+- vector quality appears to be worse than original game (compared to original
+game videos)
+- verify controls
+- implement game linking (after MAME supports network)
+- current implementation of 68010 &lt;-&gt; TMS320C10 is a little b... -->
 </platform>

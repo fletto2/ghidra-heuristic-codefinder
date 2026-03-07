@@ -20,4 +20,25 @@
     <region start="0x6F00003C" end="0x6F00003F" type="io" name="printer_r"/>
     <region start="0xFEFE0000" end="0xFEFEFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="scsi" name="ncr53c90"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- sun3.c: preliminary driver for Sun 3x models.
+status: 3/80 POSTs, 3/460 needs its unique RTC chip (also used by non-3x Sun 3s).
+TODO:
+- Improve interrupt controller emulation.
+- Figure out how the IOMMU works.
+- Sun custom MMU for original Sun 3 models.
+- AM7990 LANCE chip support for everyone.
+- Figure out how the parallel printer port maps to Centronics and make it so.
+- Much more...
+Sun-3x Models
+------------
+3/80
+Processor(s):   68030 @ 20MHz, 68882 @ 20MHz, 68030 on-chip
+MMU, 3 MIPS, 0.16 M... -->
 </platform>

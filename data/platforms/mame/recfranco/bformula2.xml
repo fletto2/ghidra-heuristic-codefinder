@@ -8,4 +8,27 @@
     <region start="0x0000AA00" end="0x0000AAFF" type="io" name="io_r"/>
     <region start="0x0000B000" end="0x0000B003" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- i8085 + projectors based slots by Recreativos Franco
+----------------------------------------------------
+Recreativos Franco used this hardware from 1987 to 1992 on several machines, including:
+-Baby &amp; Bombo
+-Baby Formula 2
+-Limon y Baby
+-Limon y Baby 100
+-Baby Ajofrin Dakar 3
+-El Tren
+-Baby Derby
+...Etc.
+Hardware Notes:
+---------------
+Recreativos Franco PCB Ref. 53/3297
+.-----------------------------------------------------------------------------------------------------------------.
+|  ..... -->
 </platform>

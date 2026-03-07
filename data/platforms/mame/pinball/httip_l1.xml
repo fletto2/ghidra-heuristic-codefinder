@@ -9,4 +9,22 @@
     <region start="0x00003000" end="0x00003003" type="io" name="read"/>
     <region start="0x00006000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- PINBALL
+Williams System 3
+Typical of Williams hardware: Motorola 8-bit CPUs, and lots of PIAs.
+Schematic and PinMAME used as references.
+Written during October 2012 [Robbbert]
+Games:
+- Hot Tip (#477)
+- Lucky Seven (#480)
+- World Cup Soccer (#481)
+- Contact (#482)
+- Disco Fevel (#483)
+- Phoenix (#485)
+- Pokerino (#488)
+When first used, it appears frozen (the score should alternate). Press F3 to fix.
+Sound:
+- All games have a knocker.
+- Hot Tip and Lucky Seven use chimes. There was a noise drum to... -->
 </platform>

@@ -21,4 +21,24 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Crystal Castles hardware
+Games supported:
+Crystal Castles (1983) [8 sets]
+Known issues:
+none at this time
+Horizontal sync chain:
+A J/K flip flop @ 8L counts the 1H line, and cascades into a
+4-bit binary counter @ 7M, which counts the 2H,4H,8H,16H lines.
+This counter cascades into a 4-bit BCD decade counter @ 7N
+which counts the 32H,64H,128H,HBLANK lines. The counter system
+rolls over after counting to 320.
+Pixel clock = 5MHz
+HBLANK ends at H = 0
+HBLANK begins at H = 256
+HSYNC begins at H =... -->
 </platform>

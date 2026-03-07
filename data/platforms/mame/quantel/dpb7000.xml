@@ -58,4 +58,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- DPB-7001 (c) 1981 Quantel
+Known issues/possible improvements:
+- Disk Sequencer Card is currently implemented via HLE.
+- Tablet is currently implemented via HLE.
+- Blanking PAL is currently disabled, which results in on-screen
+garbage when scrolling.
+- Size Card and Filter Card functionality is not yet implemented.
+- Video input functionality is not yet implemented.
+- There are numerous Brush Processor Card functions that are not yet
+implemented.
+To create a hard disk image compatible with the "3... -->
 </platform>

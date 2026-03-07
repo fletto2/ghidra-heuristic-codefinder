@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Brazilian bootleg board from 1989. Forte II Games, Industria Brasileira.
+MAME driver by Mariusz Wojcieszek &amp; hap, based on
+information from Alexandre Souza (a.k.a. "Tabajara").
+Hardware is based on MSX1, excluding i8255 PPI:
+- 64KB RAM, largely unused
+- 64KB EPROM (2764-15, contains hacked BIOS and game ROM)
+- Z80 @ 3.58MHz
+- GI AY-3-8910
+- TI TMS9928A
+- (no dipswitches)
+Pesadelo (means 'nightmare' in Portuguese), 1989 bootleg of Knightmare (Majou
+Densetsu in Japan) (C) 1986 Konami, original... -->
 </platform>

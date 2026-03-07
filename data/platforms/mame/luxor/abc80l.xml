@@ -7,4 +7,15 @@
     <region start="0x00005800" end="0x00005FFF" type="ram" name="ram"/>
     <region start="0x00007C00" end="0x00007FFF" type="io" name="map_only_the_upper_1k_of_char_ram"/>
   </memory_map>
+
+  <!-- Luxor ABC 80
+PCB Layout
+----------
+55 10470-02
+CN1               CN2                                                CN5
+SW1   |-----|  |------------------------|                                  |-----|
+|-------|     |--|                        |----------------------------------|     |---|
+|                                                             CN3       CN4            |
+|                                                    7912                              |
+|            MC1488           ... -->
 </platform>

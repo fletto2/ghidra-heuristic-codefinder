@@ -9,4 +9,26 @@
     <region start="0x00009000" end="0x00009000" type="io" name="rom_bank_select_w"/>
     <region start="0x0000A000" end="0x0000FFFF" type="ram" name="vrambank"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Kitco Crowns Golf hardware
+driver by Aaron Giles
+Games supported:
+Crowns Golf (4 sets)
+Crowns Golf in Hawaii
+Known bugs:
+not sure if the analog inputs are handled correctly
+Text Strings in sound CPU ROM read:
+ARIES ELECA
+1984JAN15 V-0
+Text Strings in the bootleg sound CPU ROM read:
+WHO AM I?      (In place of "ARIES ELECA")
+1984JULY1 V-1  (In place of "1984JAN15 V-0")
+1984 COPYRIGHT BY WHO
+2008-08
+Dip locations and factory settings verified with manual
+PAL16L8 @ E3 on cpu/sound board - Provided ... -->
 </platform>

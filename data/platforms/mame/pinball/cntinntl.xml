@@ -6,4 +6,22 @@
     <region start="0x00000000" end="0x00001EFF" type="rom" name="rom"/>
     <region start="0x00001F00" end="0x00001FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- basic machine hardware */
+S2650(config, m_maincpu, 1000000);
+m_maincpu-&gt;set_addrmap(AS_PROGRAM, &amp;bingo_state::bingo_map);
+}
+class seeben_state : public driver_device
+{
+public:
+seeben_state(const machine_config &amp;mconfig, device_type type, const char *tag) :
+driver_device(mconfig, type, tag),
+m_maincpu(*this, "maincpu")
+{ }
+void seeben(machine_config &amp;config);
+void seeben_map(address_map &amp;map) ATTR_COLD;
+void init_seeben();
+protected:
+// devices
+required_device&lt;cpu_device&gt;... -->
 </platform>

@@ -60,4 +60,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Driver by Paul Leaman (paul@vortexcomputing.demon.co.uk)
+Thanks to Andreas Naive and Nicola Salmoria for understanding the
+encryption mechanism.
+Thanks to Razoola, Ange 'Crashtest' Albertini and the CPS2 decryption team
+for their initial work on extracting decrypted code.
+Capcom System 2
+===============
+CPS2 Hardware Overview
+Capcom, 1993-2004
+From 1993 to 2004 Capcom produced a generic system known as CPS2 (Capcom Play System 2). It
+comprises a base board (known as the A-Board) and a top board ... -->
 </platform>

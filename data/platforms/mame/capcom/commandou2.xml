@@ -10,4 +10,32 @@
     <region start="0x0000C808" end="0x0000C80B" type="io" name="scrollx_w"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Commando (C) 1985 Capcom
+Memory map (preliminary):
+MAIN CPU
+0000-bfff ROM
+d000-d3ff Video RAM
+d400-d7ff Color RAM
+d800-dbff background video RAM
+dc00-dfff background color RAM
+e000-ffff RAM
+fe00-ff7f Sprites
+read:
+c000      IN0
+c001      IN1
+c002      IN2
+c003      DSW1
+c004      DSW2
+write:
+c808-c809 background scroll x position
+c80a-c80b background scroll y position
+SOUND CPU
+0000-3fff ROM
+4000-47ff RAM
+write:
+8000      YM2203 #1 control
+8001      YM2203 #1 write
+8002      YM2203 #2 control
+80... -->
 </platform>

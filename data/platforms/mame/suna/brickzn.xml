@@ -16,4 +16,19 @@
     <region start="0x0000C800" end="0x0000DFFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="io" name="banked_spriteram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- -=  SunA 8 Bit Games =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU:      Encrypted Z80 (Epoxy Module)
+Sound CPU:      Z80 [Music]  +  Z80 [4 Bit PCM, Optional]
+Sound Chips:    AY8910  +  YM3812/YM2203  + DAC x 4 [Optional] + Samples [Optional]
+--------------------------------------------------------------------------------------
+Year + Game         Game     PCB         Epoxy CPU  Samples  Notes
+--------------------------------------------------------------------------------------
+88  Hard H... -->
 </platform>

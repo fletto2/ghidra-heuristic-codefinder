@@ -10,4 +10,19 @@
     <region start="0x000E8000" end="0x000FBFFF" type="unmapped" name="unmapped"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+    <device type="rtc" name="mc146818"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Hilger Analytical AB6089 Mk. 1 (LSI Octopus)
+2013-07-26 Skeleton driver.
+http://computers.mcbx.netne.net/8bit/hilger/index.htm
+Below is an extract from the page:
+The computer has 2 CPUs: Z80 and 8088. Most circuits are dated 1985-1986, display circuitry is made by Signetics.
+Mainboard was manufactured by LSI Computers Ltd. under part numbers: 15000SS100 and 15000P4100. All steel parts
+of casing are grounded by wires. It's graphics card works in pass-through mode: It takes picture from mainboard'... -->
 </platform>

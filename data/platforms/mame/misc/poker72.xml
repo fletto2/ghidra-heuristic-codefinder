@@ -13,4 +13,23 @@
     <region start="0x0000FE60" end="0x0000FE60" type="io" name="address_w"/>
     <region start="0x0000FF00" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Poker Monarch
+GFX ROMs contain
+'Extrema Systems International Ltd'
+as well as a logo for the company.
+There are also 'Lucky Boy' graphics in various places.
+TODO:
+- NVRAM;
+- Doesn't initialize properly, cfr. 892314112 for total out and coins out in Analyzer,
+not even with "clear page" button;
+- Coin in doesn't work, accepts key-in from IPT_SERVICE1 only
+(hold it then press any of the IPT_POKER_HOLD);
+- Crashes or starts corrupting graphics after some time of gameplay;
+- $fe08-$fe0b looks PPI?
+- ... -->
 </platform>

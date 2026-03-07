@@ -10,4 +10,17 @@
     <region start="0x00FFFF40" end="0x00FFFF47" type="io" name="read"/>
     <region start="0x00FFFF60" end="0x00FFFF6F" type="io" name="read"/>
   </memory_map>
+
+  <!-- Omnibyte OB68K1A
+PCB Layout
+----------
+REV-B
+|-----------------------------------------------------------|
+|   555     CN3     CN4         CN5   8116  SW5     10MHz   |
+|                                       5.0688MHz           |
+|                   PIA         PIA                         |
+|           ACIA                            ROM1    ROM0    |
+|                   ACIA        PTM         ROM3    ROM2    |
+|           SW1                             ROM5    ROM4    |
+|                    ... -->
 </platform>

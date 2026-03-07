@@ -12,4 +12,22 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Enerdyne Technologies Inc. (El Cajon, CA 92020) hardware
+CPU: Z80
+Sound: AY-3-8912 (x3)
+Other: Dallas DS1220Y NVRAM, N8T245N (x2), PAL16L8A-2CN (x2, protected)
+XTAL = 12 MHz
+Supported games:
+- Progressive Music Trivia  (c) 1985
+- Super Trivia Master       (c) 1986
+driver by Pierpaolo Prazzoli, thanks to Tomasz Slanina too.
+Notes:
+You can swap the question ROMs arbitrarily on these boards. This means
+the ROMsets in this driver aren't true sets per se, they're just how
+boards were found "in the wi... -->
 </platform>

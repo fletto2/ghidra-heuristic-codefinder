@@ -14,4 +14,27 @@
     <region start="0x0000B000" end="0x0000B000" type="io" name="port"/>
     <region start="0x0000B800" end="0x0000B800" type="io" name="system_watchdog_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Marine Boy hardware memory map (preliminary)
+driver by Zsolt Vasvari
+MAIN CPU:
+0000-7fff ROM (not all games use the entire region)
+8000-87ff RAM
+8c18-8c3f sprite RAM (Hoccer only)
+8800-8bff video RAM  \ (contains sprite RAM in invisible regions)
+9000-93ff color RAM  /
+read:
+a000      IN0
+a800      IN1
+b000      DSW
+b800      IN2/watchdog reset
+write:
+9800      column scroll
+9a00      char palette bank bit 0 (not used by Hoccer)
+9c00      char palette bank bit 1 (not used by Hoccer)
+a000      NMI... -->
 </platform>

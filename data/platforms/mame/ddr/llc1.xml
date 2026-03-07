@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x000013FF" type="rom" name="rom"/>
     <region start="0x00001400" end="0x00001FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- LLC1 driver by Miodrag Milanovic
+2009-04-17 Preliminary driver.
+2012-07-?? Updates by Robbbert
+Handy addresses: (Press X then the 4 digits then Enter)
+0800 = BASIC cold start
+0803 = BASIC warm start
+13BE = display Monitor logo
+This machine has an 8-digit LED display with hex keyboard,
+and also a 64x16 monochrome screen with full keyboard.
+The monitor uses the hex keyboard, while Basic uses the full keyboard.
+Monitor output is on the digits, but the single-step command displays
+a running register... -->
 </platform>

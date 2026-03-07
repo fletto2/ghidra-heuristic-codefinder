@@ -6,4 +6,22 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="nvram"/>
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- AMERICAN POKER 2
+----------------
+Company:  Novomatic.
+Year:     1990.
+Driver by Roberto Fresca &amp; Grull Osgo.
+--- Supported Sets ---
+Set Name   | Relation | Description
+-----------+----------+------------------------------------
+ampoker2   |  parent  |  American Poker II.
+ampkr2b1   |  clone   |  American Poker II (bootleg, set 1).
+ampkr2b2   |  clone   |  American Poker II (bootleg, set 2).
+ampkr2b3   |  clone   |  American Poker II (bootleg, set 3).
+ampkr2b4   |  clone   |  American Poker ... -->
 </platform>

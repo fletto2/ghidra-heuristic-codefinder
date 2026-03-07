@@ -14,4 +14,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- MINI-BOY 7 / SUPER MINI-BOY.
+Bonanza Enterprises, Ltd.
+Driver by Roberto Fresca.
+Games running on this hardware:
+Mini-Boy 7,             1983,  Bonanza Enterprises, Ltd.
+Super Mini-Boy,         1984,  Bonanza Enterprises, Ltd.
+Bonanza's Joker Poker,  1984,  Bonanza Enterprises, Ltd.
+Game Notes:
+Mini-Boy 7.
+Model BE-7000/MBS.
+https://flyers.arcade-museum.com/videogames/show/4043
+https://flyers.arcade-museum.com/videogames/show/6161
+Seven games in one, plus Ad message support.
+- Draw Poker.
+- 7-St... -->
 </platform>

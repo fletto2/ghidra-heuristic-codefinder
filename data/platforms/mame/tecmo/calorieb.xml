@@ -8,4 +8,21 @@
     <region start="0x0000F000" end="0x0000F000" type="unmapped" name="nop_write"/>
     <region start="0x0000F003" end="0x0000F003" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Bomb Jack
+driver by Mirko Buffoni, Z80 code research and notes by Stepph
+original Calorie Kun driver by David Haywood/Pierpaolo Prazzoli
+NOTE:
+The hardware is a later iteration of the designs
+sprung by Tehkan from the Crazy Climber family.
+bombjack2 is an older version. The lucky message
+has a typo where "LUCKY" is misspelled as "LUCY."
+The "Bonus Life" DIP switch NEVER gives an extra
+life because of patched code at 0x5a07: There is
+a 'ret' opcode at 0x5a07 that should be 'push af'
+instead. Howe... -->
 </platform>

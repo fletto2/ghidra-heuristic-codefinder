@@ -19,4 +19,18 @@
     <region start="0x000F0000" end="0x000F0FFF" type="ram" name="video_ram"/>
     <region start="0x000F8000" end="0x000F9FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="serial" name="z80sio"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Victor 9000 / ACT Sirius 1 emulation
+TODO:
+- contrast
+- expansion bus:
+Z80 card
+RAM cards
+clock cards -->
 </platform>

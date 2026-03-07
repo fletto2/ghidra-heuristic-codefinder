@@ -10,4 +10,24 @@
     <region start="0x0000AB80" end="0x0000ABFF" type="ram" name="spriteattram"/>
     <region start="0x0000B000" end="0x0000B7FF" type="rom" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Great Swordsman (Taito) 1984
+Joshi Volleyball (Taito) 1983
+TODO:
+-joshi volleyball
+-The incomplete graphic
+-The implementation of DAC sound ?
+-MCU hookup is incomplete
+-The true interrupt circuit of SUB CPU
+-unknown ROM (BANK ROM of sub-CPU?)
+Credits:
+- Steve Ellenoff: Original emulation and MAME driver
+- Jarek Parchanski: Dip Switch Fixes, Color improvements, ADPCM Interface code
+- Tatsuyuki Satoh: sound improvements, NEC 8741 emulation, ADPCM improvements,
+josvollyvall 8741 emulation
+- Charlie... -->
 </platform>

@@ -6,4 +6,16 @@
     <region start="0x00002000" end="0x00007FFF" type="ram" name="videoram"/>
     <region start="0x00008000" end="0x00008000" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Skeleton driver for ITT Courier 1700 compact IBM 3278-compatible display terminal.
+Next to the CPU is a 40-pin DIP marked:
+AMI 8421MAF
+2651-P2
+C02805
+PHILIPPINES
+This device may be related to the Intel 8251, but it is definitely not a SCN2651 equivalent. -->
 </platform>

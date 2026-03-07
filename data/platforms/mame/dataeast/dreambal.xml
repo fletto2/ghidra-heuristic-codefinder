@@ -58,4 +58,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Dream Ball
+PCB DE-0386-2
+(also has DEC-22V0 like many Data East PCBS)
+Customs
+104 (I/O, Protection)
+59 (68000 CPU)
+141 (Tilemap GFX)
+71 (usually sprites? or mixer?)
+HD63B50P in I/O section (maybe hopper comms?)
+--
+todo:
+emulate hopper
+lamps? -->
 </platform>

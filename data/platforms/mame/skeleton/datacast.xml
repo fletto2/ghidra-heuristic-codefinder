@@ -12,4 +12,22 @@
     <region start="0x000C0300" end="0x000C0303" type="io" name="read"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Datacast Controller by Defence Products
+The PCB is named Datacast Controller, and the outer casing is customised
+for 'The Stock Exchange'. Maybe other ROM variants exist for this
+controller.
+Hardware:
+---------
+CPU:    80186
+RAM:    HM62256 x 8
+PCF8582
+Video:  SAA5240 + 2K RAM - Teletext Decoder
+SAA5250 + 2K RAM - Teletext Acquisition and Control
+SAA5231          - Teletext Video Processor
+Serial: D8251 x 2 - USART
+AY-5-8116 - Baud Rate Generator
+MC145406  - Driver/Receiver
+Ports:  Printer
+Modem... -->
 </platform>

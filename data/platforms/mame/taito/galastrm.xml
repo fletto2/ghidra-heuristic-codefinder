@@ -56,4 +56,33 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Galactic Storm
+(c)1992 Taito
+----------------------------------------------------------
+MAIN PCB
+CPU:MC68EC020RP25
+TC0480SCP
+TC0100SCN
+TC0510NIO
+TC0580PIV x2
+TC0110PCR
+TC0470LIN x2
+TC0570SPC
+TC0610
+ADC0809CCN
+OSC1:32MHz
+OSC2:20MHz
+----------------------------------------------------------
+SOUND BOARD
+CPU:MC68000P12F,MC68681P
+ENSONIQ 5701,5510,5505
+OSC1:16MHz
+OSC2:30.47618MHz
+----------------------------------------------------------
+based on driver from taito/gunbustr.cpp by Bryan McPhail &amp; ... -->
 </platform>

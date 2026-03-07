@@ -6,4 +6,21 @@
     <region start="0x00006000" end="0x000063FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="speech_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity electronic card games
+- Bridge Challenger (BRC)
+- Advanced Bridge Challenger (UBC/UB2)
+- Voice Bridge Challenger (VBRC/BV2)
+- Bridge Challenger III (BV3)
+- Gin &amp; Cribbage Challenger (GIN)
+- *Skat Challenger (SKT)
+: not dumped yet
+Card Challenger (model CDC) was announced but not released, it was supposed to be
+a card games console, with games on separate cartridges. Maybe some of the games
+were already finished, and used later for GIN and SKT.
+NOTE: The card scanner is simulated, bu... -->
 </platform>

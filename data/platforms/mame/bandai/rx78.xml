@@ -7,4 +7,21 @@
     <region start="0x00006000" end="0x0000EBFF" type="ram" name="ram"/>
     <region start="0x0000EC00" end="0x0000FFFF" type="io" name="vram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Gundam RX-78 (c) 1983 Bandai
+TODO:
+- implement printer;
+- Implement 2nd cart slot
+- Keyboard works in all scenarios, but it is a guess.
+- RAM handling can't be right: PCB has 30KB shared RAM (manual also says this in the technical specs),
+but MAME allocates much more
+- Find out what port F3 does - read and write - used by many games
+- Find out what ports 23 and EF do - used by rengo
+Notes:
+- BS-BASIC v1.0 notes:
+-- COLOR x doesn't do anything. It sets a memory location with x, but does nothing w... -->
 </platform>

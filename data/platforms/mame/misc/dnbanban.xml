@@ -6,4 +6,28 @@
     <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x00008000" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- ドラネコバンバン - Dora Neco BanBan
+(as transliterated on the cab)
+Medal game by Kato Seisakusho
+whack-a-mole style
+Driver by Roberto Fresca &amp; Grull Osgo.
+Main components:
+Sharp LH0080B Z80B-CPU
+12.000 MHz XTAL
+HM6116LP-3 Static RAM
+2x NEC D71055C
+OKI M6295GS
+4-DIP switches bank
+Some videos about the machine...
+https://www.youtube.com/watch?v=NwB9iffssts
+https://www.youtube.com/watch?v=zRxTYqj9On4
+https://www.youtube.com/watch?v=dGlkhfn2Nbw
+https://www.youtube.com/watch?v=zRxTYqj9On4
+https://www.you... -->
 </platform>

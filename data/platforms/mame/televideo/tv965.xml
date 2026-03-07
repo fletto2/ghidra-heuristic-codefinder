@@ -5,4 +5,7 @@
     <region start="0x00000000" end="0x0000FFFF" type="rom" name="rom"/>
     <region start="0x00020000" end="0x00027FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Skeleton driver for TeleVideo 965 video display terminal.
+TeleVideo 9320 appears to run on similar hardware with a 2681 DUART replacing the ACIAs. -->
 </platform>

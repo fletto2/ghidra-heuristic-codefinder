@@ -66,4 +66,35 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Boogie Wings (aka The Great Ragtime Show)
+Data East, 1992
+PCB No: DE-0379-1
+CPU: DE102
+Sound: HuC6280A, YM2151, YM3012, OKI M6295 (x2)
+OSC: 32.220MHz, 28.000MHz
+DIPs: 8 position (x2)
+PALs: (not dumped) VF-00 (PAL16L8)
+VF-01 (PAL16L8)
+VF-02 (22CV10P)
+VF-03 (PAL16L8)
+VF-04 (PAL16L8)
+VF-05 (PAL16L8)
+PROM: MB7122 (compatible to 82S137, located near MBD-09)
+RAM: 62256 (x2), 6264 (x5)
+Data East Chips:   52 (x2)
+141 (x2)
+102
+104
+113
+99
+71 (x2)
+200
+ROMs:
+kn00-2.2b   27c2001   \
+kn01-2.4b   27c2001    | ... -->
 </platform>

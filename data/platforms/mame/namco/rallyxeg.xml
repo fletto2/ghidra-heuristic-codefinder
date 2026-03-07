@@ -15,4 +15,19 @@
     <region start="0x0000A170" end="0x0000A170" type="unmapped" name="nop_write"/>
     <region start="0x0000A180" end="0x0000A187" type="io" name="d0"/>
   </memory_map>
+
+  <!-- Rally X      (c) 1980 Namco
+New Rally X  (c) 1981 Namco
+and also
+Jungler      (c) 1981 Konami
+Tactician    (c) 1981 Konami
+Loco-Motion  (c) 1982 Konami
+Commando     (c) 1983 Sega
+driver by Nicola Salmoria
+There doesn't seem to be much doubt that Konami copied the video hardware of
+Rally X.
+The boards are surely very different; Rally X has video and sound split on the
+two boards, while the Konami version has all video in one board and all sound
+in the other.
+Rally X uses a single Z80 and Namco so... -->
 </platform>

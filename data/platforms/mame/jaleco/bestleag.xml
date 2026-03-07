@@ -55,4 +55,11 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Best League (c) 1993
+A Big Striker Italian bootleg (made by Playmark?) running on a different hardware. -->
 </platform>

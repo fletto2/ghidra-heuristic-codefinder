@@ -5,4 +5,20 @@
     <region start="0x00004000" end="0x000047FF" type="io" name="left_r"/>
     <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- This hardware seems to be an evolution of the one found in lucky74.cpp. Its main components are:
+A001 CPU block, containing probably a Z80 or compatible CPU and ROM(s) (not dumped).
+Dumper description after opening it: 3 unknown/white chips, which had no pins, with no markings.
+HD647180X0P6 MCU with internal ROM (decapped and dumped but for lucky25)
+1 32.000 MHz and 1 21.000 MHz XTALs
+1 OKI M6295V with 1.056 MHz resonator
+1 custom 06B30P
+1 custom 101B10P
+6 8-dip banks
+1 MB8421-12L
+Exact markings... -->
 </platform>

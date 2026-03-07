@@ -51,4 +51,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Bionic Commando
+© 1987 Capcom
+Hardware:
+Main CPU board: 86612-A-2
+Graphics ROM board: 86612-B-2
+Program ROM board: 86612-C-2
+Main CPU: 68000CP10        @ 24MHz / 2 = 12MHz
+Sound CPU: Z80A             @ 14.31818 / 4 = 3.579545MHz
+MCU: Intel C8751H-88  @ 24MHz / 4 = 6MHz
+Sound Chip: YM2151 &amp; YM3012
+OSC: 24.000 MHz (on the 86612-B-2 PCB)
+Custom: CAPCOM DL-010D-103 (on the 86612-B-2 PCB)
+Video timings:
+Horizontal scan rate: 15.606kHz
+Vertical scan rate: 60.024Hz
+pixel clock:         6.000MHz, 16... -->
 </platform>

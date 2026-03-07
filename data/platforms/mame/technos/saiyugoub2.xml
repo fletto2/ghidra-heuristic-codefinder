@@ -14,4 +14,21 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- China Gate.
+By Paul Hampson from First Principles
+(IE: ROMs + a description of their contents and a list of CPUs on board.)
+Based on ddragon.c:
+"Double Dragon, Double Dragon (bootleg) &amp; Double Dragon II"
+"By Carlos A. Lozano &amp; Rob Rosenbrock et. al."
+NOTES:
+A couple of things unaccounted for:
+No backgrounds ROMs from the original board...
+- TOSHIBA TRJ-100 installed at the second board should contain the image
+as U.S. Championship V'Ball has a TRJ-101 that contains it. It also contains
+r... -->
 </platform>

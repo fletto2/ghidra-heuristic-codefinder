@@ -50,4 +50,29 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="8250"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- HP 9816
+1982
+MESS driver by friol (dantonag (at) gmail.com)
+System reference mainly from O.De Smet
+Driver started on 10/01/2012
+===
+Memory map:
+000000-00ffff - system rom
+428000-428fff - keyboard 8042 host status / data ports (8042 undumped)
+510000-51ffff - videoram
+530000-53ffff - graphic memory
+5f0000-5f3fff - system PROM
+xxxxxx-ffffff - system RAM
+===
+- 0x408: startup code, 68000 registers test
+- 0x1002: bootrom test
+- 0x1d18: PROM test
+- 0x103C: prints "bootrom failed"
+- 0x1150: other boot t... -->
 </platform>

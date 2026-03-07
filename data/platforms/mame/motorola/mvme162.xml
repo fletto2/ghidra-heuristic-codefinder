@@ -9,4 +9,19 @@
     <region start="0xFFF45000" end="0xFFF457FF" type="io" name="ab_dc_r"/>
     <region start="0xFFFC0000" end="0xFFFC7FFF" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Motorola MVME series of CPU boards: MVME-162
+16/05/2016, rebased 2019
+||
+||    ||  MVME-162
+||||--||_____________________________________________________________
+||||--||                                                             |
+||    ||                                                           _ |__
+C|                                                          | |   |
+||                                                          | |   |
+C|                                                        ... -->
 </platform>

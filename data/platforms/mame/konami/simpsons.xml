@@ -15,4 +15,24 @@
     <region start="0x00004000" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- The Simpsons (c) 1991 Konami Co. Ltd
+Preliminary driver by:
+Ernesto Corvi
+someone@secureshell.com
+The Simpsons
+Konami 1991
+PCB Layout
+----------
+GX072 PWB352346B
+|--------------------------------------------------------|
+| MB3722   072D04.1D  072D05.1F           8464           |
+|VOL VOL   YM2151   |------|            |------|072B08.3N|
+|          YM3012   |053260| 3.579545MHz|053246|         |
+|CN3                |      |            |      |         |
+|                   |------|            |  ... -->
 </platform>

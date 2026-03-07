@@ -54,4 +54,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Driver for Gaelco 3D games
+driver by Aaron Giles
+Games supported:
+Speed Up
+Surf Planet
+Radikal Bikers
+Football Power
+Known bugs:
+EEPROM interface not right
+PCB Layout -- Radikal Bikers
+----------
+Top board
+REF. 980311
+|----------------------------------------------------------------|
+|  RAB.6  RAB.14                          PAL            RAB.48* |
+|     RAB.12  RAB.19                                             |
+|                         RAB.23*   ADSP-2115  16MHz     RAB.45* |
+|             ... -->
 </platform>

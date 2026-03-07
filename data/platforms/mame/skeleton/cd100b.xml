@@ -6,4 +6,13 @@
     <region start="0x00004000" end="0x00004000" type="io" name="mech_latch_w"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+  </devices>
+
+  <!-- Skeleton driver for Rowe CD-100 jukebox series.
+Communication between the Central Control Computer and the Mech
+Controller is handled through an unemulated serial link (Z180 emulation
+improvements are needed to handle this). -->
 </platform>

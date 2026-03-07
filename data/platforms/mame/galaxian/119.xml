@@ -9,4 +9,19 @@
     <region start="0x0000B000" end="0x0000B003" type="io" name="tilebanks_flipscreen_w"/>
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Coreland / Sega 119 (C) 1986, limited release
+Main PCB:
+- 18.432MHz XTAL, NEC D780-C
+- 4*2764 ROM (program data), 3*2764 ROM (gfx data), 2*6331-1N (PROM)
+- 3*TC5517AP (2Kx8), 2*NMC2148 (1Kx4)
+- unpopulated Alpha Denshi 8302 protection MCU with support chips
+- 2*8-pos DSW
+Sound PCB:
+- 8MHz XTAL, NEC D780-C
+- AY-3-8910, DAC0808LCN MC1408P8
+- 2*2764 ROM, HM6116LP-4 (2Kx8)
+- 8-pos DSW (why?)
+Dumped from a bootleg PCB (no Sega labels anywhere), although it's possible that
+the ROMs were unmodified. Th... -->
 </platform>

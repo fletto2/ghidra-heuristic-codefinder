@@ -5,4 +5,23 @@
     <region start="0x00C00000" end="0x00C0000B" type="io" name="gunbird_input_r"/>
     <region start="0x00C00013" end="0x00C00013" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Psikyo Games =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU:    68EC020 + PIC16C57 [Optional MCU]
+Sound:  Z80A                +   YM2610
+Or:  LZ8420M (Z80 core)  +   YMF286-K (YM2610 compatible)
+Chips:  PS2001B
+PS3103
+PS3204
+PS3305
+---------------------------------------------------------------------------
+Name                    Year    Board          Notes
+---------------------------------------------------------------------------
+Sengoku Ace         (J) 1993    SH201B
+Gun Bird            (J)... -->
 </platform>

@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x0000EFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Project PROCONN (and PC92/PC98) Fruit Machine hardware
+skeleton driver!
+what's the difference between the platforms, sound hardware?
+Some early Proconn hardware was used for Maygay stuff, so this may be a bit of a mix.
+Error codes:
+ERROR 1   EPROM FAILED
+ERROR 3   RAM CORRUPTION DETECTED (common on PC90 boards)
+ERROR 10  RAM FAILURE
+ERROR 20  METERS DISCONNECTED
+ERROR 21  CASH IN METER FAIL
+ERROR 22  CASH OUT METER FAIL
+ERROR 25  REFILL METER FAIL
+ERROR 30  REEL 1 FAIL
+ERROR 31  REEL 2 FAIL
+ERRO... -->
 </platform>

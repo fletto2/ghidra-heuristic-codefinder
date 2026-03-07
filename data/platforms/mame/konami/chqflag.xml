@@ -12,4 +12,15 @@
     <region start="0x0000E000" end="0x0000E000" type="io" name="read"/>
     <region start="0x0000F000" end="0x0000F000" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <!-- Chequered Flag / Checkered Flag (GX717) (c) Konami 1988
+Main board: PWB(C)350761A
+IO board:   PWB(C)450871A
+TODO:
+- 007232 volume &amp; panning control is almost certainly wrong;
+- needs proper shadow/highlight factor values for sprites and tilemap;
+- compared to references, emulation is a bit slower (around 2/3 seconds
+behind on a full lap of stage 2);
+- hsync was measured 15.13 / 15.19khz but seems suspicious, it would mean
+vtotal=256, htotal=396? -->
 </platform>

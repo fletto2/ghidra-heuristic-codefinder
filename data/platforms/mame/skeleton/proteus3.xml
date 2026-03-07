@@ -7,4 +7,24 @@
     <region start="0x00008010" end="0x00008011" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Proteus III computer.
+2015-10-02 Skeleton [Robbbert]
+Chips:
+6800 @ 894kHz
+6850 (TTY keyboard interface)
+6850 (Cassette interface)
+6820 (PIA for Keyboard and video
+6844 DMA
+MC14411 baud rate generator
+CRT96364 CRTC @1008kHz
+There's an undumped 74S287 prom (M24) in the video section.
+It converts ascii control codes into the crtc control codes
+Schematic has lots of errors and omissions.
+Like many systems of the time, the cassette is grossly over-complicated,
+using 12 chips for a standard Kansas-cit... -->
 </platform>

@@ -10,4 +10,22 @@
     <region start="0x0000E800" end="0x0000E800" type="ram" name="writeonly"/>
     <region start="0x0000F000" end="0x0000F7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- King of Boxer - (c) 1985 Woodplace Inc.
+Ring King     - (c) 1985 Data East USA Inc. / Woodplace Inc.
+Driver by:
+Ernesto Corvi
+ernesto@imagina.com
+Notes:
+-----
+Main CPU:
+- There's a memory area from 0xf000 to 0xf7ff, which is clearly
+initialized at startup and never used anymore.
+TODO: PCBs (at least for the originals) only have one 18 MHz XTAL.
+Derive from that. -->
 </platform>

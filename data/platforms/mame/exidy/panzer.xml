@@ -21,4 +21,30 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Exidy 6502 hardware
+Games supported:
+Side Trak
+Targ
+Spectar
+Mouse Trap
+Venture
+Teeter Torture (prototype)
+Pepper 2
+Hard Hat
+Fax and Fax 2
+TODO:
+check whether games besides Venture have coin counter outputs
+Known bugs:
+none at this time
+'Universal' Game Board V2 (xxL logic, xxA audio)
+Name                 Year  CPU    board/rom numbers
+Side Trak            1979  6502   STL, STA
+Targ                 1980  6502   HRL, HRA
+Spectar              1980  6502   SPL, SPA
+Mouse Trap           1981  6502   ... -->
 </platform>

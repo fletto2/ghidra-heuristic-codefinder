@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00001000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- If you want to "own" this, go ahead, it's yours.
+Olympia Olytext 20 Screen-Typing System
+Made in Germany
+Major Chips: Z80A, Z80PIO x2, Z80SCC, WD1772, National Semiconductor NS405-B18N
+Crystals: 16.000, 18.000
+Piezo-Beeper
+RAM: 128k dynamic (16x 4164), 8k static (4x MB8128-10)
+Keyboard: 3870 with 4.000 crystal, 3 dipswitches
+The NS405 is a Terminal Management Processor which provides complete video functionality.
+It is modelled on the 8048, and requires an external rom. All other functions (cpu,... -->
 </platform>

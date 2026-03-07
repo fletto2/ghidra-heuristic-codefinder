@@ -6,4 +6,12 @@
     <region start="0x00600000" end="0x00600007" type="io" name="ba_cd_r"/>
     <region start="0x00800000" end="0x00800003" type="io" name="read16"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Callan PM68K Unix mainframe.
+2013-09-04 Skeleton driver
+Status: Boots into monitor, some commands work, some freeze. -->
 </platform>

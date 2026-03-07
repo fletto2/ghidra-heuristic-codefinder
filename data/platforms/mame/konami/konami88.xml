@@ -15,4 +15,6 @@
     <region start="0x00005FC0" end="0x00005FCF" type="io" name="ctrl_w"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- 88 Games (c) 1988 Konami -->
 </platform>

@@ -47,4 +47,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity Designer Display series, 6502 and 68000
+(6502-based displayless Designer is the same as Par Excellence, see excel.cpp)
+================================================================================
+Designer 2100 Display (model 6106) overview:
+- PCB label: 510.1130A01
+- WDC W65C02P-6 CPU, 6MHz XTAL
+- 8KB RAM(MS6264L-10), 2*32KB ROM(27C256)
+- 4-digit LCD panel
+Designer 2000 Display (model 6105): same hardware, no bookrom, 3MHz
+============================================================... -->
 </platform>

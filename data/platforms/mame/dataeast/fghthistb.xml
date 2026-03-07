@@ -26,4 +26,19 @@
     <region start="0x00200000" end="0x00207FFF" type="io" name="prot32ram"/>
     <region start="0x00208800" end="0x00208803" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <!-- Data East 32 bit ARM based games:
+Captain America
+Dragon Gun
+Fighter's History
+Locked 'n Loaded
+Night Slashers
+Tattoo Assassins
+Emulation by Bryan McPhail, mish@tendril.co.uk.  Thank you to Tim,
+Avedis and Stiletto for many things including work on Fighter's
+History protection and tracking down Tattoo Assassins!
+Captain America &amp; Fighter's History - reset with both start buttons
+held down for test mode.  Reset with player 1 start held in Fighter's
+History for 'Pattern Editor'.
+For version in... -->
 </platform>

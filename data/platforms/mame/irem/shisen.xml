@@ -7,4 +7,16 @@
     <region start="0x0000C800" end="0x0000CAFF" type="ram" name="ram"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Tamtex Shisensho / Match It
+driver by Nicola Salmoria
+IREM M80-A-A PCB
++-----------------------------------------------------+
+|  VR1 MB3730A  D780C-1    PAL16L8.IC37               |
+|          ML324N          24.000MHz                  |
+|              SIS_A-22-.IC22             C2H.IC50    |
+|       Y3014B                KNA91H014   C2L.IC51    |
+|J     YM2151  TMM2063AP-70               C0H.IC52*   |
+|A                         PAL16L8.IC30   C0L.IC53    |
+|M    SD.IC14                        ... -->
 </platform>

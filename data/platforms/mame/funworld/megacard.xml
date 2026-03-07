@@ -20,4 +20,15 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Fun World / Amatic / TAB / Impera
+Series 7000 hardware.
+65C02/65SC02 + 2x 6821 PIAs + 6845 CRTC + AY-3-8910.
+From raw, to different ways of encryption. Even through custom CPUs.
+Also from CMC, Dino4 (encrypted), and Leopard 4.
+Driver by Roberto Fresca.
+Based on a preliminary work of Curt Coder &amp; Peter Trauner.
+Games running on this hardware:
+Jolly Card (German, set 1),                                    TAB Austria,          1985.
+Jolly Card (German, set 2),                                  ... -->
 </platform>

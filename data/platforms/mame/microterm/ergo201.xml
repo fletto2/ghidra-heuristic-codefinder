@@ -13,4 +13,17 @@
     <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Skeleton driver for Micro-Term ERGO 201 terminal.
+The ERGO 201 belongs to one half of a paired series of terminals. Half
+of these terminals emulate the VT100 and support a 132 column mode; the
+other half emulate the VT52, ADM3A and ACT-5A instead but do appear to
+have been influenced by the VT100 in overall design.
+The first members of this series, the MIME 340 (non-VT100 emulation)
+and MIME 740 (VT100 emulation), were single units with non-detachable
+keyboards like Micro-Term's older ACT and MI... -->
 </platform>

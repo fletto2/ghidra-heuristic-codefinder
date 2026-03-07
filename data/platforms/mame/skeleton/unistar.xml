@@ -4,4 +4,12 @@
     <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000097FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Callan Unistar Terminal
+2009-12-09 Skeleton driver.
+Chips used: i8275, AM9513, AM8085A-2, i8237, i8255, 2x 2651. XTAL 20MHz -->
 </platform>

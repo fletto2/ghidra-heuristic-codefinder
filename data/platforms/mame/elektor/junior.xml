@@ -6,4 +6,23 @@
     <region start="0x00001A00" end="0x00001A9F" type="io" name="ram_map"/>
     <region start="0x00001C00" end="0x00001FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Elektor Junior
+2009-07-17 Skeleton driver.
+This is heavily based on the KIM-1, the keycodes and operation being
+identical.
+Pasting:
+0-F : as is
++ (inc) : ^
+AD : -
+DA : =
+GO : X
+(note: DA only works when addressing RAM)
+Test Paste:
+=11^22^33^44^55^66^77^88^99^-0000
+Now press up-arrow to confirm the data has been entered.
+NMI and IRQ:
+- When NMI is activated, it jumps to the vector located at 1A7A.
+- When IRQ is activated, it jumps to the vector located at 1A7E.
+- The user needs to populate these ... -->
 </platform>

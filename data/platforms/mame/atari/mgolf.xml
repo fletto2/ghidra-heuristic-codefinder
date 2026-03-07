@@ -17,4 +17,6 @@
     <region start="0x00000800" end="0x00000BFF" type="ram" name="video_ram"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Mini Golf (prototype) driver -->
 </platform>

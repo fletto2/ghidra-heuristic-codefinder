@@ -5,4 +5,16 @@
     <region start="0x00900001" end="0x00900001" type="io" name="read"/>
     <region start="0x00C00001" end="0x00C00001" type="io" name="jumbogod_leds_w"/>
   </memory_map>
+
+  <!-- -= Cave Hardware =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU    :  MC68000
+Sound CPU    :  Z80 [Optional]
+Sound Chips  :  YMZ280B or
+OKIM6295 x (1|2) + YM2203 / YM2151 [Optional]
+Other        :  93C46 EEPROM
+-----------------------------------------------------------------------------------------
+Year + Game               License       PCB         Tilemaps        Sprites         Other
+-----------------------------------------------------------------------------------------
+94 Mazinger Z  ... -->
 </platform>

@@ -9,4 +9,21 @@
     <region start="0x00009000" end="0x000097FF" type="rom" name="rom"/>
     <region start="0x0000D800" end="0x0000DFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Emma and Emma II by L.J.Technical Systems
+These were produced by L.J.Electronics Ltd, Norwich in 1979.
+2018-09-20 Working driver.
+We don't have roms for the Emma, so only the Emma II is emulated.
+Keys:
+0-9,A-F: hex input
+M      : memory mode (modify address, or modify data)
+G      : go
+R      : single step (not emulated)
+P      : insert a forced break
+S      : save to cassette
+L      : load from cassette
++      : up (use UP-arrow key)
+-      : down (use DOWN-arrow key)
+Pasting example:
+M0020M01^... -->
 </platform>

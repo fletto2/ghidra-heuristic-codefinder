@@ -30,4 +30,20 @@
     <region start="0x2C000100" end="0x2C000103" type="io" name="port"/>
     <region start="0x2E000000" end="0x2EFFFFFF" type="io" name="iop_bus_error_r"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="disk" name="upd765"/>
+    <device type="net" name="am7990"/>
+    <device type="rtc" name="msm6242"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Sony NEWS NWS-38xx workstations
+The NWS-3800 series was the last model of NEWS workstation to use the original NWS-8xx/9xx architecture of
+having a CPU running NEWS-OS (handling the processing of user code) and a CPU running a separate OS (iopboot/rtx/mrx)
+to handle system I/O. Unlike the 8xx/9xx and 18xx/19xx, the NWS-3800 is a mixed architecture system. It uses a MIPS
+R3000 CPU for NEWS-OS and user programs, and a 68030 running rtx (NEWS-OS 3) or mrx (NEWS-OS 4) as the IOP.
+The motherboard des... -->
 </platform>

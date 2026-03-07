@@ -7,4 +7,24 @@
     <region start="0x0000C000" end="0x0000CFFF" type="io" name="spriteram_r"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Air Buster
+(C) 1990  Kaneko
+driver by Luca Elia (l.elia@tin.it)
+CPU   : Z-80 x 3
+SOUND : YM2203C     M6295
+OSC.  : 12.000MHz   16.000MHz
+Interesting routines (main CPU)
+-------------------------------
+fd-fe   address of int: 0x38    (must alternate? see e600/1)
+ff-100  address of int: 0x16
+66      print "sub CPU caused nmi" and die!
+7       after tests
+1497    print string following call: (char)*,0. program continues after 0.
+base addr = c300 + HL &amp; 08ff, DE=xy , BC=dxdy
++0&lt;-(e61b)  +100&... -->
 </platform>

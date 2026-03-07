@@ -563,11 +563,10 @@ public class PlatformDetector {
 				{0x75, 0x4E}, // placeholder
 			};
 		} else if (processor.contains("MIPS")) {
-			// MIPS: 32-bit instructions
-			// JR RA = 0x03E00008
+			// MIPS: 32-bit fixed-width instructions — use 32-bit scan only
 			check32bit = true;
-			nativeOpcodes = new int[][] {{0x00, 0x00}}; // placeholder
-			swappedOpcodes = new int[][] {{0x00, 0x00}};
+			nativeOpcodes = new int[0][];  // skip 16-bit scan
+			swappedOpcodes = new int[0][];
 		} else if (processor.contains("6809") || processor.contains("6309") || processor.contains("HD6309") ||
 				   processor.contains("6800") || processor.contains("6801") || processor.contains("6803") ||
 				   processor.contains("68HC") || processor.contains("6805")) {
@@ -735,8 +734,10 @@ public class PlatformDetector {
 						if (rev == pat) swap32Hits++;
 					}
 
-					// 16-bit pair swap
-					long ps = ((word & 0xFFFF) << 16) | ((word >> 16) & 0xFFFF);
+					// 16-bit byte swap (swap bytes within each 16-bit half)
+					// This is the most common ROM byte-swap: 16-bit EPROM with swapped data lines
+					long ps = (((word >> 16) & 0xFF) << 24) | (((word >> 24) & 0xFF) << 16) |
+							  ((word & 0xFF) << 8) | ((word >> 8) & 0xFF);
 					for (long pat : patterns32) {
 						if (ps == pat) swap16in32Hits++;
 					}
@@ -990,6 +991,15 @@ public class PlatformDetector {
 			}
 		}
 
+		// --- MIPS ROM base heuristic ---
+		// MIPS reset vector is at physical 0x1FC00000 (kseg1: 0xBFC00000).
+		// All MIPS systems map boot ROM there — this is universal across SGI, Sony,
+		// NEC, DEC, Nintendo, Namco, Tektronix. No need to validate first instruction.
+		if (processor.contains("MIPS") && currentBase == 0 && romSize >= 256) {
+			return new BaseAddressResult(0x1FC00000L, romSize, 1, 1, 0.95,
+				"MIPS ROM: universal boot ROM base at 0x1FC00000");
+		}
+
 		if (targets.isEmpty()) {
 			return new BaseAddressResult(currentBase, romSize, 0, 0, 0,
 				"No absolute address references found");
@@ -1114,6 +1124,10 @@ public class PlatformDetector {
 		} else if (processor.contains("WE32100") || processor.contains("WE32")) {
 			// WE32100: ROM always at $00000000 (reset reads PCBP from $80)
 			return new long[]{ 0x00000000L };
+		} else if (processor.contains("MIPS")) {
+			// MIPS: ROM at 0x1FC00000 (kseg1 reset vector, universal across SGI/Sony/NEC/DEC/Nintendo)
+			// 0x9FC00000 = kseg0 cached mirror, 0xBFC00000 = kseg1 uncached (physical 0x1FC00000)
+			return new long[]{ 0x1FC00000L, 0xBFC00000L, 0x9FC00000L };
 		} else if (processor.contains("x86") || processor.contains("8086") ||
 				   processor.contains("8088") || processor.contains("80186") ||
 				   processor.contains("80286") || processor.contains("80386")) {

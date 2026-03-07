@@ -12,4 +12,18 @@
     <region start="0x0000C400" end="0x0000C7FF" type="ram" name="spriteram"/>
     <region start="0x0000D000" end="0x0000EFFF" type="ram" name="m62_tileram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Kung-Fu Master / Spartan X (Tecfri bootleg)
+single PCB with 2x Z80
+similar looking to the '1942p' and 'spyhuntpr' PCBs
+P2 inputs don't work in 'cocktail' mode (maybe it's just unsupported on this PCB?)
+DIPS etc. are near the 2nd CPU, should it be reading them?
+visible area is 16 lines less than the original, otherwise you get bad sprites
+but I think this is probably correct.
+some sprites are a bit glitchy when entering playfield (see title screen)
+probably an original bug? -->
 </platform>

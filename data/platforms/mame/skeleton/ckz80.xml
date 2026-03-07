@@ -4,4 +4,23 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- CKZ-80
+2010-08-30 Skeleton driver
+2010-11-27 Connected to a terminal
+2014-01-08 Added devices
+Only known info: http://forumcpm.gaby.de/oldboard/showtopic0adb.html?threadid=280
+On main board there are Z80A CPU, Z80A PIO, Z80A DART and Z80A CTC
+there is 8K ROM and XTAL 16MHz
+Two undumped proms, AM27S20DC and D3631-1.
+FDC board contains Z80A DMA and NEC 765A (XTAL on it is 8MHZ)
+Mega board contains 74LS612 and memory chips (32x 41256)
+Status:
+It prints 2 lines of text, then waits for a floppy.
+ToDo... -->
 </platform>

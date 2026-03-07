@@ -6,4 +6,13 @@
     <region start="0x00002000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- MC-80.20 driver by Miodrag Milanovic
+2009-05-12 Skeleton driver.
+2009-05-15 Initial implementation
+2011-09-01 Modernised, added a keyboard
+ToDo:
+- Find out if it has sound hardware, add if so
+- What port B on PIO is for
+- Find out the correct frequencies and connections for the CTC -->
 </platform>

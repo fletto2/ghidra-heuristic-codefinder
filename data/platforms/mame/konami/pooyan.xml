@@ -13,4 +13,9 @@
     <region start="0x0000A100" end="0x0000A100" type="io" name="sound_data_w"/>
     <region start="0x0000A180" end="0x0000A187" type="io" name="d0"/>
   </memory_map>
+
+  <!-- Pooyan
+GX320
+Original driver by Allard van der Bas
+This hardware is very similar to Time Pilot. -->
 </platform>

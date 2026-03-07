@@ -11,4 +11,19 @@
     <region start="0x0000E000" end="0x0000E000" type="io" name="tmnt_upd_start_w"/>
     <region start="0x0000F000" end="0x0000F000" type="io" name="tmnt_upd_busy_r"/>
   </memory_map>
+
+  <!-- Cue Brick (c) Konami 1989
+Missing In Action (c) Konami 1989
+Teenage Mutant Ninja Turtles (c) Konami 1989
+driver by Nicola Salmoria
+Teenage Mutant Ninja Turtles, Konami, 1989
+Hardware info by Guru
+PCB Layout
+----------
+GX963
+PWB351853A
+|------------------------------------------------------------------|
+|  MB3731         963A25.D5                 963A17.H4    963A15.K4 |
+|     VOL                                                          |
+|                                           963A18.H6    9... -->
 </platform>

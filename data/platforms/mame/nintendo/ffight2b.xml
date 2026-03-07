@@ -49,4 +49,24 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Arcade games (hacks of console games) running on SNES hardware.
+Driver (based on nss.cpp) by Tomasz Slanina
+Supported games:
+- Fatal Fury Special
+- Final Fight 2
+- Final Fight 3
+- Ghost Chaser Densei (2 sets)
+- Gundam Wing: Endless Duel (2 sets)
+- Iron (bootleg of Iron Commando)
+- Killer Instinct
+- Legend
+- Pirates of Dark Water
+- Rushing Beat Shura
+- Sonic Blast Man II Special Turbo
+- Teenage Mutant Ninja Turtles - Mutant Warriors
+- Venom &amp; Spider-Man - Separation Anxiety
+- Wild Guns
+TODO:
+... -->
 </platform>

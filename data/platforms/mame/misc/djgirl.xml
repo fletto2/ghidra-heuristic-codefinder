@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <!-- Disco Boy
+Similar to mitchell.cpp / egghunt.cpp .. clearly derived from that hardware
+TODO:
+- move sound HW into proper file (it's 99% IDENTICAL to yunsung8.cpp)
+- ADPCM has sound volume issues, it's either too loud or too quiet;
+PCB Layout
+----------
+SOFT ART CO. 1993 NO - 1021
+PROGRAM NO-93-01-14-0024
++------------------------------------------+
+| YM3014 YM3812 10MHz            5.u94     |
+|       6116                    6.u124     |
+|400kHz 1.u45                    7.u95     |
+| M5205 2.u28  ... -->
 </platform>

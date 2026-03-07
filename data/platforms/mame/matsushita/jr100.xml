@@ -9,4 +9,14 @@
     <region start="0x0000CC00" end="0x0000CFFF" type="io" name="map0xcc00_0xcfff___expansion_io"/>
     <region start="0x0000D000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- JR-100 National / Panasonic
+2010-08-23 Initial driver version
+CPU: User manual for JR100U states it is a MN1800 (==MC6802), but the photo
+shows it to be a Fujitsu MB8861H, which is a MC6800 with extra instructions.
+The manual also states the clock to be 890kHz but in fact it is 894kHz.
+MB14392 custom LSI generates the various clock signals for the computer.
+List of extra instructions:
+0x71 NIM And Immediate with memory    data &amp; M -&gt; M       Index, 8,3   71,data,index
+V is reset; if resul... -->
 </platform>

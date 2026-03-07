@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Xyonix *********************************************************************
+driver by David Haywood and Stephh
+Notes about the board:
+Ram is 2x 6264 (near Z80) and 1x 6264 near UM6845. Xtal is verified 16.000MHz,
+I can also see another special chip. PHILKO PK8801. Chip looks about the same as a
+TMS3615 (though I have no idea what the chip actually is). It's located next to the
+PROM, the 2x 256k ROMs, and the 1x 6264 RAM.
+Dip SW is 1 x 8-position
+On the PCB is an empty socket. Written next to th... -->
 </platform>

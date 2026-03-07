@@ -13,4 +13,18 @@
     <region start="0x0000A000" end="0x0000A000" type="io" name="control_a000_w"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Preliminary driver for Facit 4440 Twist terminal.
+The “Twist” sobriquet refers to the adjustable orientation of the
+monitor, whose normally black-on-white display has the dimensions of a
+sheet of A4 paper. It displays 24 lines of 80 characters in landscape
+mode and 72 lines of rather smaller characters in portrait mode.
+No user manual for this terminal has been found. The layout of the
+keyboard is also unclear, not to mention the serial protocol.
+Nonvolatile settings are configured through VT100... -->
 </platform>

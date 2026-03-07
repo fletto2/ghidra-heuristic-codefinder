@@ -8,4 +8,18 @@
     <region start="0x00001FC0" end="0x00001FFF" type="io" name="keyboard_r"/>
     <region start="0x00002000" end="0x00003FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- The LinnDrum is a digital drum machine. It stores and plays digital samples
+(recordings of acoustic drums), some of which are processed by analog filters or
+amplifiers.
+The firmware runs on a Z80. It controls the UI (reads buttons, drives displays
+and LEDs), synchronization with other devices, cassette I/O, and voice
+triggering.
+The LinnDrum has 10 voice cores, not including the "click" (metronome) and
+"beep" sounds. Many of the voices have variations (loudness, pitch, sample
+selection, decay ti... -->
 </platform>

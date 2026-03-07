@@ -31,4 +31,24 @@
     <region start="0xF0FC0000" end="0xF10BFFFF" type="rom" name="rom"/>
     <region start="0xF0FC4000" end="0xF0FC4007" type="io" name="map"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="disk" name="upd765"/>
+    <device type="net" name="am7990"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Sony NEWS M68K systems.
+Sources:
+- http://wiki.netbsd.org/ports/news68k/
+TODO:
+- mouse/keyboard
+- graphics/slots
+The Sony NEWS Portable Workstation NWS-1250 is a "laptop" (weight of more than 8 Kg) with a black-and-white LCD (1120×780),
+a keyboard, a 3.5″ floppy disk drive, a (SCSI) harddisk, and interfaces for mouse, audio (phones, line in, mic in), SCSI,
+Ethernet (AUI), serial (DB9), and parallel (proprietary).
+This is its main PCB layout:
+______________________________________________________... -->
 </platform>

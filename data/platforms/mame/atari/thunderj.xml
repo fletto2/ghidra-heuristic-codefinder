@@ -55,4 +55,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari ThunderJaws hardware
+driver by Aaron Giles
+Games supported:
+ThunderJaws (1990)
+Known bugs:
+none at this time
+Video controller interface woes:
+Sigh. CPU #1 reads the video controller register twice per frame, once at
+the beginning of interrupt and once near the end. It stores these values in a
+table starting at $163484. CPU #2 periodically looks at this table to make
+sure that it is getting interrupts at the appropriate times, and that the
+VBLANK bit is set appropriately. Unfortunately, due... -->
 </platform>

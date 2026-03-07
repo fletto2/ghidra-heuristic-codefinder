@@ -9,4 +9,23 @@
     <region start="0x00800000" end="0x008FFFFF" type="rom" name="rom"/>
     <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Dinamic / Inder arcade hardware
+- Mega Phoenix
+- Hammer Boy
+- YoYo Spell
+also known to exist on this hardware:
+- Nonamed 2 (ever finished? only code seen has 1991 date and is vastly incomplete)
+(versions exist for Amstrad CPC, MSX and Spectrum)
+- After The War
+trivia: Test mode graphics are the same as Little Robin(?!), TMS is very similar too,
+suggesting they share a common codebase.
+PIC16C54 info:
+- The PIC has 5 functions:
+Read dip switches (serially connected) [cmd 0x82 0x86]
+Read the two st... -->
 </platform>

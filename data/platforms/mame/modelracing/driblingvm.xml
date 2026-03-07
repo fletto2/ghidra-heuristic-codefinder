@@ -7,4 +7,23 @@
     <region start="0x00004000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000DFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Model Racing Dribbling hardware
+MEF00284 main board + MEF00277 'counter drive' board + CS283 player control
+driver by Aaron Giles
+Games supported:
+Dribbling
+TODO:
+Implement the 2 banks of 8 DIP switches which determine coinage for the 2 players
+Actual game duration doesn't match the time reported in the manual
+Memory map
+========================================================================
+CPU #1
+========================================================================
+tbd
+====================... -->
 </platform>

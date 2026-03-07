@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x0000CFFF" type="rom" name="rom"/>
     <region start="0x0000D000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Golden Star
+Cherry Master
+Lucky 8 Lines
+Amcoe CGA games
+Golden Star and Cherry Master seem to be almost the same thing, running on
+different hardware.  There are also various bootlegs / hacks, it isn't clear
+exactly what hardware each runs on, some appear to have no OKI for example.
+Driver by Mirko Buffoni.
+Additional Work: David Haywood &amp; Roberto Fresca.
+The vast majority of the sets in here are probably bootlegs and hacks
+hence the slightly different PCBs, ROM layouts, slightly hacked prog... -->
 </platform>

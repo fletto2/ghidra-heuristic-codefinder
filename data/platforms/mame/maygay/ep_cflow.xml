@@ -5,4 +5,16 @@
     <region start="0x00000000" end="0x0007FFFF" type="rom" name="rom"/>
     <region start="0x00FE0000" end="0x00FFFD0F" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Maygay EPOCH hardware
+'mechanical' fruit machine HW
+primary use 1997 - 2003
+HD6413002FN16 (H8-3002) CPU
+YMZ280B sound
+2x PICs for security
+the PIC marked 'Security' is apparently the RTC, and doesn't change
+the other is per game / manufacturer and provides data needed for booting?
+The majority of system tasks are handled by a custom ASIC which is capable of reading and writing
+directly from/to the main RAM.  This includes handling of the inputs, and lamps / LEDs
+---------------------------------... -->
 </platform>

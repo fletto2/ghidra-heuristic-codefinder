@@ -14,4 +14,12 @@
     <region start="0x0000F800" end="0x0000F805" type="io" name="port"/>
     <region start="0x0000FC00" end="0x0000FC07" type="io" name="d0"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Fighting Roller (c) 1983 Kaneko
+Issues:
+-sound effects missing -->
 </platform>

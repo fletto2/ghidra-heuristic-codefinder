@@ -7,4 +7,12 @@
     <region start="0x00006000" end="0x00006001" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E001" type="io" name="read"/>
   </memory_map>
+
+  <!-- The Sequential Circuits Six-Trak (aka Model 610) is a 6-voice, MIDI-enabled,
+digitally-controlled analog synthesizer.
+Each voice is built around a CEM3394, a single-oscillator "synth-on-a-chip".
+Control voltages (CVs) for each CEM3394 are generated independently, for a
+6-part multitimbrality. A single noise source can be mixed in every voice.
+Modulation sources (e.g. envelope generators) for the VCA and VCF are computed
+by the firmware and incorporated into the CVs. Because of this, the sample &... -->
 </platform>

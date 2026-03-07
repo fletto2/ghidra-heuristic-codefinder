@@ -9,4 +9,25 @@
     <region start="0x0000D000" end="0x0000DFFF" type="io" name="region_d000"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="sound" name="ym2151"/>
+  </devices>
+
+  <!-- PCB Layout
+----------
+ACE9412
+DM941204
+|------------------------------------------|
+|UPC1241 YM3012 YM2151       3.BIN         |
+|TL084 TL084 6116      30MHz 4.BIN         |
+|9.BIN    1.BIN                            |
+|M6295    Z80B(2)                          |
+|     4MHz                                 |
+|                                      6116|
+|J    6116                             6116|
+|A    6116                                 |
+|M                                         |
+|M         ... -->
 </platform>

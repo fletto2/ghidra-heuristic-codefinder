@@ -11,4 +11,23 @@
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- SMS Manufacturing Corp hardware
+Driver by Mariusz Wojcieszek
+Preliminary driver by Reip
+Schematics provided by Exodus
+Sure Shot board provided by ranger_lennier
+Notes by Lord Nightmare
+Notes/ToDo:
+- pit8254 is not accessed by z80 (and there is no interrupt service routine), so
+it is not fitted in the driver
+- video registers can be read (to read framebuffer contents), this is not emulated
+as software does not use this feature
+- I8088 clock may be incorrect
+- Video Blanking Zone input - probably ... -->
 </platform>

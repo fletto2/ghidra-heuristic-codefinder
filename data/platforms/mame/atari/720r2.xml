@@ -23,4 +23,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari System 2 hardware
+driver by Aaron Giles
+Games supported:
+Paperboy (1984) [3 sets]
+720 Degrees (1986) [6 sets]
+Super Sprint (1986) [7 sets]
+Championship Sprint (1986) [8 sets]
+APB - All Points Bulletin (1987) [9 sets]
+Known bugs:
+none at this time
+Memory map
+========================================================================
+MAIN CPU
+========================================================================
+0000-0FFF   R/W   xxxxxxxx xxxxxxxx   Program RAM
+1000-107F   R/W   xxxxxxxx xxxx... -->
 </platform>

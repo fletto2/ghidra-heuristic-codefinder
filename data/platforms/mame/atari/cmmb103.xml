@@ -17,4 +17,18 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Centipede / Millipede / Missile Command / Let's Go Bowling
+(c) 1980-2 / 2002 - Infogrames / CosmoDog
+Earlier revisions of this cabinet did not include the bowling game.
+Known to exist "CMM Rev 1.03" (without Let's Go Bowling)
+Let's Go Bowling is actually a completely new game by Cosmodog, not
+a port or prototype of an old Atari game.
+TODO:
+- flash ROM hookup;
+- finish video emulation;
+- trackball inputs;
+- sound;
+- NVRAM (flash ROM, as per NVRAM test at 0xC2A7);
+- IRQs are problematic.  Haven't ... -->
 </platform>

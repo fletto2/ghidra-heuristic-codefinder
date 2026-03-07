@@ -54,4 +54,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Volfied (c) 1989 Taito Corporation
+==================================
+Original driver from RAINE
+68000 (8MHz) + Z80 (4MHz) + YM-2203 (4MHz) + C-Chip
+VIDEO RAM: 12 * MB-81461 (256k VRAM)
+Customs:
+TC0070RGB   - Colour output
+PC050CM     - Colour output
+TC0030CMD   - Protection (labeled C04 23)
+PC060HA     - Audio
+PC090OJ     - Sprites
+OSC: 32MHz, 26.686MHz &amp; 20MHz
+TC0030CMD is a hybrid package ASIC containing NEC D78C11
+(with 4k internal ROM) + 8k EPROM + 8k DRAM + logic.
+Stephh's notes (based... -->
 </platform>

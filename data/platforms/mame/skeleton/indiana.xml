@@ -48,4 +48,8 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Indiana University 68030 board
+08/12/2009 Skeleton driver.
+01/20/2014 Added ISA bus and peripherals -->
 </platform>

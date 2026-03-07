@@ -12,4 +12,24 @@
     <region start="0x0000A000" end="0x0000A000" type="io" name="kbd_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Qume QVT-102/QVT-102A video terminal
+Hardware:
+- Motorola 6800 CPU
+- Hitachi HD46505SP (Motorola 6845-compatible) CRTC
+- Hitachi HD46850 (Motorola 6850-compatible) ACIA
+- M58725P-15 (6116-compatible) (2k x 8bit RAM)
+- Zilog Z8430 CTC
+- 16.6698MHz Crystal
+- 2x TC5514-APL + 3V battery, functioning as NVRAM
+Keyboard: D8748D, 6.000MHz Crystal, Beeper
+For the QVT102, the 'Setup' function is entered by typing F11. The 'left'
+and 'right' arrow keys then move between entries on a line, and the 'up'
+and ... -->
 </platform>

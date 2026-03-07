@@ -63,4 +63,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- konamigx.cpp - Konami System GX
+Driver by R. Belmont, Acho A. Tang, and Phil Stroffolino.
+ESC protection emulation by Olivier Galibert.
+Basic hardware consists of:
+- MC68EC020 main CPU at 24 MHz
+- MC68000 sound CPU with 2x K054539 PCM chips plus a TMS57002 DASP for effects
+Tilemaps are handled by the old familiar K054156 with a new partner K056832.
+This combination is mostly compatible with the 156/157 combo but now sports
+up to 8 bits per pixel as well as larger 128x64 tile planes.
+Sprites are ... -->
 </platform>

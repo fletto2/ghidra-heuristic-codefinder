@@ -7,4 +7,26 @@
     <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
     <region start="0x00009000" end="0x00009FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Midway Omega Race hardware
+driver by Bernd Wiebelt
+Games supported:
+Omega Race [3 sets]
+Delta Race (Omega Race bootleg by Allied Leisure)
+Known bugs:
+none at this time
+This driver is dedicated to my loving wife Natalia Wiebelt
+and my daughter Lara Anna Maria
+Summer 1997 Bernd Wiebelt
+Many thanks to Al Kossow for the original sources and the solid documentation.
+Without him, I could never had completed this driver.
+--------
+Omega Race Memory Map
+Version 1.1 (Jul 24,1997)
+---------------------
+000... -->
 </platform>

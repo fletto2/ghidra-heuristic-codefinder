@@ -54,4 +54,27 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Legion
+(c)1986 Nichibutsu
+Terra Force
+(c)1987 Nichibutsu
+Kozure Ookami
+(c)1987 Nichibutsu
+Crazy Climber 2
+(c)1988 Nichibutsu
+Armed F (アームドF, not "Formation Armed F")
+(c)1988 Nichibutsu
+Sky Robo / Tatakae! Big Fighter
+(c)1989 Nichibutsu
+Based on the notes below I suspect several of the supported sets are
+actually bootlegs.
+68000 + Z80
+TODO:
+- identify and decap the NB1414M4 chip, it could be either a MCU or a fancy blitter chip;
+- Fix Armed F and Tatakae Big Fighter text tilemap usage, they both ... -->
 </platform>

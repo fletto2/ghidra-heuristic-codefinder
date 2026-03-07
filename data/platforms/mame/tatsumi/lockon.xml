@@ -15,4 +15,11 @@
     <region start="0x00020000" end="0x0004FFFF" type="io" name="main_z80_r"/>
     <region start="0x00050000" end="0x0007FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Tatsumi Lock-On hardware
+driver by Phil Bennett
+TODO:
+Coincounters add one coin at boot, caused by ay8910 writing 00 on
+port direction change. Likely wrong I/O emulation in ay8910 device,
+but not trivial to fix. -->
 </platform>

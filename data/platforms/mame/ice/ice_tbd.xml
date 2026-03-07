@@ -5,4 +5,15 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Turbo Drive by Innovative Creations in Entertainment (ICE)
+http://www.arcade-museum.com/game_detail.php?game_id=10658
+Slot car type race game, coin operated.
+Device is a 27c128
+--
+not sure what the actual inputs / outputs would be on this, maybe just track position / lap sensors? -->
 </platform>

@@ -54,4 +54,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Two Minute Drill - Taito 1993
+-----------------------------
+Half Video, Half Mechanical?
+(video hw + motion/acceleration sensor ?)
+preliminary driver by
+David Haywood
+Tomasz Slanina
+Angelo Salese
+TODO:
+- understand the ball hit sensor
+- simulate the sensors (there are still some shutter errors/defender errors that pops up)
+- Hook-up timers for shutter/defender sensors (check service mode)
+- Dip-Switches
+Brief hardware overview:
+------------------------
+Main processor   - 68000 16Mhz
+Sound       ... -->
 </platform>

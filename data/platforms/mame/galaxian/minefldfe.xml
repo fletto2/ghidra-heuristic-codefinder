@@ -17,4 +17,24 @@
     <region start="0x00008A00" end="0x000091FF" type="rom" name="rom"/>
     <region start="0x0000F802" end="0x0000F802" type="io" name="galaxold_coin_counter_w"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Super Cobra hardware
+NOTE:  Eventually to be merged into galaxian.cpp
+TODO:
+----
+- Dark Planet background graphics
+- Explosion sound in Scramble/Super Cobra repeats
+- Armored Car probably has some other effect(s) during an explosion.
+It uses both POUT1 and POUT2.
+Notes/Tidbits:
+-------------
+- Armored Car sets Port C as well, but it's input only and the games uses other
+bits for the 2nd player controls.  Maybe the games was meant to use 2 joysticks
+at one time.
+- Video Hustler and its two bootle... -->
 </platform>

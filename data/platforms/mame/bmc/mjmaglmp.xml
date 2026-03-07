@@ -64,4 +64,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- BMC games using a 68k + VDB40817/SYA70521
+driver by Luca Elia
+Similar to bmcbowl, koftball, popobear
+CPU:    68000
+Video:  BMC VDB40817 + BMC SYA70521
+Sound:  M6295 + UM3567
+Other:  BMC B816140 (CPLD)
+TODO:
+Hopper hookup doesn't work properly.  MAME counts far more "tickets
+dispensed" than the number of coins/tickets the games are supposed to
+pay out.
+dbshahb: Implement different video chip, different memory map
+xyddzhh: Improve DSW definitions -->
 </platform>

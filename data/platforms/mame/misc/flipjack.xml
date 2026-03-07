@@ -11,4 +11,27 @@
     <region start="0x00008000" end="0x00009FFF" type="rom" name="rom"/>
     <region start="0x0000A000" end="0x0000FFFF" type="ram" name="cram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- prelim notes:
+Flipper Jack, by Jackson, 1983
+probably a prequel to superwng, it has a Falcon logo on the pcb
+xtal: 16mhz, 6mhz
+cpu: 2*z80
+sound: 2*ay8910
+other: 8255 ppi, hd6845 crtc, 1 dipsw
+ram: 2*8KB, 4*2KB
+rom: see romdefs
+TODO:
+- remaining gfx/color issues
+- measure clocks
+--------------------------------------------------------------------
+DipSwitch Title   |  Function  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+--------------------------------------------------------------------
+Demo Sounds      |... -->
 </platform>

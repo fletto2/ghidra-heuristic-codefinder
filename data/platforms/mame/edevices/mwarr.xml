@@ -51,4 +51,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Mighty Warrior
+Elettronica Video-Games S.R.L, 19??
+PCB Layout
+----------
+|----------------------------------------------|      |---------------------------|
+|     M6295  OKI0      PAL          CN1        |      | SF2-0    SF2-1     SF4-1  |
+|     M6295  OKI1      PAL     |------------|  |      |                           |
+|         PAL                  |------------|  |      | DW-0     SF3-1     SF4-0  |
+|                         6264                 |      |                           |
+|      ... -->
 </platform>

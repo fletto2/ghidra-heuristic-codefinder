@@ -9,4 +9,23 @@
     <region start="0x0000A000" end="0x0000A007" type="io" name="d0"/>
     <region start="0x0000A001" end="0x0000A003" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- 2010.04.05. stephh
+- Fixed Dip Switches and Inputs (after verification of the Z80 code)
+- Updated memory map to partially handle screen flipping
+05/01/2003  Ryan Holtz
+- Added first AY's status read
+- Added coinage DIP
+2003.01.01. Tomasz Slanina
+changes :
+- nmi generation (incorrect freq probably)
+- music/sfx (partially)
+- more sprite tiles (twice than before)
+- fixed sprites flips
+- scrolling (2nd game level)
+- better colors (weird 'hack' .. but works in most cases ( comparing with screens from... -->
 </platform>

@@ -10,4 +10,6 @@
     <region start="0x00006000" end="0x00006FFF" type="io" name="da_latch_w"/>
     <region start="0x00007000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Poolshark Driver -->
 </platform>

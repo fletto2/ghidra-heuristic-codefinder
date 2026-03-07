@@ -10,4 +10,20 @@
     <region start="0x00003800" end="0x00003FFF" type="ram" name="ram"/>
     <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Based on drivers from Juno First emulator by Chris Hardy (chris@junofirst.freeserve.co.uk)
+To enter service mode, keep 1&amp;2 pressed on reset
+Info provided with these alt sets
+MEGA ZONE   CHIP PLACEMENT
+USES 69A09EP, Z80 CPU'S &amp; AY-3-8910 SOUND CHIP W/8039 CPU
+THERE ARE AT LEAST THREE VERSIONS OF MEGA ZONE, ALL THE ROMS ARE THE
+SAME EXCEPT POSITION 6,7,8,9,11H IN SETS 1,2
+ALL ROMS ARE 2764 EXCEPT H01 (E01) IS A 2732
+CHIP #     POSITION                         VERS 3
+-----------------------... -->
 </platform>

@@ -11,4 +11,26 @@
     <region start="0x0000D806" end="0x0000D807" type="io" name="scroll_w"/>
     <region start="0x0000E800" end="0x0000FFFF" type="ram" name="writeonly"/>
   </memory_map>
+
+  <!-- Mustache Boy
+(c)1987 Seibu Kaihatsu
+driver by Tomasz Slanina
+Region byte is at maincpu $A000:
+- 0 = Seibu
+- 1 = Taito
+- 2 = March
+(The Italy IG S.p.A. version is region 3)
+The hardware is similar to Knuckle Joe.
+Oscillators:
+- OSC1 - 14.318180 Mhz
+- OSC2 - 18.432000 Mhz
+- OSC3 - 12.000000 Mhz
+Measured freq:
+Z80:
+- Pin  6 - 6001135.77 Hz OSC3/2
+- Pin 16 - 56.747 Hz
+T5182:
+- Pin 18 - 3577599.xx Hz OSC1/4
+YM2151:
+- Pin 24 - 3577600.55 OSC1/4 -->
 </platform>

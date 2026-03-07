@@ -12,4 +12,18 @@
     <region start="0x0000CC60" end="0x0000CC60" type="io" name="disp_w"/>
     <region start="0x0000CCE0" end="0x0000CCE0" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- PINBALL
+Spinball (previously Inder)
+Hardware is much the same as Inder, except the digital display is replaced by a DMD controlled by
+a i8031.
+Each machine has 2 identical sound card, each with different roms. One card plays music and the
+other does effects. The first version of the cards uses MSM5205, this was upgraded to MSM6585
+(Jolly Park, Verne's World).
+There are mistakes in the sound board schematic: IC14 pin12 goes to IC5 pin13 only. IC16 pin 22
+is the CS0 line only. So, they are not joi... -->
 </platform>

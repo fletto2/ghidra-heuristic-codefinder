@@ -7,4 +7,27 @@
     <region start="0x00006000" end="0x000063FF" type="ram" name="ram"/>
     <region start="0x00007000" end="0x00007BFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- KO Punch (c) 1981 Sega
+XTAL: ?
+CPU: 8085 (proof: it uses SIM opcode)
+Other: 4 x i8255 for all I/O
+TODO:
+- discrete sound?
+- figure out sensors
+- coins sometimes don't register
+This is a simple boxing bag game, but for visual feedback
+it has a small CRT instead of LEDs or a dial.
+Insert coin, select your weightclass (7 buttons on cab), and punch.
+Heavyweight   - 300K
+Middleweight  - 260K
+Welterweight  - 230K
+Lightweight   - 200K
+Featherweight - 170K
+Bantamweight  - 140K
+Flyweight     - 100K -->
 </platform>

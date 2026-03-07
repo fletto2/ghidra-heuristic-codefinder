@@ -5,4 +5,15 @@
     <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
     <region start="0x0000A000" end="0x0000A001" type="io" name="read"/>
   </memory_map>
+
+  <!-- Electrocoin Fruit Machines
+This seems to be the most common Electrocoin hardware type, used
+extensively by Electrocoin with a number of 3rd party sets running on
+the same boards / same cabinets to provide different gameplay features.
+Some of these are scrambled (see the MAB sets)
+Build dates in the sets seem to range from 1991 - 2007
+(todo, put correct dates for each rom in the driver)
+A PIC16C54A is used for security.
+the UART chips in the board are either an NEC D71051C-10 or an OKI M82C51A-2
+... -->
 </platform>

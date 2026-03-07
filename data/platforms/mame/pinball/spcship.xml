@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Skeleton driver for Stargame pinballs (2 x Z80, Z80CTC, DAC, AY8910, MEA8000).
+Hardware listing and ROM definitions from PinMAME.
+Machines: Space Ship, White Force.
+These 2 machines have similar but not identical hardware, and there's no manuals for White Force.
+The biggest changes are in the switch matrix, and the display data is inverted too.
+Status:
+- spcship: working (At start of each ball, press Z to enable the playfield)
+- whtforce: shows an error at start
+Todo:
+- investigate and f... -->
 </platform>

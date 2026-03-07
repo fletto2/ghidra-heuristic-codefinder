@@ -5,4 +5,26 @@
     <region start="0x00000780" end="0x000007DF" type="ram" name="ram"/>
     <region start="0x00003040" end="0x00003041" type="io" name="data_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Mat Mania
+Memetron, 1985
+(copyright Taito, licensed by Technos, distributed by Memetron)
+driver by Brad Oliver
+MAIN BOARD:
+0000-0fff RAM
+1000-13ff Video RAM
+1400-17ff Attribute RAM
+1800-1fff ?? Only used in self-test ??
+2000-21ff Background video RAM #1
+2200-23ff Background attribute RAM #1
+2400-25ff Background video RAM #2
+2600-27ff Background attribute RAM #2
+4000-ffff ROM
+2008.04.04: Small note regarding DipSwitches. Locations and values have been
+verified with the manual for both Mat Mania a... -->
 </platform>

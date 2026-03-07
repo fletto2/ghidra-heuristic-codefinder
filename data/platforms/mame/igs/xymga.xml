@@ -5,4 +5,21 @@
     <region start="0x00700000" end="0x00700005" type="io" name="port"/>
     <region start="0x00700002" end="0x00700003" type="io" name="lhb_inputs_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= IGS011 (Blitter) Based Hardware =-
+driver by   Luca Elia (l.elia@tin.it)
+code decrypted by   Olivier Galibert
+CPU     :   68000
+Sound   :   M6295 + Optional FM or ICS2115
+Custom  :   IGS011 (blitter, protection)
+IGS012 (protection, optional)
+IGS003 (8255, protection)
+NVRAM   :   Battery for main RAM
+---------------------------------------------------------------------------
+Year + Game                   PCB        Sound         Chips
+-----------------------------------------------------------... -->
 </platform>

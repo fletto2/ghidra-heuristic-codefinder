@@ -5,4 +5,25 @@
     <region start="0x00040000" end="0x000BFFFF" type="ram" name="blit_ram"/>
     <region start="0x000C0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- High Video Tour 4000
+Driver by Mirko Buffoni.
+Original brasil.c by David Haywood &amp; Angelo Salese.
+Additional work by Roberto Fresca.
+Memory layout:
+000000-0003FF   Interrupt table
+000400-003FFF   NVRAM and main ram
+040000-04FFFF   VGA 320x200 address space
+080000-0BFFFF   Banked ROM
+0C0000-0FFFFF   Program ROM
+Port layout:
+0x0008 R    Input port -&gt; Keyboard
+0x000A R    Input port -&gt; Coin and Service
+0x000C R    Input port -&gt; Reset
+0x0030 R    Read continuously... maybe watchdog?
+0x0... -->
 </platform>

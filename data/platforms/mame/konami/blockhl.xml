@@ -12,4 +12,14 @@
     <region start="0x00006000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Block Hole (GX973) (c) 1989 Konami
+Original driver by Nicola Salmoria
+Notes:
+- To advance to the next screen in service mode, press P1 and P2 start
+simultaneously
+Todo:
+- How is the sound irq cleared (currently using HOLD_LINE)?
+- Do bit 2 and 7 of the bankswitch port have any meaning?
+- Verify raw screen parameters -->
 </platform>

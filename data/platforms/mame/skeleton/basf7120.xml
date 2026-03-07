@@ -7,4 +7,30 @@
     <region start="0x0000A000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x0000FF00" end="0x0000FFFF" type="io" name="mmio_r"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- BASF 7100
+This system is based on (or even identical to) the DigiLog Microterm II
+Models:
+- 7120: 24k disk controller memory, 3x 5.25" single sided
+- 7125: 32k disk controller memory, 3x 5.25" double sided
+- 7130: 32k disk controller memory, 1x 5.25" double sided, 1x Winchester
+Hardware:
+- Z-80A
+- I8259A
+- I8251
+- COM8116
+- 3x 8255A
+- 64k memory
+- 5.0688 MHz XTAL
+- 4x DSW8
+- External ports: Printer, Dialer, Data Comm I/O, Aux I/O
+Video board:
+- Motorola 160A002-B (?)
+- 2x 8255A
+- 18.720 MHz XTAL... -->
 </platform>

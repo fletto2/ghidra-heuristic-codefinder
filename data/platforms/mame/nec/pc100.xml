@@ -5,4 +5,23 @@
     <region start="0x000C0000" end="0x000DFFFF" type="io" name="pc100_vram_r"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- NEC PC-100
+preliminary driver by Angelo Salese
+Thanks to Carl for the i8259 tip;
+TODO:
+- i8259 works in edge triggering mode, kludged to work somehow.
+Notes:
+- First two POST checks are for the irqs, first one checks the timer irq:
+F8209: B8 FB 00                  mov     ax,0FBh
+F820C: E6 02                     out     2h,al
+F820E: B9 00 00                  mov     cx,0h
+F8211: FB                        sti
+F8212: 0A E4                     or      ah,ah &lt;- irq fires here
+F8214: E1 FC        ... -->
 </platform>

@@ -4,4 +4,17 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x000047FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Ganso Janken Man 2
+Pretty Present
+'S9405021 CPU-DM-NEW' PCB
+Z0840004PSC
+4.000 MHz XTAL
+LH0082A Z80A-CTC-D
+CXK5816PS-15L SRAM
+2 banks of 8 DIP switches -->
 </platform>

@@ -7,4 +7,17 @@
     <region start="0x00008000" end="0x00008000" type="io" name="input_r"/>
     <region start="0x0000C000" end="0x0000C000" type="io" name="speaker_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Newcrest CXG Chess 2001, also sold by Hanimex as Computachess (model HCG 1900),
+and by CGL as Computachess Champion.
+Newcrest CXG Chess 3000 is assumed to be on similar hardware as this.
+The chess engine is by Richard Lang, based on Cyrus.
+Newcrest Technology Ltd. and CXG Systems S.A. were related companies, with Eric
+White at the steering wheel. Newcrest (1984-1991) was probably a rename of "White
+and Allcock" (1981-1984). CXG Systems was apparently their PCB manufacturing and
+perhaps also thei... -->
 </platform>

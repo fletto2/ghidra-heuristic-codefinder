@@ -5,4 +5,9 @@
     <region start="0x00000000" end="0x0000FFFF" type="io" name="eurocube_map"/>
     <region start="0x0000EE00" end="0x0000EE1F" type="io" name="read"/>
   </memory_map>
+
+  <!-- Control Universal EuroCUBE
+http://chrisacorns.computinghistory.org.uk/8bit_Upgrades/CU_EuroBeeb.html
+TODO:
+- add configuration to run at either 1MHz or 2MHz. -->
 </platform>

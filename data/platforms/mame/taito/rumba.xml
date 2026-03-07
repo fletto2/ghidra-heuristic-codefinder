@@ -9,4 +9,15 @@
     <region start="0x0000DCE0" end="0x0000DCE0" type="io" name="victnine_gfxctrl_r"/>
     <region start="0x0000DCE1" end="0x0000DCE1" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- The FairyLand Story
+added Victorious Nine by BUT
+TODO:
+- TA7630 emulation needs filter support (bass sounds from MSM5232 should
+be about 2 times louder) -->
 </platform>

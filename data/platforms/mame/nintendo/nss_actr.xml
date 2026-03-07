@@ -6,4 +6,20 @@
     <region start="0x007E0000" end="0x007FFFFF" type="ram" name="wram"/>
     <region start="0x00800000" end="0x00FFFFFF" type="io" name="snes_r_bank2"/>
   </memory_map>
+
+  <!-- Nintendo Super System
+driver by Angelo Salese, based off info from Noca$h
+TODO:
+- EEPROM doesn't save?
+- Fix sound CPU halt / reset lines, particularly needed by this to work
+correctly;
+- Fix continue behaviour, might be the same issue as the one above.
+- Various M50458 bits
+- OSD should actually super-impose with the SNES video somehow;
+Notes:
+- Multi-Cart BIOS works only with F-Zero, Super Tennis and Super Mario
+World;
+Nintendo Super System Hardware Overview
+Nintendo, 1991/1992
+This system is ... -->
 </platform>

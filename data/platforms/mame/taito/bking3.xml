@@ -11,4 +11,19 @@
     <region start="0x00004802" end="0x00004802" type="io" name="sndnmi_disable_r"/>
     <region start="0x0000E000" end="0x0000EFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Birdie King / Birdie King II / Birdie King III Memory Map
+---------------------------------------------------------
+0000-7fff ROM
+8000-83ff Scratch RAM
+8400-8fff (Scratch RAM again, address lines AB10, AB11 ignored)
+9000-97ff Playfield RAM
+a000-bfff Unused?
+DIP Locations verified for:
+- bking2 -->
 </platform>

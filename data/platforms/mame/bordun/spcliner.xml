@@ -11,4 +11,20 @@
     <region start="0x0000B600" end="0x0000B63F" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Sky Lancer / Butterfly / Mad Zoo / Super Star 97 and others...
+Bordun International.
+Original preliminary driver by Luca Elia.
+Additional Work: Roberto Fresca &amp; David Haywood.
+Notes:
+- There are at least 3 different PCBs: Rolla, Sky and Cleco.
+- Some of the tiles look badly scaled down, and others appear to have columns swapped.
+This might actually be correct due to different gfx encoding for different PCBs.
+- Skylncr and madzoo can run with the same program roms, they're basically graphics ... -->
 </platform>

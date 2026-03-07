@@ -6,4 +6,23 @@
     <region start="0x000B8000" end="0x000BFFFF" type="ram" name="ram"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- STM PC
+All-in-One IBM PC compatible portable computer
+Hardware (incomplete):
+- Intel 186 at 8 MHz
+- 256 KB RAM (expandable to 512 KB)
+- SCN2674B
+- NEC D8251AC
+- Monochrome LCD display with 80x16 lines (512x128 resolution)
+- External monitor support (RGB, composite)
+- Canon MDD413 dual 5.25" QD drive
+- SCSI interface
+- 2x RS232 port
+- Centronics port
+- Internal thermal printer
+- 83-key keyboard with RJ-11 connector
+- OS: MS-DOS 2.11
+TODO:
+- Everything -->
 </platform>

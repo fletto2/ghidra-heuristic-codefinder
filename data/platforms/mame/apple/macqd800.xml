@@ -8,4 +8,21 @@
     <region start="0x5000A000" end="0x5000B0FF" type="io" name="map"/>
     <region start="0x5000C000" end="0x5000DFFF" type="io" name="mac_scc_r"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr53c90"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
+
+  <!-- Mac Centris 610 ("WLCD")
+Mac Centris 650 ("Wombat 25")
+Mac Quadra 610 ("Speedbump 610")
+Mac Quadra 650 ("Speedbump 650")
+Mac Quadra 800 ("Wombat 33")
+By R. Belmont
+These second-generation 68040 machines shrunk the huge mass of separate
+chips found in the Quadra 700 down to a pair of ASICs, djMEMC (memory controller
+plus revised DAFB video) and IOSB (I/O bus adaptor with integrated VIAs,
+audio, "Turbo SCSI", and SWIM2 floppy). -->
 </platform>

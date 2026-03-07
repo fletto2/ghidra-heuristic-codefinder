@@ -5,4 +5,19 @@
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
     <region start="0x00FF8000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="ay8912"/>
+  </devices>
+
+  <!-- Sharp MZ-6500
+TODO:
+- keyboard (from MCU thru PIO, serial i/f)
+- "ERROR 06" during selfcheck (r/w from &lt;reserved&gt; "I/O slot" $f5 port);
+- mz5500: "ERROR 12" when testing floppies;
+- mz6550: hangs for missing second CTC;
+- mz6550: hookup EMM to bus slot (tested in selfcheck, "ERROR 05"); -->
 </platform>

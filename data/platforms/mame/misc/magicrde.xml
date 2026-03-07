@@ -19,4 +19,22 @@
     <region start="0x00500000" end="0x0050FFFF" type="ram" name="nvram"/>
     <region start="0x00600000" end="0x0067FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- MAGIC CARD - IMPERA
+-------------------
+Driver by Roberto Fresca, David Haywood, Angelo Salese and Paul Arnold
+Games running on this hardware:
+Magic Card (v2.01),                         Impera,  1994.
+Magic Card (v1.10 14.09.94),                Impera,  1994.
+Magic Card (v1.5 17.12.93, set 1),          Impera,  1993.
+Magic Card (v1.5 17.12.93, set 2),          Impera,  1993.
+Magic Card (v1.2 200/93, set 1),            Impera,  1994.
+Magic Card (v1.2 200/93, set 2),            Impera,  1994.
+Mag... -->
 </platform>

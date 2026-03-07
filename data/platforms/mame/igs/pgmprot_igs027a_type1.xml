@@ -20,4 +20,18 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- PGM IGS027A ARM protection simulations &amp; emulation - type 1
+these are simulations of the 'kov' type ARM device
+used by
+Knights of Valor (kov) + bootlegs
+Knights of Valor Plus (kovplus)
+Puzzli 2 / Puzzli 2 Super (puzzli2s)
+Photo Y2k2 (py2k2)
+Photo Y2k2 - Flash 3-in-1 (pgm3in1)
+Puzzle Star (puzlstar)
+These are implemented in 55857E type chips
+the following appear to have the same basic behavior as the
+early '55857E' type chips, but are actually using the '55857G'
+chips, which execute only area... -->
 </platform>

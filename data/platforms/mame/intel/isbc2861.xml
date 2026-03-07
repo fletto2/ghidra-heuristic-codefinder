@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x000EFFFF" type="ram" name="ram"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Intel iSBC series
+09/12/2009 Skeleton driver.
+Notes:
+isbc86 commands: BYTE WORD REAL EREAL ROMTEST. ROMTEST works, the others hang.
+Press capital-U to drop into the monitor on the isbc 86/05 and 86/30
+The 86/05 can boot floppies with the b command but appears to mostly be
+able to deal with 256byte sectors so fails to load the irmx 512byte sector images. -->
 </platform>

@@ -8,4 +8,24 @@
     <region start="0x0000D000" end="0x0000D3FF" type="ram" name="fgvideoram"/>
     <region start="0x0000E000" end="0x0000E0FF" type="ram" name="spriteram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Dacholer    (c) 1983 Nichibutsu
+Kick Boy    (c) 1983 Nichibutsu
+Driver by Pierpaolo Prazzoli
+TODO:
+- is the background color pen correct for all games?
+Mods by Tomasz Slanina (2008.06.12):
+- fixed sound cpu interrupts (mode 2 (two vectors)+ nmi)
+- added sound and music.
+- ay/msm clocks are arbitrary
+- just a guess - upper nibble of byte from port 3 _probably_
+contains sound command (sound cpu writes it to port c)
+Itazura Tenshi (Japan Ver.)
+(c)1984 Nichibutsu / Alice
+--- Team Japump!!! ---
+Dumpe... -->
 </platform>

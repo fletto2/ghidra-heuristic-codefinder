@@ -19,4 +19,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Exidy Car Polo hardware
+driver by Zsolt Vasvari
+Games supported:
+Car Polo
+Known issues:
+sound
+Original Bugs:
+if you insert a coin too fast (before the GAME OVER sign appears),
+the cars will chase *away* from the ball -->
 </platform>

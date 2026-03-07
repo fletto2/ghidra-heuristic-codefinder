@@ -8,4 +8,13 @@
     <region start="0x0000C000" end="0x0000C006" type="io" name="o0_w"/>
     <region start="0x0000E000" end="0x0000E001" type="io" name="write"/>
   </memory_map>
+
+  <!-- PINBALL
+Skeleton driver for EFO "Z-Pinball" hardware.
+ToDo:
+- Inputs
+- Outputs
+- Screen
+- Sound
+- Mechanical sounds -->
 </platform>

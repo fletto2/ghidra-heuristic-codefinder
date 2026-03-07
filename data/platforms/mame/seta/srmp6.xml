@@ -56,4 +56,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Super Real Mahjong P6 (JPN Ver.)
+(c)1996 Seta
+WIP driver by Sebastien Volpe, Tomasz Slanina and David Haywood
+Emulation Notes:
+The graphics are compressed, using the same 8bpp RLE scheme as CPS3 uses
+for the background on Sean's stage of Street Fighter III.
+DMA Operations are not fully understood
+according prg ROM (offset $0fff80):
+S12 SYSTEM
+SUPER REAL MAJAN P6
+SETA CO.,LTD
+19960410
+V1.00
+TODO:
+- fix sound emulation
+- fix DMA operations
+- fix video emulation
+Video reference : https://youtu.be/w... -->
 </platform>

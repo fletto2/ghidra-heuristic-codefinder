@@ -9,4 +9,30 @@
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000FFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- Human Designed Systems HDS200
+ANSI/DEC-compatible terminal
+Hardware:
+- Z80A (Z8400APS)
+- Z80A DMA (Z8410APS)
+- 2x SCN2681A
+- SCN2674B
+- 2x MB81416-12 DRAM (and two empty sockets)
+- 2x TMM2016BP-90 (2k)
+- 1x TMM2016AP-10 (2k)
+- MK48Z02B-25 (2k)
+- XTAL 3.6864 MHz (next to DUARTs)
+- XTAL 8 MHz (CPU)
+- XTAL 22.680 MHz and 35.640 MHz (video)
+TODO:
+- Fix SCN2674/Z80DMA hookup
+- Missing keyboard keys
+- RS232 control lines
+Notes:
+- The PCB has a large unpopulated area. Possibly this is used for the
+200G... -->
 </platform>

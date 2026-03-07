@@ -12,4 +12,25 @@
     <region start="0x00C80000" end="0x00CBFFFF" type="ram" name="ram"/>
     <region start="0x00E80000" end="0x00EFFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="v9938"/>
+    <device type="video" name="v9958"/>
+  </devices>
+
+  <!-- 'High Rate DVD' HW (c) 1998 Nichibutsu
+preliminary driver by Angelo Salese
+TODO:
+- Implement DVD routing and YUV decoding;
+- game timings seem busted, could be due of missing DVD hook-up
+- csplayh1: inputs doesn't work at all, slower than the others too.
+Probably not a DVD but CD rom game?
+DVD Notes:
+- h8 board components:
+H8/3002
+MN7100 8-bit channel data acquisition system
+Fujitsu MD0208
+Zoran ZR36110PQC (mpeg ps/video decoder)
+Nippon Steel Corp NN71003F (mpeg audio decoder)
+uPD6379A dual 16-b... -->
 </platform>

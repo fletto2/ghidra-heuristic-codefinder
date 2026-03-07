@@ -14,4 +14,23 @@
     <region start="0x00007800" end="0x00007BFF" type="ram" name="sharedram"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Driver by Jarek Burczynski, started by Tomasz Slanina
+Lots of hardware info from Guru
+memory map :
+0000 - 3fff rom
+4000 - 43ff RAM for main CPU
+4800 - 480f  control area (connected to 74LS259 8-bit addressable latch; lines A0,A1,A2 - address input, line A3 - data input)
+4800,4808 - control shared RAM access between main CPU/sub CPU. 4800=access for sub CPU, 4808=access for main CPU
+4801,4809 - NMI disable/enable
+4802,480a -
+4803,480b -
+4804,480c -
+4807,480f -?
+4800 - 4800 read: input
+5000 - 5000... -->
 </platform>

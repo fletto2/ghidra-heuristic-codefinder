@@ -14,4 +14,18 @@
     <region start="0x0000F000" end="0x0000F83F" type="io" name="pf_data_8bit_swap_r"/>
     <region start="0x0000F840" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- -= Run Deep / The Deep =-
+driver by   Luca Elia (l.elia@tin.it)
+Board       :   DE-0298-1
+Main CPU    :   Z80 (LH0080B @ 6MHz) + i8751 (Intel C8751H-88 @ 8MHz, protection)
+Sound CPU   :   65C02 (R65C02P2 @ 1.5MHz)
+Sound Chips :   YM2203C (@ 3MHz)
+Video Chips :   L7B0073 DATA EAST MXC 06 8746
+L7A0072 DATA EAST BAC 06 VAE8713
+XTAL        :   12.000MHz, 8.000MHz
+[ 1 Horizontally Scrolling Layer ]
+Size :  512 x 512
+Tiles:  16 x 16 x 4.
+In addition to a global x &amp; y scroll register each tile-wide... -->
 </platform>

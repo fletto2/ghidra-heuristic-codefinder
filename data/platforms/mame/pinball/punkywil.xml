@@ -16,4 +16,19 @@
     <region start="0x0000C038" end="0x0000C03F" type="io" name="drivers_w"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="soundlatch_nmi_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- PINBALL
+Skeleton driver for Joctronic pinballs.
+TODO:
+- Confirm "Pin Ball" exact hardware configuration, may be different from "Punky Willy" and "Walkyria".
+- Inputs
+- Outputs
+- Screen
+- Sound
+- Mechanical sounds -->
 </platform>

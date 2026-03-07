@@ -10,4 +10,13 @@
     <region start="0x00A00000" end="0x00E00001" type="io" name="map0xa00000_0xbfffff_page_map_rw"/>
     <region start="0x00E00000" end="0x00FFFFFF" type="io" name="map0xe00000_0xffffff_context_register_w"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Contel Codata Corporation Codata
+2010-01-11 Skeleton driver.
+2013-08-26 Connected to a terminal.
+Chips: uPD7201C, AM9513, SCN68000. Crystal: 16 MHz -->
 </platform>

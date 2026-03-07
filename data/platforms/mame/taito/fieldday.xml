@@ -15,4 +15,11 @@
     <region start="0x0000B8E0" end="0x0000B8FF" type="ram" name="spriteram2"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="fortyl_pixram_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Forty-Love (c) Taito 1984
+driver by Jarek Burczynski -->
 </platform>

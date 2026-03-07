@@ -7,4 +7,15 @@
     <region start="0x0000C000" end="0x0000C007" type="unmapped" name="nop_write"/>
     <region start="0x0000D000" end="0x0000D007" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for "Sport Damjes 1" darts machine
+PCB labeled as "DARDO" ("Dart" in Spanish) on both sides
+_______________________________________________________________________________________________________________
+|   .................   ...                                            .....     ........    ........          |
+|  __________   ___________   ___________                             ___________   ___________   ___________  |
+| |TC74HC367P  |TC74HC367P   |TC74HC367P              ... -->
 </platform>

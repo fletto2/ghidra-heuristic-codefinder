@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x000027FF" type="rom" name="rom"/>
     <region start="0x00003400" end="0x00003BFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- VEB Mikroelektronik "Karl Marx" Erfurt Chess-Master (aka Schachcomputer CM)
+- Chess-Master (G-5003-500) (10*U505 roms)
+- Chess-Master (G-5003-501) (2 roms set)
+Unlike SC2, the chess engine was not copied from an existing one. It is an
+original creation by Rüdiger Worbs and Dieter Schultze. It competed in
+Budapest WMCCC 1983 and ended at a low 16th place.
+Hardware notes:
+- PCB label: 15003-500-2902 B 01 02 03
+- UB880 Z80 @ ~2.5MHz
+- 2*Z80 PIO
+- 10KB ROM (10*U505D), 2KB RAM (4*U214D)
+- chessboard ... -->
 </platform>

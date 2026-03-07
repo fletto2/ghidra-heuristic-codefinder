@@ -5,4 +5,16 @@
     <region start="0x00040000" end="0x00040FFF" type="ram" name="ram"/>
     <region start="0x00180001" end="0x00180001" type="io" name="sound_command_w"/>
   </memory_map>
+
+  <!-- Equites           (c) 1984 Alpha Denshi Co./Sega
+Bull Fighter      (c) 1984 Alpha Denshi Co./Sega
+Gekisou           (c) 1985 Eastern Corp.
+The Koukouyakyuh  (c) 1985 Alpha Denshi Co.
+Bingo Time        (c) 1986 CLS
+The following are not dumped yet:
+Champion Croquet  (c) 1984 Alpha Denshi Co. (sports)
+Violent Run       (c) 1985 Eastern Corp. (export version of Gekisou)
+Tune Pit(?)       (c) 1985 Alpha Denshi Co.
+Perfect Janputer  (c) 1984 Alpha Denshi Co. (4-player Mahjong)
+Driver by Acho A. Tang,... -->
 </platform>

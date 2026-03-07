@@ -56,4 +56,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Sand Scorpion    (C) 1992 FACE
+driver by   Luca Elia (l.elia@tin.it)
+PCB Number: Z03VA-001
+CPU: TMP68HC000N-12
+Sound CPU: Z8400AB1 (Z80A)
+Sound: OKI6295, YM2203C &amp; Y3014B
+OSC: 16.000mhz &amp; 12.000mhz
+Dips: Two 8-way dipswitch banks
+Kaneko custom (surfaced scratched):
+PX79C480FP-3 PANDORA-CHIP (160pin PQFP)  &lt;- Sprites
+VIEW2-CHIP (144pin PQFP)                 &lt;- Tilemaps
+HELP1-CHIP (64pin PQFP)
+CALC1-CHIP (40pin DIP)                   &lt;- Collision Detection etc.
++------------------... -->
 </platform>

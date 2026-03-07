@@ -5,4 +5,16 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Konami Target Panic (cabinet test PCB)
+It takes a while to boot up, just hold INS for a bit to fast forward.
+driver by Phil Bennett
+Hardware notes:
+- PCB label: KONAMI PWB402613
+- Z84C0008PEC Z80 CPU, 4.0MHz ceramic resonator
+- 32KB ROM (M27C256B), 64KB RAM (MB8464C-70L)
+- simple bitmap video, no sound
+TODO:
+- Determine correct IRQ and video timing, for some reason inputs may behave
+erratically in test mode with different IRQ timing -->
 </platform>

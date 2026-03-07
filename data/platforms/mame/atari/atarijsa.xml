@@ -21,4 +21,29 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- atarijsa.cpp
+Functions to emulate the Atari "JSA" audio boards
+JSA I (stereo): used by:
+Blasteroids (YM2151 only)
+Toobin' (YM2151 + POKEY)
+Vindicators (YM2151 + POKEY)
+Escape from the Planets of the Robot Monsters (YM2151 + TMS5220)
+JSA II (mono), used by:
+Cyberball 2072
+STUN Runner
+Skull &amp; Crossbones
+ThunderJaws
+Hydra
+Pit Fighter
+JSA III (mono), used by:
+Off the Wall (YM2151 only)
+Batman
+Guardians of the 'Hood
+Road Riot 4WD
+Steel Talons
+JSA IIIs (stereo), used by:
+Space Lords
+Moto Frenzy
+Ro... -->
 </platform>

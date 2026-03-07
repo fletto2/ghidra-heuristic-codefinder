@@ -16,4 +16,6 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- Hewlett Packard 49G+ Graphing Calculator -->
 </platform>

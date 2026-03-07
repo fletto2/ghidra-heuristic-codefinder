@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
     <region start="0x0000F000" end="0x0000F7FF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Systems Group (a division of Measurement Systems and Controls) System 2900 S100 computer
+2009-05-12 Skeleton driver.
+Photos: https://www.vintagecomputer.net/Systems-Group/2900/
+The system contains 4 S100 boards, 2 8" floppies, enormous power supply,
+1/4" thick mother board, 4 RS232 I/F boards, and an Australian made
+"Computer Patch Board".
+The S100 boards that make up the unit are:
+CPU board - Model CPC2810 Rev D
+The board has a MK3880N-4 (Z80A CPU), CTC, 2x MK3884N-4 (Z80SIO), PIO.
+It has a lot... -->
 </platform>

@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x000003FF" type="rom" name="rom"/>
     <region start="0x00000400" end="0x00000FFF" type="io" name="rom04"/>
   </memory_map>
+
+  <!-- Driver file to handle emulation of the Magnavox Odyssey 2 (stylized Odyssey²),
+Philips Videopac G7000 and Philips Videopac+ G7400.
+Magnavox was wholly owned by Philips at the time. The console had a limited
+release late-1978 in Europe as the Philips G7000, but the launch was quickly
+halted due to a hardware defect, wide release continued in 1979.
+The 2 joysticks have no clear distinction between player 1 and 2, it differs
+per game. And in MAME it's extra awkward due to the default input mapping
+... -->
 </platform>

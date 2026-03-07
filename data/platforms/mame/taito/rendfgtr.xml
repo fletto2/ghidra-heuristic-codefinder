@@ -6,4 +6,15 @@
     <region start="0x0000C000" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000F00F" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Taito redemption games
+Honoo no Invader (炎のインベーダー) (c) 1997 Taito
+Bubblen Roulette (バブルンるーれっと) (c) 1997 Taito - video: https://www.youtube.com/watch?v=AaugRz3cqv0
+Packy no Treasure Slot (パッキイのトレジャースロット) (c) 1997 Taito - video: https://www.youtube.com/watch?v=IPse14eGiqM
+Harikiri Junior Baseball (はりきりジュニアベースボール) (c) 1998 Taito - video: https://www.youtube.com/watch?v=eRZctnd8whE
+Sonic Blast Man no Janken Battle (ソニックブラストマンのジャンケンバトル) (c) 1998 Taito - video: https://www.youtube.com/watch?v=AFWLMHbp... -->
 </platform>

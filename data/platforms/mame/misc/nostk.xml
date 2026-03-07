@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000DFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <!-- 'Face' LINDA board
+driver by Paul Priest + David Haywood
+Games on this Hardware
+Magical Cat Adventure (c)1993 Wintechno
+Nostradamus (c)1993 Face
+Hardware Overview:
+Magical Cat (C) 1993 Wintechno
+Board Name: LINDA5
+Main CPU: 68000-16
+Sound CPU: Z0840004PSC
+Sound Chip: YMF286-K &amp; Y3016-F
+Custom: FACE FX1037 x1
+038 x2 (As in Cave)
+Nostradamus (C) 1993 FACE
+Board Name: LINDA25
+Main CPU: MC68000P12F 16MHz
+Sound CPU: Z8400B PS (Goldstar)
+Sound chip: YMF286-K &amp; Y3016-F
+Graphics chips:
+176 Pin P... -->
 </platform>

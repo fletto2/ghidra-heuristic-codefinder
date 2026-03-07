@@ -7,4 +7,20 @@
     <region start="0x00500001" end="0x00500001" type="io" name="read"/>
     <region start="0x008C0000" end="0x008CFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- what is this HW cloned from? I doubt it's an original design
+Promat / Oriental Soft SPR800E driver
+1945K III (Newer)    2000   Oriental Soft
+1945K III (Older)    1999   Oriental Soft
+1945K III            1999   Promat
+Solite Spirits       1999   Promat
+'96 Flag Rally       1996   Promat???
+NOTES
+-----
+1945K III is clearly a retooled Solite Spirits. There are spots in 1945K III where it shows "SOLITE SPIRITS"
+such as the ship selection screen's background and after the continue countdown expires,... -->
 </platform>

@@ -55,4 +55,16 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Batman hardware
+driver by Aaron Giles
+Games supported:
+Batman (1991)
+Known bugs:
+none at this time
+Memory map (TBA) -->
 </platform>

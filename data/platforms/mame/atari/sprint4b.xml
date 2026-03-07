@@ -15,4 +15,6 @@
     <region start="0x00002000" end="0x000027FF" type="unmapped" name="unmapped"/>
     <region start="0x00002800" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Sprint 4 driver -->
 </platform>

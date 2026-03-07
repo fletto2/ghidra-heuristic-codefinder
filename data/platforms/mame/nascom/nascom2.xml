@@ -5,4 +5,16 @@
     <region start="0x0000F000" end="0x0000F7FF" type="rom" name="rom"/>
     <region start="0x0000F800" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <!-- Nascom 1/2/3
+Single board computer
+To Do:
+- TTY
+- Nascom2 has two dipswitch banks, and a memory control header
+- Nascom3 (Gemini), nothing usable found
+Cassette (nascom1):
+It outputs a string of pulses at 1953.125Hz to indicate a 1, and blank tape for 0. This means that
+no tape will present a 0 to the UART instead of the expected 1 (idle). Part of the cassette
+schematic is missing, so a few liberties have been taken. The result is you can save a file and
+load it back. Haven't found wav files on ... -->
 </platform>

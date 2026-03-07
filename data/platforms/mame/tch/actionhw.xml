@@ -55,4 +55,24 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Driver Info
+Kick Goal (c)1995 TCH
+Action Hollywood (c)1995 TCH
+driver by David Haywood
+todo:
+PIC from Action Hollywood still needs deprotecting + dumping
+Both games have problems with the Eeprom (settings are not saved)
+Main board: PRO-3/B
++-------------------------------------------+
+|       IC13   PIC16C57                16MHz|
+|VOL    M6295                   +----+ 65764|
+|                               |1020|      |
+|                               +----+ 65764|
+|J    65764 65764             ... -->
 </platform>

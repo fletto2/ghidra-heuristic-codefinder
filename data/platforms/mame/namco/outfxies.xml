@@ -61,4 +61,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Namco System NB-1
+Notes:
+- tilemap system is identical to Namco System2
+ToDo:
+- improve interrupts
+- gunbulet force feedback
+Main CPU : Motorola 68020 32-bit processor @ 25MHz
+Secondary CPUs : C329 + 137 (both custom)
+Custom Graphics Chips : GFX:123,145,156,C116 - Motion Objects:C355,187,C347
+Sound CPU : C75 (Mitsu M37702 with internal ROM)
+PCM Sound chip : C352 (custom)
+I/O Chip : 160 (custom)
+Board composition : Single board
+Known games using this hardware:
+- Great Sluggers '93
+- Great Slugger... -->
 </platform>

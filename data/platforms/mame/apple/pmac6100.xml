@@ -31,4 +31,10 @@
     <region start="0x5FFFFFF8" end="0x5FFFFFFF" type="io" name="id_r"/>
     <region start="0xFFC00000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="bus" name="nscsi"/>
+    <device type="scsi" name="ncr53c90"/>
+    <device type="serial" name="z80scc"/>
+  </devices>
 </platform>

@@ -7,4 +7,21 @@
     <region start="0x0000F000" end="0x0000F7FF" type="rom" name="rom"/>
     <region start="0x0000F800" end="0x0000F8FF" type="io" name="memory_r"/>
   </memory_map>
+
+  <!-- Explorer 85
+12/05/2009 Skeleton driver.
+29/12/2023 Reworked driver to enable extended RAM memory,
+MS BASIC and disable ROM mirror after boot/interrupt.
+Setting Up
+==========
+The terminal must be set for
+- Baud: 9600
+- Format: 7E1
+If it isn't, adjust the settings, then restart the system.
+Once started, press Space. The system will start up.
+All input must be in upper case.
+Microsoft Basic is executed entering the following 2 commands
+in the monitor prompt:
+.XS nnnn-F87F mmmm-C000 &lt;CR&gt;
+.G &l... -->
 </platform>

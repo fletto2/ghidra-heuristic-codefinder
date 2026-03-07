@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x000007FF" type="io" name="lowram"/>
     <region start="0x00000800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Olympia BOSS
+Made in Germany around 1981
+The BOSS series was not a great success, as its members differed too much to be compatible:
+First they were 8085 based, later machines used a Z80A.
+Other distinguishing features were the capacity of the disk drives:
+BOSS A: Two 128K floppy drives
+BOSS B: Two 256K disk drives
+BOSS C: Two 600K disk drives
+BOSS D: One 600K disk drive, one 5 MB harddisk
+BOSS M: M for multipost, up to four BOSS machines linked together for up to 20MB shared harddisk space
+Olym... -->
 </platform>

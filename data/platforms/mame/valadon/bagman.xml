@@ -11,4 +11,23 @@
     <region start="0x0000A800" end="0x0000A800" type="io" name="port"/>
     <region start="0x0000B800" end="0x0000B800" type="io" name="reset_r"/>
   </memory_map>
+
+  <!-- Bagman memory map
+driver by Nicola Salmoria
+protection and speech emulation by Jarek Burczynski
+protection info Andrew Deschenes
+memory map:
+0000-5fff ROM
+6000-67ff RAM
+9000-93ff Video RAM
+9800-9bff Color RAM
+9800-981f Sprites (hidden portion of color RAM)
+9c00-9fff ? (filled with 3f, not used otherwise)
+c000-ffff ROM (Super Bagman only)
+memory mapped ports:
+read:
+a000      PAL16r6 output. (RD4 line)
+a800      ? (read only in one place, not used) (RD5 line)
+b000      DSW (RD6 line)
+b800      wat... -->
 </platform>

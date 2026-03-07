@@ -5,4 +5,22 @@
     <region start="0x00800180" end="0x00800183" type="io" name="read"/>
     <region start="0x00800189" end="0x00800189" type="io" name="read"/>
   </memory_map>
+
+  <!-- Dragon Master (c)1994 Unico
+the hardware seems to fall somewhere between the
+hardware playmark commonly used and the hardware
+unico used for zero point etc.
+(also seems to be related to cps1 bootlegs?)
+PCB Layout
+----------
+DM1001    DM1002   6116   6116     DM1003
+6295 6295        6116   *PLCC84  DM1004
+6116            DM1005
+PIC16C55                        DM1006
+6116            6116          DM1007
+6116            6116          DM1008
+6116
+6116
+TPC1020
+DSW1 62256   62256                   (PL... -->
 </platform>

@@ -19,4 +19,19 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- PGM IGS027A ARM protection emulation - type 2
+these are emulation of the 'kov2' type ARM device
+used by
+Knights of Valor 2 (kov2)
+Knights of Valor 2 Nine Dragons (kov2p)
+DoDonPachi 2 - Bee Storm (ddp2)
+Martial Masters (martmast)
+Dragon World 2001 (dw2001)
+Dragon World Pretty Chance (dwpc) (verified to be the same internal rom as dw2001)
+----
+These games use a larger region of shared RAM than the earlier
+type and have a communication based on interrupts
+----
+All of these games have an external AR... -->
 </platform>

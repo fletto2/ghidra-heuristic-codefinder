@@ -6,4 +6,24 @@
     <region start="0x0000C800" end="0x0000CFFF" type="ram" name="mainram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Sega G-80 raster hardware
+Games supported:
+Astro Blaster
+Monster Bash
+005
+Space Odyssey
+Pig Newton
+Sindbad Mystery
+Known bugs:
+Pig Newton doesn't read cocktail controls (might be game bug)
+Astro Blaster v1 dies when you first start if you only
+have one credit at the time (bad dump?, protection?)
+The Sega G-80 system is an interchangeable raster/vector system with
+a common main board and a stack of video/sound boards for each game.
+The CPU boards were protected with the famous G-80 security chips... -->
 </platform>

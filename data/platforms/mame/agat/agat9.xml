@@ -12,4 +12,16 @@
     <region start="0x0000C070" end="0x0000C070" type="io" name="controller_strobe_r"/>
     <region start="0x0000C080" end="0x0000FFFF" type="io" name="agat9_upperbank_r"/>
   </memory_map>
+
+  <!-- agat.cpp
+Driver for Agat series of Soviet Apple II non-clones
+These are similar to Apple II (same bus architecture, keyboard
+and floppy interface), but native video controllers are different.
+agat7 supports Apple (40col, HGR and DHR) video modes with add-on
+card; agat9 has built-in support for 40col and HGR.  Palette in
+Apple modes is different and pixel stretching is not done.
+To do (common):
+- video: use palette rom
+- video: text modes use 7x8 character cell and 224x256 raster
+- video: vertica... -->
 </platform>

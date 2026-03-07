@@ -10,4 +10,13 @@
     <region start="0x10000000" end="0x1000FFFF" type="io" name="io10_r"/>
     <region start="0x18000000" end="0x18FFFFFF" type="ram" name="sdram"/>
   </memory_map>
+
+  <!-- Monkey King SoCs (currently only 3B is supported)
+Presumably-custom ARM-based system-on-chips by Digital Media Cartridge (DMC).
+Intended to run NES and Genesis emulators, primarily for ATgames systems.
+Sometimes abbreviated MK. It is a successor of the Titan SoC used in previous
+emulation based ATgames systems.
+Monkey King and Monkey 2: Presumed custom. Used in some ATgames/Blaze
+Genesis systems and the Atari Flashback Portable.
+Monkey King 3 and Monkey King 3B: Presumed custom. Used in the ATga... -->
 </platform>

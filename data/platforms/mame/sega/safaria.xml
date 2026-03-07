@@ -7,4 +7,35 @@
     <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000CFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <!-- VIC Dual Game board
+Games supported:
+Depth Charge
+Sub Hunter
+Safari
+Frogs
+Space Attack
+Space Attack / Head On
+Head On
+Head On 2
+Head On 2 (Slimline)
+Invinco / Head On 2
+N-Sub
+Samurai
+Invinco
+Invinco / Deep Scan
+Tranquillizer Gun
+Space Trek
+Carnival
+Borderline
+Digger
+Pulsar
+Heiankyo Alien
+Alpha Fighter / Head On
+and a few clones and bootlegs
+Notes:
+Head On and Space Attack had both color and monochrome
+versions. There is a game configuration option to
+switch between them.
+There existed a vertical... -->
 </platform>

@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- PINBALL
+Micropin : Pentacup
+First version used a 6800, but a later revision used a 8085A.
+An unusual design. All the guides and the flippers are made of wireform. The 4 bumpers
+are raised metal silver studs. There's no conventional rollovers, instead there are
+sensors under the board. The bumpers and slings still propel the ball, so it's presumed
+that the studs and wireforms bend a little, allowing a solenoid to pulse the ball back.
+The schematic doesn't include the switch, lamp, or solenoid mat... -->
 </platform>

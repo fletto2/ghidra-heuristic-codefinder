@@ -23,4 +23,16 @@
     <region start="0x0000FBDF" end="0x0000FBDF" type="io" name="region_fbdf"/>
     <region start="0x0000FFDF" end="0x0000FFDF" type="io" name="region_ffdf"/>
   </memory_map>
+
+  <!-- ZX Evolution: BASECONF machine driver.
+Implementation: Revision C
+Hobby computer ZX Evolution is Spectrum-compatible with extensions.
+Hardware (ZX Evolution):
+- Z80 3.5 MHz (classic mode)/ 7 MHz (turbo mode without CPU wait cycles)/ 14 MHz (mega turbo with CPU wait cycles);
+- 4 Mb RAM, 512Kb ROM;
+- MiniITX board (172x170mm), 2 ZXBUS slots, power ATX or +5,+12V;
+- Based on fpga (Altera EP1K50);
+- Peripheral MCU ATMEGA128;
+- PS/2 keyboard and mouse support;
+- Floppy (WDC1793) Beta-disk compatible ... -->
 </platform>

@@ -6,4 +6,10 @@
     <region start="0x000B8000" end="0x000BFFFF" type="ram" name="vram"/>
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="serial" name="8250"/>
+    <device type="sound" name="dac"/>
+  </devices>
 </platform>

@@ -15,4 +15,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- This 1980s computer was manufactured by VTech of Hong Kong.
+known as: CreatiVision, Dick Smith Wizzard, Funvision, Rameses, VZ 2000 and possibly others.
+There is also a CreatiVision Mk 2, possibly also known as the Laser 500. This was a hardware variant,
+sort of "evolved" hardware made compatible for the scheduled "ColecoVision expansion module", which
+never actually shipped for CreatiVision, but for the Laser 2001 home computer (successor to
+CreatiVision).
+TODO:
+CreatiVision
+- fix Diagnostic A ... -->
 </platform>

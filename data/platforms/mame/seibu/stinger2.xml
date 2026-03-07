@@ -7,4 +7,22 @@
     <region start="0x0000F808" end="0x0000F808" type="io" name="explosion_w"/>
     <region start="0x0000F80A" end="0x0000F80A" type="io" name="shot_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Seibu Stinger/Wiz hardware
+Driver by Zsolt Vasvari
+XTAL: 18.432MHz??
+2xZ80, 3xAY8910 (stinger/scion have 2xAY8910 + discrete sound)
+These boards are similar to a Galaxian board in the way it handles scrolling
+and sprites, but the similarities pretty much end there. The most notable
+difference is that there are 2 independently scrollable playfields.
+Wiz/Stinger/Scion/Kung-Fu Taikun memory map (preliminary)
+Main CPU:
+0000-BFFF  ROM
+C000-C7FF  RAM
+D000-D3FF  Video RAM (Foreground)
+D400-D7FF  Color ... -->
 </platform>

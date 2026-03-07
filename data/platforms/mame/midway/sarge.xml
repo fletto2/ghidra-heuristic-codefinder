@@ -7,4 +7,23 @@
     <region start="0x0000F000" end="0x0000F9FF" type="ram" name="nvram"/>
     <region start="0x0000FA00" end="0x0000FA7F" type="io" name="paletteram"/>
   </memory_map>
+
+  <!-- Midway MCR-3 system
+driver by Christopher Kirmse, Aaron Giles
+Games supported:
+Demolition Derby (Monoboard version) (Turbo Cheap Squeak)
+Sarge (Turbo Cheap Squeak)
+Max RPM (Turbo Cheap Squeak)
+Rampage (Sounds Good)
+Power Drive (Sounds Good)
+Star Guards (Sounds Good)
+Spy Hunter (Cheap Squeak Deluxe)
+Crater Raider
+Turbo Tag (prototype) (Cheap Squeak Deluxe)
+Known bugs:
+Spy Hunter crashes at the end of the boat level
+sprite placement on the scrolling games seems a bit off
+Game Hardware
+Sarge:
+Mono ... -->
 </platform>

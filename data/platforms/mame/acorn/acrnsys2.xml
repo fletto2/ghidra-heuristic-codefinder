@@ -13,4 +13,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Acorn System 2, 3, 4, and 5
+Acorn System 2: 6502, VDU 40x25, 4K RAM, 4K ROM (BASIC), Cassette
+http://chrisacorns.computinghistory.org.uk/Computers/System2.html
+Acorn System 3: 6502, VDU 40x25, 16K RAM, 4K ROM (BASIC), FDC (1 disc)
+http://chrisacorns.computinghistory.org.uk/Computers/System3.html
+Acorn System 3: 6809, VDU 40x25, 16K RAM, FDC (1 disc)
+http://chrisacorns.computinghistory.org.uk/8bit_Upgrades/Acorn_6809_CPU.html
+Acorn System 4: 6502, VDU 40x25, 16K RAM, FDC (2 discs)
+http://chrisaco... -->
 </platform>

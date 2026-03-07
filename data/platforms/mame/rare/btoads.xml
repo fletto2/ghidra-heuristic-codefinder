@@ -21,4 +21,7 @@
     <region start="0xB4000000" end="0xB43FFFFF" type="io" name="region_b4000000"/>
     <region start="0xFC000000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- BattleToads
+driver by Aaron Giles -->
 </platform>

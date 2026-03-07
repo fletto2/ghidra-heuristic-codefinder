@@ -8,4 +8,15 @@
     <region start="0x00002000" end="0x000020FF" type="io" name="memory_r"/>
     <region start="0x00002800" end="0x000028FF" type="io" name="memory_r"/>
   </memory_map>
+
+  <!-- Intel MCS-85 System Design Kit (SDK-85)
+09/12/2009 Skeleton driver.
+22/06/2011 Working [Robbbert]
+This is an evaluation kit for the 8085 cpu.
+All onboard RAM and (P)ROM is contained within address-latched Intel memories with built-in I/O
+(8155 and 8355/8755/8755A).
+There is no speaker or storage facility in the standard kit.
+Download the User Manual to get the operating procedures.
+An example is Press SUBST key, enter an address, press NEXT key, enter data,
+then press NEXT to increment the addre... -->
 </platform>

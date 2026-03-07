@@ -14,4 +14,19 @@
     <region start="0x0000FF94" end="0x0000FF94" type="unmapped" name="nop_write"/>
     <region start="0x0000FF98" end="0x0000FF98" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <!-- Tokio          (c) 1986 Taito
+Bubble Bobble  (c) 1986 Taito
+driver by Chris Moore, Nicola Salmoria
+also based on Tokio driver by Marcelo de G. Malheiros &lt;malheiro@dca.fee.unicamp.br&gt;
+Main clock: XTAL = 24 MHz
+Horizontal video frequency: HSYNC = XTAL/4/384 = 15.625 kHz
+Video frequency: VSYNC = HSYNC/264 = 59.185606 Hz
+VBlank duration: 1/VSYNC * (40/264) = 2560 us
+Bubble Bobble ROM info
+CPU Board
+---------
+| Taito  |Romstar | ?????  |Romstar |
+|        |        |missing |mode sel|
+17  CU1   ... -->
 </platform>

@@ -7,4 +7,19 @@
     <region start="0x0000C000" end="0x0000C0FF" type="io" name="read"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="acia6850"/>
+  </devices>
+
+  <!-- Yamaha PSR-60/PSR-70 PortaSound keyboards
+Preliminary driver by R. Belmont, major thanks to reverse-engineering work by JKN0
+Note: PSR-50 is likely the same hardware.
+Special thanks to
+Documentation: https://github.com/JKN0/PSR70-reverse
+More documentation: https://retroandreverse.blogspot.com/2021/01/reversing-psr-70-hardware.html
+https://retroandreverse.blogspot.com/2021/01/reversing-psr-70-firmware.html
+https://retroandreverse.blogspot.com/2021/01/digging-into-ymopq.html
+Service manuals: http... -->
 </platform>

@@ -22,4 +22,10 @@
     <region start="0x000F8280" end="0x000F8280" type="io" name="rtc_stat_r"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="serial" name="z80sio"/>
+    <device type="video" name="mc6845"/>
+  </devices>
 </platform>

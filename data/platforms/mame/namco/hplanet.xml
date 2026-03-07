@@ -21,4 +21,19 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <!-- Namco SH2-based Medal Series, Namco 2000-2001
+Hardware info by Guru
+---------------------
+Games on this system include....
+Game
+Game                Year       Code     Series#
+------------------------------------------------
+Shooting Paradise   2000       Z029      1st
+Galaxian Fever      2000       Z030      2nd
+Pac'n Party        2000       ?         3rd
+Happy Planet        2001       Z037      ?
+=confirmed but not dumped.
+These games above are all medal shooting games.
+There should be several... -->
 </platform>

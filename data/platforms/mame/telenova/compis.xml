@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x0003FFFF" type="ram" name="ram"/>
     <region start="0x000E0000" end="0x000EFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- drivers/compis.c
+machine driver
+Hardware:
+- Intel 80186 CPU 8MHz, integrated DMA(8237?), PIC(8259?), PIT(8253?)
+- Intel 80130 OSP Operating system processor (PIC 8259, PIT 8254)
+- Intel 8274 MPSC Multi-protocol serial communications controller (NEC 7201)
+- Intel 8255 PPI Programmable peripheral interface
+- Intel 8253 PIT Programmable interval timer
+- Intel 8251 USART Universal synchronous asynchronous receiver transmitter
+- National 58174 Real-time clock (compatible with 58274)
+Peripheral:
+- Int... -->
 </platform>

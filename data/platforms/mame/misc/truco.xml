@@ -6,4 +6,17 @@
     <region start="0x00008000" end="0x00008005" type="io" name="read"/>
     <region start="0x00008008" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Truco-Tron - (c) 198? Playtronic SRL, Argentina.
+Written by Ernesto Corvi, Roberto Fresca, and Grull Osgo.
+This appears to be the first arcade game fully designed in Argentina. The hardware, which is based on a M6809E CPU,
+is unlike anything previously known.
+The game is based on Truco, a traditional and highly strategic Argentine card game. It's known for being difficult
+to play, as the objective is to earn points by playing cards while bluffing about the hand you hold.
+For more about the rules... -->
 </platform>

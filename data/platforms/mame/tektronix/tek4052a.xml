@@ -13,4 +13,8 @@
     <region start="0x000087C8" end="0x000087D3" type="io" name="map0x87c8_0x87cb_xpc2"/>
     <region start="0x00008800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Tektronix 4051/4052A
+Skeleton driver.
+http://www.electronixandmore.com/articles/teksystem.html -->
 </platform>

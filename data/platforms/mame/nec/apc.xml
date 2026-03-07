@@ -8,4 +8,24 @@
     <region start="0x000E0000" end="0x000EFFFF" type="io" name="map0xe0000_0xeffff_special_character_ram"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Advanced Personal Computer (c) 1982 NEC
+preliminary driver by Angelo Salese
+TODO:
+- video emulation (bitmap part)
+- NMI seems valid, dumps a x86 stack to vram?
+- What are exactly APU and MPU devices? They sounds scary ...
+- DMA hook-ups
+- serial ports
+- parallel ports
+- Extract info regarding Hard Disk functionality
+- Various unknown ports
+- What kind of external ROM actually maps at 0xa****?
+- Jumper settings (comms settings and display select)
+==================================================... -->
 </platform>

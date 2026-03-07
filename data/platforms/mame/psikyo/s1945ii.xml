@@ -28,4 +28,18 @@
     <entry index="11" name="nmi" irq="true"/>
     <entry index="12" name="user_break"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- ----------------------------------------------------------------
+Psikyo PS3/PS5/PS5v2 SH-2 Based Systems
+driver by David Haywood (+ Paul Priest)
+thanks to Farfetch'd for information about the sprite zoom table.
+------------------------------------------------------------------
+Moving on from the 68020 based system used for the first Strikers
+1945 game Psikyo introduced a system using Hitachi's SH-2 CPU
+This driver is for the single-screen PS3/PS5/PS5v2 boards
+There appear to be multiple revision... -->
 </platform>

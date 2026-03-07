@@ -10,4 +10,16 @@
     <region start="0x004FFFE0" end="0x004FFFFF" type="io" name="map"/>
     <region start="0x00500000" end="0x00FFFFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <!-- Philips CD-i consoles and games
+-------------------------------
+Preliminary MAME driver by Ryan Holtz
+Help provided by CD-i Fan
+STATUS:
+CD-i:
+- The SLAVE MCU cannot be low-level emulated until there is proper /DTACK
+support in the 68k core. A2/A1 and D7..D0 are hooked up to Port C bits 1/0
+and Port A respectively, the Read/Write signal is sent to Port D bit 7, and
+/DTACK is received from Port B bit 6. The MCU therefore has the capability to
+pull /DTACK high on a data read in order to tell the 68... -->
 </platform>

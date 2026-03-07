@@ -57,4 +57,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- MJ-8956 HW games (c) 1989 Jaleco / NMK / UPL
+driver by Angelo Salese, based on early work by David Haywood
+Special thanks to Uki and Yasu for the priority system explanation.
+Similar to the NMK16 / Jaleco Mega System 1 boards but without sprites.
+Notes(general):
+-I think that the 0xf0000-0xfffff area is shared with the MCU because:
+\-The first version of the MCU programs (daireika/mjzoomin) jump in that area.
+Then the MCU upload a 68k code;the programs are likely to be the same for all the games... -->
 </platform>

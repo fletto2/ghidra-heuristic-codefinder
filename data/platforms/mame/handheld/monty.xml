@@ -6,4 +6,16 @@
     <region start="0x00007800" end="0x00007FFF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Driver for Ritam Monty Plays Scrabble Brand Crossword Game - Portable Computer Console
+Scrabble computer that allows you play a game of Scrabble by yourself (or you
+can play with up to 3 players). Has a built-in 12,000 vocabulary, expandable
+to 44,000 by way of 2 expansion modules each containing 16,000 more obscure words.
+You can use the included 'score cards' (which look like little Scrabble boards),
+or you can use a real Scrabble board and tiles to play.  Also note, Monty
+apparently originall... -->
 </platform>

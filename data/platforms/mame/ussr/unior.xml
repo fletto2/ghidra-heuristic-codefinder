@@ -4,4 +4,22 @@
     <region start="0x00000000" end="0x0000F7FF" type="ram" name="mainram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Unior
+2009-05-12 Skeleton driver.
+2013-10-09 Added DMA and CRTC
+2013-10-11 Added PPI, PIT, UART, sound
+Some info obtained from EMU-80.
+The schematic is difficult to read, and some code is guesswork.
+The monitor will only allow certain characters to be typed, thus the
+modifier keys appear to do nothing. There is no need to use the enter
+key; using spacebar and the correct parameters is enough.
+If you press Shift, indicators for numlock and capslock will appear.
+Monitor commands:
+C - ?
+D - hex dum... -->
 </platform>

@@ -50,4 +50,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Shadow Warriors (Modular System)
+As with most of the 'Modular System' setups, the hardware is heavily modified from the original
+and consists of a multi-board stack in a cage, hence different driver.
+For this game the Modular System cage contains 7 boards and 1 sub-board:
+MOD-6/1   - MC68000P10, 4 ROMs, RAMs, 20 MHz Xtal.
+MOD-7/3   - Logic, RAMs.
+MOD-8     - Tilemap board, 20 ROMs.
+MOD 21/1  - Logic, 2 PROMs, 20 MHz Xtal.
+MOD 51/3  - Sprite board, has logic + 1 PROM. Has MOD-5/1 PCB plugged into... -->
 </platform>

@@ -23,4 +23,16 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Pro Baseball Skill Tryout (JPN Ver.)
+(c) 1985 Data East
+Driver by Pierpaolo Prazzoli and Bryan McPhail
+=================================================================
+Debug cheats:
+tryout
+Pitching stage (3)
+$201 remaining ball counter
+$208 strikes count
+(note: put a wpset 20x,1,w and modify the value AFTER that the
+game modifies it) -->
 </platform>

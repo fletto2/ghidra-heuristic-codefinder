@@ -8,4 +8,10 @@
     <region start="0x00000038" end="0x00000039" type="io" name="address_w"/>
     <region start="0x00000040" end="0x00000047" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Memotech MTX 500, MTX 512 and RS 128 -->
 </platform>

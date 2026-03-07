@@ -10,4 +10,26 @@
     <region start="0x00009000" end="0x000093FF" type="ram" name="ram"/>
     <region start="0x0000A000" end="0x0000A3FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Space Force Memory Map
+driver by Zsolt Vasvari
+0000-3fff   R   ROM
+4000-43ff   R/W RAM
+7000-7002   R   input ports 0-2
+7000          W sound command
+7001          W sound CPU IRQ trigger on bit 3 falling edge
+7002          W unknown
+7008          W unknown
+7009          W unknown
+700a          W unknown
+700b          W flip screen
+700c          W unknown
+700d          W unknown
+700e          W main CPU interrupt enable (it uses RST7.5)
+700f          W unknown
+8000-83ff   R/W bit 0-7 of character... -->
 </platform>

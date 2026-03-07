@@ -26,4 +26,22 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Liberator hardware
+Games supported:
+Liberator
+Known bugs:
+none at this time
+Liberator Memory Map (for the main set, the other one is rearranged)
+(from the schematics/manual)
+HEX        R/W   D7 D6 D5 D4 D3 D2 D1 D0  function
+---------+-----+------------------------+------------------------
+0000             D  D  D  D  D  D  D  D   XCOORD
+0001             D  D  D  D  D  D  D  D   YCOORD
+0002             D  D  D                  BIT MODE DATA
+---------+-----+------------------------+--------... -->
 </platform>

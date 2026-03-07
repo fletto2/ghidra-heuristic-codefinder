@@ -7,4 +7,16 @@
     <region start="0x00003FB0" end="0x00003FFF" type="io" name="read"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="cpubank"/>
   </memory_map>
+
+  <!-- PINBALL
+Williams WPC Fliptronics I
+The Addams Family (#20017)
+Since NVRAM is not working, when it starts factory settings will be applied.
+Press F3, and wait for the game attract mode to commence.
+To start, hold ABC hit 1.
+To end the ball, Hold ABC until the bonuses have counted and the score starts flashing.
+ToDo:
+- NVRAM
+- Outputs
+- Mechanical sounds -->
 </platform>

@@ -23,4 +23,17 @@
     <region start="0x00E50000" end="0x00E50007" type="io" name="cd_ba_r"/>
     <region start="0x00E70000" end="0x00E70003" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="8250"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- AT&amp;T UNIX PC series (7300 and 3B1)
+Skeleton driver by Dirk Best and R. Belmont
+DIVS instruction at 0x801112 (the second time) causes a divide-by-zero
+exception the system isn't ready for due to word at 0x5EA6 being zero.
+Code might not get there if the attempted FDC boot succeeds; FDC hookup
+probably needs help.  2797 isn't asserting DRQ? -->
 </platform>

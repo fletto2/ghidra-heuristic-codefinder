@@ -9,4 +9,28 @@
     <region start="0x0000E000" end="0x0000E1FF" type="io" name="protected_ram_r"/>
     <region start="0x0000E800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Bally Astrocade style games
+driver by Nicola Salmoria, Mike Coates, Frank Palazzolo, Aaron Giles
+Games supported:
+Seawolf II
+Extra Bases
+Space Zap
+Wizard of Wor
+Gorf
+(The Adventures of) Robby Roto
+Professor Pac-Man
+Demons &amp; Dragons
+Ten Pix Deluxe
+Known bugs:
+No audio board for Demons &amp; Dragons
+Demons &amp; Dragons doesn't work with RAM protection enabled
+Professor Pac-Man fails screen RAM test
+Game boards:
+90002 = Seawolf II Motherboard (seawolf2)
+90700 = Seawolf II Logic Board (seawolf2... -->
 </platform>

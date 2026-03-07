@@ -12,4 +12,12 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- 2017-11-20 Skeleton
+Milwaukee Computer MC-1000 series (MC-1000/1100/1200/1300/1400) all the same except for disk options.
+Chips: SY6502, 2x 6821, 2x MC6850P, 6852, INS8253
+Other: 2x 7-position rotary "dips" to select baud rates on each 6850 (19.2K, 9600, 4800, 2400, 1200, 600, 300).
+Status:
+- When booted it asks for a test to perform. Valid answers are A,B,D,E,H,I,M,O,P,S,W. To exit a test, press E.
+M displays * then loops. E just asks the Test question again. P gets caught in a loop (fdc test).... -->
 </platform>

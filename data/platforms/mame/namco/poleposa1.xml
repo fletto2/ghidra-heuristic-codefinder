@@ -15,4 +15,28 @@
     <region start="0x0000A200" end="0x0000A200" type="io" name="polepos_engine_sound_lsb_w"/>
     <region start="0x0000A300" end="0x0000A300" type="io" name="polepos_engine_sound_msb_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Pole Position    (c) 1982 Namco
+Pole Position II (c) 1983 Namco
+driver by Ernesto Corvi, Juergen Buchmueller, Alex Pasadyn, Aaron Giles, Nicola Salmoria
+Custom ICs:
+----------
+CPU board:
+06XX     interface to custom 5xXX
+07XX     clock divider
+08XX(x2) bus controller
+10XX(x4) Z8002 bus controller
+51XX     I/O
+52XX     sample player
+53XX     I/O
+54XX     explosion sound generator
+Video board:
+02XX(x3) gfx data shifter and mixer (16-bit in, 4-bit out)
+03XX(x2) ?
+04XX     sprite address generator
+0... -->
 </platform>

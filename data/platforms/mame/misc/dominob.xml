@@ -12,4 +12,21 @@
     <region start="0x0000D018" end="0x0000D018" type="unmapped" name="nop_write"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Domino Block
+Domino Block ver.2
+Driver by Tomasz Slanina
+some bits by David Haywood
+Fixed Dip Switches and additional infos by Stephh
+Based on the Arkanoid driver
+This is a hacked up version of Arkanoid with high colour backgrounds
+and gameplay modifications.  It runs on custom Korean hardware.
+Button 1 = 'use Domino' - The ball will bounce along the bricks in a
+horizontal line without coming down
+until a "hole" or a grey or gold brick
+Button 2 = 'use Rocket' - Your paddle will jump to the top o... -->
 </platform>

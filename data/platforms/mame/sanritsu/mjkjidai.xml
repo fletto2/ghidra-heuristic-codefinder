@@ -5,4 +5,23 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000F7FF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Mahjong Kyou Jidai (麻雀狂時代)     (c)1986 Sanritsu
+CPU: Z80
+I/O: NEC D8255AC*2
+Sound: SN76489*2 CUSTOM
+OSC: 10MHz ??MHz
+driver by Nicola Salmoria
+TODO:
+- Complete dip switches.
+- Several imperfections with sprites rendering:
+- some sprites are misplaced by 1pixel vertically
+- during the tile distribution at the beginning of a match, there's something
+wrong with the stacks moved around, they are misaligned and something is
+missing. -->
 </platform>

@@ -62,4 +62,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Pirate Ship
+PWB(A)354460B
+MC68HC00FN16
+054539  - 8-Channel ADPCM sound generator. Clock input 18.432MHz. Clock outputs 18.432/4 &amp; 18.432/8
+053250  - LVC road generator
+053246A - Sprite generator
+055673  - Sprite generator
+055555  - Mixer/Priority encoder
+056832  - Tilemap generator
+054156  - Tilemap generator
+053252  - CRTC
+053250 config:
+SELC (69)  GND
+SEL1 (83)  GND
+SEL0 (82)  GND
+MODE (68)  GND
+TODO: Music stops if a coin is inserted. MAME or BTNAB? -->
 </platform>

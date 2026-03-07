@@ -19,4 +19,30 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Irem M27 hardware
+If you have any questions about how this driver works, don't hesitate to
+ask.  - Mike Balfour (mab22@po.cwru.edu)
+IREM 'DEMONEYE-X' proto 1981
+proto sound board
+8910
+6821   8910
+6802  sound6 sound7
+3.579545MHz
+main board M-27M-C
+11.73MHz              6502            x x x xx
+x x x  on
+4116            8
+4116            -
+4116            9
+4116            6
+4116            A
+4116            7
+4116            B
+4116
+sub board 1 M-27Sb
+1a2
+2114
+2114
+2114 &lt;- two parts piggy-backe... -->
 </platform>

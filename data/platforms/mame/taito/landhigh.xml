@@ -11,4 +11,24 @@
     <region start="0x00918000" end="0x0091800F" type="io" name="cs1_w"/>
     <region start="0x00FC0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Taito Type-Zero hardware
+Driver by Ville Linde
+Landing High Japan PCB info
+===========================
+Taito Landing High
+Top board
+silkscreened        TYPE-ZERO MOTHER PCB
+stickered       298100308
+K11X0886A
+JC101
+.5  29LV400BC-90        stamped E68-05-1
+.6  29LV400BC-90        stamped E68-04-1
+.24 PALV 18V8-10JC      stamped E68-06
+IC30    Taito TCG020AGP
+IC26    IDT7024 S35J V9928P
+IC10    IBM EMPPC603eBG-100
+IC53    ADV7120KP30 9926 F101764.1
+IC16,17         M54256V32A-10
+IC15,25,31,39,45,49... -->
 </platform>

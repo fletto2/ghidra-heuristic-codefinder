@@ -5,4 +5,27 @@
     <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000F000" end="0x0000F7FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- ACL Manufacturing 1983 hardware (a division of American Communication Laboratories)
+Driver by Andrew Gardner
+2 x Sharp Z80
+2 x NEC 8255
+2 x OKI MSM5126-25RS (2Kx8 RAM), 3.6V battery connected to main RAM
+TI TMS9928ANL
+GI AY-3-8912
+DSW bank at S1
+3.579545MHz XTAL for CPU/sound, 10.7386MHz XTAL for video
+several multigame gamblers on this hardware:
+- The Dealer (bad dump)
+- Kingpin
+- Maxi-Dealer
+Notes:
+- To enter setup mode, boot the game with dips 1, 4, 5, 7 set to on
+- There are some writes arou... -->
 </platform>

@@ -20,4 +20,17 @@
     <region start="0x00C00000" end="0x00C0001F" type="io" name="if16_map"/>
     <region start="0x00E00000" end="0x00E3FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- https://segaretro.org/Magistr_16
+a.k.a. Super Kombat KO16
+MegaDrive SECAM clone with ISA bus glued together thru expansion bus
+Notes:
+- error #100A: generic Magistr16 HW error, missing "BIOS" header at $400000
+(what would return when run on stock MD)
+- error #1004: flash type error PC=fc07da
+- error #1008: GPIO1 Super I/O device at $100 AT90S1200
+- error #1009: &lt;seen in the same path as #1008&gt;
+- error #100C: checksum error (on main cart);
+TODO:
+- accomodate YM7101 to use PAL semantics and ... -->
 </platform>

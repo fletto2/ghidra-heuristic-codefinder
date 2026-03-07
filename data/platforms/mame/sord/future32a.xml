@@ -31,4 +31,10 @@
     <region start="0x00EC0400" end="0x00EC0403" type="io" name="port"/>
     <region start="0x00F00000" end="0x00F0FFFF" type="io" name="region_f00000"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="serial" name="z80scc"/>
+    <device type="video" name="mc6845"/>
+  </devices>
 </platform>

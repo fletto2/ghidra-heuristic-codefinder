@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000087FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- PINBALL
+IDSA pinballs
+Games:
+- Basketball
+- Fantastic Car (1984, to be dumped)
+- V1
+Hardware listing and ROM definitions from PinMAME.
+Hardware:
+---------
+CPU:     Z80 @ 4 MHz
+INT: IRQ @ 977 Hz (4MHz/2048/2) or 488 Hz (4MHz/2048/4)
+DRIVERS: bsktbllp: 2 x 8255 driving lamps and coils, used as demultiplexers only (no read access)
+DISPLAY: bsktbllp: 7-digit 7-segment panels with PROM-based 5-bit BCD data (allowing a simple alphabet)
+v1: 6-digit 7-segment panels with BCD decoding
+SOUND:   2 x AY8910... -->
 </platform>

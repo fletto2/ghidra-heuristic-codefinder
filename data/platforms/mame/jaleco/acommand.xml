@@ -58,4 +58,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Alien Command (c) 1993 Jaleco
+Actually same HW as the Cisco Heat ones.
+TODO:
+- Understand what "devices" area needs to make this working.
+\- Possibly the upper switches controls the UFO's and the lower switches the astronauts.
+- 3D Artworks for the UFO's,Astronauts etc.
+- Merge sprite chip with jaleco/cischeat.cpp
+\- Uses zooming during attract, and needs pdrawgfx.
+Notes:
+- The real HW is a redemption machine with two guns, similar to namco/cgang.cpp.
+bp 237c4,1,{curpc+=0x10;g} ; to skip initial... -->
 </platform>

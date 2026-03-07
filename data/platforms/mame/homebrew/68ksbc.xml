@@ -45,4 +45,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Skeleton driver for 68k Single Board Computer
+29/03/2011
+http://www.kmitl.ac.th/~kswichit/68k/68k.html
+TODO:
+- Add RTC (type DS12887)
+All of the address and i/o decoding is done by a pair of XC9536
+mask-programmed custom devices.
+There are some chips used for unclear purposes (GPI, GPO, LCD).
+This computer has no sound, and no facility for saving or loading programs.
+When started, press ? key for a list of commands.
+Has 1MB of flash (which is actually just 12k of program),
+and 1MB of RAM. Memory... -->
 </platform>

@@ -6,4 +6,19 @@
     <region start="0x0000C000" end="0x0000C7FF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="vram_bank"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- 4nin-uchi Mahjong Jantotsu (c) 1983 Sanritsu
+driver by David Haywood and Angelo Salese
+Notes:
+-The 1st/2nd Player tiles on hand are actually shown on different screen sides. The Service
+Mode is for adjusting these screens (to not let the human opponent read your tiles).
+TODO:
+-According to the flyer, color bitplanes might be wrong on the A-N mahjong charset, might be
+a BTANB however...
+-I need schematics / PCB photos (component + solder sides) to understand if the background
+color is hard-wired ... -->
 </platform>

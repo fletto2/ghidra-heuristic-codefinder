@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x000AFFFF" type="ram" name="ram"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- basic machine hardware */
+I80186(config, m_maincpu, 16_MHz_XTAL);
+m_maincpu-&gt;set_addrmap(AS_PROGRAM, &amp;yes_state::program_map);
+m_maincpu-&gt;set_addrmap(AS_IO, &amp;yes_state::io_map);
+I8256(config, m_uart, 16_MHz_XTAL / 8);
+WD2793(config, m_fdc, 16_MHz_XTAL / 8);
+//m_fdc-&gt;intrq_wr_callback().set(m_uart, FUNC(i8256_device::ir));
+m_fdc-&gt;drq_wr_callback().set(m_maincpu, FUNC(i80186_cpu_device::drq1_w));
+screen_device &amp;screen(SCREEN(config, "screen", SCREEN_TYPE_RASTER));
+screen.se... -->
 </platform>

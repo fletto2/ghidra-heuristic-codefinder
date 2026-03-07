@@ -6,4 +6,17 @@
     <region start="0x00007403" end="0x00007403" type="unmapped" name="nop_write"/>
     <region start="0x00007800" end="0x00007801" type="io" name="address_data_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Skeleton driver for Cirsa 820XXX hardware.
+This PCB is an evolution of the 810XXX hardware found in missbamby.cpp. Main differences are there is an i8254
+and two dips banks instead of just one (and no service/reset button). Also there is no i8155.
+Known games on this hardware:
+________________________________________________________________________
+| Dumped | Game              | Manufacturer       | Notes              |
++--------+-------------------+--------------------+--------------------|
+| Y... -->
 </platform>

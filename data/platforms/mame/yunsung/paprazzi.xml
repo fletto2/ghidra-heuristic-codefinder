@@ -5,4 +5,22 @@
     <region start="0x00800181" end="0x00800181" type="io" name="sound_bank_w"/>
     <region start="0x00800189" end="0x00800189" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Yun Sung 16 Bit Games =-
+driver by   Luca Elia (l.elia@tin.it)
+Main  CPU    :  MC68000
+Sound CPU    :  Z80 [Optional]
+Video Chips  :  Actel A1020B PL84C
+Sound Chips  :  OKI M6295 + YM3812 [Optional]
+---------------------------------------------------------------------------
+Year + Game         Board#
+---------------------------------------------------------------------------
+199? Magic Bubble     YS-1302 / YS102
+1996 Paparazzi        YS-0211? Looks identical
+1997 Shocking         YS-0211
+1998... -->
 </platform>

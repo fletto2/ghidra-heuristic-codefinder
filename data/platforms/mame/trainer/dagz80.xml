@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00001FFF" type="ram" name="ram"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- SEL Z80 Trainer (LEHRSYSTEME)
+2010-08-31 Skeleton driver.
+2011-06-23 Working [Robbbert]
+No diagram has been found. The following is guesswork.
+Test sequence: Press -, enter an address, press = to show contents, press
+up/down-arrow to cycle through addresses.
+Paste test: -=11H22H33H44H55H66H77H88H99HK-1000=
+Now press UP to see that the data has been entered.
+ToDo:
+- Keys are a guess, need to be confirmed.
+- Needs to be tested by a subject-matter expert.
+- i8255 to be added (address is unknown)
+- ... -->
 </platform>

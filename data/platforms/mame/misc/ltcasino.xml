@@ -17,4 +17,24 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Little Casino
+Little Casino II
+Mini Vegas 4in1
+Non-Payout 'Gambling' style games
+TODO:
+- Clocks need to be verified
+- Timing is probably wrong, IRQ sources need to be verified
+- Figure out the rest of the dipswitches
+- Keyboard
+Notes:
+- To enter service mode, press buttons 2 and 4 then reset. Let go
+of the buttons once the video test finishes. Some games also
+enter service mode if you disable all games via the dipswitches.
+Once in service mode, press both buttons 2 and 4 to advance to
+next scree... -->
 </platform>

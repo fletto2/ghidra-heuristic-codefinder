@@ -24,4 +24,23 @@
     <region start="0x00FF9210" end="0x00FF9211" type="io" name="power_r"/>
     <region start="0x00FF9214" end="0x00FF9215" type="io" name="reference_r"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80scc"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- TODO:
+- floppy write
+- floppy DMA transfer timer
+- mouse moves too fast?
+- UK keyboard layout for the special keys
+- accurate screen timing
+- STe DMA sound and LMC1992 Microwire mixer
+- Mega ST/STe MC68881 FPU
+- Mega STe 16KB cache
+- Mega STe LAN
+http://dev-docs.atariforge.org/
+http://info-coach.fr/atari/software/protection.php -->
 </platform>

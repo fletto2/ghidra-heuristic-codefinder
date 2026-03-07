@@ -454,6 +454,12 @@ public class FunctionPatternDetector {
 			}
 		}
 
+		// Hardware filtering: some categories require specific ICs/peripherals.
+		// Check platform memory map and HW register names for required devices.
+		if (!platform.getMemoryMap().isEmpty() || !platform.getHwRegisters().isEmpty()) {
+			results.removeIf(r -> !hasRequiredHardware(r.category));
+		}
+
 		results.sort((a, b) -> Double.compare(b.confidence, a.confidence));
 		return results;
 	}
@@ -511,6 +517,78 @@ public class FunctionPatternDetector {
 	private void tryDetect(List<FunctionType> results, FunctionType result) {
 		if (result != null && result.confidence >= 0.80) {
 			results.add(result);
+		}
+	}
+
+	// ================================================================
+	// Hardware-dependent category filtering
+	// ================================================================
+
+	/**
+	 * Check whether the platform has the hardware required for a given function
+	 * category. Some categories are only valid when specific ICs or peripherals
+	 * are present on the board (e.g., SCSI needs a SCSI controller, sprite
+	 * rendering needs a VDP/PPU).
+	 *
+	 * Uses platform memory map region names and HW register names to infer
+	 * which devices exist. Returns true if the category has no hardware
+	 * requirement, or if the required hardware is present.
+	 */
+	private boolean hasRequiredHardware(String category) {
+		String[] requiredKeywords = getRequiredDeviceKeywords(category);
+		if (requiredKeywords == null) return true; // no requirement
+
+		// Check explicit device list first
+		for (PlatformDescription.DeviceEntry dev : platform.getDevices()) {
+			String devStr = (dev.type + " " + dev.name).toLowerCase();
+			for (String kw : requiredKeywords) {
+				if (devStr.contains(kw)) return true;
+			}
+		}
+
+		// Fall back to scanning region names and HW register names
+		StringBuilder hw = new StringBuilder();
+		for (PlatformDescription.MemoryRegion region : platform.getMemoryMap()) {
+			hw.append(region.name.toLowerCase()).append(' ');
+		}
+		for (PlatformDescription.HardwareRegister reg : platform.getHwRegisters()) {
+			hw.append(reg.name.toLowerCase()).append(' ');
+		}
+		String hwStr = hw.toString();
+
+		for (String kw : requiredKeywords) {
+			if (hwStr.contains(kw)) return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Map function categories to keywords that indicate the required hardware
+	 * is present. Returns null if the category has no hardware dependency.
+	 */
+	private static String[] getRequiredDeviceKeywords(String category) {
+		switch (category) {
+			case "scsi_command":
+			case "scsi_phase":
+				return new String[]{"scsi", "wd33c9", "ncr5380", "53c9", "am5380", "aic6250"};
+			case "sprite_renderer":
+			case "sprite_scaling":
+				return new String[]{"vdp", "ppu", "sprite", "oam", "tms9918", "tms9928",
+					"315-5313", "315-5246", "sega_vdp"};
+			case "sound_driver":
+				return new String[]{"ym2", "ym3", "sn7649", "psg", "spc700", "apu",
+					"opl", "opn", "dac", "pcm", "adpcm", "rf5c", "pokey",
+					"ay-3", "ay8910", "sid", "paula"};
+			case "dma_transfer":
+			case "dma_queue":
+			case "dma_chaining":
+				return new String[]{"dma", "dmac", "blitter"};
+			case "fat_filesystem":
+			case "file_operation":
+				return new String[]{"disk", "fdc", "floppy", "ide", "ata", "scsi",
+					"sdcard", "mmc", "flash"};
+			default:
+				return null; // no hardware requirement
 		}
 	}
 

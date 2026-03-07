@@ -9,4 +9,38 @@
     <region start="0x0000F000" end="0x0000F0FF" type="io" name="vidram_r"/>
     <region start="0x0000F840" end="0x0000F8FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Big Event Golf (c) Taito 1986
+driver by Jarek Burczynski
+Tomasz Slanina
+Taito 1986  M4300056B
+K1100156A Sound
+J1100068A
+YM2149     2016
+MSM5232    A67-16
+Z80        A67-17
+A67-18
+8MHz
+-----------------------------------------------------
+K1100215A CPU
+J1100066A
+2064
+A67-21
+A67-20      A67-03
+Z80         A67-04
+A67-05
+A67-06                          2016
+A67-07
+A67-08
+A67-09
+A67-10-2          2016
+A67-11
+10MHz             Z80
+A67-19-1 (68705P5)
+----------------------------------------------------... -->
 </platform>

@@ -8,4 +8,20 @@
     <region start="0x0000031C" end="0x0000032F" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="region_c000"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- drivers/oric.cpp
+Systems supported by this driver:
+Oric-1,
+Oric Atmos,
+Oric Telestrat,
+Pravetz 8D
+Pravetz is a Bulgarian copy of the Oric Atmos and uses
+Apple 2 disc drives for storage.
+This driver originally by Paul Cook, rewritten by Kevin Thacker,
+re-rewritten by Olivier Galibert. -->
 </platform>

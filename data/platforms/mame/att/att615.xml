@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00005FFF" type="ram" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Skeleton driver for AT&amp;T 610 Business Communication Terminal (BCT).
+The video ASIC is a 68-pin PLCC marked:
+(M) AT&amp;T
+1006B2*
+456555
+18289S 71
+Another custom IC (28-pin DIP) is next to the character generator:
+WE
+492A*
+18186 71 -->
 </platform>

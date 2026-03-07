@@ -50,4 +50,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Dr. Tomy    -   (c) 1993 Playmark
+A rip-off of Dr. Mario by Playmark, using some code from Gaelco's Big Karnak on similar hardware.
+TOMY
++---------------------------------------------+
+| VR1   14             MCM2118                |
+|     M6295  1MHz      MCM2118                |
+|                                             |
+|        MCM2118                           17 |
+|J       MCM2118       GAL                 18 |
+|A                          TPC1020AFN     19 |
+|M                         ... -->
 </platform>

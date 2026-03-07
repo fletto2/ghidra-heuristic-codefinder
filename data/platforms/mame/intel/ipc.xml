@@ -4,4 +4,27 @@
     <region start="0x00000000" end="0x0000DFFF" type="ram" name="ram"/>
     <region start="0x0000E800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Intel iPB and iPC
+17/12/2009 Skeleton driver.
+22/04/2011 Connected to a terminal, it responds. Modernised.
+--&gt; When started, you must press Space, then it will start to work.
+Monitor commands:
+A
+Dn n - dump memory
+E
+Fn n n - fill memory
+G
+Hn n - hex arithmetic
+Mn n n - move (copy) memory block
+N
+Q
+R
+Sn - modify a byte of memory
+W - display memory in Intel? format
+X - show and modify registers
+Preliminary Memory Map
+E800-F7FF BIOS ROM area
+F800-FFFF Monitor ROM (or other user interface)
+I/O F4... -->
 </platform>

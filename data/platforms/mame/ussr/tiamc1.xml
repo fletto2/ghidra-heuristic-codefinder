@@ -5,4 +5,29 @@
     <region start="0x0000C000" end="0x0000CFFF" type="ram" name="ram"/>
     <region start="0x0000F000" end="0x0000F3FF" type="io" name="kot_videoram_w"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- TIA-MC1 driver
+driver by Eugene Sandulenko
+special thanks to Shiru for his standalone emulator and documentation
+Games supported:
+Billiard
+Konek-Gorbunok (Little Humpbacked Horse)
+Snezhnaja Koroleva (Snow Queen)
+S.O.S.
+Gorodki
+Kot-Rybolov
+Other games known to exist on this hardware (interchangeable by the ROM swap):
+Avtogonki
+Istrebitel'
+Kotigoroshko
+Ostrov Drakona
+Ostrov Sokrovisch
+Perekhvatchik
+Zvezdnyi Rytsar'
+During bootup hold F2 to enter test mode.
+Also use F2 to switch the screens during ... -->
 </platform>

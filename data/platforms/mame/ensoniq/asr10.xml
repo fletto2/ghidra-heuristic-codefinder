@@ -45,4 +45,32 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+  </devices>
+
+  <!-- esqasr.c - Ensoniq ASR-10 and ASR-X
+Skeleton driver by R. Belmont
+ASR-10 hardware:
+CPU: 68302 MCU
+Sound: ES5506
+Effects: ES5510
+FDC: NEC uPD72069
+DUART: 2681
+Memory map:
+0x000000-0x03ffff   OS ROM
+0xfb0000-0xfcffff   OS RAM
+ASR-X hardware:
+CPU: 68340 MCU
+Sound: ES5506
+Effects: ES5511
+FDC: NEC uPD72069
+http://www.gweep.net/~shifty/music/asrxhack/
+Memory map:
+0x00000000-0x000fffff   OS ROM
+0x00800000-0x008000ff   ESP2 5511?
+0x00f00000-0x00f007ff   Unknown
+0x08000000-0x08200000   RAM
+0x0be00000-0x0... -->
 </platform>

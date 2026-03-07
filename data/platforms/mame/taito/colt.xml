@@ -13,4 +13,22 @@
     <region start="0x0000DF03" end="0x0000DF03" type="io" name="nycaptor_gfxctrl_r"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="sharedram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- N.Y. Captor - Taito '85
+Driver by Tomasz Slanina
+Hardware similar to Fairyland Story
+Cycle Shooting (Taito '86) is running on (almost) the same hardware
+as NY Captor, but MCU dump is missing.
+What's new :
+- added bootlegs - Bronx and Colt
+- Cycle Shooting added (bigger VRAM than nycpator, different (unknown yet) banking and
+gfx control , ROMs probably are wrong mapped, gfx too)
+- Sub CPU halt (cpu #0 ,$d001)
+- Improved communication between main cpu and sound cpu ($d400 cpu#0 , $d000 sound cpu)
+... -->
 </platform>

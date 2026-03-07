@@ -5,4 +5,14 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="main_ram"/>
     <region start="0x0000FFFD" end="0x0000FFFF" type="io" name="output_ack_r"/>
   </memory_map>
+
+  <!-- Self Contained zexall 'Z80 instruction exerciser' test driver
+Zexall originally written by Frank Cringle for ZX Spectrum
+Modularized Spectrum-independent Zexall binary supplied by Blargg
+Serial interface binary/preloader at 0x0000-0x00FF written by Kevin 'kevtris' Horton
+NOTE: there's a modified version of this driver in src/zexall
+Memory map:
+Ram 0000-FFFF (preloaded with binary)
+Special calls take place for three ram values (this interface was designed by kevtris):
+FFFD - 'ack' - shared ram wi... -->
 </platform>

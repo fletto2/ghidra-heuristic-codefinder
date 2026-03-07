@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x000007FF" type="rom" name="rom"/>
     <region start="0x00001C00" end="0x00001FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Tesla PMI-80
+2009-05-12 Skeleton driver.
+2011-06-20 Made mostly working
+2019-06-27 More work done
+ToDo:
+- cassette (coded per schematic, but not working ("SPAT" error))
+- I button (should cause an interrupt and jump to 0038 - currently nothing happens)
+Notes:
+- Keyboard consists of 16 black hex keys, and 9 blue function keys
+- The hex keys are 0 through 9, A through F on our keyboard
+- The function key labels are RE, I, EX, R, BR, M, L, S, =
+- The letter M shows as an inverted U in the display
+-... -->
 </platform>

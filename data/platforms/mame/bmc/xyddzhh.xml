@@ -8,4 +8,23 @@
     <region start="0x00360000" end="0x00360001" type="io" name="xyddzhh_dsw_r"/>
     <region start="0x00370000" end="0x00370001" type="io" name="mahjong_key_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- BMC games using a 68k + VDB40817/SYA70521
+driver by Luca Elia
+Similar to bmcbowl, koftball, popobear
+CPU:    68000
+Video:  BMC VDB40817 + BMC SYA70521
+Sound:  M6295 + UM3567
+Other:  BMC B816140 (CPLD)
+TODO:
+Hopper hookup doesn't work properly.  MAME counts far more "tickets
+dispensed" than the number of coins/tickets the games are supposed to
+pay out.
+dbshahb: Implement different video chip, different memory map
+xyddzhh: Improve DSW definitions -->
 </platform>

@@ -7,4 +7,23 @@
     <region start="0x00C0000B" end="0x00C0000B" type="io" name="s1945_mcu_command_w"/>
     <region start="0x00C00011" end="0x00C00011" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- -= Psikyo Games =-
+driver by   Luca Elia (l.elia@tin.it)
+CPU:    68EC020 + PIC16C57 [Optional MCU]
+Sound:  Z80A                +   YM2610
+Or:  LZ8420M (Z80 core)  +   YMF286-K (YM2610 compatible)
+Chips:  PS2001B
+PS3103
+PS3204
+PS3305
+---------------------------------------------------------------------------
+Name                    Year    Board          Notes
+---------------------------------------------------------------------------
+Sengoku Ace         (J) 1993    SH201B
+Gun Bird            (J)... -->
 </platform>

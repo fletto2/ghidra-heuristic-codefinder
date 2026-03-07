@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x00007FFF" type="io" name="region_0"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- mc-CP/M-Computer
+2010-08-31 Skeleton driver.
+2010-11-18 Connected to a terminal
+2011-09-28 Added more bioses
+Some Monitor commands (varies between versions):
+B - lock keyboard (^N to regain control)
+E - prints a number
+I - Select boot drive/set parameters - then it attempts to boot
+K,O - display version header
+N - newline
+Z - print 'EFFF'
+URL for v3.4: http://www.hanshehl.de/mc-prog.htm (German language)
+Although the manual specifies ports 40-44 for the FDC, all bios versions
+support it at 30-34... -->
 </platform>

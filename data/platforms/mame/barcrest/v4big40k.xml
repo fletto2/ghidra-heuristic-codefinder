@@ -5,4 +5,17 @@
     <region start="0x00A00002" end="0x00A00005" type="io" name="mpu4_vid_bt_a00002_w"/>
     <region start="0x00A00008" end="0x00A00009" type="io" name="mpu4_vid_bt_a00008_w"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="acia6850"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Barcrest MPU4 Extension driver by J.Wallace, Phil Bennett and Anonymous.
+--- Board Setup ---
+For the Barcrest MPU4 Video system, the GAME CARD (cartridge) contains the MPU4 video bios in the usual ROM
+space (occupying 16k), an interface card to connect an additional Video board, and a 6850 serial IO to
+communicate with said board.
+The VIDEO BOARD is driven by a 10mhz 68000 processor, and contains a 6840PTM, 6850 serial IO
+(the other end of the communications), an SAA1099 for stereo sound and SCN... -->
 </platform>

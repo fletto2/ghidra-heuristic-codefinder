@@ -51,4 +51,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+    <device type="sound" name="rf5c68"/>
+  </devices>
+
+  <!-- System 16 / 18 bootlegs
+Sega's System 16 and System 18 hardware was heavily bootlegged.
+Most of these bootlegs had significant modifications compared to the real hardware.
+They still roughly reflect which system they have been bootlegged from however.
+Bootlegs
+Type 16B:
+--------
+Encrypted / Protected bootlegs
+- Bay Route (set 1)
+- Golden Axe (set 1)
+These share a common encryption, Bay Route is also protected, the Golden Axe set has a strange
+unknown rom, maybe it's related to an MCU that isn't ... -->
 </platform>

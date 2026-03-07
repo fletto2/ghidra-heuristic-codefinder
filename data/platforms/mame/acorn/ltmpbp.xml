@@ -18,4 +18,24 @@
     <region start="0x0000FEC0" end="0x0000FEC3" type="io" name="read"/>
     <region start="0x0000FEE0" end="0x0000FEFF" type="io" name="host_r"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="sound" name="sn76489"/>
+  </devices>
+
+  <!-- BBC Model B+
+ANB51 - BBC Model B+ 64K
+ANB52 - BBC Model B+ 64K with Econet
+ANB53 - BBC Model B+ 64K with Disc interface
+ANB54 - BBC Model B+ 64K with Disc and Econet interfaces
+ANB55 - BBC Model B+ 128K with Disc interface
+Econet
+AEH25 - Econet X25 Gateway
+Acorn Business Computer
+ABC110        - 64K,   10MB HDD, Z80, CP/M 2.2
+ABC210/ACW443 - 4096K, 20MB HDD, 32016, PanOS
+ABC310        - 1024K, 10MB HDD, 80286, DOS 3.1/GEM
+TODO:
+- Cambridge Workstation has a Tube switch to disable internal co-pro... -->
 </platform>

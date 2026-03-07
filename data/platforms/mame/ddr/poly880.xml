@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- VEB Polytechnik Poly-Computer 880
+http://www.kc85-museum.de/books/poly880/index.html
+Initially the screen is blank. The CTC causes a NMI, this autoboots the system,
+and then the PIO releases the NMI line.
+Pasting:
+0-F : as is
+EXEC : X
+BACK : K
+MEM : M
+GO : G
+Test Paste:
+M4000X11X22X33X44X55X66X77X88X99XM4000
+Now press X to confirm the data has been entered.
+The SC1 version is a modification that turns it into a chesscomputer.
+Not to be confused with the prequel to SC2, but more likely a differen... -->
 </platform>

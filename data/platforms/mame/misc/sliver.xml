@@ -55,4 +55,24 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Sliver - Hollow Corp.1996
+driver by Tomasz Slanina
+Custom blitter + background framebuffer + oki for sound.
+The background images on this hardware are in JPEG format, the Zoran chips are
+hardware JPEG decompression chips.
+TODO:
+- verify OKI rom banking  (bank num inverted or not)
+- fix transparency problems in some stages
+PCB Layout
+----------
+WS16-AJ-940820
+|---------|-----------|------------------------------------|
+|   TL084 |   i8031   |   KA-1                             |
+|         |------... -->
 </platform>

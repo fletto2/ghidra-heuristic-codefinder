@@ -7,4 +7,17 @@
     <region start="0x000C000E" end="0x000C000F" type="io" name="region_c000e"/>
     <region start="0x000C001E" end="0x000C001F" type="unmapped" name="nop_read"/>
   </memory_map>
+
+  <!-- Rabbit Punch / Rabio Lepus
+driver by Aaron Giles
+Memory map
+========================================================================
+MAIN CPU
+========================================================================
+000000-03FFFF   R     xxxxxxxx xxxxxxxx   Program ROM
+040000-04FFFF   R/W   xxxxxxxx xxxxxxxx   Bitmap RAM (512x256 pixels)
+R/W   xxxx---- --------      (leftmost pixel)
+R/W   ----xxxx --------      (2nd pixel)
+R/W   -------- xxxx----      (3rd pixel)
+R/W   -------- ----xxxx      (rig... -->
 </platform>

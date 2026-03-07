@@ -26,4 +26,27 @@
     <region start="0x00004000" end="0x0000400F" type="io" name="read"/>
     <region start="0x00005000" end="0x00007FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="pokey"/>
+  </devices>
+
+  <!-- Atari Tunnel Hunt hardware
+Games supported:
+Tunnel Hunt
+Known issues:
+see below
+MAME driver for Tunnel Hunt (C)1981
+(aka Tube Chase)
+Developed by Atari
+Hardware by Dave Sherman
+Game Programmed by Owen Rubin
+Licensed and Distributed by Centuri
+Many thanks to Owen Rubin for invaluable hardware information and
+game description!
+Known Issues:
+Colors:
+- Hues are hardcoded.  There doesn't appear to be any logical way to
+map the color PROMs so that the correct colors appear.
+See last page of schematics... -->
 </platform>

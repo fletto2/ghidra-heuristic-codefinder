@@ -5,4 +5,16 @@
     <region start="0x03C00000" end="0x03C1FFFF" type="ram" name="fb_vram"/>
     <region start="0x03F00000" end="0x03F0FFFF" type="ram" name="share3"/>
   </memory_map>
+
+  <!-- System H1 (c) 1994 Sega
+Driver by David Haywood, Angelo Salese and Tomasz Slanina
+special thanks to Guru for references and HW advices
+Games on this system include Cool Riders and Aqua Stage.
+This system is interesting in that it makes use of an RLE compression scheme, which
+is not something common for Sega hardware, there is a patent for it ( 6,141,122 )
+http://www.google.com/patents/US6141122
+TODO:
+- Understand what the 0x400000c reads on SH-2 really do.
+- improve sound emulation
+- i8237 purpo... -->
 </platform>

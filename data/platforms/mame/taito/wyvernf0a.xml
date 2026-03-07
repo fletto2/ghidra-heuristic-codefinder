@@ -15,4 +15,20 @@
     <region start="0x0000D800" end="0x0000DBFF" type="ram" name="palette"/>
     <region start="0x0000DC00" end="0x0000DC00" type="unmapped" name="nop_write"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Wyvern F-0 (1985, Taito)
+driver by Luca Elia
+Typical Taito mid-80s hardware but with dual video output.
+Sound board:    Z80, 2 x YM2149, OKI M5232
+CPU board:      Z80, ROM and RAM, 68705P5 MCU (protected)
+OBJ board:      48MHz OSC, ROMs and RAM
+Video board:    ROMs and RAM, 4 x Fujitsu MB112S146 (also used on arkanoid, lkage)
+The rest is just common logic, there are no custom chips.
+The cabinet uses a half-silvered mirror to mix the images from two screens for a pseudo-3D effect:
+http://www.hige... -->
 </platform>

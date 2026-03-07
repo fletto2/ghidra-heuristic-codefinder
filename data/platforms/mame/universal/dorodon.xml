@@ -11,4 +11,31 @@
     <region start="0x0000B000" end="0x0000D7FF" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E000" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Universal 8106-A2 + 8106-B PCB set
+driver by Nicola Salmoria
+Confirmed to use the 8106-A2/8106-B PCB:
+Lady Bug
+Snap Jack
+Cosmic Avenger
+Similar or bootleg PCB:
+Dorodon (by Falcon)
+Memory map (preliminary)
+0000-5fff ROM
+6000-6fff RAM
+d000-d3ff video RAM
+d000-d007/d020-d027/d040-d047/d060-d067 contain the column scroll
+registers (not used by Lady Bug)
+d400-d7ff color RAM (4 bits wide)
+memory mapped ports:
+read:
+9000      IN0
+9001      IN1
+9002      DSW0
+9003      DSW1
+e000      IN2 (not used by La... -->
 </platform>

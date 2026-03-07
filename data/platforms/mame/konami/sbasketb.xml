@@ -16,4 +16,25 @@
     <region start="0x00003F80" end="0x00003F80" type="ram" name="writeonly"/>
     <region start="0x00006000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Super Basketball memory map (preliminary)
+(Hold down Start 1 &amp; Start 2 keys to enter test mode on start up;
+use Start 1 to change modes)
+driver by Zsolt Vasvari
+MAIN BOARD:
+2000-2fff RAM
+3000-33ff Color RAM
+3400-37ff Video RAM
+3800-39ff Sprite RAM
+6000-ffff ROM
+Konami designated Super Basketball with the label of GX405.
+Super Basketball is composed of two boards.  A Sound board with the
+label PWB(B)3000288A and a CPU/Video board with the label
+PWB(A)2000177C silked screened onto them.  All K... -->
 </platform>

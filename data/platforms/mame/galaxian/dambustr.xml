@@ -19,4 +19,17 @@
     <region start="0x0000F800" end="0x0000F800" type="io" name="pitch_w"/>
     <region start="0x0000F800" end="0x0000FFFF" type="io" name="reset_r"/>
   </memory_map>
+
+  <!-- Dambusters
+(c) 1981 South West Research Ltd. (Bristol, UK)
+Reverse-engineering and MAME Driver by Norbert Kehrer (August 2006)
+NOTE:  Eventually to be merged into GALAXIAN.C
+2008-08
+Dip locations verified with manual
+Stephh's notes (based on the games Z80 code and some tests) :
+1) 'dambustr'
+- This seems to be a bugfixed version as only the 3 "fire" buttons are
+tested while entering the initials (code at 0x1e59).
+- The "Initials Reset" button only affects the initials, not the scores !
+- The "Di... -->
 </platform>

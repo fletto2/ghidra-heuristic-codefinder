@@ -5,4 +5,8 @@
     <region start="0x00080000" end="0x00080001" type="io" name="ghunter_trackball_low_r"/>
     <region start="0x000B0000" end="0x000B0001" type="io" name="ghunter_trackball_high_r"/>
   </memory_map>
+
+  <!-- Pop'N Run                       (c) 1987 Seibu Kaihatsu &amp; Yukai Tsukai
+Dead Angle                      (c) 1988 Seibu Kaihatsu
+Gang Hunter                     (c) 1988 Seibu Kaihatsu -->
 </platform>

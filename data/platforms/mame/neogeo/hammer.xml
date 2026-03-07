@@ -62,4 +62,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- -= Andamiro's Midas hardware =-
+driver by Luca Elia
+a reengineered Neo-Geo, with a few differences: no Z80, better sound chip, serial eeprom and 256 color tiles.
+Plus a PIC12C508A microcontroller, probably for the protection checks (I've patched them out for now).
+Hardware description:
+http://web.archive.org/web/20041018094226/http://www.andamiro.com/kor/business/hard_05.html
+CPU         MC68000
+VRAM        256kbyte (4Display/Access bank)
+PaletteRAM  96kbyte
+Display     320(x)*224(y)
+Sprite     ... -->
 </platform>

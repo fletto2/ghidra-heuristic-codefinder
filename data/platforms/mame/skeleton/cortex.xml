@@ -7,4 +7,23 @@
     <region start="0x0000F120" end="0x0000F121" type="io" name="read"/>
     <region start="0x0000F140" end="0x0000F147" type="io" name="map0xf140_0xf147__fdc_tms9909"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="tms9928"/>
+  </devices>
+
+  <!-- Powertran Cortex
+2012-04-20 Skeleton driver.
+ftp://ftp.whtech.com/Powertran Cortex/
+http://www.powertrancortex.com/index.html
+Uses Texas Instruments parts and similar to other TI computers.
+It was designed by TI engineers, so it may perhaps be a clone
+of another TI or the Geneve.
+Chips:
+TMS9995   - CPU
+TMS9929   - Video
+TMS9911   - DMA to floppy (unemulated device)
+TMS9909   - Floppy Disk Controller (unemulated device)
+TMS9902   - UART (x2) (device not usable with rs232.h)
+AY-5-2376 - Keyboard c... -->
 </platform>

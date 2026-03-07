@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00008FFF" type="ram" name="vram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Futari Mahjong Ron II (c) 1981 Sanritsu
+TODO:
+- colors;
+- dip switches;
+- sound, especially f/f part;
+============================================================================
+Debug cheats:
+0x8580-d player-1 tiles
+0x8680-d player-2 tiles -->
 </platform>

@@ -11,4 +11,32 @@
     <region start="0x0000A000" end="0x0000BFFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Chack'n Pop driver by BUT
+Modified by Hau, Chack'n
+Chack'n Pop
+Taito 1983
+PCB Layout
+----------
+Top board
+J1000045A
+K1000220A
+|------------------------|
+|                        |
+|             AO4_06.IC27|
+|                        |
+|                        |
+|                        |
+|                        |
+|                        |
+|                        |
+|                        |
+|                        |
+|-|                       |
+| |              Z80A     |
+| |                  ... -->
 </platform>

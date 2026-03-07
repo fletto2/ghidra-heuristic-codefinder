@@ -12,4 +12,31 @@
     <region start="0x00100000" end="0x002FFFFF" type="ram" name="ram"/>
     <region start="0x00300000" end="0x007FFFFF" type="io" name="buserror_r"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="mc146818"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80scc"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Torch Triple X
+Known components:
+- 68010 CPU
+- 68451 MMU
+- 68450 DMA
+- 6845 CRTC
+- 6303 MPU
+- 6840 Timer
+- HD146818 RTC
+- 6850 UART
+- NCR5380 SCSI
+- AM7990 LANCE 20MHz
+- 8530 SCC
+- 20MHz XTAL
+- 16MHz XTAL
+- 4.9152MHz XTAL
+TODO:
+- emulate the OMTI 5200 controller board, with floppy.
+- dump keyboard MCU and implement full keyboard, with mouse. -->
 </platform>

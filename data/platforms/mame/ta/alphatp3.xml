@@ -6,4 +6,20 @@
     <region start="0x000E0000" end="0x000EFFFF" type="io" name="gfxext_r"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+  </devices>
+
+  <!-- Triumph-Adler Alphatronic Px series
+===================================
+The Px series was designed by SKS (Steinmetz-Krischke Systemtechnik), like the ITT3030 and the SKS Nano,
+the boards are closely related.
+Keyboard and floppy stuff was copypasted from ITT3030 and adapted to the best of knowledge.
+P1, P2 and P2S: no paging
+Lower 16K for P1, P2 and P2 S:
+0x0000 - 0x17ff ROM monitor (MOS)
+0x1800 - 0x1bff 1K RAM
+0x1c00 - 0x1fff reserved
+0x2000 - 0x2fff reserved, belonging to the video card's memo... -->
 </platform>

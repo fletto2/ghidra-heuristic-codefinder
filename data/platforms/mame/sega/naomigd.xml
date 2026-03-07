@@ -7,4 +7,12 @@
     <region start="0x10000000" end="0x103FFFFF" type="io" name="shared_6154_sdram_r"/>
     <region start="0x14000000" end="0x1BFFFFFF" type="io" name="region_14000000"/>
   </memory_map>
+
+  <!-- GPIO pins(main board: EEPROM, DIMM SPDs, option board: PIC16, JPs)
+|
+SH4 &lt;-&gt; 315-6154 &lt;-&gt; PCI bus -&gt; Sega 315-6322 -&gt; Host system interface (NAOMI, Triforce, Chihiro)
+|         |                                  -&gt; 2x DIMM RAM modules
+RAM       RAM                -&gt; Altera (PCI IDE Bus Master Controller) -&gt; IDE bus -&gt; GD-ROM or CF
+16MB       4MB                -&gt; PCnet-FAST III -&gt; Ethernet
+315-6154 - SH4 CPU to PCI bridge and SDRAM controller, also used in Seg... -->
 </platform>

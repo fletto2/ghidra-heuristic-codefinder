@@ -21,4 +21,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Ohio Scientific Superboard II Model 600
+PCB Layout
+----------
+OHIO SCIENTIFIC MODEL 600 REV D
+|-------------------------------------------------------------------------------------------|
+|                   2114    2114                                                            |
+|                                   LS138               CN1                                 |
+|       IC1         2114    2114                                                            |
+|                             ... -->
 </platform>

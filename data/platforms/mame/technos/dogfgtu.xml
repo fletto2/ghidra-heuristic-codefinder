@@ -21,4 +21,15 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Acrobatic Dog-Fight / 『バッテン・オハラのスチャラカ空中戦』
+(c) 1984 Technos Japan
+driver by Nicola Salmoria
+TODO:
+- verify clocks: 1.5MHz AY clocks and 57.44Hz screen refresh rate are
+certain when compared to PCB video, 16 IRQs per frame is also certain -->
 </platform>

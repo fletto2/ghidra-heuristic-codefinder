@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x0000FFFF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Sega System E
+Sega System 'E' is a piece of hardware used for a couple of Arcade Games
+produced by Sega in the mid 80's. It's roughly based on their Sega Master System
+home console unit, using the same '315-5124' VDP (actually in this case 2 of
+them)
+An interesting feature of the system is that the CPU is contained on the ROM
+board, the MAIN System E board contains the Graphics processor, this opens the
+possibility for using processors other than the Standard Z80 to run the main
+game code on; se... -->
 </platform>

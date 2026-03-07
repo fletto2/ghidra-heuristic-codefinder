@@ -12,4 +12,25 @@
     <region start="0x0000B500" end="0x0000B500" type="io" name="address_w"/>
     <region start="0x0000B600" end="0x0000B600" type="io" name="data_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Wall Crash by Midcoin (c) 1984
+Driver by Jarek Burczynski
+2002.12.23
+DIPSW-8     AY-3-8912                               DIPSW-4
+DIPSW-4
+74s288
+WAC1   WAC2   WAC3
+(2532) (2532) (2532)
+12.288MHz
++------------+        2114  2114  2114  2114
++ EPOXY WITH +                                +-------+
++ LS08       +      WAC05  WAC1/52   EMPTY    + SMALL +
++LS240, LS245+      (2764) (2764)    SOCKET   + EPOXY +
++ Z80        +                                +-------+
++------------+
+The bigger Epoxy brick... -->
 </platform>

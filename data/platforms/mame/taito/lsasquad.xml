@@ -10,4 +10,20 @@
     <region start="0x0000EC00" end="0x0000EC01" type="io" name="write"/>
     <region start="0x0000EE00" end="0x0000EE00" type="io" name="data_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Land Sea Air Squad / Storming Party  (c) 1986 Taito
+driver by Nicola Salmoria
+TODO:
+- Wrong sprite/tilemap priority. Sprites can appear above and below the middle
+layer, it's not clear how this is selected since there are no free attribute
+bits.
+The priority seems to involve split transparency on the tilemap and also
+priority on sprites (so that people pass below doors but airplanes above).
+It is confirmed that priority is controlled by PROM a64-06.9 (grounding A9
+makes sprites disappear).
+- Scr... -->
 </platform>

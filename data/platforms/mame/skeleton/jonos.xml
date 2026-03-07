@@ -8,4 +8,11 @@
     <region start="0x00005000" end="0x00005003" type="io" name="keyboard_r"/>
     <region start="0x00006000" end="0x00006001" type="io" name="unknown_device"/>
   </memory_map>
+
+  <!-- Jonos Escort
+2013-09-12 Skeleton driver
+It seems there were about 6 models of Escort, mostly Z-80A based running
+CP/M. However, this one appears to be an 8085-based terminal.
+Haven't found any info.
+There are interrupt handlers at 5.5 (0x002c) and 6.5 (0x0034). -->
 </platform>

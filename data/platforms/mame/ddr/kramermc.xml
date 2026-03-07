@@ -8,4 +8,19 @@
     <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000FC00" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <!-- Kramer MC driver by Miodrag Milanovic
+2008-09-13 Preliminary driver.
+This is a homebrew computer by Manfred Kramer, of Germany. The "Y23VO" that
+appears at startup was the author's amateur radio callsign at the time. (It
+changed after reunification.)
+The computer was intended to have a CTC, a SIO, and a FDC (uPD765A), however
+there's no code to make use of them. The system PIO is intended for
+keyboard, serial, and beeper.
+Commands:
+A : Assembler
+B : Basic
+C : Copy
+D : Dump (Hex dump of memory)
+E... -->
 </platform>

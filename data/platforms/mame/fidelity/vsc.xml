@@ -5,4 +5,21 @@
     <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x000063FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Fidelity Voice Sensory Chess Challenger (VSC)
+---------------------------------------------
+RE notes by Kevin Horton
+The display/button/LED/speech technology is identical to Fidelity CSC.
+Only the CPU board was changed. As such, it works the same but is interfaced
+to different port chips this time.
+Hardware:
+---------
+On the board are 13 chips.
+The CPU is a Z80A running at 3.9MHz, with 20K of ROM and 1K of RAM mapped.
+I/O is composed of an 8255 triple port adaptor, and a Z80A PIO parallel I/O
+in... -->
 </platform>

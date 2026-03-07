@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00000FFF" type="rom" name="rom"/>
     <region start="0x00004000" end="0x000043FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- 2011-JUL-16 SLC1 skeleton driver [Robbbert]
+2011-DEC-29 Working [Robbbert]
+2021-APR-27 And stuff [Stuff doer]
+Schach- und Lerncomputer SLC 1 by Dr.Ing. Dieter Scheuschner, published in
+Schaltungssammlung für den Amateur, 5. Lieferung 1989 (East Germany).
+Reference:
+- https://dr-scheuschner.de/start/schachcomputer-slc1/
+- http://www.jens-mueller.org/jkcemu/slc1.html
+This computer is both a Z80 trainer, and a chess computer. The keyboard
+is different between the two. So by default, the chess numbe... -->
 </platform>

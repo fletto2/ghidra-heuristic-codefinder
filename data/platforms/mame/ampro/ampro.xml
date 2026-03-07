@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="mainram"/>
     <region start="0x00000000" end="0x00000FFF" type="ram" name="bank1"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="scsi" name="ncr5380"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Ampro Little Z80 Board
+2013-09-02 Skeleton driver.
+Chips: Z80A @4MHz, Z80CTC, Z80DART, WD1770/2, NCR5380. Crystal: 16 MHz
+This is a complete CP/M single-board computer that could be mounted
+on top of a standard 13cm floppy drive. You needed to supply your own
+power supply and serial terminal.
+The later versions included a SCSI chip (NCR5380) enabling the use
+of a hard drive of up to 88MB. -->
 </platform>

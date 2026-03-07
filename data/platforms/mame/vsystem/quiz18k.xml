@@ -55,4 +55,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Welltris (c)1991 Video System
+hardware is similar to aerofgt.cpp but with slightly different sprites, sound,
+and an additional 'pixel' layer used for the backdrops
+Driver by David Haywood, with help from Steph from The Ultimate Patchers
+Thanks to the authors of aerofgt.cpp and fromance.cpp on which most of this is
+based
+OW-13 CPU
+CPU  : MC68000P10
+Sound: Z80 YM2610 YM3016
+OSC  : 14.31818MHz (X1), 12.000MHz (X2),
+8.000MHz (X3), 20.0000MHz (OSC1)
+ROMs:
+j1.7 - Main programs (271000 compatible oneti... -->
 </platform>

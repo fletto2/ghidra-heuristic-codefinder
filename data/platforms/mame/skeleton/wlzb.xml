@@ -54,4 +54,22 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- TODO:
+- Crashes strong with ACRTC, plenty of unsupported features (starting with COMMAND_DWT);
+- OKI bank (standard 0/0x40000 layout);
+- I/Os;
+===================================================================================================
+Wu Lin Zhengba, Huang Yeh, 1999?
+Hardware Info by Guru
+---------------------
+HY-9802
+|--------------------------------------------------------------|
+| SW5  EPM7032  M5M482128   M5M482128                     T518B|
+|                     M5M482128   M5M48212... -->
 </platform>

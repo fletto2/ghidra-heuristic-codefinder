@@ -5,4 +5,23 @@
     <region start="0x00008000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="hd6845"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Lola 8 and Lola 8A
+Ivo Lola Ribar Institute
+2013-08-28 Skeleton driver.
+Lola 8 and Lola 8 NK
+====================
+Lola 8 is predecessor Lola 8A, but essentially a different computer with more
+differences than similarities.
+D1 and D2 are sockets for ROMs, but 4K or 8K can be used (solder jumper)
+D3 and D4 can be used for ROM or RAM chips.
+D5,D6 and D7 only for RAM, all are 2K (HM6116 or MB8416)
+F6 for video RAM is 1K or 2K, note that only 1K is actually used
+Quartz crystal can be 15 or 16MHz (not... -->
 </platform>

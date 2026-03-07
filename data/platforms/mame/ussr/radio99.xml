@@ -5,4 +5,13 @@
     <region start="0x00000000" end="0x0000F7FF" type="ram" name="mainram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- MIKRO80 driver by Miodrag Milanovic
+2008-03-10 Preliminary driver.
+Cassette:
+Mikro80: loads software items, but not its own saves
+Radio99: can load its own saves; can load radio86 tapes, can load ut88 tapes.
+Kristall2: can load its own saves; can load radio86 tapes; can load radio99 tapes.
+ToDo:
+- Cassette - need schematic of CMT. -->
 </platform>

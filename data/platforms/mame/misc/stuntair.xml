@@ -14,4 +14,20 @@
     <region start="0x0000F800" end="0x0000FBFF" type="ram" name="fgram"/>
     <region start="0x0000FC03" end="0x0000FC03" type="io" name="stuntair_sound_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Stunt Air by Nuova Videotron 1983
+driver todo: (SOME OF THIS WILL NEED PCB REFERENCES / MEASUREMENTS)
+- correct colour PROM decoding (resistor values?)
+- correct FG colour handling (currently use a hardcoded white)
+- correct sound (discrete stuff is for filtering? or drums?)
+- correct remaining GFX / sprite issues (flicker sometimes, might need better vblank timing?)
+Hardware info (complete):
+Main cpu Z80A
+Sound cpu Z80A
+Sound ic AY-3-8910 x2 @ 1.536MHz
+Note: stereo sound output.Op amps LM3900 x... -->
 </platform>

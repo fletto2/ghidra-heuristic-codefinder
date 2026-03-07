@@ -6,4 +6,13 @@
     <region start="0x00040000" end="0x000F3FFF" type="io" name="mrdc_r"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Wang Professional Computer
+http://www.seasip.info/VintagePC/wangpc.html
+chdman -createblankhd q540.chd 512 8 17 512 -->
 </platform>

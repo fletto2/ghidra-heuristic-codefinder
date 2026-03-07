@@ -14,4 +14,19 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Tag Team Wrestling hardware description:
+This hardware is very similar to the BurgerTime/Lock N Chase family of games
+but there are just enough differences to make it a pain to share the
+codebase. It looks like this hardware is a bridge between the BurgerTime
+family and the later Technos games, like Mat Mania and Mysterious Stones.
+The video hardware supports 3 sprite banks instead of 1
+The sound hardware appears nearly identical to Mat Mania
+Stephh's notes :
+- When the "Cabinet" Dip Switch is s... -->
 </platform>

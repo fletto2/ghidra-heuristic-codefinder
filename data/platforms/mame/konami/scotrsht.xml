@@ -12,4 +12,17 @@
     <region start="0x00003300" end="0x00003303" type="io" name="reset_w"/>
     <region start="0x00004000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- GX545 Scooter Shooter - (c) 1985 Konami
+It uses a mixed hardware based on Jailbreak and Iron Horse
+Stephh's notes (based on the game M6809 code and some tests) :
+- There is a leftover from an unknown previous Konami game
+when you enter your initials (code at 0x43f2) :
+if DSW2 bit 2 is ON and DSW3 bit 1 is OFF, you ALWAYS
+have to use player 1 controls !
+Here is what you have for example in konami/jailbrek.cpp driver :
+PORT_START("DSW2")
+...
+PORT_DIPNAME( 0x04, 0x00, DEF_STR( Cabinet ) )
+PORT_DIPS... -->
 </platform>

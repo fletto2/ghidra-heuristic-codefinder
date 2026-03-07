@@ -6,4 +6,25 @@
     <region start="0x00007800" end="0x00007FFF" type="ram" name="nvram"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Some Dynax games using the first version of their blitter
+driver by Nicola Salmoria, blitter support based on work by Luca Elia
+CPU:    Z80-A
+Sound:  YM2203C
+M5205
+OSC:    20.0000MHz
+Video:  HD46505SP
+---------------------------------------
+Year + Game                 Board
+---------------------------------------
+87 Hana Yayoi               D0208298L1
+87 Hana Fubuki              D0602048
+87 Untouchable              D0806298
+---------------------------------------
+Notes:
+- In service mode, press ... -->
 </platform>

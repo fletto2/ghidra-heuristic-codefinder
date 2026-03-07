@@ -6,4 +6,19 @@
     <region start="0x40000000" end="0x47FFFFFF" type="io" name="map"/>
     <region start="0xA0000000" end="0xA07FFFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Sharp Zaurus PDA skeleton driver (SL, ARM/Linux based, 4th generation)
+TODO:
+- Dumps are questionable
+=========================================================================================================================================
+Sharp Zaurus
+------------
+Personal Information (PI) Series
+--------------------------------
+Model: Pi^2 T (proof-of-concept model)
+Manufacturer: Sharp
+Nickname/Series:
+Demo/Press Release Date: April 1992
+Availability: Japan
+Main CPU: Sharp SC62015-compatible "... -->
 </platform>

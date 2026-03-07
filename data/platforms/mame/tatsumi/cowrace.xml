@@ -5,4 +5,24 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00002000" end="0x000023FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="okim6295"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- King Derby (c) 1981 Tatsumi
+driver by Andrew Gardner, Angelo Salese &amp; Roberto Fresca
+original cowrace.c by Luca Elia
+TODO:
+- remaining video issues, priorities, sprites etc.;
+- inputs;
+- Understand how tilemap color offsets really works;
+- Discrete sound part? There's a Rossini's "William Tell" bgm on the Chinese bootlegs,
+I think it's tied with ay8910 port B. Update: the 1986 version sounds that just fine, could be
+that this is a btanb;
+- unknown memories;
+- Garbage on the window tilemap if... -->
 </platform>

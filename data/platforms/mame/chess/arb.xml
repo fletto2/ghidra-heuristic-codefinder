@@ -6,4 +6,21 @@
     <region start="0x00000000" end="0x000007FF" type="ram" name="nvram"/>
     <region start="0x00008000" end="0x0000800F" type="io" name="map"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- AVE Micro Systems ARB chess computer driver, in some regions redistributed
+by Chafitz, and in Germany by Sandy Electronic.
+Auto Response Board (ARB) overview:
+- R6502P CPU @ 2MHz(4MHz XTAL), R6522P VIA
+- 2KB RAM(4*2114), cartridge port
+- magnetic chessboard, 8*8+12 leds
+- PCB label AV001C01 REV A
+The electronic magnetic chessboard is the first of its kind. AVE later licensed
+it to Fidelity (see fidelity/elite.cpp).
+ARB is a romless system, the program ROM is on a cartridge.
+Known chess modules:
+... -->
 </platform>

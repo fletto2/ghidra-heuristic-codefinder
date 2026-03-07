@@ -12,4 +12,15 @@
     <region start="0x00004000" end="0x00005FFF" type="ram" name="banked"/>
     <region start="0x00006000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Ghosts'n Goblins
+Diamond Run
+Notes:
+- Diamond Run doesn't use all the ROMs. d5 is not used at all, and the second
+half of d3o is not used either. There are 0x38 levels in total, the data for
+levels 0x00-0x0f is taken from ROM space 0x8000-0xbfff, the data for levels
+0x10-0x37 is taken from the banked space 0x4000-0x5fff (5 banks) (see the
+table at 0xc66f). Actually, looking at the code it seems to roll overs at
+level 0x2f, and indeed the data for levels 0x30-0x37 isn't valid (player
+starts into ... -->
 </platform>

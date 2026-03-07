@@ -64,4 +64,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Data East 'Rohga' era hardware:
+Rogha Armour Attack         (c) 1991 Data East Corporation
+Wizard Fire                 (c) 1992 Data East Corporation
+Nitro Ball/Gun Ball         (c) 1992 Data East Corporation
+Hangzo (prototype)          (c) 1992 Hot-B
+Schmeiser Robo              (c) 1993 Hot-B
+This hardware is capable of alpha-blending on sprites and playfields
+Todo:  Sprite priority errors in Nitro Ball.
+Schmeiser Robo runs on a slightly modified Rohga pcb.
+Emulation by Bryan McPhail, mish@tend... -->
 </platform>

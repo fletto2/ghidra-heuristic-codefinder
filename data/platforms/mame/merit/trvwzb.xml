@@ -13,4 +13,23 @@
     <region start="0x0000E800" end="0x0000F7FF" type="ram" name="ram"/>
     <region start="0x0000F800" end="0x0000FBFF" type="io" name="palette_r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Merit trivia games
+driver by Pierpaolo Prazzoli
+Games known to be needed:
+- Some other missing categories romsets and new / old revision
+TODO:
+- add flipscreen according to schematics
+- pitboss: dip switches
+- general - add named output notifiers
+- tictacuk: coins aren't accepted. Different coin detection logic?
+Notes: it's important that "questions" is 0xa0000 bytes with empty space filled
+with 0xff, because the built-in ROMs test checks how many question ROMs
+the games has and the type of each... -->
 </platform>

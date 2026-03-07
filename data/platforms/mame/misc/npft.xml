@@ -56,4 +56,17 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Neo Print (c) 1996 SNK
+preliminary driver by David Haywood &amp; Angelo Salese
+npcartv1 bp 1260 pc += 2
+98best44 bp 1312 pc += 2
+TODO:
+- implement remaining video features;
+- sound interface, needs full Neo-Geo conversion;
+- inputs are bare bones and needs extra work;
+- printer/camera devices;
+- lamps;
+- upd4990a returns 4 years less than expected?
+- nprsp: paletteram has 0x40000 palette entries, kludged to work. -->
 </platform>

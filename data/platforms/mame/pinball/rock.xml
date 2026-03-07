@@ -10,4 +10,13 @@
     <region start="0x00000300" end="0x0000031F" type="io" name="io_map"/>
     <region start="0x00001800" end="0x000018FF" type="ram" name="nvram"/>
   </memory_map>
+
+  <!-- PINBALL
+Gottlieb System 80B
+Same as system 80, except that the displays are 20-digit alphanumeric driven by Rockwell 10939/10941 chips.
+The test rom says U4 is faulty. Using MOS6532 fixes this error, but the games ramdomly slam-tilt instead.
+PinMAME used for the display character generator.
+When asked to enter your initials, use the Advance buttons to select a letter, and the Start button to enter it.
+Here are the key codes to enable play: (may need to hit X to start a ball)
+Game                ... -->
 </platform>

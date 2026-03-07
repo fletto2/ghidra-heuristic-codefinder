@@ -8,4 +8,19 @@
     <region start="0x0000D000" end="0x0000D003" type="io" name="map"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="sysbank1"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="sound" name="sn76489"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Nova Laserdisc Games/Atari Games COPS
+(hardware developed by Nova Productions Limited, should we move it from Atari?)
+Preliminary driver by Mariusz Wojcieszek, James Wallace
+Cops uses a Sony CD-ROM in addition to the regular setup, purely to play
+Bad Boys by Inner Circle, so there is musical accompaniment to areas
+where the laserdisc audio is muted.
+The different games here have subtly different control PCBs. COPS has an Atari
+part number (58-12B), while Revelations and Vision Quest simply refer... -->
 </platform>

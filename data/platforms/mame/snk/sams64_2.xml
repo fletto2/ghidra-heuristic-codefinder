@@ -29,4 +29,14 @@
     <region start="0xC0000000" end="0xC0000FFF" type="io" name="com_ram"/>
     <region start="0xC0001000" end="0xC0001007" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Hyper NeoGeo 64
+Driver by David Haywood, ElSemi, Andrew Gardner and Angelo Salese
+Notes:
+The main board is identical for all revisions and all "versions" of the hardware.
+It contains the main MIPS CPU and a secondary communications KL5C80.
+The I/O board is what changes between hardware "versions".  It has a Toshiba MCU with a protected
+internal ROM which has been dumped. This MCU controls (at least) the inputs per game and communicates
+with the main board through dualport RAM.
+I believe that thi... -->
 </platform>

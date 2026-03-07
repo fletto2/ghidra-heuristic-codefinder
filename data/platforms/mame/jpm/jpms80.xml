@@ -4,4 +4,19 @@
     <region start="0x00000000" end="0x00002FFF" type="rom" name="rom"/>
     <region start="0x00003000" end="0x00003FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- JPM System 80 Hardware
+TMS9980A CPU
++
+???
+AY8912?
+TMS9902
+(is there a 9901 as well?)
+---
+There are also older platforms also using the TMS CPU, we load some of those roms here too, but many should go into the SRU folder.
+System80 is based on the SRU platform, but with more outputs and finally a separate CPU and sound board setup to permit easy repair. -->
 </platform>

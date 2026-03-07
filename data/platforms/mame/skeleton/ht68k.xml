@@ -9,4 +9,28 @@
     <region start="0x00E80000" end="0x00E800FF" type="io" name="read"/>
     <region start="0x00F00000" end="0x00F07FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- Hawthorne Technology TinyGiant HT68k
+29/11/2009 Skeleton driver.
+Monitor commands (from ht68k manual) (must be in Uppercase)
+B Load binary file from disk.
+C Compare memory.
+D Display memory in Hex and ASCII.
+E Examine and/or change memory (2 bytes). (. to escape)
+F Fill a block of memory with a value.
+G Go to an address and execute program.
+K Peek.
+L Load program from serial port.
+M Move memory.
+P Poke.
+R Read binary file from disk.
+S System boot.
+T Test printer.
+W Write binary file to disk.
+X E... -->
 </platform>

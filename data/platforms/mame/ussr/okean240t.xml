@@ -5,4 +5,30 @@
     <region start="0x00000000" end="0x0000BFFF" type="ram" name="mainram"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Okeah-240 (Ocean-240).
+2011-12-28 Skeleton driver.
+Info from EMU80:
+intctl : K580wn59
+irq[0]=kbd.irq2
+irq[1]=kbd.irq
+irq[4]=tim.out[0]
+ppa40 : K580ww55
+portA=kbd.pressed.mask
+portB[2]=cas.playback
+portB[5]=kbd.key[58]
+portB[6]=kbd.key[59]
+portC[0-3]=kbd.pressed.row
+portC[4]=kbd.ack
+ppaC0 : K580ww55
+portA=vid.scroll.y
+portB[0-3]=mem.frame[0].page
+portB[1-3]=mem.frame[1].page
+portB[4-5]=mm.page
+portC=vid.scroll.x
+If you leave out the CPM80 roms, the machine will start up in a machine-language moni... -->
 </platform>

@@ -54,4 +54,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Little Robin, (c)1994 TCH
+driver by:
+Pierpaolo Prazzoli
+David Haywood
+Notes:
+How big are the actual framebuffers?  Are both also double buffered?
+Sound pitch is directly correlated with irqs, scanline timings and pixel clock,
+so it's surely not 100% correct. Sound sample playbacks looks fine at current time tho.
+------
+LITTLE ROBIN  TCH S.A.
++---------------------------------------------+
+|TDA2003                       U41_RAM  44C256|
+|VR1                  U48      U40_RAM  44C256|
+|  6.000MHz ... -->
 </platform>

@@ -6,4 +6,20 @@
     <region start="0x00002000" end="0x000020FF" type="ram" name="ram"/>
     <region start="0x00008000" end="0x00009FFF" type="ram" name="vram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Sun Electronics / Gifu Tokki G.T. Block Challenger
+(is "G.T." Gifu Tokki or an indication of table cabinet type like Taito with T.T.?)
+Hardware notes:
+- NEC 8080A @ 2MHz (18MHz XTAL, 8224 clock divider)
+- NEC 8228, 2*NEC 8255C
+- 4KB ROM (4*MB8518)
+- 256 bytes SRAM(2*MB8101), 1KB SRAM(2*M58754S)
+- 1bpp bitmap + ball sprite, paddle sprite
+- discrete sound
+- 15 switches (not the usual small dipswitches, but separate large switches)
+TV Game 8080 hardware is pretty much the same, but on a completely ... -->
 </platform>

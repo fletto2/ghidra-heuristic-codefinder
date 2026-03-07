@@ -16,4 +16,11 @@
     <region start="0x0000A000" end="0x0000BFFF" type="ram" name="bank1"/>
     <region start="0x0000BF00" end="0x0000FFFF" type="io" name="map0xbf00_0xbfff_writes_here_when_zoomsi"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Forty-Love (c) Taito 1984
+driver by Jarek Burczynski -->
 </platform>

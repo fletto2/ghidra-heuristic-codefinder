@@ -17,4 +17,14 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <!-- Shoot Out (USA)             (c) 1985 Data East USA      DE-0219
+Shoot Out (Japan)           (c) 1985 Data East USA      DE-0203
+Shoot Out (Korean bootleg)  (c) 1985 Data East USA      DE-0203 bootleg
+Shoot Out (Japan) is an interesting board, it runs on an earlier PCB design
+than the USA version, has no sound CPU, uses half as many sprites and
+unusually for a Deco Japanese game it is credited to 'Data East USA'.
+Perhaps the USA arm of Deco designed this game rather than the Japanese
+arm?
+Shoot O... -->
 </platform>

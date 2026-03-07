@@ -51,4 +51,27 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- CLE-TOUCH REV. 1 PCB
+Video slots by Chain Luck Electronic (CLE).
+At least some of the games were distributed in the USA by Lucky Sunshine Enterprises (LSE).
+The main components are:
+MC68HC000FN12 CPU
+Lattice ispLSI 1032E 70LJ
+Lattice ispLSI 1016 60LJ
+Lattice iM4A5-32/32 10JC-12JI
+2x HM6264LP-70 RAM (near ispLSI 1016)
+2x HM6264LP-70 RAM (near CPU ROMs)
+2x HM86171-80 RAMDAC (near CPU ROMs)
+12 MHz XTAL (for M68K)
+AT90S4414 MCU (AVR core)
+11.0592 MHz XTAL (for AT90?)
+U6295 sound chip
+6x 8-DIP banks
+... -->
 </platform>

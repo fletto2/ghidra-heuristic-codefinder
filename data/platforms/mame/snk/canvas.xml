@@ -13,4 +13,26 @@
     <region start="0x0000C700" end="0x0000C700" type="io" name="write"/>
     <region start="0x0000D800" end="0x0000F7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Main Event - SNK 1984
+Canvas Croquis - SNK 1985
+driver by David Haywood, Tomasz Slanina
+Notes:
+------
+- mainsnk controls:
+The game uses 2 joysticks (with button on top) and 2 buttons per player.
+Left stick
+up: left straight punch to enemy's face
+left: sway to left
+Right stick
+up: right straight punch to enemy's face
+right: sway to right
+Left + Right stick combinations
+L down + R up: right straight punch to enemy's body
+L up + R down: left straight punch to enemy's body
+L right + R left: guard pl... -->
 </platform>

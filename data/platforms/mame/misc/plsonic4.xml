@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x000099FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Play Sonic 4 by SegaSA / Sonic
+This is a multi-game system. Up to 4 JAMMA PCBs can be connected and the player can decide which game to play.
+The system offers digital counters for time of play and credits (configurable via dips), and game statistics.
+The PCB doesn't seem to have any markings.
+Main components are:
+Z8400AB1 main CPU
+3x 6116 RAMs
+8-dip bank
+4-dip bank
+8 MHz XTAL (near main CPU)
+20 MHz XTAL
+lots of TTL
+4x digital counters
+lots of wires
+There's a very small riser PCB marked 1B-2001-... -->
 </platform>

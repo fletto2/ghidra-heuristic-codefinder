@@ -11,4 +11,18 @@
     <region start="0x0000F006" end="0x0000F007" type="io" name="control_w"/>
     <region start="0x000A0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Dynamite Duke                       (c) 1989 Seibu Kaihatsu/Fabtek
+The Double Dynamites                (c) 1989 Seibu Kaihatsu/Fabtek
+To access test mode, reset with both start buttons held.
+The background layer is 5bpp and I'm not 100% sure the colours are
+correct on it, although the layer is 5bpp the palette data is 4bpp.
+My current implementation looks pretty good though I've never seen
+the real game.
+There is a country code byte in the program to select between
+Seibu Kaihatsu/Fabtek/Taito li... -->
 </platform>

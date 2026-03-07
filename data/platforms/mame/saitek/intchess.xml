@@ -9,4 +9,17 @@
     <region start="0x0000A800" end="0x0000A80F" type="io" name="map"/>
     <region start="0x0000C000" end="0x0000DFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Intelligent Games / SciSys Intelligent Chess
+Developed by Intelligent Games, the same group of people that worked on SciSys
+Super System III and Mark V. Manufactured by SciSys, their main business partner
+at the time. The visual interface is an evolution of "Tolinka".
+It was advertised in a 1980 brochure by SciSys, but it looks like SciSys didn't
+sell this chess computer. It was marketed by Intelligent Games themselves.
+The UK version wasn't widely released, the German version was more common.
+H... -->
 </platform>

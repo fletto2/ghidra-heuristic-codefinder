@@ -12,4 +12,17 @@
     <region start="0x00004000" end="0x00005FFF" type="ram" name="videoram"/>
     <region start="0x00006000" end="0x000077FF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Dorachan (Dora-Chan ?) (c) 1980 Craul Denshi
+Driver by Tomasz Slanina
+Similar to Beam Invader
+TODO:
+- discrete sound
+- dips (if any) - bits 5,6,7 of input port 0?
+- verify cpu clock and interrupts (should be the same as beaminv), it will do
+random resets after screen transitions if timing is wrong
+Gameplay: run over dots in lower half while avoiding monsters and trees. This draws
+back the red curtain blocking access to top part of the screen. Go through and new dots
+below are worth more points.
+... -->
 </platform>

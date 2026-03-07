@@ -6,4 +6,14 @@
     <region start="0x0000C000" end="0x0000C7FF" type="rom" name="rom"/>
     <region start="0x0000C800" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Processor Technology Corp. SOL-20
+07/2009 Skeleton driver.
+Info from: http://www.sol20.org/
+The Sol Terminal Computer was the first complete S-100 microcomputer
+with a built-in keyboard and video output. However, its internal
+architecture resembles a video display terminal more than anything else.
+Note that the SOLOS dump comes from the Solace emu. Confirmed as ok.
+The roms DPMON and CONSOL are widely available on the net as ENT files,
+which can be loaded into memory with the Paste option, then ... -->
 </platform>

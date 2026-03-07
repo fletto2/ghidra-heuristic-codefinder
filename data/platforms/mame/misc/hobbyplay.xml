@@ -6,4 +6,20 @@
     <region start="0x00001000" end="0x00001003" type="io" name="read"/>
     <region start="0x00001800" end="0x00001803" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Skeleton driver for early 80's slot machines manufactured by Hobby Play.
+Hobby Play did about eight different machines, but they're mostly unknown.
+Most Hobby Play slot machines (Gran Gol, etc.) use three 5x7 dot-matrix displays:
+o o o o o    o o o o o    o o o o o
+o o o o o    o o o o o    o o o o o
+o o o o o    o o o o o    o o o o o
+o o o o o    o o o o o    o o o o o
+o o o o o    o o o o o    o o o o o
+o o o o o    o o o o o    o o o o o
+o o o o o    o o o o o    o o o o o
+PCB marked Hobby P... -->
 </platform>

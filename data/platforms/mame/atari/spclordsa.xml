@@ -52,4 +52,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari GX2 hardware
+driver by Aaron Giles
+Moto Frenzy and Space Lords protection reverse engineered by:
+Morten Shearman Kirkegaard, Samuel Neves, Peter Wilhelmsen
+Games supported:
+Space Lords (1992)
+Moto Frenzy (1992)
+Road Riot's Revenge Rally (1993)
+Known bugs:
+Protection for Road Riot's Revenge
+Missing DSPCOM board (Moto Frenzy SD) and Clarn board (Road Riot's Revenge, Space Lords and Moto Frenzy mini dx), both ADSP2105 based.
+Memory map (TBA) -->
 </platform>

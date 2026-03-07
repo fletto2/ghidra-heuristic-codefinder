@@ -14,4 +14,17 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity Chesster Challenger
+These were made after Hegener + Glaser became the parent company of Fidelity
+(design phase started before that). Kishon Chesster was released under both
+Fidelity and Mephisto brands. Fidelity changed from Fidelity International,
+Inc. to Fidelity Electronics International, Inc. after becoming a subsidiary.
+================================================================================
+Fidelity Chesster (model 6120)
+There is also a German version titled Kishon Chesste... -->
 </platform>

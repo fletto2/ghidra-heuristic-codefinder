@@ -5,4 +5,22 @@
     <region start="0x00000037" end="0x00000037" type="unmapped" name="nop_write"/>
     <region start="0x00008000" end="0x00009FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="video" name="v9938"/>
+  </devices>
+
+  <!-- /\/\&lt;&lt; Kasino '89 &gt;&gt;/\/\
+6-players electronic roulette.
+Video field + physical LEDs roulette.
+Driver by Roberto Fresca.
+Running in this hardware:
+Kasino '89,  SFC SRL, 1989.
+Osel '93,    SFC SRL, 1993.
+Special thanks to Rob Ragon and Tomasz Slanina for their invaluable help.
+Also big thanks to Iris Falbala and Sofia Kiara for the beta-testing stage.
+For better results, use the associated artwork. Will allow you to see
+the roulette with all the working LEDs and lamps...
+Hardware specs... -->
 </platform>

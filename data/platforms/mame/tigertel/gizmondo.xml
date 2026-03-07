@@ -17,4 +17,7 @@
     <entry index="6" name="irq" irq="true"/>
     <entry index="7" name="fiq" irq="true"/>
   </vectors>
+
+  <!-- Tiger Telematics Gizmondo
+(c) 2010 Tim Schuerewegen -->
 </platform>

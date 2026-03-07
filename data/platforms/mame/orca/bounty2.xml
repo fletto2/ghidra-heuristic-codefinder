@@ -15,4 +15,26 @@
     <region start="0x0000B000" end="0x0000B3FF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000CFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Zodiack/Dogfight (c) 1983 Orca
+driver by Zsolt Vasvari
+Notes:
+- Moguchan and The Percussor triggers this code:
+2DD6: D1            pop  de
+2DD7: D1            pop  de
+2DD8: D1            pop  de
+2DD9: D1            pop  de
+2DDA: D1            pop  de
+2DDB: D1            pop  de
+2DDC: 32 00 70      ld   ($7000),a
+2DDF: 0B            dec  bc
+2DE0: 78            ld   a,b
+2DE1: B1            or   c
+2DE2: 20 F2         jr   nz,$2DD6
+2DE4: E9            jp   (hl)
+All it does is scanning the whole 64k ... -->
 </platform>

@@ -5,4 +5,14 @@
     <region start="0x00000000" end="0x0000FFFF" type="ram" name="ram"/>
     <region start="0x00000000" end="0x000003FF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+  </devices>
+
+  <!-- Ithaca Intersystems DPS-1
+The last commercial release of a computer fitted with a front panel.
+It needs to boot from floppy before anything appears on screen.
+ToDo:
+- Need artwork of the front panel switches and LEDs, and port FF. -->
 </platform>

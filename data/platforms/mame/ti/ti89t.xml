@@ -8,4 +8,14 @@
     <region start="0x00800000" end="0x00BFFFFF" type="io" name="read"/>
     <region start="0x00C00000" end="0x00FFFFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <!-- TI-89, TI-92, TI-92 plus, Voyage 200 PLT and TI-89 Titanium
+Driver by Sandro Ronco
+Note:
+-NVRAM works only if the calculator is turned off (2nd + ON) before closing MESS
+TODO:
+-Link
+-HW 3 I/O port
+-RTC
+-LCD contrast -->
 </platform>

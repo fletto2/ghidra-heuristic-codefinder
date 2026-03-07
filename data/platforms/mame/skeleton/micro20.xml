@@ -10,4 +10,14 @@
     <region start="0xFFFF80A0" end="0xFFFF80AF" type="io" name="read"/>
     <region start="0xFFFF80C0" end="0xFFFF80DF" type="io" name="read"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="mc68681"/>
+  </devices>
+
+  <!-- micro20.cpp
+GMX Micro 20 single-board computer
+68020 + 68881 FPU
+800a5e = end of initial 68020 torture test -->
 </platform>

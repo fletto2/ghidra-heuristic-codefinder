@@ -56,4 +56,18 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Atari Cyberball hardware
+driver by Aaron Giles
+Games supported:
+Cyberball (1988) [4 sets]
+Cyberball 2072, 2-players (1989) [4 sets]
+Tournament Cyberball 2072 (1989) [2 sets]
+Known bugs:
+none at this time
+Memory map (TBA) -->
 </platform>

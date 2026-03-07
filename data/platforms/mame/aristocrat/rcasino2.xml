@@ -8,4 +8,19 @@
     <region start="0x0000F000" end="0x0000F3FF" type="ram" name="vram"/>
     <region start="0x0000F800" end="0x0000FBFF" type="ram" name="attr"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Royal Casino (c) 1984 Dyna
+Casino Winner (c) 1985 Aristocrat
+driver by Chris Hardy &amp; Angelo Salese
+original rcasino.c driver by Curt Coder
+TODO:
+- Imperfect 8-liner video mode, which in turn looks derived from misc/summit.cpp?
+- Hookup payout (press 'I' to bypass when "call dealer" happens);
+- Add lamps support;
+- p1 &amp; p2 inputs are tied to the same port...maybe they are mux-ed with the flip screen bit?
+=====================================================================================... -->
 </platform>

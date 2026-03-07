@@ -15,4 +15,22 @@
     <region start="0x00007C00" end="0x00007C00" type="io" name="reset_r"/>
     <region start="0x00008000" end="0x0000DFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Zaccaria Z80µP hardware
+driver by Nicola Salmoria
+thanks to Andrea Babich for the manual.
+TODO:
+- implement discrete filters for analog signals 1 to 5 and attenuation control
+for signal 5 (74LS156)
+- The 8910 outputs go through some analog circuitry to make them sound more like
+real instruments.
+#0 Ch. A = "rullante"/"cassa" (drum roll/bass drum) (selected by bits 3&amp;4 of port A)
+#0 Ch. B = "basso" (bass)
+#0 Ch. C = straight out through an optional filter
+#1 Ch. A = "piano"
+#1 Ch. B = "tromba... -->
 </platform>

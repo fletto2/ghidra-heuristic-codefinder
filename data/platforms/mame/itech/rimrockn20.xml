@@ -6,4 +6,35 @@
     <region start="0x000001A0" end="0x000001A0" type="io" name="rimrockn_bank_w"/>
     <region start="0x000001C0" end="0x000001DF" type="io" name="blitter_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Incredible Technologies/Strata system
+(8-bit blitter variant)
+driver by Aaron Giles
+Games supported:
+Arlington Horse Racing
+Dyno Bop
+Golden Par Golf
+Golden Tee Golf
+Golden Tee Golf II
+Grudge Match
+Hot Shots Tennis
+Neck-N-Neck
+Ninja Clowns
+Peggle
+Poker Dice
+Rim Rockin' Basketball
+Slick Shot
+Strata Bowling
+Super Strike Bowling
+Wheel of Fortune
+Known issues:
+None
+Memory map
+========================================================================
+CPU #1 (6809 games)
+=================================... -->
 </platform>

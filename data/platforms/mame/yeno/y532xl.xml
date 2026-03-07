@@ -15,4 +15,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Yeno 532 XL
+This is the only Yeno chesscomputer that has a common CPU with external EPROM,
+others are based on a 1-chip MCU. The 532 XL chess engine is by Ulf Rathsman.
+Hardware notes:
+- R65C02P4 @ 4 MHz
+- 32KB ROM (MBM27C256H-10)
+- 8KB battery-backed RAM (HY6264LP-10)
+- HD61603, 2 4*7seg LCD screens
+- TTL, piezo, 8*8+7 LEDs, button sensors
+The software searches for an opening book ROM in 0x4000-0x7fff, it looks like
+it's compatible with Conchess L16 / Mephisto HG240. Though the hardware does
+no... -->
 </platform>

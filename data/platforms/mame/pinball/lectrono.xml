@@ -10,4 +10,14 @@
     <region start="0x00000200" end="0x000002FF" type="ram" name="nvram"/>
     <region start="0x00001000" end="0x00001FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- PINBALL
+Stern MP-100 MPU
+(almost identical to Bally MPU-17)
+Status:
+- pinball,stingray,stars,memlane,blkshpsq: working
+- others are working but with wrong/missing sounds
+ToDo:
+- Dips, Inputs, Solenoids vary per game
+- Sound board - an enormous mass of discrete circuitry -->
 </platform>

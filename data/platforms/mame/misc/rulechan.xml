@@ -4,4 +4,33 @@
     <region start="0x00000000" end="0x0000DFFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000FFFF" type="ram" name="nvram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="ay8910"/>
+    <device type="storage" name="eeprom"/>
+    <device type="video" name="v9938"/>
+  </devices>
+
+  <!-- Super Ball
+6-player Electromechanical Roulette.
+Copyright 199x by Electro Chance.
+Industria Argentina.
+Driver by Grull Osgo.
+2 sets dumped:
+- Super Ball (Version EC-3.50 N322),     1991.
+- Super Ball (Version EC-3.50 N165),     1991.
+PCB specs: Hardware not available
+Edge Connector:
+Solder side |  | Components
+-----------------|--|-----------------
++5Vcc |01| GND
++5Vcc |02| -5Vcc
+Player 2 |03| Player 1
+Player 4 |04| Player 3
+Player 6 |06| Player 5
+|07|
+|08| Left
+Right |09| Down
+Credits IN |10| C... -->
 </platform>

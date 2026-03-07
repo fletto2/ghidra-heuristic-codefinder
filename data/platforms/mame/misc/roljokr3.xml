@@ -8,4 +8,19 @@
     <region start="0x000A0300" end="0x000A031F" type="io" name="write16"/>
     <region start="0x000F0000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="rtc" name="msm6242"/>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Bingo Roll / Bell Star
+TODO: Hook up i8256
+PCB Layout (Bell Star V3):
+___________________________________________
+____________________| | | | | | | | | | | | | | | | | | | | | | |____________________
+|                                  22x2 edge connector                                |
+|                     ___________   ___________   ___________                         |
+|                    |  9CANH1M  | |  9CANH1M  | |  9CANH1M  |                        |
+|                    | ULN2003AN | |... -->
 </platform>

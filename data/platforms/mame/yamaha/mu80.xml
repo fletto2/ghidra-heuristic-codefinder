@@ -8,4 +8,13 @@
     <region start="0x00440000" end="0x0044001F" type="io" name="map"/>
     <region start="0x00460000" end="0x0046003F" type="io" name="map"/>
   </memory_map>
+
+  <!-- Yamaha MU-80 : 32-part, 64-note polyphonic/multitimbral General MIDI/GS/XG
+tone module
+Preliminary driver by R. Belmont and O. Galibert
+The first XG-capable module (mu15 and mu50 came out later).  Uses a distributed
+structure of chips, with two chained SWP20 providing 32-notes each with a MEG
+effects processor at the end of the chain followed by an EQ chip on the result.
+MU80 CPU: Hitachi H8/3002 (HD6413D02F16), strapped for mode 4, with a 12 MHz oscillator
+Sound ASICs: 2x Yamaha YMM275-F/SWP20 ... -->
 </platform>

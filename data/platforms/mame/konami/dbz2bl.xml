@@ -12,4 +12,20 @@
     <region start="0x004F0000" end="0x004F0001" type="io" name="region_4f0000"/>
     <region start="0x004F4000" end="0x004F4001" type="io" name="the_bootleg_nops_this_so_sound_doesnt_wo"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Dragon Ball Z                  (c) 1993 Banpresto
+Dragon Ball Z 2 - Super Battle (c) 1994 Banpresto
+Driver by David Haywood, R. Belmont and Pierpaolo Prazzoli
+MC68000 + Konami Xexex-era video hardware and system controller ICs
+Z80 + YM2151 + OKIM6295 for sound
+Note: game has an extremely complete test mode, it's beautiful for emulation.
+flip the DIP and check it out!
+TODO:
+- Self Test Fails
+- Banpresto logo in DBZ has bad colors after 1 run of the attract mode because
+it's associated to the wron... -->
 </platform>

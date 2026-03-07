@@ -5,4 +5,10 @@
     <region start="0x00000000" end="0x00007FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00009FFF" type="ram" name="charram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Skeleton driver for TI Model 931 RS-232/fiber-optic video display terminal. -->
 </platform>

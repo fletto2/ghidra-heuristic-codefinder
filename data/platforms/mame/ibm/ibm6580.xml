@@ -6,4 +6,25 @@
     <region start="0x000EF000" end="0x000EFFFF" type="ram" name="videoram"/>
     <region start="0x000FC000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- IBM 6580 Displaywriter.
+A green-screen dedicated word-processing workstation. It uses 8" floppy
+disks. It could have up to 224k of ram.  Consists of:
+Electronics Module 6580
+Display 3300
+Keyboard 5330 [a "beamspring"-type]
+Diskette Unit 6360
+Optional:
+Printers: 5215, 5218, 5228
+Printer Sharing feature
+Mag Card Unit
+Asynchronous and Bisynchronous communications features
+66-line display and adapter (800x1056 px, 8x16 character cell)
+All chips have IBM part numbers on them.  F.e. on system board:
+8... -->
 </platform>

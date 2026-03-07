@@ -16,4 +16,27 @@
     <region start="0x7F800000" end="0x7F9FFFFF" type="rom" name="rom"/>
     <region start="0x7FE00000" end="0x7FFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Konami 'ZR107' Hardware
+Konami, 1995-1996
+Driver by Ville Linde
+TODO:
+- SHARC PC stack underflow on soft reset;
+- jetwave motors/sensors
+Hardware overview:
+ZR107 CPU board:
+----------------
+IBM PowerPC 403GA at 32MHz (main CPU)
+Motorola MC68EC000 at 8MHz (sound CPU)
+Konami K056800 (MIRAC), sound system interface
+Konami K056230 (LANC), LAN interface
+Konami K058141 sound chip (same as 2x K054539)
+ZR107 GFX board:
+----------------
+Analog Devices ADSP-21062 SHARC DSP at 36MHz
+Konami K056832 tilemap ... -->
 </platform>

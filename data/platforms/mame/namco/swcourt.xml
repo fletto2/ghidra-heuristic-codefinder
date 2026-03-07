@@ -8,4 +8,24 @@
     <region start="0x00DC0000" end="0x00DC001F" type="io" name="read"/>
     <region start="0x00E00000" end="0x00E03FFF" type="io" name="read"/>
   </memory_map>
+
+  <!-- Namco NA-1 / NA-2 System
+NA-1 Games:
+-   Bakuretsu Quiz Ma-Q Dai Bouken (C348)
+-   F/A / Fighter &amp; Attacker (C349)
+-   Super World Court (C357)
+-   Exvania (C350)
+-   Cosmo Gang the Puzzle (C356)
+-   Tinkle Pit (C367)
+-   Emeraldia (C358)
+NA-2 Games:
+-   Knuckle Heads (C360)
+-   Numan Athletics (C359)
+-   Emeraldia (C358)
+-   Nettou! Gekitou! Quiztou!! (C365)
+-   X-Day 2 (C394)
+-   Zelos (no keycus)
+To Do:
+- Remove remaining MCU simulation hacks
+- View area / screen resolution controlled by ... -->
 </platform>

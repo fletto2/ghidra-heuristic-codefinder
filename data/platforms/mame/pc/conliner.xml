@@ -5,4 +5,15 @@
     <region start="0x000E0000" end="0x000FFFFF" type="rom" name="rom"/>
     <region start="0xFFFC0000" end="0xFFFFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Skeleton driver for Comatel "Onliner" PC-based touch games machines.
+The machines need an online server to work, they won't boot up the games without it.
+More info: https://www.recreativas.org/onliner-6342-comatel
+-Gigabyte GA-7VKMP Rev 3.4 motherboard (VIA KM266, VIA T8235, IT8705F, RTL8100BL, ALC650, etc.).
+-256MB RAM PC2700 DDR
+-AMD Athlon AXDA1800DLT3C processor.
+-ATI Rage 128 Pro 32MB AGP video.
+-Elo Touch touch screen.
+-Logitech QuickCam.
+-Custom I/O board for coin management, inputs, etc.... -->
 </platform>

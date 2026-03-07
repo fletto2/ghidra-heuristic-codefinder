@@ -50,4 +50,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Mephisto Amsterdam (2-ROM hardware version)
+Hardware notes:
+Amsterdam:
+- same as Glasgow, but 2*27C256 EPROMs
+Dallas 68020:
+- MC68020RC12B @ 14MHz
+- 64KB ROM(27C512), 64KB RAM(8*M5M5165P-10L)
+- rest is similar to 16-bit version
+TODO:
+- does it have DTACK wait states? surely the PCB supports LDS/UDS wait states
+just like Glasgow, but it's probably disabled due to faster EPROMs -->
 </platform>

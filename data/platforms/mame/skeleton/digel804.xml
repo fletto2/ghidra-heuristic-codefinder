@@ -8,4 +8,14 @@
     <region start="0x00006000" end="0x0000C7FF" type="ram" name="main_ram"/>
     <region start="0x0000D000" end="0x0000D7FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Wavetek/Digelec model 804/EP804 (eprom programmer) driver
+By balrog and Jonathan Gevaryahu AKA Lord Nightmare
+Code adapted from zexall.c
+DONE:
+figure out z80 address space and hook up roms and rams (done)
+figure out where 10937 vfd controller lives (port 0x44 bits 7 and 0, POR has not been found yet)
+figure out how keypresses are detected (/INT?, port 0x43, and port 0x46)
+figure out how the banked ram works (writes to port 0x43 select a ram bank, fw2.2 supports 64k and fw4.1 supports 256k)
+tenta... -->
 </platform>

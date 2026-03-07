@@ -14,4 +14,21 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Fidelity SC9, Fidelity Playmatic "S"
+TODO:
+- fscc9ps module switch and led
+- verify fscc9ps XTAL (checked against sound recording, 99.97% similarity)
+Hardware notes:
+Fidelity Sensory Chess Challenger "9" (SC9) overview:
+- PCB label: 510-1046C01 2-1-82
+- R6502-13, 1.4MHz from resonator, another pcb with the same resonator was measured 1.49MHz*
+- 2KB RAM(TMM2016P), 2*8KB ROM(HN48364P)
+- 36-pin edge connector, assume same as SC12
+- 8*(8+1) buttons, 8*8+1 LEDs
+: 2 other boards were measured 1.60MHz ... -->
 </platform>

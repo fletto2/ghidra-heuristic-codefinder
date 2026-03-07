@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x0000FFFF" type="io" name="ram_r"/>
     <region start="0x0000E000" end="0x0000EFFF" type="io" name="monitor_r"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- AID-80F was Mostek's development system for the Z80 and 3870 families.
+It was later advertised as the development system for the MATRIX-80
+(MDX) STD bus microcomputer.
+Boards available for this modular system included:
+SDB-80E/OEM-80E CPU Module
+FLP-80E Floppy Controller
+CRT-80E Video Terminal Controller
+PPG-8/16 2708/2758/2716 PROM Programmer
+AIM-80 Z80 Application Interface Module
+— later replaced by AIM-Z80AE (4 MHz) and AIM-Z80BE (6 MHz)
+AIM-72 3870 Application Interface Module
+— later repla... -->
 </platform>

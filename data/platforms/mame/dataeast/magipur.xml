@@ -6,4 +6,20 @@
     <region start="0x00100010" end="0x00100011" type="unmapped" name="nop_write"/>
     <region start="0x00F00000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- the following run on hardware which is physically not the same as
+Tumble Pop but works in a very similar way.
+Tumblepop             (c) 1991 Data East Corporation (Bootleg 1)
+Tumblepop             (c) 1991 Data East Corporation (Bootleg 2)
+Jump Kids             (c) 1993 Comad
+Metal Saver           (c) 1994 First Amusement
+Magicball Fighting    (c) 1994 SemiCom
+Pang Pang             (c) 1994 Dong Gue La Mi Ltd.
+Super Trio[1]         (c) 1994 GameAce
+Fancy World           (c) 1995 Unico
+Hatch Catc... -->
 </platform>

@@ -45,4 +45,9 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Data East Pinball / Sega Pinball Dot Matrix Display
+Type 3: 192x64
+68000 @ 12MHz
+68B45 CRTC -->
 </platform>

@@ -6,4 +6,12 @@
     <region start="0x001F0000" end="0x001F1FFF" type="ram" name="ram"/>
     <region start="0x001FE000" end="0x001FE7FF" type="io" name="vdc_r"/>
   </memory_map>
+
+  <!-- Sharp X1Twin = Sharp X1 + NEC PC Engine All-in-One
+Both systems don't interact at all, according to info on the net they just share the
+same "house". It doesn't even do super-imposing, not even with the in-built X1 feature apparently
+TODO:
+- Find 100% trusted info about it.
+- Work out this to really be a middleground for both pce_state &amp; x1twin_state
+- Needs video mods -->
 </platform>

@@ -10,4 +10,21 @@
     <region start="0x0000F018" end="0x0000F018" type="unmapped" name="nop_write"/>
     <region start="0x0000F019" end="0x0000F019" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ym2203"/>
+  </devices>
+
+  <!-- KiKi KaiKai - (c) 1987 Taito
++ Knight Boy (bootleg with 68705)
+Kick and Run - (c) 1987 Taito
++ Mexico 86 (bootleg with 68705)
+Ernesto Corvi
+ernesto@imagina.com
+Notes:
+- master/slave 4 players mode is not emulated at all.
+To set it up, enable the Master/Slave Mode and set the two boards IDs with
+different settings. Do NOT enable the Single board 4p mode, I don't think
+that the main board is supposed to be still connected to the sub board.
+- Single board 4 players mode actually works but I'm not s... -->
 </platform>

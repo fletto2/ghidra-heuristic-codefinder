@@ -5,4 +5,18 @@
     <region start="0x0000A000" end="0x0000A000" type="io" name="arknoid2_bankswitch1_w"/>
     <region start="0x0000C000" end="0x0000C001" type="io" name="mcu_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Notes:
+- There are four versions of TNZS supported.
+1) "tnzs".   New hardware revision. 3 Z80 and no M-Chip (8742 MPU).
+2) "tnzsj".  New hardware revision. 3 Z80 and no M-Chip (8742 MPU).
+3) "tnzsjo". Standard hardware. 2 Z80 and the M-Chip.
+4) "tnzsop".  Standard hardware. Harder gameplay, old Taito logo. Maybe a prototype?
+- TNZS hidden level select: keep service coin pressed (default:9) and reset the game.
+When SERVICE SWITCH ERROR appears, release service coin and press 1 player start
+three ... -->
 </platform>

@@ -5,4 +5,22 @@
     <region start="0x00E0000C" end="0x00E0000D" type="io" name="lamps_w"/>
     <region start="0x00E00010" end="0x00E00011" type="io" name="saiyu_counters_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Umi de Poker (c) 1997 World Station Co.,LTD
+Slot Poker Saiyuki (c) 1998 World Station Co.,LTD
+Undumped games running on the same hardware:
+Baccara Star (World-One)
+Driver by Angelo Salese.
+Additional work by Roberto Fresca.
+TODO:
+- Verify clocks (XTALs are 14.3181 and 2.000MHz)
+- Hopper support
+NOTE:
+- without default NVRAM, vparadis2 stops at
+'renewal is necessary' screen.
+TMP68HC000-16 + Z80 + YM3812 + OKI6295 -->
 </platform>

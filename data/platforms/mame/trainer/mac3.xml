@@ -14,4 +14,24 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="serial" name="mc68681"/>
+    <device type="serial" name="scn2681"/>
+  </devices>
+
+  <!-- Mac III by L.J.Technical Systems
+Keys:
+0-9,A-F: hex input
+M      : memory display and edit
+P      : port display and edit
+L      : load from cassette
+S      : save to cassette
+G      : program run
+R      : register display and edit
++      : up (use UP-arrow key)
+-      : down (use DOWN-arrow key)
+TODO:
+- fix cassette interface, maybe a SCN2681 issue.
+- keypad logic is guessed, need schematic. -->
 </platform>

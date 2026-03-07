@@ -6,4 +6,13 @@
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="banked"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="timekeeper_r"/>
   </memory_map>
+
+  <!-- todo: bank handlers etc. should be installed on a per-game basis
+to make it clearer why all the sets with hacked bank
+setup existed in the wild
+note:
+this file contains the originals only
+for bootlegs see multfish_boot.cpp
+for reference information about undumped sets see at the end of the file
+- if adding a new set ALWAYS check that, anything not listed in there is almost certainly a bootleg. -->
 </platform>

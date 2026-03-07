@@ -54,4 +54,44 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- paint &amp; puzzle
+video is standard VGA
+Main PCB
+Reb B
+Label:
+Board Num.
+90
+The PCB has no silkscreen or reference designators. All locations
+provided here are from the published schematics.
+U1 64 pin IC
+MC68000P12
+OB26M8829
+U2 32 pin IC
+27C010A
+Label:
+Paint N Puzzle
+Ver. 1.09
+Odd
+U3 32 pin IC
+27C010A
+Label:
+Paint N Puzzle
+Ver. 1.09
+Even
+U4 &amp; U5 28 pin ICs
+Mosel
+MS62256L-85PC
+8911 5D
+U14 28 pin IC
+MicroTouch Systems
+c 1992
+19-507 Rev 2
+ICS1578N 9334 (ASIC 1578 on schematic)
+U15 48 pin IC
+P8... -->
 </platform>

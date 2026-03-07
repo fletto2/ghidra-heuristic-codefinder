@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x00004FFF" type="rom" name="rom"/>
     <region start="0x00005000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <!-- Philips P2000 1 Memory map
+CPU: Z80
+0000-0fff   ROM
+1000-4fff   ROM (appl)
+5000-57ff   RAM (Screen T ver)
+5000-5fff   RAM (Screen M ver)
+6000-9fff   RAM (system)
+a000-ffff   RAM (extension)
+Interrupts:
+Ports:
+00-09       Keyboard input
+10-1f       Output ports
+20-2f       Input ports
+30-3f       Scroll reg (T ver)
+50-5f       Beeper
+70-7f       DISAS (M ver)
+88-8B       CTC
+8C-90       Floppy ctrl
+94          RAM Bank select
+Display: SAA5050 -->
 </platform>

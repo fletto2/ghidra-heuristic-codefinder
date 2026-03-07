@@ -10,4 +10,30 @@
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
     <region start="0x0000F800" end="0x0000F803" type="io" name="out_0_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Looping / Sky Bumper
+TODO:
+- get sound working
+- map and test any remaining input ports
+---------------------------------------------------------------
+Looping
+(C)1981 Video Games GmbH
+Main CPU
+TMS9995
+COP420 Microcontroller
+protection
+Sound CPU
+TMS9980
+AY-3-8910
+TMS5220 (SPEECH)
+---------------------------------------------------------------
+Sky Bumper
+(C)1982 Venture Line (did not involve Looping's designer)
+This is a ROM swap for Looping.  There are two 6116's on
+the CPU board, where there is... -->
 </platform>

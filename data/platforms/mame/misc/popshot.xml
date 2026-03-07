@@ -6,4 +6,14 @@
     <region start="0x00001800" end="0x00001800" type="io" name="ay8910_w"/>
     <region start="0x00002800" end="0x00002807" type="io" name="tms_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Dynamo Skeet Shot
+Notes:
+Pop Shot is a prototype sequel (or upgrade) to Skeet Shot
+Supposedly Skeet Shot used a laserdisc to supply video for eight
+different background "scenes". Pop Shot probably did too, in that case. -->
 </platform>

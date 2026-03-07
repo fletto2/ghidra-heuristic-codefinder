@@ -9,4 +9,15 @@
     <region start="0x00003FF5" end="0x00003FF5" type="io" name="register_w"/>
     <region start="0x00003FF7" end="0x00003FF7" type="io" name="register_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Cosmic Guerilla by Universal (board number 7907A)
+Notes:
+- background should be blue
+- board can operate in b&amp;w mode if there is no PROM, in this case
+a colour overlay should be used. -->
 </platform>

@@ -12,4 +12,15 @@
     <region start="0x0000B800" end="0x0000B800" type="io" name="load_w"/>
     <region start="0x0000C000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Bozo Pail toss by ICE  (ice_tbd notes say Innovative Creations in Entertainment - same company?)
+Devices are 27c080
+U9 is version 2.07
+PCB uses a 68HC11A1P for a processor/security......
+could be related to (or the same thing as - our name could be incorrect)
+http://www.highwaygames.com/arcade-machines/bozo-s-grand-prize-game-6751/ -->
 </platform>

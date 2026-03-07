@@ -13,4 +13,22 @@
     <region start="0x00FFFFC8" end="0x00FFFFCD" type="io" name="fdc_stat_r"/>
     <region start="0x00FFFFD0" end="0x00FFFFD1" type="io" name="fdc_cmd_w"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80scc"/>
+    <device type="sound" name="dac"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Applix 1616 computer
+See for docs: http://psiphi.server101.com/applix/
+First revealed to the world in December 1986 issue of Electronics Today
+International (ETI) an Australian electronics magazine which is now defunct.
+The main articles appeared in ETI February/March/April 1987, followed by
+other articles in various issues after that.
+Current Status:
+After 60 seconds, boots to the ramdisk. You can enter commands.
+If you have a floppy mounted, it will boot from the disk.
+The system could support... -->
 </platform>

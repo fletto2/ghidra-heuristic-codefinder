@@ -5,4 +5,19 @@
     <region start="0x00000000" end="0x00001FFF" type="rom" name="rom"/>
     <region start="0x00008000" end="0x00008FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- NEC TK80 / MIKROLAB KR580IK80
+TK80 driver by Robbbert
+Mikrolab driver by Micko
+Merged by Robbbert.
+TK80 (Training Kit 80) considered to be Japan's first home computer.
+It consisted of 25 keys and 8 LED digits, and was programmed in hex.
+The Mikrolab is a Russian clone which appears to be almost completely identical.
+TK85 seems to be the same as TK80, except it has a 8085 and a larger ROM.
+No schematics etc are available. Thanks to 'Nama' who dumped the rom.
+It has 25 keys, so a few aren't define... -->
 </platform>

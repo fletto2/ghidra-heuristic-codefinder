@@ -6,4 +6,12 @@
     <region start="0x00000000" end="0x000003FF" type="io" name="bank0_r"/>
     <region start="0x000F8000" end="0x000FFFFF" type="io" name="amap16"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="serial" name="z80sio"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Compugraphic MCS Powerview 10 -->
 </platform>

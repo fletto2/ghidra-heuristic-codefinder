@@ -7,4 +7,18 @@
     <region start="0x0000A000" end="0x0000BFFF" type="ram" name="ram"/>
     <region start="0x0000C000" end="0x0000FFFF" type="io" name="pak_r"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Driver completely rewritten by Robbbert, in a process begun on 2009-02-24.
+Assistance/advice was gratefully received from:
+E.J.Wordsworth (owner of Microbee Systems), nama, ChickenMan,
+and the author of the "ubee512" emulator.
+Previous driver was written by Juergen Buchmueller, Jan 2000 with assistance
+from Brett Selwood and Andrew Davies.
+Keyboard notes are in video/microbee.cpp
+256tc: The 1.31 rom version which appears to fit the 256TC is actually
+part of the Z80 emulation in the Matilda model... -->
 </platform>

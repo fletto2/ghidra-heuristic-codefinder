@@ -11,4 +11,23 @@
     <region start="0x0000C000" end="0x0000C003" type="io" name="write"/>
     <region start="0x0000E000" end="0x0000E003" type="io" name="write"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Diga Mart (Sega, 1983)
+It's a crane machine with prizes on a moving track/turntable under a dome,
+with 4 player positions surrounding it.
+Stickers on PCB:
+834-5781
+86012400242K
+Main chips on PCB:
+1x Z8400APS
+1x HM6116LP-3
+1x M5L8255AP-5
+2x SN76489AN
+1x 8 MHx XTAL
+1x 8-dip bank -->
 </platform>

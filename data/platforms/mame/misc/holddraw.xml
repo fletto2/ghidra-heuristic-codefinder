@@ -11,4 +11,19 @@
     <region start="0x00004000" end="0x00004001" type="io" name="port"/>
     <region start="0x00006000" end="0x000060FF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Amstar Z80 based hardware for card games
+Dumper's notes:
+Etched in copper    AMSTAR ELEC
+ASSY 1061-3700/
+SER NO  42-109      42-109 was hand written
+graphics dump showed card characters
+.e5 2708        stickered   001-1201
+.d5 AMD 4708    stickered   1102        read as a 2708 - couldn't get a steady reading
+.b6 2708        stickered   001-8000
+.b7 2708        stickered   001-8200
+.c7 2708        stickered   001-8100
+.c8 2708        stickered   001-8500
+.d8 2708        stickered   001-8400
+.e8 2... -->
 </platform>

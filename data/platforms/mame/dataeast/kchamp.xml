@@ -6,4 +6,24 @@
     <region start="0x0000C000" end="0x0000E7FF" type="ram" name="ram"/>
     <region start="0x0000EA00" end="0x0000FFFF" type="ram" name="spriteram"/>
   </memory_map>
+
+  <!-- Karate Champ - (c) 1984 Data East
+driver by Ernesto Corvi
+Changes:
+(1999/11/11 Takahiro Nogi)
+Changed "karatedo" to "karatevs".
+Supported "karatedo".
+Corrected DIPSW settings.(kchamp/karatedo)
+Currently supported sets:
+Karate Champ - 1 Player Version (kchamp)
+Karate Champ - VS Version (kchampvs)
+Karate Champ - 1 Player Version Japanese (karatedo)
+Karate Champ - VS Version Japanese (karatevs)
+VS Version Info:
+---------------
+Memory Map:
+Main CPU
+0000-bfff ROM (encrypted)
+c000-cfff RAM
+d000-d3ff c... -->
 </platform>

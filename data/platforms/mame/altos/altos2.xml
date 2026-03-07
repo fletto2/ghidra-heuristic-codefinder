@@ -5,4 +5,14 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- 2017-11-03 Skeleton
+Altos II terminal. Green screen.
+Chips: Z80A, 2x Z80DART, Z80CTC, X2210D, 2x CRT9006, CRT9007, CRT9021A, 8x 6116
+Other: Beeper.  Crystals: 4.9152, 8.000, 40.000
+Keyboard: P8035L CPU, undumped 2716 labelled "358_2758", XTAL marked "4608-300-107 KSS4C" -->
 </platform>

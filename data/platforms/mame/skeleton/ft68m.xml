@@ -9,4 +9,14 @@
     <region start="0x00A00000" end="0x00DFFFFF" type="ram" name="ram"/>
     <region start="0x00E00000" end="0x00FFFFFF" type="io" name="switches_r"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Forward Technology FT-68M Multibus card.
+2013-09-26 Skeleton driver
+Chips: HD68000-10, uPD7201C, AM9513APC. Crystal: 19.6608 MHz
+Interrupts: INT6 is output of Timer 2, INT7 is output of Timer 3 (refresh),
+INT5 comes from SIO. -->
 </platform>

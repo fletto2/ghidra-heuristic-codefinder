@@ -9,4 +9,19 @@
     <region start="0x0000F000" end="0x0000F000" type="io" name="input_r"/>
     <region start="0x0000F800" end="0x0000F800" type="io" name="leds_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- La Régence
+NOTE: The hardware triggers an NMI on power-off (or power-failure). If this isn't
+done, NVRAM fails at next power-on.
+French chess computer by "France Double R". German distribution by Sandy Electronic,
+who sub-titled it TSB 4 (Turniersensorbrett), the EPROM contents is the same.
+There is no English version.
+the chess engine is Richard Lang's Cyrus. This was from when he was working for
+Intelligent Software, before he got hired by Hegener + Glaser.
+Hardware notes:
+- PCB label: FRANCE ... -->
 </platform>

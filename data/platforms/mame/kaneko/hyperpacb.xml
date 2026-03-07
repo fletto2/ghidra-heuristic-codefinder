@@ -52,4 +52,20 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Snow Brothers (Toaplan) / SemiCom Hardware
+uses Kaneko's Pandora sprite chip (also used in DJ Boy, Air Buster ..)
+Snow Bros Nick &amp; Tom
+Toaplan, 1990
+PCB Layout
+----------
+MIN16-02
+|------------------------------------------|
+| VOL     YM3812  6116  4464  4464         |
+| LA4460  YM3014        4464  4464         |
+|       458   SBROS-4.29         SBROS1.40 |
+|   2003       Z80B     PANDORA            |
+|J                    D41101C-1 LS07  LS32 |
+|A SBROS-3A.5 SBROS-2A.6        LS139 LS174|
+|... -->
 </platform>

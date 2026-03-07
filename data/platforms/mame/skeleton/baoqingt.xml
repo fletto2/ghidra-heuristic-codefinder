@@ -5,4 +5,22 @@
     <region start="0x00000000" end="0x00005FFF" type="rom" name="rom"/>
     <region start="0x00006000" end="0x00006FFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Bao Qing Tian, TIC, 1995
+Hardware Info by Guru
+---------------------
+no number (bootleg-like so probably a rip-off of something else)
+|-------------------------------------------------|
+| uPC1241H   VOL1    VOL2          6606    TIC01  |
+|            4558    4558                         |
+|                           95123     3.579545MHz |
+|-|             2018                             8|
+|                         95101          SCAP  L|
+|-|             2018                             I|
+|   ... -->
 </platform>

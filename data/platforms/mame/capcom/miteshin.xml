@@ -5,4 +5,25 @@
     <region start="0x00000000" end="0x00003FFF" type="rom" name="rom"/>
     <region start="0x0000E000" end="0x0000EFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Mite Shinzeyou - 見てしんぜよう
+Capcom 95683-1 + 95684-1 PCBs (LCD PCB is missing)
+Slot machine from 1995, featuring three slot reels as well as a bitmapped LCD, and six
+illuminated buttons.
+https://www.youtube.com/watch?v=QMAC_lRcPvI
+Main components for 95683-1:
+Z0840008PSC CPU
+8.0000 MHz XTAL
+2x MB8464A-10L RAM
+Main components for 95684-1:
+Z0840008PSC CPU
+8.0000 MHz XTAL
+MB8464A-10L RAM
+Oki M6295
+Oki M6650
+2x bank of 8 DIP switches -->
 </platform>

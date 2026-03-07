@@ -8,4 +8,15 @@
     <region start="0x00FDFFC0" end="0x00FDFFE3" type="io" name="read"/>
     <region start="0x00FE0000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- wxstar4000.cpp: WeatherSTAR 4000 cable head-end unit
+1990 Applied Microelectronics Institute (Amirix) / The Weather Channel
+Skeleton driver by R. Belmont
+This was used by cable companies in the US starting in 1990 to generate
+graphics and text for the local weather forecast during The Weather Channel's
+"Local on the 8s" segments.
+There are 4 PCBs on a VME backplane:
+- CPU board contains a 68010 CPU, RAM, and EEPROM
+- Graphics board contains a 68010 CPU and an i8051 which manages the palette
+and ... -->
 </platform>

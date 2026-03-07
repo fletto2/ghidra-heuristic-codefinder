@@ -5,4 +5,39 @@
     <region start="0x00000000" end="0x00009FFF" type="rom" name="rom"/>
     <region start="0x0000A000" end="0x0000FFFF" type="ram" name="banked"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- Appoooh memory map (preliminary)
+Similar to Bank Panic
+driver by Tatsuyuki Satoh
+0000-9fff ROM
+a000-dfff BANKED ROM
+e000-e7ff RAM
+e800-efff RAM??
+write:
+f000-f01f Sprite RAM #1
+f020-f3ff Video  RAM #1
+f420-f7ff Color  RAM #1
+f800-f81f Sprite RAM #2
+f820-fbff Video  RAM #2
+fc20-ffff Color  RAM #2
+I/O
+read:
+00  IN0
+01  IN1
+03  DSW
+04  IN2
+write:
+00  SN76489A #1
+01  SN76489A #2
+02  SN76489A #3
+03  MSM5205 address write
+04  bit 0   = NMI enable
+bit 1   = flipscreen
+bit 2-3 = ?
+bit 4-5 = priority
+bit... -->
 </platform>

@@ -56,4 +56,14 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Beast Busters           A9003   (c) 1989 SNK Corporation
+Beast Busters is a large dedicated (non-jamma) triple machine gun game,
+the gun positions values are read in an interrupt routine that must be
+called for each position (X and Y for 3 guns, so at least 6 times a
+frame).
+----------------------------------------------------------------------------------------
+Stephh's notes (based on the games M68000 code and some tests) :
+1) 'bbusters'
+- Country/version is stored at 0x003954.w and the possib... -->
 </platform>

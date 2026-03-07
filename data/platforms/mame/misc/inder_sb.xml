@@ -5,4 +5,17 @@
     <region start="0x00000020" end="0x00000020" type="io" name="vec_bankswitch_r"/>
     <region start="0x00004000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <!-- Inder / Dinamic Sound Board */
+#include "emu.h"
+#include "inder_sb.h"
+#include "speaker.h"
+DEFINE_DEVICE_TYPE(INDER_AUDIO, inder_sb_device, "indersb", "Inder 4xDAC Sound Board")
+inder_sb_device::inder_sb_device(const machine_config &amp;mconfig, const char *tag, device_t *owner, uint32_t clock)
+: device_t(mconfig, INDER_AUDIO, tag, owner, clock)
+, device_mixer_interface(mconfig, *this)
+, m_audiocpu(*this, "audiocpu")
+, m_ctc(*this, "ctc")
+, m_audiocpu_rom(*this, "audiocpu")
+, m_sounddata_bank(*t... -->
 </platform>

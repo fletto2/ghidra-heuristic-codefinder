@@ -52,4 +52,21 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- King Of Football (c)1995 BMC
+preliminary driver by Tomasz Slanina
+TODO:
+- Lots of unknown writes/reads.
+- One of the customs could contain a VIA6522-like core. bmc/bmcbowl.cpp
+uses the VIA6522 and the accesses are similar.
+- Better understanding / implementation of the video registers.
+- jxzh and kaimenhu show a full mahjong keyboard in their key tests - is
+this actually supported or is it vestigial?
+- jxzh stops responding to inputs properly after winning a hand if
+stripping sequences are enabl... -->
 </platform>

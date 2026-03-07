@@ -6,4 +6,22 @@
     <region start="0x00003800" end="0x00003BFF" type="io" name="read"/>
     <region start="0x0000C000" end="0x0000FFFF" type="ram" name="videoram"/>
   </memory_map>
+
+  <!-- Elektronika MS6102.02 terminal
+https://goo.gl/photos/xJManS26QTxG1T7M7
+Schematics
+http://sfrolov.livejournal.com/110770.html
+Photos
+To do:
+- character attributes
+- improve keyboard response and add LED layout (MS7002)
+- verify CRTC clock
+Chips:
+- DD5 - KR580WM80A (8080 clone) - CPU
+- DD7 - KR580WT57 (8257 clone) - DMAC
+- DD9 - KR1601RR1 (1024x4 bit NVRAM)
+- DD21 - KR581WA1A (TR6402 clone) - UART
+- DD55, DD56 - KR580WG75 (8275 clone) - CRTC
+- DD59 - KR556RT5 - alternate chargen ROM
+- DD64 - K556R... -->
 </platform>

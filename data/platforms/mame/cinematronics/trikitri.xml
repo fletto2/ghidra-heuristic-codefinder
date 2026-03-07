@@ -11,4 +11,33 @@
     <region start="0x0000B700" end="0x0000B700" type="io" name="control_w"/>
     <region start="0x0000B800" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Jack the Giant Killer memory map (preliminary)
+driver by Brad Oliver
+Main CPU
+--------
+0000-3fff  ROM
+4000-5fff  RAM
+b000-b07f  sprite ram
+b400       command for sound CPU
+b500-b505  input ports
+b506       screen flip off
+b507       screen flip on
+b600-b61f  palette ram
+b800-bbff  video ram
+bc00-bfff  color ram
+c000-ffff  More ROM
+Sound CPU (appears to run in interrupt mode 1)
+---------
+0000-0fff  ROM
+1000-1fff  ROM (Zzyzzyxx only)
+4000-43ff  RAM
+6000-6fff  R/C filter ???
+I/O
+---
+0x40: Read - ay... -->
 </platform>

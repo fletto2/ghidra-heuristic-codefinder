@@ -12,4 +12,20 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="sn76496"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- GOLDEN POKER DOUBLE UP (BONANZA ENTERPRISES, LTD)
+-------------------------------------------------
+Driver by Roberto Fresca.
+Games running on this hardware:
+Golden Poker Double Up (Big Boy),                  1981, Bonanza Enterprises, Ltd.
+Golden Poker Double Up (Mini Boy),                 1981, Bonanza Enterprises, Ltd.
+Golden Poker Double Up (bootleg, set 1),           198?, Bootleg.
+Golden Poker Double Up (bootleg, set 2),           198?, Bootleg.
+Golden Poker Double Up (bootleg, set 3),    ... -->
 </platform>

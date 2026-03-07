@@ -4,4 +4,20 @@
     <region start="0x000F8000" end="0x000FFFFF" type="rom" name="rom"/>
     <region start="0x00FF8000" end="0x00FFFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="upd765"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Hitachi B(asic Master?) 16000 series?
+TODO:
+- Barely anything is known about the HW;
+- Requires a compatible system disk to make it go further;
+- hookup proper keyboard;
+- FDC throws disk error, mon_w hookup is unconfirmed, doesn't seem to select a drive ...
+- b16: hangs for checking bit 7 in vblank fashion at $80, either the DMA is at the
+wrong spot or the earlier variant effectively don't have it.
+- b16ex2: "error message 1101", bypassed between ports $80 and $48
+- b16ex2: confirm kanji hookup... -->
 </platform>

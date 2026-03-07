@@ -5,4 +5,17 @@
     <region start="0x00000000" end="0x0000F7FF" type="ram" name="mainram"/>
     <region start="0x0000F800" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Argo
+2011-03-16 Skeleton driver.
+There are no manuals, diagrams, or anything else available afaik.
+The entire driver is guesswork, however it appears to be related to UNIOR.
+The monitor will only allow certain characters to be typed, thus the
+modifier keys appear to do nothing. There is no need to use the enter
+key; using spacebar and the correct parameters is enough.
+Commands: same as UNIOR
+ToDo:
+- Add remaining devices, most likely 8255.
+- There is no obvious evidence of sound.
+- Need dump of ... -->
 </platform>

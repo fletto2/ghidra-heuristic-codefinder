@@ -6,4 +6,20 @@
     <region start="0x00006400" end="0x000067FF" type="ram" name="nvram"/>
     <region start="0x00007000" end="0x000073FF" type="io" name="vram_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Bootleg of Omori's 野球拳 - The Yakyuken
+It's a strip rock-paper-scissors game in a cocktail cabinet, each side has
+7 buttons. One of the buttons apparently is for relinquishing controls to
+the other side.
+PCB is marked 20282 and LC (stands for "lato componenti", so components side)
+with a small riser board marked W 15482 plugged into one of the main CPU ROMs'
+sockets
+Main components are:
+SGS Z80CPUB1 main CPU (clock measured 3.07 MHz)
+18.432 MHz XTAL
+SGS Z80CPUB1 audio CPU (clock measured 1.53 MHz... -->
 </platform>

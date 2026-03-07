@@ -5,4 +5,26 @@
     <region start="0x00000000" end="0x000FCFFF" type="ram" name="ram"/>
     <region start="0x000FE000" end="0x000FFFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="disk" name="wd_fdc"/>
+    <device type="serial" name="z80sio"/>
+    <device type="video" name="mc6845"/>
+  </devices>
+
+  <!-- Convergent NGen series
+10-11-14 - Skeleton driver
+Interrupts based on patents:
+level 1 - SIO
+level 3 - timer (from PIT, presumably channel 0? Patent says "channel 3")
+level 4 - "interrupt detector" - keyboard, printer, RTC
+level 7 - floppy/hard disk
+DMA channels:
+channel 0 - communications (RS-232)
+channel 1 - X-Bus expansion modules (except disk and graphics)
+channel 2 - graphics?
+channel 3 - hard disk
+On the CP-001/B26 channels 4 on are handled by the 80186.
+channel 4 - floppy disk
+To get to "... -->
 </platform>

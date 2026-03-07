@@ -9,4 +9,21 @@
     <region start="0x00005800" end="0x00005800" type="io" name="port"/>
     <region start="0x00008000" end="0x0000BFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+    <device type="sound" name="dac"/>
+  </devices>
+
+  <!-- Driver by Zsolt Vasvari
+Notes / TODO:
+-------------
+Route 16:
+- Route 16 doesn't have the SN76477 chip. There is space on the PCB
+but it is not populated.
+- Has the added ability to turn off each bitplane individually.
+This looks like an afterthought, as one of the same bits that control
+the palette selection is doubly utilized as the bitmap enable bit.
+- New code to better emulate the protection in Route 16 was added in 0.194,
+but it turned out to harbour a bug (see MT 07310). Therefore the pre... -->
 </platform>

@@ -53,4 +53,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <!-- Splendor Blast    (c) 1985 Alpha Denshi Co.
+Splendor Blast II (c) 1985 Alpha Denshi Co.
+High Voltage      (c) 1985 Alpha Denshi Co.
+Driver by Acho A. Tang, Nicola Salmoria
+Stephh's notes (based on the games M68000 code and some tests) :
+splndrbt:
+- When starting a 2 players game, when player 1 game is over, the game enters in
+an infinite loop on displaying the "GAME OVER" message.
+- You can test player 2 by putting 0xff instead of 0x00 at 0x040009 ($9,A6).
+- FYI, what should change the contents ... -->
 </platform>

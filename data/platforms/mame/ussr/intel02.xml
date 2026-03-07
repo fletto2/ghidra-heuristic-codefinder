@@ -5,4 +5,20 @@
     <region start="0x00000000" end="0x00001FFF" type="io" name="rom"/>
     <region start="0x0000F000" end="0x0000F3FF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Интеллект-02 (Intellect-02) driver
+This is a Soviet electronic board game console, a dozen or so cartridge games were
+announced(can't say for certain how many released). PCB labels have prefix ДМП,
+it's assumed to have been designed by НИИ БРЭА (SRI BREA). First shown in 1983,
+produced during around 1985-1992.
+Hardware notes:
+- КР580ВМ80А CPU (i8080A clone) @ 1.5MHz
+- КР580ИК55 (i8255 clone)
+- 1 KB RAM (8*КР565РУ2), cartridge port
+- 4-digit 7seg panel, 2 leds, 16 buttons, game board above it
+The... -->
 </platform>

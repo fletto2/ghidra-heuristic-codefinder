@@ -28,4 +28,20 @@
     <region start="0x13000000" end="0x13FFFFFF" type="io" name="ta_texture_directpath1_w"/>
     <region start="0x14000000" end="0x1FFFFFFF" type="unmapped" name="unmapped"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Sega System SP (Spider)
+skeleton driver
+this is another 'Naomi-derived' system
+as for SP... it must be done having few things in mind:
+differences with Naomi in SH4 memory map only:
+0x00200000 - 0x00207fff - no SRAM here
+0x01000000 - 0x0100ffff - banked access to ROM board address space, see later
+0x01010000 - 0x010101ff - I/O registers, IRQ control, reg 0 - upper 16bits of rombd bank address
+as for ROM board - unlike regular Naomi M4 it have not only ROM itself,
+but the other hardware too*:
+0x0... -->
 </platform>

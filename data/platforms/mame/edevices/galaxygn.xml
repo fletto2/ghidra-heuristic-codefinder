@@ -10,4 +10,18 @@
     <region start="0x00060000" end="0x0006FFFF" type="ram" name="spriteram2"/>
     <region start="0x00070000" end="0x0007FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="dac"/>
+    <device type="sound" name="sn76496"/>
+  </devices>
+
+  <!-- -= Electronic Devices / International Games =-
+driver by   Luca Elia (l.elia@tin.it)
+CPUs    :   2 x 8086? / V20 + 8088
+Sound   :   YM2151 [+ DAC] / 4 x MSM5205
+Video   :   2 x I.G.1BB 48844758V
+------------------------------------------------------------------------------------------------------------------------
+Year + Game             Main CPU  Sound CPU  Sound                         Video
+-------------------------------------------------------------------------------------------------------... -->
 </platform>

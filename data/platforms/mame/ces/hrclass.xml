@@ -56,4 +56,23 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- CES Classic wall games
+Notes:
+- to play Home Run Classic you have to select a pitcher shot and hold the remote button.
+When you release the strobe, batter does the swing.
+TODO:
+- artwork;
+- hookup extra DMD sections;
+- extra lamps, cfr. hrclass reference;
+- irq sources &amp; timings are unknown
+\- cfr. ccclass, being really slow on continue screen;
+- sound doesn't play most samples;
+- hookup m68681 + 2x max232;
+- tsclass: runs on a single LCD, needs mods
+- tsclass: throws bad U43 and U44 at POST... -->
 </platform>

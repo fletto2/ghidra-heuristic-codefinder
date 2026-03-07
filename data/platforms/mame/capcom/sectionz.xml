@@ -10,4 +10,25 @@
     <region start="0x0000F80B" end="0x0000F80E" type="io" name="port"/>
     <region start="0x0000F80E" end="0x0000F80E" type="io" name="lwings_bankswitch_w"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Legendary Wings
+Section Z
+Trojan
+Avengers
+Driver provided by Paul Leaman
+TODO:
+- sectionz does "false contacts" on the coin counters, causing them to
+increment twice per coin.
+- verify avengers MCU comms, and redump internal ROM as well (see note in
+ROM defs under AVENGERS_MCU)
+- palette bus conflicts, real hardware does weird stuff if you write to
+palette RAM outside of vblank
+BTANB:
+- sectionz abrupt sprite popups on left-scrolling levels
+Notes:
+Avengers has a protection chip underneath the so... -->
 </platform>

@@ -13,4 +13,30 @@
     <region start="0x0000FA00" end="0x0000FA00" type="io" name="control_w"/>
     <region start="0x0000FF00" end="0x0000FF00" type="io" name="map0xff00_0xff00r"/>
   </memory_map>
+
+  <devices>
+    <device type="io" name="i8255"/>
+  </devices>
+
+  <!-- Gold Line
+Main components:
+Z80 (a second one is probably inside the box on the daughter board)
+3 x D8255AC-2
+HD63310P20 S-DPRAM
+12.00 crystal
+3.579545 crystal (near YM2413)
+10 x 6116
+5816
+YM2413
+3 x 8-dip banks
+1 reset push button
+The daughter card has a big box on it labelled as follows:
+Cointek logo
+Cointek, Technique
+Mask Microcomputer
+CODE NUM
+The daughter board is connected to the main board via 40 pin socket.
+TODO:
+- Audio CPU ROM decryption may be incomplete, though code flow looks sane.
+... -->
 </platform>

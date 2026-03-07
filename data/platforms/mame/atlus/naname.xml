@@ -53,4 +53,15 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Oh My God!       (c) 1993 Atlus
+Naname de Magic! (c) 1994 Atlus
+driver by Nicola Salmoria
+Notes:
+- not sure about the scroll registers
+- lots of unknown RAM, maybe other GFX planes not used by these games -->
 </platform>

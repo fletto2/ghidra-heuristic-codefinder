@@ -6,4 +6,16 @@
     <region start="0x0024C880" end="0x0024CBFF" type="ram" name="ram"/>
     <region start="0x00FF87EE" end="0x00FF87EF" type="io" name="port"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Data East 16 bit games - Bryan McPhail, mish@tendril.co.uk
+Heavy Barrel, Bad Dudes, Robocop, Birdie Try &amp; Hippodrome use the 'MEC-M1'
+motherboard and varying game boards.  Sly Spy, Midnight Resistance and
+Boulder Dash use the same graphics chips but are different pcbs.
+Bandit (USA) is almost certainly a field test prototype, the software runs
+on a Heavy Barrel board with the original Heavy Barrel MCU (which is effectively
+not used).  There is also Japanese version known to run on a DE-0321-1... -->
 </platform>

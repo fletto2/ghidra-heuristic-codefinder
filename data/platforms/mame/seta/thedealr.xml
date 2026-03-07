@@ -20,4 +20,25 @@
     <entry index="1" name="reset"/>
     <entry index="2" name="irq" irq="true"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- The Dealer (Visco Games)
+Driver by Luca Elia
+This game runs on Seta Hardware
+P0-040A PCB:
+R65C02P2 x 2
+X0-009 (Intel 8742 MCU)
+X1-001
+X1-002
+X1-003
+X1-004
+X1-006
+Yamaha YM2149F
+MC68B50P ACIA
+DSW8 x 4, Reset Button
+CR2032 3V Battery
+XTAL 16MHz -->
 </platform>

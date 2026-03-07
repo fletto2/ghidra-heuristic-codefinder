@@ -11,4 +11,19 @@
     <region start="0x0000A800" end="0x0000A802" type="io" name="sound_command_w"/>
     <region start="0x0000F000" end="0x0000FFFF" type="ram" name="ram"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Oli-Boo-Chu (USA) / Punching Kid (パンチングキッド) (Japan)
+There's also an English language flyer for Ali-Boo-Chu
+driver by Nicola Salmoria
+NOTES:
+- Irem M47 hardware? (according to PCB, this is all we have)
+- Doesn't seem related to later Irem designs (M52, etc.)
+- PCB (Punching Kid): https://youtu.be/ImUpedYnfME
+- PCB (Oli Boo Chu): https://youtu.be/nPzBmCDtHO0
+- Punching Kid has a POST with zeroes across the screen, Oli Boo Chu shows nothing.
+Punching Kid also doesn't play a sound when Boo drops foo... -->
 </platform>

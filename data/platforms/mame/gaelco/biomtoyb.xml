@@ -52,4 +52,19 @@
     <entry index="46" name="trap_14"/>
     <entry index="47" name="trap_15"/>
   </vectors>
+
+  <devices>
+    <device type="sound" name="okim6295"/>
+  </devices>
+
+  <!-- Gaelco game hardware from 1991-1996
+Driver by Manuel Abadia
+Games supported:
+Year   Game                PCB                       NOTES
+------------------------------------------------------------------------
+1990   Xor World           ?                         Prototype
+1991   Big Karnak          REF 901112-1              Unprotected
+1992   Maniac Square       REF 922804/2              Prototype
+1992   Squash              REF 922804/2 or 922804/1  Encrypted Video RAM
+1992   Thunder Hoop        ... -->
 </platform>

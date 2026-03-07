@@ -6,4 +6,30 @@
     <region start="0x00008000" end="0x000087FF" type="ram" name="nvram"/>
     <region start="0x0000A000" end="0x0000BFFF" type="ram" name="charram"/>
   </memory_map>
+
+  <devices>
+    <device type="serial" name="z80sio"/>
+  </devices>
+
+  <!-- Falco Endura TS-28 (aka FM-II?)
+VT100/VT102/VT132 terminal
+Hardware:
+- Z80A (Z8400A PS)
+- 6116
+- SY2128-3 x2 (and two empty sockets)
+- 2x 2764 (and one empty socket)
+- 1x 2732 (chargen)
+- Z80ACTC
+- SCN2672 with SCB2673
+- Z80ADART
+- XTAL 16.537 MHz (hard to read)
+- Bell
+- DAC0832LCN (brightness control)
+TODO:
+- Some scrolling issues (GNU nano for example)
+- Bell is really silent
+Notes:
+- Starts with a relatively dark screen. Push FUNCTION (mapped to LALT)
+and cursor up to increase brightness.
+- K... -->
 </platform>

@@ -10,4 +10,22 @@
     <region start="0x00001800" end="0x00001803" type="io" name="atarifb4_in0_r"/>
     <region start="0x00002000" end="0x00003FFF" type="rom" name="rom"/>
   </memory_map>
+
+  <!-- Atari Football hardware
+driver by Mike Balfour, Patrick Lawrence, Brad Oliver
+Games supported:
+Atari Football
+Atari Baseball
+Atari Soccer
+TODO:
+these are cocktail arcade cabs, should view be rotated?
+atarifb play-select LED sometimes remains on, or is this normal?
+confirm sprite 'colors' in soccer
+Memory Map:
+0000-01FF   Working RAM
+0200-025F   Playfield - Player 1
+03A0-03FF   Playfield - Player 2
+1000-13BF   Scrollfield
+13C0-13FF   Motion Object Parameters:
+13C0        Motion Object 1 Picture #... -->
 </platform>

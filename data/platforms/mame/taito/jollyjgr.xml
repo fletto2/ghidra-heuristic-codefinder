@@ -12,4 +12,22 @@
     <region start="0x00009800" end="0x00009BFF" type="ram" name="colorram"/>
     <region start="0x0000A000" end="0x0000FFFF" type="ram" name="bitmap"/>
   </memory_map>
+
+  <devices>
+    <device type="sound" name="ay8910"/>
+  </devices>
+
+  <!-- Guru-Readme for Jolly Jogger (Taito, 1982)
+PCB Layout
+----------
+FGO70007
+KDN00004
+KDK00502
+|----------------------------------------------------------|
+|             TMM416  TMM416  TMM416  TMM416               |
+|             TMM416  TMM416  TMM416  TMM416              |-|
+|             TMM416  TMM416  TMM416  TMM416              | |
+|             TMM416  TMM416  TMM416  TMM416              | |
+|                                                         | |
+|                                     ... -->
 </platform>

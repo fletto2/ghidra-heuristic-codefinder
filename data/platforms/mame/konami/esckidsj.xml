@@ -17,4 +17,23 @@
     <region start="0x00006000" end="0x00007FFF" type="ram" name="banked"/>
     <region start="0x00008000" end="0x0000FFFF" type="rom" name="rom"/>
   </memory_map>
+
+  <devices>
+    <device type="storage" name="eeprom"/>
+  </devices>
+
+  <!-- Vendetta (GX081) (c) 1991 Konami
+Preliminary driver by:
+Ernesto Corvi
+someone@secureshell.com
+Notes:
+- collision detection is handled by a protection chip. Its emulation might
+not be 100% accurate.
+Game driver for "ESCAPE KIDS (TM)"  (KONAMI, 1991)
+--------------------------------------------------------------------------------
+This driver was made on the basis of 'src/drivers/vendetta.cpp' file.
+Driver by OHSAKI Masayuki (2002/08/13)
+NOTES *****
+-------
+1) ESCAPE KIDS uses 053246's unknown func... -->
 </platform>

@@ -5,4 +5,18 @@
     <region start="0x00000000" end="0x001FFFFF" type="io" name="soundram_r"/>
     <region start="0x00800000" end="0x00807FFF" type="io" name="dc_arm_aica_r"/>
   </memory_map>
+
+  <!-- dccons.cpp - Sega Dreamcast driver
+by R. Belmont &amp; Angelo Salese
+SH-4 @ 200 MHz
+ARM7DI @ 2.8223 MHz (no T or M extensions)
+PowerVR 3D video
+AICA audio
+GD-ROM drive (modified ATAPI interface)
+NTSC/N  NTSC/I   PAL/N   PAL/I   VGA
+(x/240) (x/480) (x/240)  (x/480) (640x480)
+VTOTAL   262     524      312     624    524
+HTOTAL   857     857      863     863    857
+PCLKs = 26917135 (NTSC 480 @ 59.94), 26944080 (VGA 480 @ 60.0), 13458568 (NTSC 240 @ 59.94),
+25925600 (PAL 480 @ 50.00), 13462800 (PAL ... -->
 </platform>
