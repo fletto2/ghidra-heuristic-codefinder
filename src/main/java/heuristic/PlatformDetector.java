@@ -609,11 +609,22 @@ public class PlatformDetector {
 				{0x70, 0x56},
 			};
 		} else if (processor.contains("PowerPC") || processor.contains("PPC")) {
-			// PowerPC: 32-bit instructions, big-endian
-			// BLR = 0x4E800020
+			// PowerPC: 32-bit fixed-width instructions, big-endian
+			// BLR = 0x4E800020, MFLR r0 = 0x7C0802A6, MTLR r0 = 0x7C0803A6
+			// STW r0 = 0x9001xxxx, STWU r1 = 0x9421xxxx (stack frame setup)
 			check32bit = true;
-			nativeOpcodes = new int[][] {{0x4E, 0x80}}; // first half of BLR
-			swappedOpcodes = new int[][] {{0x80, 0x4E}};
+			nativeOpcodes = new int[][] {
+				{0x4E, 0x80}, // BLR / BCTR / BCTRL
+				{0x7C, 0x08}, // MFLR/MTLR r0
+				{0x90, 0x01}, // STW r0,offset(r1) — save LR to stack
+				{0x94, 0x21}, // STWU r1,offset(r1) — create stack frame
+			};
+			swappedOpcodes = new int[][] {
+				{0x80, 0x4E},
+				{0x08, 0x7C},
+				{0x01, 0x90},
+				{0x21, 0x94},
+			};
 		} else if (processor.contains("WE32100") || processor.contains("WE32")) {
 			// WE32100: 1-byte opcodes, big-endian data, instructions not word-aligned.
 			// ROMs are 32-bit interleaved across 4 byte-wide chips — wrong chip order
@@ -975,16 +986,60 @@ public class PlatformDetector {
 				top = 0x00100000L; // 1MB for 8086/8088/80186
 			}
 			long x86Base = top - romSize;
-			// Check if byte at (romSize - 16) is a JMP (0xEA = far jump, 0xE9 = near jump)
+			// Check the last 16 bytes for valid x86 reset code.
+			// The reset vector at physical (top-16) maps to ROM offset (romSize-16).
+			// Look for: far JMP (EA oo oo ss ss), near JMP, or bootstrap opcodes.
+			// For far JMP, parse the CS segment — BIOS segments are typically X000 format,
+			// and (segment << 4) gives the physical base of the code segment.
 			try {
-				Address resetAddr = blocks[0].getStart().add(romSize - 16);
-				byte resetByte = memory.getByte(resetAddr);
-				int opcode = resetByte & 0xFF;
-				if (opcode == 0xEA || opcode == 0xE9 || opcode == 0xEB) {
-					// Valid x86 JMP at reset vector location — high confidence
+				// Read last 16 bytes of ROM
+				byte[] tail = new byte[16];
+				memory.getBytes(blocks[0].getStart().add(romSize - 16), tail);
+
+				// First check exact reset vector position (offset 0 in tail = romSize-16)
+				int opcode = tail[0] & 0xFF;
+				if (opcode == 0xEA && tail.length >= 5) {
+					int segment = (tail[3] & 0xFF) | ((tail[4] & 0xFF) << 8);
+					// Validate segment: BIOS segments are X000 (paragraph-aligned, high nibble only)
+					if ((segment & 0x0FFF) == 0 && segment >= 0xC000) {
+						long csBase = (long) segment << 4;
+						long inferredBase = csBase;
+						// ROM must contain reset vector: csBase + romSize >= top
+						if (csBase + romSize >= top) {
+							inferredBase = top - romSize;
+						}
+						return new BaseAddressResult(inferredBase, romSize, 1, 1, 0.95,
+							String.format("x86 BIOS: reset vector at 0x%X has JMP to %04X:xxxx, ROM belongs at 0x%X",
+								top - 16, segment, inferredBase));
+					}
+					// Non-standard segment but still a far JMP at reset vector
+					return new BaseAddressResult(x86Base, romSize, 1, 1, 0.90,
+						String.format("x86 BIOS: reset vector at 0x%X has JMP (0xEA), ROM belongs at 0x%X",
+							top - 16, x86Base));
+				}
+				if (opcode == 0xE9 || opcode == 0xEB) {
 					return new BaseAddressResult(x86Base, romSize, 1, 1, 0.95,
 						String.format("x86 BIOS: reset vector at 0x%X has JMP (0x%02X), ROM belongs at 0x%X",
 							top - 16, opcode, x86Base));
+				}
+				if (opcode == 0xFA || opcode == 0xFC || opcode == 0x90) {
+					return new BaseAddressResult(x86Base, romSize, 1, 1, 0.85,
+						String.format("x86 BIOS: reset vector at 0x%X has bootstrap (0x%02X), ROM belongs at 0x%X",
+							top - 16, opcode, x86Base));
+				}
+
+				// Scan the last 16 bytes for a far JMP (EA) — some ROMs have the JMP
+				// a few bytes into the reset sequence (after CLI/CLD prefix)
+				for (int i = 1; i <= 11; i++) {
+					if ((tail[i] & 0xFF) == 0xEA && i + 4 < tail.length) {
+						int segment = (tail[i + 3] & 0xFF) | ((tail[i + 4] & 0xFF) << 8);
+						if ((segment & 0x0FFF) == 0 && segment >= 0xC000) {
+							long inferredBase = top - romSize;
+							return new BaseAddressResult(inferredBase, romSize, 1, 1, 0.80,
+								String.format("x86 BIOS: far JMP to %04X:xxxx found near reset vector, ROM belongs at 0x%X",
+									segment, inferredBase));
+						}
+					}
 				}
 			} catch (Exception e) {
 				// ignore
@@ -1145,6 +1200,11 @@ public class PlatformDetector {
 			long base = top - romSize;
 			// Also try common BIOS locations
 			return new long[]{ base, 0xF0000L, 0xFC000L, 0xFE000L, 0xFF000L, 0xF8000L };
+		} else if (processor.contains("PowerPC") || processor.contains("ppc")) {
+			// PowerPC boot ROM maps to 0xFFF00000 (exception vectors at 0xFFF0xxxx)
+			// Some systems also use 0xFFE00000 or 0xFFC00000 for larger ROMs
+			long topBase = 0x100000000L - romSize; // Top of 4GB minus ROM size
+			return new long[]{ 0xFFF00000L, topBase, 0xFFE00000L, 0xFFC00000L };
 		}
 		return new long[]{};
 	}

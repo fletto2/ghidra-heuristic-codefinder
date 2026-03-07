@@ -177,20 +177,94 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 
 		// x86 reset vector: CPU starts execution at FFFF:0000 (8086) or
 		// FFFFFFF0 (386+). Add as entry point if it falls within ROM.
+		// Also parse the JMP instruction at the reset vector to extract
+		// the actual entry point target address.
 		String procName = program.getLanguage().getProcessor().toString();
-		if (procName.contains("x86") || procName.contains("8086") ||
+		boolean isX86 = procName.contains("x86") || procName.contains("8086") ||
 				procName.contains("8088") || procName.contains("80186") ||
-				procName.contains("80286") || procName.contains("80386")) {
+				procName.contains("80286") || procName.contains("80386");
+		if (isX86) {
 			long resetAddr;
-			if (procName.contains("80386") || procName.contains("80486")) {
+			boolean is386plus = procName.contains("80386") || procName.contains("80486");
+			if (is386plus) {
 				resetAddr = 0xFFFFFFF0L;
 			} else {
 				resetAddr = 0xFFFF0L; // FFFF:0000 physical
 			}
+			int x86Seeds = 0;
 			if (memory.contains(defaultSpace.getAddress(resetAddr))) {
 				vectorAddrs.add(resetAddr);
-				Msg.info(this, "x86 reset vector at 0x" + Long.toHexString(resetAddr) +
-					" added as entry point");
+				x86Seeds++;
+
+				// Parse the JMP at reset vector to find the actual entry point
+				try {
+					Address ra = defaultSpace.getAddress(resetAddr);
+					byte opByte = memory.getByte(ra);
+					int op = opByte & 0xFF;
+					if (op == 0xEA) {
+						// FAR JMP: EA oo oo ss ss (offset:segment, little-endian)
+						byte[] jmpBuf = new byte[4];
+						memory.getBytes(ra.add(1), jmpBuf);
+						int offset = (jmpBuf[0] & 0xFF) | ((jmpBuf[1] & 0xFF) << 8);
+						int segment = (jmpBuf[2] & 0xFF) | ((jmpBuf[3] & 0xFF) << 8);
+						long target = ((long) segment << 4) + offset;
+						if (memory.contains(defaultSpace.getAddress(target))) {
+							vectorAddrs.add(target);
+							x86Seeds++;
+							Msg.info(this, "x86 reset JMP target: " + String.format(
+								"%04X:%04X = 0x%X", segment, offset, target));
+						}
+					} else if (op == 0xE9) {
+						// NEAR JMP: E9 ll hh (16-bit relative)
+						byte[] jmpBuf = new byte[2];
+						memory.getBytes(ra.add(1), jmpBuf);
+						int rel = (short) ((jmpBuf[0] & 0xFF) | ((jmpBuf[1] & 0xFF) << 8));
+						long target = resetAddr + 3 + rel; // PC after instruction + offset
+						if (memory.contains(defaultSpace.getAddress(target))) {
+							vectorAddrs.add(target);
+							x86Seeds++;
+						}
+					} else if (op == 0xEB) {
+						// SHORT JMP: EB dd (8-bit relative)
+						byte rel = memory.getByte(ra.add(1));
+						long target = resetAddr + 2 + rel;
+						if (memory.contains(defaultSpace.getAddress(target))) {
+							vectorAddrs.add(target);
+							x86Seeds++;
+						}
+					}
+				} catch (Exception e) {
+					// ignore
+				}
+			}
+
+			// For x86 ROMs with no reset vector in range, try the ROM start
+			// (some embedded 80186/80188 systems boot from physical address 0xFFFF0
+			// which maps to the start of the ROM chip)
+			if (x86Seeds == 0) {
+				long romStart = memory.getBlocks()[0].getStart().getOffset();
+				// Check if first bytes look like valid x86 code
+				try {
+					Address startAddr = defaultSpace.getAddress(romStart);
+					byte firstByte = memory.getByte(startAddr);
+					int fb = firstByte & 0xFF;
+					// Common x86 entry: JMP, CLI, MOV, XOR, PUSH
+					if (fb == 0xEA || fb == 0xE9 || fb == 0xEB || fb == 0xFA ||
+						fb == 0xB8 || fb == 0x33 || fb == 0x31 || fb == 0x50 ||
+						fb == 0x55 || fb == 0xFC || fb == 0x90 || fb == 0xE8) {
+						vectorAddrs.add(romStart);
+						x86Seeds++;
+						Msg.info(this, "x86 fallback: ROM start 0x" +
+							Long.toHexString(romStart) + " as entry point (opcode 0x" +
+							String.format("%02X", fb) + ")");
+					}
+				} catch (Exception e) {
+					// ignore
+				}
+			}
+
+			if (x86Seeds > 0) {
+				Msg.info(this, "x86 entry points: " + x86Seeds + " seeds added");
 			}
 		}
 
@@ -289,6 +363,54 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				if (memory.contains(defaultSpace.getAddress(excAddr))) {
 					vectorAddrs.add(excAddr);
 				}
+			}
+		}
+
+		// PowerPC reset vector: CPU starts at 0xFFF00100 (exception vector base
+		// 0xFFF00000 + 0x100 for system reset). Common exception offsets:
+		// 0x100=reset, 0x200=machine check, 0x300=DSI, 0x400=ISI,
+		// 0x500=external, 0x600=alignment, 0x700=program, 0x800=FPU unavail,
+		// 0x900=decrementer, 0xC00=syscall
+		if (procName.contains("PowerPC") || procName.contains("ppc")) {
+			long romBase = memory.getBlocks()[0].getStart().getOffset();
+			long romEnd = memory.getBlocks()[0].getEnd().getOffset();
+			int ppcSeeds = 0;
+
+			// Try ROM base + standard exception offsets
+			long[] ppcExcOffsets = { 0x100, 0x200, 0x300, 0x400, 0x500, 0x600,
+				0x700, 0x800, 0x900, 0xC00 };
+			for (long off : ppcExcOffsets) {
+				long excAddr = romBase + off;
+				if (excAddr <= romEnd && memory.contains(defaultSpace.getAddress(excAddr))) {
+					// Check if it looks like valid PPC code (not 0x00000000 or 0xFFFFFFFF)
+					try {
+						byte[] buf = new byte[4];
+						memory.getBytes(defaultSpace.getAddress(excAddr), buf);
+						long word = ((buf[0] & 0xFFL) << 24) | ((buf[1] & 0xFFL) << 16) |
+							((buf[2] & 0xFFL) << 8) | (buf[3] & 0xFFL);
+						if (word != 0 && word != 0xFFFFFFFFL) {
+							vectorAddrs.add(excAddr);
+							ppcSeeds++;
+						}
+					} catch (Exception e) { /* skip */ }
+				}
+			}
+			// Also add ROM base itself if it has valid-looking code
+			if (memory.contains(defaultSpace.getAddress(romBase))) {
+				try {
+					byte[] buf = new byte[4];
+					memory.getBytes(defaultSpace.getAddress(romBase), buf);
+					long word = ((buf[0] & 0xFFL) << 24) | ((buf[1] & 0xFFL) << 16) |
+						((buf[2] & 0xFFL) << 8) | (buf[3] & 0xFFL);
+					if (word != 0 && word != 0xFFFFFFFFL) {
+						vectorAddrs.add(romBase);
+						ppcSeeds++;
+					}
+				} catch (Exception e) { /* skip */ }
+			}
+			if (ppcSeeds > 0) {
+				Msg.info(this, "PowerPC exception vectors: " + ppcSeeds +
+					" entry points added");
 			}
 		}
 
@@ -1207,7 +1329,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			long currentBase = program.getMemory().getBlocks()[0].getStart().getOffset();
 			if (baseResult.inferredBase != currentBase
 					&& baseResult.confidence > 0.15
-					&& (baseResult.targetsInRange >= 3 || baseResult.confidence >= 0.90)) {
+					&& (baseResult.targetsInRange >= 3 || baseResult.confidence >= 0.80)) {
 				String baseMsg = String.format("ROM BASE ADDRESS: %s (confidence: %.0f%%)",
 					baseResult.description, baseResult.confidence * 100);
 				Msg.warn(this, baseMsg);
@@ -1215,7 +1337,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 
 				// Relocate memory block to inferred base address
 				if (baseResult.confidence >= 0.50
-						&& (baseResult.targetsInRange >= 5 || baseResult.confidence >= 0.90)) {
+						&& (baseResult.targetsInRange >= 5 || baseResult.confidence >= 0.80)) {
 					try {
 						ghidra.program.model.mem.MemoryBlock block =
 							program.getMemory().getBlocks()[0];
