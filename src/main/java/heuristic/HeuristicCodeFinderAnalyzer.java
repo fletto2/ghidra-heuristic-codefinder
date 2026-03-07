@@ -324,6 +324,13 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		totalFound += pass2Found;
 		Msg.info(this, "Pass 2: " + pass2Found + " instructions from vector seeds");
 
+		// Collect flow targets from ALL disassembled instructions (including those
+		// disassembled by Ghidra's DisassembleCommand which bypasses our collectTargets)
+		int rescued = collectMissedFlowTargets(program, newTargets);
+		if (rescued > 0) {
+			Msg.info(this, "Pass 2 post-scan: " + rescued + " additional flow targets from Ghidra-disassembled instructions");
+		}
+
 		// ============================================================
 		// Pass 3: Reference target tracing (H03, H04, H22)
 		// Iterate until no new blocks discovered
@@ -348,6 +355,8 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				}
 			}
 			pass3Total += pass3Round;
+			// Also collect any flow targets from Ghidra's internal flow-following
+			collectMissedFlowTargets(program, nextTargets);
 			newTargets = nextTargets;
 			if (pass3Round == 0) break;
 		}
@@ -617,6 +626,70 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 
 			entryPoints.add(target);
 		}
+	}
+
+	/**
+	 * Scan all disassembled instructions for flow targets that haven't been
+	 * disassembled yet. This catches targets from Ghidra's DisassembleCommand
+	 * flow-following, which bypasses our collectTargets() method.
+	 * Also collects data references (e.g., PC-relative LEA/PEA) that point to
+	 * undisassembled ROM regions — these are likely code pointers (exception
+	 * handlers, callback tables, etc.).
+	 */
+	private int collectMissedFlowTargets(Program program, Set<Address> targets) {
+		Listing listing = program.getListing();
+		Memory memory = program.getMemory();
+		int count = 0;
+
+		InstructionIterator iter = listing.getInstructions(true);
+		while (iter.hasNext()) {
+			Instruction instr = iter.next();
+
+			// Collect direct flow targets (branches/calls)
+			Address[] flows = instr.getFlows();
+			if (flows != null) {
+				for (Address target : flows) {
+					if (!memory.contains(target)) continue;
+					if (listing.getInstructionAt(target) != null) continue;
+					if (targets.contains(target)) continue;
+
+					targets.add(target);
+					entryPoints.add(target);
+					FlowType flow = instr.getFlowType();
+					if (flow.isCall()) {
+						functionEntries.add(target);
+						if (!confidence.containsKey(target)) {
+							confidence.put(target, CONF_CALL);
+						}
+					} else if (!confidence.containsKey(target)) {
+						confidence.put(target, flow.isConditional() ? CONF_CBRANCH : CONF_BRANCH);
+					}
+					count++;
+				}
+			}
+
+			// Collect data references that may be code pointers (LEA, PEA, etc.)
+			ghidra.program.model.symbol.Reference[] refs = instr.getReferencesFrom();
+			if (refs != null) {
+				for (ghidra.program.model.symbol.Reference ref : refs) {
+					if (ref.getReferenceType().isFlow()) continue; // already handled above
+					if (!ref.getReferenceType().isData()) continue;
+					Address target = ref.getToAddress();
+					if (!memory.contains(target)) continue;
+					if (listing.getInstructionAt(target) != null) continue;
+					if (targets.contains(target)) continue;
+					// Only treat as code if target is in a code-capable region
+					if (!platform.isValidCodeAddress(target.getOffset())) continue;
+					targets.add(target);
+					entryPoints.add(target);
+					if (!confidence.containsKey(target)) {
+						confidence.put(target, CONF_BRANCH);
+					}
+					count++;
+				}
+			}
+		}
+		return count;
 	}
 
 	// ================================================================
