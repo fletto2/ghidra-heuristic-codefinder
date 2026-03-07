@@ -1267,6 +1267,24 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				Msg.info(this, romMsg);
 				log.appendMsg("Heuristic Code Finder: " + romMsg);
 
+				// Warn if this is a split/incomplete ROM.
+				// Detect by: matchType "split*", non-zero slice index (offset & 3),
+				// or loadType indicating byte/word-interleaved loading.
+				boolean isSplit = best.matchType.startsWith("split");
+				if (!isSplit && (best.romOffset & 3) != 0) isSplit = true; // non-zero slice = interleaved chip
+				if (!isSplit && best.loadType != null &&
+					(best.loadType.contains("bit_byte") || best.loadType.contains("bit_word"))) {
+					isSplit = true;
+				}
+				if (isSplit) {
+					String splitWarn = String.format(
+						"WARNING: This ROM is an incomplete split chip (%s, offset 0x%X). " +
+						"It must be combined with its matching chip(s) before disassembly.",
+						best.matchType, best.romOffset);
+					Msg.warn(this, splitWarn);
+					log.appendMsg("Heuristic Code Finder: " + splitWarn);
+				}
+
 				// Log all matches if multiple
 				if (romMatches.size() > 1) {
 					StringBuilder sb = new StringBuilder("All ROM matches:\n");
