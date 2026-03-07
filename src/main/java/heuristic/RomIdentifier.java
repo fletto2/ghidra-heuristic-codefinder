@@ -64,6 +64,8 @@ public class RomIdentifier {
 	}
 
 	private Map<String, List<JsonObject>> sha1Lookup;  // sha1 -> list of entries
+	private List<JsonObject> combinedGroups;            // combined ROM groups
+	private Map<Integer, List<Integer>> sizeToGroups;   // total_size -> group indices
 	private boolean loaded = false;
 
 	public RomIdentifier() {
@@ -143,8 +145,21 @@ public class RomIdentifier {
 				sha1Lookup.put(sha1, list);
 			}
 
-			Msg.info(this, String.format("ROM database loaded: %d SHA1 entries",
-				sha1Lookup.size()));
+			// Load combined ROM groups for de-interleave matching
+			combinedGroups = new ArrayList<>();
+			sizeToGroups = new HashMap<>();
+			JsonArray combinedArr = db.getAsJsonArray("combined");
+			if (combinedArr != null) {
+				for (int i = 0; i < combinedArr.size(); i++) {
+					JsonObject group = combinedArr.get(i).getAsJsonObject();
+					combinedGroups.add(group);
+					int totalSize = group.get("z").getAsInt();
+					sizeToGroups.computeIfAbsent(totalSize, k -> new ArrayList<>()).add(i);
+				}
+			}
+
+			Msg.info(this, String.format("ROM database loaded: %d SHA1 entries, %d combined groups",
+				sha1Lookup.size(), combinedGroups.size()));
 
 		} catch (Exception e) {
 			Msg.error(this, "Failed to load ROM database: " + e.getMessage());
@@ -228,7 +243,26 @@ public class RomIdentifier {
 			}
 		}
 
-		// Mode 4: Split into 2 words (16-bit) within 32-bit — word-interleave
+		// Mode 4: Combined group matching — de-interleave according to known layouts
+		// This handles all interleave patterns from the MAME database including
+		// multi-bank layouts (e.g. 4 chips with i=2 across two banks)
+		if (sizeToGroups != null) {
+			List<Integer> candidateGroupIndices = sizeToGroups.get(romData.length);
+			if (candidateGroupIndices != null) {
+				for (int gi : candidateGroupIndices) {
+					JsonObject group = combinedGroups.get(gi);
+					RomMatch match = tryDeinterleaveGroup(romData, group);
+					if (match != null) {
+						results.add(match);
+						Msg.info(this, "ROM identified by combined de-interleave: " + match);
+						return results;
+					}
+				}
+			}
+		}
+
+		// Mode 5: Split into 2 words (16-bit) within 32-bit — word-interleave
+		// (legacy fallback for patterns not in combined groups)
 		if (romData.length >= 256 && romData.length % 4 == 0) {
 			int halfSize = romData.length / 2;
 			byte[] wordLo = new byte[halfSize];
@@ -283,6 +317,59 @@ public class RomIdentifier {
 		}
 
 		return results;
+	}
+
+	/**
+	 * Try to de-interleave a ROM according to a combined group's layout
+	 * and verify all chip SHA1s match.
+	 */
+	private RomMatch tryDeinterleaveGroup(byte[] romData, JsonObject group) {
+		int interleave = group.get("i").getAsInt();
+		int numChips = group.get("n").getAsInt();
+		int chipSize = group.get("ck").getAsInt();
+
+		JsonArray chipSha1s = group.getAsJsonArray("cs");
+		JsonArray chipOffsets = group.getAsJsonArray("co");
+
+		if (chipSha1s.size() != numChips || chipOffsets.size() != numChips) {
+			return null;
+		}
+
+		// De-interleave: extract each chip's data from the combined ROM
+		for (int ci = 0; ci < numChips; ci++) {
+			int offset = chipOffsets.get(ci).getAsInt();
+			String expectedSha1 = chipSha1s.get(ci).getAsString();
+
+			int byteLane = offset % interleave;
+			int base = offset - byteLane;
+
+			byte[] chipData = new byte[chipSize];
+			boolean valid = true;
+			for (int si = 0; si < chipSize; si++) {
+				int srcIdx = base + si * interleave + byteLane;
+				if (srcIdx >= romData.length) {
+					valid = false;
+					break;
+				}
+				chipData[si] = romData[srcIdx];
+			}
+
+			if (!valid) return null;
+
+			String actualSha1 = sha1hex(chipData);
+			if (!actualSha1.equals(expectedSha1)) {
+				return null; // This chip doesn't match — try next group
+			}
+		}
+
+		// All chips matched!
+		String machine = group.get("m").getAsString();
+		String cpu = group.has("c") ? group.get("c").getAsString() : "unknown";
+		String desc = group.has("d") ? group.get("d").getAsString() : machine;
+		String mfr = group.has("v") ? group.get("v").getAsString() : "";
+
+		return new RomMatch(machine, desc, mfr, cpu, romData.length, 0,
+			"maincpu", "combined_i" + interleave + "_n" + numChips, "");
 	}
 
 	/**
