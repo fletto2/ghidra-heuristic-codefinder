@@ -77,6 +77,8 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 	private Set<Address> entryPoints = new LinkedHashSet<>();
 	private Set<Address> functionEntries = new LinkedHashSet<>();
 	private Map<Address, Integer> confidence = new LinkedHashMap<>();
+	private List<RomIdentifier.RomMatch> romMatches = new ArrayList<>();
+	private PcodeVectorDatabase vectorDb;
 
 	// Confidence tiers (H20)
 	private static final int CONF_VECTOR = 100;
@@ -275,6 +277,25 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		// ============================================================
 		monitor.setMessage("Heuristic Pass 10: Function classification & HW register labeling");
 		FunctionPatternDetector fpd = new FunctionPatternDetector(program, platform);
+
+		// Initialize P-code vector database for structural similarity matching
+		if (vectorDb == null) {
+			vectorDb = new PcodeVectorDatabase();
+			vectorDb.ensureLoaded();
+		}
+		fpd.setVectorDatabase(vectorDb);
+
+		// Determine ROM domain from identification results or platform
+		PcodeVectorDatabase.RomDomain domain;
+		if (!romMatches.isEmpty()) {
+			domain = PcodeVectorDatabase.classifyDomain(romMatches);
+		} else {
+			String cpuName = program.getLanguage().getProcessor().toString();
+			domain = PcodeVectorDatabase.classifyDomainFromPlatform(cpuName, platform);
+		}
+		fpd.setRomDomain(domain);
+		Msg.info(this, "Pass 10: ROM domain = " + domain +
+			", vector DB has " + vectorDb.getSignatureCount() + " signatures");
 
 		int hwLabels = 0;
 		try {
@@ -917,7 +938,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			// --- ROM identification by SHA1 ---
 			monitor.setMessage("Identifying ROM by SHA1 hash...");
 			RomIdentifier romId = new RomIdentifier();
-			List<RomIdentifier.RomMatch> romMatches = romId.identify(program.getMemory());
+			this.romMatches = romId.identify(program.getMemory());
 			if (!romMatches.isEmpty()) {
 				RomIdentifier.RomMatch best = romMatches.get(0);
 				String romMsg = String.format("ROM IDENTIFIED: %s (CPU: %s, match: %s)",

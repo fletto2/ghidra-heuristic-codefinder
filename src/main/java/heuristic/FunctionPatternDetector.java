@@ -72,10 +72,28 @@ public class FunctionPatternDetector {
 
 	private final Program program;
 	private final PlatformDescription platform;
+	private PcodeVectorDatabase vectorDb;
+	private PcodeVectorDatabase.RomDomain romDomain = PcodeVectorDatabase.RomDomain.GENERIC;
 
 	public FunctionPatternDetector(Program program, PlatformDescription platform) {
 		this.program = program;
 		this.platform = platform;
+	}
+
+	/**
+	 * Set the P-code vector database for structural similarity matching.
+	 * Must be called before classify() for vector-based classification.
+	 */
+	public void setVectorDatabase(PcodeVectorDatabase db) {
+		this.vectorDb = db;
+	}
+
+	/**
+	 * Set the ROM domain for filtering plausible function categories.
+	 * Derived from ROM identification or platform description.
+	 */
+	public void setRomDomain(PcodeVectorDatabase.RomDomain domain) {
+		this.romDomain = domain != null ? domain : PcodeVectorDatabase.RomDomain.GENERIC;
 	}
 
 	// ================================================================
@@ -96,7 +114,48 @@ public class FunctionPatternDetector {
 		OpcodeProfile profile = buildProfile(pcode);
 		List<FunctionType> results = new ArrayList<>();
 
-		// Phase 1: Rule-based detectors (high precision for specific patterns)
+		// Phase 0: P-code vector database matching (primary classifier)
+		// Uses normalized P-code n-gram similarity against a reference database
+		// of known functions, filtered by ROM domain.
+		if (vectorDb != null) {
+			List<PcodeVectorDatabase.VectorMatch> vectorMatches =
+				vectorDb.classify(pcode, romDomain);
+			for (PcodeVectorDatabase.VectorMatch vm : vectorMatches) {
+				// Convert to FunctionType, scaling confidence from similarity
+				double conf = vm.similarity;
+				String desc = vm.description +
+					String.format(" (%.0f%% ngram, %.0f%% struct match from %s)",
+						vm.ngramSimilarity * 100, vm.structSimilarity * 100, vm.sourceCpu);
+				results.add(new FunctionType(vm.category, vm.label, conf, desc));
+			}
+		}
+
+		// If vector database is active, it is the primary classifier.
+		// Skip rule-based detectors which produce too many false positives
+		// on unfamiliar ISAs. Only fall through to rules if vector DB
+		// found nothing AND we have no ROM domain constraint.
+		if (vectorDb != null) {
+			if (!results.isEmpty()) {
+				// Domain filtering for vector DB results
+				if (romDomain != null && romDomain != PcodeVectorDatabase.RomDomain.GENERIC) {
+					Set<String> allowed = getDomainCategories(romDomain);
+					if (allowed != null) {
+						results.removeIf(r -> !allowed.contains(r.category));
+					}
+				}
+				if (!results.isEmpty()) {
+					results.sort((a, b) -> Double.compare(b.confidence, a.confidence));
+					return results;
+				}
+			}
+			// Vector DB found nothing — if domain is known, don't fall through
+			// to noisy rule-based detectors either
+			if (romDomain != null && romDomain != PcodeVectorDatabase.RomDomain.GENERIC) {
+				return Collections.emptyList();
+			}
+		}
+
+		// Phase 1: Rule-based detectors (legacy fallback for unknown ROMs only)
 		tryDetect(results, detectSoftwareMultiply(pcode, profile));
 		tryDetect(results, detectSoftwareDivide(pcode, profile));
 		tryDetect(results, detectMemcpy(pcode, profile));
@@ -386,12 +445,71 @@ public class FunctionPatternDetector {
 			if (vectorMatch != null) results.add(vectorMatch);
 		}
 
+		// Domain filtering: remove results whose category is implausible
+		// for the identified ROM type (e.g., no sprite renderers in boot ROMs)
+		if (romDomain != null && romDomain != PcodeVectorDatabase.RomDomain.GENERIC) {
+			Set<String> allowed = getDomainCategories(romDomain);
+			if (allowed != null) {
+				results.removeIf(r -> !allowed.contains(r.category));
+			}
+		}
+
 		results.sort((a, b) -> Double.compare(b.confidence, a.confidence));
 		return results;
 	}
 
+	/**
+	 * Get the set of plausible function categories for a ROM domain.
+	 * Returns null if all categories are allowed.
+	 */
+	private static Set<String> getDomainCategories(PcodeVectorDatabase.RomDomain domain) {
+		// Delegate to the vector database's domain map, but we need a static
+		// accessor. Build a local map covering the rule-based detector categories.
+		// This map should stay in sync with PcodeVectorDatabase.DOMAIN_CATEGORIES.
+		switch (domain) {
+			case COMPUTER_BOOT:
+				return new HashSet<>(Arrays.asList(
+					"multiply", "divide", "memcpy", "memset", "memcmp", "memmove",
+					"strlen", "strcmp", "strcpy", "checksum", "crc",
+					"bcd", "jump_table", "interrupt_handler", "boot_init",
+					"printf", "sprintf", "number_to_string", "hex_dump",
+					"memory_test", "self_test", "post_memory_test",
+					"serial_io", "uart_init", "dma_transfer",
+					"scsi_command", "disk_block_io", "flash_program", "flash_erase",
+					"device_driver", "interrupt_control",
+					"vector_table", "context_save", "exception_frame",
+					"state_machine", "command_parser", "retry_loop",
+					"busy_wait", "delay_loop", "watchdog",
+					"sort", "binary_search", "table_lookup",
+					"linked_list", "circular_buffer",
+					"block_mapping", "page_table", "mpu_config",
+					"cache_flush", "tlb_flush",
+					"checksum_validate", "ip_checksum",
+					"abs_value", "clamp", "byte_swap",
+					"timer_setup", "rtc",
+					"keyboard_scan", "dip_switch",
+					"crt_init", "lcd_init", "text_render",
+					"error_handler", "assert_panic", "log_print",
+					"bootloader_jump", "relocation",
+					"bus_arbitration", "jtag",
+					"fat_filesystem", "file_operation",
+					"heap_alloc", "memory_pool", "slab_alloc",
+					"task_scheduler", "semaphore", "mutex",
+					"coroutine", "event_signal",
+					"atoi", "itoa", "string_search", "string_tokenize",
+					"software_float", "float_add", "float_mul",
+					"rng", "fixed_point", "sqrt"
+				));
+			case GAME_CONSOLE:
+			case ARCADE:
+				return null; // Allow all for games — they have everything
+			default:
+				return null; // GENERIC: allow all
+		}
+	}
+
 	private void tryDetect(List<FunctionType> results, FunctionType result) {
-		if (result != null && result.confidence >= 0.40) {
+		if (result != null && result.confidence >= 0.80) {
 			results.add(result);
 		}
 	}
@@ -598,6 +716,9 @@ public class FunctionPatternDetector {
 				}
 			}
 
+			Msg.info(this, String.format("  Classified %s @%s as %s: %s (%.0f%%)",
+				func.getName(), func.getEntryPoint(), best.category, best.label,
+				best.confidence * 100));
 			classified++;
 		}
 		return classified;
@@ -951,15 +1072,20 @@ public class FunctionPatternDetector {
 		double shiftSubRatio = (double) keyOps / p.totalOps;
 		if (shiftSubRatio < 0.15) return null;
 
-		double conf = 0.4;
-		if (p.lefts > 0 && p.rights > 0) conf += 0.1;  // Both directions = restoring div
-		if (p.sLesses > 0 || p.lesses > 0) conf += 0.1; // Comparison with divisor
-		if (p.loopCount == 1) conf += 0.1;
-		if (p.divs == 0) conf += 0.1;  // No hardware divide
-		if (p.rems > 0 || p.ors > 0) conf += 0.05;  // Building quotient/remainder
+		// Must have both left and right shifts (shift dividend, build quotient)
+		if (p.lefts < 1 || p.rights < 1) return null;
+
+		double conf = 0.45;
+		if (p.sLesses > 0 || p.lesses > 0) conf += 0.10; // Comparison with divisor
+		if (p.loopCount == 1) conf += 0.05; // Single loop (shift-subtract)
+		if (p.divs == 0) conf += 0.05;  // No hardware divide
+		if (shiftSubRatio > 0.25) conf += 0.10; // Very shift-heavy
+		if (p.totalOps < 60) conf += 0.05; // Compact function
+
+		if (conf < 0.60) return null;
 
 		return new FunctionType("divide", "software_divide",
-			Math.min(conf, 0.95),
+			Math.min(conf, 0.90),
 			"Software divide via shift-and-subtract loop");
 	}
 
@@ -1175,55 +1301,79 @@ public class FunctionPatternDetector {
 	 */
 	private FunctionType detectDecompression(PcodeOp[] pcode, OpcodeProfile p) {
 		if (!p.hasLoop) return null;
-		// Decompressors are substantial — need enough ops for reliable detection
-		if (p.totalOps < 50) return null;
+		// Decompressors are substantial leaf functions
+		if (p.totalOps < 80) return null;
 
-		// Decompression is characterized by:
-		// 1. Heavy shift/mask usage (bit extraction)
-		// 2. Both LOAD and STORE (read compressed, write decompressed)
-		// 3. Multiple conditional branches (format parsing)
-		// 4. AND with mask constants (ring buffer, bit fields)
+		// Decompressors are self-contained — they don't call many other functions.
+		// A function that calls 4+ subroutines is not a decompressor.
+		if (p.calls >= 4) return null;
 
-		// Require minimum absolute counts of key operations
-		if (p.shifts < 3 || p.ands < 3) return null;
-		if (p.loads < 3 || p.stores < 3) return null;
-		if (p.cbranches < 3) return null;
+		// Require substantial shift+mask usage — this is the core discriminator.
+		// Shifts and ANDs must be a significant fraction of total ops, not incidental.
+		if (p.shifts < 4 || p.ands < 4) return null;
+		if (p.loads < 5 || p.stores < 3) return null;
+		if (p.cbranches < 4) return null;
 
 		double shiftMaskRatio = (double)(p.shifts + p.ands) / p.totalOps;
-		if (shiftMaskRatio < 0.08) return null;
+		if (shiftMaskRatio < 0.10) return null;
 
-		// Check for ring buffer mask patterns (AND with 0xFFF, 0x3FF, etc.)
+		// Decompressors need NESTED loops or multiple loops — a single loop
+		// is too common in generic code.
+		if (p.loopCount < 2 && !p.hasNestedLoop) return null;
+
+		// Check for ring buffer mask patterns.
+		// LZSS requires 0xFFF (4K) or 0x3FF (1K). These are NOT common in
+		// generic code and serve as strong positive signals.
+		// 0xFF is too common (byte masking) — it's not a ring buffer indicator.
 		boolean hasRingBufferMask = false;
 		boolean hasBitExtraction = false;
+		int distinctBitMasks = 0;
 		for (PcodeOp op : pcode) {
 			if (op.getOpcode() == PcodeOp.INT_AND) {
 				Varnode mask = op.getInput(1);
 				if (mask != null && mask.isConstant()) {
 					long val = mask.getOffset();
-					// Common ring buffer sizes: 0xFFF (4K), 0x3FF (1K), 0xFF (256)
-					if (val == 0xFFF || val == 0x3FF || val == 0x1FF || val == 0xFF) {
+					// Ring buffer: 0xFFF (4K), 0x3FF (1K), 0x1FF (512)
+					// 0xFF is excluded — it's generic byte masking
+					if (val == 0xFFF || val == 0x3FF || val == 0x1FF) {
 						hasRingBufferMask = true;
 					}
-					// Bit masks: 1, 3, 7, 0xF, 0x1F, 0x3F, 0x7F, 0x80
-					if (val <= 0xFF && val > 0 && (((val + 1) & val) == 0 || val == 0x80)) {
+					// Bit extraction masks (1, 3, 7, 0xF, 0x1F, 0x3F, 0x7F)
+					if (val >= 1 && val <= 0x7F && ((val + 1) & val) == 0) {
 						hasBitExtraction = true;
+						distinctBitMasks++;
 					}
 				}
 			}
 		}
 
-		double conf = 0.4;
-		if (hasRingBufferMask) conf += 0.2;
-		if (hasBitExtraction) conf += 0.1;
-		if (shiftMaskRatio > 0.15) conf += 0.1;
-		if (p.loopCount >= 2) conf += 0.05; // Nested loops common
-		if (p.totalOps > 100) conf += 0.05; // Decompressors tend to be large
+		// Without a ring buffer mask, need very strong shift/mask signal
+		// to distinguish from generic byte-manipulation code
+		if (!hasRingBufferMask && shiftMaskRatio < 0.15) return null;
+		if (!hasRingBufferMask && !hasBitExtraction) return null;
+
+		// Decompressors are mostly self-contained byte shufflers.
+		// Penalize if the function has many calls (utility/glue code, not algorithm)
+		// or many ASCII constant comparisons (string processing, not compression).
+		if (p.constAsciiCompares >= 3) return null; // string handler, not decompressor
+
+		double conf = 0.45;
+		if (hasRingBufferMask) conf += 0.25; // definitive LZSS signal
+		if (hasBitExtraction && distinctBitMasks >= 2) conf += 0.10;
+		if (shiftMaskRatio > 0.15) conf += 0.05;
+		if (p.hasNestedLoop) conf += 0.05;
+		if (p.totalOps > 150) conf += 0.05;
+		if (p.calls == 0) conf += 0.05; // pure leaf function = stronger signal
+		if (p.calls >= 2) conf -= 0.10; // calls weaken the case
+
+		if (conf < 0.60) return null;
 
 		String variant = hasRingBufferMask ? "lzss" : "rle_or_bitstream";
 		return new FunctionType("decompression", "decompress_" + variant,
-			Math.min(conf, 0.95),
-			"Decompression routine (shift/mask heavy" +
-			(hasRingBufferMask ? " with ring buffer" : "") + ")");
+			Math.min(conf, 0.90),
+			"Decompression routine (shift/mask ratio " +
+			String.format("%.0f%%", shiftMaskRatio * 100) +
+			(hasRingBufferMask ? ", ring buffer mask" : "") + ")");
 	}
 
 	/**
@@ -1326,10 +1476,22 @@ public class FunctionPatternDetector {
 	 * potential status register manipulation.
 	 */
 	private FunctionType detectInterruptHandler(PcodeOp[] pcode, OpcodeProfile p) {
-		// Need enough ops to see the save/restore pattern clearly
+		// Real ISRs: save regs, do minimal work, restore regs, RTE/RETI.
+		// They rarely call subroutines — functions that call 3+ other functions
+		// are almost certainly not interrupt handlers.
+		if (p.calls >= 3) return null;
 		if (p.stores < 4) return null;
 
-		// Check first N ops for store-heavy pattern without arithmetic
+		// Must have CALLOTHER (which maps to TRAP/RTE/RETI on many ISAs)
+		// or be very small (some ISRs are just a register write + return).
+		boolean hasSpecialReturn = p.hasTrapOp || p.callOtherCount > 0;
+		boolean isSmall = p.totalOps < 40;
+
+		// Count initial stores that look like register saves.
+		// On most ISAs, ISR prologues save more registers than normal functions.
+		// But we need to distinguish ISR saves from normal function prologues.
+		// Real ISRs save registers to a *different* location (ISR stack) or
+		// save *all* registers (not just callee-saved ones).
 		int initialStores = 0;
 		int initialOps = Math.min(p.totalOps, 20);
 		boolean hasEarlyArithmetic = false;
@@ -1351,15 +1513,22 @@ public class FunctionPatternDetector {
 			if (pcode[i].getOpcode() == PcodeOp.LOAD) trailingLoads++;
 		}
 
-		double conf = 0.4;
-		if (initialStores >= 5) conf += 0.15;
-		if (trailingLoads >= 3) conf += 0.15;
-		if (p.returns > 0) conf += 0.1;
-		if (p.calls == 0) conf += 0.05; // Many ISRs don't call other functions
+		// Require strong evidence: special return instruction OR (no calls AND
+		// save/restore symmetry AND small function)
+		double conf = 0.3;
+		if (hasSpecialReturn) conf += 0.25; // strong signal: RTE/RETI
+		if (p.calls == 0) conf += 0.10;
+		if (initialStores >= 6 && trailingLoads >= 4) conf += 0.10; // heavy save/restore
+		if (isSmall && p.calls == 0) conf += 0.10; // short leaf = strong ISR signal
+		if (p.hasLoop) conf -= 0.15; // ISRs rarely loop
+		if (p.calls >= 1) conf -= 0.10; // each call weakens the case
+		if (p.totalOps > 200) conf -= 0.10; // ISRs are usually short
+
+		if (conf < 0.60) return null;
 
 		return new FunctionType("interrupt_handler", "interrupt_handler",
-			Math.min(conf, 0.95),
-			"Interrupt/exception handler (register save/restore pattern)");
+			Math.min(conf, 0.90),
+			"Interrupt/exception handler (register save/restore + special return)");
 	}
 
 	/**
@@ -2313,19 +2482,43 @@ public class FunctionPatternDetector {
 	 */
 	private FunctionType detectCircularBuffer(PcodeOp[] pcode, OpcodeProfile p) {
 		if (p.totalOps > 200 || p.totalOps < 15) return null;
-		if (p.loads < 1 || p.stores < 1) return null;
-		if (p.powerOf2Masks < 1 && p.rems < 1) return null;
+		if (p.loads < 2 || p.stores < 2) return null;
+		// Must have actual ring buffer wrap: AND with power-of-2 mask ≥ 0xF
+		// (not just byte masking with 0xFF which is ubiquitous)
+		if (p.powerOf2Masks < 2 && p.rems < 1) return null;
+		// Ring buffers are leaf or near-leaf operations
+		if (p.calls >= 3) return null;
 
-		// Ring buffer: AND mask for wrapping, or REM for modular arithmetic
-		double conf = 0.45;
-		if (p.powerOf2Masks >= 2) conf += 0.15;
-		if (p.adds > 0) conf += 0.05; // index increment
-		if (p.compares > 0) conf += 0.10; // empty/full check
-		if (p.constZeroCompares > 0) conf += 0.05;
+		// Check for actual ring-buffer-sized masks (not just 0xFF/0x1)
+		int ringMasks = 0;
+		for (PcodeOp op : pcode) {
+			if (op.getOpcode() == PcodeOp.INT_AND) {
+				Varnode mask = op.getInput(1);
+				if (mask != null && mask.isConstant()) {
+					long val = mask.getOffset();
+					// Ring buffer sizes: 0xF (16), 0x1F (32), 0x3F (64), 0xFF (256), 0x1FF, 0x3FF, 0xFFF
+					if (val >= 0xF && val <= 0xFFFF && ((val + 1) & val) == 0) {
+						ringMasks++;
+					}
+				}
+			}
+		}
+		if (ringMasks < 1 && p.rems < 1) return null;
+
+		// Must have index update (ADD) and bounds/empty check
+		if (p.adds < 1 || p.compares < 1) return null;
+
+		double conf = 0.50;
+		if (ringMasks >= 2) conf += 0.15;
+		if (p.rems >= 1) conf += 0.10;
+		if (p.constZeroCompares > 0) conf += 0.05; // empty/full check
+		if (p.calls == 0) conf += 0.05;
+
+		if (conf < 0.60) return null;
 
 		return new FunctionType("circular_buffer", "circular_buffer_op",
 			Math.min(conf, 0.85),
-			"Circular/ring buffer operation (modular index)");
+			"Circular/ring buffer operation (modular index wrap)");
 	}
 
 	/**
@@ -2657,19 +2850,30 @@ public class FunctionPatternDetector {
 	 * length/checksum computation, structured store sequence.
 	 */
 	private FunctionType detectNetworkProtocol(PcodeOp[] pcode, OpcodeProfile p) {
-		if (p.totalOps < 25) return null;
-		if (p.loads < 3 || p.stores < 3) return null;
-		if (p.shifts < 1 && p.logic < 2) return null;
+		if (p.totalOps < 40) return null;
+		if (p.loads < 5 || p.stores < 5) return null;
 
-		// Packet build/parse: extract fields (shift/mask), validate lengths, checksum
-		double conf = 0.40;
-		if (p.ands >= 2) conf += 0.10; // field extraction
-		if (p.ors >= 2) conf += 0.10; // field packing
-		if (p.lefts > 0 && p.rights > 0) conf += 0.10; // byte/word swapping
-		if (p.adds >= 2 && p.compares >= 2) conf += 0.10; // length/offset calc + bounds check
-		if (p.calls >= 1) conf += 0.05; // call to send/receive
+		// Packet build/parse is distinguished by byte-order conversion:
+		// BOTH left and right shifts are required (byte swapping / field extraction+packing).
+		// Also needs AND masks for field isolation.
+		if (p.lefts < 1 || p.rights < 1) return null;
+		if (p.ands < 2) return null;
 
-		// Need enough indicators
+		// Must have specific network-relevant constants:
+		// port numbers, protocol numbers, header sizes, byte-order shifts (8, 16, 24)
+		boolean hasNetworkShifts = p.constants.contains(8L) && p.constants.contains(16L);
+		boolean hasProtocolConst = false;
+		for (long c : p.constants) {
+			// Common: 0xFF (byte mask), 0xFFFF (word mask), known port numbers, IP header size
+			if (c == 0xFF00L || c == 0xFF0000L || c == 0xFF000000L) hasProtocolConst = true;
+		}
+		if (!hasNetworkShifts && !hasProtocolConst) return null;
+
+		double conf = 0.50;
+		if (hasNetworkShifts) conf += 0.15;
+		if (p.ors >= 2) conf += 0.05; // field packing
+		if (p.adds >= 2 && p.compares >= 2) conf += 0.05;
+
 		if (conf < 0.60) return null;
 
 		return new FunctionType("network_protocol", "packet_build_or_parse",
@@ -3036,23 +3240,31 @@ public class FunctionPatternDetector {
 	 */
 	private FunctionType detectBitmapAllocator(PcodeOp[] pcode, OpcodeProfile p) {
 		if (!p.hasLoop) return null;
-		if (p.totalOps < 20) return null;
-		if (p.shifts < 2) return null;
-		if (p.ands < 2) return null;
+		if (p.totalOps < 30) return null;
+		// Bitmap allocators are leaf functions — no external calls
+		if (p.calls >= 2) return null;
+		// Must have substantial shift+logic operations, not incidental
+		if (p.shifts < 3) return null;
+		if (p.ands < 3) return null;
 
-		// Bitmap ops: shift to position, AND to test, OR to set, loop over bits/bytes
+		// Bitmap ops: shift to bit position, AND to test, OR to set bits
 		double shiftFrac = p.shifts / (double) p.totalOps;
 		double logicFrac = p.logic / (double) p.totalOps;
-		if (shiftFrac < 0.05 || logicFrac < 0.05) return null;
+		// Both shift and logic must be substantial fractions
+		if (shiftFrac < 0.08 || logicFrac < 0.08) return null;
 
-		double conf = 0.40;
-		if (p.ors > 0) conf += 0.10; // OR to set bits
-		if (p.powerOf2Masks >= 1) conf += 0.10;
-		if (p.compares >= 2) conf += 0.10; // boundary/full checks
-		if (p.constSmallInts >= 2) conf += 0.05; // bit positions
-		if (p.lefts > 0 && p.rights > 0) conf += 0.10; // bidirectional shifts
+		// Must have OR (to set bits) — bitmap allocators both test AND set
+		if (p.ors < 1) return null;
+		// Need bidirectional shifts (left to create mask, right to extract position)
+		if (p.lefts < 1 || p.rights < 1) return null;
 
-		if (conf < 0.55) return null;
+		double conf = 0.50;
+		if (p.powerOf2Masks >= 2) conf += 0.10;
+		if (p.compares >= 2) conf += 0.05;
+		if (shiftFrac > 0.12) conf += 0.05;
+		if (p.calls == 0) conf += 0.05;
+
+		if (conf < 0.60) return null;
 
 		return new FunctionType("bitmap_allocator", "bitmap_bit_allocator",
 			Math.min(conf, 0.85),
@@ -3158,15 +3370,23 @@ public class FunctionPatternDetector {
 		if (p.totalOps < 15) return null;
 		if (p.loads < 2) return null;
 
-		// Device dispatch: load from table, indirect call or branch
+		// Device dispatch: load from table, indirect call or branch.
+		// Must have BOTH indirect dispatch AND index scaling.
 		boolean hasIndirectDispatch = p.callInds > 0 || p.branchInds > 0;
 		if (!hasIndirectDispatch) return null;
+		// Index scaling: shift left or multiply to compute table offset
+		boolean hasIndexScale = p.lefts > 0 || p.mults > 0;
+		if (!hasIndexScale) return null;
+		// Should have bounds checking
+		if (p.compares < 1) return null;
 
-		double conf = 0.45;
-		if (p.compares >= 1) conf += 0.10; // bounds check on command/device id
-		if (p.lefts > 0 || p.mults > 0) conf += 0.10; // index scaling
-		if (p.callInds > 0) conf += 0.10; // indirect call
-		if (p.loads >= 3) conf += 0.05;
+		double conf = 0.50;
+		if (p.callInds > 0) conf += 0.10; // indirect call (not just branch)
+		if (p.cbranch_eq_runs >= 2) conf += 0.10; // compare-and-branch dispatch
+		if (p.loads >= 4) conf += 0.05;
+		if (p.totalOps < 80) conf += 0.05; // dispatch tables are usually compact
+
+		if (conf < 0.60) return null;
 
 		return new FunctionType("device_dispatch", "device_driver_dispatch",
 			Math.min(conf, 0.85),
@@ -5120,17 +5340,28 @@ public class FunctionPatternDetector {
 	}
 
 	private FunctionType detectBitReverse(PcodeOp[] pcode, OpcodeProfile p) {
-		if (p.totalOps < 15) return null;
-		double conf = 0;
-		// Bit reverse: extract LSB, shift into MSB, 8/16/32 iterations
-		if (p.hasLoop) conf += 0.15;
-		if (p.shifts >= 2) conf += 0.20; // shift left + shift right
-		if (p.ands >= 1) conf += 0.15; // extract bit
-		if (p.ors >= 1) conf += 0.15; // assemble reversed
-		// Or table-driven: single load from 256-entry table
-		if (!p.hasLoop && p.loads >= 1 && p.ands >= 1) conf += 0.20;
-		if (p.totalOps < 40) conf += 0.10;
-		if (conf < 0.55) return null;
+		// Bit reverse: extract LSB, shift into MSB, iterate N times.
+		// Must be a small, tight loop with shifts in BOTH directions (left + right),
+		// AND for bit extraction, OR for bit insertion.
+		// Must be a leaf function — bit reverse doesn't call subroutines.
+		if (p.totalOps < 15 || p.totalOps > 80) return null;
+		if (p.calls >= 1) return null;
+		if (!p.hasLoop) return null;
+		// Need both left and right shifts (extracting from one end, inserting at other)
+		if (p.lefts < 1 || p.rights < 1) return null;
+		if (p.ands < 1 || p.ors < 1) return null;
+		// Shifts must be the dominant operation (not incidental)
+		double shiftFrac = (double) p.shifts / p.totalOps;
+		if (shiftFrac < 0.10) return null;
+		// Should have constant 1 (single bit mask) and constant 8, 16, or 32 (iteration count)
+		boolean hasBit1 = p.constants.contains(1L);
+		boolean hasIterCount = p.constants.contains(8L) || p.constants.contains(16L) || p.constants.contains(32L);
+		if (!hasBit1) return null;
+
+		double conf = 0.55;
+		if (hasIterCount) conf += 0.15;
+		if (shiftFrac > 0.15) conf += 0.10;
+		if (conf < 0.60) return null;
 		return new FunctionType("bit_reverse", "bitreverse_permutation",
 			Math.min(conf, 0.80), "Bit reversal permutation");
 	}
@@ -7942,13 +8173,13 @@ public class FunctionPatternDetector {
 			}
 		}
 
-		// Require high similarity (>0.80) and scale confidence by similarity
-		// The cosine similarity threshold is intentionally high because we're
-		// doing a fallback classification — we want few false positives
-		if (bestSimilarity < 0.80) return null;
+		// Require very high similarity (>0.95) for feature-vector fallback.
+		// Lower thresholds produce too many false positives — generic functions
+		// on unfamiliar ISAs have similar P-code distributions.
+		if (bestSimilarity < 0.95) return null;
 
-		double conf = (bestSimilarity - 0.80) * 2.5; // 0.80->0, 0.90->0.25, 1.0->0.5
-		conf = Math.max(0.40, Math.min(0.75, conf + 0.40));
+		double conf = (bestSimilarity - 0.95) * 10.0; // 0.95->0, 0.98->0.30, 1.0->0.50
+		conf = Math.max(0.90, Math.min(0.95, conf + 0.90));
 
 		return new FunctionType(bestCategory, bestLabel + "_similarity",
 			conf, bestDesc + String.format(" (%.0f%% vector similarity)", bestSimilarity * 100));
