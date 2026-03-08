@@ -80,6 +80,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 	private Map<Address, Integer> confidence = new LinkedHashMap<>();
 	private List<RomIdentifier.RomMatch> romMatches = new ArrayList<>();
 	private PcodeVectorDatabase vectorDb;
+	private boolean platformFromRomId = false; // true if platform loaded from ROM ID or user file
 	private AddressSet dataRegions = new AddressSet(); // Regions known to be data, not code
 
 	// Confidence tiers (H20)
@@ -155,6 +156,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		functionEntries.clear();
 		confidence.clear();
 		dataRegions.clear();
+		platformFromRomId = false;
 
 		// Initialize subsystems
 		patternMatcher = new PcodePatternMatcher(program);
@@ -812,6 +814,10 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			entryPoints.size() + " entry points" +
 			(classified > 0 ? ", " + classified + " functions classified" : "") +
 			(hwLabels > 0 ? ", " + hwLabels + " HW registers labeled" : ""));
+
+		// Write hardware memory map as plate comment at program base address
+		// for export scripts to include in output headers
+		writePlatformInfo(program);
 
 		return true;
 	}
@@ -1686,8 +1692,23 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				if (mameDir.isDirectory()) {
 					java.io.File[] mfrDirs = mameDir.listFiles(java.io.File::isDirectory);
 					if (mfrDirs != null) {
+						outer:
 						for (java.io.File mfrDir : mfrDirs) {
+							// Try exact name first, then with manufacturer prefix
 							java.io.File candidate = new java.io.File(mfrDir, machName + ".xml");
+							if (candidate.exists()) {
+								matchedXml = candidate;
+								break;
+							}
+							// Try mfr + machName (e.g., att + 3b2_300 = att3b2_300.xml)
+							String mfrPrefix = mfrDir.getName();
+							candidate = new java.io.File(mfrDir, mfrPrefix + machName + ".xml");
+							if (candidate.exists()) {
+								matchedXml = candidate;
+								break;
+							}
+							// Try mfr + "_" + machName
+							candidate = new java.io.File(mfrDir, mfrPrefix + "_" + machName + ".xml");
 							if (candidate.exists()) {
 								matchedXml = candidate;
 								break;
@@ -1702,6 +1723,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				if (matchedXml != null) {
 					try (java.io.FileInputStream fis = new java.io.FileInputStream(matchedXml)) {
 						platform = PlatformDescription.loadFromXml(fis);
+						platformFromRomId = true;
 						Msg.info(this, "Loaded platform from ROM ID: " + matchedXml.getName() +
 							" (" + platform.getPlatformName() + ")");
 					} catch (Exception e) {
@@ -1934,12 +1956,79 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		return result != null ? (int) result.getNumAddresses() : 0;
 	}
 
+	/**
+	 * Write platform info (ROM identification, hardware memory map) as a plate
+	 * comment at the program's base address so export scripts can include it.
+	 */
+	private void writePlatformInfo(Program program) {
+		try {
+			Address baseAddr = program.getMemory().getMinAddress();
+			if (baseAddr == null) return;
+			Listing listing = program.getListing();
+
+			StringBuilder plate = new StringBuilder();
+
+			// ROM identification
+			if (!romMatches.isEmpty()) {
+				RomIdentifier.RomMatch best = romMatches.get(0);
+				plate.append(String.format("ROM: %s\n", best.toString()));
+				if (best.cpu != null && !best.cpu.isEmpty()) {
+					plate.append(String.format("CPU: %s\n", best.cpu));
+				}
+			}
+
+			// Platform name
+			if (platform != null && platform.getPlatformName() != null &&
+				!platform.getPlatformName().startsWith("auto:")) {
+				plate.append(String.format("Platform: %s\n", platform.getPlatformName()));
+			}
+
+			// Hardware memory map and registers — only from ROM-identified or
+			// user-specified platforms (auto-detected platforms may be wrong)
+			if (platformFromRomId && platform != null) {
+				if (!platform.getMemoryMap().isEmpty()) {
+					plate.append("\nHardware Memory Map:\n");
+					for (PlatformDescription.MemoryRegion region : platform.getMemoryMap()) {
+						plate.append(String.format("  %08X-%08X  %-8s  %s\n",
+							region.start, region.end, region.type, region.name));
+					}
+				}
+				if (!platform.getHwRegisters().isEmpty()) {
+					plate.append("\nHardware Registers:\n");
+					int regCount = 0;
+					for (PlatformDescription.HardwareRegister reg : platform.getHwRegisters()) {
+						plate.append(String.format("  %08X  %s  (%s, %d-bit)\n",
+							reg.addr, reg.name, reg.access, reg.width * 8));
+						regCount++;
+						if (regCount >= 50) {
+							plate.append(String.format("  ... and %d more\n",
+								platform.getHwRegisters().size() - 50));
+							break;
+						}
+					}
+				}
+			}
+
+			if (plate.length() > 0) {
+				// Append to existing plate comment if any
+				String existing = listing.getComment(CodeUnit.PLATE_COMMENT, baseAddr);
+				String newComment = (existing != null && !existing.isEmpty())
+					? existing + "\n" + plate.toString()
+					: plate.toString();
+				listing.setComment(baseAddr, CodeUnit.PLATE_COMMENT, newComment);
+			}
+		} catch (Exception e) {
+			Msg.warn(this, "Failed to write platform info: " + e.getMessage());
+		}
+	}
+
 	private void loadPlatform(Program program) {
 		if (platformFile != null && !platformFile.isEmpty()) {
 			try {
 				java.io.File f = new java.io.File(platformFile);
 				if (f.exists()) {
 					platform = PlatformDescription.loadFromXml(new java.io.FileInputStream(f));
+					platformFromRomId = true;
 					Msg.info(this, "Loaded platform: " + platform.getPlatformName());
 					return;
 				}
