@@ -448,6 +448,49 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			}
 		}
 
+		// WE32100: boot sequence reads PCBP from $80, then PC from [PCBP+4].
+		// Also add exception handler addresses from the vector table at $84+.
+		if (procName.contains("WE32100") || procName.contains("WE32")) {
+			int we32Seeds = 0;
+			try {
+				MemoryBlock blk = memory.getBlocks()[0];
+				long romBase32 = blk.getStart().getOffset();
+				long romSize32 = blk.getSize();
+				if (romSize32 > 0x90) {
+					byte[] buf4 = new byte[4];
+					// Read PCBP from $80
+					memory.getBytes(defaultSpace.getAddress(romBase32 + 0x80), buf4);
+					long pcbp = ((buf4[0] & 0xFFL) << 24) | ((buf4[1] & 0xFFL) << 16) |
+						((buf4[2] & 0xFFL) << 8) | (buf4[3] & 0xFFL);
+					// Read PC from [PCBP+4] if PCBP is within ROM
+					if (pcbp >= romBase32 && pcbp + 8 < romBase32 + romSize32) {
+						memory.getBytes(defaultSpace.getAddress(pcbp + 4), buf4);
+						long initPC = ((buf4[0] & 0xFFL) << 24) | ((buf4[1] & 0xFFL) << 16) |
+							((buf4[2] & 0xFFL) << 8) | (buf4[3] & 0xFFL);
+						if (initPC >= romBase32 && initPC < romBase32 + romSize32) {
+							vectorAddrs.add(initPC);
+							we32Seeds++;
+						}
+					}
+					// Read exception handler addresses from $84 onwards (up to 64 vectors)
+					Set<Long> seenVecs = new HashSet<>();
+					for (int vi = 0; vi < 64 && (0x84 + vi * 4 + 4) <= romSize32; vi++) {
+						memory.getBytes(defaultSpace.getAddress(romBase32 + 0x84 + vi * 4), buf4);
+						long excAddr = ((buf4[0] & 0xFFL) << 24) | ((buf4[1] & 0xFFL) << 16) |
+							((buf4[2] & 0xFFL) << 8) | (buf4[3] & 0xFFL);
+						if (excAddr >= romBase32 && excAddr < romBase32 + romSize32 &&
+							excAddr != 0 && excAddr != 0xFFFFFFFFL && seenVecs.add(excAddr)) {
+							vectorAddrs.add(excAddr);
+							we32Seeds++;
+						}
+					}
+				}
+			} catch (Exception e) { /* skip */ }
+			if (we32Seeds > 0) {
+				Msg.info(this, "WE32100 vectors: " + we32Seeds + " entry points added");
+			}
+		}
+
 		// 6502/6809: read reset/NMI/IRQ vectors from end of ROM and add as code entry points.
 		// These vectors live at fixed CPU addresses ($FFFA-$FFFF for 6502, $FFF2-$FFFF for 6809)
 		// but in a small ROM they're at the end of the ROM image, which may be mapped elsewhere.
@@ -1513,6 +1556,18 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				if (!isSplit && best.loadType != null &&
 					(best.loadType.contains("bit_byte") || best.loadType.contains("bit_word"))) {
 					isSplit = true;
+				}
+				// If the actual ROM file is larger than the MAME chip size, the file
+				// is likely already interleaved/combined — suppress the split warning.
+				if (isSplit && best.romSize > 0) {
+					long actualSize = program.getMemory().getBlocks()[0].getSize();
+					if (actualSize > best.romSize) {
+						Msg.info(this, String.format(
+							"ROM matched as %s (chip size %d) but file is %d bytes — " +
+							"likely already interleaved, not a single chip",
+							best.matchType, best.romSize, actualSize));
+						isSplit = false;
+					}
 				}
 				if (isSplit) {
 					String splitWarn = String.format(
