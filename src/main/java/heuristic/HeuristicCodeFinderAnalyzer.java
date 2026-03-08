@@ -491,6 +491,73 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			}
 		}
 
+		// 8051: interrupt vector table at fixed addresses. Each entry contains code
+		// (LJMP/AJMP), not address pointers. Add vector addresses as code entry points.
+		// Vectors: 0x0000=Reset, 0x0003=INT0, 0x000B=Timer0, 0x0013=INT1,
+		// 0x001B=Timer1, 0x0023=Serial, 0x002B=Timer2 (8052)
+		if (procName.contains("8051") || procName.contains("8052") ||
+			procName.contains("8048") || procName.contains("8049") ||
+			procName.contains("80C51") || procName.contains("80C52")) {
+			long[] i8051Vectors = { 0x0000, 0x0003, 0x000B, 0x0013, 0x001B, 0x0023, 0x002B };
+			int i8051Seeds = 0;
+			for (long vecAddr : i8051Vectors) {
+				try {
+					// Try CODE space first (Harvard architecture), then default space
+					Address va = null;
+					for (MemoryBlock blk : memory.getBlocks()) {
+						Address candidate = blk.getStart().getAddressSpace().getAddress(vecAddr);
+						if (blk.contains(candidate)) {
+							va = candidate;
+							break;
+						}
+					}
+					if (va == null) continue;
+					// Verify the location has non-FF data (not erased PROM)
+					byte[] chk = new byte[1];
+					memory.getBytes(va, chk);
+					if ((chk[0] & 0xFF) != 0xFF) {
+						vectorAddrs.add(vecAddr);
+						i8051Seeds++;
+					}
+				} catch (Exception e) { /* skip */ }
+			}
+			if (i8051Seeds > 0) {
+				Msg.info(this, "8051 vectors: " + i8051Seeds + " entry points added");
+			}
+		}
+
+		// 8085: interrupt vector table at 0x0000 (RST 0/RESET), 0x0008 (RST 1),
+		// 0x0010 (RST 2), ..., 0x0038 (RST 7), plus TRAP=0x0024,
+		// RST 5.5=0x002C, RST 6.5=0x0034, RST 7.5=0x003C.
+		// Each vector is a code entry point (JMP instruction at the vector address).
+		if (procName.contains("8085") || procName.contains("8080")) {
+			long[] i8085Vectors = { 0x0000, 0x0008, 0x0010, 0x0018, 0x0020,
+				0x0024, 0x0028, 0x002C, 0x0030, 0x0034, 0x0038, 0x003C };
+			int i8085Seeds = 0;
+			for (long vecAddr : i8085Vectors) {
+				try {
+					Address va = null;
+					for (MemoryBlock blk : memory.getBlocks()) {
+						Address candidate = blk.getStart().getAddressSpace().getAddress(vecAddr);
+						if (blk.contains(candidate)) {
+							va = candidate;
+							break;
+						}
+					}
+					if (va == null) continue;
+					byte[] chk = new byte[1];
+					memory.getBytes(va, chk);
+					if ((chk[0] & 0xFF) != 0xFF && (chk[0] & 0xFF) != 0x00) {
+						vectorAddrs.add(vecAddr);
+						i8085Seeds++;
+					}
+				} catch (Exception e) { /* skip */ }
+			}
+			if (i8085Seeds > 0) {
+				Msg.info(this, "8085 vectors: " + i8085Seeds + " entry points added");
+			}
+		}
+
 		// 6502/6809: read reset/NMI/IRQ vectors from end of ROM and add as code entry points.
 		// These vectors live at fixed CPU addresses ($FFFA-$FFFF for 6502, $FFF2-$FFFF for 6809)
 		// but in a small ROM they're at the end of the ROM image, which may be mapped elsewhere.
