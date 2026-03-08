@@ -1055,6 +1055,90 @@ public class PlatformDetector {
 				"MIPS ROM: universal boot ROM base at 0x1FC00000");
 		}
 
+		// --- 6502/6809 reset vector heuristic ---
+		// 6502: vectors at $FFFA (NMI), $FFFC (RESET), $FFFE (IRQ) — little-endian
+		// 6809: vectors at $FFF2-$FFFF (SWI3, SWI2, FIRQ, IRQ, SWI, NMI, RESET) — big-endian
+		// The reset vector value tells us where ROM is mapped.
+		boolean is6502 = processor.contains("6502") || processor.contains("65C02") ||
+			processor.contains("N2A03") || processor.contains("n2a03");
+		boolean is6809 = processor.contains("6809") || processor.contains("6309") ||
+			processor.contains("HD6309");
+		if ((is6502 || is6809) && currentBase == 0 && romSize >= 32) {
+			try {
+				// Read all 3 vectors: NMI, RESET, IRQ (6502) or NMI, RESET (6809)
+				// The reset vector may point to RAM (copied startup code), but NMI
+				// and IRQ almost always point into ROM.
+				long[] vectors = new long[3];
+				byte[] vecBuf = new byte[2];
+				if (is6502) {
+					// NMI at $FFFA = romSize-6, RESET at $FFFC = romSize-4, IRQ at $FFFE = romSize-2
+					memory.getBytes(blocks[0].getStart().add(romSize - 6), vecBuf);
+					vectors[0] = (vecBuf[0] & 0xFF) | ((vecBuf[1] & 0xFF) << 8); // NMI
+					memory.getBytes(blocks[0].getStart().add(romSize - 4), vecBuf);
+					vectors[1] = (vecBuf[0] & 0xFF) | ((vecBuf[1] & 0xFF) << 8); // RESET
+					memory.getBytes(blocks[0].getStart().add(romSize - 2), vecBuf);
+					vectors[2] = (vecBuf[0] & 0xFF) | ((vecBuf[1] & 0xFF) << 8); // IRQ
+				} else {
+					// 6809: NMI at $FFFC = romSize-4, RESET at $FFFE = romSize-2
+					memory.getBytes(blocks[0].getStart().add(romSize - 4), vecBuf);
+					vectors[0] = ((vecBuf[0] & 0xFF) << 8) | (vecBuf[1] & 0xFF); // NMI
+					memory.getBytes(blocks[0].getStart().add(romSize - 2), vecBuf);
+					vectors[1] = ((vecBuf[0] & 0xFF) << 8) | (vecBuf[1] & 0xFF); // RESET
+					vectors[2] = 0; // unused
+				}
+
+				// Try each common base: score by how many vectors land inside ROM.
+				// On ties, prefer the base that includes the vector table itself
+				// ($FFFA-$FFFF), i.e., base + romSize >= 0x10000. If still tied,
+				// prefer higher bases (kernal/BIOS ROMs map near top of address space).
+				long[] bases6x = getCommonBases(processor, romSize, addrSpaceMax);
+				long bestBase = -1;
+				int bestHits = 0;
+				boolean bestIncludesVectors = false;
+				for (long candidateBase : bases6x) {
+					// Skip bases where ROM would extend past 16-bit address space
+					if (candidateBase + romSize > 0x10000) continue;
+
+					int hits = 0;
+					for (long v : vectors) {
+						if (v > 0 && v < 0xFFFF &&
+							v >= candidateBase && v < candidateBase + romSize) {
+							hits++;
+						}
+					}
+					boolean includesVectors = (candidateBase + romSize >= 0x10000);
+					// Prefer: more hits > includes vector table > higher base
+					boolean better = hits > bestHits ||
+						(hits == bestHits && includesVectors && !bestIncludesVectors) ||
+						(hits == bestHits && includesVectors == bestIncludesVectors &&
+						 candidateBase > bestBase);
+					if (better) {
+						bestHits = hits;
+						bestBase = candidateBase;
+						bestIncludesVectors = includesVectors;
+					}
+				}
+				if (bestHits >= 1 && bestBase >= 0) {
+					double conf = bestHits >= 2 ? 0.95 : 0.85;
+					String cpuName = is6502 ? "6502" : "6809";
+					StringBuilder vecDesc = new StringBuilder();
+					String[] vecNames = is6502 ? new String[]{"NMI","RESET","IRQ"} : new String[]{"NMI","RESET"};
+					for (int vi = 0; vi < vecNames.length; vi++) {
+						if (vectors[vi] > 0 && vectors[vi] < 0xFFFF) {
+							if (vecDesc.length() > 0) vecDesc.append(", ");
+							vecDesc.append(String.format("%s=$%04X", vecNames[vi], vectors[vi]));
+						}
+					}
+					return new BaseAddressResult(bestBase, romSize, bestHits, bestHits, conf,
+						String.format("%s vectors [%s] -> ROM base 0x%X (%d/%d vectors in range)",
+							cpuName, vecDesc, bestBase, bestHits,
+							is6502 ? 3 : 2));
+				}
+			} catch (Exception e) {
+				// ignore — read may fail for very small ROMs
+			}
+		}
+
 		if (targets.isEmpty()) {
 			return new BaseAddressResult(currentBase, romSize, 0, 0, 0,
 				"No absolute address references found");
@@ -1155,15 +1239,15 @@ public class PlatformDetector {
 	 */
 	private static long[] getCommonBases(String processor, long romSize, long addrSpaceMax) {
 		if (processor.contains("6502") || processor.contains("65C02")) {
-			// 6502: ROMs at $8000, $C000, $E000, $F000, $F800
-			return new long[]{ 0x8000L, 0xC000L, 0xE000L, 0xF000L, 0xF800L };
+			// 6502: ROMs at $4000, $8000, $A000, $C000, $E000, $F000, $F800
+			return new long[]{ 0x4000L, 0x8000L, 0xA000L, 0xC000L, 0xE000L, 0xF000L, 0xF800L };
 		} else if (processor.contains("z80") || processor.contains("Z80") ||
 				   processor.contains("8080") || processor.contains("8085")) {
 			// Z80: ROMs often at $0000, $4000, $8000, $C000
 			return new long[]{ 0x0000L, 0x4000L, 0x8000L, 0xC000L };
 		} else if (processor.contains("6809")) {
-			// 6809: ROMs at $8000, $C000, $E000, $F000
-			return new long[]{ 0x8000L, 0xC000L, 0xE000L, 0xF000L };
+			// 6809: ROMs at $8000, $A000 (CoCo BASIC), $C000, $E000, $F000, $F800
+			return new long[]{ 0x8000L, 0xA000L, 0xC000L, 0xE000L, 0xF000L, 0xF800L };
 		} else if (processor.contains("68") && !processor.contains("HC")) {
 			// 68000: ROMs usually at $000000 but some at $FC0000, $F80000
 			return new long[]{ 0x000000L, 0xFC0000L, 0xF80000L, 0xFE0000L };

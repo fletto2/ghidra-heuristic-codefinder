@@ -14,6 +14,7 @@ import ghidra.program.model.address.*;
 import ghidra.program.model.listing.*;
 import ghidra.program.model.mem.Memory;
 import ghidra.program.model.mem.MemoryAccessException;
+import ghidra.program.model.mem.MemoryBlock;
 import ghidra.program.model.pcode.PcodeOp;
 import ghidra.program.model.pcode.Varnode;
 import ghidra.program.model.symbol.FlowType;
@@ -79,6 +80,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 	private Map<Address, Integer> confidence = new LinkedHashMap<>();
 	private List<RomIdentifier.RomMatch> romMatches = new ArrayList<>();
 	private PcodeVectorDatabase vectorDb;
+	private AddressSet dataRegions = new AddressSet(); // Regions known to be data, not code
 
 	// Confidence tiers (H20)
 	private static final int CONF_VECTOR = 100;
@@ -152,6 +154,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		entryPoints.clear();
 		functionEntries.clear();
 		confidence.clear();
+		dataRegions.clear();
 
 		// Initialize subsystems
 		patternMatcher = new PcodePatternMatcher(program);
@@ -445,6 +448,52 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			}
 		}
 
+		// 6502/6809: read reset/NMI/IRQ vectors from end of ROM and add as code entry points.
+		// These vectors live at fixed CPU addresses ($FFFA-$FFFF for 6502, $FFF2-$FFFF for 6809)
+		// but in a small ROM they're at the end of the ROM image, which may be mapped elsewhere.
+		// We read relative to the end of the ROM (like PlatformDetector does).
+		boolean is6502 = procName.contains("6502") || procName.contains("65C02") ||
+			procName.contains("N2A03") || procName.contains("n2a03");
+		boolean is6809 = procName.contains("6809") || procName.contains("6309") ||
+			procName.contains("HD6309");
+		if (is6502 || is6809) {
+			int vecSeeds6x = 0;
+			try {
+				MemoryBlock blk = memory.getBlocks()[0];
+				long romBase6x = blk.getStart().getOffset();
+				long romSize6x = blk.getSize();
+				// 6502: 3 vectors at end-6..end-1 (NMI, RESET, IRQ), little-endian
+				// 6809: 7 vectors at end-14..end-1 (SWI3,SWI2,FIRQ,IRQ,SWI,NMI,RESET), big-endian
+				int numVectors = is6502 ? 3 : 7;
+				int vecTableSize = numVectors * 2;
+				if (romSize6x >= vecTableSize) {
+					byte[] vecBuf = new byte[2];
+					for (int i = 0; i < numVectors; i++) {
+						long offset = romSize6x - vecTableSize + (i * 2);
+						Address va = blk.getStart().add(offset);
+						memory.getBytes(va, vecBuf);
+						long target;
+						if (is6809) {
+							target = ((vecBuf[0] & 0xFF) << 8) | (vecBuf[1] & 0xFF);
+						} else {
+							target = (vecBuf[0] & 0xFF) | ((vecBuf[1] & 0xFF) << 8);
+						}
+						// Valid target: non-zero, not $FFFF, within ROM range
+						if (target != 0 && target != 0xFFFFL &&
+							target >= romBase6x &&
+							target < romBase6x + romSize6x) {
+							vectorAddrs.add(target);
+							vecSeeds6x++;
+						}
+					}
+				}
+			} catch (Exception e) { /* skip */ }
+			if (vecSeeds6x > 0) {
+				Msg.info(this, (is6502 ? "6502" : "6809") + " vectors: " +
+					vecSeeds6x + " entry points added");
+			}
+		}
+
 		int vectorSeeds = 0;
 		for (Long addr : vectorAddrs) {
 			monitor.checkCancelled();
@@ -459,6 +508,25 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		}
 		Msg.info(this, "Pass 1: " + vectorAddrs.size() + " vector entry points" +
 			" (" + vectorSeeds + " new seeds, " + (vectorAddrs.size() - vectorSeeds) + " already disassembled)");
+
+		// Mark 68000 vector table (0x000-0x3FF) as data — 256 x 4-byte pointers.
+		// Vector entries are addresses, not code. Prevents orphan recovery and gap
+		// fill from falsely disassembling pointer values as instructions.
+		boolean is68k = procName.contains("68") && !procName.contains("HC") &&
+			!procName.contains("6502") && !procName.contains("6809") && !procName.contains("6805");
+		if (is68k) {
+			long vecBase = memory.getBlocks()[0].getStart().getOffset();
+			long vecTableEnd = vecBase + 0x3FF;
+			try {
+				Address vecStartAddr = defaultSpace.getAddress(vecBase);
+				Address vecEndAddr = defaultSpace.getAddress(vecTableEnd);
+				if (memory.contains(vecStartAddr) && memory.contains(vecEndAddr)) {
+					dataRegions.add(vecStartAddr, vecEndAddr);
+					Msg.info(this, String.format("68000 vector table 0x%X-0x%X marked as data",
+						vecBase, vecTableEnd));
+				}
+			} catch (Exception e) { /* skip */ }
+		}
 
 		// ============================================================
 		// Pass 2: Forward trace from seeds (H01-H05, H07, H08, H21, H23)
@@ -550,15 +618,26 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		Msg.info(this, "Pass 7: " + pass7Found + " instructions from gap filling");
 
 		// ============================================================
-		// Pass 8 & 9: Overlap resolution (H14) and confidence (H20)
+		// Pass 8: Remove isolated code islands (false positives)
+		// ============================================================
+		monitor.setMessage("Heuristic Pass 8: Removing isolated code islands");
+		int islandsRemoved = removeIsolatedIslands(program, listing, monitor);
+		if (islandsRemoved > 0) {
+			totalFound -= islandsRemoved;
+			Msg.info(this, "Pass 8: " + islandsRemoved +
+				" instructions removed (isolated 1-3 instruction islands with no references)");
+		}
+
+		// ============================================================
+		// Pass 9 & 10: Overlap resolution (H14) and confidence (H20)
 		// are handled implicitly — Ghidra's Listing prevents overlaps,
 		// and confidence is tracked in our map for reporting.
 		// ============================================================
 
 		// ============================================================
-		// Pass 10: Function pattern detection & hardware register labeling
+		// Pass 11: Function pattern detection & hardware register labeling
 		// ============================================================
-		monitor.setMessage("Heuristic Pass 10: Function classification & HW register labeling");
+		monitor.setMessage("Heuristic Pass 11: Function classification & HW register labeling");
 		FunctionPatternDetector fpd = new FunctionPatternDetector(program, platform);
 
 		// Initialize P-code vector database for structural similarity matching
@@ -577,14 +656,14 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			domain = PcodeVectorDatabase.classifyDomainFromPlatform(cpuName, platform);
 		}
 		fpd.setRomDomain(domain);
-		Msg.info(this, "Pass 10: ROM domain = " + domain +
+		Msg.info(this, "Pass 11: ROM domain = " + domain +
 			", vector DB has " + vectorDb.getSignatureCount() + " signatures");
 
 		int hwLabels = 0;
 		try {
 			hwLabels = fpd.labelHardwareRegisters(monitor);
 			if (hwLabels > 0) {
-				Msg.info(this, "Pass 10: " + hwLabels + " hardware register labels created");
+				Msg.info(this, "Pass 11: " + hwLabels + " hardware register labels created");
 			}
 		} catch (Exception e) {
 			Msg.warn(this, "Hardware register labeling failed: " + e.getMessage());
@@ -594,7 +673,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		try {
 			classified = fpd.classifyAllFunctions(monitor);
 			if (classified > 0) {
-				Msg.info(this, "Pass 10: " + classified + " functions classified by pattern");
+				Msg.info(this, "Pass 11: " + classified + " functions classified by pattern");
 			}
 		} catch (Exception e) {
 			Msg.warn(this, "Function classification failed: " + e.getMessage());
@@ -743,6 +822,26 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			double redundancy = patternMatcher.redundantOpFraction(pcodeArray);
 			if (redundancy > redundancyMax) return null;
 		}
+
+		// ARM coprocessor false positive filter: ARM7TDMI has no coprocessors,
+		// so CDP/LDC/STC/MCR/MRC instructions indicate data decoded as code.
+		String traceProc = program.getLanguage().getProcessor().toString();
+		if (traceProc.contains("ARM") && block.size() >= 3) {
+			int coprocCount = 0;
+			for (PseudoInstruction pi : block) {
+				String mnem = pi.getMnemonicString().toLowerCase();
+				if (mnem.startsWith("cdp") || mnem.startsWith("ldc") ||
+					mnem.startsWith("stc") || mnem.startsWith("mcr") ||
+					mnem.startsWith("mrc") || mnem.startsWith("msr") ||
+					mnem.startsWith("mrs")) {
+					coprocCount++;
+				}
+			}
+			if ((double) coprocCount / block.size() > 0.20) return null;
+		}
+
+		// Skip known data regions (e.g., 68000 vector table)
+		if (dataRegions.contains(seed)) return null;
 
 		// H33: Memory map validation (Tier 3) — skip for trusted seeds
 		if (!trusted && !platform.getMemoryMap().isEmpty()) {
@@ -1031,6 +1130,9 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			// H07: Data run check
 			if (hasDataRuns(bytes, bytes.length)) continue;
 
+			// Skip known data regions (e.g., 68000 vector table)
+			if (dataRegions.contains(start)) continue;
+
 			// Try speculative disassembly
 			Set<Address> targets = new LinkedHashSet<>();
 			AddressSet traced = traceForward(program, pseudo, start, targets, monitor);
@@ -1101,6 +1203,9 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 						Address candidate = scanAddr.add(offset);
 						if (!memory.contains(candidate)) continue;
 
+						// Skip known data regions (e.g., 68000 vector table)
+						if (dataRegions.contains(candidate)) continue;
+
 						// Check preceding bytes are data-like
 						if (offset > 8) {
 							byte[] preceding = new byte[Math.min((int) offset, 32)];
@@ -1158,6 +1263,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		for (Address gapStart : gapStarts) {
 			monitor.checkCancelled();
 			if (listing.getInstructionAt(gapStart) != null) continue;
+			if (dataRegions.contains(gapStart)) continue; // Skip known data regions
 
 			// Try to decode the gap
 			boolean allValid = true;
@@ -1186,6 +1292,91 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			}
 		}
 		return found;
+	}
+
+	// ================================================================
+	// Pass 8: Isolated code island removal
+	// ================================================================
+
+	/**
+	 * Remove very small code blocks (1-3 instructions) that are completely
+	 * isolated: no references point to them, not adjacent to other code,
+	 * and not a known entry point. These are data bytes that happen to
+	 * decode as valid instructions (common with V850, ARM, MIPS).
+	 */
+	private int removeIsolatedIslands(Program program, Listing listing,
+			TaskMonitor monitor) throws CancelledException {
+
+		List<Address[]> toRemove = new ArrayList<>();
+
+		InstructionIterator iter = listing.getInstructions(true);
+		List<Instruction> island = new ArrayList<>();
+
+		while (iter.hasNext()) {
+			monitor.checkCancelled();
+			Instruction instr = iter.next();
+
+			if (island.isEmpty()) {
+				island.add(instr);
+				continue;
+			}
+
+			Instruction last = island.get(island.size() - 1);
+			Address expectedNext = last.getAddress().add(last.getLength());
+
+			if (instr.getAddress().equals(expectedNext)) {
+				island.add(instr);
+			} else {
+				// Gap — evaluate the completed island
+				evaluateIsland(program, island, toRemove);
+				island.clear();
+				island.add(instr);
+			}
+		}
+		// Handle last island
+		if (!island.isEmpty()) {
+			evaluateIsland(program, island, toRemove);
+		}
+
+		// Remove the islands
+		int removed = 0;
+		for (Address[] range : toRemove) {
+			try {
+				listing.clearCodeUnits(range[0], range[1], false);
+				removed++;
+			} catch (Exception e) {
+				// ignore
+			}
+		}
+		return removed;
+	}
+
+	private void evaluateIsland(Program program, List<Instruction> island,
+			List<Address[]> toRemove) {
+		if (island.size() > 3) return; // Only remove very small islands
+
+		// Check if anything references this island or it's a known entry point
+		for (Instruction instr : island) {
+			Address addr = instr.getAddress();
+			// Check for incoming references
+			ghidra.program.model.symbol.ReferenceIterator refs =
+				program.getReferenceManager().getReferencesTo(addr);
+			if (refs.hasNext()) return; // Has references — keep it
+			// Check if it's a known high-confidence entry point (vector, call target)
+			if (confidence.containsKey(addr) &&
+				confidence.get(addr) >= CONF_CALL) {
+				return; // Known call target — keep it
+			}
+			if (functionEntries.contains(addr)) return; // Function entry — keep
+		}
+
+		// No references, not a known entry point — mark for removal
+		Instruction first = island.get(0);
+		Instruction last = island.get(island.size() - 1);
+		toRemove.add(new Address[]{
+			first.getAddress(),
+			last.getAddress().add(last.getLength() - 1)
+		});
 	}
 
 	// ================================================================
@@ -1402,6 +1593,17 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			PlatformDetector.EndiannessResult endianness = PlatformDetector.detectEndianness(program, monitor);
 			if (endianness.isSwapped()) {
 				String warning = "WARNING: " + endianness.description;
+
+				// WE32100: "byte-swap" usually means 4-way byte interleaving (ROM_LOAD32_BYTE),
+				// not simple byte-swap. Each chip provides every 4th byte.
+				String endianProc = program.getLanguage().getProcessor().toString();
+				if (endianProc.contains("WE32100") || endianProc.contains("WE32")) {
+					warning = "WARNING: WE32100 ROM appears to be a single chip from a " +
+						"4-way byte-interleaved set (ROM_LOAD32_BYTE). The 4 chips must be " +
+						"combined by interleaving bytes before analysis — simple byte-swapping " +
+						"will not fix it. " + endianness.description;
+				}
+
 				Msg.warn(this, warning);
 				log.appendMsg("Heuristic Code Finder: " + warning);
 
@@ -1473,6 +1675,20 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 				}
 			} else {
 				Msg.info(this, "Base address check: " + baseResult.description);
+			}
+
+			// x86 BIOS real mode warning: when a 32-bit x86 processor is selected
+			// but the ROM has a BIOS reset vector, warn about mode mismatch
+			String baseProc = program.getLanguage().getProcessor().toString();
+			boolean is32bitX86 = baseProc.contains("80386") || baseProc.contains("80486") ||
+				(baseProc.contains("x86") && program.getDefaultPointerSize() >= 4);
+			if (is32bitX86 && baseResult.description.contains("x86 BIOS")) {
+				String modeWarn = "WARNING: This ROM was loaded with a 32-bit x86 processor, " +
+					"but a BIOS reset vector pattern was found. BIOS ROMs start in 16-bit " +
+					"real mode. For correct disassembly, re-import with processor " +
+					"\"x86:LE:16:Real Mode\".";
+				Msg.warn(this, modeWarn);
+				log.appendMsg("Heuristic Code Finder: " + modeWarn);
 			}
 
 			// --- Platform detection ---
