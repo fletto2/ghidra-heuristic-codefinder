@@ -1,12 +1,16 @@
 /* Licensed under the Apache License, Version 2.0 */
 package heuristic;
 
+import ghidra.app.util.PseudoDisassembler;
+import ghidra.app.util.PseudoInstruction;
 import ghidra.program.model.pcode.PcodeOp;
 import ghidra.program.model.pcode.Varnode;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Program;
+import ghidra.program.model.mem.Memory;
+import ghidra.program.model.mem.MemoryAccessException;
 
 import java.util.*;
 
@@ -27,22 +31,27 @@ public class PcodePatternMatcher {
 
 	/**
 	 * H24: Detect function prologue — stack frame setup.
-	 * Pattern: SP = INT_SUB SP, const; STORE [SP+off], reg (repeated)
+	 * Patterns:
+	 *   - SP = INT_SUB SP, const; STORE [SP+off], reg (68000, ARM, Z80)
+	 *   - SP = INT_ADD SP, negative_const; STORE [SP+off], reg (MIPS addiu sp,sp,-N)
+	 *   - STORE [SP-off], reg (pre-decrement); SP = INT_SUB SP, N (ARM STMDB)
+	 *   - mflr r0; STORE [SP+off], r0; SP = INT_SUB SP, N (PowerPC stwu)
 	 */
 	public boolean isPrologue(Instruction[] instrs, int startIdx) {
 		if (stackPointer == null || startIdx >= instrs.length) return false;
 
 		Varnode spVarnode = getVarnode(stackPointer);
-		boolean foundSpSub = false;
+		boolean foundSpAlloc = false;
 		int storeCount = 0;
 
 		for (int i = startIdx; i < Math.min(startIdx + 8, instrs.length); i++) {
 			PcodeOp[] pcode = instrs[i].getPcode();
 			for (PcodeOp op : pcode) {
-				if (isSpSub(op, spVarnode)) {
-					foundSpSub = true;
+				if (isSpAlloc(op, spVarnode)) {
+					foundSpAlloc = true;
 				}
-				if (foundSpSub && op.getOpcode() == PcodeOp.STORE) {
+				// Count stack-relative stores (before or after SP adjustment)
+				if (op.getOpcode() == PcodeOp.STORE) {
 					Varnode addr = op.getInput(1);
 					if (isStackRelative(addr, pcode, spVarnode)) {
 						storeCount++;
@@ -50,19 +59,22 @@ public class PcodePatternMatcher {
 				}
 			}
 		}
-		return foundSpSub && storeCount >= 1;
+		return foundSpAlloc && storeCount >= 1;
 	}
 
 	/**
 	 * H25: Detect function epilogue — stack frame teardown.
-	 * Pattern: LOAD from stack (repeated); SP = INT_ADD SP, const; RETURN
+	 * Patterns:
+	 *   - LOAD from stack (repeated); SP = INT_ADD SP, const; RETURN
+	 *   - SP = INT_SUB SP, negative_const (MIPS addiu sp,sp,N); RETURN (jr ra)
+	 *   - LOAD [SP+off] into multiple regs; SP adjust; RETURN (ARM LDMIA)
 	 */
 	public boolean isEpilogue(Instruction[] instrs, int endIdx) {
 		if (stackPointer == null || endIdx < 0) return false;
 
 		Varnode spVarnode = getVarnode(stackPointer);
 		boolean foundReturn = false;
-		boolean foundSpAdd = false;
+		boolean foundSpDealloc = false;
 		int loadCount = 0;
 
 		int start = Math.max(0, endIdx - 7);
@@ -72,8 +84,8 @@ public class PcodePatternMatcher {
 				if (op.getOpcode() == PcodeOp.RETURN) {
 					foundReturn = true;
 				}
-				if (isSpAdd(op, spVarnode)) {
-					foundSpAdd = true;
+				if (isSpDealloc(op, spVarnode)) {
+					foundSpDealloc = true;
 				}
 				if (op.getOpcode() == PcodeOp.LOAD) {
 					Varnode addr = op.getInput(1);
@@ -83,7 +95,7 @@ public class PcodePatternMatcher {
 				}
 			}
 		}
-		return foundReturn && (foundSpAdd || loadCount >= 1);
+		return foundReturn && (foundSpDealloc || loadCount >= 1);
 	}
 
 	/**
@@ -199,24 +211,191 @@ public class PcodePatternMatcher {
 		return saved;
 	}
 
+	/**
+	 * Fast raw-byte pre-filter for prologue scan. Checks if bytes at addr
+	 * match known prologue instruction encodings for the current architecture.
+	 * Returns true if the bytes COULD be a prologue (worth full P-code check).
+	 * This avoids expensive pseudo-disassembly for most non-prologue addresses.
+	 */
+	public boolean quickPrologueByteCheck(Address addr) {
+		Memory memory = program.getMemory();
+		String proc = program.getLanguage().getProcessor().toString();
+		boolean bigEndian = program.getLanguage().isBigEndian();
+
+		try {
+			byte[] b = new byte[4];
+			memory.getBytes(addr, b);
+
+			if (proc.contains("MIPS")) {
+				if (bigEndian) {
+					// addiu sp, sp, -N: 0x27BD + negative 16-bit imm (high bit set)
+					return b[0] == 0x27 && b[1] == (byte) 0xBD && (b[2] & 0x80) != 0;
+				} else {
+					// LE: 0xXXXXBD27 where high byte of imm has high bit set
+					return b[2] == (byte) 0xBD && b[3] == 0x27 && (b[1] & 0x80) != 0;
+				}
+			}
+
+			if (proc.contains("PowerPC")) {
+				// stwu r1, -N(r1): 0x9421XXXX (big endian) with negative displacement
+				if (bigEndian) {
+					return b[0] == (byte) 0x94 && b[1] == 0x21 && (b[2] & 0x80) != 0;
+				} else {
+					return b[2] == 0x21 && b[3] == (byte) 0x94 && (b[1] & 0x80) != 0;
+				}
+			}
+
+			if (proc.contains("ARM")) {
+				// Check if this could be Thumb or ARM mode
+				// ARM32 STMDB sp!, {regs}: 0xE92DXXXX
+				if (bigEndian) {
+					if (b[0] == (byte) 0xE9 && b[1] == 0x2D) return true;
+				} else {
+					if (b[3] == (byte) 0xE9 && b[2] == 0x2D) return true;
+					// Thumb PUSH {regs, lr}: 0xB5XX (little-endian stored as XX B5)
+					if (b[1] == (byte) 0xB5) return true;
+					// Thumb PUSH {regs}: 0xB4XX
+					if (b[1] == (byte) 0xB4) return true;
+				}
+				return false;
+			}
+
+			if (proc.contains("SuperH") || proc.contains("SH-2") || proc.contains("SH-4")) {
+				// SH: sts.l pr, @-r15: 0x4F22 (save return address)
+				// mov.l Rn, @-r15: 0x2Fn6 (save register)
+				if (bigEndian) {
+					if (b[0] == 0x4F && b[1] == 0x22) return true;
+					if ((b[0] & 0xF0) == 0x20 && (b[0] & 0x0F) == 0x0F && (b[1] & 0x0F) == 0x06) return true;
+				} else {
+					if (b[1] == 0x4F && b[0] == 0x22) return true;
+					if ((b[1] & 0xF0) == 0x20 && (b[1] & 0x0F) == 0x0F && (b[0] & 0x0F) == 0x06) return true;
+				}
+				return false;
+			}
+
+			// For 68000: LINK An, #-N: 0x4E50-0x4E57 (LINK A0-A7)
+			// or MOVEM.L regs, -(SP): 0x48E7XXXX
+			if (proc.contains("68")) {
+				// Always big-endian
+				int word = ((b[0] & 0xFF) << 8) | (b[1] & 0xFF);
+				if (word >= 0x4E50 && word <= 0x4E57) return true; // LINK
+				if (word == 0x48E7) return true; // MOVEM.L regs, -(SP)
+				return false;
+			}
+
+			// For architectures without known byte patterns, fall through to
+			// full P-code check (this will be slow, so we return true sparingly)
+			// Unknown arch: skip quick check, let P-code handle it
+			return true;
+
+		} catch (MemoryAccessException e) {
+			return false;
+		}
+	}
+
+	/**
+	 * H24b: Check if a given address looks like a function prologue by
+	 * pseudo-disassembling a few instructions at that address.
+	 * Used by the prologue scan pass to discover function starts in undefined regions.
+	 *
+	 * Caller should use quickPrologueByteCheck() first as a fast pre-filter.
+	 */
+	public boolean isPrologueAt(PseudoDisassembler pseudo, Address addr) {
+		if (stackPointer == null) return false;
+		Memory memory = program.getMemory();
+		if (!memory.contains(addr)) return false;
+
+		// Pseudo-disassemble up to 8 instructions
+		Instruction[] instrs = new Instruction[8];
+		Address current = addr;
+		int count = 0;
+
+		for (int i = 0; i < 8; i++) {
+			if (!memory.contains(current)) break;
+			try {
+				PseudoInstruction pi = pseudo.disassemble(current);
+				if (pi == null) break;
+				instrs[i] = pi;
+				count++;
+				current = current.add(pi.getLength());
+			} catch (Exception e) {
+				break;
+			}
+		}
+		if (count < 2) return false;
+
+		Instruction[] trimmed = new Instruction[count];
+		System.arraycopy(instrs, 0, trimmed, 0, count);
+		return isPrologue(trimmed, 0);
+	}
+
 	// --- Helpers ---
 
 	private Varnode getVarnode(Register reg) {
 		return new Varnode(reg.getAddress(), reg.getMinimumByteSize());
 	}
 
-	private boolean isSpSub(PcodeOp op, Varnode sp) {
-		if (op.getOpcode() != PcodeOp.INT_SUB) return false;
+	/**
+	 * Detect stack allocation: SP = INT_SUB SP, const OR SP = INT_ADD SP, negative_const.
+	 * The latter covers MIPS `addiu sp, sp, -N` which Ghidra lifts as INT_ADD with
+	 * a sign-extended negative immediate.
+	 */
+	private boolean isSpAlloc(PcodeOp op, Varnode sp) {
 		Varnode out = op.getOutput();
+		if (out == null || !matchesReg(out, sp)) return false;
 		Varnode in0 = op.getInput(0);
-		return out != null && matchesReg(out, sp) && matchesReg(in0, sp);
+		if (!matchesReg(in0, sp)) return false;
+
+		if (op.getOpcode() == PcodeOp.INT_SUB) {
+			// SP = INT_SUB SP, positive_const — classic stack alloc
+			Varnode in1 = op.getInput(1);
+			if (in1 != null && in1.isConstant() && in1.getOffset() > 0) return true;
+		}
+		if (op.getOpcode() == PcodeOp.INT_ADD) {
+			// SP = INT_ADD SP, negative_const — MIPS addiu sp,sp,-N
+			Varnode in1 = op.getInput(1);
+			if (in1 != null && in1.isConstant()) {
+				long val = in1.getOffset();
+				int spSize = sp.getSize();
+				// Check if high bit is set (negative in sign-extended representation)
+				long signBit = 1L << (spSize * 8 - 1);
+				if ((val & signBit) != 0 && val != 0) return true;
+			}
+		}
+		return false;
 	}
 
-	private boolean isSpAdd(PcodeOp op, Varnode sp) {
-		if (op.getOpcode() != PcodeOp.INT_ADD) return false;
+	/**
+	 * Detect stack deallocation: SP = INT_ADD SP, positive_const OR
+	 * SP = INT_SUB SP, negative_const (unusual but possible).
+	 */
+	private boolean isSpDealloc(PcodeOp op, Varnode sp) {
 		Varnode out = op.getOutput();
+		if (out == null || !matchesReg(out, sp)) return false;
 		Varnode in0 = op.getInput(0);
-		return out != null && matchesReg(out, sp) && matchesReg(in0, sp);
+		if (!matchesReg(in0, sp)) return false;
+
+		if (op.getOpcode() == PcodeOp.INT_ADD) {
+			Varnode in1 = op.getInput(1);
+			if (in1 != null && in1.isConstant()) {
+				long val = in1.getOffset();
+				int spSize = sp.getSize();
+				long signBit = 1L << (spSize * 8 - 1);
+				// Positive constant = stack dealloc
+				if ((val & signBit) == 0 && val > 0) return true;
+			}
+		}
+		if (op.getOpcode() == PcodeOp.INT_SUB) {
+			// Unusual but handle it
+			Varnode in1 = op.getInput(1);
+			if (in1 != null && in1.isConstant()) {
+				long val = in1.getOffset();
+				int spSize = sp.getSize();
+				long signBit = 1L << (spSize * 8 - 1);
+				if ((val & signBit) != 0 && val != 0) return true;
+			}
+		}
+		return false;
 	}
 
 	private boolean matchesReg(Varnode v, Varnode reg) {

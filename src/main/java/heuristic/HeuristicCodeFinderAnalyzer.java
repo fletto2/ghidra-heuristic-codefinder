@@ -29,16 +29,17 @@ import ghidra.util.task.TaskMonitor;
  * proven across 68000, Z80, and 6502 disassemblers, abstracted to work on
  * any SLEIGH-supported ISA via P-code analysis.
  *
- * 9-pass pipeline:
+ * 10-pass pipeline:
  *   Pass 1: Vector table entry points (H32)
  *   Pass 2: Forward trace from seeds (H01-H05, H07, H08, H21, H23)
  *   Pass 3: Reference target tracing (H03, H04, H22)
  *   Pass 4: Jump table resolution (H19, H27)
- *   Pass 5: Orphan recovery (H09-H11)
- *   Pass 6: Data/code boundary detection (H17)
- *   Pass 7: Gap filling (H06)
- *   Pass 8: Overlap resolution (H14)
- *   Pass 9: Confidence assignment (H20)
+ *   Pass 5: Prologue scan (H24) — find function starts in undefined regions
+ *   Pass 6: Orphan recovery (H09-H11)
+ *   Pass 7: Data/code boundary detection (H17)
+ *   Pass 8: Gap filling (H06)
+ *   Pass 9: Isolated island removal
+ *   Pass 10: Confidence assignment (H20)
  */
 public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 
@@ -706,42 +707,50 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 		Msg.info(this, "Pass 4: " + pass4Found + " instructions from jump tables");
 
 		// ============================================================
-		// Pass 5: Orphan recovery (H09-H11)
+		// Pass 5: Prologue scan (H24) — find function starts in undefined regions
 		// ============================================================
-		monitor.setMessage("Heuristic Pass 5: Orphan recovery");
-		int pass5Found = recoverOrphans(program, pseudo, set, listing, memory, monitor);
+		monitor.setMessage("Heuristic Pass 5: Prologue scan");
+		int pass5Found = scanForPrologues(program, pseudo, set, listing, memory, monitor);
 		totalFound += pass5Found;
-		Msg.info(this, "Pass 5: " + pass5Found + " instructions from orphan recovery");
+		Msg.info(this, "Pass 5: " + pass5Found + " instructions from prologue scan");
 
 		// ============================================================
-		// Pass 6: Data/code boundary detection (H17)
+		// Pass 6: Orphan recovery (H09-H11)
 		// ============================================================
-		monitor.setMessage("Heuristic Pass 6: Data/code boundary detection");
-		int pass6Found = detectDataCodeBoundaries(program, pseudo, listing, memory, monitor);
+		monitor.setMessage("Heuristic Pass 6: Orphan recovery");
+		int pass6Found = recoverOrphans(program, pseudo, set, listing, memory, monitor);
 		totalFound += pass6Found;
-		Msg.info(this, "Pass 6: " + pass6Found + " instructions from data/code boundaries");
+		Msg.info(this, "Pass 6: " + pass6Found + " instructions from orphan recovery");
 
 		// ============================================================
-		// Pass 7: Gap filling (H06)
+		// Pass 7: Data/code boundary detection (H17)
 		// ============================================================
-		monitor.setMessage("Heuristic Pass 7: Gap filling");
-		int pass7Found = fillGaps(program, pseudo, listing, memory, monitor);
+		monitor.setMessage("Heuristic Pass 7: Data/code boundary detection");
+		int pass7Found = detectDataCodeBoundaries(program, pseudo, listing, memory, monitor);
 		totalFound += pass7Found;
-		Msg.info(this, "Pass 7: " + pass7Found + " instructions from gap filling");
+		Msg.info(this, "Pass 7: " + pass7Found + " instructions from data/code boundaries");
 
 		// ============================================================
-		// Pass 8: Remove isolated code islands (false positives)
+		// Pass 8: Gap filling (H06)
 		// ============================================================
-		monitor.setMessage("Heuristic Pass 8: Removing isolated code islands");
+		monitor.setMessage("Heuristic Pass 8: Gap filling");
+		int pass8Found = fillGaps(program, pseudo, listing, memory, monitor);
+		totalFound += pass8Found;
+		Msg.info(this, "Pass 8: " + pass8Found + " instructions from gap filling");
+
+		// ============================================================
+		// Pass 9: Remove isolated code islands (false positives)
+		// ============================================================
+		monitor.setMessage("Heuristic Pass 9: Removing isolated code islands");
 		int islandsRemoved = removeIsolatedIslands(program, listing, monitor);
 		if (islandsRemoved > 0) {
 			totalFound -= islandsRemoved;
-			Msg.info(this, "Pass 8: " + islandsRemoved +
+			Msg.info(this, "Pass 9: " + islandsRemoved +
 				" instructions removed (isolated 1-3 instruction islands with no references)");
 		}
 
 		// ============================================================
-		// Pass 9 & 10: Overlap resolution (H14) and confidence (H20)
+		// Pass 10 & 11: Overlap resolution (H14) and confidence (H20)
 		// are handled implicitly — Ghidra's Listing prevents overlaps,
 		// and confidence is tracked in our map for reporting.
 		// ============================================================
@@ -1169,7 +1178,157 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 	}
 
 	// ================================================================
-	// Pass 5: Orphan recovery (H09-H11)
+	// Pass 5: Prologue scan (H24)
+	// ================================================================
+
+	/**
+	 * Scan undefined regions for function prologues at instruction-aligned addresses.
+	 * Prologue detection finds function starts that weren't reached by reference tracing,
+	 * particularly effective for MIPS, PowerPC, ARM, and SH where prologues are distinctive.
+	 */
+	private int scanForPrologues(Program program, PseudoDisassembler pseudo,
+			AddressSetView analysisSet, Listing listing, Memory memory, TaskMonitor monitor)
+			throws CancelledException {
+
+		int found = 0;
+		int instrAlign = program.getLanguage().getInstructionAlignment();
+		if (instrAlign < 1) instrAlign = 1;
+
+		// Build list of undefined regions within initialized memory only
+		// (skip EXTERNAL and other virtual address spaces)
+		AddressSet initMemory = new AddressSet();
+		for (MemoryBlock blk : memory.getBlocks()) {
+			if (blk.isInitialized() && !blk.isExternalBlock()) {
+				initMemory.add(blk.getStart(), blk.getEnd());
+			}
+		}
+		AddressSet scanSet = initMemory.intersect(analysisSet);
+
+		List<AddressRange> undefined = new ArrayList<>();
+		for (AddressRange range : scanSet) {
+			monitor.checkCancelled();
+			Address rangeStart = range.getMinAddress();
+			Address rangeEnd = range.getMaxAddress();
+			InstructionIterator instrIter = listing.getInstructions(
+				new AddressSet(rangeStart, rangeEnd), true);
+			Address cursor = rangeStart;
+			while (instrIter.hasNext()) {
+				monitor.checkCancelled();
+				Instruction instr = instrIter.next();
+				Address instrStart = instr.getAddress();
+				if (instrStart.compareTo(cursor) > 0) {
+					long gapSize = instrStart.subtract(cursor);
+					if (gapSize >= minBlockSize) {
+						undefined.add(new AddressRangeImpl(cursor, instrStart.subtract(1)));
+					}
+				}
+				cursor = instrStart.add(instr.getLength());
+			}
+			if (cursor.compareTo(rangeEnd) <= 0) {
+				long tailSize = rangeEnd.subtract(cursor) + 1;
+				if (tailSize >= minBlockSize) {
+					undefined.add(new AddressRangeImpl(cursor, rangeEnd));
+				}
+			}
+		}
+
+		// Use minimum instruction size for step (e.g., 4 for MIPS/PPC/ARM, 2 for Thumb, 1 for x86)
+		int minInstrSize = program.getLanguage().getInstructionAlignment();
+		if (minInstrSize < 2) minInstrSize = 2; // At least 2 — single-byte prologue is implausible
+		// For fixed-width ISAs, use the actual instruction width
+		String procName = program.getLanguage().getProcessor().toString();
+		if (procName.contains("MIPS") || procName.contains("PowerPC")) {
+			minInstrSize = 4; // Fixed 4-byte instructions (ignore MIPS16 for prologue scan)
+		}
+
+		Msg.info(this, "Pass 5: scanning " + undefined.size() +
+			" undefined regions for prologues (step=" + minInstrSize + ")");
+
+		int prologueHits = 0;
+		int regionIdx = 0;
+		for (AddressRange range : undefined) {
+			monitor.checkCancelled();
+			regionIdx++;
+			if (regionIdx % 50 == 0) {
+				monitor.setMessage("Heuristic Pass 5: Prologue scan " +
+					regionIdx + "/" + undefined.size());
+			}
+
+			Address start = range.getMinAddress();
+			Address end = range.getMaxAddress();
+
+			// Align start address
+			long startOff = start.getOffset();
+			if (startOff % minInstrSize != 0) {
+				startOff = (startOff + minInstrSize - 1) & ~(minInstrSize - 1L);
+				start = start.getNewAddress(startOff);
+			}
+
+			// Scan at aligned addresses within this region
+			for (Address addr = start; addr.compareTo(end) <= 0; ) {
+				monitor.checkCancelled();
+				if (listing.getInstructionAt(addr) != null) {
+					addr = addr.add(minInstrSize);
+					continue;
+				}
+				if (dataRegions.contains(addr)) {
+					addr = addr.add(minInstrSize);
+					continue;
+				}
+
+				// Fast byte-level pre-filter: architecture-specific prologue byte check
+				if (!patternMatcher.quickPrologueByteCheck(addr)) {
+					addr = addr.add(minInstrSize);
+					continue;
+				}
+
+				// Full P-code level prologue check (expensive — only reached after byte pre-filter)
+				if (patternMatcher.isPrologueAt(pseudo, addr)) {
+					prologueHits++;
+					// Use prologue as a high-confidence seed for traceForward
+					Set<Address> targets = new LinkedHashSet<>();
+					AddressSet traced = traceForward(program, pseudo, addr, targets, monitor, true);
+					if (traced != null && !traced.isEmpty()) {
+						found += disassembleSet(program, traced, monitor);
+						confidence.put(addr, CONF_PATTERN);
+						functionEntries.add(addr);
+
+						// Trace from newly discovered call/branch targets
+						for (Address target : targets) {
+							if (listing.getInstructionAt(target) == null &&
+								memory.contains(target)) {
+								AddressSet sub = traceForward(program, pseudo, target,
+									new LinkedHashSet<>(), monitor);
+								if (sub != null && !sub.isEmpty()) {
+									found += disassembleSet(program, sub, monitor);
+								}
+							}
+						}
+						// Skip past the traced region
+						Address lastAddr = traced.getMaxAddress();
+						if (lastAddr.compareTo(addr) > 0) {
+							addr = lastAddr.add(1);
+							// Re-align
+							long off = addr.getOffset();
+							if (off % minInstrSize != 0) {
+								off = (off + minInstrSize - 1) & ~(minInstrSize - 1L);
+								addr = addr.getNewAddress(off);
+							}
+							continue;
+						}
+					}
+				}
+				addr = addr.add(minInstrSize);
+			}
+		}
+
+		Msg.info(this, "Pass 5: " + prologueHits + " prologue patterns detected, " +
+			found + " instructions traced");
+		return found;
+	}
+
+	// ================================================================
+	// Pass 6: Orphan recovery (H09-H11)
 	// ================================================================
 
 	private int recoverOrphans(Program program, PseudoDisassembler pseudo,
@@ -1214,7 +1373,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			}
 		}
 
-		Msg.info(this, "Pass 5: " + undefined.getNumAddressRanges() + " orphan regions to scan");
+		Msg.info(this, "Pass 6: " + undefined.getNumAddressRanges() + " orphan regions to scan");
 
 		// H09: Entropy classification of orphan regions
 		int regionIdx = 0;
@@ -1223,7 +1382,7 @@ public class HeuristicCodeFinderAnalyzer extends AbstractAnalyzer {
 			monitor.checkCancelled();
 			regionIdx++;
 			if (regionIdx % 100 == 0) {
-				monitor.setMessage("Heuristic Pass 5: Orphan " + regionIdx + "/" + totalRegions);
+				monitor.setMessage("Heuristic Pass 6: Orphan " + regionIdx + "/" + totalRegions);
 			}
 			Address start = range.getMinAddress();
 			long size = range.getLength();
