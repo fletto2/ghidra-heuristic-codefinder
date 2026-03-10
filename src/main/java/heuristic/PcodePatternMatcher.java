@@ -35,14 +35,19 @@ public class PcodePatternMatcher {
 	 *   - SP = INT_SUB SP, const; STORE [SP+off], reg (68000, ARM, Z80)
 	 *   - SP = INT_ADD SP, negative_const; STORE [SP+off], reg (MIPS addiu sp,sp,-N)
 	 *   - STORE [SP-off], reg (pre-decrement); SP = INT_SUB SP, N (ARM STMDB)
-	 *   - mflr r0; STORE [SP+off], r0; SP = INT_SUB SP, N (PowerPC stwu)
+	 *   - mflr r0; stwu r1, -N(r1) (PowerPC — COPY from LR + SP alloc)
 	 */
 	public boolean isPrologue(Instruction[] instrs, int startIdx) {
 		if (stackPointer == null || startIdx >= instrs.length) return false;
 
 		Varnode spVarnode = getVarnode(stackPointer);
 		boolean foundSpAlloc = false;
+		boolean foundLrSave = false;
 		int storeCount = 0;
+
+		// Get link register (return address register) for COPY-from-LR detection
+		Register lrReg = getLinkRegister();
+		Varnode lrVarnode = lrReg != null ? getVarnode(lrReg) : null;
 
 		for (int i = startIdx; i < Math.min(startIdx + 8, instrs.length); i++) {
 			PcodeOp[] pcode = instrs[i].getPcode();
@@ -57,9 +62,17 @@ public class PcodePatternMatcher {
 						storeCount++;
 					}
 				}
+				// Detect COPY from link/return-address register (PPC mflr r0)
+				if (op.getOpcode() == PcodeOp.COPY && lrVarnode != null) {
+					Varnode in = op.getInput(0);
+					if (in != null && matchesReg(in, lrVarnode)) {
+						foundLrSave = true;
+					}
+				}
 			}
 		}
-		return foundSpAlloc && storeCount >= 1;
+		// Classic: SP alloc + stack store. PPC variant: LR save + SP alloc.
+		return foundSpAlloc && (storeCount >= 1 || foundLrSave);
 	}
 
 	/**
@@ -229,20 +242,30 @@ public class PcodePatternMatcher {
 			if (proc.contains("MIPS")) {
 				if (bigEndian) {
 					// addiu sp, sp, -N: 0x27BD + negative 16-bit imm (high bit set)
-					return b[0] == 0x27 && b[1] == (byte) 0xBD && (b[2] & 0x80) != 0;
+					if (b[0] == 0x27 && b[1] == (byte) 0xBD && (b[2] & 0x80) != 0) return true;
+					// sw ra, N(sp): 0xAFBFXXXX — saves return address (non-leaf indicator)
+					// Often the first instruction when addiu is in a branch delay slot
+					if (b[0] == (byte) 0xAF && b[1] == (byte) 0xBF) return true;
 				} else {
-					// LE: 0xXXXXBD27 where high byte of imm has high bit set
-					return b[2] == (byte) 0xBD && b[3] == 0x27 && (b[1] & 0x80) != 0;
+					if (b[2] == (byte) 0xBD && b[3] == 0x27 && (b[1] & 0x80) != 0) return true;
+					// sw ra, N(sp) LE: 0xXXXXBFAF
+					if (b[2] == (byte) 0xBF && b[3] == (byte) 0xAF) return true;
 				}
+				return false;
 			}
 
 			if (proc.contains("PowerPC")) {
-				// stwu r1, -N(r1): 0x9421XXXX (big endian) with negative displacement
 				if (bigEndian) {
-					return b[0] == (byte) 0x94 && b[1] == 0x21 && (b[2] & 0x80) != 0;
+					// stwu r1, -N(r1): 0x9421XXXX with negative displacement
+					if (b[0] == (byte) 0x94 && b[1] == 0x21 && (b[2] & 0x80) != 0) return true;
+					// mflr r0: 0x7C0802A6 — very common PPC prologue start (88% mwcc -O4)
+					if (b[0] == 0x7C && b[1] == 0x08 && b[2] == 0x02 && b[3] == (byte) 0xA6) return true;
 				} else {
-					return b[2] == 0x21 && b[3] == (byte) 0x94 && (b[1] & 0x80) != 0;
+					if (b[2] == 0x21 && b[3] == (byte) 0x94 && (b[1] & 0x80) != 0) return true;
+					// mflr r0 LE: 0xA6020807C
+					if (b[0] == (byte) 0xA6 && b[1] == 0x02 && b[2] == 0x08 && b[3] == 0x7C) return true;
 				}
+				return false;
 			}
 
 			if (proc.contains("ARM")) {
@@ -333,6 +356,31 @@ public class PcodePatternMatcher {
 
 	private Varnode getVarnode(Register reg) {
 		return new Varnode(reg.getAddress(), reg.getMinimumByteSize());
+	}
+
+	/**
+	 * Get the link register (return address register) for the current architecture.
+	 * PPC: LR, MIPS: ra, ARM: lr, SH: PR, 68000: null (uses stack).
+	 */
+	private Register getLinkRegister() {
+		String proc = program.getLanguage().getProcessor().toString();
+		String[] candidates;
+		if (proc.contains("PowerPC")) {
+			candidates = new String[]{"LR", "lr"};
+		} else if (proc.contains("MIPS")) {
+			candidates = new String[]{"ra", "RA"};
+		} else if (proc.contains("ARM")) {
+			candidates = new String[]{"lr", "LR", "r14"};
+		} else if (proc.contains("SuperH") || proc.contains("SH-2") || proc.contains("SH-4")) {
+			candidates = new String[]{"pr", "PR"};
+		} else {
+			return null;
+		}
+		for (String name : candidates) {
+			Register reg = program.getRegister(name);
+			if (reg != null) return reg;
+		}
+		return null;
 	}
 
 	/**
