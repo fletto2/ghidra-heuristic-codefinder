@@ -74,6 +74,7 @@ public class FunctionPatternDetector {
 	private final PlatformDescription platform;
 	private PcodeVectorDatabase vectorDb;
 	private PcodeVectorDatabase.RomDomain romDomain = PcodeVectorDatabase.RomDomain.GENERIC;
+	private final PcodeMotifDetector motifDetector = new PcodeMotifDetector();
 
 	public FunctionPatternDetector(Program program, PlatformDescription platform) {
 		this.program = program;
@@ -148,8 +149,33 @@ public class FunctionPatternDetector {
 					return results;
 				}
 			}
-			// Vector DB found nothing — if domain is known, don't fall through
-			// to noisy rule-based detectors either
+
+			// Phase 1.5: Motif-based classification
+			// Vector DB found nothing — try motif detection before falling back
+			// to rule-based. Motifs detect algorithmic structure (crypto rounds,
+			// hash mixing, CRC feedback) by scanning for repeated local P-code
+			// patterns, which is more robust than aggregate statistics.
+			PcodeMotifDetector.MotifProfile motifProfile = motifDetector.analyze(pcode);
+			if (motifProfile.totalMotifs >= 2) {
+				FunctionType motifResult = motifDetector.classifyFromMotifs(
+					motifProfile, pcode, profile.hasLoop);
+				if (motifResult != null && motifResult.confidence >= 0.80) {
+					// Domain-filter the motif result too
+					if (romDomain != null && romDomain != PcodeVectorDatabase.RomDomain.GENERIC) {
+						Set<String> allowed = getDomainCategories(romDomain);
+						if (allowed == null || allowed.contains(motifResult.category)) {
+							results.add(motifResult);
+							return results;
+						}
+					} else {
+						results.add(motifResult);
+						return results;
+					}
+				}
+			}
+
+			// Vector DB and motifs both found nothing — if domain is known,
+			// don't fall through to noisy rule-based detectors either
 			if (romDomain != null && romDomain != PcodeVectorDatabase.RomDomain.GENERIC) {
 				return Collections.emptyList();
 			}
